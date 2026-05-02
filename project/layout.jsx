@@ -99,6 +99,10 @@ function Nav() {
       icon: Icon.layers, title: "Product Strategy & Design", slug: "product-strategy",
       bullets: ["Discovery", "UX Design", "Design Systems"],
     },
+    {
+      icon: Icon.users, title: "AI Engineering Outstaffing", slug: "ai-outstaffing",
+      bullets: ["Dedicated AI Engineers", "Embedded Team Leads", "Domain Specialists"],
+    },
   ];
 
   const expertise = [
@@ -174,6 +178,7 @@ function Nav() {
         </div>
       </header>
       <div className={"nav-mobile" + (mobileOpen ? " is-open" : "")}>
+        <a href="#/service/ai-outstaffing">AI Outstaffing</a>
         <a href="#/process">Services</a>
         <a href="#/case-studies">Case Studies</a>
         <a href="#/expertise">Expertise</a>

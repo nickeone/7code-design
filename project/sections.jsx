@@ -217,6 +217,7 @@ function Services() {
     { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that compounds." },
     { icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", desc: "Scalable AWS / GCP architectures, CI/CD pipelines, observability." },
     { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate." },
+    { icon: Icon.users, title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — hired in days, not months. No recruiting overhead, no long-term lock-in." },
   ];
   return (
     <section className="section section--alt">

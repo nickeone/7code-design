@@ -130,6 +130,47 @@ const SERVICES_DATA = {
     next: { slug: "product-strategy", title: "Product Strategy & Design" },
   },
 
+  "ai-outstaffing": {
+    slug: "ai-outstaffing",
+    title: "AI Engineering Outstaffing",
+    shortTitle: "AI Outstaffing",
+    tagline: "Senior AI engineers embedded in your team — matched in days, not months. Your roadmap, your rituals, our engineers.",
+    summary: "The AI talent market is broken for most companies. Senior engineers with production LLM experience are expensive, rare, and not responding to LinkedIn. The teams winning with AI right now aren't the ones with the biggest recruiting budgets — they're the ones who found a smarter way to access the talent. We embed our engineers directly into your team: your Slack, your standups, your sprint cadence. You get the leverage of a specialist without the overhead of a hire.",
+    icon: "users",
+    accentColor: "#0891B2",
+    stats: [
+      { v: "72 hrs", l: "to first matched profile" },
+      { v: "Senior only", l: "5+ yrs production AI" },
+      { v: "30 days", l: "scale up or down" },
+      { v: "6 industries", l: "domain coverage" },
+    ],
+    problem: {
+      title: "The AI talent gap is real. Most companies can't close it by hiring.",
+      body: "A senior AI engineer with production LLM and MLOps experience commands €150–280k in Europe and expects frontier model access, interesting problems, and a team that moves fast. Most product companies outside the top 20 tech firms can't compete on all three. The result: long hiring cycles, expensive mis-hires, or — most commonly — AI initiatives that stall because the right engineer was never in the room. Outstaffing solves this without the risk, the overhead, or the equity dilution of a permanent hire.",
+    },
+    whatWeDeliver: [
+      { title: "Senior AI & ML engineers", desc: "Engineers with production experience across LLM integration, RAG pipelines, fine-tuning, and MLOps. Matched to your stack, your domain, and the specific problem you're trying to solve — not just keyword-matched." },
+      { title: "Full-stack product engineers", desc: "React, React Native, Node.js, and Python engineers who've shipped in AI-native codebases. They work to your sprint cadence, contribute to architecture decisions, and write the kind of code you'd want to inherit." },
+      { title: "Embedded technical leads", desc: "A tech lead who runs a sub-team inside your organisation — architecture ownership, code review, mentoring your junior engineers, and bridging the gap between engineering and product. All without the 6-month executive search." },
+      { title: "Domain-specialist engineers", desc: "Engineers with verified experience in regulated industries: healthcare (HIPAA, HL7, FHIR), finance (SOC 2, PCI-DSS), defence (security-cleared), and energy (IEC 62443). Rare skills available without the rare search timeline." },
+      { title: "AI research engineers", desc: "For teams pushing the frontier: fine-tuning on proprietary data, RLHF pipeline design, evaluation framework architecture, and custom model development. Ex-research backgrounds with production delivery track records." },
+      { title: "Flexible engagement models", desc: "Full-time equivalents, part-time specialists, and targeted sprint injections. Monthly rolling contracts. Scale up for a product launch, scale back after — with 30 days' notice and no penalty clauses." },
+    ],
+    techStack: {
+      "AI & ML profiles": ["PyTorch", "Hugging Face", "LangChain", "LlamaIndex", "pgvector"],
+      "Product engineering": ["React", "Next.js", "TypeScript", "Node.js", "Python"],
+      "Infrastructure": ["AWS", "GCP", "Kubernetes", "Terraform", "Docker"],
+      "Evaluation & ops": ["RAGAS", "Braintrust", "Datadog", "OpenTelemetry"],
+    },
+    process: [
+      { step: "01", title: "Requirements and matching — 72 hours", desc: "We scope the role together: skills, seniority, timezone, domain knowledge, and team fit. Within 72 hours we present 2–3 matched profiles with a technical summary and relevant project history attached to each. No generic CVs." },
+      { step: "02", title: "Two-week embedded trial", desc: "The engineer joins your team for a trial sprint — real work, your codebase, your processes. If the fit isn't right technically or culturally, we replace at no cost and no delay. Most engagements pass the trial and move straight to ongoing." },
+      { step: "03", title: "Ongoing engagement with a dedicated account lead", desc: "Monthly rolling contract. A dedicated account lead on our side handles performance, feedback, and any escalations — so you get the responsiveness of a direct hire without the HR overhead. Scale up or down with 30 days' notice." },
+    ],
+    cases: ["helix-health", "vector-defence"],
+    next: { slug: "ai-product-engineering", title: "AI-Native Product Engineering" },
+  },
+
   "product-strategy": {
     slug: "product-strategy",
     title: "Product Strategy & Design",
