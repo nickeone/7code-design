@@ -7,42 +7,42 @@ const { useState: useStateSVC } = React;
 // Service data
 // ─────────────────────────────────────────────────────────────────
 const SERVICES_DATA = {
-  "web-mobile": {
-    slug: "web-mobile",
-    title: "Web & Mobile App Development",
-    shortTitle: "Web & Mobile",
-    tagline: "Production-grade React, React Native, and native apps — shipped on time, built to last.",
-    summary: "We build web and mobile products that don't just work on launch day — they scale with your users, extend cleanly as requirements grow, and hold up through the parts of the product lifecycle nobody demos at conferences.",
+  "ai-product-engineering": {
+    slug: "ai-product-engineering",
+    title: "AI-Native Product Engineering",
+    shortTitle: "AI Product Engineering",
+    tagline: "We build AI-native web and mobile products from the ground up — not retrofits, not wrappers. Products engineered to compound in value as your data grows.",
+    summary: "Most teams are still building products the old way and patching AI on top. We start with AI as a core capability — the data layer, the inference loop, the feedback cycle — and build the interface and backend around it. The result ships faster, scales cleaner, and improves with every user interaction.",
     icon: "code",
-    accentColor: "#4F46E5",
+    accentColor: "#06B6D4",
     stats: [
-      { v: "50+", l: "products shipped" },
-      { v: "React", l: "primary stack" },
-      { v: "iOS + Android", l: "mobile targets" },
+      { v: "50+", l: "AI-native products shipped" },
       { v: "6 wks", l: "to first production deploy" },
+      { v: "Web + Mobile", l: "full-stack delivery" },
+      { v: "HIPAA · SOC 2", l: "compliance-ready" },
     ],
     problem: {
-      title: "Most software projects fail before they launch. The ones that launch often fail after.",
-      body: "The failure modes are consistent: specs that drift, scopes that expand, codebases that become unmaintainable after the first engineering handoff. We've inherited enough of these to know what went wrong — and to build our process around not repeating those mistakes.",
+      title: "Bolting AI onto a product built without it is expensive. Usually too expensive.",
+      body: "The teams that regret their architecture are the ones who built a clean CRUD app first and tried to add intelligence later. The data model doesn't support it. The latency budget is gone. The UX was never designed for async responses. We've inherited enough of these codebases to know that starting with AI in mind costs far less than retrofitting it in — and the products that result are categorically better.",
     },
     whatWeDeliver: [
-      { title: "Web applications", desc: "React / Next.js SPAs, SSR apps, and complex internal tools. We write them the way we'd want to inherit them: typed, tested, observable." },
-      { title: "Mobile apps", desc: "React Native for shared codebases, Swift/Kotlin for platform-native requirements. We've shipped apps in the App Store and Play Store, including in regulated industries." },
-      { title: "Design systems", desc: "Component libraries that your team can actually use — documented, accessible, and connected to your design tokens." },
-      { title: "API integration", desc: "We connect your frontend to your data — REST, GraphQL, real-time subscriptions, and the legacy systems that don't follow any of those patterns." },
-      { title: "Performance engineering", desc: "Core Web Vitals, bundle optimisation, render performance. We measure first, then fix, and we show you the numbers before and after." },
-      { title: "Accessibility", desc: "WCAG 2.1 AA compliance built into the process, not bolted on. We test with screen readers and keyboard navigation as part of every sprint." },
+      { title: "AI-native web applications", desc: "React and Next.js applications with AI workflows embedded in the product experience — real-time suggestions, semantic search, intelligent routing, and dynamic content grounded in your data." },
+      { title: "Intelligent mobile apps", desc: "iOS and Android apps with on-device inference, personalisation loops, and smart features that work offline. We've shipped AI-powered apps in healthcare, logistics, and enterprise SaaS." },
+      { title: "LLM-first user interfaces", desc: "Chat interfaces, copilots, and AI-driven dashboards designed for the latency and uncertainty of language models. We handle streaming, fallbacks, and confidence displays — not just the happy path." },
+      { title: "AI-ready data and API layer", desc: "The backend that makes AI possible: event streaming, vector stores, real-time pipelines, and the API contracts that keep your frontend fast while the model thinks." },
+      { title: "Adaptive design systems", desc: "Component libraries designed for dynamic, AI-generated content — variable-length text, streaming responses, skeleton states, and the edge cases that break standard UI patterns." },
+      { title: "Legacy integration and migration", desc: "We connect your new AI-native product to the systems that hold your real data — EHRs, ERPs, CRMs, and the internal tools that predate modern APIs. No greenfield silos." },
     ],
     techStack: {
-      Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand / Redux"],
-      Mobile: ["React Native", "Expo", "Swift", "Kotlin"],
-      Testing: ["Vitest", "Playwright", "Detox"],
-      Tooling: ["Storybook", "Chromatic", "Figma"],
+      "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
+      "Mobile": ["React Native", "Expo", "Swift", "Kotlin"],
+      "AI & LLM": ["Anthropic Claude", "OpenAI GPT-4", "pgvector", "LangChain"],
+      "Backend & Data": ["Node.js", "PostgreSQL", "Redis", "Kafka", "Prisma"],
     },
     process: [
-      { step: "01", title: "Discovery and architecture", desc: "One week of structured requirements, user research synthesis, and architecture decisions. We document assumptions and get your sign-off before writing a line of production code." },
-      { step: "02", title: "Two-week sprints, always deployable", desc: "Every sprint ends with a deployable build. You see progress every Friday. The backlog is yours to steer between sprints." },
-      { step: "03", title: "Hardening and handoff", desc: "The final sprint is dedicated to performance, accessibility, documentation, and making sure your team can own what we built. No sprint-zero, no surprise handoff debt." },
+      { step: "01", title: "AI capability scoping — before the spec", desc: "We map your product requirements against AI capabilities in week one, before writing a specification. The architecture decisions made early — data model, inference strategy, feedback loops — have a 10× impact on what's possible at month six. We get these right first." },
+      { step: "02", title: "Two-week sprints with AI checkpoints", desc: "Every sprint ends with a deployable build you can use. At each sprint review, we evaluate every feature against an AI opportunity. Not everything needs a model — but every feature that benefits from one should have it designed in, not retrofitted." },
+      { step: "03", title: "Production hardening and handoff", desc: "The final phase covers prompt management, model versioning, evaluation pipelines, and the observability that tells you when your AI components start to drift. We don't hand off without it — and we don't consider the engagement finished until your team can operate it independently." },
     ],
     cases: ["helix-health", "octolabs"],
     next: { slug: "ai-automation", title: "AI & Process Automation" },
@@ -168,7 +168,7 @@ const SERVICES_DATA = {
       { step: "03", title: "High-fidelity and handoff", desc: "Figma files with full component specs, design tokens, and interaction annotations. Handed off in a format your engineers can build from, not interpret." },
     ],
     cases: ["helix-health", "octolabs"],
-    next: { slug: "web-mobile", title: "Web & Mobile App Development" },
+    next: { slug: "ai-product-engineering", title: "AI-Native Product Engineering" },
   },
 };
 
@@ -195,8 +195,8 @@ function TechStackGrid({ stack }) {
 // ─────────────────────────────────────────────────────────────────
 // Service detail page
 // ─────────────────────────────────────────────────────────────────
-function ServiceDetailPage({ slug = "web-mobile" }) {
-  const svc = SERVICES_DATA[slug] || SERVICES_DATA["web-mobile"];
+function ServiceDetailPage({ slug = "ai-product-engineering" }) {
+  const svc = SERVICES_DATA[slug] || SERVICES_DATA["ai-product-engineering"];
   const iconMap = { code: Icon.code, cpu: Icon.cpu, cloud: Icon.cloud, layers: Icon.layers };
   const SvcIcon = iconMap[svc.icon] || Icon.code;
   const relatedCases = svc.cases.map(s => (typeof CASES !== "undefined" && CASES[s]) ? CASES[s] : null).filter(Boolean);

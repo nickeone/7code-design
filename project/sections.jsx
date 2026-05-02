@@ -213,7 +213,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 // Services section
 function Services() {
   const services = [
-    { icon: Icon.code, title: "Web & Mobile App Development", desc: "Production-grade React, Next.js, React Native and native apps." },
+    { icon: Icon.code, title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
     { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that compounds." },
     { icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", desc: "Scalable AWS / GCP architectures, CI/CD pipelines, observability." },
     { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate." },

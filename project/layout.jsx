@@ -84,8 +84,8 @@ function Nav() {
 
   const services = [
     {
-      icon: Icon.code, title: "Web & Mobile App Development", slug: "web-mobile",
-      bullets: ["React Development", "React Native Apps", "Enterprise Portals"],
+      icon: Icon.code, title: "AI-Native Product Engineering", slug: "ai-product-engineering",
+      bullets: ["AI-Powered Web Apps", "Intelligent Mobile Apps", "LLM-First Interfaces"],
     },
     {
       icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", slug: "cloud-devops",
