@@ -25,8 +25,8 @@ function TrustedBy() {
         <div className="marquee">
           <div className="marquee-track">
             {all.map((l, i) => (
-              <div key={i} className="marquee-logo">
-                <img src={l.src} alt={l.alt} style={{ height: 36, width: "auto", maxWidth: 140, objectFit: "contain", filter: "grayscale(1) brightness(0.4)", opacity: 0.85 }} />
+              <div key={i} className="marquee-logo" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 48, padding: "0 8px" }}>
+                <img src={l.src} alt={l.alt} style={{ height: 44, width: "auto", maxWidth: 160, objectFit: "contain", display: "block" }} />
               </div>
             ))}
           </div>
