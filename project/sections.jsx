@@ -37,7 +37,18 @@ function TrustedBy() {
 }
 
 // Case study cover graphic
-function CSCover({ kind, label }) {
+function CSCover({ kind, label, slug }) {
+  if (slug === "wholesum") {
+    return (
+      <div className="cs-cover cs-cover--photo">
+        <img
+          src="project/uploads/wholesum%20hero.png"
+          alt={label || "WholeSum"}
+          className="cs-cover-img"
+        />
+      </div>
+    );
+  }
   const map = {
     health:   { cls: "cover--health",   icon: <Icon.heart /> },
     finance:  { cls: "cover--finance",  icon: <Icon.briefcase /> },
@@ -91,7 +102,7 @@ function CaseStudies({ limit }) {
         <div className="cs-grid">
           {list.map((c, i) => (
             <a key={i} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
-              <CSCover kind={c.kind} label={c.meta[0]} />
+              <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
                 <div className="cs-meta">

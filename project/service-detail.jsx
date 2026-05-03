@@ -393,7 +393,7 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
             <div className="cs-grid">
               {relatedCases.map((c) => (
                 <a key={c.slug} href={"#/case-study/" + c.slug} className="cs-card reveal">
-                  <CSCover kind={c.kind} label={c.industry} />
+                  <CSCover kind={c.kind} label={c.industry} slug={c.slug} />
                   <div className="cs-body">
                     <div className="cs-meta">{c.meta && c.meta.map((m, j) => <span key={j}>{m}</span>)}</div>
                     <h3>{c.title}</h3>

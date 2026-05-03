@@ -45,7 +45,7 @@ function CaseStudiesGrid() {
         <div className="cs-grid">
           {filtered.map((c, i) => (
             <a key={c.title} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
-              <CSCover kind={c.kind} label={c.meta[0]} />
+              <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
                 <div className="cs-meta">
@@ -109,7 +109,7 @@ function CaseStudiesFeatured() {
       <div className="container">
         <div className="cs-feat reveal">
           <div className="cs-feat-cover">
-            <CSCover kind={item.kind} label={item.meta[0]} />
+            <CSCover kind={item.kind} label={item.meta[0]} slug={item.slug} />
           </div>
           <div className="cs-feat-body">
             <span className="tag tag--ink"><span className="tag-dot"/> Case study</span>
@@ -316,7 +316,7 @@ function CaseStudiesMagazine() {
       <div className="container">
         <div className="mag-grid">
           <a href={"#/case-study/" + hero.slug} className="mag-hero reveal">
-            <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} /></div>
+            <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} slug={hero.slug} /></div>
             <div className="mag-hero-body">
               <span className="mag-kicker"><span className="mag-dot"/> Featured story · {hero.year}</span>
               <h2 className="mag-hero-title">{hero.title}</h2>
@@ -347,7 +347,7 @@ function CaseStudiesMagazine() {
         <div className="mag-row">
           {rest.slice(3).map((c, i) => (
             <a key={c.title} href={"#/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-              <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+              <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="mag-card-body">
                 <div className="mag-mini-meta">{c.meta[0]} · {c.year}</div>
                 <h3>{c.title}</h3>
@@ -371,7 +371,7 @@ function CaseStudiesStack() {
         <div className="stk-list">
           {CS_ITEMS.map((c, i) => (
             <a key={c.title} href={"#/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
-              <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+              <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="stk-body">
                 <div className="stk-num">{c.num} / 06</div>
                 <div className="stk-meta">
@@ -422,7 +422,7 @@ function CaseStudiesMosaic() {
               <a key={c.title} href={"#/case-study/" + c.slug} className={"mos-card reveal " + L.span + " mos--" + L.variant} style={{ transitionDelay: (i * 50) + "ms" }}>
                 {L.variant === "image" && (
                   <>
-                    <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+                    <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
                     <div className="mos-overlay">
                       <div className="mos-meta">{c.meta[0]} · {c.year}</div>
                       <div className="mos-title">{c.title}</div>

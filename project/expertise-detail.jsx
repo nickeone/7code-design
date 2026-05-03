@@ -375,7 +375,7 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
             <div className="cs-grid">
               {relatedCases.map((c, i) => (
                 <a key={c.slug} href={"#/case-study/" + c.slug} className="cs-card reveal">
-                  <CSCover kind={c.kind || exp.kind} label={exp.title} />
+                  <CSCover kind={c.kind || exp.kind} label={exp.title} slug={c.slug} />
                   <div className="cs-body">
                     <div className="cs-meta">{c.meta && c.meta.map((m, j) => <span key={j}>{m}</span>)}</div>
                     <h3>{c.title}</h3>

@@ -623,7 +623,7 @@ function CSDVisual() {
   return (
     <div className="csd-visual">
       <section className="csd-visual-hero">
-        <div className="csd-visual-hero-bg"><CSCover kind={CSD.kind} label={CSD.industry} /></div>
+        <div className="csd-visual-hero-bg"><CSCover kind={CSD.kind} label={CSD.industry} slug={CSD.slug} /></div>
         <div className="container csd-visual-hero-overlay">
           <span className="csd-kicker csd-kicker--inverse"><span className="csd-dot csd-dot--cyan"/> Featured case study</span>
           <h1>{CSD.title}</h1>
