@@ -35,15 +35,15 @@ function HeroPatternMockup() {
       </div>
       <div className="container hero-pattern-inner">
         <div className="hero-content reveal">
-          <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> Software product agency</span>
-          <h1>Modern engineering for products that <span className="text-cyan">scale</span>.</h1>
-          <p className="hero-sub">7Code partners with ambitious teams to ship reliable, scalable software — from product strategy through engineering, design, and beyond.</p>
+          <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> AI-first engineering partner</span>
+          <h1>AI-native software, engineered for <span className="text-cyan">production</span>.</h1>
+          <p className="hero-sub">We design, build, and operate AI-native products end-to-end — LLM features, agent workflows, and the cloud infrastructure behind them. Strategy, design, and engineering under one roof.</p>
           <div className="hero-cta">
             <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
             <a href="#/process" className="btn btn--ghost btn--lg">How we work</a>
           </div>
           <div className="hero-meta">
-            <div className="hero-meta-item"><strong>50+</strong><span>Products shipped</span></div>
+            <div className="hero-meta-item"><strong>50+</strong><span>AI products shipped</span></div>
             <div className="hero-meta-divider"/>
             <div className="hero-meta-item"><strong>12+ yrs</strong><span>Engineering practice</span></div>
             <div className="hero-meta-divider"/>
