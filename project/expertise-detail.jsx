@@ -388,19 +388,6 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
         </section>
       )}
 
-      {/* ── Next expertise ───────────────────────────────────── */}
-      <section className="section section--alt">
-        <div className="container">
-          <a href={"#/expertise/" + nextSlug} className="exp-next">
-            <div className="exp-next-label">Next expertise area</div>
-            <div className="exp-next-row">
-              <div className="exp-next-title">{exp.next.title}</div>
-              <span className="exp-next-arrow"><Icon.arrow /></span>
-            </div>
-          </a>
-        </div>
-      </section>
-
       <CTAStrip />
     </div>
   );
