@@ -125,13 +125,13 @@ function CaseStudies({ limit }) {
 // Why-choose section
 function WhyChoose() {
   const why = [
-    { icon: Icon.award, title: "Proven Track Record", desc: "Our portfolio spans multiple industries with measurable results: increased conversions, improved engagement, and scalable architectures." },
-    { icon: Icon.message, title: "Agile & Transparent", desc: "Regular updates, iterative development, and clear communication ensure you're always in the loop and can adapt quickly." },
-    { icon: Icon.target, title: "Future-Proof Solutions", desc: "We build with scalability in mind, using modern tech stacks and best practices that grow with your business." },
-    { icon: Icon.pulse, title: "Always-On Partnership", desc: "Beyond launch, we monitor, iterate, and evolve your product. Long-term partners, not vendors." },
+    { icon: Icon.cpu, title: "AI-native by default", desc: "We design products around LLMs and agents from day one. Retrieval, evaluation, observability and guardrails are built in — not bolted on — so AI features behave predictably in production." },
+    { icon: Icon.chart, title: "Outcomes you can audit", desc: "Every engagement opens with a baseline and closes with the numbers: conversion lift, deflection rate, cost per task, eval scores. We commit to measurable business impact, not deliverables." },
+    { icon: Icon.cloud, title: "Production-grade cloud & agent infra", desc: "AWS, GCP, and Azure native. Vector stores, model gateways, eval harnesses, and CI for prompts and code — built to scale, audit, and recover, not just to demo." },
+    { icon: Icon.users, title: "Embedded long-term partnership", desc: "Senior AI engineers matched in 72 hours and embedded inside your team. Monthly rolling contracts, no lock-in, and 24/7 production support after launch." },
   ];
   const stats = [
-    { v: "50+", l: "Products shipped" },
+    { v: "50+", l: "AI products shipped" },
     { v: "98%", l: "Client retention" },
     { v: "12 yrs", l: "Engineering practice" },
     { v: "24/7", l: "Production support" },
@@ -141,8 +141,8 @@ function WhyChoose() {
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">Why 7Code</span>
-          <h2>Why teams choose us as their engineering partner</h2>
-          <p>We combine technical excellence with business strategy to deliver solutions that make a real impact.</p>
+          <h2>Your AI-first engineering partner for production-grade products</h2>
+          <p>We design, build, and operate AI-native software end-to-end — LLM features, agentic workflows, and the cloud foundations that keep them reliable. Strategy, design, and engineering under one roof, shipping in weeks, not quarters.</p>
         </div>
         <div className="why-grid">
           {why.map((w, i) => {
