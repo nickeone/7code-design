@@ -15,6 +15,7 @@ function TrustedBy() {
     { src: "project/uploads/daily8.png", alt: "Daily8" },
     { src: "project/uploads/lendit.png", alt: "Lendit" },
     { src: "project/uploads/Lidl-logo.png", alt: "Lidl" },
+    { src: "project/uploads/wholesum.webp", alt: "Wholesum" },
   ];
   const all = [...logos, ...logos];
   return (
