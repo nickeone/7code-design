@@ -249,9 +249,13 @@
   align-items: center;
   gap: 28px;
   transition: all .2s ease;
+  color: inherit;
+  text-decoration: none;
 }
 .svc-card + .svc-card { margin-top: 16px; }
 .svc-card:hover { border-color: var(--ink); transform: translateX(4px); }
+.svc-card:hover h3 { color: var(--cyan-600); }
+.svc-card:hover .arrow-svg, .svc-card:hover svg:last-child { color: var(--ink) !important; }
 .svc-card .icon-tile { width: 64px; height: 64px; border-radius: 16px; margin: 0; }
 .svc-card .icon-tile svg { width: 28px; height: 28px; }
 .svc-card h3 { font-size: 22px; margin-bottom: 6px; }

@@ -237,12 +237,12 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 // Services section
 function Services() {
   const services = [
-    { icon: Icon.code, title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
-    { icon: Icon.globe, title: "System Integrations", desc: "Connect your stack — ERPs, CRMs, data warehouses, and legacy systems — into a single, reliable data fabric." },
-    { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
-    { icon: Icon.cloud, title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration — so your AI products run reliably, scale automatically, and cost what they should." },
-    { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate with users and hold up under engineering." },
-    { icon: Icon.users, title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
+    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
+    { icon: Icon.globe, slug: "system-integrations", title: "System Integrations", desc: "Connect your stack — ERPs, CRMs, data warehouses, and legacy systems — into a single, reliable data fabric." },
+    { icon: Icon.cpu, slug: "ai-automation", title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
+    { icon: Icon.cloud, slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration — so your AI products run reliably, scale automatically, and cost what they should." },
+    { icon: Icon.layers, slug: "product-strategy", title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate with users and hold up under engineering." },
+    { icon: Icon.users, slug: "ai-outstaffing", title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
   ];
   return (
     <section className="section section--alt">
@@ -256,14 +256,14 @@ function Services() {
           {services.map((s, i) => {
             const I = s.icon;
             return (
-              <div key={i} className="svc-card">
+              <a key={i} href={"#/service/" + s.slug} className="svc-card">
                 <span className="icon-tile"><I /></span>
                 <div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
                 </div>
                 <Icon.arrow style={{ width: 20, height: 20, color: "var(--slate-400)" }} />
-              </div>
+              </a>
             );
           })}
         </div>
