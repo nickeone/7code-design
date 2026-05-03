@@ -9,13 +9,10 @@ const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
 // Trusted-by marquee
 function TrustedBy() {
   const logos = [
-    { src: "project/assets/ac6d1a3c3a83587f4996f01fca1420142402e2ad.png", alt: "Synergo Group" },
     { src: "project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
-    { src: "project/assets/402fcd955d62dfdddb53d0e6fa8d6fb28ce88d99.png", alt: "The Digital Tree" },
     { src: "project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
     { src: "project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
     { src: "project/assets/660b6acfe4043cf93f893611004ecfda7d68b7c0.png", alt: "SmartSpot" },
-    { src: "project/assets/d2e070228b257dd47e56e1cd367b8bc1bccb08f0.png", alt: "Lendit" },
   ];
   const all = [...logos, ...logos];
   return (
