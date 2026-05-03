@@ -77,6 +77,7 @@ function CaseStudies({ limit }) {
     { slug: "northwind-logistics", kind: "ops", title: "Workflow automation for global logistics provider", meta: ["Operations", "10 weeks"] },
     { slug: "vector-defence", kind: "defence", title: "Situational awareness platform for defence agency", meta: ["Defence", "20 weeks"] },
     { slug: "octolabs", kind: "cyan", title: "AI-powered support copilot for B2B SaaS", meta: ["AI / SaaS", "6 weeks"] },
+    { slug: "wholesum", kind: "cyan", title: "Self-serve qualitative-data analysis platform", meta: ["Data / AI", "18 weeks"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (

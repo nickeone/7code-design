@@ -9,9 +9,10 @@ const CS_ITEMS = [
   { slug: "northwind-logistics", kind: "ops",     num: "04", year: "2025", client: "Northwind Logistics", title: "Workflow automation for global logistics provider",       meta: ["Operations", "10 weeks"],  result: "$4.2M annual savings",    metric: { v: "$4.2M", l: "annual savings" },     excerpt: "Replaced six legacy tools with one workflow engine. Onboarding dropped from days to minutes." },
   { slug: "vector-defence",     kind: "defence",  num: "05", year: "2025", client: "Vector Defence",     title: "Situational awareness platform for defence agency",      meta: ["Defence",    "20 weeks"],  result: "8× faster threat triage", metric: { v: "8×",    l: "faster triage" },       excerpt: "A single pane of glass across radar, comms, and intel feeds — built for operators, not analysts." },
   { slug: "octolabs",           kind: "cyan",     num: "06", year: "2024", client: "OctoLabs",           title: "AI-powered support copilot for B2B SaaS",                 meta: ["AI / SaaS",   "6 weeks"],  result: "47% deflection rate",     metric: { v: "47%",   l: "ticket deflection" },  excerpt: "RAG + tools + a thoughtful escalation path. Customers got faster answers, agents got their afternoons back." },
+  { slug: "wholesum",           kind: "cyan",     num: "07", year: "2025", client: "WholeSum",           title: "Self-serve qualitative-data analysis platform",            meta: ["Data / AI",   "18 weeks"], result: "Manual analysis → minutes", metric: { v: "1", l: "unified pipeline" },     excerpt: "Upload free-text surveys and interviews, get structured, trustworthy insight via a proprietary LLM-powered pipeline." },
 ];
 
-const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS"];
+const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS", "Data / AI"];
 
 // ──────────────────────────────────────────────────────────────────
 // V1 — Grid + filter (existing default)

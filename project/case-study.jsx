@@ -209,6 +209,45 @@ const CASES = {
       { v: "0", l: "rage-quits", sub: "customers escalating angry" },
     ],
     testimonial: { quote: "Other vendors pitched us a chatbot. 7Code asked what 'good' looked like for our customers and built backwards from there. It's the only AI feature we've shipped that customers thank us for.", name: "Sara Lindgren", role: "VP Customer, OctoLabs" },
+    next: { slug: "wholesum", client: "WholeSum", title: "Self-serve qualitative-data analysis platform", kind: "cyan" },
+  },
+  "wholesum": {
+    slug: "wholesum",
+    client: "WholeSum", industry: "Data / AI", year: "2025",
+    duration: "18 weeks", team: "1 PM · 1 designer · 1 architect · 3 engineers · 1 QA",
+    region: "United Kingdom", kind: "cyan",
+    title: "Self-serve qualitative-data analysis platform",
+    tagline: "Upload free-text surveys and interview transcripts, get structured, trustworthy insight via a proprietary LLM-powered pipeline.",
+    summary: "WholeSum is building a self-serve web application that turns unstructured qualitative data — surveys, interview transcripts, open-ended customer feedback — into structured, trustworthy insight. We partnered with the founders to design and build the MVP across web app, admin, backend API, and a dedicated file-processing system on AWS.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "Qualitative insight at the speed of quantitative.",
+      body: "Researchers and product teams sit on mountains of free-text data they never get around to analysing — interviews, survey comments, support transcripts. Manual coding takes weeks, generic LLM tools are unreliable, and most platforms force users to upload everything to a black box.",
+      pains: [
+        "Manual qualitative coding is slow and expensive",
+        "Off-the-shelf LLM outputs aren't auditable or reproducible",
+        "No clear separation between user data, model outputs, and admin tooling",
+        "Self-serve means the platform has to be both powerful and approachable",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "Four clean modules, one trustworthy pipeline.",
+      body: "We split the system into four cleanly separated modules — a self-serve web app, an admin console, a backend API, and an isolated file-processing pipeline that runs the proprietary analysis. Auth lives in a managed identity provider, infrastructure is cloud-native on AWS, and the pipeline communicates with the API over HTTP so each layer can scale and evolve independently.",
+      pillars: [
+        { title: "Modular architecture", desc: "Web app, admin, API, and processing pipeline as independently deployable services." },
+        { title: "Cloud-native on AWS", desc: "Serverless processing, managed storage, and infra-as-code from week one." },
+        { title: "Managed auth", desc: "Cognito / Auth0-grade identity instead of rolling our own — secure by default." },
+        { title: "Discovery-first delivery", desc: "1-month discovery phase to lock scope, design, and architecture before building." },
+      ],
+    },
+    results: [
+      { v: "4", l: "modules shipped", sub: "web, admin, API, pipeline" },
+      { v: "18 wks", l: "MVP timeline", sub: "discovery → UAT → go-live" },
+      { v: "JS", l: "end-to-end stack", sub: "React + Node on AWS" },
+      { v: "1", l: "self-serve flow", sub: "from upload to insight" },
+    ],
+    testimonial: { quote: "", name: "", role: "" },
     next: { slug: "helix-health", client: "Helix Health", title: "Telehealth platform for a national clinic network", kind: "health" },
   },
 };
@@ -328,6 +367,7 @@ function ResultsStrip({ dark = false }) {
 }
 
 function TestimonialCard({ flat = false }) {
+  if (!CSD.testimonial || !CSD.testimonial.quote) return null;
   return (
     <div className={"csd-quote" + (flat ? " csd-quote--flat" : "")}>
       <div className="csd-quote-mark">&ldquo;</div>
