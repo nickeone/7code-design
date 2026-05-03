@@ -376,7 +376,6 @@ function CTAStrip() {
           </div>
           <div className="cta-strip-actions">
             <a href="#/contact" className="btn btn--cyan btn--lg">Book a discovery call <Icon.arrow /></a>
-            <a href="mailto:hello@7code.ro" className="btn btn--ghost-light btn--lg">hello@7code.ro</a>
           </div>
         </div>
       </div>
