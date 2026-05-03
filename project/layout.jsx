@@ -96,8 +96,8 @@ function Nav() {
       bullets: ["Custom Copilots", "Workflow Automation", "LLM Evaluation"],
     },
     {
-      icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", slug: "cloud-devops",
-      bullets: ["AWS / Azure / GCP", "CI/CD Pipelines", "Observability"],
+      icon: Icon.cloud, title: "Cloud & Agentic Infrastructure", slug: "cloud-agentic-infra",
+      bullets: ["Cloud-Native Deployments", "Agentic Pipelines & Orchestration", "AI Observability"],
     },
     {
       icon: Icon.layers, title: "Product Strategy & Design", slug: "product-strategy",
