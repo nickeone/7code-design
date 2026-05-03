@@ -287,7 +287,67 @@ function PhoneMockup({ accent = "var(--cyan-500)" }) {
   );
 }
 
+function WholesumCube({ cx, cy, s, top, right, left }) {
+  const h = s * 0.866;
+  const v = s * 0.5;
+  const topFace   = `${cx},${cy-s} ${cx+h},${cy-v} ${cx},${cy} ${cx-h},${cy-v}`;
+  const rightFace = `${cx+h},${cy-v} ${cx},${cy} ${cx},${cy+s} ${cx+h},${cy+v}`;
+  const leftFace  = `${cx-h},${cy-v} ${cx},${cy} ${cx},${cy+s} ${cx-h},${cy+v}`;
+  return (
+    <g>
+      <polygon points={leftFace}  fill={left}/>
+      <polygon points={rightFace} fill={right}/>
+      <polygon points={topFace}   fill={top}/>
+    </g>
+  );
+}
+
+function WholesumCubes() {
+  const s = 44;
+  const cubes = [
+    { cx: 200, cy: 80,  top: "#FDBA74", right: "#FB923C", left: "#EA580C" },
+    { cx: 110, cy: 140, top: "#FB923C", right: "#F97316", left: "#C2410C" },
+    { cx: 290, cy: 140, top: "#F97316", right: "#EA580C", left: "#9A3412" },
+    { cx: 200, cy: 200, top: "#F97316", right: "#C2410C", left: "#7C2D12" },
+    { cx: 110, cy: 260, top: "#C2410C", right: "#9A3412", left: "#7C2D12" },
+    { cx: 290, cy: 260, top: "#9A3412", right: "#7C2D12", left: "#5C1A0A" },
+    { cx: 200, cy: 320, top: "#7C2D12", right: "#5C1A0A", left: "#3F1409" },
+  ];
+  return (
+    <svg viewBox="0 0 400 400" className="csd-ws-cubes" aria-hidden="true">
+      {cubes.map((c, i) => <WholesumCube key={i} {...c} s={s}/>)}
+    </svg>
+  );
+}
+
+function WholesumHero() {
+  return (
+    <div className="csd-browser csd-ws-browser">
+      <div className="csd-browser-bar">
+        <span className="csd-dot"/><span className="csd-dot"/><span className="csd-dot"/>
+        <div className="csd-browser-url">wholesum.tech</div>
+      </div>
+      <div className="csd-ws-page">
+        <div className="csd-ws-nav">
+          <div className="csd-ws-logo">whole<span className="csd-ws-logo-orb">Sum</span></div>
+          <div className="csd-ws-nav-links"><span>About Us</span><span>Contact</span><span>Blog</span></div>
+          <div className="csd-ws-login">Login</div>
+        </div>
+        <div className="csd-ws-hero">
+          <div className="csd-ws-hero-text">
+            <div className="csd-ws-h1">Get deeper insights<br/>from your <span className="csd-ws-accent">richest</span> data</div>
+            <p className="csd-ws-sub">Quantify the qualitative with statistically robust analysis that stands up to scrutiny.</p>
+            <span className="csd-ws-cta">Talk to us<span className="csd-ws-arrow">→</span></span>
+          </div>
+          <div className="csd-ws-hero-art"><WholesumCubes/></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function BrowserMockup({ kind = "calendar" }) {
+  if (CSD.slug === "wholesum") return <WholesumHero/>;
   return (
     <div className="csd-browser">
       <div className="csd-browser-bar">

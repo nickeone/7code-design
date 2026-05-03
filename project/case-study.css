@@ -295,3 +295,28 @@
   .csd-sticky-body { grid-template-columns: 1fr; gap: 32px; }
   .csd-sticky-aside { position: static; }
 }
+
+/* ── Wholesum-themed browser mockup ───────────────────────── */
+.csd-ws-browser .csd-browser-url { color: #C2410C; }
+.csd-ws-page { background: linear-gradient(90deg, #FFF7ED 0%, #FFFBF5 60%, #fff 100%); min-height: 440px; }
+.csd-ws-nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 32px; background: #fff; border-bottom: 1px solid #FDE7D0; }
+.csd-ws-logo { font-family: var(--font-display); font-weight: 800; font-size: 22px; color: #1F2937; letter-spacing: -0.02em; display: inline-flex; align-items: center; }
+.csd-ws-logo-orb { display: inline-grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: #F97316; color: #fff; font-size: 15px; font-weight: 700; margin-left: 1px; }
+.csd-ws-nav-links { display: flex; gap: 32px; font-size: 14px; font-weight: 600; color: #1F2937; }
+.csd-ws-login { font-size: 14px; font-weight: 600; color: #2563EB; }
+
+.csd-ws-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center; padding: 32px 40px 40px; }
+.csd-ws-h1 { font-family: var(--font-display); font-weight: 800; font-size: clamp(24px, 3vw, 34px); line-height: 1.05; color: #1F2937; letter-spacing: -0.02em; margin: 0 0 18px; }
+.csd-ws-accent { color: #F97316; }
+.csd-ws-sub { font-size: 14px; line-height: 1.55; color: #6B7280; margin: 0 0 24px; max-width: 320px; }
+.csd-ws-cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; background: #F97316; color: #fff; border-radius: 10px; font-size: 14px; font-weight: 600; box-shadow: 0 8px 18px -8px rgba(249,115,22,0.55); }
+.csd-ws-arrow { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 999px; background: #fff; color: #F97316; font-weight: 700; font-size: 13px; }
+
+.csd-ws-hero-art { display: grid; place-items: center; }
+.csd-ws-cubes { width: 100%; max-width: 320px; height: auto; display: block; filter: drop-shadow(0 16px 24px rgba(124,45,18,0.18)); }
+
+@media (max-width: 700px) {
+  .csd-ws-nav-links { display: none; }
+  .csd-ws-hero { grid-template-columns: 1fr; padding: 24px; gap: 16px; }
+  .csd-ws-cubes { max-width: 220px; }
+}
