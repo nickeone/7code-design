@@ -409,19 +409,6 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
         </section>
       )}
 
-      {/* ── Next service ───────────────────────────────────── */}
-      <section className="section">
-        <div className="container">
-          <a href={"#/service/" + svc.next.slug} className="exp-next">
-            <div className="exp-next-label">Next service</div>
-            <div className="exp-next-row">
-              <div className="exp-next-title">{svc.next.title}</div>
-              <span className="exp-next-arrow"><Icon.arrow /></span>
-            </div>
-          </a>
-        </div>
-      </section>
-
       <CTAStrip />
     </div>
   );
