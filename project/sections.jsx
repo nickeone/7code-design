@@ -214,10 +214,11 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 function Services() {
   const services = [
     { icon: Icon.code, title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
-    { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that compounds." },
-    { icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", desc: "Scalable AWS / GCP architectures, CI/CD pipelines, observability." },
-    { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate." },
-    { icon: Icon.users, title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — hired in days, not months. No recruiting overhead, no long-term lock-in." },
+    { icon: Icon.globe, title: "System Integrations", desc: "Connect your stack — ERPs, CRMs, data warehouses, and legacy systems — into a single, reliable data fabric." },
+    { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
+    { icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", desc: "Scalable AWS / GCP / Azure architectures, CI/CD pipelines, and the observability that keeps you sleeping at night." },
+    { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate with users and hold up under engineering." },
+    { icon: Icon.users, title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
   ];
   return (
     <section className="section section--alt">

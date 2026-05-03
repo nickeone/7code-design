@@ -88,12 +88,16 @@ function Nav() {
       bullets: ["AI-Powered Web Apps", "Intelligent Mobile Apps", "LLM-First Interfaces"],
     },
     {
-      icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", slug: "cloud-devops",
-      bullets: ["AWS / Azure", "DevOps", "Serverless"],
+      icon: Icon.globe, title: "System Integrations", slug: "system-integrations",
+      bullets: ["API & Middleware", "ERP / CRM Connectors", "Real-time Data Pipelines"],
     },
     {
       icon: Icon.cpu, title: "AI & Process Automation", slug: "ai-automation",
-      bullets: ["Machine Learning", "NLP", "Data Analytics"],
+      bullets: ["Custom Copilots", "Workflow Automation", "LLM Evaluation"],
+    },
+    {
+      icon: Icon.cloud, title: "Cloud Infrastructure & DevOps", slug: "cloud-devops",
+      bullets: ["AWS / Azure / GCP", "CI/CD Pipelines", "Observability"],
     },
     {
       icon: Icon.layers, title: "Product Strategy & Design", slug: "product-strategy",

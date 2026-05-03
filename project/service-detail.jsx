@@ -45,6 +45,47 @@ const SERVICES_DATA = {
       { step: "03", title: "Production hardening and handoff", desc: "The final phase covers prompt management, model versioning, evaluation pipelines, and the observability that tells you when your AI components start to drift. We don't hand off without it — and we don't consider the engagement finished until your team can operate it independently." },
     ],
     cases: ["helix-health", "octolabs"],
+    next: { slug: "system-integrations", title: "System Integrations" },
+  },
+
+  "system-integrations": {
+    slug: "system-integrations",
+    title: "System Integrations",
+    shortTitle: "System Integrations",
+    tagline: "We connect your stack — ERPs, CRMs, data warehouses, APIs, and legacy systems — into one reliable data fabric your whole business can trust.",
+    summary: "Most companies don't have a data problem. They have a fragmentation problem. The data exists — it's sitting in a CRM, an ERP, a dozen SaaS tools, and a handful of databases nobody fully understands. We build the integration layer that connects them: reliable, observable, and designed to carry the weight of an AI layer on top.",
+    icon: "globe",
+    accentColor: "#0E7C90",
+    stats: [
+      { v: "32+", l: "integration connectors built" },
+      { v: "< 60s", l: "event latency target" },
+      { v: "99.9%", l: "pipeline uptime SLA" },
+      { v: "6 wks", l: "typical delivery" },
+    ],
+    problem: {
+      title: "Your systems don't talk to each other. Every team is working from a different version of the truth.",
+      body: "The pattern is always the same: sales works in the CRM, finance works in the ERP, operations works in a spreadsheet, and the weekly sync meeting exists to reconcile all three. Manual exports, CSV imports, and copy-paste workflows that break the moment one field changes. The cost is measured in analyst hours, delayed decisions, and the quiet confidence that nobody really knows the current state of the business.",
+    },
+    whatWeDeliver: [
+      { title: "API design and middleware", desc: "Clean, versioned APIs and middleware layers that translate between your systems — handling authentication, rate limiting, retry logic, and the edge cases every integration eventually hits." },
+      { title: "ERP and CRM connectors", desc: "Bi-directional sync between Salesforce, HubSpot, SAP, NetSuite, Dynamics, and your internal systems. We've mapped the data models, handled the edge cases, and built the conflict resolution that generic iPaaS tools skip." },
+      { title: "Real-time event pipelines", desc: "Event-driven architectures that propagate changes across your systems in seconds, not overnight batches. Kafka, webhooks, and change-data-capture for the systems that don't publish events natively." },
+      { title: "Legacy system integration", desc: "We've integrated SOAP services, mainframe exports, FTP batch files, and systems that predate REST. If it exposes any interface — file, database, API, or message queue — we can build a reliable connector for it." },
+      { title: "Data warehouse and BI pipelines", desc: "ELT pipelines from your operational systems into Snowflake, BigQuery, or Redshift — with the transformation layer that makes the data analytically useful, not just present." },
+      { title: "Integration observability", desc: "Dashboards, alerting, and audit logs for every pipeline we build. You'll know when a sync failed, which records were affected, and what the system did about it — before your users file a ticket." },
+    ],
+    techStack: {
+      "Messaging & streaming": ["Apache Kafka", "AWS SQS / SNS", "RabbitMQ", "Webhooks"],
+      "ELT & pipelines": ["Airbyte", "dbt", "AWS Glue", "custom ELT"],
+      "API & middleware": ["Node.js", "Python", "GraphQL", "REST", "gRPC"],
+      "Data warehouses": ["Snowflake", "BigQuery", "Redshift", "PostgreSQL"],
+    },
+    process: [
+      { step: "01", title: "Integration audit and architecture", desc: "We map every system, every data flow, and every manual handoff in your current stack. The output is an integration architecture document — what connects to what, in what direction, with what latency and reliability requirement — signed off before we write a line of code." },
+      { step: "02", title: "Connector-by-connector delivery", desc: "We build and ship integrations one connector at a time, validating each before moving to the next. You get a working integration in production every two weeks — not a big-bang go-live six months from now." },
+      { step: "03", title: "Observability, runbooks, and handoff", desc: "Every pipeline we build ships with a monitoring dashboard, alerting rules, and a runbook your team can follow when something breaks at 2am. We don't consider an integration finished until it's been in production long enough to have failed once — and recovered cleanly." },
+    ],
+    cases: ["northbank", "northwind-logistics"],
     next: { slug: "ai-automation", title: "AI & Process Automation" },
   },
 
@@ -209,7 +250,7 @@ const SERVICES_DATA = {
       { step: "03", title: "High-fidelity and handoff", desc: "Figma files with full component specs, design tokens, and interaction annotations. Handed off in a format your engineers can build from, not interpret." },
     ],
     cases: ["helix-health", "octolabs"],
-    next: { slug: "ai-product-engineering", title: "AI-Native Product Engineering" },
+    next: { slug: "ai-outstaffing", title: "AI Engineering Outstaffing" },
   },
 };
 
