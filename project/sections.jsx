@@ -13,6 +13,9 @@ function TrustedBy() {
     { src: "project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
     { src: "project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
     { src: "project/assets/660b6acfe4043cf93f893611004ecfda7d68b7c0.png", alt: "SmartSpot" },
+    { src: "project/uploads/daily8.png", alt: "Daily8" },
+    { src: "project/uploads/lendit.png", alt: "Lendit" },
+    { src: "project/uploads/Lidl-logo.png", alt: "Lidl" },
   ];
   const all = [...logos, ...logos];
   return (
