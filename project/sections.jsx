@@ -363,8 +363,7 @@ function Testimonials() {
     {
       quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
       name: "Marcel Ionescu",
-      role: "CTO",
-      company: "Eurel International",
+      role: "Chief Technology Officer",
       photoUrl: "project/uploads/marcel%20ionescu%20.jpeg",
     },
     {
@@ -393,7 +392,7 @@ function Testimonials() {
                 <img src={t.photoUrl} alt={t.name} className="testi-photo" loading="lazy"/>
                 <div>
                   <div className="testi-name">{t.name}</div>
-                  <div className="testi-role">{t.role}, {t.company}</div>
+                  <div className="testi-role">{t.role}{t.company ? ", " + t.company : ""}</div>
                 </div>
               </div>
             </article>
