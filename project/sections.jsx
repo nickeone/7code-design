@@ -150,9 +150,9 @@ function WhyChoose() {
     { icon: Icon.users, title: "Embedded long-term partnership", desc: "Senior AI engineers matched in 72 hours and embedded inside your team. Monthly rolling contracts, no lock-in, and 24/7 production support after launch." },
   ];
   const stats = [
-    { v: "50+", l: "AI products shipped" },
-    { v: "98%", l: "Client retention" },
-    { v: "12 yrs", l: "Engineering practice" },
+    { v: "20+", l: "Projects delivered" },
+    { v: "98%", l: "Satisfied clients" },
+    { v: "8+ yrs", l: "Engineering practice" },
     { v: "24/7", l: "Production support" },
   ];
   return (

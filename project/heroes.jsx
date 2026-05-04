@@ -184,7 +184,7 @@ function HeroBoldSplit() {
     <section className="hero hero--split">
       <div className="container hero-split-inner">
         <div className="hero-split-left reveal">
-          <span className="tag"><Icon.star style={{ width: 14, height: 14 }}/> Trusted by 50+ teams worldwide</span>
+          <span className="tag"><Icon.star style={{ width: 14, height: 14 }}/> Trusted by 20+ teams worldwide</span>
           <h1 className="hero-mega">
             We build <span className="text-cyan">software</span><br/>
             that compounds.

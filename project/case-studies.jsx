@@ -25,9 +25,9 @@ function CaseStudiesGrid() {
   const [active, setActive] = useStateCS("All");
   const filtered = active === "All" ? CS_ITEMS : CS_ITEMS.filter(i => i.meta[0] === active);
   const stats = [
-    { v: "50+", l: "Products shipped" },
+    { v: "20+", l: "Projects delivered" },
     { v: "12", l: "Industries served" },
-    { v: "98%", l: "Client retention" },
+    { v: "98%", l: "Satisfied clients" },
     { v: "$120M+", l: "Revenue impact" },
   ];
   return (

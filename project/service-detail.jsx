@@ -16,7 +16,7 @@ const SERVICES_DATA = {
     icon: "code",
     accentColor: "#06B6D4",
     stats: [
-      { v: "50+", l: "AI products shipped" },
+      { v: "20+", l: "Projects delivered" },
       { v: "6 wks", l: "to first production deploy" },
       { v: "Web + Mobile", l: "full-stack delivery" },
       { v: "HIPAA · SOC 2", l: "compliance-ready" },
