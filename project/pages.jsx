@@ -246,10 +246,12 @@ function ContactPage() {
   const [form, setForm] = useStateP({ name: "", email: "", company: "", budget: "", message: "" });
   const [errors, setErrors] = useStateP({});
   const [sent, setSent] = useStateP(false);
+  const [submitting, setSubmitting] = useStateP(false);
+  const [serverError, setServerError] = useStateP(null);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
     const errs = {};
     if (!form.name.trim()) errs.name = "Required";
@@ -257,7 +259,27 @@ function ContactPage() {
     else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) errs.email = "Invalid email";
     if (!form.message.trim() || form.message.length < 10) errs.message = "Tell us a little more";
     setErrors(errs);
-    if (Object.keys(errs).length === 0) setSent(true);
+    if (Object.keys(errs).length > 0) return;
+
+    setSubmitting(true);
+    setServerError(null);
+    try {
+      const res = await fetch("https://formspree.io/f/xdabgopp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await res.json();
+      if (data.ok) {
+        setSent(true);
+      } else {
+        setServerError(data.errors ? data.errors.map(err => err.message).join(" ") : "Submission failed. Please try again.");
+      }
+    } catch {
+      setServerError("Network error. Please check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -336,8 +358,11 @@ function ContactPage() {
                     <textarea rows="5" value={form.message} onChange={update("message")} placeholder="What are you trying to build? Any constraints, timelines, or success metrics we should know about?"/>
                     {errors.message && <span className="field-error">{errors.message}</span>}
                   </div>
-                  <button type="submit" className="btn btn--cyan btn--lg" style={{ width: "100%" }}>
-                    Send message <Icon.arrow />
+                  {serverError && (
+                    <div className="field-error" style={{ marginBottom: 12, fontSize: 14 }}>{serverError}</div>
+                  )}
+                  <button type="submit" className="btn btn--cyan btn--lg" style={{ width: "100%" }} disabled={submitting}>
+                    {submitting ? "Sending…" : <span style={{ display: "flex", alignItems: "center", gap: 8 }}>Send message <Icon.arrow /></span>}
                   </button>
                 </form>
               )}
