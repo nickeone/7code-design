@@ -204,15 +204,17 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#/" className="brand"><Logo height={32} color="#fff" /></a>
-            <p>We build scalable digital products for long-term impact. Modern engineering, thoughtful design, and a partnership model that grows with you.</p>
+            <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end — LLM features, agent workflows, and the production cloud behind them.</p>
           </div>
           <div>
-            <h4>Company</h4>
+            <h4>Services</h4>
             <ul>
-              <li><a href="#/about">About</a></li>
-              <li><a href="#/process">Our Process</a></li>
-              <li><a href="#/blog">Blog</a></li>
-              <li><a href="#/contact">Contact</a></li>
+              <li><a href="#/service/ai-product-engineering">AI-Native Product Engineering</a></li>
+              <li><a href="#/service/system-integrations">System Integrations</a></li>
+              <li><a href="#/service/ai-automation">AI &amp; Process Automation</a></li>
+              <li><a href="#/service/cloud-agentic-infra">Cloud &amp; Agentic Infra</a></li>
+              <li><a href="#/service/product-strategy">Product Strategy &amp; Design</a></li>
+              <li><a href="#/service/ai-outstaffing">AI Engineering Outstaffing</a></li>
             </ul>
           </div>
           <div>
@@ -220,25 +222,38 @@ function Footer() {
             <ul>
               <li><a href="#/expertise/healthcare">Healthcare</a></li>
               <li><a href="#/expertise/finance">Finance</a></li>
-              <li><a href="#/expertise/defence">Defence</a></li>
-              <li><a href="#/expertise/energy">Energy</a></li>
+              <li><a href="#/expertise/energy">Energy &amp; Utilities</a></li>
+              <li><a href="#/expertise/defence">Defence &amp; Security</a></li>
+              <li><a href="#/expertise/hr">HR</a></li>
+              <li><a href="#/expertise/operations">Operations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="#/about">About</a></li>
+              <li><a href="#/case-studies">Case Studies</a></li>
+              <li><a href="#/process">Our Process</a></li>
+              <li><a href="#/blog">Blog</a></li>
+              <li><a href="#/contact">Contact</a></li>
+              <li><a href="https://clutch.co/profile/7code#reviews" target="_blank" rel="noopener noreferrer">Reviews on Clutch</a></li>
             </ul>
           </div>
           <div>
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:hello@7code.ro">hello@7code.ro</a></li>
-              <li><a href="tel:+40700000000">+40 700 000 000</a></li>
-              <li>Bucharest, Romania</li>
+              <li><a href="mailto:office@7code.ro">office@7code.ro</a></li>
+              <li><a href="tel:+40774542081">+40 774 542 081</a></li>
+              <li>Cetatii 39, Cluj-Napoca, Romania</li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 7Code. All rights reserved.</span>
           <div className="footer-social">
-            <a href="#" aria-label="GitHub"><Icon.github /></a>
-            <a href="#" aria-label="LinkedIn"><Icon.linkedin /></a>
-            <a href="#" aria-label="Twitter"><Icon.twitter /></a>
+            <a href="https://github.com/nickeone" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon.github /></a>
+            <a href="https://www.linkedin.com/company/7-code" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon.linkedin /></a>
+            <a href="https://clutch.co/profile/7code" target="_blank" rel="noopener noreferrer" aria-label="Clutch profile"><Icon.award /></a>
           </div>
         </div>
       </div>
