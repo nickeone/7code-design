@@ -279,6 +279,21 @@
   .svc-card { grid-template-columns: 1fr; gap: 16px; }
 }
 
+.testi-source {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--slate-500);
+}
+.testi-source a {
+  color: var(--cyan-600);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color .15s ease;
+}
+.testi-source a:hover { border-bottom-color: var(--cyan-500); }
+
 /* ── New testimonial — dark full-bleed card with photo ──── */
 .testi-new {
   display: grid;

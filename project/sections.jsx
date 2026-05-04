@@ -301,28 +301,42 @@ function Services() {
 // Testimonial slider
 // Testimonial slider — dark full-bleed cards, photo slot, logo panel
 function Testimonials() {
+  // Verified client reviews sourced from clutch.co/profile/7code
   const items = [
     {
-      quote: "7Code became the engineering team we always wished we had. They turned a six-month roadmap into a six-week sprint, and the quality is exactly what we needed.",
-      name: "Maria Petrescu",
-      role: "VP Product",
-      company: "NorthBank",
-      initial: "M",
-      // photoUrl: "url-to-photo.jpg" — add real photo URLs here
+      quote: "Throughout the project, 7Code felt like part of our extended team. They've remained supportive and collaborative as Hera evolves, and we look forward to continuing to build and scale together.",
+      name: "Hera Health Tech",
+      role: "Healthcare MVP — iOS & Android",
+      company: "Verified Clutch review",
+      initial: "H",
     },
     {
-      quote: "What sets them apart is the strategic thinking. They didn't just build what we asked for — they helped us figure out what we actually needed to build.",
-      name: "James Halloran",
-      role: "Chief Technology Officer",
-      company: "Helix Health",
-      initial: "J",
+      quote: "7Code didn't just build what was asked for — they took time to understand how our recruitment processes actually work and suggested improvements along the way, thinking like partners instead of just developers. Manual reporting time dropped by around 40%.",
+      name: "Recruitment Marketplace",
+      role: "Custom internal ERP — candidate tracking, dashboards, workflows",
+      company: "Verified Clutch review",
+      initial: "R",
     },
     {
-      quote: "From discovery through launch, 7Code felt like a true partner. Communication was constant, decisions were transparent, and the product shipped on time.",
-      name: "Sofia Andreescu",
-      role: "Founder",
-      company: "Atlas Energy",
-      initial: "S",
+      quote: "Alessandro provided great technical leadership, suggestions and support throughout. The whole team is very easy and pleasant to work with — and we're really happy with the outcome, all delivered within budget.",
+      name: "ERP Product Team",
+      role: "Symfony + Angular module development",
+      company: "Verified Clutch review",
+      initial: "E",
+    },
+    {
+      quote: "If something was not going to work as planned or required tradeoffs, they were upfront and honest about it. Rather than overpromising, they focused on finding practical solutions and keeping us informed at every step.",
+      name: "Product Founder",
+      role: "Software development engagement",
+      company: "Verified Clutch review",
+      initial: "P",
+    },
+    {
+      quote: "What truly set them apart was the sense of partnership. It felt like working with an extension of our own team rather than an external vendor. That level of collaboration built trust and made the entire process more efficient and enjoyable.",
+      name: "Engineering Lead",
+      role: "Software development engagement",
+      company: "Verified Clutch review",
+      initial: "E",
     },
   ];
   const [idx, setIdx] = useStateS(0);
@@ -380,6 +394,10 @@ function Testimonials() {
               </div>
             )}
           </div>
+        </div>
+        <div className="testi-source">
+          All reviews verified on{" "}
+          <a href="https://clutch.co/profile/7code#reviews" target="_blank" rel="noopener noreferrer">Clutch.co/7code</a>
         </div>
       </div>
     </section>

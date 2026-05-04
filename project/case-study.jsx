@@ -296,22 +296,22 @@ const CASES = {
     region: "European Union (Belgium, Italy)", kind: "defence",
     title: "Remote electronic voting platform for the European Parliament",
     tagline: "A modern, secure remote-voting system that lets MEPs vote from anywhere — built on the Parliament's network, designed to replace a 20-year-old in-chamber system.",
-    summary: "Eurel International, a Rome-based provider of voting systems for the Italian Senate, the Chamber of Deputies, and the European Parliament for nearly 20 years, partnered with 7Code to upgrade their in-chamber electronic voting platform with a remote-voting application. The new system lets Members of the European Parliament authenticate through the EP network and vote securely from a smartphone, tablet, laptop, or desktop — with full feature parity to the chamber experience.",
+    summary: "Eurel International, a Rome-based provider of voting systems for the Italian Senate, the Chamber of Deputies, and the European Parliament for nearly 20 years, partnered with 7Code to design and build a remote-voting application alongside their established in-chamber system. The new system lets Members of the European Parliament authenticate through the EP network and vote securely from a smartphone, tablet, laptop, or desktop — with full feature parity to the chamber experience.",
     challenge: {
       eyebrow: "The challenge",
-      title: "Modernise a two-decade-old voting system without breaking a single Parliament session.",
-      body: "The legacy in-chamber voting solution had been the Parliament's standard for 20 years. The new remote system had to match it feature-for-feature, integrate with the EP's high-security network, and remain reliable through plenary and committee sessions where every vote counts. Testing was constrained by EP security policy — our CTO travelled to Brussels twice to validate the system on the live network.",
+      title: "Build a remote-voting platform that meets European Parliament's standards from day one.",
+      body: "The Parliament's in-chamber voting system had been the standard for 20 years. The new remote application had to match it feature-for-feature, integrate with the EP's high-security network, and remain reliable through plenary and committee sessions where every vote counts. Testing was constrained by EP security policy — our CTO travelled to Brussels twice to validate the system on the live network.",
       pains: [
+        "Coordinating architecture and feature parity against a 20-year incumbent in-chamber system",
         "Security and networking restrictions that limited where and how we could test",
         "Performance, reliability, and scalability had to match a real-time chamber-grade system",
-        "Inheriting an in-progress project from a previous engagement, mid-flight",
         "Each release had to clear EP infrastructure validation before user testing",
       ],
     },
     approach: {
       eyebrow: "Our approach",
       title: "Discovery in Brussels, proof of concept on the EP network, ship in eight months.",
-      body: "We began with a one-month discovery to assess the existing project and define the right architecture, followed by a one-month proof of concept on the European Parliament's network. The four-month development phase shipped five core modules — Landing, Authentication, Plenary, Committee, and Dashboard — with two months of user-acceptance testing on the live infrastructure before the May 2023 release.",
+      body: "We began with a one-month discovery to map requirements with Eurel and EP infrastructure teams and define the right architecture, followed by a one-month proof of concept on the European Parliament's network. The four-month development phase shipped five core modules — Landing, Authentication, Plenary, Committee, and Dashboard — with two months of user-acceptance testing on the live infrastructure before the May 2023 release.",
       pillars: [
         { title: "Discovery in-situ", desc: "On-site assessment with Eurel and EP infrastructure teams to lock requirements and constraints before proposing an architecture." },
         { title: "Proof of concept on the live network", desc: "A working PoC inside the Parliament's network during month two — surfacing security and performance constraints early, when they were cheapest to fix." },
@@ -559,7 +559,6 @@ function BrowserMockup({ kind = "calendar" }) {
   />;
   if (CSD.slug === "lidl-road-safety") return <PhotoHero
     src="project/uploads/lidl-road-safety-hero.jpg"
-    urlBar="superpieton.lidl.ro"
     alt="Lidl Romania + Politia Romana road-safety web app for children"
   />;
   return (
