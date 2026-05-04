@@ -43,11 +43,11 @@ function HeroPatternMockup() {
             <a href="#/process" className="btn btn--ghost btn--lg">How we work</a>
           </div>
           <div className="hero-meta">
-            <div className="hero-meta-item"><strong>50+</strong><span>AI products shipped</span></div>
+            <div className="hero-meta-item"><strong>20+</strong><span>Projects delivered</span></div>
             <div className="hero-meta-divider"/>
-            <div className="hero-meta-item"><strong>12+ yrs</strong><span>Engineering practice</span></div>
+            <div className="hero-meta-item"><strong>8+ yrs</strong><span>Engineering practice</span></div>
             <div className="hero-meta-divider"/>
-            <div className="hero-meta-item"><strong>98%</strong><span>Client retention</span></div>
+            <div className="hero-meta-item"><strong>98%</strong><span>Satisfied clients</span></div>
           </div>
         </div>
         <div className="hero-mockup reveal">
