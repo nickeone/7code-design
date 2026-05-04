@@ -76,6 +76,7 @@ const POSTS = [
     read: "9 min read",
     author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
     cover: "cyan",
+    illus: "blueprint",
     featured: true,
     body: [
       { type: "lead", text: "Most AI projects fail in the first 30 days — not in production. They fail because the team starts shipping before anyone agreed on what success looks like, what data is available, and which model behaviours are non-negotiable. Our AI Discovery Mission is a four-week, fixed-scope engagement that turns a vague AI ambition into a build-ready plan: a product vision, an evaluation harness, a technical architecture, and a defensible budget." },
@@ -102,6 +103,7 @@ const POSTS = [
     read: "7 min read",
     author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
     cover: "energy",
+    illus: "launch",
     body: [
       { type: "lead", text: "An AI MVP is the smallest version of an AI product that produces measurable user value and produces measurable evals. We ship most of ours in six weeks. Not because we cut corners — because we're disciplined about what an MVP is for: validated learning, not feature completeness." },
       { type: "h2", text: "What an AI MVP actually is" },
@@ -127,6 +129,7 @@ const POSTS = [
     read: "8 min read",
     author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
     cover: "finance",
+    illus: "blueprint",
     body: [
       { type: "lead", text: "The fixed price vs. time and materials debate is older than software itself. AI engineering forces an honest answer to it. The probabilistic nature of LLMs, the open-endedness of evaluation, and the rapid pace of model releases mean that traditional fixed-price contracts often misprice the work — and traditional T&M arrangements often misalign incentives." },
       { type: "h2", text: "What's different about AI engineering pricing" },
@@ -152,6 +155,7 @@ const POSTS = [
     read: "10 min read",
     author: { name: "Stefan Vlad", role: "Lead AI Engineer", initial: "S" },
     cover: "ops",
+    illus: "gears",
     body: [
       { type: "lead", text: "Manufacturing operations still run on a quiet tax: hours every day spent pushing paper, updating spreadsheets, chasing suppliers, reconciling shop-floor reports. AI agents are absorbing that tax. Not the demo-ware kind — the production kind, with evals, audit trails, and a human in the loop where it matters." },
       { type: "h2", text: "What an AI agent does in a factory" },
@@ -177,6 +181,7 @@ const POSTS = [
     read: "8 min read",
     author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
     cover: "finance",
+    illus: "circuit",
     body: [
       { type: "lead", text: "Software automation used to mean writing rules between systems: when a CRM contact updates, sync to the ERP; when an IoT sensor crosses a threshold, raise a ticket. AI-native automation is something else. It treats the LLM as the orchestrator, not as a feature, and rebuilds the integration surface around natural language, structured outputs, and continuous evals." },
       { type: "h2", text: "What 'AI-native' actually means" },
@@ -201,6 +206,7 @@ const POSTS = [
     read: "9 min read",
     author: { name: "Stefan Vlad", role: "Lead AI Engineer", initial: "S" },
     cover: "ink",
+    illus: "circuit",
     body: [
       { type: "lead", text: "Adrenaline lets developers chat with their codebase: import a repository, ask a question, get an explanation or a fix. Behind the chat sits an LLM-powered indexing and retrieval system tuned for code. We helped the Adrenaline team build it from MVP through AWS-scale production — and the lessons apply to any AI product that has to reason over large structured corpora." },
       { type: "h2", text: "The brief" },
@@ -226,6 +232,7 @@ const POSTS = [
     read: "6 min read",
     author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
     cover: "ink",
+    illus: "blueprint",
     body: [
       { type: "lead", text: "AI copilots have changed the daily experience of writing software more than any tool since the IDE. The temptation is to conclude that team composition matters less. The opposite is true. Copilots compress the productivity gap between juniors and seniors on small tasks — and amplify it on architectural ones." },
       { type: "h2", text: "What copilots are good at" },
@@ -250,6 +257,7 @@ const POSTS = [
     read: "7 min read",
     author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
     cover: "cyan",
+    illus: "blueprint",
     body: [
       { type: "lead", text: "A clean software handover is hard. A clean AI handover is harder, because the artefacts that keep the system trustworthy don't fit in a Git repo. They're evals, prompt versions, golden datasets, model cards, runbooks for drift, and the institutional memory of which failure modes you've already seen. Skip any of those, and the next team inherits a black box." },
       { type: "h2", text: "What a real AI handover includes" },
@@ -273,6 +281,7 @@ const POSTS = [
     read: "7 min read",
     author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
     cover: "ops",
+    illus: "globe",
     body: [
       { type: "lead", text: "Remote engineering is the default. Distributed AI engineering is harder than distributed CRUD engineering, because AI work depends on tight feedback loops between prompt, eval, and review — exactly the loops time zones break. The teams that get this right treat distributed AI as an operational design problem, not a culture slogan." },
       { type: "h2", text: "What's different about AI work in distributed teams" },
@@ -297,6 +306,7 @@ const POSTS = [
     read: "8 min read",
     author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
     cover: "energy",
+    illus: "launch",
     body: [
       { type: "lead", text: "Switching engineering partners is expensive, and most teams put it off six months too long. With AI projects, that delay is more costly: model choices age out, eval debt compounds, and the team that built the system loses interest in the team that needs to inherit it. Here are the signals worth acting on, and the playbook for switching cleanly." },
       { type: "h2", text: "Five signals it's time to switch" },
@@ -321,6 +331,7 @@ const POSTS = [
     read: "7 min read",
     author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
     cover: "defence",
+    illus: "globe",
     body: [
       { type: "lead", text: "Outstaffing has a reputation problem because most of it is staff augmentation in a hoodie — bodies billed by the hour, with little ownership and less judgement. AI engineering outstaffing only works when the model is different: senior-led pods, eval ownership, and a velocity that justifies the rate." },
       { type: "h2", text: "What 'outstaffing done properly' actually means" },
@@ -345,6 +356,7 @@ const POSTS = [
     read: "5 min read",
     author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
     cover: "health",
+    illus: "skyline",
     body: [
       { type: "lead", text: "We spent three days at London Tech Week with a single filter on every conversation: what's actually shipping in production AI, and what's still keynote theatre? Here are the patterns we walked away with — and the bets we're making in 2026 because of them." },
       { type: "h2", text: "Agents are eating workflows, not jobs" },
@@ -363,30 +375,184 @@ const POSTS = [
 ];
 
 // ─────────────────────────────────────────────────────────────────
-// Cover colours
+// ─────────────────────────────────────────────────────────────────
+// Cover colours + illustration system
 // ─────────────────────────────────────────────────────────────────
 const COVER_COLORS = {
-  ink:     { bg: "linear-gradient(135deg, #0F172A 0%, #1E2939 100%)" },
-  cyan:    { bg: "linear-gradient(135deg, #082A35 0%, #0C3544 100%)" },
-  finance: { bg: "linear-gradient(135deg, #0F1E2E 0%, #162437 100%)" },
-  energy:  { bg: "linear-gradient(135deg, #1C1A10 0%, #2A2515 100%)" },
-  ops:     { bg: "linear-gradient(135deg, #0D1F2D 0%, #132534 100%)" },
-  health:  { bg: "linear-gradient(135deg, #1A2535 0%, #243044 100%)" },
-  defence: { bg: "linear-gradient(135deg, #141A1F 0%, #1C2530 100%)" },
+  ink:     { bg: "linear-gradient(135deg, #0F172A 0%, #1E2939 100%)", fg: "#E2E8F0" },
+  cyan:    { bg: "linear-gradient(135deg, #082A35 0%, #0C3544 100%)", fg: "#67E8F9" },
+  finance: { bg: "linear-gradient(135deg, #0F1E2E 0%, #162437 100%)", fg: "#93C5FD" },
+  energy:  { bg: "linear-gradient(135deg, #1C1A10 0%, #2A2515 100%)", fg: "#FDE68A" },
+  ops:     { bg: "linear-gradient(135deg, #0D1F2D 0%, #132534 100%)", fg: "#6EE7B7" },
+  health:  { bg: "linear-gradient(135deg, #1A2535 0%, #243044 100%)", fg: "#BAE6FD" },
+  defence: { bg: "linear-gradient(135deg, #141A1F 0%, #1C2530 100%)", fg: "#CBD5E1" },
 };
 
-function BlogCover({ cover, label, large = false }) {
+// Topic-specific SVG illustrations — rendered on top of the gradient
+const ILLUSTRATIONS = {
+  // Rising chart + blueprint grid → strategy / discovery / planning
+  blueprint: ({ fg }) => (
+    <>
+      {[80,160,240,320,400].map((y,i) => (
+        <line key={"bh"+i} x1={0} y1={y} x2={800} y2={y} stroke={fg} strokeWidth={0.5} opacity={0.1}/>
+      ))}
+      {[100,200,300,400,500,600,700].map((x,i) => (
+        <line key={"bv"+i} x1={x} y1={0} x2={x} y2={480} stroke={fg} strokeWidth={0.5} opacity={0.1}/>
+      ))}
+      <polyline points="80,380 200,300 360,210 530,145 700,90" fill="none" stroke={fg} strokeWidth={2.5} opacity={0.45}/>
+      {[[80,380],[200,300],[360,210],[530,145],[700,90]].map(([x,y],i) => (
+        <g key={"bp"+i}>
+          <circle cx={x} cy={y} r={7} fill="none" stroke={fg} strokeWidth={2} opacity={0.55}/>
+          <circle cx={x} cy={y} r={3} fill={fg} opacity={0.6}/>
+        </g>
+      ))}
+      <path d="M40,50 L40,30 L60,30" stroke={fg} fill="none" strokeWidth={1.5} opacity={0.35}/>
+      <path d="M760,50 L760,30 L740,30" stroke={fg} fill="none" strokeWidth={1.5} opacity={0.35}/>
+      <path d="M40,430 L40,450 L60,450" stroke={fg} fill="none" strokeWidth={1.5} opacity={0.35}/>
+      <path d="M760,430 L760,450 L740,450" stroke={fg} fill="none" strokeWidth={1.5} opacity={0.35}/>
+    </>
+  ),
+
+  // Rocket + dashed arc + milestone dots → MVP / shipping / launch
+  launch: ({ fg }) => (
+    <>
+      {[[80,60],[200,100],[350,40],[500,80],[180,190],[620,150],[720,50]].map(([x,y],i) => (
+        <circle key={"ls"+i} cx={x} cy={y} r={1.5} fill={fg} opacity={0.3}/>
+      ))}
+      <path d="M100,440 C300,440 500,240 720,60" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="8 5" opacity={0.35}/>
+      {[[150,420],[290,360],[450,260],[610,145],[720,60]].map(([x,y],i) => (
+        <circle key={"lm"+i} cx={x} cy={y} r={i===4?8:5} fill={fg} opacity={0.2+i*0.12}/>
+      ))}
+      <g transform="translate(720,60) rotate(-45)">
+        <path d="M0,-32 C12,-32 20,-10 20,12 L20,24 C20,28 12,32 0,32 C-12,32 -20,28 -20,24 L-20,12 C-20,-10 -12,-32 0,-32 Z" fill="none" stroke={fg} strokeWidth={2} opacity={0.65}/>
+        <path d="M-20,20 L-33,37 L-20,30 Z" fill={fg} opacity={0.45}/>
+        <path d="M20,20 L33,37 L20,30 Z" fill={fg} opacity={0.45}/>
+        <circle cx={0} cy={-8} r={8} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.55}/>
+        <circle cx={0} cy={-8} r={3} fill={fg} opacity={0.5}/>
+      </g>
+    </>
+  ),
+
+  // PCB traces + pads + chips → engineering / code / debugging
+  circuit: ({ fg }) => (
+    <>
+      <path d="M100,240 L200,240 L200,140 L400,140 L400,200 L600,200 L600,100 L720,100" fill="none" stroke={fg} strokeWidth={2} opacity={0.3}/>
+      <path d="M100,340 L300,340 L300,280 L500,280 L500,380 L680,380" fill="none" stroke={fg} strokeWidth={2} opacity={0.3}/>
+      <path d="M400,200 L400,340 L500,340" fill="none" stroke={fg} strokeWidth={1.5} opacity={0.22}/>
+      <path d="M600,200 L600,340 L680,340" fill="none" stroke={fg} strokeWidth={1.5} opacity={0.22}/>
+      {[[200,240],[200,140],[400,140],[400,200],[600,200],[600,100],[300,340],[300,280],[500,280],[500,380],[680,380],[680,340]].map(([x,y],i) => (
+        <g key={"cp"+i}>
+          <circle cx={x} cy={y} r={8} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+          <circle cx={x} cy={y} r={3} fill={fg} opacity={0.45}/>
+        </g>
+      ))}
+      <rect x={340} y={118} width={120} height={44} rx={4} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      <rect x={440} y={258} width={100} height={44} rx={4} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      {[0,1,2,3,4].map(i => (
+        <line key={"cpl"+i} x1={340+i*24+8} y1={118} x2={340+i*24+8} y2={110} stroke={fg} strokeWidth={1.5} opacity={0.28}/>
+      ))}
+      {[0,1,2,3].map(i => (
+        <line key={"cpr"+i} x1={440+i*24+8} y1={258} x2={440+i*24+8} y2={250} stroke={fg} strokeWidth={1.5} opacity={0.28}/>
+      ))}
+    </>
+  ),
+
+  // Gears + conveyor → manufacturing / industrial / operations
+  gears: ({ fg }) => (
+    <>
+      <circle cx={310} cy={240} r={105} fill="none" stroke={fg} strokeWidth={2} opacity={0.35}/>
+      <circle cx={310} cy={240} r={72} fill="none" stroke={fg} strokeWidth={1} opacity={0.18}/>
+      <circle cx={310} cy={240} r={28} fill="none" stroke={fg} strokeWidth={2} opacity={0.38}/>
+      {Array.from({length:12},(_,i) => {
+        const a=i*30*Math.PI/180;
+        return <line key={"gt"+i} x1={310+105*Math.sin(a)} y1={240-105*Math.cos(a)} x2={310+122*Math.sin(a)} y2={240-122*Math.cos(a)} stroke={fg} strokeWidth={6} strokeLinecap="round" opacity={0.38}/>;
+      })}
+      <circle cx={490} cy={175} r={58} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.3}/>
+      <circle cx={490} cy={175} r={40} fill="none" stroke={fg} strokeWidth={1} opacity={0.16}/>
+      <circle cx={490} cy={175} r={16} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.3}/>
+      {Array.from({length:8},(_,i) => {
+        const a=i*45*Math.PI/180;
+        return <line key={"gs"+i} x1={490+58*Math.sin(a)} y1={175-58*Math.cos(a)} x2={490+70*Math.sin(a)} y2={175-70*Math.cos(a)} stroke={fg} strokeWidth={5} strokeLinecap="round" opacity={0.3}/>;
+      })}
+      <line x1={80} y1={390} x2={700} y2={390} stroke={fg} strokeWidth={2} opacity={0.25}/>
+      <line x1={80} y1={410} x2={700} y2={410} stroke={fg} strokeWidth={1} opacity={0.15}/>
+      {[110,190,270,350,430,510,590,670].map((x,i) => (
+        <circle key={"gr"+i} cx={x} cy={400} r={10} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.22}/>
+      ))}
+    </>
+  ),
+
+  // Globe + lat/lon + location pins + arcs → distributed / remote / global
+  globe: ({ fg }) => (
+    <>
+      <circle cx={400} cy={240} r={185} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.28}/>
+      {[-100,-50,0,50,100].map((dy,i) => {
+        const r = Math.sqrt(Math.max(0,185*185-dy*dy));
+        return <ellipse key={"gl"+i} cx={400} cy={240+dy} rx={r} ry={r*0.28} fill="none" stroke={fg} strokeWidth={0.7} opacity={0.14}/>;
+      })}
+      {[-0.9,-0.45,0,0.45,0.9].map((f,i) => (
+        <ellipse key={"gm"+i} cx={400} cy={240} rx={Math.abs(Math.sin(f*1.3))*185+4} ry={185} fill="none" stroke={fg} strokeWidth={0.7} opacity={0.14}/>
+      ))}
+      {[[310,175],[510,155],[245,285],[570,295],[415,345]].map(([x,y],i) => (
+        <g key={"gp"+i}>
+          <circle cx={x} cy={y} r={7} fill={fg} opacity={0.48}/>
+          <line x1={x} y1={y} x2={x} y2={y-22} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+          <circle cx={x} cy={y-22} r={3} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+        </g>
+      ))}
+      <path d="M310,175 Q410,135 510,155" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="5 4" opacity={0.28}/>
+      <path d="M245,285 Q360,248 570,295" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="5 4" opacity={0.28}/>
+      <path d="M510,155 Q492,248 415,345" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="5 4" opacity={0.28}/>
+    </>
+  ),
+
+  // City skyline + floating data nodes → events / culture / industry
+  skyline: ({ fg }) => (
+    <>
+      {[
+        {x:55,y:335,w:62,h:145},{x:127,y:295,w:52,h:185},{x:188,y:255,w:82,h:225},
+        {x:280,y:315,w:62,h:165},{x:352,y:235,w:72,h:245},{x:434,y:285,w:58,h:195},
+        {x:502,y:265,w:92,h:215},{x:604,y:305,w:66,h:175},{x:680,y:345,w:72,h:135},
+      ].map(({x,y,w,h},i) => (
+        <g key={"sb"+i}>
+          <rect x={x} y={y} width={w} height={h} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.25+i%3*0.06}/>
+          {i%3===0 && <rect x={x+8} y={y+12} width={12} height={12} fill={fg} opacity={0.12}/>}
+          {i%3===1 && <rect x={x+10} y={y+14} width={10} height={10} fill={fg} opacity={0.1}/>}
+          {i%3===2 && <rect x={x+w-22} y={y+10} width={14} height={14} fill={fg} opacity={0.12}/>}
+        </g>
+      ))}
+      <line x1={40} y1={480} x2={760} y2={480} stroke={fg} strokeWidth={1} opacity={0.18}/>
+      {[[198,115],[385,75],[562,106],[703,86],[118,158]].map(([x,y],i) => (
+        <g key={"sn"+i}>
+          <circle cx={x} cy={y} r={11} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+          <circle cx={x} cy={y} r={4} fill={fg} opacity={0.48}/>
+        </g>
+      ))}
+      <path d="M198,115 Q292,68 385,75" fill="none" stroke={fg} strokeWidth={1.2} strokeDasharray="5 4" opacity={0.27}/>
+      <path d="M385,75 Q473,62 562,106" fill="none" stroke={fg} strokeWidth={1.2} strokeDasharray="5 4" opacity={0.27}/>
+      <path d="M562,106 Q632,88 703,86" fill="none" stroke={fg} strokeWidth={1.2} strokeDasharray="5 4" opacity={0.27}/>
+      <path d="M198,115 Q155,135 118,158" fill="none" stroke={fg} strokeWidth={1.2} strokeDasharray="5 4" opacity={0.22}/>
+      <path d="M198,115 Q192,185 188,255" fill="none" stroke={fg} strokeWidth={0.8} strokeDasharray="4 4" opacity={0.18}/>
+      <path d="M385,75 Q374,155 352,235" fill="none" stroke={fg} strokeWidth={0.8} strokeDasharray="4 4" opacity={0.18}/>
+      <path d="M562,106 Q538,185 502,265" fill="none" stroke={fg} strokeWidth={0.8} strokeDasharray="4 4" opacity={0.18}/>
+    </>
+  ),
+};
+
+function BlogCover({ cover, illus, label, large = false }) {
   const c = COVER_COLORS[cover] || COVER_COLORS.ink;
+  const IllusComponent = illus && ILLUSTRATIONS[illus];
   return (
     <div className={"blog-visual-cover" + (large ? " is-large" : "")} style={{ background: c.bg }}>
       <svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
         <defs>
           <pattern id={"bc-" + cover} width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill={c.fg} opacity="0.1"/>
+            <circle cx="2" cy="2" r="1.5" fill={c.fg} opacity="0.06"/>
           </pattern>
         </defs>
         <rect width="800" height="480" fill={"url(#bc-" + cover + ")"}/>
-        <circle cx="650" cy="100" r="300" fill={c.fg} opacity="0.05"/>
+        <circle cx="650" cy="100" r="320" fill={c.fg} opacity="0.04"/>
+        {IllusComponent && <IllusComponent fg={c.fg}/>}
       </svg>
       {label && <span className="blog-visual-label" style={{ color: c.fg }}>{label}</span>}
     </div>
@@ -427,7 +593,7 @@ function BlogListPage() {
           {/* ── Featured post ─────────────────────────────── */}
           <a href={"#/blog/" + featured.slug} className="blog-featured-card reveal">
             <div className="blog-featured-cover">
-              <BlogCover cover={featured.cover} large />
+              <BlogCover cover={featured.cover} illus={featured.illus} large />
             </div>
             <div className="blog-featured-body">
               <div className="blog-feat-top">
@@ -459,7 +625,7 @@ function BlogListPage() {
             {filtered.map((p, i) => (
               <a key={p.slug} href={"#/blog/" + p.slug} className="blog-post-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
                 <div className="blog-post-cover">
-                  <BlogCover cover={p.cover} />
+                  <BlogCover cover={p.cover} illus={p.illus} />
                 </div>
                 <div className="blog-post-body">
                   <div className="blog-post-meta">
@@ -564,7 +730,7 @@ function BlogPostPage({ slug }) {
       {/* ── Cover image ────────────────────────────────────── */}
       <div className="blog-single-cover-wrap">
         <div className="container">
-          <BlogCover cover={post.cover} large label={post.cat} />
+          <BlogCover cover={post.cover} illus={post.illus} large label={post.cat} />
         </div>
       </div>
 
@@ -606,7 +772,7 @@ function BlogPostPage({ slug }) {
                   {related.map(r => (
                     <a key={r.slug} href={"#/blog/" + r.slug} className="blog-related-card">
                       <div className="blog-related-cover">
-                        <BlogCover cover={r.cover} />
+                        <BlogCover cover={r.cover} illus={r.illus} />
                       </div>
                       <div className="blog-related-body">
                         <div className="blog-post-meta">
