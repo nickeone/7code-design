@@ -203,7 +203,7 @@ function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="#/" className="brand"><Logo height={32} color="#fff" /></a>
-            <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end — LLM features, agent workflows, and the production cloud behind them.</p>
+            <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the production cloud behind them.</p>
           </div>
           <div>
             <h4>Services</h4>

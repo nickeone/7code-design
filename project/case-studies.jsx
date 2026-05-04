@@ -3,23 +3,23 @@
 const { useState: useStateCS } = React;
 
 const CS_ITEMS = [
-  { slug: "wholesum",           kind: "cyan",     num: "01", year: "2025", client: "WholeSum",           title: "Self-serve AI analytics platform for unstructured text",   meta: ["Data / AI",   "16 weeks"], result: "Launched on time, raised funding", metric: { v: "On time", l: "launch & funding" }, tag: "Featured", excerpt: "Upload surveys, reviews, and interviews and get structured, AI-powered insights — built end-to-end on Next.js, Nest.js, and AWS." },
-  { slug: "daily8",             kind: "cyan",     num: "02", year: "2022", client: "Daily8",             title: "AI-powered news aggregator for the MENA region",           meta: ["Mobile / Media", "6 months"], result: "Shipped iOS + Android in 6 months", metric: { v: "iOS + Android", l: "stores ready" }, excerpt: "News, podcasts, and videos tailored by interest and country — moderated, summarised, and surfaced by AI on React Native + AWS Lambda + OpenAI." },
-  { slug: "revote",             kind: "defence",  num: "03", year: "2023", client: "Eurel International", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"], result: "Released May 2023 to the EU Parliament", metric: { v: "EU Parliament", l: "live deployment" }, excerpt: "Modern remote voting for MEPs across the EU — five modules, EP-grade infrastructure, eight months from discovery to release. Partner: Eurel International." },
-  { slug: "g42-fleet",          kind: "energy",   num: "04", year: "2022", client: "Group 42 (G42)",     title: "Real-time fleet tracking platform for EXPO 2020 Dubai",     meta: ["IoT / Smart Buildings", "2 years"], result: "Deployed for EXPO 2020 Dubai", metric: { v: "EXPO 2020", l: "deployed at scale" }, excerpt: "Custom TCP ingestion, geofence rules, real-time map and trip playback — built for the world's largest expo on React Native + Node.js." },
-  { slug: "cloud-of-legacy",    kind: "cyan",     num: "05", year: "2024", client: "Cloud of Legacy",    title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"], result: "MVP launched", metric: { v: "MVP", l: "launched in 8 months" }, excerpt: "Subscription cloud where users designate two heirs who can access documents, photos, and credit cards after death — Next.js, React, Keycloak, 2FA." },
-  { slug: "lidl-road-safety",   kind: "cyan",     num: "06", year: "2022", client: "Lidl Romania",       title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"], result: "8th edition running with Romanian Police", metric: { v: "8 editions", l: "annual programme" }, excerpt: "Public + private web app for kids and parents — episodes, levels, quizzes, gamification — built with Lidl and the Romanian Police on React + Nest.js." },
+  { slug: "wholesum",           kind: "cyan",     num: "01", year: "2025", client: "WholeSum",           title: "Self-serve AI analytics platform for unstructured text",   meta: ["Data / AI",   "16 weeks"], result: "Launched on time, raised funding", metric: { v: "On time", l: "launch & funding" }, tag: "Featured", excerpt: "Upload surveys, reviews, and interviews and get structured, AI-powered insights, built end-to-end on Next.js, Nest.js, and AWS." },
+  { slug: "daily8",             kind: "cyan",     num: "02", year: "2022", client: "Daily8",             title: "AI-powered news aggregator for the MENA region",           meta: ["Mobile / Media", "6 months"], result: "Shipped iOS + Android in 6 months", metric: { v: "iOS + Android", l: "stores ready" }, excerpt: "News, podcasts, and videos tailored by interest and country, moderated, summarised, and surfaced by AI on React Native + AWS Lambda + OpenAI." },
+  { slug: "revote",             kind: "defence",  num: "03", year: "2023", client: "Eurel International", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"], result: "Released May 2023 to the EU Parliament", metric: { v: "EU Parliament", l: "live deployment" }, excerpt: "Modern remote voting for MEPs across the EU, five modules, EP-grade infrastructure, eight months from discovery to release. Partner: Eurel International." },
+  { slug: "g42-fleet",          kind: "energy",   num: "04", year: "2022", client: "Group 42 (G42)",     title: "Real-time fleet tracking platform for EXPO 2020 Dubai",     meta: ["IoT / Smart Buildings", "2 years"], result: "Deployed for EXPO 2020 Dubai", metric: { v: "EXPO 2020", l: "deployed at scale" }, excerpt: "Custom TCP ingestion, geofence rules, real-time map and trip playback, built for the world's largest expo on React Native + Node.js." },
+  { slug: "cloud-of-legacy",    kind: "cyan",     num: "05", year: "2024", client: "Cloud of Legacy",    title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"], result: "MVP launched", metric: { v: "MVP", l: "launched in 8 months" }, excerpt: "Subscription cloud where users designate two heirs who can access documents, photos, and credit cards after death, Next.js, React, Keycloak, 2FA." },
+  { slug: "lidl-road-safety",   kind: "cyan",     num: "06", year: "2022", client: "Lidl Romania",       title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"], result: "8th edition running with Romanian Police", metric: { v: "8 editions", l: "annual programme" }, excerpt: "Public + private web app for kids and parents, episodes, levels, quizzes, gamification, built with Lidl and the Romanian Police on React + Nest.js." },
   { slug: "founders-factory",   kind: "finance",  num: "07", year: "2024", client: "Founders Factory",   title: "UI overhaul + ongoing engineering for a UK venture studio",   meta: ["Venture Studio / VC", "Ongoing"], result: "Bug-free Tailwind migration, Version 6 live", metric: { v: "Tailwind", l: "migrated foundation" }, excerpt: "Cleared the inherited bug backlog, migrated foundersfactory.com from base CSS to Tailwind on Gatsby + Storyblok, and now ship new components on demand." },
-  { slug: "hera",               kind: "health",   num: "08", year: "2025", client: "Hera Health Tech",   title: "AI-powered patient-support app for fertility clinics",        meta: ["Healthcare / FemTech", "3 months MVP"], result: "MVP shipped in 3 months, ongoing engagement", metric: { v: "RAG", l: "verified clinical AI" }, excerpt: "React Native + Serverless on AWS with a LlamaIndex RAG layer over verified clinical content, and a Strapi-powered Admin + Clinic CMS — HIPAA + GDPR ready from day one." },
-  { slug: "melsonic",           kind: "cyan",     num: "09", year: "2025", client: "Melsonic",           title: "AI-powered guitar-learning web app with real-time feedback",  meta: ["Music / EdTech", "5 months MVP"], result: "MVP shipped in 5 months", metric: { v: "Real-time", l: "AI feedback" }, excerpt: "Next.js + Nest.js + pixi.js wraps Melsonic's AI engine — record, score against the original, and surface notes correct, missed, or wrong." },
-  { slug: "drum-bun",           kind: "ops",      num: "10", year: "2024", client: "Explorom (Drum Bun)", title: "Romanian car-services mobile app — RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"], result: "Live on App Store and Play Store", metric: { v: "3-in-1", l: "compliance app" }, excerpt: "React Native + Node.js with an OCR document pipeline and per-car expiry alerts — verify, purchase, and track every Romanian driver obligation." },
-  { slug: "numerize",           kind: "ops",      num: "11", year: "2024", client: "Numerize",           title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"], result: "Responsive overhaul live for 6,000+ accounts", metric: { v: "6,000+", l: "customer accounts" }, excerpt: "React + Material-UI overhaul of a 17-year French GED platform — OCR-trained invoice pipeline, YouSign e-signatures, Stripe + 3D Secure billing." },
+  { slug: "hera",               kind: "health",   num: "08", year: "2025", client: "Hera Health Tech",   title: "AI-powered patient-support app for fertility clinics",        meta: ["Healthcare / FemTech", "3 months MVP"], result: "MVP shipped in 3 months, ongoing engagement", metric: { v: "RAG", l: "verified clinical AI" }, excerpt: "React Native + Serverless on AWS with a LlamaIndex RAG layer over verified clinical content, and a Strapi-powered Admin + Clinic CMS, HIPAA + GDPR ready from day one." },
+  { slug: "melsonic",           kind: "cyan",     num: "09", year: "2025", client: "Melsonic",           title: "AI-powered guitar-learning web app with real-time feedback",  meta: ["Music / EdTech", "5 months MVP"], result: "MVP shipped in 5 months", metric: { v: "Real-time", l: "AI feedback" }, excerpt: "Next.js + Nest.js + pixi.js wraps Melsonic's AI engine, record, score against the original, and surface notes correct, missed, or wrong." },
+  { slug: "drum-bun",           kind: "ops",      num: "10", year: "2024", client: "Explorom (Drum Bun)", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"], result: "Live on App Store and Play Store", metric: { v: "3-in-1", l: "compliance app" }, excerpt: "React Native + Node.js with an OCR document pipeline and per-car expiry alerts, verify, purchase, and track every Romanian driver obligation." },
+  { slug: "numerize",           kind: "ops",      num: "11", year: "2024", client: "Numerize",           title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"], result: "Responsive overhaul live for 6,000+ accounts", metric: { v: "6,000+", l: "customer accounts" }, excerpt: "React + Material-UI overhaul of a 17-year French GED platform, OCR-trained invoice pipeline, YouSign e-signatures, Stripe + 3D Secure billing." },
 ];
 
 const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS", "Data / AI"];
 
 // ──────────────────────────────────────────────────────────────────
-// V1 — Grid + filter (existing default)
+// V1, Grid + filter (existing default)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesGrid() {
   const [active, setActive] = useStateCS("All");
@@ -70,7 +70,7 @@ function CaseStudiesGrid() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V2 — Editorial Index (large numbered list)
+// V2, Editorial Index (large numbered list)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesEditorial() {
   return (
@@ -101,7 +101,7 @@ function CaseStudiesEditorial() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V3 — Featured story + tab switcher
+// V3, Featured story + tab switcher
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesFeatured() {
   const [i, setI] = useStateCS(0);
@@ -149,7 +149,7 @@ function CaseStudiesFeatured() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V4 — Vertical timeline
+// V4, Vertical timeline
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesTimeline() {
   return (
@@ -183,11 +183,11 @@ function CaseStudiesTimeline() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V5 — Showcase (Tallium-inspired large cards w/ glow + mockup)
+// V5, Showcase (Tallium-inspired large cards w/ glow + mockup)
 // ──────────────────────────────────────────────────────────────────
 function ShowcaseMockup({ kind }) {
   // Inline product mockup illustrations per kind. Browser/phone chrome
-  // with abstract content blocks — keeps brand cyan accent throughout.
+  // with abstract content blocks, keeps brand cyan accent throughout.
   if (kind === "health" || kind === "cyan") {
     // Mobile app mockup
     return (
@@ -306,7 +306,7 @@ function CaseStudiesShowcase() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V6 — Magazine (asymmetric: one hero + smaller cards)
+// V6, Magazine (asymmetric: one hero + smaller cards)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesMagazine() {
   const [hero, ...rest] = CS_ITEMS;
@@ -360,7 +360,7 @@ function CaseStudiesMagazine() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V7 — Stack (full-width alternating stories)
+// V7, Stack (full-width alternating stories)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesStack() {
   return (
@@ -394,7 +394,7 @@ function CaseStudiesStack() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V8 — Mosaic (bento grid, mixed sizes)
+// V8, Mosaic (bento grid, mixed sizes)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesMosaic() {
   // Layout slots: each item gets a spec on the bento grid.
@@ -459,18 +459,18 @@ function CaseStudiesMosaic() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// Page wrapper — switches body by variant prop
+// Page wrapper, switches body by variant prop
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesPage({ variant = "grid" }) {
   const headlines = {
-    grid:      { eyebrow: "Case studies", h1: "Outcomes, not just deliverables", sub: "A selection of products we've shipped with our partners — across healthcare, finance, energy, defence and beyond." },
+    grid:      { eyebrow: "Case studies", h1: "Outcomes, not just deliverables", sub: "A selection of products we've shipped with our partners, across healthcare, finance, energy, defence and beyond." },
     editorial: { eyebrow: "Selected work · 2024–2026", h1: "Six stories, six outcomes.", sub: "An editorial index of the work we're proudest of, with the numbers attached." },
     featured:  { eyebrow: "Featured case studies", h1: "Each one moved a metric.", sub: "Hover any project below to dig into how we built it and the results it produced." },
-    timeline:  { eyebrow: "A short history", h1: "How we've spent the last two years", sub: "From early-stage MVPs to large-scale platform launches — in roughly the order they shipped." },
+    timeline:  { eyebrow: "A short history", h1: "How we've spent the last two years", sub: "From early-stage MVPs to large-scale platform launches, in roughly the order they shipped." },
     showcase:  { eyebrow: "Recent case studies", h1: "Work we're proud to ship", sub: "Learn more about our clients, the types of projects we work with, our process, and the technologies we use to build software." },
-    magazine:  { eyebrow: "The portfolio", h1: "Stories worth telling", sub: "An editorial look at the products we've shipped — what they do, who they're for, and what they moved." },
-    stack:     { eyebrow: "Selected work", h1: "In-depth stories", sub: "Take your time — each one is a full case, top to bottom." },
-    mosaic:    { eyebrow: "Portfolio", h1: "A snapshot of recent work", sub: "Every project earned its real estate — by what it shipped, what it changed, or what someone said about it." },
+    magazine:  { eyebrow: "The portfolio", h1: "Stories worth telling", sub: "An editorial look at the products we've shipped, what they do, who they're for, and what they moved." },
+    stack:     { eyebrow: "Selected work", h1: "In-depth stories", sub: "Take your time, each one is a full case, top to bottom." },
+    mosaic:    { eyebrow: "Portfolio", h1: "A snapshot of recent work", sub: "Every project earned its real estate, by what it shipped, what it changed, or what someone said about it." },
   };
   const h = headlines[variant] || headlines.grid;
   let Body;

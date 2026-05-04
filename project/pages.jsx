@@ -48,7 +48,7 @@ function ExpertisePage() {
 function ProcessPage() {
   const steps = [
     { title: "Discovery & Strategy", desc: "We start by understanding your business, users, and constraints. Output: a clear product strategy and engineering plan.", deliverables: ["Product strategy doc", "Tech architecture", "Roadmap"] },
-    { title: "Design & Prototyping", desc: "Wireframes, hi-fi designs, and interactive prototypes — validated with real users before a line of production code is written.", deliverables: ["Design system", "Hi-fi mockups", "Clickable prototype"] },
+    { title: "Design & Prototyping", desc: "Wireframes, hi-fi designs, and interactive prototypes, validated with real users before a line of production code is written.", deliverables: ["Design system", "Hi-fi mockups", "Clickable prototype"] },
     { title: "Engineering Sprints", desc: "Two-week sprints with continuous deployment. You see progress every Friday and can steer the roadmap as you go.", deliverables: ["Production-ready code", "Demo videos", "Sprint reports"] },
     { title: "Launch & QA", desc: "Comprehensive testing, performance optimization, and a launch playbook tailored to your audience and stack.", deliverables: ["Test coverage", "Launch playbook", "Performance audit"] },
     { title: "Iterate & Scale", desc: "We monitor, measure, and iterate post-launch. Long-term partnership means your product keeps compounding value.", deliverables: ["Analytics dashboard", "Monthly retrospectives", "Scaling plan"] },
@@ -92,7 +92,7 @@ function ProcessPage() {
 function AboutPage() {
   const values = [
     { icon: Icon.target, title: "Outcomes over output", desc: "We measure success in business impact, not lines of code or features shipped." },
-    { icon: Icon.heart, title: "Long-term partnerships", desc: "We're here for the second deploy and the hundredth — not just the first launch." },
+    { icon: Icon.heart, title: "Long-term partnerships", desc: "We're here for the second deploy and the hundredth, not just the first launch." },
     { icon: Icon.zap, title: "Bias for shipping", desc: "Real users, real feedback, real iteration. We move fast without breaking the things that matter." },
   ];
   const team = [
@@ -116,7 +116,7 @@ function AboutPage() {
           <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0 }}>
             <span className="eyebrow">Vision & mission</span>
             <h2>To shape the future of digital products by building technology that is fast, scalable, and meaningful.</h2>
-            <p>7Code envisions a world where businesses can transform ideas into powerful digital experiences through modern engineering and thoughtful design. We approach every project as a product, not just a delivery — focused on building scalable, maintainable solutions that support long-term growth.</p>
+            <p>7Code envisions a world where businesses can transform ideas into powerful digital experiences through modern engineering and thoughtful design. We approach every project as a product, not just a delivery, focused on building scalable, maintainable solutions that support long-term growth.</p>
           </div>
         </div>
       </section>
@@ -147,7 +147,7 @@ function AboutPage() {
           <div className="section-head reveal">
             <span className="eyebrow">The team</span>
             <h2>Small team, deep expertise</h2>
-            <p>Senior engineers, designers and product strategists. No middlemen, no junior labour pools — just the people who actually do the work.</p>
+            <p>Senior engineers, designers and product strategists. No middlemen, no junior labour pools, just the people who actually do the work.</p>
           </div>
           <div className="team-grid">
             {team.map((t, i) => (
@@ -188,7 +188,7 @@ function BlogPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Blog</span>
           <h1>Notes from the workshop</h1>
-          <p>Engineering, design, and strategy — the things we wish we'd known before we started.</p>
+          <p>Engineering, design, and strategy, the things we wish we'd known before we started.</p>
         </div>
       </section>
 
@@ -198,7 +198,7 @@ function BlogPage() {
             <div>
               <span className="tag tag--ink" style={{ marginBottom: 16 }}>Featured</span>
               <h2 style={{ marginTop: 12 }}>{featured.title}</h2>
-              <p>An honest take on why distributed systems are still overkill for most products — and what to reach for instead.</p>
+              <p>An honest take on why distributed systems are still overkill for most products, and what to reach for instead.</p>
               <div style={{ marginTop: 24 }}>
                 <a href="#" className="btn btn--cyan">Read article <Icon.arrow /></a>
               </div>
@@ -288,7 +288,7 @@ function ContactPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Contact</span>
           <h1>Let's build something together</h1>
-          <p>Tell us a bit about your project — we'll get back to you within one business day with next steps.</p>
+          <p>Tell us a bit about your project, we'll get back to you within one business day with next steps.</p>
         </div>
       </section>
 
@@ -316,7 +316,7 @@ function ContactPage() {
               {sent ? (
                 <div className="form-success">
                   <div className="check-circle"><Icon.check style={{ width: 28, height: 28 }} /></div>
-                  <h3>Thanks — we got it.</h3>
+                  <h3>Thanks, we got it.</h3>
                   <p style={{ marginTop: 8, color: "var(--slate-500)" }}>We'll be in touch within one business day.</p>
                 </div>
               ) : (
@@ -371,7 +371,7 @@ function ContactPage() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// CASE STUDIES — moved to case-studies.jsx (variants live there)
+// CASE STUDIES, moved to case-studies.jsx (variants live there)
 // ──────────────────────────────────────────────────────────────────
 function _CaseStudiesPage_DEPRECATED() {
   const cats = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS"];
@@ -399,7 +399,7 @@ function _CaseStudiesPage_DEPRECATED() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Case studies</span>
           <h1>Outcomes, not just deliverables</h1>
-          <p>A selection of products we've shipped with our partners — across healthcare, finance, energy, defence and beyond.</p>
+          <p>A selection of products we've shipped with our partners, across healthcare, finance, energy, defence and beyond.</p>
         </div>
       </section>
 
@@ -441,7 +441,7 @@ function _CaseStudiesPage_DEPRECATED() {
 
           {filtered.length === 0 && (
             <div style={{ textAlign: "center", padding: "64px 0", color: "var(--slate-500)" }}>
-              No case studies in this category yet — but we're always shipping.
+              No case studies in this category yet, but we're always shipping.
             </div>
           )}
         </div>

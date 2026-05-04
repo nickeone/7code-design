@@ -6,7 +6,7 @@ const { useState: useStateH, useEffect: useEffectH } = React;
 // HERO VARIATIONS
 // ──────────────────────────────────────────────────────────────────
 
-// Variant A — Pattern grid + dashboard mockup (faithful to Figma)
+// Variant A, Pattern grid + dashboard mockup (faithful to Figma)
 function HeroPatternMockup() {
   return (
     <section className="hero hero--pattern">
@@ -37,7 +37,7 @@ function HeroPatternMockup() {
         <div className="hero-content reveal">
           <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> AI-first engineering partner</span>
           <h1>AI-native software, engineered for <span className="text-cyan">production</span>.</h1>
-          <p className="hero-sub">We design, build, and operate AI-native products end-to-end — LLM features, agent workflows, and the cloud infrastructure behind them. Strategy, design, and engineering under one roof.</p>
+          <p className="hero-sub">We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the cloud infrastructure behind them. Strategy, design, and engineering under one roof.</p>
           <div className="hero-cta">
             <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
             <a href="#/process" className="btn btn--ghost btn--lg">How we work</a>
@@ -118,7 +118,7 @@ function DashboardMockup() {
   );
 }
 
-// Variant B — Animated terminal / code rain
+// Variant B, Animated terminal / code rain
 function HeroTerminal() {
   const [lines, setLines] = useStateH([]);
   const all = [
@@ -144,7 +144,7 @@ function HeroTerminal() {
     <section className="hero hero--terminal">
       <div className="container hero-pattern-inner">
         <div className="hero-content reveal">
-          <span className="tag"><span className="tag-dot"/> Available for new partnerships — Q2 2026</span>
+          <span className="tag"><span className="tag-dot"/> Available for new partnerships, Q2 2026</span>
           <h1>Engineering teams that ship like a <span className="text-cyan">product team</span>.</h1>
           <p className="hero-sub">From the first whiteboard session to the hundredth deploy, 7Code becomes the engineering muscle behind your product roadmap.</p>
           <div className="hero-cta">
@@ -178,7 +178,7 @@ function HeroTerminal() {
   );
 }
 
-// Variant C — Bold split / type-forward, no mockup
+// Variant C, Bold split / type-forward, no mockup
 function HeroBoldSplit() {
   return (
     <section className="hero hero--split">

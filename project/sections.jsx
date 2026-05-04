@@ -40,16 +40,16 @@ function TrustedBy() {
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
   "wholesum":         { src: "project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
-  "daily8":           { src: "project/uploads/daily8-website.jpg",       alt: "Daily8 — daily8.com/en" },
-  "revote":           { src: "project/uploads/revote-hero.jpg",          alt: "Revote — European Parliament chamber" },
+  "daily8":           { src: "project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
+  "revote":           { src: "project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
   "g42-fleet":        { src: "project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
   "cloud-of-legacy":  { src: "project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
   "lidl-road-safety": { src: "project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
-  "founders-factory": { src: "project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage — Power to founders" },
-  "hera":             { src: "project/uploads/hera-hero.jpg",             alt: "Hera Health Tech — fertility-clinic patient support app" },
-  "melsonic":         { src: "project/uploads/melsonic-hero.jpg",         alt: "Melsonic — AI-powered guitar learning" },
-  "drum-bun":         { src: "project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun — Romanian car-services mobile app" },
-  "numerize":         { src: "project/uploads/numerize-hero.jpg",         alt: "Numerize — French document management and e-signature platform" },
+  "founders-factory": { src: "project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
+  "hera":             { src: "project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
+  "melsonic":         { src: "project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
+  "drum-bun":         { src: "project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
+  "numerize":         { src: "project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
 };
 
 // Case study cover graphic
@@ -102,11 +102,11 @@ function CaseStudies({ limit }) {
     { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"] },
     { slug: "hera", kind: "health", title: "AI-powered patient-support app for fertility clinics", meta: ["Healthcare / FemTech", "3 months MVP"] },
     { slug: "melsonic", kind: "cyan", title: "AI-powered guitar-learning web app with real-time feedback", meta: ["Music / EdTech", "5 months MVP"] },
-    // Remaining cases — visible on /case-studies, hidden from the homepage grid.
+    // Remaining cases, visible on /case-studies, hidden from the homepage grid.
     { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
     { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
     { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
-    { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app — RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
+    { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
     { slug: "numerize", kind: "ops", title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
@@ -144,9 +144,9 @@ function CaseStudies({ limit }) {
 // Why-choose section
 function WhyChoose() {
   const why = [
-    { icon: Icon.cpu, title: "AI-native by default", desc: "We design products around LLMs and agents from day one. Retrieval, evaluation, observability and guardrails are built in — not bolted on — so AI features behave predictably in production." },
+    { icon: Icon.cpu, title: "AI-native by default", desc: "We design products around LLMs and agents from day one. Retrieval, evaluation, observability and guardrails are built in, not bolted on, so AI features behave predictably in production." },
     { icon: Icon.chart, title: "Outcomes you can audit", desc: "Every engagement opens with a baseline and closes with the numbers: conversion lift, deflection rate, cost per task, eval scores. We commit to measurable business impact, not deliverables." },
-    { icon: Icon.cloud, title: "Production-grade cloud & agent infra", desc: "AWS, GCP, and Azure native. Vector stores, model gateways, eval harnesses, and CI for prompts and code — built to scale, audit, and recover, not just to demo." },
+    { icon: Icon.cloud, title: "Production-grade cloud & agent infra", desc: "AWS, GCP, and Azure native. Vector stores, model gateways, eval harnesses, and CI for prompts and code, built to scale, audit, and recover, not just to demo." },
     { icon: Icon.users, title: "Embedded long-term partnership", desc: "Senior AI engineers matched in 72 hours and embedded inside your team. Monthly rolling contracts, no lock-in, and 24/7 production support after launch." },
   ];
   const stats = [
@@ -161,7 +161,7 @@ function WhyChoose() {
         <div className="section-head reveal">
           <span className="eyebrow">Why 7Code</span>
           <h2>Your AI-first engineering partner for production-grade products</h2>
-          <p>We design, build, and operate AI-native software end-to-end — LLM features, agentic workflows, and the cloud foundations that keep them reliable. Strategy, design, and engineering under one roof, shipping in weeks, not quarters.</p>
+          <p>We design, build, and operate AI-native software end-to-end, LLM features, agentic workflows, and the cloud foundations that keep them reliable. Strategy, design, and engineering under one roof, shipping in weeks, not quarters.</p>
         </div>
         <div className="why-grid">
           {why.map((w, i) => {
@@ -190,14 +190,14 @@ function WhyChoose() {
   );
 }
 
-// Verified & accredited section — credentials and listings
+// Verified & accredited section, credentials and listings
 function VerifiedAccredited() {
   const items = [
-    { src: "project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II — AICPA-aligned controls" },
-    { src: "project/uploads/hipa.webp",                       alt: "HIPAA Compliant — healthcare data safeguards" },
-    { src: "project/uploads/gdpr.png",                        alt: "GDPR Compliant — EU General Data Protection Regulation" },
-    { src: "project/uploads/iso%209001.png",                  alt: "ISO 9001:2015 — quality management system certification" },
-    { src: "project/uploads/clutch.png",                      alt: "Clutch — Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
+    { src: "project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II, AICPA-aligned controls" },
+    { src: "project/uploads/hipa.webp",                       alt: "HIPAA Compliant, healthcare data safeguards" },
+    { src: "project/uploads/gdpr.png",                        alt: "GDPR Compliant, EU General Data Protection Regulation" },
+    { src: "project/uploads/iso%209001.png",                  alt: "ISO 9001:2015, quality management system certification" },
+    { src: "project/uploads/clutch.png",                      alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
     { src: "project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
     { src: "project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
     { src: "project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
@@ -263,7 +263,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
     },
     {
       icon: Icon.users, title: "HR",
-      desc: "Recruitment, onboarding, payroll and workforce analytics — unified.",
+      desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
       bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"],
     },
     {
@@ -304,12 +304,12 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 // Services section
 function Services() {
   const services = [
-    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
-    { icon: Icon.globe, slug: "system-integrations", title: "System Integrations", desc: "Connect your stack — ERPs, CRMs, data warehouses, and legacy systems — into a single, reliable data fabric." },
+    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "AI-first web and mobile products, LLM interfaces, smart workflows, and scalable architectures built to compound." },
+    { icon: Icon.globe, slug: "system-integrations", title: "System Integrations", desc: "Connect your stack, ERPs, CRMs, data warehouses, and legacy systems, into a single, reliable data fabric." },
     { icon: Icon.cpu, slug: "ai-automation", title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
-    { icon: Icon.cloud, slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration — so your AI products run reliably, scale automatically, and cost what they should." },
-    { icon: Icon.layers, slug: "product-strategy", title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate with users and hold up under engineering." },
-    { icon: Icon.users, slug: "ai-outstaffing", title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
+    { icon: Icon.cloud, slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration, so your AI products run reliably, scale automatically, and cost what they should." },
+    { icon: Icon.layers, slug: "product-strategy", title: "Product Strategy & Design", desc: "From discovery to design system, building products that resonate with users and hold up under engineering." },
+    { icon: Icon.users, slug: "ai-outstaffing", title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team, matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
   ];
   return (
     <section className="section section--alt">
@@ -317,7 +317,7 @@ function Services() {
         <div className="section-head reveal">
           <span className="eyebrow">Our services</span>
           <h2>End-to-end product engineering</h2>
-          <p>Comprehensive digital services to take your product from concept to launch — and beyond.</p>
+          <p>Comprehensive digital services to take your product from concept to launch, and beyond.</p>
         </div>
         <div className="reveal" style={{ maxWidth: 880, margin: "0 auto" }}>
           {services.map((s, i) => {
@@ -342,7 +342,7 @@ function Services() {
   );
 }
 
-// Testimonials — verified Clutch reviews, 2x2 grid with client photos
+// Testimonials, verified Clutch reviews, 2x2 grid with client photos
 function Testimonials() {
   // All quotes verified on clutch.co/profile/7code
   const items = [
