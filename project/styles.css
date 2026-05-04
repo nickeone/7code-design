@@ -210,8 +210,8 @@ p { margin: 0; color: var(--slate-700); }
   display: grid; place-items: center;
 }
 .mm-icon svg { width: 20px; height: 20px; }
-.mm-title { font-weight: 600; color: var(--ink); font-size: 15px; }
-.mm-desc { font-size: 13px; color: var(--slate-500); margin-top: 2px; }
+.mm-title { display: block; font-weight: 600; color: var(--ink); font-size: 15px; }
+.mm-desc { display: block; font-size: 13px; color: var(--slate-500); margin-top: 3px; }
 
 /* Services mega menu — full-width panel */
 .svc-mega {
