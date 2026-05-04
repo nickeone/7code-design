@@ -190,6 +190,43 @@ function WhyChoose() {
   );
 }
 
+// Verified & accredited section — credentials and listings
+function VerifiedAccredited() {
+  const items = [
+    { icon: Icon.shield,      title: "SOC 2 Type II",        sub: "AICPA-aligned controls" },
+    { icon: Icon.heart,       title: "HIPAA-compliant",      sub: "Healthcare data safeguards" },
+    { icon: Icon.checkCircle, title: "GDPR-compliant",       sub: "EU data protection (Reg. 2016/679)" },
+    { icon: Icon.award,       title: "Clutch verified",      sub: "Top Web Developers · Romania" },
+    { icon: Icon.star,        title: "Sortlist verified",    sub: "Verified agency profile" },
+    { icon: Icon.globe,       title: "Listed on Crunchbase", sub: "Public company profile" },
+  ];
+  return (
+    <section className="section section--alt">
+      <div className="container">
+        <div className="section-head reveal">
+          <span className="eyebrow">Verified & accredited</span>
+          <h2>The credentials behind the work</h2>
+          <p>Audited where it matters, listed where buyers look, certified for the regulated industries we ship in.</p>
+        </div>
+        <div className="trust-grid">
+          {items.map((item, i) => {
+            const I = item.icon;
+            return (
+              <div key={i} className="trust-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
+                <span className="trust-icon"><I /></span>
+                <div>
+                  <div className="trust-title">{item.title}</div>
+                  <div className="trust-sub">{item.sub}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // Expertise section
 function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in key sectors, delivering tailored digital solutions that drive growth, efficiency, and innovation." }) {
   const items = [
@@ -416,6 +453,7 @@ function CTAStrip() {
 window.TrustedBy = TrustedBy;
 window.CaseStudies = CaseStudies;
 window.WhyChoose = WhyChoose;
+window.VerifiedAccredited = VerifiedAccredited;
 window.Expertise = Expertise;
 window.Services = Services;
 window.Testimonials = Testimonials;

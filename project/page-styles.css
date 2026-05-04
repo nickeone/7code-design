@@ -227,6 +227,42 @@
 }
 .exp-card:hover { border-color: var(--cyan-500); transform: translateY(-4px); }
 .exp-card:hover::after { opacity: 1; }
+
+/* ──────────────────────────────────────────────────────────────────
+   Verified & accredited (trust-signals grid)
+   ────────────────────────────────────────────────────────────────── */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .trust-grid { grid-template-columns: 1fr; } }
+
+.trust-card {
+  background: #fff;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap: 16px;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.trust-card:hover { border-color: var(--cyan-500); transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(6,182,212,.25); }
+.trust-icon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--bg-cyan-50);
+  display: grid; place-items: center;
+  color: var(--cyan-700);
+}
+.trust-icon svg { width: 20px; height: 20px; }
+.trust-title { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--ink); letter-spacing: -0.01em; }
+.trust-sub { font-size: 12.5px; color: var(--slate-500); margin-top: 2px; }
 .exp-card .icon-tile { width: 56px; height: 56px; border-radius: 14px; }
 .exp-card .icon-tile svg { width: 24px; height: 24px; }
 .exp-card h3 { font-size: 22px; margin-bottom: 8px; }

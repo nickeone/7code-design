@@ -1,4 +1,4 @@
-/* global React, Icon, TrustedBy, CaseStudies, WhyChoose, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover */
+/* global React, Icon, TrustedBy, CaseStudies, WhyChoose, VerifiedAccredited, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover */
 
 const { useState: useStateP, useEffect: useEffectP } = React;
 
@@ -13,6 +13,7 @@ function HomePage({ heroVariant }) {
       <TrustedBy />
       <CaseStudies limit={6} />
       <WhyChoose />
+      <VerifiedAccredited />
       <Expertise headTitle="Our Expertise" headDesc="We specialize in key sectors, delivering tailored digital solutions that drive growth and innovation." />
       <Services />
       <Testimonials />
