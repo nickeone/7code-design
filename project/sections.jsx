@@ -324,6 +324,13 @@ function Testimonials() {
       company: "Revote — European Parliament voting platform",
       initial: "C",
     },
+    {
+      quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
+      name: "Paul Egan",
+      role: "CTO",
+      company: "Founders Factory",
+      initial: "P",
+    },
   ];
   const [idx, setIdx] = useStateS(0);
   const next = () => setIdx(i => (i + 1) % items.length);
