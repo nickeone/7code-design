@@ -261,8 +261,6 @@
   height: auto;
   object-fit: contain;
 }
-/* The Sortlist badge ships as white-on-black; invert for our light card */
-.trust-logo--invert { filter: invert(1) hue-rotate(180deg); }
 .exp-card .icon-tile { width: 56px; height: 56px; border-radius: 14px; }
 .exp-card .icon-tile svg { width: 24px; height: 24px; }
 .exp-card h3 { font-size: 22px; margin-bottom: 8px; }

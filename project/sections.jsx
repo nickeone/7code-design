@@ -196,8 +196,9 @@ function VerifiedAccredited() {
     { src: "project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II — AICPA-aligned controls" },
     { src: "project/uploads/hipa.webp",                       alt: "HIPAA Compliant — healthcare data safeguards" },
     { src: "project/uploads/gdpr.png",                        alt: "GDPR Compliant — EU General Data Protection Regulation" },
+    { src: "project/uploads/iso%209001.png",                  alt: "ISO 9001:2015 — quality management system certification" },
     { src: "project/uploads/clutch.png",                      alt: "Clutch — Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
-    { src: "project/uploads/sortlist.png",                    alt: "Sortlist Verified Agency", className: "trust-logo--invert" },
+    { src: "project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
     { src: "project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
     { src: "project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
   ];
