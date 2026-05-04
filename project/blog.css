@@ -241,3 +241,11 @@
   .blog-related-grid { grid-template-columns: 1fr; }
   .blog-post-lead { font-size: 19px; }
 }
+@media (max-width: 640px) {
+  .blog-featured-body { padding: 20px; }
+  .blog-feat-title { font-size: 24px; }
+  .blog-next-title { font-size: 17px; }
+  .blog-next-row { gap: 12px; }
+  .blog-single-title { font-size: clamp(28px, 7vw, 52px); }
+  .blog-single-sub { font-size: 17px; }
+}

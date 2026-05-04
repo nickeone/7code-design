@@ -182,7 +182,6 @@ function Nav() {
         </div>
       </header>
       <div className={"nav-mobile" + (mobileOpen ? " is-open" : "")}>
-        <a href="#/service/ai-outstaffing">AI Outstaffing</a>
         <a href="#/process">Services</a>
         <a href="#/case-studies">Case Studies</a>
         <a href="#/expertise">Expertise</a>

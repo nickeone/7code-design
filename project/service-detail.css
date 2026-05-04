@@ -63,8 +63,8 @@
 @media (max-width: 800px) {
   .svc-hero-stats { grid-template-columns: repeat(2, 1fr); }
   .svc-stat:nth-child(2) { border-right: none; }
-  .svc-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
-  .svc-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+  .svc-stat:nth-child(3) { border-top: 1px solid var(--slate-200); }
+  .svc-stat:nth-child(4) { border-top: 1px solid var(--slate-200); border-right: none; }
   .svc-hero-text h1 { font-size: 36px; }
 }
 

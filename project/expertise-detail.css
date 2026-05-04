@@ -108,8 +108,8 @@
 @media (max-width: 900px) {
   .exp-hero-stats { grid-template-columns: repeat(2, 1fr); }
   .exp-hero-stat:nth-child(2) { border-right: none; }
-  .exp-hero-stat:nth-child(3) { border-top: 1px solid rgba(255,255,255,0.08); }
-  .exp-hero-stat:nth-child(4) { border-top: 1px solid rgba(255,255,255,0.08); }
+  .exp-hero-stat:nth-child(3) { border-top: 1px solid var(--slate-200); }
+  .exp-hero-stat:nth-child(4) { border-top: 1px solid var(--slate-200); border-right: none; }
   .exp-hero-text h1 { font-size: 40px; }
   .exp-hero-sub { font-size: 16px; }
 }

@@ -348,6 +348,9 @@ p { margin: 0; color: var(--slate-700); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; gap: 16px; }
 }
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
 
 /* ──────────────────────────────────────────────────────────────────
    Cards / atoms used across pages
@@ -419,7 +422,7 @@ p { margin: 0; color: var(--slate-700); }
 /* Tweaks panel base */
 .tweak-panel {
   position: fixed; right: 24px; bottom: 24px; z-index: 100;
-  width: 320px; max-height: 70vh;
+  width: 320px; max-width: calc(100vw - 48px); max-height: 70vh;
   background: #fff;
   border: 1px solid var(--slate-200);
   border-radius: var(--radius-lg);

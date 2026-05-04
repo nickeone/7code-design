@@ -135,6 +135,12 @@
   .hero-orb { margin: 0 auto; max-width: 320px; }
   .hero-orb-badges { display: none; }
 }
+@media (max-width: 640px) {
+  .mockup-body { grid-template-columns: 1fr; }
+  .mockup-side { display: none; }
+  .mockup-stats { grid-template-columns: 1fr 1fr; }
+  .mockup-chart { height: 88px; }
+}
 
 /* ──────────────────────────────────────────────────────────────────
    Trusted-by marquee
@@ -194,6 +200,7 @@
 /* Stat row */
 .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
 @media (max-width: 960px) { .stat-row { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .stat-row { grid-template-columns: 1fr; } }
 .stat {
   background: #fff;
   border: 1px solid var(--slate-200);
@@ -297,6 +304,7 @@
 
 @media (max-width: 700px) {
   .svc-card { grid-template-columns: 1fr; gap: 16px; }
+  .svc-card > svg:last-child { display: none; }
 }
 
 .testi-source {
@@ -440,6 +448,12 @@
 @media (max-width: 960px) {
   .cta-strip { grid-template-columns: 1fr; padding: 40px 28px; }
 }
+@media (max-width: 560px) {
+  .cta-strip { padding: 32px 20px; }
+  .cta-strip-actions .btn { width: 100%; justify-content: center; }
+  .hero-cta { flex-direction: column; }
+  .hero-cta .btn { width: 100%; justify-content: center; }
+}
 
 /* ──────────────────────────────────────────────────────────────────
    Page heroes (sub-pages)
@@ -474,6 +488,10 @@
   background: var(--slate-200);
 }
 .process-step:last-child::before { display: none; }
+@media (max-width: 560px) {
+  .process-step { grid-template-columns: 1fr; gap: 16px; padding: 24px; }
+  .process-step::before { left: 34px; }
+}
 .process-num {
   width: 56px; height: 56px;
   background: var(--ink); color: #fff;
@@ -493,6 +511,7 @@
 @media (max-width: 960px) { .values-grid { grid-template-columns: 1fr; } }
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 @media (max-width: 960px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .team-grid { grid-template-columns: 1fr; } }
 .team-card { text-align: left; }
 .team-photo {
   aspect-ratio: 4/5;
