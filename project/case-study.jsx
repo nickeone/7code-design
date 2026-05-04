@@ -247,7 +247,11 @@ const CASES = {
       { v: "Ongoing", l: "engagement", sub: "continued maintenance & support" },
       { v: "5", l: "modules shipped", sub: "landing, upload, results, dashboard, profile" },
     ],
-    testimonial: { quote: "", name: "", role: "" },
+    testimonial: {
+      quote: "The self-serve MVP is live and in use. 7Code has excellent communication and project management skills. The team is quick to respond to the client's needs. The client is pleased with the outcome and the team's technical leadership.",
+      name: "Emily Kucharski",
+      role: "CEO & Co-Founder, WholeSum",
+    },
     next: { slug: "daily8", client: "Daily8", title: "AI-powered news aggregator for the MENA region", kind: "cyan" },
   },
   "daily8": {
@@ -325,7 +329,11 @@ const CASES = {
       { v: "Multi-device", l: "voting parity", sub: "phone, tablet, laptop, desktop" },
       { v: "Ongoing", l: "engagement", sub: "continued maintenance & rollout support" },
     ],
-    testimonial: { quote: "", name: "", role: "" },
+    testimonial: {
+      quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
+      name: "Chief Technology Officer",
+      role: "Electronic Voting Systems Company",
+    },
     next: { slug: "g42-fleet", client: "Group 42", title: "Real-time fleet tracking for EXPO 2020 Dubai", kind: "energy" },
   },
   "g42-fleet": {

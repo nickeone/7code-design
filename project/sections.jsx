@@ -304,39 +304,25 @@ function Testimonials() {
   // Verified client reviews sourced from clutch.co/profile/7code
   const items = [
     {
-      quote: "Throughout the project, 7Code felt like part of our extended team. They've remained supportive and collaborative as Hera evolves, and we look forward to continuing to build and scale together.",
+      quote: "The self-serve MVP is live and in use. 7Code has excellent communication and project management skills. The team is quick to respond to the client's needs. The client is pleased with the outcome and the team's technical leadership.",
+      name: "Emily Kucharski",
+      role: "CEO & Co-Founder",
+      company: "WholeSum",
+      initial: "E",
+    },
+    {
+      quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
       name: "Evyn White",
       role: "Co-Founder",
       company: "Hera Health Tech",
       initial: "E",
     },
     {
-      quote: "7Code didn't just build what was asked for — they took time to understand how our recruitment processes actually work and suggested improvements along the way, thinking like partners instead of just developers. Manual reporting time dropped by around 40%.",
-      name: "Recruitment Marketplace",
-      role: "Custom internal ERP — candidate tracking, dashboards, workflows",
-      company: "Verified Clutch review",
-      initial: "R",
-    },
-    {
-      quote: "Alessandro provided great technical leadership, suggestions and support throughout. The whole team is very easy and pleasant to work with — and we're really happy with the outcome, all delivered within budget.",
-      name: "ERP Product Team",
-      role: "Symfony + Angular module development",
-      company: "Verified Clutch review",
-      initial: "E",
-    },
-    {
-      quote: "If something was not going to work as planned or required tradeoffs, they were upfront and honest about it. Rather than overpromising, they focused on finding practical solutions and keeping us informed at every step.",
-      name: "Product Founder",
-      role: "Software development engagement",
-      company: "Verified Clutch review",
-      initial: "P",
-    },
-    {
-      quote: "What truly set them apart was the sense of partnership. It felt like working with an extension of our own team rather than an external vendor. That level of collaboration built trust and made the entire process more efficient and enjoyable.",
-      name: "Engineering Lead",
-      role: "Software development engagement",
-      company: "Verified Clutch review",
-      initial: "E",
+      quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
+      name: "Chief Technology Officer",
+      role: "Electronic Voting Systems Company",
+      company: "Revote — European Parliament voting platform",
+      initial: "C",
     },
   ];
   const [idx, setIdx] = useStateS(0);
