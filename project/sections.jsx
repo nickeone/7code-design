@@ -101,6 +101,10 @@ function CaseStudies({ limit }) {
     { slug: "octolabs", kind: "cyan", title: "AI-powered support copilot for B2B SaaS", meta: ["AI / SaaS", "6 weeks"] },
     { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"] },
     { slug: "daily8", kind: "cyan", title: "AI-powered news aggregator for the MENA region", meta: ["Mobile / Media", "6 months"] },
+    { slug: "revote", kind: "defence", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"] },
+    { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
+    { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
+    { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "Ongoing"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (

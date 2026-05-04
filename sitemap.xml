@@ -30,4 +30,8 @@
   <url><loc>https://7code-design.vercel.app/case-study/atlas-energy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://7code-design.vercel.app/case-study/northwind-logistics</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://7code-design.vercel.app/case-study/vector-defence</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://7code-design.vercel.app/case-study/revote</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://7code-design.vercel.app/case-study/g42-fleet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://7code-design.vercel.app/case-study/cloud-of-legacy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://7code-design.vercel.app/case-study/lidl-road-safety</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
