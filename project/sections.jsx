@@ -398,10 +398,6 @@ function Testimonials() {
             </article>
           ))}
         </div>
-        <div className="testi-source">
-          All reviews verified on{" "}
-          <a href="https://clutch.co/profile/7code#reviews" target="_blank" rel="noopener noreferrer">Clutch.co/7code</a>
-        </div>
       </div>
     </section>
   );
