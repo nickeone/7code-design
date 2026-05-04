@@ -342,95 +342,62 @@ function Services() {
   );
 }
 
-// Testimonial slider
-// Testimonial slider — dark full-bleed cards, photo slot, logo panel
+// Testimonials — verified Clutch reviews, 2x2 grid with client photos
 function Testimonials() {
-  // Verified client reviews sourced from clutch.co/profile/7code
+  // All quotes verified on clutch.co/profile/7code
   const items = [
     {
       quote: "The self-serve MVP is live and in use. 7Code has excellent communication and project management skills. The team is quick to respond to the client's needs. The client is pleased with the outcome and the team's technical leadership.",
       name: "Emily Kucharski",
       role: "CEO & Co-Founder",
       company: "WholeSum",
-      initial: "E",
+      photoUrl: "project/uploads/emily%20.jpeg",
     },
     {
       quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
       name: "Evyn White",
       role: "Co-Founder",
       company: "Hera Health Tech",
-      initial: "E",
+      photoUrl: "project/uploads/evyn%20-%20hera.jpeg",
     },
     {
       quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
-      name: "Chief Technology Officer",
-      role: "Electronic Voting Systems Company",
-      company: "Revote — European Parliament voting platform",
-      initial: "C",
+      name: "Marcel Ionescu",
+      role: "CTO",
+      company: "Eurel International",
+      photoUrl: "project/uploads/marcel%20ionescu%20.jpeg",
     },
     {
       quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
       name: "Paul Egan",
       role: "CTO",
       company: "Founders Factory",
-      initial: "P",
+      photoUrl: "project/uploads/paul%20egan.jpeg",
     },
   ];
-  const [idx, setIdx] = useStateS(0);
-  const next = () => setIdx(i => (i + 1) % items.length);
-  const prev = () => setIdx(i => (i - 1 + items.length) % items.length);
-  const item = items[idx];
 
   return (
     <section className="section">
       <div className="container">
-        <div className="testi-new reveal" key={idx}>
-          {/* Left — quote + name + logo panel */}
-          <div className="testi-new-left">
-            <div className="testi-new-quote-mark">&ldquo;</div>
-            <blockquote className="testi-new-quote">{item.quote}</blockquote>
-            <div className="testi-new-author">
-              <div className="testi-new-name">{item.name}</div>
-              <div className="testi-new-role">{item.role}, {item.company}</div>
-            </div>
-            {/* Company logo placeholder */}
-            <div className="testi-new-logo-row">
-              <div className="testi-new-logo">
-                <div className="testi-new-logo-text">{item.company}</div>
+        <div className="section-head reveal">
+          <span className="eyebrow">Testimonials</span>
+          <h2>What clients say after the launch</h2>
+          <p>Verified, named reviews from the founders and CTOs we work with.</p>
+        </div>
+        <div className="testi-grid">
+          {items.map((t, i) => (
+            <article key={i} className="testi-card reveal" style={{ transitionDelay: (i % 2 * 60) + "ms" }}>
+              <div className="testi-quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote className="testi-quote">{t.quote}</blockquote>
+              <div className="testi-author">
+                <img src={t.photoUrl} alt={t.name} className="testi-photo" loading="lazy"/>
+                <div>
+                  <div className="testi-name">{t.name}</div>
+                  <div className="testi-role">{t.role}, {t.company}</div>
+                </div>
               </div>
-              <div className="testi-new-logo-divider"/>
-              <div className="testi-new-logo">
-                <div className="testi-new-logo-badge">Technology partner</div>
-              </div>
-            </div>
-            {/* Controls */}
-            <div className="testi-new-controls">
-              <button className="testi-new-arrow" onClick={prev} aria-label="Previous">
-                <Icon.arrowLeft style={{ width: 18, height: 18 }} />
-              </button>
-              <div className="testi-new-dots">
-                {items.map((_, j) => (
-                  <span key={j} className={"testi-new-dot" + (idx === j ? " is-active" : "")} onClick={() => setIdx(j)}/>
-                ))}
-              </div>
-              <button className="testi-new-arrow" onClick={next} aria-label="Next">
-                <Icon.arrow style={{ width: 18, height: 18 }} />
-              </button>
-              <span className="testi-new-counter">{String(idx + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
-            </div>
-          </div>
-
-          {/* Right — person photo (or gradient placeholder) */}
-          <div className="testi-new-photo">
-            {item.photoUrl ? (
-              <img src={item.photoUrl} alt={item.name} className="testi-new-photo-img"/>
-            ) : (
-              <div className="testi-new-photo-placeholder">
-                <div className="testi-new-initials">{item.initial}</div>
-                <div className="testi-new-photo-grad"/>
-              </div>
-            )}
-          </div>
+            </article>
+          ))}
         </div>
         <div className="testi-source">
           All reviews verified on{" "}
