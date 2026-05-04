@@ -300,15 +300,11 @@ function ContactPage() {
               <p style={{ color: "var(--slate-500)" }}>Prefer a quick chat? Pick whichever channel works best.</p>
               <div className="contact-row">
                 <span className="icon-tile"><Icon.email /></span>
-                <div><strong>Email</strong><span>hello@7code.ro</span></div>
-              </div>
-              <div className="contact-row">
-                <span className="icon-tile"><Icon.phone /></span>
-                <div><strong>Phone</strong><span>+40 700 000 000</span></div>
+                <div><strong>Email</strong><a href="mailto:office@7code.ro" style={{ color: "var(--slate-500)" }}>office@7code.ro</a></div>
               </div>
               <div className="contact-row">
                 <span className="icon-tile"><Icon.pin /></span>
-                <div><strong>Office</strong><span>Bucharest, Romania</span></div>
+                <div><strong>Office</strong><a href="https://share.google/kSWr5AJABJj33MMVu" target="_blank" rel="noopener noreferrer" style={{ color: "var(--slate-500)" }}>Cluj-Napoca, Romania</a></div>
               </div>
               <div style={{ background: "var(--bg-cyan-50)", border: "1px solid var(--bg-cyan-100)", borderRadius: "var(--radius-lg)", padding: 24, marginTop: 16 }}>
                 <strong style={{ display: "block", marginBottom: 6, fontFamily: "var(--font-display)" }}>Currently accepting new partnerships</strong>

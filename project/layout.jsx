@@ -242,8 +242,7 @@ function Footer() {
             <h4>Contact</h4>
             <ul>
               <li><a href="mailto:office@7code.ro">office@7code.ro</a></li>
-              <li><a href="tel:+40774542081">+40 774 542 081</a></li>
-              <li>Cetatii 39, Cluj-Napoca, Romania</li>
+              <li><a href="https://share.google/kSWr5AJABJj33MMVu" target="_blank" rel="noopener noreferrer">Cluj-Napoca, Romania</a></li>
             </ul>
           </div>
         </div>
