@@ -10,8 +10,8 @@ const EXPERTISE = {
   "healthcare": {
     slug: "healthcare",
     title: "Healthcare",
-    tagline: "HIPAA-compliant platforms that connect clinicians, patients, and data — built for the complexity of regulated care.",
-    summary: "Healthcare software has to do two things simultaneously: be clinician-grade in reliability and compliance, and patient-grade in usability. We've shipped platforms that do both, across EHR interoperability, clinical decision support, telehealth, and patient engagement.",
+    tagline: "HealthTech engineering for clinics, hospitals, and FemTech founders: HIPAA + GDPR-compliant platforms with HL7 / FHIR EHR interoperability, telehealth, patient engagement, and clinically-grounded AI.",
+    summary: "HealthTech software has to be clinician-grade in reliability and compliance and patient-grade in usability — at the same time. 7Code ships platforms that do both, across HL7 / FHIR EHR interoperability, clinical decision support, telehealth, patient engagement, and AI features grounded in verified clinical knowledge. Recent work includes Hera Health Tech's AI-powered fertility-clinic patient app (3-month MVP, HIPAA + GDPR ready).",
     icon: "heart",
     kind: "health",
     color: "#E53E3E",
@@ -40,14 +40,22 @@ const EXPERTISE = {
       { step: "03", title: "Phased rollout with rollback", desc: "Healthcare can't afford a big-bang deployment. We go live behind feature flags, unit by unit, with automated rollback if error rates exceed threshold." },
     ],
     cases: ["hera"],
+    metaDescription: "HealthTech engineering by 7Code. HIPAA + GDPR-compliant clinical platforms, EHR (HL7 / FHIR) interoperability, telehealth, patient engagement, and AI-grounded clinical support — built end-to-end for clinics, hospitals, and FemTech / FertilityTech founders.",
+    faqs: [
+      { q: "Are you HIPAA-compliant by default?", a: "Yes. Every healthcare engagement starts with a compliance architecture review — encryption in transit and at rest, audit logs, RBAC, BAA-ready vendor stack, and the technical safeguards your compliance team can sign off in week one. We've shipped HIPAA-compliant platforms for fertility (Hera Health Tech), telehealth, and hospital settings — and we ship GDPR controls alongside HIPAA so cross-border deployments don't need re-architecting." },
+      { q: "Do you do EHR / EMR integrations?", a: "Yes. HL7 v2 and FHIR R4 are our defaults. We've integrated with Epic, Cerner, Meditech, and custom HL7 systems, including the parts most teams skip — clinical vocabulary mapping (SNOMED, LOINC, ICD-10), conflict resolution on bi-directional sync, and the audit trail your auditors actually want to see." },
+      { q: "Can you build LLM / AI features for healthcare?", a: "Yes — but always grounded. We use RAG over verified clinical content (with frameworks like LlamaIndex), citation-required answers, refusal patterns when confidence is low, and a held-out evaluation set scored on hallucination rate. AI features in healthcare have to be clinically reliable and auditable; we treat that as a hard constraint, not a stretch goal." },
+      { q: "How do you handle clinician workflow integration?", a: "We run structured observation sessions and co-design workshops with the clinicians who'll use the system. Alert fatigue and workflow friction are caught here, not in production. UI iterations continue against simulated and shadow workflows until triage time drops measurably — only then do we ship." },
+      { q: "How long does a healthcare MVP take?", a: "Three months for a focused MVP with one core clinical workflow (Hera shipped in three months). 12-week telehealth platforms are typical. Full enterprise EHR-integrated platforms run 16–24 weeks. Compliance work starts in week one regardless — we do not ship clinical systems without it." },
+    ],
     next: { slug: "finance", title: "Finance" },
   },
 
   "finance": {
     slug: "finance",
     title: "Finance",
-    tagline: "Real-time dashboards, ERP integration, and automation for finance teams that can't afford to be wrong.",
-    summary: "Finance software operates at the intersection of speed and correctness — a dashboard that's 60 seconds stale is fine; one that's wrong is a compliance event. We've shipped treasury platforms, ERP integrations, accounting automation, and regulatory reporting tools for fintechs and enterprise finance teams.",
+    tagline: "FinTech and finance software engineering: real-time treasury dashboards, ERP integration (SAP, Oracle, NetSuite, Dynamics), accounting automation, regulatory reporting, and venture / MarTech platforms — for finance teams that can't afford to be wrong.",
+    summary: "Finance software operates at the intersection of speed and correctness — a dashboard that's 60 seconds stale is fine; one that's wrong is a compliance event. 7Code has shipped treasury platforms, ERP integrations (SAP, Oracle, NetSuite, Dynamics), accounting automation, regulatory reporting tools, Stripe + 3D Secure billing engines, and MarTech platforms for venture studios — including Founders Factory's Gatsby + Storyblok + Tailwind site overhaul.",
     icon: "briefcase",
     kind: "finance",
     color: "#3182CE",
@@ -76,14 +84,22 @@ const EXPERTISE = {
       { step: "03", title: "Parallel run before cutover", desc: "New system runs alongside the old one for 30 days, with daily variance reporting. Cutover happens only when the numbers match to the cent." },
     ],
     cases: ["founders-factory"],
+    metaDescription: "FinTech and finance software engineering by 7Code. Real-time treasury dashboards, ERP integration (SAP, Oracle, NetSuite), accounting automation, regulatory reporting, payments, and venture/MarTech platforms for VCs.",
+    faqs: [
+      { q: "What do you mean by 'finance software'?", a: "Two strands: (1) software for finance teams inside companies — treasury dashboards, ERP integrations, accounting automation, regulatory reporting; (2) FinTech products — payments, lending, embedded finance, venture-studio platforms. We've shipped both, including the marketing platform for Founders Factory (UK venture studio) and treasury-grade tooling with multi-entity consolidation." },
+      { q: "Which ERPs do you integrate with?", a: "Native connectors for SAP, Oracle (Fusion + EBS), NetSuite, Microsoft Dynamics 365, and custom on-prem ERPs via SOAP / REST / file-drop. We handle the data-model mapping, delta sync, and the conflict resolution that generic iPaaS tools skip — including the reconciliation breaks that always show up at month-end." },
+      { q: "Can you build for FinTech compliance (SOC 2, PCI-DSS, PSD2)?", a: "Yes. We design the technical safeguards into the architecture: encryption, audit logs, key rotation, segregation of duties, and an evidence pack for the audit. SOC 2 Type II readiness, PCI-DSS scope minimisation (using tokenisation), and PSD2 SCA / 3D Secure are within our defaults — not stretch goals." },
+      { q: "How do you handle correctness in finance dashboards?", a: "Every aggregation is double-verified against source records. We ship a reconciliation test suite alongside the product, parallel-run the new system against the old for 30 days with daily variance reporting, and only cut over when the numbers match to the cent. Finance is unforgiving of schema mistakes — we treat correctness as a non-negotiable." },
+      { q: "Do you handle payments and Stripe + 3D Secure billing?", a: "Yes — we've shipped Stripe + 3D Secure billing with bank-transfer fallback for enterprise procurement (Numerize, France: 6,000+ accounts), as well as multi-jurisdiction billing engines. We design subscription tiers, upgrade/downgrade flows, and the audit trail finance and tax teams expect." },
+    ],
     next: { slug: "energy", title: "Energy & Utilities" },
   },
 
   "energy": {
     slug: "energy",
     title: "Energy & Utilities",
-    tagline: "IoT-driven monitoring, predictive analytics, and operations platforms for critical energy infrastructure.",
-    summary: "Energy infrastructure runs 24/7 with zero tolerance for downtime. We've built operations platforms that fuse telemetry from thousands of sensors, predict equipment failures before they happen, and give control room operators a single cockpit instead of six screens.",
+    tagline: "Energy, utilities, and IoT engineering: real-time SCADA / Modbus / MQTT ingestion, predictive maintenance, geofencing, and operations cockpits — for 24/7 critical infrastructure that can't go down.",
+    summary: "Energy and utilities infrastructure runs 24/7 with zero tolerance for downtime. 7Code builds IoT operations platforms that fuse telemetry from thousands of sensors over SCADA, Modbus, MQTT, and custom TCP, predict equipment failures with 10-day lead time, and give control-room operators a single cockpit instead of six screens. Recent work: G42's ESTS fleet-tracking platform deployed at EXPO 2020 Dubai — custom TCP ingestion, geofence rule engine, and real-time map dashboard.",
     icon: "energy",
     kind: "energy",
     color: "#D69E2E",
@@ -112,14 +128,22 @@ const EXPERTISE = {
       { step: "03", title: "Control room co-design", desc: "We run operator shadowing sessions in the control room and iterate on the UI until triage time drops measurably in simulation. We don't ship until it does." },
     ],
     cases: ["g42-fleet"],
+    metaDescription: "Energy, utilities, and IoT software engineering by 7Code. SCADA / Modbus / MQTT ingestion, predictive maintenance, real-time operations cockpits, geofencing, and grid optimisation — built for 24/7 critical infrastructure.",
+    faqs: [
+      { q: "What IoT protocols and sensor stacks do you support?", a: "Protocol-agnostic ingestion: SCADA, Modbus (RTU + TCP), MQTT, OPC UA, custom TCP, and proprietary sensor stacks. We've built the device TCP server behind G42's ESTS fleet platform at EXPO 2020 Dubai — real-time telemetry, geofence rules, and trip event detection across the expo grounds. We normalise into a single canonical schema so analytics and ML pipelines downstream work with one model, not fifty." },
+      { q: "Do you build predictive maintenance models?", a: "Yes. We train per-asset health models on historical failure data, maintenance logs, and environmental inputs — with the goal of giving operators actionable 10-day lead time, not binary alerts. The models are paired with a feedback loop so prediction accuracy improves as new failure events are labelled." },
+      { q: "Can you handle real-time at scale?", a: "Yes. ESTS for EXPO 2020 ran a custom TCP server ingesting live telemetry across thousands of vehicles, with geofence rule evaluation in near real time and trip playback for incident reconstruction. We architect for 24/7 critical-infrastructure SLAs — no scheduled downtime, automated failover, and full observability." },
+      { q: "Do you handle compliance for OT (operational technology)?", a: "Yes — NERC CIP, IEC 62443, and ISO 27019 for the OT side, plus the IT-side compliance that matters for the data and reporting layer. We work alongside your security team from week one and treat segmentation between IT and OT as a hard architectural constraint." },
+      { q: "How long does an energy / IoT platform take?", a: "Six to nine months for a focused operations cockpit with predictive analytics. ESTS at EXPO 2020 ran 18 months of focused build plus 6 months of production maintenance — a full multi-tenant fleet platform at expo scale." },
+    ],
     next: { slug: "defence", title: "Defence & Security" },
   },
 
   "defence": {
     slug: "defence",
     title: "Defence & Security",
-    tagline: "Situational awareness platforms, secure systems integration, and mission-critical software for defence and government.",
-    summary: "Defence software operates where the stakes are absolute. We build platforms that fuse multi-domain intelligence, enforce strict information assurance controls, and give operators the clarity they need under pressure — without the cognitive load of six disjointed screens.",
+    tagline: "Defence, security, and GovTech / E-Government engineering: multi-domain fusion, information assurance, secure remote-voting (built for the European Parliament), and mission-critical operator interfaces.",
+    summary: "Defence and GovTech software operates where the stakes are absolute. 7Code builds platforms that fuse multi-domain intelligence (radar, comms, SIGINT, structured intel), enforce strict information-assurance controls, and give operators the clarity they need under pressure — without the cognitive load of six disjointed screens. Recent work: Revote, the remote electronic voting platform for the European Parliament (with Eurel International, released May 2023).",
     icon: "shield",
     kind: "defence",
     color: "#4A5568",
@@ -148,14 +172,22 @@ const EXPERTISE = {
       { step: "03", title: "Accreditation-ready from sprint one", desc: "Evidence packages, audit logs, and security documentation are generated as part of the build process — not assembled retrospectively before the assessment." },
     ],
     cases: ["revote"],
+    metaDescription: "Defence, security, and GovTech / E-Government engineering by 7Code. Mission-critical platforms with multi-domain fusion, information assurance, secure remote-voting (built for the European Parliament), and after-action review tooling.",
+    faqs: [
+      { q: "Do you work with classified data and accredited environments?", a: "We design to information-assurance standards (NIST 800-53, ISO 27001, MoD Secure-by-Design) and work alongside the client's accreditation authority from week one. For the European Parliament's Revote remote-voting platform, our CTO travelled to Brussels to validate the system on the live network under EP security policy. We don't bolt accreditation on at the end — evidence packages and audit logs are part of the build." },
+      { q: "Can you build for E-Government / civic-tech use cases?", a: "Yes — Revote (remote electronic voting for Members of the European Parliament, partnered with Eurel International) shipped in eight months on the EP network. We've designed multi-device authentication, audit-grade vote handling, and the Plenary / Committee / Dashboard surfaces governments and parliaments require." },
+      { q: "What does 'multi-domain fusion' mean for defence?", a: "Radar, comms, SIGINT, and structured intelligence fused into one queryable record store, with role-based redaction enforced at the data layer (not the UI). Operators see one map, one timeline, one detail panel — all data, no tabs. We replace six disconnected screens with a single pane of glass." },
+      { q: "Do you handle coalition and joint-force interoperability?", a: "Yes. Legacy system integration, protocol translation, and command-and-control interoperability across coalition and joint environments are part of how we approach defence systems integration. We work with whatever the existing tactical and strategic comms stack imposes — not what we'd prefer to build greenfield." },
+      { q: "How quickly can a defence / GovTech project move?", a: "Faster than most teams expect. Revote shipped in eight months end-to-end (1 mo discovery + 1 mo PoC + 4 mo build + 2 mo UAT) on a high-security European Parliament network. We move at proof-of-concept pace with accreditation-ready evidence collected throughout — not as a final-phase scramble." },
+    ],
     next: { slug: "hr", title: "HR" },
   },
 
   "hr": {
     slug: "hr",
     title: "HR",
-    tagline: "Recruitment, onboarding, payroll, and workforce analytics — unified into platforms people actually use.",
-    summary: "HR software is uniquely hard to get right: it touches every employee in the organisation, it integrates with more systems than almost anything else in the stack, and the consequences of getting it wrong — a missed payroll run, a failed compliance filing — are immediately visible to the whole company.",
+    tagline: "HR Tech engineering: ATS / HRIS integration (Workday, SAP SuccessFactors, BambooHR), recruitment, onboarding, payroll automation, workforce analytics, and compliance reporting — unified into platforms people actually use.",
+    summary: "HR Tech is uniquely hard to get right: it touches every employee in the organisation, integrates with more systems than almost anything else in the stack, and the consequences of getting it wrong — a missed payroll run, a failed compliance filing — are immediately visible to the whole company. 7Code builds HRIS, ATS, payroll, and workforce-analytics platforms with multi-jurisdiction labour-law and GDPR controls baked in.",
     icon: "users",
     kind: "ops",
     color: "#805AD5",
@@ -184,14 +216,22 @@ const EXPERTISE = {
       { step: "03", title: "Parallel payroll run", desc: "Any change to payroll infrastructure runs in parallel for at least two pay cycles before cutover. We don't take risks with people's pay." },
     ],
     cases: [],
+    metaDescription: "HR Tech engineering by 7Code. ATS / HRIS integration (Workday, SAP SuccessFactors, BambooHR), recruitment and onboarding workflows, payroll automation, workforce analytics, and compliance reporting (EEO, GDPR, local labour law).",
+    faqs: [
+      { q: "Which HRIS / ATS systems do you integrate with?", a: "Native connectors for Workday, SAP SuccessFactors, BambooHR, Personio, and custom HRIS via REST / SOAP / file-drop. We handle the bi-directional sync, conflict resolution, audit trail, and the surprise edge cases — every system has them, and HR data is uniquely intolerant of silent corruption." },
+      { q: "Can you handle payroll integration?", a: "Yes — multi-jurisdiction payroll calculation, statutory filing automation, integration with payroll processors (ADP, Sage, local providers), and the reconciliation layer that catches errors before they reach employees. Any change to payroll infrastructure is parallel-run for at least two pay cycles before cutover. We do not take risks with people's pay." },
+      { q: "What about workforce analytics and predictive HR?", a: "Attrition prediction, performance correlation, hiring funnel analysis, and headcount planning — surfaced in dashboards HR business partners can actually use, with the data export hooks finance and leadership need. We also build the data lake / warehouse pipelines underneath if your existing stack can't support these queries." },
+      { q: "Do you handle EEO, GDPR, and local labour law compliance?", a: "Yes. Multi-jurisdiction labour-law compliance tooling, EEO and DEI reporting, GDPR data-subject-access controls, and audit-ready data exports. We design for the regulator your team will actually face, not a generic global standard." },
+      { q: "How long does an HR platform take?", a: "12 weeks for a focused HR module — recruitment, onboarding, or analytics. Full HRIS replacements run 16–32 weeks depending on the integration count and parallel-run period required for payroll." },
+    ],
     next: { slug: "operations", title: "Operations" },
   },
 
   "operations": {
     slug: "operations",
     title: "Operations",
-    tagline: "Workflow automation, operations dashboards, and systems integration for teams that move fast and can't afford to break things.",
-    summary: "Operations software is the connective tissue of a business — the workflows, dashboards, and integrations that make everything else run. We build it for companies that have grown past their tooling: too many systems, too much manual work, too little visibility.",
+    tagline: "Operations software engineering: workflow automation, real-time dashboards, OCR document pipelines, systems integration, and process intelligence — for teams that have outgrown spreadsheets, Slack, and heroic individuals.",
+    summary: "Operations software is the connective tissue of a business — workflows, dashboards, OCR pipelines, and integrations that make everything else run. 7Code builds it for companies that have grown past their tooling: too many systems, too much manual work, too little visibility. Recent work includes G42's ESTS real-time fleet operations at EXPO 2020, Drum Bun's OCR-driven car-services pipeline, and Numerize's responsive GED / EDM platform.",
     icon: "chart",
     kind: "ops",
     color: "#2B6CB0",
@@ -220,6 +260,14 @@ const EXPERTISE = {
       { step: "03", title: "Measure before and after", desc: "We instrument the current process before we change anything, so we can show the before and after in the same units. Impact is calculated, not estimated." },
     ],
     cases: ["g42-fleet"],
+    metaDescription: "Operations software engineering by 7Code. Workflow automation, real-time operations dashboards, OCR-driven document pipelines, systems integration, and process intelligence — for teams that have outgrown spreadsheets, Slack, and heroic individuals.",
+    faqs: [
+      { q: "What does 'operations software' actually mean?", a: "The connective tissue of a business — workflow engines, operations dashboards, integrations across CRM/ERP/SaaS tools, and customer-facing portals. We build for companies that have grown past their tooling: too many systems, too much manual work, too little visibility. Recent work includes real-time fleet operations (G42 / EXPO 2020) and OCR-driven document operations (Drum Bun, Numerize)." },
+      { q: "Do you do workflow automation?", a: "Yes. Visual workflow authoring, conditional routing, approval chains, SLA monitoring, and event-driven orchestration on Temporal or LangGraph for agentic workflows. We design the workflow engine so operations teams can own and modify it — not so it requires an engineering ticket for every rule change." },
+      { q: "Can you build OCR / document pipelines?", a: "Yes — OCR is a recurring need in operations. Drum Bun (Romanian car-services app) uses an OCR pipeline to lift policy and inspection details from photographed documents. Numerize trains OCR on incoming invoices, extracts structured data, categorises by sector, and routes into archival storage. We pick the OCR engine to fit the document distribution and ship the data-cleaning layer alongside it." },
+      { q: "How do you find the right things to automate?", a: "Process discovery in week one — including the undocumented processes. We map current workflows, identify the 20% of automation opportunities that deliver 80% of the value, and ship something visible by week two. Operations teams need momentum to trust the longer work; we engineer for that." },
+      { q: "How do you measure operations impact?", a: "We instrument the current process before changing anything, so the before-and-after is in the same units. Time saved per task, exception rate, throughput, and SLA breach rate are the typical metrics — calculated, not estimated. Recent example: $4.2M annual savings on a single workflow automation engagement." },
+    ],
     next: { slug: "healthcare", title: "Healthcare" },
   },
 };
@@ -278,6 +326,49 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
     slug: s,
     ...(typeof CASES !== "undefined" && CASES[s] ? CASES[s] : { title: s, kind: exp.kind, meta: [exp.title] }),
   }));
+
+  React.useEffect(() => {
+    const e = EXPERTISE[slug] || EXPERTISE["healthcare"];
+    const prevTitle = document.title;
+    const descEl = document.querySelector('meta[name="description"]');
+    const prevDesc = descEl ? descEl.getAttribute("content") : null;
+    document.title = "7Code — " + e.title + " software engineering";
+    if (descEl && e.metaDescription) descEl.setAttribute("content", e.metaDescription);
+
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": e.title + " software engineering",
+          "serviceType": e.title,
+          "description": e.metaDescription || e.tagline,
+          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "areaServed": "Worldwide",
+          "url": "https://7code-design.vercel.app/#/expertise/" + e.slug,
+        },
+        ...(e.faqs && e.faqs.length ? [{
+          "@type": "FAQPage",
+          "mainEntity": e.faqs.map(f => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a },
+          })),
+        }] : []),
+      ],
+    };
+    const scriptEl = document.createElement("script");
+    scriptEl.type = "application/ld+json";
+    scriptEl.id = "exp-ld";
+    scriptEl.text = JSON.stringify(ld);
+    document.head.appendChild(scriptEl);
+
+    return () => {
+      document.title = prevTitle;
+      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
+      scriptEl.remove();
+    };
+  }, [slug]);
 
   return (
     <div className="page">
@@ -363,6 +454,26 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
           </div>
         </div>
       </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      {exp.faqs && exp.faqs.length > 0 && (
+        <section className="section">
+          <div className="container svc-faq-wrap">
+            <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0, marginBottom: 32 }}>
+              <span className="eyebrow">Frequently asked</span>
+              <h2>Questions teams ask before they start</h2>
+            </div>
+            <div className="svc-faq">
+              {exp.faqs.map((f, i) => (
+                <details key={i} className="svc-faq-item reveal" style={{ transitionDelay: (i * 40) + "ms" }}>
+                  <summary>{f.q}</summary>
+                  <p>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Related case studies ─────────────────────────────── */}
       {relatedCases.length > 0 && (
