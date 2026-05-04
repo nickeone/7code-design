@@ -44,6 +44,20 @@
 <body>
 <div id="root"></div>
 
+<script>
+// Path → hash bootstrap. The site uses a hash router (project/layout.jsx) but
+// vercel.json rewrites path-based URLs (e.g. /service/ai-product-engineering)
+// to index.html. We translate the pathname into the hash the router expects so
+// crawlers and direct visits to clean URLs render the correct page.
+(function () {
+  var p = window.location.pathname;
+  if (p && p !== "/" && p !== "/index.html" && !/^\/project\//.test(p)) {
+    var search = window.location.search || "";
+    window.history.replaceState(null, "", "/" + search + "#" + p);
+  }
+})();
+</script>
+
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
