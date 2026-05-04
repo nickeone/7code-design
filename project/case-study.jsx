@@ -58,7 +58,7 @@ const CASES = {
     region: "United Arab Emirates", kind: "cyan",
     title: "AI-powered news aggregator for the MENA region",
     tagline: "MediaTech meets generative AI: a React Native news, podcasts, and videos app for the MENA region — moderated, summarised, and balanced by an OpenAI + AWS Lambda AI layer.",
-    summary: "Daily8 is a UAE-based AI MediaTech startup building a centralised mobile platform for news, podcasts, and videos tailored by country and interest. After a stalled engagement with a previous provider, Daily8 switched to 7Code to design and ship the product end-to-end — a React Native iOS + Android app, an admin dashboard, and an AI layer on OpenAI + AWS Lambda for automated comment moderation, daily wrap-up summaries, and balanced-opinion features.",
+    summary: "Daily8 is a UAE-based AI MediaTech startup building a centralised platform for news, podcasts, and videos tailored by country and interest — live now at daily8.com/en. After a stalled engagement with a previous provider, Daily8 switched to 7Code to design and ship the product end-to-end: a React Native iOS + Android app, the daily8.com web experience, an admin dashboard, and an AI layer on OpenAI + AWS Lambda for automated comment moderation, daily wrap-up summaries, and balanced-opinion features.",
     challenge: {
       eyebrow: "The challenge",
       title: "A multi-format content app that's fast, fair, and shippable on a startup runway.",
@@ -88,7 +88,7 @@ const CASES = {
       { v: "iOS + Android", l: "ready for the stores", sub: "App Store and Play Store" },
     ],
     testimonial: { quote: "", name: "", role: "" },
-    metaDescription: "AI-powered news aggregator for the MENA region by 7Code. React Native mobile app for Daily8 (UAE) with AI moderation, daily wrap-up, and unbiased opinion on AWS Lambda + OpenAI — shipped iOS + Android in 6 months.",
+    metaDescription: "AI-powered news aggregator for the MENA region by 7Code. Daily8 (UAE) — live at daily8.com/en — with React Native mobile, web, AI moderation, daily wrap-up, and unbiased opinion on AWS Lambda + OpenAI. Shipped iOS + Android in 6 months.",
     next: { slug: "revote", client: "Eurel International", title: "Remote electronic voting platform for the European Parliament", kind: "defence" },
   },
   "revote": {
