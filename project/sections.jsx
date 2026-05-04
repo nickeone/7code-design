@@ -193,12 +193,13 @@ function WhyChoose() {
 // Verified & accredited section — credentials and listings
 function VerifiedAccredited() {
   const items = [
-    { icon: Icon.shield,      title: "SOC 2 Type II",        sub: "AICPA-aligned controls" },
-    { icon: Icon.heart,       title: "HIPAA-compliant",      sub: "Healthcare data safeguards" },
-    { icon: Icon.checkCircle, title: "GDPR-compliant",       sub: "EU data protection (Reg. 2016/679)" },
-    { icon: Icon.award,       title: "Clutch verified",      sub: "Top Web Developers · Romania" },
-    { icon: Icon.star,        title: "Sortlist verified",    sub: "Verified agency profile" },
-    { icon: Icon.globe,       title: "Listed on Crunchbase", sub: "Public company profile" },
+    { src: "project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II — AICPA-aligned controls" },
+    { src: "project/uploads/hipa.webp",                       alt: "HIPAA Compliant — healthcare data safeguards" },
+    { src: "project/uploads/gdpr.png",                        alt: "GDPR Compliant — EU General Data Protection Regulation" },
+    { src: "project/uploads/clutch.png",                      alt: "Clutch — Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
+    { src: "project/uploads/sortlist.png",                    alt: "Sortlist Verified Agency", className: "trust-logo--invert" },
+    { src: "project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
+    { src: "project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
   ];
   return (
     <section className="section section--alt">
@@ -210,14 +211,23 @@ function VerifiedAccredited() {
         </div>
         <div className="trust-grid">
           {items.map((item, i) => {
-            const I = item.icon;
-            return (
-              <div key={i} className="trust-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
-                <span className="trust-icon"><I /></span>
-                <div>
-                  <div className="trust-title">{item.title}</div>
-                  <div className="trust-sub">{item.sub}</div>
-                </div>
+            const inner = (
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={"trust-logo" + (item.className ? " " + item.className : "")}
+                loading="lazy"
+              />
+            );
+            return item.href ? (
+              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer"
+                 className="trust-card reveal" style={{ transitionDelay: (i % 4 * 50) + "ms" }}
+                 aria-label={item.alt}>
+                {inner}
+              </a>
+            ) : (
+              <div key={i} className="trust-card reveal" style={{ transitionDelay: (i % 4 * 50) + "ms" }}>
+                {inner}
               </div>
             );
           })}
