@@ -127,7 +127,11 @@ const CASES = {
       { v: "Multi-device", l: "voting parity", sub: "phone, tablet, laptop, desktop" },
       { v: "Ongoing", l: "engagement", sub: "continued maintenance & rollout support" },
     ],
-    testimonial: { quote: "", name: "", role: "" },
+    testimonial: {
+      quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
+      name: "IT Engineer",
+      role: "Electronic Voting Systems Company",
+    },
     metaDescription: "Remote electronic voting platform for the European Parliament, built by 7Code with Eurel International. Secure multi-device voting on the EP network — five modules, eight months, released May 2023.",
     next: { slug: "g42-fleet", client: "Group 42", title: "Real-time fleet tracking for EXPO 2020 Dubai", kind: "energy" },
   },
