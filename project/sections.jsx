@@ -49,6 +49,17 @@ function CSCover({ kind, label, slug }) {
       </div>
     );
   }
+  if (slug === "daily8") {
+    return (
+      <div className="cs-cover cs-cover--d8">
+        <img
+          src="project/uploads/daily8-hero.png"
+          alt={label || "Daily8"}
+          className="cs-cover-d8-img"
+        />
+      </div>
+    );
+  }
   const map = {
     health:   { cls: "cover--health",   icon: <Icon.heart /> },
     finance:  { cls: "cover--finance",  icon: <Icon.briefcase /> },
@@ -89,6 +100,7 @@ function CaseStudies({ limit }) {
     { slug: "vector-defence", kind: "defence", title: "Situational awareness platform for defence agency", meta: ["Defence", "20 weeks"] },
     { slug: "octolabs", kind: "cyan", title: "AI-powered support copilot for B2B SaaS", meta: ["AI / SaaS", "6 weeks"] },
     { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"] },
+    { slug: "daily8", kind: "cyan", title: "AI-powered news aggregator for the MENA region", meta: ["Mobile / Media", "6 months"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (

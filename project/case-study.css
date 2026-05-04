@@ -299,3 +299,42 @@
 /* ── Wholesum hero (real screenshot in browser frame) ────── */
 .csd-ws-browser .csd-browser-url { color: #C2410C; }
 .csd-ws-shot { display: block; width: 100%; height: auto; }
+
+/* ── Daily8 hero (mobile app screenshots on a brand stage) ── */
+.csd-d8-stage {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, #1E2939 0%, #0F172A 60%, #1E1B0E 100%);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(15,23,42,0.18);
+  display: grid; place-items: center;
+}
+.csd-d8-grid {
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(250,177,0,0.18), transparent 45%),
+    radial-gradient(circle at 100% 100%, rgba(6,182,212,0.18), transparent 50%);
+  pointer-events: none;
+}
+.csd-d8-shot {
+  position: absolute;
+  height: 88%;
+  width: auto;
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.csd-d8-shot--main      { left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-4deg); z-index: 2; }
+.csd-d8-shot--secondary { left: 50%; top: 50%; transform: translate(45%, -50%) rotate(6deg); height: 78%; opacity: 0.92; z-index: 1; }
+
+@media (max-width: 700px) {
+  .csd-d8-shot--main      { transform: translate(-65%, -50%) rotate(-4deg); }
+  .csd-d8-shot--secondary { transform: translate(20%, -50%) rotate(6deg); }
+}
+
+.csd-phone--shot { padding: 8px; }
+.csd-phone--shot .csd-phone-screen { display: none; }
+.csd-phone-img { display: block; width: 100%; height: auto; border-radius: 28px; }

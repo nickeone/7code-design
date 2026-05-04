@@ -248,6 +248,45 @@ const CASES = {
       { v: "5", l: "modules shipped", sub: "landing, upload, results, dashboard, profile" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    next: { slug: "daily8", client: "Daily8", title: "AI-powered news aggregator for the MENA region", kind: "cyan" },
+  },
+  "daily8": {
+    slug: "daily8",
+    client: "Daily8", industry: "Mobile / Media", year: "2022",
+    duration: "6 months", team: "1 UI/UX designer · 1 architect · 3 full-stack developers · 1 PM · 1 QA",
+    region: "United Arab Emirates", kind: "cyan",
+    title: "AI-powered news aggregator for the MENA region",
+    tagline: "News, podcasts, and videos tailored by interest and country — moderated, summarised, and surfaced by AI.",
+    summary: "Daily8 is a UAE-based startup building a centralised platform for news, podcasts, and videos tailored by country and interest. After a difficult run with a previous provider, Daily8 switched to 7Code to design and ship the product end-to-end — a React Native mobile app, an admin dashboard, and an AI layer (OpenAI + AWS Lambda) for moderation, daily summaries, and balanced-opinion features.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "A multi-format content app that's fast, fair, and shippable on a startup runway.",
+      body: "Daily8 came to us after a stalled engagement with a prior vendor. The product had to span three content formats — news, podcasts, and videos — feel personal from session one, and keep community spaces clean as comments scaled. All inside a six-month runway from blank canvas to App Store and Play Store readiness.",
+      pains: [
+        "Switching providers mid-vision with no working build to inherit",
+        "Three content surfaces (news, podcasts, videos) under one cohesive UX",
+        "Community comments at scale required automated moderation from day one",
+        "Six months to design, build, test, and ready the app for both stores",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "AI-native foundations, end-to-end delivery, ready for the stores in six months.",
+      body: "We took the product from discovery to release: one month of focused UI/UX, four months of mobile and admin development, and parallel AI integration across moderation and summarisation. React Native on the front, AWS Lambda for the backend, OpenAI behind the AI features — chosen so the app would scale cleanly as Daily8's audience grew across the Emirates and the wider MENA region.",
+      pillars: [
+        { title: "Aligned discovery sprint", desc: "One-month UI/UX phase locked the experience — onboarding, three content feeds, comments, profile — before a line of mobile code was written." },
+        { title: "React Native + admin dashboard", desc: "Single codebase for iOS and Android, plus an internal admin for editorial and ops, built on AWS Lambda for cost-efficient scale." },
+        { title: "AI moderation built-in", desc: "OpenAI-powered comment moderation keeps community spaces safe without a human-only review queue." },
+        { title: "AI summarisation & balance", desc: "A Daily Wrap-Up condenses the news cycle; an Unbiased Opinion feature surfaces multiple perspectives on a story." },
+      ],
+    },
+    results: [
+      { v: "6 months", l: "design to release", sub: "1 month design · 5 months build & QA" },
+      { v: "9", l: "consumer modules shipped", sub: "social login, feeds, comments, profile, push" },
+      { v: "3", l: "AI features in core flow", sub: "moderator · daily wrap-up · unbiased opinion" },
+      { v: "iOS + Android", l: "ready for the stores", sub: "App Store and Play Store" },
+    ],
+    testimonial: { quote: "", name: "", role: "" },
     next: { slug: "helix-health", client: "Helix Health", title: "Telehealth platform for a national clinic network", kind: "health" },
   },
 };
@@ -260,6 +299,14 @@ let CSD = CASES["helix-health"];
 // Shared mockup graphics — phone + browser
 // ──────────────────────────────────────────────────────────────────
 function PhoneMockup({ accent = "var(--cyan-500)" }) {
+  if (CSD.slug === "daily8") {
+    return (
+      <div className="csd-phone csd-phone--shot">
+        <div className="csd-phone-notch"/>
+        <img className="csd-phone-img" src="project/uploads/daily8-notifications.png" alt="Daily8 notifications screen"/>
+      </div>
+    );
+  }
   return (
     <div className="csd-phone">
       <div className="csd-phone-notch"/>
@@ -303,8 +350,27 @@ function WholesumHero() {
   );
 }
 
+function Daily8Hero() {
+  return (
+    <div className="csd-d8-stage">
+      <div className="csd-d8-grid" aria-hidden="true"/>
+      <img
+        className="csd-d8-shot csd-d8-shot--main"
+        src="project/uploads/daily8-hero.png"
+        alt="Daily8 onboarding screen — Welcome to Daily8 with language selection"
+      />
+      <img
+        className="csd-d8-shot csd-d8-shot--secondary"
+        src="project/uploads/daily8-feed.png"
+        alt="Daily8 news feed — personalised news, podcasts, and videos"
+      />
+    </div>
+  );
+}
+
 function BrowserMockup({ kind = "calendar" }) {
   if (CSD.slug === "wholesum") return <WholesumHero/>;
+  if (CSD.slug === "daily8") return <Daily8Hero/>;
   return (
     <div className="csd-browser">
       <div className="csd-browser-bar">
