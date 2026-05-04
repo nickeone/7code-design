@@ -142,7 +142,7 @@ function CaseStudies({ limit }) {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#/blog" className="btn btn--ghost">View all projects <Icon.arrow /></a>
+          <a href="#/case-studies" className="btn btn--ghost">View all projects <Icon.arrow /></a>
         </div>
       </div>
     </section>
