@@ -48,6 +48,7 @@ const CASES = {
       name: "Emily Kucharski",
       role: "CEO & Co-Founder, WholeSum",
     },
+    metaDescription: "Self-serve AI analytics platform for unstructured text by 7Code. Built end-to-end on Next.js + Nest.js + AWS for WholeSum (UK) — 16-week design and build, launched on time and raised funding.",
     next: { slug: "daily8", client: "Daily8", title: "AI-powered news aggregator for the MENA region", kind: "cyan" },
   },
   "daily8": {
@@ -87,6 +88,7 @@ const CASES = {
       { v: "iOS + Android", l: "ready for the stores", sub: "App Store and Play Store" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "AI-powered news aggregator for the MENA region by 7Code. React Native mobile app for Daily8 (UAE) with AI moderation, daily wrap-up, and unbiased opinion on AWS Lambda + OpenAI — shipped iOS + Android in 6 months.",
     next: { slug: "revote", client: "Eurel International", title: "Remote electronic voting platform for the European Parliament", kind: "defence" },
   },
   "revote": {
@@ -130,6 +132,7 @@ const CASES = {
       name: "Chief Technology Officer",
       role: "Electronic Voting Systems Company",
     },
+    metaDescription: "Remote electronic voting platform for the European Parliament, built by 7Code with Eurel International. Secure multi-device voting on the EP network — five modules, eight months, released May 2023.",
     next: { slug: "g42-fleet", client: "Group 42", title: "Real-time fleet tracking for EXPO 2020 Dubai", kind: "energy" },
   },
   "g42-fleet": {
@@ -169,6 +172,7 @@ const CASES = {
       { v: "5+ modules", l: "shipped", sub: "TCP server, geofences, map, playback, alerts" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "Real-time IoT fleet tracking for EXPO 2020 Dubai by 7Code, partnered with Group 42 (G42, UAE). Custom TCP ingestion, geofence rules, real-time map, and trip playback — 18 months build + 6 months maintenance.",
     next: { slug: "cloud-of-legacy", client: "Cloud of Legacy", title: "Cloud-based digital-heritage platform with secure inheritance", kind: "cyan" },
   },
   "cloud-of-legacy": {
@@ -208,12 +212,13 @@ const CASES = {
       { v: "Ongoing", l: "engagement", sub: "continued maintenance & feature work" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "Cloud-based digital-heritage platform for Cloud of Legacy (Germany), built by 7Code in 8 months on Next.js + React + Keycloak with 2FA. Subscription cloud where users designate two heirs.",
     next: { slug: "lidl-road-safety", client: "Lidl Romania", title: "Children's road-safety gamification web app", kind: "cyan" },
   },
   "lidl-road-safety": {
     slug: "lidl-road-safety",
     client: "Lidl Romania", industry: "Education / Retail CSR", year: "2022",
-    duration: "Ongoing", team: "1 front-end · 1 back-end · 1 QA",
+    duration: "6 months", team: "1 front-end · 1 back-end · 1 QA",
     region: "Romania", kind: "cyan",
     title: "Children's road-safety gamification web app for Lidl Romania",
     tagline: "A gamified learning platform for kids — built with Lidl Romania and the Romanian Police to make road safety engaging, parent-supervised, and inclusive.",
@@ -231,11 +236,11 @@ const CASES = {
     },
     approach: {
       eyebrow: "Our approach",
-      title: "Public landing, authenticated kids' space, and a gamification engine on React Native + Nest.js.",
-      body: "We split the web app into a public marketing experience and an authenticated child-and-parent space. The authenticated space is built around episodes, levels, quizzes, and video content — each anchored in a points-based gamification engine that rewards progress and unlocks the next level. Stack: React Native (web + mobile parity), a Nest.js API, and Heroku-hosted infrastructure. A back-office lets Lidl and Police content owners manage episodes, levels, and reporting independently.",
+      title: "Public landing, authenticated kids' space, and a gamification engine on React + Nest.js.",
+      body: "We split the web app into a public marketing experience and an authenticated child-and-parent space. The authenticated space is built around episodes, levels, quizzes, and video content — each anchored in a points-based gamification engine that rewards progress and unlocks the next level. Stack: React on the front, a Nest.js API, and Heroku-hosted infrastructure. A back-office lets Lidl and Police content owners manage episodes, levels, and reporting independently.",
       pillars: [
         { title: "Public + private architecture", desc: "Open marketing pages plus an authenticated kid-and-parent space, each tuned to its own engagement and accessibility needs." },
-        { title: "React Native + Nest.js stack", desc: "One codebase covering web and mobile, with a Nest.js API on Heroku — chosen so Lidl can extend the platform across devices each annual edition." },
+        { title: "React + Nest.js stack", desc: "React on the front and a Nest.js API on Heroku — chosen so Lidl can extend the platform each annual edition without re-platforming." },
         { title: "Episode and level engine", desc: "Episodes group themed lessons; levels structure progression; videos and quizzes deliver the content. All editable by the back-office team." },
         { title: "Gamification with welcoming logic", desc: "Dynamic points reward learning; welcoming logic eases new users in; flexible rules keep the experience inclusive across families." },
         { title: "Back-office for editorial teams", desc: "A reporting and content-management module for Lidl and Police staff — they manage episodes, content, and reporting without our involvement." },
@@ -248,6 +253,7 @@ const CASES = {
       { v: "Inclusive", l: "by design", sub: "WCAG-aligned, parent-guided, family-friendly" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "Children's road-safety gamification web app for Lidl Romania and the Romanian Police, built by 7Code on React + Nest.js + Heroku in 6 months. Public + private split, episodes, levels, and a points engine.",
     next: { slug: "founders-factory", client: "Founders Factory", title: "UI overhaul + ongoing engineering for a UK venture studio", kind: "finance" },
   },
   "founders-factory": {
@@ -291,6 +297,7 @@ const CASES = {
       name: "Paul Egan",
       role: "CTO, Founders Factory",
     },
+    metaDescription: "UI overhaul and ongoing engineering for Founders Factory (UK venture studio) by 7Code. Gatsby + Storyblok site migrated from base CSS to Tailwind, with TypeScript and CircleCI underpinning every PR.",
     next: { slug: "hera", client: "Hera", title: "AI-powered fertility-clinic patient app", kind: "health" },
   },
   "hera": {
@@ -334,6 +341,7 @@ const CASES = {
       name: "Evyn White",
       role: "Co-Founder, Hera Health Tech",
     },
+    metaDescription: "AI-powered patient-support app for fertility clinics, built by 7Code for Hera Health Tech (UAE). React Native + Serverless on AWS, LlamaIndex RAG over verified clinical content, HIPAA + GDPR compliant. 3-month MVP.",
     next: { slug: "melsonic", client: "Melsonic", title: "AI-powered guitar-learning web app", kind: "cyan" },
   },
   "melsonic": {
@@ -373,6 +381,7 @@ const CASES = {
       { v: "Ongoing", l: "engagement", sub: "continued feature work and platform iteration" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "AI-powered guitar-learning web app for Melsonic (UK), built by 7Code on Next.js + pixi.js + Nest.js + Postgres + AWS. Real-time audio capture and AI scoring against the original track. 5-month MVP.",
     next: { slug: "drum-bun", client: "Drum Bun", title: "Mobile car-services app for the Romanian driver", kind: "ops" },
   },
   "drum-bun": {
@@ -412,6 +421,7 @@ const CASES = {
       { v: "8 modules", l: "shipped", sub: "walkthrough, cars, alerts, OCR, profile, services, payments, history" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "Romanian car-services mobile app (Drum Bun) for Explorom, built by 7Code on React Native + Node.js with an OCR document pipeline. Verify and purchase RCA, ITP, and vignette in one tap on App Store and Play Store.",
     next: { slug: "numerize", client: "Numerize", title: "Electronic document management platform with OCR + e-signature", kind: "ops" },
   },
   "numerize": {
@@ -451,6 +461,7 @@ const CASES = {
       { v: "YouSign", l: "e-signature integrated", sub: "multi-signatory, email delivery" },
     ],
     testimonial: { quote: "", name: "", role: "" },
+    metaDescription: "Responsive electronic document management and e-signature platform for Numerize (France), built by 7Code on React + Material-UI + Laravel + AWS. OCR invoice pipeline, YouSign multi-signatory e-signatures, Stripe + 3D Secure billing across 6,000+ accounts.",
     next: { slug: "wholesum", client: "WholeSum", title: "Self-serve AI analytics platform for unstructured text", kind: "cyan" },
   },
 };
@@ -1079,6 +1090,52 @@ function CSDSticky() {
 function CaseStudyPage({ slug = "wholesum", variant = "longread" }) {
   // Reassign module-level CSD synchronously before render
   CSD = CASES[slug] || CASES["wholesum"];
+
+  React.useEffect(() => {
+    const c = CASES[slug] || CASES["wholesum"];
+    const prevTitle = document.title;
+    const descEl = document.querySelector('meta[name="description"]');
+    const prevDesc = descEl ? descEl.getAttribute("content") : null;
+    document.title = "7Code — " + c.client + ": " + c.title;
+    if (descEl && c.metaDescription) descEl.setAttribute("content", c.metaDescription);
+
+    const url = "https://7code-design.vercel.app/#/case-study/" + c.slug;
+    const ld = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": c.title,
+          "description": c.metaDescription || c.tagline,
+          "articleSection": "Case Study",
+          "about": { "@type": "Organization", "name": c.client },
+          "author": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "publisher": { "@type": "ProfessionalService", "name": "7Code" },
+          "datePublished": String(c.year),
+          "url": url,
+          "keywords": (c.industry || "") + ", " + (c.region || ""),
+        },
+        ...(c.testimonial && c.testimonial.quote ? [{
+          "@type": "Review",
+          "reviewBody": c.testimonial.quote,
+          "author": { "@type": "Person", "name": c.testimonial.name, "jobTitle": c.testimonial.role },
+          "itemReviewed": { "@type": "ProfessionalService", "name": "7Code" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        }] : []),
+      ],
+    };
+    const scriptEl = document.createElement("script");
+    scriptEl.type = "application/ld+json";
+    scriptEl.id = "csd-ld";
+    scriptEl.text = JSON.stringify(ld);
+    document.head.appendChild(scriptEl);
+
+    return () => {
+      document.title = prevTitle;
+      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
+      scriptEl.remove();
+    };
+  }, [slug]);
 
   let Body;
   if (variant === "metric") Body = <CSDMetric />;

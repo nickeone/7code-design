@@ -110,7 +110,7 @@ function CaseStudies({ limit }) {
     { slug: "revote", kind: "defence", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"] },
     { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
     { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
-    { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "Ongoing"] },
+    { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"] },
     { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
     { slug: "hera", kind: "health", title: "AI-powered patient-support app for fertility clinics", meta: ["Healthcare / FemTech", "3 months MVP"] },
     { slug: "melsonic", kind: "cyan", title: "AI-powered guitar-learning web app with real-time feedback", meta: ["Music / EdTech", "5 months MVP"] },
