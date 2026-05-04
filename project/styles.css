@@ -294,7 +294,12 @@ p { margin: 0; color: var(--slate-700); }
     font-family: var(--font-display); font-weight: 600; font-size: 22px;
     border-bottom: 1px solid var(--slate-100);
   }
-  .nav-mobile .btn { margin-top: 24px; width: 100%; }
+  .nav-mobile .btn {
+    margin-top: 24px; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+    height: 52px; padding: 0 22px;
+    font-size: 16px; border-bottom: none;
+  }
 }
 
 /* ──────────────────────────────────────────────────────────────────
