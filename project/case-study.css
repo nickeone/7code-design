@@ -299,6 +299,14 @@
 /* ── Wholesum hero (real screenshot in browser frame) ────── */
 .csd-ws-browser .csd-browser-url { color: #C2410C; }
 .csd-ws-shot { display: block; width: 100%; height: auto; }
+.csd-photo-caption {
+  padding: 14px 24px 18px;
+  font-size: 13px;
+  color: var(--slate-500);
+  font-style: italic;
+  text-align: center;
+  border-top: 1px solid var(--slate-100);
+}
 
 /* ── Daily8 hero (mobile app screenshots on a brand stage) ── */
 .csd-d8-stage {

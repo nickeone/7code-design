@@ -524,9 +524,44 @@ function Daily8Hero() {
   );
 }
 
+function PhotoHero({ src, alt, urlBar, caption }) {
+  return (
+    <div className="csd-browser">
+      {urlBar ? (
+        <div className="csd-browser-bar">
+          <span className="csd-dot"/><span className="csd-dot"/><span className="csd-dot"/>
+          <div className="csd-browser-url">{urlBar}</div>
+        </div>
+      ) : null}
+      <img className="csd-ws-shot" src={src} alt={alt}/>
+      {caption ? <div className="csd-photo-caption">{caption}</div> : null}
+    </div>
+  );
+}
+
 function BrowserMockup({ kind = "calendar" }) {
   if (CSD.slug === "wholesum") return <WholesumHero/>;
   if (CSD.slug === "daily8") return <Daily8Hero/>;
+  if (CSD.slug === "revote") return <PhotoHero
+    src="project/uploads/revote-hero.jpg"
+    alt="Igor Mardari (CTO, 7Code) with Massimo Locorotondo (Eurel) inside the European Parliament chamber, Brussels"
+    caption="Igor Mardari (CTO, 7Code) and Massimo Locorotondo (Eurel) at the European Parliament — Brussels, 2023"
+  />;
+  if (CSD.slug === "g42-fleet") return <PhotoHero
+    src="project/uploads/g42-fleet-hero.jpg"
+    urlBar="g42.ai · ESTS Fleet Tracking"
+    alt="G42 ESTS fleet-tracking dashboard with all-trip alerts and live vehicle map"
+  />;
+  if (CSD.slug === "cloud-of-legacy") return <PhotoHero
+    src="project/uploads/cloud-of-legacy-hero.jpg"
+    urlBar="cloudoflegacy.com"
+    alt="Cloud of Legacy landing page — digital-heritage cloud with subscription"
+  />;
+  if (CSD.slug === "lidl-road-safety") return <PhotoHero
+    src="project/uploads/lidl-road-safety-hero.jpg"
+    urlBar="superpieton.lidl.ro"
+    alt="Lidl Romania + Politia Romana road-safety web app for children"
+  />;
   return (
     <div className="csd-browser">
       <div className="csd-browser-bar">

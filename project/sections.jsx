@@ -36,16 +36,23 @@ function TrustedBy() {
   );
 }
 
+// Photo covers for case studies that have a real hero image. Anything not
+// listed falls back to the kind-based pattern card below.
+const CS_PHOTO_COVERS = {
+  "wholesum":         { src: "project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
+  "revote":           { src: "project/uploads/revote-hero.jpg",          alt: "Revote — European Parliament chamber" },
+  "g42-fleet":        { src: "project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
+  "cloud-of-legacy":  { src: "project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
+  "lidl-road-safety": { src: "project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
+};
+
 // Case study cover graphic
 function CSCover({ kind, label, slug }) {
-  if (slug === "wholesum") {
+  const photo = CS_PHOTO_COVERS[slug];
+  if (photo) {
     return (
       <div className="cs-cover cs-cover--photo">
-        <img
-          src="project/uploads/wholesum%20hero.png"
-          alt={label || "WholeSum"}
-          className="cs-cover-img"
-        />
+        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img"/>
       </div>
     );
   }
