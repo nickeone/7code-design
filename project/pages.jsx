@@ -96,10 +96,9 @@ function AboutPage() {
     { icon: Icon.zap, title: "Bias for shipping", desc: "Real users, real feedback, real iteration. We move fast without breaking the things that matter." },
   ];
   const team = [
-    { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
-    { name: "Elena Marin", role: "Co-founder, Design", initial: "E" },
-    { name: "Stefan Vlad", role: "Lead Engineer", initial: "S" },
-    { name: "Ioana Dinu", role: "Product Strategist", initial: "I" },
+    { name: "Nicu Mardari", role: "CEO & Co-founder", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
   ];
   return (
     <div className="page">
@@ -107,7 +106,7 @@ function AboutPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
           <h1>We build the engineering team you wish you had</h1>
-          <p>7Code is a software product agency based in Bucharest. We partner with founders and product teams to ship reliable, scalable software.</p>
+          <p>7Code is a software product agency based in Cluj-Napoca, Romania. We partner with founders and product teams to ship reliable, scalable software.</p>
         </div>
       </section>
 
@@ -149,10 +148,15 @@ function AboutPage() {
             <h2>Small team, deep expertise</h2>
             <p>Senior engineers, designers and product strategists. No middlemen, no junior labour pools, just the people who actually do the work.</p>
           </div>
-          <div className="team-grid">
+          <div className="team-grid team-grid--3">
             {team.map((t, i) => (
               <div key={i} className="team-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-                <div className="team-photo"><span>{t.initial}</span></div>
+                <div className="team-photo">
+                  {t.photo
+                    ? <img src={t.photo} alt={t.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+                    : <span>{t.initial}</span>
+                  }
+                </div>
                 <div className="team-name">{t.name}</div>
                 <div className="team-role">{t.role}</div>
               </div>
