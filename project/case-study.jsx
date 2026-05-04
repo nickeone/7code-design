@@ -529,15 +529,21 @@ function Daily8Hero() {
   return (
     <div className="csd-d8-stage">
       <div className="csd-d8-grid" aria-hidden="true"/>
+      <div className="csd-d8-browser">
+        <div className="csd-browser-bar">
+          <span className="csd-dot"/><span className="csd-dot"/><span className="csd-dot"/>
+          <div className="csd-browser-url">daily8.com/en</div>
+        </div>
+        <img
+          className="csd-d8-web"
+          src="project/uploads/daily8-website.jpg"
+          alt="Daily8 website (daily8.com/en) — Get Started Now: Download the App"
+        />
+      </div>
       <img
         className="csd-d8-shot csd-d8-shot--main"
         src="project/uploads/daily8-hero.png"
         alt="Daily8 onboarding screen — Welcome to Daily8 with language selection"
-      />
-      <img
-        className="csd-d8-shot csd-d8-shot--secondary"
-        src="project/uploads/daily8-feed.png"
-        alt="Daily8 news feed — personalised news, podcasts, and videos"
       />
     </div>
   );
