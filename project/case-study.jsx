@@ -231,10 +231,11 @@ const CASES = {
     },
     approach: {
       eyebrow: "Our approach",
-      title: "Public landing, authenticated kids' space, and a gamification engine that scales each year.",
-      body: "We split the web app into a public marketing experience and an authenticated child-and-parent space. The authenticated space is built around episodes, levels, quizzes, and video content — each anchored in a points-based gamification engine that rewards progress and unlocks the next level. A back-office lets Lidl and Police content owners manage episodes, levels, and reporting independently.",
+      title: "Public landing, authenticated kids' space, and a gamification engine on React Native + Nest.js.",
+      body: "We split the web app into a public marketing experience and an authenticated child-and-parent space. The authenticated space is built around episodes, levels, quizzes, and video content — each anchored in a points-based gamification engine that rewards progress and unlocks the next level. Stack: React Native (web + mobile parity), a Nest.js API, and Heroku-hosted infrastructure. A back-office lets Lidl and Police content owners manage episodes, levels, and reporting independently.",
       pillars: [
         { title: "Public + private architecture", desc: "Open marketing pages plus an authenticated kid-and-parent space, each tuned to its own engagement and accessibility needs." },
+        { title: "React Native + Nest.js stack", desc: "One codebase covering web and mobile, with a Nest.js API on Heroku — chosen so Lidl can extend the platform across devices each annual edition." },
         { title: "Episode and level engine", desc: "Episodes group themed lessons; levels structure progression; videos and quizzes deliver the content. All editable by the back-office team." },
         { title: "Gamification with welcoming logic", desc: "Dynamic points reward learning; welcoming logic eases new users in; flexible rules keep the experience inclusive across families." },
         { title: "Back-office for editorial teams", desc: "A reporting and content-management module for Lidl and Police staff — they manage episodes, content, and reporting without our involvement." },
@@ -290,6 +291,166 @@ const CASES = {
       name: "Paul Egan",
       role: "CTO, Founders Factory",
     },
+    next: { slug: "hera", client: "Hera", title: "AI-powered fertility-clinic patient app", kind: "health" },
+  },
+  "hera": {
+    slug: "hera",
+    client: "Hera Health Tech", industry: "Healthcare / FemTech / FertilityTech", year: "2025",
+    duration: "3 months MVP · ongoing", team: "1 full-stack engineer · 1 cloud architect · 1 AI engineer · 1 PM",
+    region: "United Arab Emirates", kind: "health",
+    title: "AI-powered patient-support app for fertility clinics",
+    tagline: "An adaptive AI persona that turns Hera's verified medical knowledge into warm, personalised support across the patient's fertility journey.",
+    summary: "Hera Health Tech is a UAE-based healthcare company building an AI companion for fertility-clinic patients. We partnered with Hera's founders to design and ship the mobile app — a React Native client backed by a Serverless framework API on AWS, with a LlamaIndex retrieval layer over Hera's verified clinical knowledge base, and Strapi powering both an Admin CMS for the medical team and a Clinic CMS for partner sites. The product launched as an MVP in three months and is now an ongoing engagement.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "Make AI feel like a clinically-trained assistant — without losing the empathy patients actually need.",
+      body: "Fertility care is high-stakes, deeply personal, and surrounded by misinformation. Hera's founders set out to combine medically accurate feedback with a compassionate user experience. The product had to profile every patient's behaviour and preferences, ground every answer in Hera's verified medical knowledge, and stay safe under HIPAA and GDPR.",
+      pains: [
+        "AI profiling system that adapts to patient behaviour and preferences",
+        "Medically accurate answers grounded in an ever-growing clinical knowledge base",
+        "Balancing clinical reliability with a warm, supportive user experience",
+        "HIPAA and GDPR compliance from day one of the MVP",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "RAG over verified clinical content, an AI persona over a structured patient profile, all on a serverless AWS stack.",
+      body: "We shipped a React Native app with onboarding, profile management, suggested questions, and an AI chat that retrieves over Hera's verified content via LlamaIndex. A Serverless framework API on AWS keeps inference and content delivery latency low; Strapi powers an Admin CMS for the medical team and a Clinic CMS for partner sites. Every layer was designed for HIPAA + GDPR compliance from week one — and shipped as a working MVP in three months.",
+      pillars: [
+        { title: "AI profiling system", desc: "Patient behaviour and preferences feed a structured profile that an adaptive AI persona uses to personalise every reply." },
+        { title: "Verified RAG", desc: "LlamaIndex retrieves over Hera's clinically-verified knowledge base so answers cite real content, not hallucinated guesses." },
+        { title: "Twin CMS layer", desc: "Strapi-powered Admin CMS for the medical content team, Clinic CMS for partner clinics — same codebase, role-scoped surfaces." },
+        { title: "Compliance from week one", desc: "HIPAA and GDPR controls — encryption, audit logs, data residency, consent flows — designed in, not bolted on after launch." },
+      ],
+    },
+    results: [
+      { v: "3 months", l: "to MVP launch", sub: "discovery, design, build, and store readiness" },
+      { v: "RAG-grounded", l: "AI chat", sub: "answers cite Hera's verified clinical knowledge" },
+      { v: "HIPAA + GDPR", l: "compliance-ready", sub: "encryption, audit logs, consent flows from day one" },
+      { v: "Ongoing", l: "engagement", sub: "continued feature work and clinic onboarding" },
+    ],
+    testimonial: {
+      quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
+      name: "Evyn White",
+      role: "Co-Founder, Hera Health Tech",
+    },
+    next: { slug: "melsonic", client: "Melsonic", title: "AI-powered guitar-learning web app", kind: "cyan" },
+  },
+  "melsonic": {
+    slug: "melsonic",
+    client: "Melsonic", industry: "Music / EdTech / AI", year: "2025",
+    duration: "5 months MVP · ongoing", team: "1 front-end engineer · 1 cloud architect · 1 QA · 1 PM",
+    region: "United Kingdom", kind: "cyan",
+    title: "AI-powered guitar-learning web app with real-time performance feedback",
+    tagline: "Play your guitar, get instant AI feedback on timing, tempo, and note accuracy — Melsonic turns learning into a measurable, gamified loop.",
+    summary: "Melsonic is a UK-based music-tech startup helping beginner and intermediate guitarists improve through AI-powered performance analysis. We integrated Melsonic's existing AI engine into a fully functional Next.js web platform — with real-time audio capture, pixi.js note rendering on a synced canvas, scoring against the original track, and a gamification loop that keeps players coming back.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "Sync real-time audio with note rendering — and turn raw performance data into feedback a player actually trusts.",
+      body: "Melsonic had a working AI engine. They needed a product around it: a web platform that captures a player's recording, syncs note rendering on a canvas to the live audio, runs the AI comparison against the original track, and renders feedback (notes correct, missed, played wrong) in a way a learner can act on.",
+      pains: [
+        "Syncing real-time audio capture with note rendering on a pixi.js canvas",
+        "Smooth user experience during recording — latency-sensitive across browsers and devices",
+        "Transforming raw audio analysis into structured, motivating feedback",
+        "Hitting a five-month MVP target with a full product surface (auth, learning, recording, feedback, profile, gamification)",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "Next.js front, Nest.js API, pixi.js canvas — wrapped around Melsonic's AI engine.",
+      body: "We built the full web platform on Next.js, with a pixi.js canvas for note rendering tightly synchronised to the audio capture pipeline. A Nest.js API on Postgres + AWS sits in front of Melsonic's AI engine and feeds the scoring loop. Seven core modules shipped — sign-up & login, landing, learning, feedback, recording, profile, and gamification — into a five-month MVP that's now an ongoing engagement.",
+      pillars: [
+        { title: "Audio-to-canvas sync", desc: "pixi.js note rendering tied to the live audio pipeline so every note on the canvas matches what the player just heard." },
+        { title: "AI scoring loop", desc: "Recording compared against the original track via Melsonic's AI engine — notes correct, missed, played wrong — surfaced as actionable feedback." },
+        { title: "Seven-module web platform", desc: "Auth, landing, learning, recording, feedback, profile, gamification — all shipped on Next.js + Nest.js + Postgres on AWS." },
+        { title: "Gamified engagement", desc: "A points-and-progression layer that turns repeated practice into a measurable streak, not just a one-shot demo." },
+      ],
+    },
+    results: [
+      { v: "5 months", l: "to MVP launch", sub: "platform built around Melsonic's AI engine" },
+      { v: "7 modules", l: "shipped", sub: "auth, learning, recording, feedback, profile, gamification, landing" },
+      { v: "Real-time", l: "audio + canvas sync", sub: "pixi.js rendering tied to live audio" },
+      { v: "Ongoing", l: "engagement", sub: "continued feature work and platform iteration" },
+    ],
+    testimonial: { quote: "", name: "", role: "" },
+    next: { slug: "drum-bun", client: "Drum Bun", title: "Mobile car-services app for the Romanian driver", kind: "ops" },
+  },
+  "drum-bun": {
+    slug: "drum-bun",
+    client: "Explorom (drumbun.ro)", industry: "InsurTech / Automotive / Mobile", year: "2024",
+    duration: "Ongoing", team: "2 front-end engineers · 2 back-end engineers · 1 QA",
+    region: "Romania", kind: "ops",
+    title: "Mobile car-services app for the Romanian driver — RCA, ITP, vignette, all in one tap",
+    tagline: "Verify, purchase, and track every Romanian car-service obligation — RCA insurance, ITP inspection, road vignette — from one React Native app with OCR-driven document storage.",
+    summary: "Drum Bun, by Romanian startup Explorom, is the single mobile app for everything Romanian drivers need to keep their car compliant: verifying RCA insurance, ITP inspections, and road vignettes by plate number, then purchasing or renewing them in-app. We built the React Native client and Node.js backend, plus the OCR document layer that auto-fills car details so drivers stop typing license plates.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "Take three fragmented Romanian car-service flows and hide the bureaucracy behind one tap.",
+      body: "Romanian drivers juggle three separate compliance services — RCA insurance, ITP inspection, and the road vignette — each with its own provider, expiry date, and renewal flow. Drum Bun's pitch is one app for all of it: instant verification on a plate, alerts before anything expires, OCR-assisted onboarding, and in-app purchase. Building it meant pulling together a robust foundation, an OCR pipeline, and a payment layer that drivers actually trust.",
+      pains: [
+        "Three independent compliance services unified behind a single product surface",
+        "OCR pipeline robust enough to read messy real-world car documents",
+        "Auto-complete and pre-fill so drivers don't manually type plates and details",
+        "Custom expiry-alert engine for RCA, ITP, and vignette per car",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "React Native + Node.js, walkthrough-first onboarding, OCR-driven document capture.",
+      body: "We built Drum Bun on React Native with a Node.js backend on Heroku. The app opens with verification (RCA, ITP, vignette by plate, no signup required), funnels users into a Sign Up only when they need to do more, and leans on OCR to lift documents from photos — so adding a car takes seconds, not minutes. Modules cover walkthrough, car management, alerts, OCR, profile, services, and payment methods, with purchase history stored alongside each car.",
+      pillars: [
+        { title: "Verification before signup", desc: "Open the app, type a plate, see whether RCA / ITP / vignette is valid. Sign up only when the user wants to act." },
+        { title: "OCR document pipeline", desc: "Photograph a car document and the OCR module extracts and pre-fills the structured data — drivers stop typing plates by hand." },
+        { title: "Per-car expiry alerts", desc: "Custom notification rules for each service per car so RCA, ITP, and vignette renewals never sneak up on the driver." },
+        { title: "In-app service purchase", desc: "Buy or renew RCA, ITP, and vignette directly inside the app, with purchase history tied to the right car." },
+      ],
+    },
+    results: [
+      { v: "3-in-1", l: "compliance app", sub: "RCA, ITP, vignette unified for Romanian drivers" },
+      { v: "OCR-assisted", l: "onboarding", sub: "auto-fill from a single document photo" },
+      { v: "App Store + Play Store", l: "live", sub: "released to both stores, ongoing engagement" },
+      { v: "8 modules", l: "shipped", sub: "walkthrough, cars, alerts, OCR, profile, services, payments, history" },
+    ],
+    testimonial: { quote: "", name: "", role: "" },
+    next: { slug: "numerize", client: "Numerize", title: "Electronic document management platform with OCR + e-signature", kind: "ops" },
+  },
+  "numerize": {
+    slug: "numerize",
+    client: "Numerize", industry: "DocTech / Enterprise SaaS / OCR", year: "2024",
+    duration: "Ongoing", team: "1 front-end engineer · 1 back-end engineer · 1 QA",
+    region: "France", kind: "ops",
+    title: "Responsive electronic document management platform with OCR and digital signatures",
+    tagline: "GED, archiving, and e-signature for 6,000+ enterprises, hospitals, and administrations — re-engineered for responsive web with Stripe + 3D Secure billing baked in.",
+    summary: "Numerize is a French simplified joint-stock company that has been digitising and archiving documents for 17+ years, serving 6,000+ enterprises, public administrations, hospitals, and SMEs. We took on the responsive overhaul of their GED (gestion électronique des documents) tool — keeping the OCR-driven invoice pipeline, electronic archiving, and multi-signatory workflows intact while modernising the billing layer with Stripe + 3D Secure and a tiered subscription engine.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "A 17-year-old document-management platform whose customers expect both rigour and a modern responsive UX.",
+      body: "Numerize's clients trust them with sensitive documents — invoices, contracts, hospital records — and expect indexation, archiving, and customer-signed workflows that hold up in a French legal and procurement context. The brief was to take a mature platform and rebuild the customer-facing surface to be responsive, billable, and signable end-to-end without breaking the OCR and archiving pipelines underneath.",
+      pains: [
+        "Responsive web overhaul of a long-established GED tool — without breaking existing customers",
+        "Digital signatures with multiple signatories, customer-side labelling, and email delivery of signed invoices",
+        "Stripe + 3D Secure integration with bank-transfer fallback for enterprise billing",
+        "Customisable subscription tiers across user count, storage, and file type — annual or monthly",
+      ],
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "React + Material-UI on the front, Laravel + PHP on the back, AWS underneath — all bolted onto Numerize's existing OCR and archiving core.",
+      body: "We rebuilt the responsive customer surface on React + Material-UI, with a Laravel + PHP API on AWS. The OCR pipeline trains on invoices, extracts structured data, and routes documents into the right archival sector. Digital signatures via YouSign cover multi-signatory flows; Stripe with 3D Secure (and bank-transfer fallback) handles billing across individual, company, and trial accounts. Subscriptions can be created, upgraded, or downgraded — monthly or annual — without touching the archive layer.",
+      pillars: [
+        { title: "Responsive GED surface", desc: "React + Material-UI rebuild of the customer-facing document manager — phone, tablet, and desktop parity for the same archival workflows." },
+        { title: "OCR-trained invoice pipeline", desc: "Train on incoming invoices, extract structured data, categorise by sector, route into archival storage — all preserved through the redesign." },
+        { title: "Digital signature & email delivery", desc: "YouSign-backed e-signatures with multi-signatory flows, customer-side labelling of signature fields, and email delivery of signed invoices." },
+        { title: "Tiered Stripe + 3D Secure billing", desc: "Individual, company, and trial accounts with monthly or annual subscriptions, upgrade/downgrade flows, Stripe 3D Secure, and a bank-transfer fallback for enterprise procurement." },
+      ],
+    },
+    results: [
+      { v: "6,000+", l: "customer accounts", sub: "enterprises, hospitals, administrations, SMEs" },
+      { v: "17+ yrs", l: "in market", sub: "Numerize platform, responsive overhaul shipped by 7Code" },
+      { v: "Stripe + 3DS", l: "billing live", sub: "monthly + annual tiers, bank-transfer fallback" },
+      { v: "YouSign", l: "e-signature integrated", sub: "multi-signatory, email delivery" },
+    ],
+    testimonial: { quote: "", name: "", role: "" },
     next: { slug: "wholesum", client: "WholeSum", title: "Self-serve AI analytics platform for unstructured text", kind: "cyan" },
   },
 };
@@ -412,6 +573,26 @@ function BrowserMockup({ kind = "calendar" }) {
     src="project/uploads/founders-factory-hero.jpg"
     urlBar="foundersfactory.com"
     alt="Founders Factory homepage hero — Power to founders"
+  />;
+  if (CSD.slug === "hera") return <PhotoHero
+    src="project/uploads/hera-hero.jpg"
+    urlBar="herahealthtech.com"
+    alt="Hera Health Tech — Introducing Hera, AI-powered fertility-clinic patient app"
+  />;
+  if (CSD.slug === "melsonic") return <PhotoHero
+    src="project/uploads/melsonic-hero.jpg"
+    urlBar="app.melsonic.com"
+    alt="Melsonic — Learn your favourite song today, AI-powered guitar learning"
+  />;
+  if (CSD.slug === "drum-bun") return <PhotoHero
+    src="project/uploads/drum-bun-hero.jpg"
+    urlBar="drumbun.ro"
+    alt="Drum Bun — Aplicația șoferilor responsabili (Romanian car-services app)"
+  />;
+  if (CSD.slug === "numerize") return <PhotoHero
+    src="project/uploads/numerize-hero.jpg"
+    urlBar="numerize.com"
+    alt="Numerize — Société de numérisation de documents et d'archivage"
   />;
   return (
     <div className="csd-browser">

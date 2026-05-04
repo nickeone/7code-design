@@ -39,7 +39,7 @@ const EXPERTISE = {
       { step: "02", title: "Clinician co-design", desc: "We run structured observation sessions and co-design workshops with the clinical staff who will actually use the system. Alert fatigue and workflow friction are caught here, not in production." },
       { step: "03", title: "Phased rollout with rollback", desc: "Healthcare can't afford a big-bang deployment. We go live behind feature flags, unit by unit, with automated rollback if error rates exceed threshold." },
     ],
-    cases: [],
+    cases: ["hera"],
     next: { slug: "finance", title: "Finance" },
   },
 
