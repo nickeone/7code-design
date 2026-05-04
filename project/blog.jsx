@@ -903,9 +903,17 @@ function BlogListPage() {
   const filtered = active === "All" ? rest : rest.filter(p => p.cat === active);
 
   useEffectBL(() => {
-    document.title = "Blog, AI engineering, product, and operations | 7Code";
-    setMeta("description", "Field notes from 7Code's AI engineering practice: how we ship LLM features, run agentic workflows, structure AI MVPs, and operate AI products in production.");
-    setCanonical(SITE_ORIGIN_BL + "/blog");
+    const t = "Blog, AI Engineering, Product & Operations | 7Code";
+    const d = "Field notes from 7Code's AI engineering practice: how we ship LLM features, run agentic workflows, structure AI MVPs, and operate AI products in production, written by the team doing it in Cluj-Napoca, Romania.";
+    document.title = t;
+    setMeta("description", d);
+    setMeta("og:title", t, "property");
+    setMeta("og:description", d, "property");
+    setMeta("og:type", "website", "property");
+    setMeta("og:url", SITE_ORIGIN_BL + "/#/blog", "property");
+    setMeta("twitter:title", t, "name");
+    setMeta("twitter:description", d, "name");
+    setCanonical(SITE_ORIGIN_BL + "/#/blog");
     setArticleJsonLd(null);
   }, []);
 
@@ -1027,9 +1035,18 @@ function BlogPostPage({ slug }) {
   const nextPost = POSTS[(POSTS.indexOf(post) + 1) % POSTS.length];
 
   useEffectBL(() => {
-    document.title = post.title + " | 7Code Blog";
-    setMeta("description", post.subtitle);
-    setCanonical(SITE_ORIGIN_BL + "/blog/" + post.slug);
+    const t = post.title + " | 7Code Blog";
+    const d = post.subtitle;
+    const url = SITE_ORIGIN_BL + "/#/blog/" + post.slug;
+    document.title = t;
+    setMeta("description", d);
+    setMeta("og:title", t, "property");
+    setMeta("og:description", d, "property");
+    setMeta("og:type", "article", "property");
+    setMeta("og:url", url, "property");
+    setMeta("twitter:title", t, "name");
+    setMeta("twitter:description", d, "name");
+    setCanonical(url);
     setArticleJsonLd(post);
     return () => { setArticleJsonLd(null); };
   }, [post.slug]);

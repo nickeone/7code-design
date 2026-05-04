@@ -461,6 +461,14 @@ function CaseStudiesMosaic() {
 // Page wrapper, switches body by variant prop
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesPage({ variant = "grid" }) {
+  React.useEffect(() => {
+    const prev = document.title;
+    document.title = "Case Studies, AI & Software Engineering Projects | 7Code Romania";
+    const d = document.querySelector('meta[name="description"]');
+    const pd = d ? d.getAttribute("content") : null;
+    if (d) d.setAttribute("content", "10+ case studies from 7Code's AI and software engineering practice: HealthTech, FinTech, IoT, GovTech, EdTech, and SaaS products built for clients across Europe, the UK, and the Middle East.");
+    return () => { document.title = prev; if (d && pd !== null) d.setAttribute("content", pd); };
+  }, []);
   const headlines = {
     grid:      { eyebrow: "Case studies", h1: "Outcomes, not just deliverables", sub: "A selection of products we've shipped with our partners, across healthcare, finance, energy, defence and beyond." },
     editorial: { eyebrow: "Selected work · 2024–2026", h1: "Six stories, six outcomes.", sub: "An editorial index of the work we're proudest of, with the numbers attached." },

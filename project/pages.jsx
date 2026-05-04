@@ -1,11 +1,48 @@
 /* global React, Icon, TrustedBy, CaseStudies, WhyChoose, VerifiedAccredited, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover */
 
 const { useState: useStateP, useEffect: useEffectP } = React;
+const SITE_ROOT = "https://7code-design.vercel.app";
+
+function useSeoMeta(title, desc, ldJson) {
+  useEffectP(() => {
+    const prevTitle = document.title;
+    document.title = title;
+    const descEl = document.querySelector('meta[name="description"]');
+    const prevDesc = descEl ? descEl.getAttribute("content") : null;
+    if (descEl && desc) descEl.setAttribute("content", desc);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (ogTitle) ogTitle.setAttribute("content", title);
+    if (ogDesc && desc) ogDesc.setAttribute("content", desc);
+    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + window.location.hash.slice(1));
+    if (twTitle) twTitle.setAttribute("content", title);
+    if (twDesc && desc) twDesc.setAttribute("content", desc);
+    let s;
+    if (ldJson) {
+      s = document.createElement("script");
+      s.type = "application/ld+json"; s.setAttribute("data-page-ld", "1"); s.text = JSON.stringify(ldJson);
+      document.head.appendChild(s);
+    }
+    return () => {
+      document.title = prevTitle;
+      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
+      if (s) s.remove();
+    };
+  }, []);
+}
 
 // ──────────────────────────────────────────────────────────────────
 // HOME
 // ──────────────────────────────────────────────────────────────────
 function HomePage({ heroVariant }) {
+  useSeoMeta(
+    "7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania",
+    "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, agent workflows, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.",
+    { "@context": "https://schema.org", "@type": "ProfessionalService", "name": "7Code", "url": SITE_ROOT, "description": "AI-first software engineering agency, Cluj-Napoca, Romania.", "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" }, "areaServed": "Worldwide", "priceRange": "$$" }
+  );
   const Hero = heroVariant === "terminal" ? HeroTerminal : heroVariant === "bold" ? HeroBoldSplit : HeroPatternMockup;
   return (
     <div className="page">
@@ -26,6 +63,10 @@ function HomePage({ heroVariant }) {
 // EXPERTISE
 // ──────────────────────────────────────────────────────────────────
 function ExpertisePage() {
+  useSeoMeta(
+    "Industry Expertise, 7Code AI Engineering, Healthcare, Finance, Energy, Defence, HR, Operations",
+    "7Code delivers domain-grounded AI and software engineering across Healthcare, FinTech, Energy & Utilities, Defence & Security, HR Tech, and Operations, from Cluj-Napoca, Romania, serving clients across Europe, the UK, and the Middle East."
+  );
   return (
     <div className="page">
       <section className="page-hero">
@@ -46,6 +87,10 @@ function ExpertisePage() {
 // PROCESS
 // ──────────────────────────────────────────────────────────────────
 function ProcessPage() {
+  useSeoMeta(
+    "How We Work, Our Engineering Process | 7Code Cluj-Napoca",
+    "7Code's five-stage product engineering process: Discovery & Strategy, Design & Prototyping, Engineering Sprints, Launch & QA, and Iterate & Scale. Built for founders and product teams who need reliable delivery, not just velocity."
+  );
   const steps = [
     { title: "Discovery & Strategy", desc: "We start by understanding your business, users, and constraints. Output: a clear product strategy and engineering plan.", deliverables: ["Product strategy doc", "Tech architecture", "Roadmap"] },
     { title: "Design & Prototyping", desc: "Wireframes, hi-fi designs, and interactive prototypes, validated with real users before a line of production code is written.", deliverables: ["Design system", "Hi-fi mockups", "Clickable prototype"] },
@@ -361,6 +406,11 @@ function BlogPage() {
 // CONTACT
 // ──────────────────────────────────────────────────────────────────
 function ContactPage() {
+  useSeoMeta(
+    "Contact 7Code, Start a Project | Cluj-Napoca, Romania",
+    "Get in touch with 7Code, an AI-native software engineering agency based in Cluj-Napoca, Romania. Tell us about your project and we'll respond within one business day.",
+    { "@context": "https://schema.org", "@type": "ContactPage", "name": "Contact 7Code", "url": SITE_ROOT + "/#/contact", "description": "Contact 7Code to start a software engineering or AI project.", "mainEntity": { "@type": "Organization", "name": "7Code", "email": "office@7code.ro", "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" } } }
+  );
   const [form, setForm] = useStateP({ name: "", email: "", company: "", budget: "", message: "" });
   const [errors, setErrors] = useStateP({});
   const [sent, setSent] = useStateP(false);
