@@ -305,10 +305,10 @@ function Testimonials() {
   const items = [
     {
       quote: "Throughout the project, 7Code felt like part of our extended team. They've remained supportive and collaborative as Hera evolves, and we look forward to continuing to build and scale together.",
-      name: "Hera Health Tech",
-      role: "Healthcare MVP — iOS & Android",
-      company: "Verified Clutch review",
-      initial: "H",
+      name: "Evyn White",
+      role: "Co-Founder",
+      company: "Hera Health Tech",
+      initial: "E",
     },
     {
       quote: "7Code didn't just build what was asked for — they took time to understand how our recruitment processes actually work and suggested improvements along the way, thinking like partners instead of just developers. Manual reporting time dropped by around 40%.",
