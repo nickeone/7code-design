@@ -505,6 +505,44 @@
 .process-deliverables { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* ──────────────────────────────────────────────────────────────────
+   About — who we are split
+   ────────────────────────────────────────────────────────────────── */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 80px;
+  align-items: start;
+}
+@media (max-width: 960px) { .about-split { grid-template-columns: 1fr; gap: 40px; } }
+.about-split-text p { color: var(--slate-500); line-height: 1.75; }
+.about-split-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--border);
+}
+.about-stat {
+  background: var(--surface);
+  padding: 28px 24px;
+}
+.about-stat-v {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--cyan-600);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.about-stat-l {
+  font-size: 13px;
+  color: var(--slate-500);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ──────────────────────────────────────────────────────────────────
    About — values + team
    ────────────────────────────────────────────────────────────────── */
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

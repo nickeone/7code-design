@@ -90,40 +90,131 @@ function ProcessPage() {
 // ABOUT
 // ──────────────────────────────────────────────────────────────────
 function AboutPage() {
+  React.useEffect(() => {
+    const prev = document.title;
+    document.title = "About 7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania";
+    const descEl = document.querySelector('meta[name="description"]');
+    const prevDesc = descEl ? descEl.getAttribute("content") : null;
+    if (descEl) descEl.setAttribute("content", "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.");
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "7Code",
+      "url": "https://7code-design.vercel.app/",
+      "logo": "https://7code-design.vercel.app/project/logo.svg",
+      "description": "AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end.",
+      "foundingLocation": { "@type": "Place", "name": "Cluj-Napoca, Romania" },
+      "areaServed": ["Romania", "Europe", "United Kingdom", "United Arab Emirates", "Worldwide"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" },
+      "contactPoint": { "@type": "ContactPoint", "email": "office@7code.ro", "contactType": "sales" },
+      "sameAs": [
+        "https://www.linkedin.com/company/7-code/",
+        "https://github.com/7code",
+        "https://clutch.co/profile/7code"
+      ],
+    };
+    const s = document.createElement("script");
+    s.type = "application/ld+json"; s.id = "about-ld"; s.text = JSON.stringify(ld);
+    document.head.appendChild(s);
+    return () => { document.title = prev; if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc); s.remove(); };
+  }, []);
+
+  const stats = [
+    { v: "2019", l: "Founded in Cluj-Napoca" },
+    { v: "20+", l: "Products shipped" },
+    { v: "12", l: "Industries served" },
+    { v: "4", l: "Countries with active clients" },
+  ];
   const mission = [
-    { icon: Icon.target, title: "Deliver more than expected", desc: "We go beyond the brief, every time. Our goal is to build lasting partnerships where clients genuinely love working with us." },
-    { icon: Icon.chart, title: "Scalable, predictable growth", desc: "We're building a strong, independent sales engine with a repeatable process, so growth is earned by design, not luck." },
-    { icon: Icon.users, title: "Hire slowly, fire quickly", desc: "We choose people who are passionate and share our values. The right team makes everything else possible." },
-    { icon: Icon.zap, title: "A reliable, autonomous core", desc: "We invest in a core team that can execute effectively without hand-holding, trusted, aligned, and capable of leading from the front." },
+    {
+      icon: Icon.target,
+      title: "Always deliver more than expected",
+      desc: "Going beyond the brief is not a courtesy, it's a standard. We track client satisfaction as a business metric and treat every engagement as an opportunity to earn a long-term partner, not just close a project.",
+    },
+    {
+      icon: Icon.chart,
+      title: "Build a scalable, predictable sales engine",
+      desc: "Growth built on referrals and luck has a ceiling. We're building a structured, repeatable process for finding and winning clients, so the pipeline is something we design, not something that happens to us.",
+    },
+    {
+      icon: Icon.users,
+      title: "Hire slowly, fire quickly",
+      desc: "Every hire shapes the culture and the quality bar. We take as long as we need to find people who are genuinely skilled and genuinely aligned with our values. We don't compromise on either, and we act fast when something isn't working.",
+    },
+    {
+      icon: Icon.zap,
+      title: "Build a reliable, autonomous core team",
+      desc: "The best companies run on a team that doesn't need constant oversight. We invest in people who can own outcomes end-to-end: trusted enough to make decisions, skilled enough to make good ones, and aligned enough that they don't need to be told twice.",
+    },
   ];
   const values = [
-    { icon: Icon.heart, title: "Happy, satisfied clients", desc: "Client success is our success. We measure outcomes, not hours, and we don't stop until the work is something to be proud of." },
-    { icon: Icon.pulse, title: "Growth, personal and professional", desc: "Everyone here is on a trajectory. We encourage learning, stretch assignments, and honest feedback, because stagnation is not an option." },
-    { icon: Icon.layers, title: "Strong teamwork", desc: "We rely on each other. Clear communication, shared ownership, and genuine collaboration are not values on a wall, they're how we operate." },
-    { icon: Icon.smile, title: "A fun, positive work vibe", desc: "Life's too short for a miserable workplace. We take the work seriously, not ourselves, and we build something worth showing up for." },
+    {
+      icon: Icon.heart,
+      title: "Happy, satisfied clients",
+      desc: "Client success is the only metric that matters at the end of an engagement. We measure outcomes, not hours logged, and we don't consider a project done until the client is genuinely happy with what was built and how it was built.",
+    },
+    {
+      icon: Icon.pulse,
+      title: "Growth, personal and professional",
+      desc: "Everyone at 7Code is on a growth trajectory. We create space for learning, encourage stretch assignments, give honest feedback, and share the context people need to keep developing. Stagnation is a warning sign, not a steady state.",
+    },
+    {
+      icon: Icon.layers,
+      title: "Strong teamwork and collaboration",
+      desc: "We build complex software in tight timelines, which only works if the team actually functions as a team. Clear communication, shared ownership of outcomes, and genuine respect for each other's work are not aspirations, they're how we operate.",
+    },
+    {
+      icon: Icon.smile,
+      title: "A fun, positive work environment",
+      desc: "The best work comes from people who enjoy showing up. We take our craft seriously and our culture deliberately, because a positive environment isn't a perk, it's a competitive advantage that shows up in the quality of what we ship.",
+    },
   ];
   const team = [
     { name: "Nicu Mardari", role: "CEO & Co-founder", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
   ];
+
   return (
     <div className="page">
+
+      {/* Hero */}
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
-          <h1>We build the engineering team you wish you had</h1>
-          <p>7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end for founders and product teams who need a reliable, senior team, not a body shop.</p>
+          <h1>The AI engineering partner that actually ships</h1>
+          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2019, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
+        </div>
+      </section>
+
+      {/* Who we are */}
+      <section className="section">
+        <div className="container about-split">
+          <div className="about-split-text reveal">
+            <span className="eyebrow">Who we are</span>
+            <h2>A Cluj-Napoca engineering team with a track record across 12 industries</h2>
+            <p>We were founded in Cluj-Napoca, Romania's fastest-growing tech hub, with a single belief: that a small, senior, well-organised team consistently outperforms a large, bloated one. Every engineer at 7Code is hands-on, every project gets direct access to the people who actually write the code, and every engagement is treated as a product partnership, not a service contract.</p>
+            <p style={{ marginTop: 16 }}>From HIPAA-compliant HealthTech platforms and European Parliament e-voting infrastructure to real-time IoT fleet systems and LLM-powered consumer apps, we've shipped across the full stack, and across the full risk spectrum. Our clients range from early-stage founders raising their first round to established enterprises integrating AI into production systems that can't go down.</p>
+            <p style={{ marginTop: 16 }}>Cluj-Napoca gives us a structural advantage: a deep pool of senior engineering talent, a lower cost base than Western Europe, and a timezone that overlaps comfortably with the UK, EU, and even UAE teams. We're Romanian-built and globally delivered.</p>
+          </div>
+          <div className="about-split-stats reveal">
+            {stats.map((s, i) => (
+              <div key={i} className="about-stat">
+                <div className="about-stat-v">{s.v}</div>
+                <div className="about-stat-l">{s.l}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">Our mission</span>
             <h2>Always deliver more than expected.</h2>
-            <p>Four commitments that shape how we hire, sell, operate, and grow.</p>
+            <p>Four principles that shape how we hire, how we sell, how we operate, and how we grow, in that order.</p>
           </div>
           <div className="values-grid values-grid--4">
             {mission.map((m, i) => {
@@ -141,12 +232,12 @@ function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section section--alt">
+      <section className="section">
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">What we believe</span>
-            <h2>Our values</h2>
-            <p>The four things that matter most to us, as a team and as a company.</p>
+            <h2>Four values, lived daily.</h2>
+            <p>These aren't words on a wall. They're the criteria we use when hiring, the standard we hold each other to, and the reason clients keep coming back.</p>
           </div>
           <div className="values-grid values-grid--4">
             {values.map((v, i) => {
@@ -164,12 +255,12 @@ function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">The team</span>
             <h2>The people behind the work</h2>
-            <p>A tight-knit leadership team with deep technical roots and a shared obsession with building things that last.</p>
+            <p>A tight-knit leadership team with deep technical roots, a shared obsession with quality, and enough client work under their belts to know what actually matters when a project is under pressure.</p>
           </div>
           <div className="team-grid team-grid--3">
             {team.map((t, i) => (
