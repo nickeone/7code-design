@@ -44,7 +44,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Two-week sprints with AI checkpoints", desc: "Every sprint ends with a deployable build and a measurable eval delta. At each review we score AI features against a held-out evaluation set, not just demo prompts — so quality moves in one direction and regressions are caught the day they happen." },
       { step: "03", title: "Production hardening and handoff", desc: "The final phase covers prompt management, model versioning, evaluation CI, observability, and cost controls. We do not hand off without an eval harness your team can run, dashboards for token spend and latency, and a runbook for when a model degrades. The engagement finishes when your team can operate the system independently." },
     ],
-    cases: ["daily8", "wholesum", "octolabs"],
+    cases: ["wholesum", "daily8"],
     metaDescription: "AI-native product engineering by 7Code. We design and ship LLM-powered web and mobile products end-to-end — agents, RAG, evals, and the cloud infrastructure to run them in production.",
     faqs: [
       { q: "What does 'AI-native' mean in practice?", a: "It means LLMs, retrieval, and agents are designed into the product from week one — the data model, the API contracts, the evaluation harness, and the UX are all shaped around how AI features actually behave (streaming, latency, uncertainty). Most 'AI features' are bolted on later; AI-native products are architected for them from the start, which is why they ship faster and scale cleaner." },
@@ -94,7 +94,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Connector-by-connector delivery", desc: "We build and ship integrations one connector at a time, validating each in production before moving to the next. A working integration shipped every two weeks — not a big-bang go-live six months from now." },
       { step: "03", title: "Observability, runbooks, and handoff", desc: "Every pipeline ships with a monitoring dashboard, alerting rules, and a runbook your team can follow when something breaks at 2am. We do not consider an integration finished until it has been in production long enough to fail once and recover cleanly." },
     ],
-    cases: ["northbank", "northwind-logistics"],
+    cases: ["g42-fleet", "revote", "cloud-of-legacy"],
     metaDescription: "System integrations by 7Code. We connect ERPs, CRMs, SaaS tools, data warehouses, and legacy systems into a single reliable data fabric — built to carry AI workloads on top.",
     faqs: [
       { q: "How is this different from an iPaaS like Zapier or Workato?", a: "iPaaS tools are great for simple, low-volume workflows. They tend to break down on three things: high-throughput events, complex conflict resolution between bi-directional syncs, and observability you can audit. We build custom integration layers (often using Kafka, dbt, and a thin API gateway) when you need reliability, latency, and control beyond what an iPaaS provides — usually because an AI or operational system is consuming the data downstream." },
@@ -143,7 +143,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Prototype, evaluate, iterate", desc: "Two-week cycles: build a narrow version, run it against the eval set, measure, and iterate. We show you the score at every review — and the failure cases that drive the next sprint." },
       { step: "03", title: "Production hardening and operate", desc: "Confidence thresholds, fallback paths, audit logging, eval CI, token-cost dashboards, and the drift monitoring that tells you when output quality degrades. We do not ship without these — and we can stay on to operate the system if you'd rather your team not learn it overnight." },
     ],
-    cases: ["octolabs", "wholesum", "daily8"],
+    cases: ["wholesum", "daily8"],
     metaDescription: "AI & process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, and shipped to production in six weeks.",
     faqs: [
       { q: "What is RAG, and why does it matter?", a: "Retrieval-augmented generation grounds an LLM's answer in your real data — documents, tickets, knowledge base — by retrieving relevant context at query time and including it in the prompt. It dramatically reduces hallucinations, lets the model cite sources, and means you don't need to fine-tune (or wait for the next model release) to teach it about your business. Almost every production copilot we ship is RAG-based." },
@@ -195,7 +195,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Foundation and pipeline build", desc: "Cloud environments, agentic orchestration scaffolding, and vector DB setup deployed in two-week phases. Each phase ships something to production — we don't hold back until the full architecture is complete." },
       { step: "03", title: "Observability and handoff", desc: "Dashboards, eval pipelines, and runbooks your team owns. We consider the engagement done when your engineers can deploy a new agent, monitor its quality, and roll it back — without us in the loop." },
     ],
-    cases: ["atlas-energy", "octolabs", "wholesum"],
+    cases: ["wholesum", "daily8", "g42-fleet"],
     metaDescription: "Cloud and agentic infrastructure by 7Code. AWS, GCP, and Azure foundations for AI products — agent pipelines (LangGraph, Temporal), vector stores, eval CI, and cost optimisation.",
     faqs: [
       { q: "Why does AI need different infrastructure from a normal web app?", a: "AI workloads behave differently: token-streaming responses (not HTTP request/response), GPU rather than CPU bottlenecks, vector search latency that varies with index size, agent loops that run for minutes instead of milliseconds. Standard auto-scaling and observability tools miss this. We size, scale, and monitor on the right metrics — token throughput, retrieval latency, eval score — not just request count." },
@@ -245,7 +245,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Two-week embedded trial", desc: "The engineer joins your team for a trial sprint — real work, your codebase, your processes. If the fit isn't right technically or culturally, we replace at no cost and no delay. Most engagements pass the trial and move straight to ongoing." },
       { step: "03", title: "Ongoing engagement with a dedicated account lead", desc: "Monthly rolling contract. A dedicated account lead on our side handles performance, feedback, and any escalations — so you get the responsiveness of a direct hire without the HR overhead. Scale up or down with 30 days' notice." },
     ],
-    cases: ["helix-health", "vector-defence", "octolabs"],
+    cases: ["founders-factory", "cloud-of-legacy", "lidl-road-safety"],
     metaDescription: "AI engineering outstaffing by 7Code. Senior AI and ML engineers — production LLM, RAG, and MLOps experience — embedded in your team in 72 hours. Monthly rolling, no lock-in.",
     faqs: [
       { q: "How is outstaffing different from outsourcing?", a: "Outsourcing hands a project to a third party who delivers it (or doesn't) opaquely. Outstaffing embeds named senior engineers directly into your team — they join your Slack, your standups, your sprint cadence, and they report into your engineering management. You own the roadmap, code, and decisions. We own matching, retention, and replacement if the fit isn't right." },
@@ -297,7 +297,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Wireframe and test", desc: "Low-fidelity flows and prototypes, tested with 5–8 users. We run the tests, synthesise the findings, and iterate — including failure-case scenarios for AI features — all before high-fidelity design begins." },
       { step: "03", title: "High-fidelity and handoff", desc: "Figma files with full component specs, design tokens, and interaction annotations — including streaming, latency, and error-state animations. Handed off in a format your engineers can build from without interpretation." },
     ],
-    cases: ["helix-health", "wholesum", "daily8"],
+    cases: ["wholesum", "daily8", "lidl-road-safety"],
     metaDescription: "Product strategy and design by 7Code. Discovery to design system for AI-native products — UX patterns for streaming, confidence, and fallback paths. Figma and code, ready to ship.",
     faqs: [
       { q: "Do I need a 'product strategy' phase if I already know what I want to build?", a: "Sometimes no. If your discovery is done, your user research is solid, and your team has alignment on the problem, we can start at wireframes. But it is rare — most teams that come to us with 'we know what to build' have an unspoken disagreement that shows up at sprint three. A one-week strategy phase usually pays for itself many times over by avoiding rework." },

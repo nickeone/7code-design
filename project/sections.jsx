@@ -101,13 +101,7 @@ function CSCover({ kind, label, slug }) {
 // Case studies section
 function CaseStudies({ limit }) {
   const items = [
-    { slug: "helix-health", kind: "health", title: "Telehealth platform for a national clinic network", meta: ["Healthcare", "12 weeks"], tag: "Featured" },
-    { slug: "northbank", kind: "finance", title: "Real-time treasury dashboard for fintech ops team", meta: ["Finance", "8 weeks"] },
-    { slug: "atlas-energy", kind: "energy", title: "IoT monitoring + predictive maintenance for utility", meta: ["Energy", "16 weeks"] },
-    { slug: "northwind-logistics", kind: "ops", title: "Workflow automation for global logistics provider", meta: ["Operations", "10 weeks"] },
-    { slug: "vector-defence", kind: "defence", title: "Situational awareness platform for defence agency", meta: ["Defence", "20 weeks"] },
-    { slug: "octolabs", kind: "cyan", title: "AI-powered support copilot for B2B SaaS", meta: ["AI / SaaS", "6 weeks"] },
-    { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"] },
+    { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"], tag: "Featured" },
     { slug: "daily8", kind: "cyan", title: "AI-powered news aggregator for the MENA region", meta: ["Mobile / Media", "6 months"] },
     { slug: "revote", kind: "defence", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"] },
     { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },

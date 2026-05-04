@@ -15,7 +15,7 @@ function useHashRoute() {
   return hash;
 }
 
-// Returns [page, slug] e.g. ["/case-study", "helix-health"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
+// Returns [page, slug] e.g. ["/case-study", "wholesum"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];

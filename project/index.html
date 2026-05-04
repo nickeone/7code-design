@@ -78,7 +78,7 @@ function App() {
   else if (page === "/expertise" && slug) Page = <ExpertiseDetailPage slug={slug} />;
   else if (page === "/expertise") Page = <ExpertisePage />;
   else if (page === "/case-studies") Page = <CaseStudiesPage variant={tweaks.caseStudiesVariant} />;
-  else if (page === "/case-study") Page = <CaseStudyPage slug={slug || "helix-health"} variant={tweaks.caseStudyVariant} />;
+  else if (page === "/case-study") Page = <CaseStudyPage slug={slug || "wholesum"} variant={tweaks.caseStudyVariant} />;
   else if (page === "/process") Page = <ProcessPage />;
   else if (page === "/about") Page = <AboutPage />;
   else if (page === "/blog" && slug) Page = <BlogRouter slug={slug} />;

@@ -7,210 +7,6 @@ const { useState: useStateCSD, useEffect: useEffectCSD } = React;
 // All case data — keyed by slug
 // ─────────────────────────────────────────────────────────────────
 const CASES = {
-  "helix-health": {
-    slug: "helix-health",
-    client: "Helix Health", industry: "Healthcare", year: "2026",
-    duration: "12 weeks", team: "1 PM · 2 designers · 4 engineers",
-    region: "United States · 14 states", kind: "health", tag: "Featured",
-    title: "Telehealth platform for a national clinic network",
-    tagline: "Booking, async consults, and HIPAA-grade infrastructure — rebuilt from scratch in 12 weeks.",
-    summary: "Helix Health runs 240 clinics across the United States. Their legacy booking system was buckling under demand and patients were dropping off before they ever saw a doctor. We rebuilt the entire patient-facing experience — async-first, accessible, HIPAA-compliant — and shipped it nationwide in three months.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "A 14-year-old booking system patients had given up on.",
-      body: "Patients were abandoning the booking flow at a 62% rate. The clinic staff had built a parallel phone-call workflow just to recover lost appointments. The legacy stack couldn't support video consults, and a HIPAA audit was scheduled for Q2.",
-      pains: ["62% drop-off in the booking funnel","No support for async or video consults","Legacy stack failing HIPAA technical safeguards review","Clinic staff spending 3+ hours/day on phone bookings"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "Async-first, mobile-first, audit-ready from day one.",
-      body: "We started with the hardest part: shipping a HIPAA-grade infrastructure foundation in week one — encrypted data, audit logs, role-based access, BAA-ready vendor stack. We designed the patient flow mobile-first because 78% of bookings start on a phone.",
-      pillars: [
-        { title: "HIPAA infra week 1", desc: "Encryption, audit logs, RBAC, and BAA-ready vendors before a single feature." },
-        { title: "Mobile-first booking", desc: "Three-tap flow tested with 40 patients before any code shipped." },
-        { title: "Async-first consults", desc: "Doctors batch messages instead of being interrupted by video calls all day." },
-        { title: "Continuous rollout", desc: "Behind a feature flag, region by region, with rollback in under 60 seconds." },
-      ],
-    },
-    results: [
-      { v: "+38%", l: "appointment volume", sub: "vs. 6-month baseline" },
-      { v: "−71%", l: "drop-off rate", sub: "from 62% to 18%" },
-      { v: "−3 hrs", l: "per clinic / day", sub: "freed from phone bookings" },
-      { v: "100%", l: "HIPAA audit pass", sub: "with zero remediation items" },
-    ],
-    testimonial: { quote: "7Code didn't just rebuild our booking flow — they rebuilt how we think about patient experience. Twelve weeks in, our drop-off rate was lower than any benchmark we could find.", name: "Dr. Maya Chen", role: "Chief Medical Officer, Helix Health" },
-    next: { slug: "northbank", client: "NorthBank", title: "Real-time treasury dashboard for fintech ops team", kind: "finance" },
-  },
-  "northbank": {
-    slug: "northbank",
-    client: "NorthBank", industry: "Finance", year: "2026",
-    duration: "8 weeks", team: "1 PM · 1 designer · 3 engineers",
-    region: "United Kingdom · EU", kind: "finance",
-    title: "Real-time treasury dashboard for fintech ops team",
-    tagline: "Real-time positions, automated reconciliation, and an audit trail the CFO actually trusts.",
-    summary: "NorthBank's treasury team was closing the books on spreadsheets and end-of-day batch files. We built a real-time dashboard that reconciles across 14 banking partners and gives the CFO a live position by entity, currency, and maturity bucket.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "A monthly close that took nine days and nobody trusted.",
-      body: "Treasury ops were stitching together CSV exports from 14 banking partners every morning. Reconciliation breaks took two analysts a full week to clear. The CFO didn't have a real-time cash position — only the previous day's snapshot.",
-      pains: ["9-day monthly close, fully manual","No real-time cash position across entities","Reconciliation breaks averaging 240 per month","Audit trail living in shared spreadsheets"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "Stream the data in, reconcile in flight, surface the position live.",
-      body: "We built an event-sourced ingestion layer that pulls from each banking partner's API on a 60-second cadence. Reconciliation runs on the stream — exceptions surface in seconds instead of days.",
-      pillars: [
-        { title: "Event-sourced ledger", desc: "Every transaction is an immutable event with full provenance." },
-        { title: "Streaming reconciliation", desc: "Breaks surface in seconds, not days, and route to one inbox." },
-        { title: "Live CFO dashboard", desc: "Cash position by entity, currency, and maturity, updated every tick." },
-        { title: "Audit-grade trail", desc: "Every adjustment is signed, timestamped, and replayable." },
-      ],
-    },
-    results: [
-      { v: "−60%", l: "close time", sub: "9 days → 3.5 days" },
-      { v: "−84%", l: "recon breaks", sub: "240 → 38 per month" },
-      { v: "60s", l: "position freshness", sub: "down from 24 hours" },
-      { v: "100%", l: "audit pass", sub: "first time, no findings" },
-    ],
-    testimonial: { quote: "I haven't opened a CSV file in four months. The team closes the month while I'm still drinking coffee. 7Code understood our regulatory posture as deeply as the engineering.", name: "James Holloway", role: "CFO, NorthBank" },
-    next: { slug: "atlas-energy", client: "Atlas Energy", title: "IoT monitoring + predictive maintenance for utility", kind: "energy" },
-  },
-  "atlas-energy": {
-    slug: "atlas-energy",
-    client: "Atlas Energy", industry: "Energy", year: "2025",
-    duration: "16 weeks", team: "2 PMs · 2 designers · 5 engineers",
-    region: "United States · grid-scale", kind: "energy",
-    title: "IoT monitoring + predictive maintenance for utility",
-    tagline: "20,000 sensors, one operations cockpit. Predictive alerts that actually reduce truck rolls.",
-    summary: "Atlas runs distribution infrastructure across three states. We replaced four separate SCADA dashboards with a single operations cockpit, and shipped a predictive maintenance model that flags failing equipment 10 days before it goes down.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "Operators monitoring four screens and still getting surprised.",
-      body: "Field equipment was failing without warning. The four SCADA tools didn't share state, so a transformer alert in one tool didn't surface load context from the next.",
-      pains: ["4 disjoint SCADA dashboards, no shared state","Reactive maintenance — issues found after outage","Truck rolls averaging $1,800 per incident","No model of equipment health over time"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "One cockpit. One signal model. Predictions over alarms.",
-      body: "We unified the telemetry into a time-series store, built a single map-based operations view, and trained a per-asset health model on 18 months of historical data.",
-      pillars: [
-        { title: "Unified telemetry", desc: "20,000 sensors, one time-series store, one query layer." },
-        { title: "Map-based cockpit", desc: "Geo + electrical schematic in the same view, cross-filtered." },
-        { title: "Predictive health score", desc: "Per-asset model with 10-day lead time on failures." },
-        { title: "Maintenance planner", desc: "Suggests windows based on weather, load, and crew availability." },
-      ],
-    },
-    results: [
-      { v: "−12%", l: "energy / year", sub: "via predictive load balancing" },
-      { v: "−47%", l: "truck rolls", sub: "from preventable failures" },
-      { v: "10 days", l: "lead time", sub: "on flagged failures" },
-      { v: "$2.1M", l: "saved year one", sub: "in avoided incidents" },
-    ],
-    testimonial: { quote: "Our control room used to be a wall of red blinking lights. Now it's a map, a list, and a calendar. The model is right often enough that we plan maintenance instead of fighting fires.", name: "Priya Raman", role: "VP Operations, Atlas Energy" },
-    next: { slug: "northwind-logistics", client: "Northwind Logistics", title: "Workflow automation for global logistics provider", kind: "ops" },
-  },
-  "northwind-logistics": {
-    slug: "northwind-logistics",
-    client: "Northwind Logistics", industry: "Operations", year: "2025",
-    duration: "10 weeks", team: "1 PM · 1 designer · 3 engineers",
-    region: "Global · 22 countries", kind: "ops",
-    title: "Workflow automation for global logistics provider",
-    tagline: "Replaced six legacy tools with one workflow engine. Onboarding dropped from days to minutes.",
-    summary: "Northwind moves 4,000 shipments a day across 22 countries. Their operations ran on six different tools held together by email. We replaced the lot with a single workflow engine — drag-and-drop authoring, full audit trail, integrations with every carrier they use.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "Six tools, forty Slack channels, one very stressed ops team.",
-      body: "A new shipment touched six systems and three teams before it left the warehouse. Onboarding a new freight customer took 5–7 days of manual configuration.",
-      pains: ["6 disjoint tools per shipment lifecycle","5–7 day customer onboarding, fully manual","12% of shipments hit at least one exception","No end-to-end visibility for ops or customers"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "One engine. Drag-and-drop workflows. Carriers as plugins.",
-      body: "We modeled every shipment as a state machine inside one workflow engine. Ops teams author flows visually — no code — and carrier integrations are plugins, not bespoke builds.",
-      pillars: [
-        { title: "Visual workflow authoring", desc: "Ops teams build and modify flows without engineering." },
-        { title: "Carriers as plugins", desc: "32 carrier integrations, one shared interface." },
-        { title: "End-to-end visibility", desc: "One timeline per shipment, shared with the customer." },
-        { title: "Templated onboarding", desc: "New customers configured in under 30 minutes." },
-      ],
-    },
-    results: [
-      { v: "$4.2M", l: "annual savings", sub: "consolidating 6 tools" },
-      { v: "−93%", l: "onboarding time", sub: "5 days → 22 minutes" },
-      { v: "−68%", l: "shipment exceptions", sub: "12% → 3.8%" },
-      { v: "32", l: "carriers integrated", sub: "via shared plugin layer" },
-    ],
-    testimonial: { quote: "We turned off five tools the week we launched. The ops team can now actually answer customer questions in real time — they couldn't before.", name: "Marcus Bell", role: "COO, Northwind Logistics" },
-    next: { slug: "vector-defence", client: "Vector Defence", title: "Situational awareness platform for defence agency", kind: "defence" },
-  },
-  "vector-defence": {
-    slug: "vector-defence",
-    client: "Vector Defence", industry: "Defence", year: "2025",
-    duration: "20 weeks", team: "2 PMs · 2 designers · 6 engineers",
-    region: "Classified", kind: "defence",
-    title: "Situational awareness platform for defence agency",
-    tagline: "A single pane of glass across radar, comms, and intel feeds — built for operators, not analysts.",
-    summary: "Vector operators were juggling six different feeds during a live operation. We built a situational awareness platform that fuses radar, comms metadata, and structured intel into one operator view, with role-based redaction baked into every query.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "Operators making decisions across six classified screens.",
-      body: "During a live operation, an operator was reading radar in one tool, comms in another, intel in a third — and reconciling them in their head, under time pressure.",
-      pains: ["6 separate feeds, manually correlated","Decision latency measured in minutes, not seconds","No replay or after-action review tooling","Strict cross-domain redaction requirements"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "Fuse the data. Redact at query time. Design for the operator.",
-      body: "We built a fusion layer that ingests every feed and tags every record with classification and need-to-know metadata. Queries return only what the requesting role can see.",
-      pillars: [
-        { title: "Cross-domain fusion", desc: "Radar, comms, intel — one record store, one query layer." },
-        { title: "Redaction at query time", desc: "Role-aware data access, not UI hiding." },
-        { title: "Operator-first UI", desc: "One map, one timeline, one detail panel — no tabs." },
-        { title: "Replay & AAR", desc: "Every operation is replayable, frame-accurate, for review." },
-      ],
-    },
-    results: [
-      { v: "8×", l: "faster triage", sub: "minutes → seconds" },
-      { v: "−72%", l: "operator load", sub: "measured via task analysis" },
-      { v: "100%", l: "IA accreditation", sub: "passed with zero findings" },
-      { v: "1", l: "screen", sub: "down from six" },
-    ],
-    testimonial: { quote: "We expected a slick UI on top of our existing tools. They delivered a new way of working. Our operators stopped translating between systems and started running the operation.", name: "Col. Anders Holm", role: "Director of Operations, Vector Defence" },
-    next: { slug: "octolabs", client: "OctoLabs", title: "AI-powered support copilot for B2B SaaS", kind: "cyan" },
-  },
-  "octolabs": {
-    slug: "octolabs",
-    client: "OctoLabs", industry: "AI / SaaS", year: "2024",
-    duration: "6 weeks", team: "1 PM · 1 designer · 2 engineers",
-    region: "Remote · global", kind: "cyan",
-    title: "AI-powered support copilot for B2B SaaS",
-    tagline: "RAG + tools + a thoughtful escalation path. Customers got faster answers, agents got their afternoons back.",
-    summary: "OctoLabs' support team was drowning in repetitive tickets. We shipped an AI copilot that drafts answers grounded in the product docs, takes scoped actions on the customer's account, and escalates the moment confidence drops.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "60% of tickets were the same fifteen questions. Agents were burning out.",
-      body: "Support was the bottleneck on growth. New customers waited 4–6 hours for first response. A previous chatbot attempt had been switched off because customers hated it.",
-      pains: ["4–6 hour first-response time","60% of tickets repetitive and low-value","Agent burnout, 32% annualized churn","Previous chatbot disabled — customer NPS impact"],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "Grounded answers. Real actions. Escalate fast and well.",
-      body: "We built a RAG pipeline grounded in the product docs and the support knowledge base, plus a small set of scoped tools for common operations. The copilot has a confidence threshold below which it escalates with a full context handoff.",
-      pillars: [
-        { title: "Grounded RAG", desc: "Every answer cites the doc page it came from." },
-        { title: "Scoped tools", desc: "Six common actions, fully audited, fully reversible." },
-        { title: "Confident escalation", desc: "Below threshold, hand off with full context." },
-        { title: "Continuous eval", desc: "Every response scored against a 1,200-prompt eval set." },
-      ],
-    },
-    results: [
-      { v: "47%", l: "ticket deflection", sub: "fully resolved without an agent" },
-      { v: "−83%", l: "first-response time", sub: "5 hours → 50 minutes" },
-      { v: "+24", l: "CSAT points", sub: "vs. pre-copilot baseline" },
-      { v: "0", l: "rage-quits", sub: "customers escalating angry" },
-    ],
-    testimonial: { quote: "Other vendors pitched us a chatbot. 7Code asked what 'good' looked like for our customers and built backwards from there. It's the only AI feature we've shipped that customers thank us for.", name: "Sara Lindgren", role: "VP Customer, OctoLabs" },
-    next: { slug: "wholesum", client: "WholeSum", title: "Self-serve qualitative-data analysis platform", kind: "cyan" },
-  },
   "wholesum": {
     slug: "wholesum",
     client: "WholeSum", industry: "Data / AI", year: "2025",
@@ -494,12 +290,12 @@ const CASES = {
       name: "Paul Egan",
       role: "CTO, Founders Factory",
     },
-    next: { slug: "helix-health", client: "Helix Health", title: "Telehealth platform for a national clinic network", kind: "health" },
+    next: { slug: "wholesum", client: "WholeSum", title: "Self-serve AI analytics platform for unstructured text", kind: "cyan" },
   },
 };
 
 // Active case — reassigned synchronously in CaseStudyPage before render
-let CSD = CASES["helix-health"];
+let CSD = CASES["wholesum"];
 
 
 // ──────────────────────────────────────────────────────────────────
@@ -1099,9 +895,9 @@ function CSDSticky() {
 // ─────────────────────────────────────────────────────────────────
 // Page wrapper — resolves slug, sets CSD, renders variant
 // ─────────────────────────────────────────────────────────────────
-function CaseStudyPage({ slug = "helix-health", variant = "longread" }) {
+function CaseStudyPage({ slug = "wholesum", variant = "longread" }) {
   // Reassign module-level CSD synchronously before render
-  CSD = CASES[slug] || CASES["helix-health"];
+  CSD = CASES[slug] || CASES["wholesum"];
 
   let Body;
   if (variant === "metric") Body = <CSDMetric />;

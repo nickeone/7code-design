@@ -39,7 +39,7 @@ const EXPERTISE = {
       { step: "02", title: "Clinician co-design", desc: "We run structured observation sessions and co-design workshops with the clinical staff who will actually use the system. Alert fatigue and workflow friction are caught here, not in production." },
       { step: "03", title: "Phased rollout with rollback", desc: "Healthcare can't afford a big-bang deployment. We go live behind feature flags, unit by unit, with automated rollback if error rates exceed threshold." },
     ],
-    cases: ["helix-health"],
+    cases: [],
     next: { slug: "finance", title: "Finance" },
   },
 
@@ -75,7 +75,7 @@ const EXPERTISE = {
       { step: "02", title: "Correctness before speed", desc: "Every aggregation is double-verified against source records. We ship a reconciliation test suite alongside the product — not as an afterthought." },
       { step: "03", title: "Parallel run before cutover", desc: "New system runs alongside the old one for 30 days, with daily variance reporting. Cutover happens only when the numbers match to the cent." },
     ],
-    cases: ["northbank"],
+    cases: ["founders-factory"],
     next: { slug: "energy", title: "Energy & Utilities" },
   },
 
@@ -111,7 +111,7 @@ const EXPERTISE = {
       { step: "02", title: "Historical model training", desc: "We train the predictive models on 12–24 months of historical data before go-live, so operators get meaningful predictions from day one, not after six months of production data collection." },
       { step: "03", title: "Control room co-design", desc: "We run operator shadowing sessions in the control room and iterate on the UI until triage time drops measurably in simulation. We don't ship until it does." },
     ],
-    cases: ["atlas-energy"],
+    cases: ["g42-fleet"],
     next: { slug: "defence", title: "Defence & Security" },
   },
 
@@ -147,7 +147,7 @@ const EXPERTISE = {
       { step: "02", title: "Operator research in context", desc: "We observe operators in realistic scenarios, not requirements workshops. The cognitive load analysis shapes every UI decision." },
       { step: "03", title: "Accreditation-ready from sprint one", desc: "Evidence packages, audit logs, and security documentation are generated as part of the build process — not assembled retrospectively before the assessment." },
     ],
-    cases: ["vector-defence"],
+    cases: ["revote"],
     next: { slug: "hr", title: "HR" },
   },
 
@@ -183,7 +183,7 @@ const EXPERTISE = {
       { step: "02", title: "Manager and employee research", desc: "We interview both the HR team and the employees and managers who will use the system. HR software fails when it's designed for the administrator and ignored by everyone else." },
       { step: "03", title: "Parallel payroll run", desc: "Any change to payroll infrastructure runs in parallel for at least two pay cycles before cutover. We don't take risks with people's pay." },
     ],
-    cases: ["northwind-logistics"],
+    cases: [],
     next: { slug: "operations", title: "Operations" },
   },
 
@@ -219,7 +219,7 @@ const EXPERTISE = {
       { step: "02", title: "Build the quick wins first", desc: "We ship something valuable in week two, every engagement. Operations teams need to see momentum; it builds the trust that sustains the longer work." },
       { step: "03", title: "Measure before and after", desc: "We instrument the current process before we change anything, so we can show the before and after in the same units. Impact is calculated, not estimated." },
     ],
-    cases: ["northwind-logistics"],
+    cases: ["g42-fleet"],
     next: { slug: "healthcare", title: "Healthcare" },
   },
 };
