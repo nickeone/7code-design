@@ -79,7 +79,6 @@ function CaseStudiesEditorial() {
         <div className="cs-edit-list">
           {CS_ITEMS.map((c, i) => (
             <a key={c.title} href={"#/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
-              <div className="cs-edit-num">{c.num}</div>
               <div className="cs-edit-meta">
                 <div className="cs-edit-tag">{c.meta[0]}</div>
               </div>
@@ -139,7 +138,6 @@ function CaseStudiesFeatured() {
         <div className="cs-feat-tabs">
           {CS_ITEMS.map((c, j) => (
             <button key={c.title} className={"cs-feat-tab" + (i === j ? " is-active" : "")} onClick={() => setI(j)}>
-              <span className="cs-feat-tab-num">{c.num}</span>
               <span className="cs-feat-tab-client">{c.client}</span>
               <span className="cs-feat-tab-meta">{c.meta[0]}</span>
             </button>
@@ -174,7 +172,7 @@ function CaseStudiesTimeline() {
                 <a href={"#/case-study/" + c.slug} className="cs-link">Read case study <Icon.arrow /></a>
               </div>
               <div className="cs-tl-node">
-                <div className="cs-tl-node-inner">{c.num}</div>
+                <div className="cs-tl-node-inner"/>
               </div>
             </div>
           ))}
@@ -334,7 +332,6 @@ function CaseStudiesMagazine() {
           <div className="mag-side">
             {rest.slice(0, 3).map((c, i) => (
               <a key={c.title} href={"#/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-                <div className="mag-mini-num">{c.num}</div>
                 <div className="mag-mini-body">
                   <div className="mag-mini-meta">{c.meta[0]}</div>
                   <div className="mag-mini-title">{c.title}</div>
@@ -374,7 +371,6 @@ function CaseStudiesStack() {
             <a key={c.title} href={"#/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="stk-body">
-                <div className="stk-num">{c.num} / 06</div>
                 <div className="stk-meta">
                   <span>{c.meta[0]}</span>
                   <span className="stk-divider"/>
@@ -473,7 +469,7 @@ function CaseStudiesPage({ variant = "grid" }) {
     timeline:  { eyebrow: "A short history", h1: "How we've spent the last two years", sub: "From early-stage MVPs to large-scale platform launches — in roughly the order they shipped." },
     showcase:  { eyebrow: "Recent case studies", h1: "Work we're proud to ship", sub: "Learn more about our clients, the types of projects we work with, our process, and the technologies we use to build software." },
     magazine:  { eyebrow: "The portfolio", h1: "Stories worth telling", sub: "An editorial look at the products we've shipped — what they do, who they're for, and what they moved." },
-    stack:     { eyebrow: "Selected work", h1: "Six in-depth stories", sub: "Take your time — each one is a full case, top to bottom." },
+    stack:     { eyebrow: "Selected work", h1: "In-depth stories", sub: "Take your time — each one is a full case, top to bottom." },
     mosaic:    { eyebrow: "Portfolio", h1: "A snapshot of recent work", sub: "Every project earned its real estate — by what it shipped, what it changed, or what someone said about it." },
   };
   const h = headlines[variant] || headlines.grid;
