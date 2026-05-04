@@ -634,6 +634,10 @@ function BrowserMockup({ kind = "calendar" }) {
   );
 }
 
+function hasPhoneShot() {
+  return CSD.slug === "daily8";
+}
+
 function FactsList({ inline = false }) {
   const facts = [
     { l: "Client",   v: CSD.client },
@@ -798,16 +802,16 @@ function CSDLongRead() {
           <section id="csd-product" className="csd-product-section">
             <span className="csd-eyebrow">The product</span>
             <h2>What we shipped.</h2>
-            <p>A patient app, a clinic dashboard, and a HIPAA-grade messaging layer between them.</p>
+            <p>{CSD.tagline}</p>
             <div className="csd-product-pair">
-              <div className="csd-product-art csd-product-art--phone"><PhoneMockup /></div>
+              {hasPhoneShot() && <div className="csd-product-art csd-product-art--phone"><PhoneMockup /></div>}
               <div className="csd-product-art csd-product-art--browser"><BrowserMockup /></div>
             </div>
           </section>
 
           <section id="csd-results">
             <span className="csd-eyebrow">Results</span>
-            <h2>The numbers, four months in.</h2>
+            <h2>By the numbers.</h2>
             <ResultsStrip />
           </section>
 
@@ -865,13 +869,13 @@ function CSDMetric() {
         <div className="container csd-narr">
           <div className="csd-narr-row">
             <div className="csd-narr-col">
-              <span className="csd-eyebrow">Before</span>
-              <h2>62% drop-off. Phone-call workarounds. A HIPAA audit looming.</h2>
+              <span className="csd-eyebrow">{CSD.challenge.eyebrow}</span>
+              <h2>{CSD.challenge.title}</h2>
               <p>{CSD.challenge.body}</p>
             </div>
             <div className="csd-narr-col">
-              <span className="csd-eyebrow csd-eyebrow--cyan">After</span>
-              <h2>18% drop-off. Async-first consults. 100% audit pass.</h2>
+              <span className="csd-eyebrow csd-eyebrow--cyan">{CSD.approach.eyebrow}</span>
+              <h2>{CSD.approach.title}</h2>
               <p>{CSD.approach.body}</p>
             </div>
           </div>
@@ -882,7 +886,7 @@ function CSDMetric() {
         <div className="container">
           <div className="csd-metric-results-head">
             <span className="csd-eyebrow csd-eyebrow--inverse">Results</span>
-            <h2>What 12 weeks of focused work delivered.</h2>
+            <h2>What the engagement delivered.</h2>
           </div>
           <ResultsStrip dark />
         </div>
@@ -935,9 +939,11 @@ function CSDVisual() {
                 {CSD.challenge.pains.map((p, i) => <li key={i}><span className="csd-bullet-dot"/>{p}</li>)}
               </ul>
             </div>
-            <div className="csd-visual-split-art csd-visual-split-art--phone">
-              <PhoneMockup />
-            </div>
+            {hasPhoneShot() && (
+              <div className="csd-visual-split-art csd-visual-split-art--phone">
+                <PhoneMockup />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -1048,9 +1054,11 @@ function CSDSticky() {
               ))}
             </div>
           </section>
-          <section className="csd-sticky-section">
-            <div className="csd-sticky-cover"><PhoneMockup /></div>
-          </section>
+          {hasPhoneShot() && (
+            <section className="csd-sticky-section">
+              <div className="csd-sticky-cover"><PhoneMockup /></div>
+            </section>
+          )}
           <section className="csd-sticky-section">
             <span className="csd-eyebrow">Results</span>
             <h2>What changed.</h2>
