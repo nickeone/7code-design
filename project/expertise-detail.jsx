@@ -475,30 +475,6 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
         </section>
       )}
 
-      {/* ── Related case studies ─────────────────────────────── */}
-      {relatedCases.length > 0 && (
-        <section className="section">
-          <div className="container">
-            <div className="section-head reveal">
-              <span className="eyebrow">Proof of work</span>
-              <h2>Case studies in {exp.title}</h2>
-            </div>
-            <div className="cs-grid">
-              {relatedCases.map((c, i) => (
-                <a key={c.slug} href={"#/case-study/" + c.slug} className="cs-card reveal">
-                  <CSCover kind={c.kind || exp.kind} label={exp.title} slug={c.slug} />
-                  <div className="cs-body">
-                    <div className="cs-meta">{c.meta && c.meta.map((m, j) => <span key={j}>{m}</span>)}</div>
-                    <h3>{c.title}</h3>
-                    <span className="cs-link">Read case study <Icon.arrow /></span>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       <CTAStrip />
     </div>
   );
