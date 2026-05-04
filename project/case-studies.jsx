@@ -81,7 +81,6 @@ function CaseStudiesEditorial() {
             <a key={c.title} href={"#/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
               <div className="cs-edit-num">{c.num}</div>
               <div className="cs-edit-meta">
-                <div className="cs-edit-year">{c.year}</div>
                 <div className="cs-edit-tag">{c.meta[0]}</div>
               </div>
               <div className="cs-edit-body">
@@ -117,7 +116,7 @@ function CaseStudiesFeatured() {
           </div>
           <div className="cs-feat-body">
             <span className="tag tag--ink"><span className="tag-dot"/> Case study</span>
-            <div className="cs-feat-client">{item.client} · {item.year}</div>
+            <div className="cs-feat-client">{item.client}</div>
             <h2 className="cs-feat-title">{item.title}</h2>
             <p className="cs-feat-excerpt">{item.excerpt}</p>
             <div className="cs-feat-metrics">
@@ -164,8 +163,6 @@ function CaseStudiesTimeline() {
             <div key={c.title} className={"cs-tl-row reveal " + (i % 2 === 0 ? "is-left" : "is-right")} style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="cs-tl-card">
                 <div className="cs-tl-meta">
-                  <span className="cs-tl-year">{c.year}</span>
-                  <span className="cs-tl-dot">·</span>
                   <span>{c.meta[0]}</span>
                 </div>
                 <div className="cs-tl-client">{c.client}</div>
@@ -322,7 +319,7 @@ function CaseStudiesMagazine() {
           <a href={"#/case-study/" + hero.slug} className="mag-hero reveal">
             <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} slug={hero.slug} /></div>
             <div className="mag-hero-body">
-              <span className="mag-kicker"><span className="mag-dot"/> Featured story · {hero.year}</span>
+              <span className="mag-kicker"><span className="mag-dot"/> Featured story</span>
               <h2 className="mag-hero-title">{hero.title}</h2>
               <p className="mag-hero-excerpt">{hero.excerpt}</p>
               <div className="mag-hero-row">
@@ -339,7 +336,7 @@ function CaseStudiesMagazine() {
               <a key={c.title} href={"#/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="mag-mini-num">{c.num}</div>
                 <div className="mag-mini-body">
-                  <div className="mag-mini-meta">{c.meta[0]} · {c.year}</div>
+                  <div className="mag-mini-meta">{c.meta[0]}</div>
                   <div className="mag-mini-title">{c.title}</div>
                   <div className="mag-mini-metric">{c.metric.v} <span>{c.metric.l}</span></div>
                 </div>
@@ -353,7 +350,7 @@ function CaseStudiesMagazine() {
             <a key={c.title} href={"#/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="mag-card-body">
-                <div className="mag-mini-meta">{c.meta[0]} · {c.year}</div>
+                <div className="mag-mini-meta">{c.meta[0]}</div>
                 <h3>{c.title}</h3>
                 <div className="mag-mini-metric">{c.metric.v} <span>{c.metric.l}</span></div>
               </div>
@@ -379,8 +376,6 @@ function CaseStudiesStack() {
               <div className="stk-body">
                 <div className="stk-num">{c.num} / 06</div>
                 <div className="stk-meta">
-                  <span className="stk-year">{c.year}</span>
-                  <span className="stk-divider"/>
                   <span>{c.meta[0]}</span>
                   <span className="stk-divider"/>
                   <span>{c.meta[1]}</span>
@@ -428,7 +423,7 @@ function CaseStudiesMosaic() {
                   <>
                     <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
                     <div className="mos-overlay">
-                      <div className="mos-meta">{c.meta[0]} · {c.year}</div>
+                      <div className="mos-meta">{c.meta[0]}</div>
                       <div className="mos-title">{c.title}</div>
                       <div className="mos-arrow"><Icon.arrow /></div>
                     </div>
@@ -452,7 +447,7 @@ function CaseStudiesMosaic() {
                     <div className="mos-quote-foot">
                       <div>
                         <div className="mos-quote-client">{c.client}</div>
-                        <div className="mos-quote-meta">{c.meta[0]} · {c.year}</div>
+                        <div className="mos-quote-meta">{c.meta[0]}</div>
                       </div>
                       <Icon.arrow />
                     </div>

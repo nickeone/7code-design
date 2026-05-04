@@ -652,7 +652,6 @@ function FactsList({ inline = false }) {
   const facts = [
     { l: "Client",   v: CSD.client },
     { l: "Industry", v: CSD.industry },
-    { l: "Year",     v: CSD.year },
     { l: "Duration", v: CSD.duration },
     { l: "Team",     v: CSD.team },
     { l: "Region",   v: CSD.region },
@@ -746,7 +745,7 @@ function CSDLongRead() {
       <div className="csd-long-hero">
         <div className="container">
           <div className="csd-long-meta">
-            <span className="csd-kicker"><span className="csd-dot"/> Case study · {CSD.year}</span>
+            <span className="csd-kicker"><span className="csd-dot"/> Case study</span>
             <span>{CSD.industry}</span>
             <span>·</span>
             <span>{CSD.duration}</span>
@@ -850,7 +849,7 @@ function CSDMetric() {
         <div className="container">
           <div className="csd-metric-hero-grid">
             <div className="csd-metric-hero-text">
-              <span className="csd-kicker csd-kicker--inverse"><span className="csd-dot csd-dot--cyan"/> {CSD.industry} · {CSD.year}</span>
+              <span className="csd-kicker csd-kicker--inverse"><span className="csd-dot csd-dot--cyan"/> {CSD.industry}</span>
               <h1>{CSD.client}</h1>
               <p className="csd-metric-tagline">{CSD.tagline}</p>
               <div className="csd-metric-hero-stats">
@@ -1007,7 +1006,7 @@ function CSDSticky() {
     <div className="csd-sticky">
       <section className="csd-sticky-hero">
         <div className="container">
-          <span className="csd-kicker"><span className="csd-dot"/> Case study · {CSD.year}</span>
+          <span className="csd-kicker"><span className="csd-dot"/> Case study</span>
           <h1>{CSD.title}</h1>
           <p>{CSD.tagline}</p>
         </div>
