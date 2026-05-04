@@ -105,15 +105,17 @@ function CSCover({ kind, label, slug }) {
 // Case studies section
 function CaseStudies({ limit }) {
   const items = [
+    // First six surface on the homepage (pages.jsx caps CaseStudies at limit={6}).
     { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"], tag: "Featured" },
     { slug: "daily8", kind: "cyan", title: "AI-powered news aggregator for the MENA region", meta: ["Mobile / Media", "6 months"] },
     { slug: "revote", kind: "defence", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"] },
-    { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
-    { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
     { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"] },
-    { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
     { slug: "hera", kind: "health", title: "AI-powered patient-support app for fertility clinics", meta: ["Healthcare / FemTech", "3 months MVP"] },
     { slug: "melsonic", kind: "cyan", title: "AI-powered guitar-learning web app with real-time feedback", meta: ["Music / EdTech", "5 months MVP"] },
+    // Remaining cases — visible on /case-studies, hidden from the homepage grid.
+    { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
+    { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
+    { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
     { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app — RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
     { slug: "numerize", kind: "ops", title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"] },
   ];
