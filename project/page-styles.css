@@ -508,7 +508,10 @@
    About — values + team
    ────────────────────────────────────────────────────────────────── */
 .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.values-grid--4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 1080px) { .values-grid--4 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 960px) { .values-grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .values-grid--4 { grid-template-columns: 1fr; } }
 .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .team-grid--3 { grid-template-columns: repeat(3, 1fr); max-width: 860px; margin: 0 auto; }
 @media (max-width: 960px) { .team-grid { grid-template-columns: 1fr 1fr; } .team-grid--3 { grid-template-columns: 1fr 1fr; } }

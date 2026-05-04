@@ -90,10 +90,17 @@ function ProcessPage() {
 // ABOUT
 // ──────────────────────────────────────────────────────────────────
 function AboutPage() {
+  const mission = [
+    { icon: Icon.target, title: "Deliver more than expected", desc: "We go beyond the brief, every time. Our goal is to build lasting partnerships where clients genuinely love working with us." },
+    { icon: Icon.chart, title: "Scalable, predictable growth", desc: "We're building a strong, independent sales engine with a repeatable process, so growth is earned by design, not luck." },
+    { icon: Icon.users, title: "Hire slowly, fire quickly", desc: "We choose people who are passionate and share our values. The right team makes everything else possible." },
+    { icon: Icon.zap, title: "A reliable, autonomous core", desc: "We invest in a core team that can execute effectively without hand-holding, trusted, aligned, and capable of leading from the front." },
+  ];
   const values = [
-    { icon: Icon.target, title: "Outcomes over output", desc: "We measure success in business impact, not lines of code or features shipped." },
-    { icon: Icon.heart, title: "Long-term partnerships", desc: "We're here for the second deploy and the hundredth, not just the first launch." },
-    { icon: Icon.zap, title: "Bias for shipping", desc: "Real users, real feedback, real iteration. We move fast without breaking the things that matter." },
+    { icon: Icon.heart, title: "Happy, satisfied clients", desc: "Client success is our success. We measure outcomes, not hours, and we don't stop until the work is something to be proud of." },
+    { icon: Icon.pulse, title: "Growth, personal and professional", desc: "Everyone here is on a trajectory. We encourage learning, stretch assignments, and honest feedback, because stagnation is not an option." },
+    { icon: Icon.layers, title: "Strong teamwork", desc: "We rely on each other. Clear communication, shared ownership, and genuine collaboration are not values on a wall, they're how we operate." },
+    { icon: Icon.smile, title: "A fun, positive work vibe", desc: "Life's too short for a miserable workplace. We take the work seriously, not ourselves, and we build something worth showing up for." },
   ];
   const team = [
     { name: "Nicu Mardari", role: "CEO & Co-founder", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
@@ -106,31 +113,46 @@ function AboutPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
           <h1>We build the engineering team you wish you had</h1>
-          <p>7Code is a software product agency based in Cluj-Napoca, Romania. We partner with founders and product teams to ship reliable, scalable software.</p>
+          <p>7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end for founders and product teams who need a reliable, senior team, not a body shop.</p>
         </div>
       </section>
 
+      {/* Mission */}
       <section className="section">
         <div className="container">
-          <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0 }}>
-            <span className="eyebrow">Vision & mission</span>
-            <h2>To shape the future of digital products by building technology that is fast, scalable, and meaningful.</h2>
-            <p>7Code envisions a world where businesses can transform ideas into powerful digital experiences through modern engineering and thoughtful design. We approach every project as a product, not just a delivery, focused on building scalable, maintainable solutions that support long-term growth.</p>
+          <div className="section-head reveal">
+            <span className="eyebrow">Our mission</span>
+            <h2>Always deliver more than expected.</h2>
+            <p>Four commitments that shape how we hire, sell, operate, and grow.</p>
+          </div>
+          <div className="values-grid values-grid--4">
+            {mission.map((m, i) => {
+              const I = m.icon;
+              return (
+                <div key={i} className="card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
+                  <span className="icon-tile"><I /></span>
+                  <h3>{m.title}</h3>
+                  <p style={{ marginTop: 8, color: "var(--slate-500)" }}>{m.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
+      {/* Values */}
       <section className="section section--alt">
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">What we believe</span>
             <h2>Our values</h2>
+            <p>The four things that matter most to us, as a team and as a company.</p>
           </div>
-          <div className="values-grid">
+          <div className="values-grid values-grid--4">
             {values.map((v, i) => {
               const I = v.icon;
               return (
-                <div key={i} className="card reveal">
+                <div key={i} className="card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                   <span className="icon-tile"><I /></span>
                   <h3>{v.title}</h3>
                   <p style={{ marginTop: 8, color: "var(--slate-500)" }}>{v.desc}</p>
@@ -141,12 +163,13 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* Team */}
       <section className="section">
         <div className="container">
           <div className="section-head reveal">
             <span className="eyebrow">The team</span>
-            <h2>Small team, deep expertise</h2>
-            <p>Senior engineers, designers and product strategists. No middlemen, no junior labour pools, just the people who actually do the work.</p>
+            <h2>The people behind the work</h2>
+            <p>A tight-knit leadership team with deep technical roots and a shared obsession with building things that last.</p>
           </div>
           <div className="team-grid team-grid--3">
             {team.map((t, i) => (
