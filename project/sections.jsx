@@ -40,6 +40,7 @@ function TrustedBy() {
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
   "wholesum":         { src: "project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
+  "daily8":           { src: "project/uploads/daily8-website.jpg",       alt: "Daily8 — daily8.com/en" },
   "revote":           { src: "project/uploads/revote-hero.jpg",          alt: "Revote — European Parliament chamber" },
   "g42-fleet":        { src: "project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
   "cloud-of-legacy":  { src: "project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
@@ -58,17 +59,6 @@ function CSCover({ kind, label, slug }) {
     return (
       <div className="cs-cover cs-cover--photo">
         <img src={photo.src} alt={label || photo.alt} className="cs-cover-img"/>
-      </div>
-    );
-  }
-  if (slug === "daily8") {
-    return (
-      <div className="cs-cover cs-cover--d8">
-        <img
-          src="project/uploads/daily8-hero.png"
-          alt={label || "Daily8"}
-          className="cs-cover-d8-img"
-        />
       </div>
     );
   }
