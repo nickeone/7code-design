@@ -74,7 +74,7 @@ const POSTS = [
     subtitle: "A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan — vision, evals, architecture, and a defensible budget.",
     date: "Apr 28, 2026",
     read: "9 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
+    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "cyan",
     illus: "blueprint",
     featured: true,
@@ -101,7 +101,7 @@ const POSTS = [
     subtitle: "Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users — and real evals — in six weeks.",
     date: "Apr 16, 2026",
     read: "7 min read",
-    author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
+    author: { name: "Cindy-Cristina Daraban", role: "Business Development Manager", initial: "C", photo: "project/uploads/authors/cindy-daraban.jpg" },
     cover: "energy",
     illus: "launch",
     body: [
@@ -127,7 +127,7 @@ const POSTS = [
     subtitle: "AI projects break the assumptions behind fixed-price contracts. Here's a pricing framework that aligns incentives between AI vendors and clients.",
     date: "Apr 02, 2026",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
+    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "finance",
     illus: "blueprint",
     body: [
@@ -153,7 +153,7 @@ const POSTS = [
     subtitle: "Production-grade AI agents are quietly absorbing the manual coordination tax in factories. Here's the architecture that's actually working.",
     date: "Mar 18, 2026",
     read: "10 min read",
-    author: { name: "Stefan Vlad", role: "Lead AI Engineer", initial: "S" },
+    author: { name: "Igor Mardari", role: "CTO & Co-founder", initial: "I", photo: "project/uploads/authors/igor-mardari.jpg" },
     cover: "ops",
     illus: "gears",
     body: [
@@ -179,7 +179,7 @@ const POSTS = [
     subtitle: "What changes when LLMs and agents sit at the centre of your business systems — not bolted on, but architecturally native.",
     date: "Mar 04, 2026",
     read: "8 min read",
-    author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
+    author: { name: "Cindy-Cristina Daraban", role: "Business Development Manager", initial: "C", photo: "project/uploads/authors/cindy-daraban.jpg" },
     cover: "finance",
     illus: "circuit",
     body: [
@@ -204,7 +204,7 @@ const POSTS = [
     subtitle: "How we partnered with the Adrenaline team to ship an LLM-powered debugger from MVP to AWS-scale production — in months, not years.",
     date: "Feb 20, 2026",
     read: "9 min read",
-    author: { name: "Stefan Vlad", role: "Lead AI Engineer", initial: "S" },
+    author: { name: "Igor Mardari", role: "CTO & Co-founder", initial: "I", photo: "project/uploads/authors/igor-mardari.jpg" },
     cover: "ink",
     illus: "circuit",
     body: [
@@ -230,7 +230,7 @@ const POSTS = [
     subtitle: "AI copilots compress the productivity gap, but they amplify the architectural one. Why we lean on senior-led pods for AI work.",
     date: "Feb 06, 2026",
     read: "6 min read",
-    author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
+    author: { name: "Cindy-Cristina Daraban", role: "Business Development Manager", initial: "C", photo: "project/uploads/authors/cindy-daraban.jpg" },
     cover: "ink",
     illus: "blueprint",
     body: [
@@ -255,7 +255,7 @@ const POSTS = [
     subtitle: "Handing over an AI product isn't just code and docs. It's evals, prompt versioning, and the operational runbooks that keep models trustworthy.",
     date: "Jan 22, 2026",
     read: "7 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
+    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "cyan",
     illus: "blueprint",
     body: [
@@ -279,7 +279,7 @@ const POSTS = [
     subtitle: "How we operate distributed AI teams without losing the tight feedback loops that LLM work demands.",
     date: "Jan 08, 2026",
     read: "7 min read",
-    author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
+    author: { name: "Cindy-Cristina Daraban", role: "Business Development Manager", initial: "C", photo: "project/uploads/authors/cindy-daraban.jpg" },
     cover: "ops",
     illus: "globe",
     body: [
@@ -304,7 +304,7 @@ const POSTS = [
     subtitle: "Five honest signals that your current vendor is holding back your AI roadmap — and how to make a clean transition.",
     date: "Dec 18, 2025",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
+    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "energy",
     illus: "launch",
     body: [
@@ -329,7 +329,7 @@ const POSTS = [
     subtitle: "Cost is not the headline. Velocity, ownership, and AI fluency are. How we set up nearshore AI pods that actually ship.",
     date: "Dec 04, 2025",
     read: "7 min read",
-    author: { name: "Andrei Popa", role: "Co-founder, Engineering", initial: "A" },
+    author: { name: "Cindy-Cristina Daraban", role: "Business Development Manager", initial: "C", photo: "project/uploads/authors/cindy-daraban.jpg" },
     cover: "defence",
     illus: "globe",
     body: [
@@ -354,7 +354,7 @@ const POSTS = [
     subtitle: "What we heard about agentic workflows, evaluation, and AI go-to-market — and what we're betting on next.",
     date: "Nov 20, 2025",
     read: "5 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N" },
+    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "health",
     illus: "skyline",
     body: [
@@ -560,6 +560,21 @@ function BlogCover({ cover, illus, label, large = false }) {
 }
 
 // ─────────────────────────────────────────────────────────────────
+// Avatar — shows photo when author.photo is set, initial otherwise
+// ─────────────────────────────────────────────────────────────────
+function BlogAvatar({ author, sm = false }) {
+  const cls = "blog-avatar" + (sm ? " blog-avatar--sm" : "");
+  if (author && author.photo) {
+    return (
+      <div className={cls} style={{ overflow: "hidden", padding: 0 }}>
+        <img src={author.photo} alt={author.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+      </div>
+    );
+  }
+  return <div className={cls}>{author ? author.initial : ""}</div>;
+}
+
+// ─────────────────────────────────────────────────────────────────
 // Blog Listing Page
 // ─────────────────────────────────────────────────────────────────
 function BlogListPage() {
@@ -603,7 +618,7 @@ function BlogListPage() {
               <h2 className="blog-feat-title">{featured.title}</h2>
               <p className="blog-feat-sub">{featured.subtitle}</p>
               <div className="blog-feat-author">
-                <div className="blog-avatar">{featured.author.initial}</div>
+                <BlogAvatar author={featured.author} />
                 <div>
                   <div className="blog-author-name">{featured.author.name}</div>
                   <div className="blog-author-role">{featured.author.role}</div>
@@ -635,7 +650,7 @@ function BlogListPage() {
                   <h3 className="blog-post-title">{p.title}</h3>
                   <p className="blog-post-sub">{p.subtitle}</p>
                   <div className="blog-post-foot">
-                    <div className="blog-avatar blog-avatar--sm">{p.author.initial}</div>
+                    <BlogAvatar author={p.author} sm />
                     <span className="blog-author-name">{p.author.name}</span>
                   </div>
                 </div>
@@ -718,7 +733,7 @@ function BlogPostPage({ slug }) {
           <h1 className="blog-single-title">{post.title}</h1>
           <p className="blog-single-sub">{post.subtitle}</p>
           <div className="blog-single-author">
-            <div className="blog-avatar">{post.author.initial}</div>
+            <BlogAvatar author={post.author} />
             <div>
               <div className="blog-author-name">{post.author.name}</div>
               <div className="blog-author-role">{post.author.role}</div>
@@ -742,7 +757,7 @@ function BlogPostPage({ slug }) {
             <div className="blog-sidebar-card">
               <div className="blog-sidebar-label">Written by</div>
               <div className="blog-sidebar-author">
-                <div className="blog-avatar">{post.author.initial}</div>
+                <BlogAvatar author={post.author} />
                 <div>
                   <div className="blog-author-name">{post.author.name}</div>
                   <div className="blog-author-role">{post.author.role}</div>
