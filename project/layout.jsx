@@ -251,9 +251,9 @@ function Footer() {
         <div className="footer-bottom">
           <span>© 2026 7Code. All rights reserved.</span>
           <div className="footer-social">
-            <a href="https://github.com/nickeone" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon.github /></a>
-            <a href="https://www.linkedin.com/company/7-code" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon.linkedin /></a>
-            <a href="https://clutch.co/profile/7code" target="_blank" rel="noopener noreferrer" aria-label="Clutch profile"><Icon.award /></a>
+            <a href="https://github.com/7code" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon.github /></a>
+            <a href="https://www.linkedin.com/company/7-code/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon.linkedin /></a>
+            <a href="https://x.com/7code_Software" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Icon.twitter /></a>
           </div>
         </div>
       </div>
