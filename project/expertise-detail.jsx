@@ -83,7 +83,7 @@ const EXPERTISE = {
       { step: "02", title: "Correctness before speed", desc: "Every aggregation is double-verified against source records. We ship a reconciliation test suite alongside the product, not as an afterthought." },
       { step: "03", title: "Parallel run before cutover", desc: "New system runs alongside the old one for 30 days, with daily variance reporting. Cutover happens only when the numbers match to the cent." },
     ],
-    cases: ["founders-factory"],
+    cases: [],
     metaDescription: "FinTech and finance software engineering by 7Code. Real-time treasury dashboards, ERP integration (SAP, Oracle, NetSuite), accounting automation, regulatory reporting, payments, and venture/MarTech platforms for VCs.",
     faqs: [
       { q: "What do you mean by 'finance software'?", a: "Two strands: (1) software for finance teams inside companies, treasury dashboards, ERP integrations, accounting automation, regulatory reporting; (2) FinTech products, payments, lending, embedded finance, venture-studio platforms. We've shipped both, including the marketing platform for Founders Factory (UK venture studio) and treasury-grade tooling with multi-entity consolidation." },

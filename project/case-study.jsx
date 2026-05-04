@@ -254,50 +254,6 @@ const CASES = {
     ],
     testimonial: { quote: "", name: "", role: "" },
     metaDescription: "Children's road-safety gamification web app for Lidl Romania and the Romanian Police, built by 7Code on React + Nest.js + Heroku in 6 months. Public + private split, episodes, levels, and a points engine.",
-    next: { slug: "founders-factory", client: "Founders Factory", title: "UI overhaul + ongoing engineering for a UK venture studio", kind: "finance" },
-  },
-  "founders-factory": {
-    slug: "founders-factory",
-    client: "Founders Factory", industry: "Venture Studio / VC", year: "2024",
-    duration: "Ongoing", team: "1 full-stack engineer · 1 PM",
-    region: "United Kingdom", kind: "finance",
-    title: "UI overhaul and ongoing engineering for a leading European venture studio",
-    tagline: "MarTech for VC: a Gatsby + Storyblok + Tailwind UI overhaul of foundersfactory.com, bug backlog cleared, base CSS migrated to Tailwind under TypeScript and CircleCI, and ongoing component delivery as the venture studio's site keeps evolving.",
-    summary: "Founders Factory is a UK-based venture studio co-founded by Brent Hoberman and Henry Lane Fox, backing early-stage founders with capital, 70+ operators, and corporate-partner access, 300+ portfolio companies have raised over $800M since 2015. 7Code picked up their Gatsby + Storyblok marketing site mid-flight, cleared a backlog of critical bugs under CircleCI gating, standardised the styling layer onto Tailwind CSS with TypeScript end-to-end, and now ships new components and features against a stable foundation as the platform continues to evolve.",
-    challenge: {
-      eyebrow: "The challenge",
-      title: "An inherited, fast-moving marketing platform with no styling standard.",
-      body: "Founders Factory's website is the public face of a venture studio that talks to founders, corporate partners, and investors every day, it cannot go down, look broken, or fall behind the brand. We came in to a Gatsby + Storyblok codebase without a unified styling system, with a backlog of bugs to clear and a roadmap of new components and features waiting behind them.",
-      pains: [
-        "Inherited codebase without a consistent styling layer or component standard",
-        "Active marketing platform, no maintenance windows, no broken commits",
-        "Critical-bug backlog that had to be cleared before new features could ship",
-        "Continuous content evolution managed via Storyblok, requiring tight CMS / front-end coordination",
-      ],
-    },
-    approach: {
-      eyebrow: "Our approach",
-      title: "Two phases: clear the backlog, then build forward.",
-      body: "We split the engagement into two micro-phases. Phase one focused on bug-fixing the inherited code and standardising the styling layer, migrating components from base CSS to Tailwind, with TypeScript and CircleCI underpinning every PR. Phase two added new components and features against the now-stable foundation, with the same small, embedded delivery pattern, one full-stack engineer and a project manager working directly inside the Founders Factory cadence.",
-      pillars: [
-        { title: "Bugfix-first phase", desc: "Cleared the backlog inherited with the codebase, with CircleCI gating every fix and TypeScript catching regressions before production." },
-        { title: "Tailwind migration", desc: "Component-by-component move from base CSS to Tailwind, same visual output, far cleaner architecture, faster downstream design changes." },
-        { title: "New components on demand", desc: "Once the foundation was stable, the second phase shipped new UI components and features into the live Storyblok-driven site without disrupting content workflows." },
-        { title: "Embedded, ongoing engagement", desc: "A small, persistent team, one full-stack engineer plus a project manager, embedded in the Founders Factory cadence with daily-status communication via email, messaging, and virtual meetings." },
-      ],
-    },
-    results: [
-      { v: "Version 6", l: "live and stable", sub: "bug-free launch on Gatsby + Storyblok + Tailwind" },
-      { v: "Tailwind", l: "styling standard", sub: "migrated from base CSS, component by component" },
-      { v: "Ongoing", l: "engagement", sub: "two-phase delivery, then continuous backlog progression" },
-      { v: "$800M+", l: "raised by their portfolio", sub: "300+ companies backed since 2015" },
-    ],
-    testimonial: {
-      quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
-      name: "Paul Egan",
-      role: "CTO, Founders Factory",
-    },
-    metaDescription: "UI overhaul and ongoing engineering for Founders Factory (UK venture studio) by 7Code. Gatsby + Storyblok site migrated from base CSS to Tailwind, with TypeScript and CircleCI underpinning every PR.",
     next: { slug: "hera", client: "Hera", title: "AI-powered fertility-clinic patient app", kind: "health" },
   },
   "hera": {
@@ -565,11 +521,6 @@ function BrowserMockup({ kind = "calendar" }) {
   if (CSD.slug === "lidl-road-safety") return <PhotoHero
     src="project/uploads/lidl-road-safety-hero.jpg"
     alt="Lidl Romania + Politia Romana road-safety web app for children"
-  />;
-  if (CSD.slug === "founders-factory") return <PhotoHero
-    src="project/uploads/founders-factory-hero.jpg"
-    urlBar="foundersfactory.com"
-    alt="Founders Factory homepage hero, Power to founders"
   />;
   if (CSD.slug === "hera") return <PhotoHero
     src="project/uploads/hera-hero.jpg"
