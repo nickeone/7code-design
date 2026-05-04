@@ -634,6 +634,10 @@ function BrowserMockup({ kind = "calendar" }) {
   );
 }
 
+function hasPhoneShot() {
+  return CSD.slug === "daily8";
+}
+
 function FactsList({ inline = false }) {
   const facts = [
     { l: "Client",   v: CSD.client },
@@ -800,7 +804,7 @@ function CSDLongRead() {
             <h2>What we shipped.</h2>
             <p>{CSD.tagline}</p>
             <div className="csd-product-pair">
-              <div className="csd-product-art csd-product-art--phone"><PhoneMockup /></div>
+              {hasPhoneShot() && <div className="csd-product-art csd-product-art--phone"><PhoneMockup /></div>}
               <div className="csd-product-art csd-product-art--browser"><BrowserMockup /></div>
             </div>
           </section>
@@ -935,9 +939,11 @@ function CSDVisual() {
                 {CSD.challenge.pains.map((p, i) => <li key={i}><span className="csd-bullet-dot"/>{p}</li>)}
               </ul>
             </div>
-            <div className="csd-visual-split-art csd-visual-split-art--phone">
-              <PhoneMockup />
-            </div>
+            {hasPhoneShot() && (
+              <div className="csd-visual-split-art csd-visual-split-art--phone">
+                <PhoneMockup />
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -1048,9 +1054,11 @@ function CSDSticky() {
               ))}
             </div>
           </section>
-          <section className="csd-sticky-section">
-            <div className="csd-sticky-cover"><PhoneMockup /></div>
-          </section>
+          {hasPhoneShot() && (
+            <section className="csd-sticky-section">
+              <div className="csd-sticky-cover"><PhoneMockup /></div>
+            </section>
+          )}
           <section className="csd-sticky-section">
             <span className="csd-eyebrow">Results</span>
             <h2>What changed.</h2>
