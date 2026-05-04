@@ -253,7 +253,7 @@ function Footer() {
           <div className="footer-social">
             <a href="https://github.com/7code" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon.github /></a>
             <a href="https://www.linkedin.com/company/7-code/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon.linkedin /></a>
-            <a href="https://x.com/7code_Software" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><Icon.twitter /></a>
+            <a href="https://clutch.co/profile/7code" target="_blank" rel="noopener noreferrer" aria-label="Clutch profile"><Icon.award /></a>
           </div>
         </div>
       </div>
