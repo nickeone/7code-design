@@ -361,18 +361,17 @@ function Testimonials() {
       photoUrl: "project/uploads/evyn%20-%20hera.jpeg",
     },
     {
+      quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
+      name: "Marcel Ionescu",
+      role: "Chief Technology Officer",
+      photoUrl: "project/uploads/marcel%20ionescu%20.jpeg",
+    },
+    {
       quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
       name: "Paul Egan",
       role: "CTO",
       company: "Founders Factory",
       photoUrl: "project/uploads/paul%20egan.jpeg",
-    },
-    {
-      quote: "7Code delivered the project on time, and the client experienced partner growth, onboarding metrics, and retention rates. They communicated frequently and promptly via email and virtual meetings, ensuring an effective workflow. Their understanding of the client's system was a hallmark of their work.",
-      name: "Jo Spolton",
-      role: "Founder",
-      company: "Rumage",
-      photoUrl: "project/uploads/jo%20spolton.jpeg",
     },
   ];
 
