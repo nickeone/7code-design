@@ -44,6 +44,7 @@ const CS_PHOTO_COVERS = {
   "g42-fleet":        { src: "project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
   "cloud-of-legacy":  { src: "project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
   "lidl-road-safety": { src: "project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
+  "founders-factory": { src: "project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage — Power to founders" },
 };
 
 // Case study cover graphic
@@ -112,6 +113,7 @@ function CaseStudies({ limit }) {
     { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
     { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
     { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "Ongoing"] },
+    { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (
