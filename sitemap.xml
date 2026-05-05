@@ -28,7 +28,6 @@
   <url><loc>https://www.7code.tech/case-study/g42-fleet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.7code.tech/case-study/cloud-of-legacy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/case-study/lidl-road-safety</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.7code.tech/case-study/founders-factory</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.7code.tech/case-study/hera</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.7code.tech/case-study/melsonic</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.7code.tech/case-study/drum-bun</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -50,4 +49,14 @@
   <url><loc>https://www.7code.tech/blog/changing-software-service-provider</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.7code.tech/blog/aws-beanstalk-to-ecs-migration</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://www.7code.tech/blog/aws-ecs-vs-beanstalk-perspective</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/adrenaline-ai-code-debugger</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/why-mvp-first</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/seamless-software-project-handover</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/cms-wordpress-vs-custom-development</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/osai-revolutionising-ai-interactions</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/low-code-no-code-vs-custom-development</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/reducing-costs-nearshoring-outstaffing</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/migrating-users-auth0-python</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/fixed-price-vs-time-and-materials</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.7code.tech/blog/7code-discovery-mission</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
