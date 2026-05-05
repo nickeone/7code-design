@@ -854,13 +854,13 @@ const POSTS = [
 // Cover colours + illustration system
 // ─────────────────────────────────────────────────────────────────
 const COVER_COLORS = {
-  ink:     { bg: "linear-gradient(135deg, #1C0F4A 0%, #2D1B7E 100%)", fg: "#C4B5FD" },
-  cyan:    { bg: "linear-gradient(135deg, #023E57 0%, #0A5C7F 100%)", fg: "#22D3EE" },
-  finance: { bg: "linear-gradient(135deg, #0D2160 0%, #14338C 100%)", fg: "#60A5FA" },
-  energy:  { bg: "linear-gradient(135deg, #3D2100 0%, #5C3400 100%)", fg: "#FBBF24" },
-  ops:     { bg: "linear-gradient(135deg, #04351C 0%, #08522E 100%)", fg: "#34D399" },
-  health:  { bg: "linear-gradient(135deg, #073070 0%, #0A469E 100%)", fg: "#38BDF8" },
-  defence: { bg: "linear-gradient(135deg, #192336 0%, #243348 100%)", fg: "#94A3B8" },
+  ink:     { bg: "linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%)", fg: "#5B21B6", accent: "#F97316" },
+  cyan:    { bg: "linear-gradient(135deg, #ECFEFF 0%, #CFFAFE 100%)", fg: "#0E7490", accent: "#7C3AED" },
+  finance: { bg: "linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)", fg: "#1E40AF", accent: "#F59E0B" },
+  energy:  { bg: "linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%)", fg: "#92400E", accent: "#2563EB" },
+  ops:     { bg: "linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)", fg: "#166534", accent: "#F97316" },
+  health:  { bg: "linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%)", fg: "#075985", accent: "#8B5CF6" },
+  defence: { bg: "linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 100%)", fg: "#1E293B", accent: "#06B6D4" },
 };
 
 // Topic-specific SVG illustrations, rendered on top of the gradient
@@ -1565,12 +1565,14 @@ function BlogCover({ cover, illus, label, large = false }) {
       <svg viewBox="0 0 800 480" preserveAspectRatio="xMidYMid slice" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
         <defs>
           <pattern id={"bc-" + cover} width="60" height="60" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.5" fill={c.fg} opacity="0.06"/>
+            <circle cx="2" cy="2" r="1.5" fill={c.fg} opacity="0.08"/>
           </pattern>
         </defs>
         <rect width="800" height="480" fill={"url(#bc-" + cover + ")"}/>
-        <circle cx="650" cy="100" r="320" fill={c.fg} opacity="0.04"/>
-        {IllusComponent && <IllusComponent fg={c.fg}/>}
+        <circle cx="680" cy="420" r="210" fill={c.accent} opacity="0.15"/>
+        <circle cx="90" cy="75" r="150" fill={c.accent} opacity="0.10"/>
+        <circle cx="650" cy="90" r="260" fill={c.fg} opacity="0.05"/>
+        {IllusComponent && <IllusComponent fg={c.fg} accent={c.accent || "#F97316"}/>}
       </svg>
       {label && <span className="blog-visual-label" style={{ color: c.fg }}>{label}</span>}
     </div>
