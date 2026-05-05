@@ -1,4 +1,4 @@
-/* global React, Icon, CTAStrip */
+/* global React, Icon, CTAStrip, useReveal */
 /* Blog listing + single post detail, slug-routed */
 
 const { useState: useStateBL, useEffect: useEffectBL } = React;
@@ -1600,6 +1600,7 @@ function BlogAvatar({ author, sm = false }) {
 function BlogListPage() {
   const cats = ["All", "Strategy", "Engineering", "Case Study", "Operations"];
   const [active, setActive] = useStateBL("All");
+  useReveal();
   const featured = POSTS[0];
   const rest = POSTS.slice(1);
   const filtered = active === "All" ? rest : POSTS.filter(p => p.cat === active);
