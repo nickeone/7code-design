@@ -354,9 +354,9 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
           "name": svc.title,
           "serviceType": svc.title,
           "description": svc.metaDescription || svc.tagline,
-          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
           "areaServed": "Worldwide",
-          "url": "https://7code-design.vercel.app/#/service/" + svc.slug,
+          "url": "https://www.7code.tech/service/" + svc.slug,
         },
         ...(svc.faqs && svc.faqs.length ? [{
           "@type": "FAQPage",

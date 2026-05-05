@@ -10,7 +10,7 @@ const { useState: useStateBL, useEffect: useEffectBL } = React;
 // manager. The injected <script type="application/ld+json"> tag is
 // tagged with data-blog-jsonld so we can clean it up on unmount.
 // ─────────────────────────────────────────────────────────────────
-const SITE_ORIGIN_BL = "https://7code-design.vercel.app";
+const SITE_ORIGIN_BL = "https://www.7code.tech";
 
 function setMeta(name, content, attr = "name") {
   if (typeof document === "undefined") return;
