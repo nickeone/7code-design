@@ -6,11 +6,14 @@ const { useState, useEffect, useRef } = React;
 // Routing (path-based)
 // ──────────────────────────────────────────────────────────────────
 function useHashRoute() {
-  const [path, setPath] = useState(() => (typeof window !== "undefined" ? window.location.pathname || "/" : "/"));
+  const [path, setPath] = useState(() => {
+    if (typeof window === "undefined") return "/";
+    return window.location.hash.slice(1) || window.location.pathname || "/";
+  });
   useEffect(() => {
-    const onPop = () => { setPath(window.location.pathname || "/"); window.scrollTo(0, 0); };
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
+    const onHash = () => { setPath(window.location.hash.slice(1) || "/"); window.scrollTo(0, 0); };
+    window.addEventListener("hashchange", onHash);
+    return () => window.removeEventListener("hashchange", onHash);
   }, []);
   return path;
 }
@@ -26,7 +29,7 @@ function parseRoute(hash) {
 }
 
 function NavLinkA({ to, children, className = "nav-link", activeClass = "is-active" }) {
-  const active = typeof window !== "undefined" && window.location.pathname === to;
+  const active = typeof window !== "undefined" && window.location.hash.slice(1) === to;
   return <a href={to} className={className + (active ? " " + activeClass : "")}>{children}</a>;
 }
 
