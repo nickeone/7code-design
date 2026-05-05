@@ -1602,7 +1602,8 @@ function BlogListPage() {
   const [active, setActive] = useStateBL("All");
   const featured = POSTS[0];
   const rest = POSTS.slice(1);
-  const filtered = active === "All" ? rest : rest.filter(p => p.cat === active);
+  const filtered = active === "All" ? rest : POSTS.filter(p => p.cat === active);
+  const showFeatured = active === "All";
 
   useEffectBL(() => {
     const t = "Blog, AI Engineering, Product & Operations | 7Code";
@@ -1634,7 +1635,7 @@ function BlogListPage() {
         <div className="container">
 
           {/* ── Featured post ─────────────────────────────── */}
-          <a href={"#/blog/" + featured.slug} className="blog-featured-card reveal">
+          {showFeatured && <a href={"#/blog/" + featured.slug} className="blog-featured-card reveal">
             <div className="blog-featured-cover">
               <BlogCover cover={featured.cover} illus={featured.illus} large />
             </div>
@@ -1654,7 +1655,7 @@ function BlogListPage() {
               </div>
               <span className="blog-read-link">Read article <Icon.arrow /></span>
             </div>
-          </a>
+          </a>}
 
           {/* ── Category filter ──────────────────────────── */}
           <div className="blog-filter">
