@@ -354,9 +354,9 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
           "name": svc.title,
           "serviceType": svc.title,
           "description": svc.metaDescription || svc.tagline,
-          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
           "areaServed": "Worldwide",
-          "url": "https://7code-design.vercel.app/#/service/" + svc.slug,
+          "url": "https://www.7code.tech/service/" + svc.slug,
         },
         ...(svc.faqs && svc.faqs.length ? [{
           "@type": "FAQPage",
@@ -405,8 +405,8 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
             ))}
           </div>
           <div className="svc-hero-cta">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
-            <a href={"#/service/" + svc.next.slug} className="btn btn--ghost btn--lg">Next: {svc.next.title} <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
+            <a href={"/service/" + svc.next.slug} className="btn btn--ghost btn--lg">Next: {svc.next.title} <Icon.arrow /></a>
           </div>
         </div>
       </section>
@@ -508,7 +508,7 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
             </div>
             <div className="cs-grid">
               {relatedCases.map((c) => (
-                <a key={c.slug} href={"#/case-study/" + c.slug} className="cs-card reveal">
+                <a key={c.slug} href={"/case-study/" + c.slug} className="cs-card reveal">
                   <CSCover kind={c.kind} label={c.industry} slug={c.slug} />
                   <div className="cs-body">
                     <div className="cs-meta">{c.meta && c.meta.map((m, j) => <span key={j}>{m}</span>)}</div>

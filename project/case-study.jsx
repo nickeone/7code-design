@@ -642,7 +642,7 @@ function TestimonialCard({ flat = false }) {
 
 function NextCaseCTA() {
   return (
-    <a href={"#/case-study/" + CSD.next.slug} className="csd-next">
+    <a href={"/case-study/" + CSD.next.slug} className="csd-next">
       <div className="csd-next-meta">Next case study</div>
       <div className="csd-next-row">
         <div>
@@ -971,7 +971,7 @@ function CSDSticky() {
                 </div>
               ))}
             </div>
-            <a href="#/contact" className="btn btn--primary csd-sticky-cta">Start a project <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--primary csd-sticky-cta">Start a project <Icon.arrow /></a>
           </div>
         </aside>
 
@@ -1043,7 +1043,7 @@ function CaseStudyPage({ slug = "wholesum", variant = "longread" }) {
     document.title = "7Code, " + c.client + ": " + c.title;
     if (descEl && c.metaDescription) descEl.setAttribute("content", c.metaDescription);
 
-    const url = "https://7code-design.vercel.app/#/case-study/" + c.slug;
+    const url = "https://www.7code.tech/case-study/" + c.slug;
     const ld = {
       "@context": "https://schema.org",
       "@graph": [
@@ -1053,7 +1053,7 @@ function CaseStudyPage({ slug = "wholesum", variant = "longread" }) {
           "description": c.metaDescription || c.tagline,
           "articleSection": "Case Study",
           "about": { "@type": "Organization", "name": c.client },
-          "author": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "author": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
           "publisher": { "@type": "ProfessionalService", "name": "7Code" },
           "datePublished": String(c.year),
           "url": url,

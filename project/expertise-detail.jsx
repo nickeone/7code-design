@@ -343,9 +343,9 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
           "name": e.title + " software engineering",
           "serviceType": e.title,
           "description": e.metaDescription || e.tagline,
-          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://7code-design.vercel.app/" },
+          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
           "areaServed": "Worldwide",
-          "url": "https://7code-design.vercel.app/#/expertise/" + e.slug,
+          "url": "https://www.7code.tech/expertise/" + e.slug,
         },
         ...(e.faqs && e.faqs.length ? [{
           "@type": "FAQPage",
@@ -390,8 +390,8 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
               ))}
             </div>
             <div className="exp-hero-cta">
-              <a href="#/contact" className="btn btn--primary btn--lg">Start a project <Icon.arrow /></a>
-              <a href={"#/expertise/" + nextSlug} className="btn btn--ghost btn--lg">Next: {exp.next.title} <Icon.arrow /></a>
+              <a href="/contact" className="btn btn--primary btn--lg">Start a project <Icon.arrow /></a>
+              <a href={"/expertise/" + nextSlug} className="btn btn--ghost btn--lg">Next: {exp.next.title} <Icon.arrow /></a>
             </div>
           </div>
         </div>

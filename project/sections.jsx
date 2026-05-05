@@ -120,7 +120,7 @@ function CaseStudies({ limit }) {
         </div>
         <div className="cs-grid">
           {list.map((c, i) => (
-            <a key={i} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+            <a key={i} href={"/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
               <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
@@ -134,7 +134,7 @@ function CaseStudies({ limit }) {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#/case-studies" className="btn btn--ghost">View all projects <Icon.arrow /></a>
+          <a href="/case-studies" className="btn btn--ghost">View all projects <Icon.arrow /></a>
         </div>
       </div>
     </section>
@@ -291,7 +291,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
                 <ul className="exp-list">
                   {e.bullets.map((b, j) => <li key={j}><Icon.checkCircle /> {b}</li>)}
                 </ul>
-                <a href="#/expertise" className="btn-link">Learn more <Icon.arrow /></a>
+                <a href="/expertise" className="btn-link">Learn more <Icon.arrow /></a>
               </div>
             );
           })}
@@ -323,7 +323,7 @@ function Services() {
           {services.map((s, i) => {
             const I = s.icon;
             return (
-              <a key={i} href={"#/service/" + s.slug} className="svc-card">
+              <a key={i} href={"/service/" + s.slug} className="svc-card">
                 <span className="icon-tile"><I /></span>
                 <div>
                   <h3>{s.title}</h3>
@@ -335,7 +335,7 @@ function Services() {
           })}
         </div>
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#/contact" className="btn btn--cyan">Discuss your project <Icon.arrow /></a>
+          <a href="/contact" className="btn btn--cyan">Discuss your project <Icon.arrow /></a>
         </div>
       </div>
     </section>
@@ -415,7 +415,7 @@ function CTAStrip() {
             <p>Tell us about your project. We'll respond within one business day with next steps.</p>
           </div>
           <div className="cta-strip-actions">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Book a discovery call <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Book a discovery call <Icon.arrow /></a>
           </div>
         </div>
       </div>
