@@ -1636,7 +1636,7 @@ function BlogListPage() {
         <div className="container">
 
           {/* ── Featured post ─────────────────────────────── */}
-          {showFeatured && <a href={"#/blog/" + featured.slug} className="blog-featured-card reveal">
+          {showFeatured && <a href={"/blog/" + featured.slug} className="blog-featured-card reveal">
             <div className="blog-featured-cover">
               <BlogCover cover={featured.cover} illus={featured.illus} large />
             </div>
@@ -1668,7 +1668,7 @@ function BlogListPage() {
           {/* ── Post grid ────────────────────────────────── */}
           <div className="blog-post-grid">
             {filtered.map((p, i) => (
-              <a key={p.slug} href={"#/blog/" + p.slug} className="blog-post-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
+              <a key={p.slug} href={"/blog/" + p.slug} className="blog-post-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
                 <div className="blog-post-cover">
                   <BlogCover cover={p.cover} illus={p.illus} />
                 </div>
@@ -1824,7 +1824,7 @@ function BlogPostPage({ slug }) {
                 <h3 className="blog-related-head">More in {post.cat}</h3>
                 <div className="blog-related-grid">
                   {related.map(r => (
-                    <a key={r.slug} href={"#/blog/" + r.slug} className="blog-related-card">
+                    <a key={r.slug} href={"/blog/" + r.slug} className="blog-related-card">
                       <div className="blog-related-cover">
                         <BlogCover cover={r.cover} illus={r.illus} />
                       </div>
@@ -1842,7 +1842,7 @@ function BlogPostPage({ slug }) {
             )}
 
             {/* Next post */}
-            <a href={"#/blog/" + nextPost.slug} className="blog-next-post">
+            <a href={"/blog/" + nextPost.slug} className="blog-next-post">
               <div className="blog-next-label">Next article</div>
               <div className="blog-next-row">
                 <div>

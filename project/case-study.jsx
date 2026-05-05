@@ -642,7 +642,7 @@ function TestimonialCard({ flat = false }) {
 
 function NextCaseCTA() {
   return (
-    <a href={"#/case-study/" + CSD.next.slug} className="csd-next">
+    <a href={"/case-study/" + CSD.next.slug} className="csd-next">
       <div className="csd-next-meta">Next case study</div>
       <div className="csd-next-row">
         <div>

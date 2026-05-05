@@ -47,7 +47,7 @@ function CaseStudiesGrid() {
         </div>
         <div className="cs-grid">
           {filtered.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
               <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
@@ -77,7 +77,7 @@ function CaseStudiesEditorial() {
       <div className="container" style={{ maxWidth: 1080 }}>
         <div className="cs-edit-list">
           {CS_ITEMS.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
               <div className="cs-edit-meta">
                 <div className="cs-edit-tag">{c.meta[0]}</div>
               </div>
@@ -131,7 +131,7 @@ function CaseStudiesFeatured() {
                 <div className="cs-feat-metric-l">industry</div>
               </div>
             </div>
-            <a href={"#/case-study/" + item.slug} className="btn btn--primary">Read full case study <Icon.arrow /></a>
+            <a href={"/case-study/" + item.slug} className="btn btn--primary">Read full case study <Icon.arrow /></a>
           </div>
         </div>
         <div className="cs-feat-tabs">
@@ -168,7 +168,7 @@ function CaseStudiesTimeline() {
                 <div className="cs-tl-result">
                   <Icon.zap style={{ width: 16, height: 16 }} /> {c.result}
                 </div>
-                <a href={"#/case-study/" + c.slug} className="cs-link">Read case study <Icon.arrow /></a>
+                <a href={"/case-study/" + c.slug} className="cs-link">Read case study <Icon.arrow /></a>
               </div>
               <div className="cs-tl-node">
                 <div className="cs-tl-node-inner"/>
@@ -272,7 +272,7 @@ function CaseStudiesShowcase() {
         </div>
         <div className="sc-grid">
           {filtered.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="sc-card reveal" style={{ transitionDelay: (i % 2 * 100) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className="sc-card reveal" style={{ transitionDelay: (i % 2 * 100) + "ms" }}>
               <div className="sc-glow"/>
               <div className="sc-card-inner">
                 <div className="sc-card-text">
@@ -313,7 +313,7 @@ function CaseStudiesMagazine() {
     <section className="section">
       <div className="container">
         <div className="mag-grid">
-          <a href={"#/case-study/" + hero.slug} className="mag-hero reveal">
+          <a href={"/case-study/" + hero.slug} className="mag-hero reveal">
             <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} slug={hero.slug} /></div>
             <div className="mag-hero-body">
               <span className="mag-kicker"><span className="mag-dot"/> Featured story</span>
@@ -330,7 +330,7 @@ function CaseStudiesMagazine() {
           </a>
           <div className="mag-side">
             {rest.slice(0, 3).map((c, i) => (
-              <a key={c.title} href={"#/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
+              <a key={c.title} href={"/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="mag-mini-body">
                   <div className="mag-mini-meta">{c.meta[0]}</div>
                   <div className="mag-mini-title">{c.title}</div>
@@ -343,7 +343,7 @@ function CaseStudiesMagazine() {
         </div>
         <div className="mag-row">
           {rest.slice(3).map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="mag-card-body">
                 <div className="mag-mini-meta">{c.meta[0]}</div>
@@ -367,7 +367,7 @@ function CaseStudiesStack() {
       <div className="container" style={{ maxWidth: 1200 }}>
         <div className="stk-list">
           {CS_ITEMS.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="stk-body">
                 <div className="stk-meta">
@@ -413,7 +413,7 @@ function CaseStudiesMosaic() {
           {CS_ITEMS.map((c, i) => {
             const L = layout[i] || layout[0];
             return (
-              <a key={c.title} href={"#/case-study/" + c.slug} className={"mos-card reveal " + L.span + " mos--" + L.variant} style={{ transitionDelay: (i * 50) + "ms" }}>
+              <a key={c.title} href={"/case-study/" + c.slug} className={"mos-card reveal " + L.span + " mos--" + L.variant} style={{ transitionDelay: (i * 50) + "ms" }}>
                 {L.variant === "image" && (
                   <>
                     <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>

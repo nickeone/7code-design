@@ -120,7 +120,7 @@ function CaseStudies({ limit }) {
         </div>
         <div className="cs-grid">
           {list.map((c, i) => (
-            <a key={i} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+            <a key={i} href={"/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
               <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
@@ -323,7 +323,7 @@ function Services() {
           {services.map((s, i) => {
             const I = s.icon;
             return (
-              <a key={i} href={"#/service/" + s.slug} className="svc-card">
+              <a key={i} href={"/service/" + s.slug} className="svc-card">
                 <span className="icon-tile"><I /></span>
                 <div>
                   <h3>{s.title}</h3>

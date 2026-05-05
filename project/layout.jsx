@@ -115,7 +115,7 @@ function Nav() {
           <a href="/" className="brand"><Logo height={28} /></a>
           <nav className="nav-links">
             <div style={{ position: "static" }} onMouseEnter={openSvc} onMouseLeave={closeSvc}>
-              <a href="/process" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen}>
+              <a href="/service/ai-product-engineering" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen} onClick={e => { e.preventDefault(); setSvcOpen(o => !o); }}>
                 Services <Icon.caret />
               </a>
               <div className={"svc-mega" + (svcOpen ? " is-open" : "")}>
