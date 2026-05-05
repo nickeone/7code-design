@@ -39,7 +39,7 @@ function TrustedBy() {
 // Photo covers for case studies that have a real hero image. Anything not
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
-  "wholesum":         { src: "/project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
+  "wholesum":         { src: "/project/uploads/wholesum-hero.png",        alt: "WholeSum" },
   "daily8":           { src: "/project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
   "revote":           { src: "/project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
   "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
@@ -358,7 +358,7 @@ function Testimonials() {
       name: "Evyn White",
       role: "Co-Founder",
       company: "Hera Health Tech",
-      photoUrl: "/project/uploads/evyn%20-%20hera.jpeg",
+      photoUrl: "/project/uploads/evyn-hera.jpeg",
     },
     {
       quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
