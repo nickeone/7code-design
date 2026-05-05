@@ -1,7 +1,7 @@
 /* global React, Icon, TrustedBy, CaseStudies, WhyChoose, VerifiedAccredited, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover */
 
 const { useState: useStateP, useEffect: useEffectP } = React;
-const SITE_ROOT = "https://7code-design.vercel.app";
+const SITE_ROOT = "https://www.7code.tech";
 
 function useSeoMeta(title, desc, ldJson) {
   useEffectP(() => {
@@ -17,7 +17,7 @@ function useSeoMeta(title, desc, ldJson) {
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (ogTitle) ogTitle.setAttribute("content", title);
     if (ogDesc && desc) ogDesc.setAttribute("content", desc);
-    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + window.location.pathname);
+    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || "/"));
     if (twTitle) twTitle.setAttribute("content", title);
     if (twDesc && desc) twDesc.setAttribute("content", desc);
     let s;
@@ -145,8 +145,8 @@ function AboutPage() {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "7Code",
-      "url": "https://7code-design.vercel.app/",
-      "logo": "https://7code-design.vercel.app/project/logo.svg",
+      "url": "https://www.7code.tech/",
+      "logo": "https://www.7code.tech/project/logo.svg",
       "description": "AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end.",
       "foundingLocation": { "@type": "Place", "name": "Cluj-Napoca, Romania" },
       "areaServed": ["Romania", "Europe", "United Kingdom", "United Arab Emirates", "Worldwide"],
