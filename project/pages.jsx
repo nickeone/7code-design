@@ -215,8 +215,8 @@ function AboutPage() {
     },
   ];
   const team = [
-    { name: "Nicu Mardari", role: "CEO & Co-founder", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg", photoContain: true },
-    { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg", photoContain: true },
+    { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg", photoContain: true },
   ];
 
