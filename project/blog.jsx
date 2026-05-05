@@ -76,7 +76,7 @@ const POSTS = [
     read: "9 min read",
     author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "cyan",
-    illus: "blueprint",
+    illus: "radar",
     featured: true,
     body: [
       { type: "lead", text: "Most AI projects fail in the first 30 days, not in production. They fail because the team starts shipping before anyone agreed on what success looks like, what data is available, and which model behaviours are non-negotiable. Our AI Discovery Mission is a four-week, fixed-scope engagement that turns a vague AI ambition into a build-ready plan: a product vision, an evaluation harness, a technical architecture, and a defensible budget." },
@@ -102,8 +102,8 @@ const POSTS = [
     date: "Apr 16, 2026",
     read: "7 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "energy",
-    illus: "launch",
+    cover: "ink",
+    illus: "rocket_arc",
     body: [
       { type: "lead", text: "An AI MVP is the smallest version of an AI product that produces measurable user value and produces measurable evals. We ship most of ours in six weeks. Not because we cut corners, because we're disciplined about what an MVP is for: validated learning, not feature completeness." },
       { type: "h2", text: "What an AI MVP actually is" },
@@ -129,7 +129,7 @@ const POSTS = [
     read: "8 min read",
     author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "finance",
-    illus: "blueprint",
+    illus: "balance_scale",
     body: [
       { type: "lead", text: "The fixed price vs. time and materials debate is older than software itself. AI engineering forces an honest answer to it. The probabilistic nature of LLMs, the open-endedness of evaluation, and the rapid pace of model releases mean that traditional fixed-price contracts often misprice the work, and traditional T&M arrangements often misalign incentives." },
       { type: "h2", text: "What's different about AI engineering pricing" },
@@ -155,7 +155,7 @@ const POSTS = [
     read: "10 min read",
     author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ops",
-    illus: "gears",
+    illus: "robot_arm",
     body: [
       { type: "lead", text: "Manufacturing operations still run on a quiet tax: hours every day spent pushing paper, updating spreadsheets, chasing suppliers, reconciling shop-floor reports. AI agents are absorbing that tax. Not the demo-ware kind, the production kind, with evals, audit trails, and a human in the loop where it matters." },
       { type: "h2", text: "What an AI agent does in a factory" },
@@ -180,8 +180,8 @@ const POSTS = [
     date: "Mar 04, 2026",
     read: "8 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "finance",
-    illus: "circuit",
+    cover: "energy",
+    illus: "mesh_net",
     body: [
       { type: "lead", text: "Software automation used to mean writing rules between systems: when a CRM contact updates, sync to the ERP; when an IoT sensor crosses a threshold, raise a ticket. AI-native automation is something else. It treats the LLM as the orchestrator, not as a feature, and rebuilds the integration surface around natural language, structured outputs, and continuous evals." },
       { type: "h2", text: "What 'AI-native' actually means" },
@@ -206,7 +206,7 @@ const POSTS = [
     read: "9 min read",
     author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ink",
-    illus: "circuit",
+    illus: "loop_debug",
     body: [
       { type: "lead", text: "Adrenaline lets developers chat with their codebase: import a repository, ask a question, get an explanation or a fix. Behind the chat sits an LLM-powered indexing and retrieval system tuned for code. We helped the Adrenaline team build it from MVP through AWS-scale production, and the lessons apply to any AI product that has to reason over large structured corpora." },
       { type: "h2", text: "The brief" },
@@ -231,8 +231,8 @@ const POSTS = [
     date: "Feb 06, 2026",
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "ink",
-    illus: "blueprint",
+    cover: "finance",
+    illus: "lever_fulcrum",
     body: [
       { type: "lead", text: "AI copilots have changed the daily experience of writing software more than any tool since the IDE. The temptation is to conclude that team composition matters less. The opposite is true. Copilots compress the productivity gap between juniors and seniors on small tasks, and amplify it on architectural ones." },
       { type: "h2", text: "What copilots are good at" },
@@ -256,8 +256,8 @@ const POSTS = [
     date: "Jan 22, 2026",
     read: "7 min read",
     author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
-    cover: "cyan",
-    illus: "blueprint",
+    cover: "defence",
+    illus: "handover_docs",
     body: [
       { type: "lead", text: "A clean software handover is hard. A clean AI handover is harder, because the artefacts that keep the system trustworthy don't fit in a Git repo. They're evals, prompt versions, golden datasets, model cards, runbooks for drift, and the institutional memory of which failure modes you've already seen. Skip any of those, and the next team inherits a black box." },
       { type: "h2", text: "What a real AI handover includes" },
@@ -280,8 +280,8 @@ const POSTS = [
     date: "Jan 08, 2026",
     read: "7 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "ops",
-    illus: "globe",
+    cover: "cyan",
+    illus: "world_grid",
     body: [
       { type: "lead", text: "Remote engineering is the default. Distributed AI engineering is harder than distributed CRUD engineering, because AI work depends on tight feedback loops between prompt, eval, and review, exactly the loops time zones break. The teams that get this right treat distributed AI as an operational design problem, not a culture slogan." },
       { type: "h2", text: "What's different about AI work in distributed teams" },
@@ -306,7 +306,7 @@ const POSTS = [
     read: "8 min read",
     author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "energy",
-    illus: "launch",
+    illus: "fork_path",
     body: [
       { type: "lead", text: "Switching engineering partners is expensive, and most teams put it off six months too long. With AI projects, that delay is more costly: model choices age out, eval debt compounds, and the team that built the system loses interest in the team that needs to inherit it. Here are the signals worth acting on, and the playbook for switching cleanly." },
       { type: "h2", text: "Five signals it's time to switch" },
@@ -330,8 +330,8 @@ const POSTS = [
     date: "Dec 04, 2025",
     read: "7 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "defence",
-    illus: "globe",
+    cover: "health",
+    illus: "org_tree",
     body: [
       { type: "lead", text: "Outstaffing has a reputation problem because most of it is staff augmentation in a hoodie, bodies billed by the hour, with little ownership and less judgement. AI engineering outstaffing only works when the model is different: senior-led pods, eval ownership, and a velocity that justifies the rate." },
       { type: "h2", text: "What 'outstaffing done properly' actually means" },
@@ -355,8 +355,8 @@ const POSTS = [
     date: "Nov 20, 2025",
     read: "5 min read",
     author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
-    cover: "health",
-    illus: "skyline",
+    cover: "ops",
+    illus: "conf_skyline",
     body: [
       { type: "lead", text: "We spent three days at London Tech Week with a single filter on every conversation: what's actually shipping in production AI, and what's still keynote theatre? Here are the patterns we walked away with, and the bets we're making in 2026 because of them." },
       { type: "h2", text: "Agents are eating workflows, not jobs" },
@@ -383,7 +383,7 @@ const POSTS = [
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "ink",
-    illus: "circuit",
+    illus: "magnify_code",
     body: [
       { type: "lead", text: "Adrenaline is a groundbreaking AI-powered debugger developed by GetAdrenaline in partnership with 7Code. Leveraging the capabilities of OpenAI Codex, Adrenaline is designed to make the debugging process faster and more efficient, diagnosing and fixing code issues in seconds, and transforming how developers interact with their codebases." },
       { type: "h2", text: "The challenge: debugging at the speed of development" },
@@ -418,7 +418,7 @@ const POSTS = [
     read: "5 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "cyan",
-    illus: "launch",
+    illus: "stacked_layers",
     body: [
       { type: "lead", text: "The most common mistake in software product development is building too much before you know what users actually want. The MVP, Minimum Viable Product, approach solves this by putting the smallest version of your product in front of real users as quickly as possible, generating validated learning before significant investment is committed." },
       { type: "h2", text: "What an MVP actually is" },
@@ -448,8 +448,8 @@ const POSTS = [
     date: "Dec 12, 2023",
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "ops",
-    illus: "blueprint",
+    cover: "defence",
+    illus: "relay_baton",
     body: [
       { type: "lead", text: "Delivering software is only half the job. The other half is ensuring the client has everything they need to own, evolve, and operate what was built, confidently, without depending on us for every small change. A seamless handover is the mark of a vendor who treats the client relationship as a partnership, not a transaction." },
       { type: "h2", text: "Transparency and source code access" },
@@ -480,8 +480,8 @@ const POSTS = [
     date: "Oct 11, 2023",
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "energy",
-    illus: "blueprint",
+    cover: "finance",
+    illus: "two_columns",
     body: [
       { type: "lead", text: "WordPress powers over 40% of the web, and for good reason. It is fast to deploy, has a vast ecosystem of themes and plugins, and requires no custom engineering for standard use cases. But when a business outgrows standard, WordPress becomes a ceiling. The question is: when does custom development become the right investment?" },
       { type: "h2", text: "Where WordPress wins" },
@@ -509,8 +509,8 @@ const POSTS = [
     date: "Oct 11, 2023",
     read: "5 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "cyan",
-    illus: "circuit",
+    cover: "health",
+    illus: "brain_neural",
     body: [
       { type: "lead", text: "Large Language Models are powerful in isolation. They are transformative when teams know how to use them together, sharing the prompts that work, refining them collaboratively, and building a shared library of tested AI interactions. Osai is the platform we built to make that possible." },
       { type: "h2", text: "The problem Osai solves" },
@@ -537,8 +537,8 @@ const POSTS = [
     date: "Oct 10, 2023",
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "finance",
-    illus: "blueprint",
+    cover: "energy",
+    illus: "building_blocks",
     body: [
       { type: "lead", text: "Low-code and no-code platforms have made software development accessible to a far wider audience, and that is genuinely valuable. But the accessibility of these platforms can obscure a critical truth: they are drag-and-drop environments built around predetermined components designed for the most common use cases. When your use case is not common, you hit the ceiling fast." },
       { type: "h2", text: "What low-code / no-code does well" },
@@ -566,8 +566,8 @@ const POSTS = [
     date: "Oct 11, 2023",
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
-    cover: "defence",
-    illus: "globe",
+    cover: "ops",
+    illus: "coin_stack",
     body: [
       { type: "lead", text: "Nearshoring and outstaffing have a reputation for being cost plays. They are, but framing them only as cost strategies undersells their real value. The teams that get the most from nearshore engagement are not the ones chasing the lowest hourly rate; they are the ones using geographic flexibility to access senior talent, sustain velocity, and build long-running product teams that know the system." },
       { type: "h2", text: "Nearshoring vs outstaffing: the distinction" },
@@ -599,8 +599,8 @@ const POSTS = [
     date: "Oct 25, 2023",
     read: "7 min read",
     author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
-    cover: "ops",
-    illus: "circuit",
+    cover: "ink",
+    illus: "data_flow_pipe",
     body: [
       { type: "lead", text: "Migrating users between Auth0 tenants is a task that sounds straightforward until you start: rate limits bite, payload sizes vary wildly across user profiles, and the window for a zero-downtime migration is narrow. This is a practical guide to the patterns and edge cases we encountered, and the Python implementation that handled them reliably." },
       { type: "h2", text: "Why tenant migration is harder than it looks" },
@@ -636,7 +636,7 @@ const POSTS = [
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "finance",
-    illus: "blueprint",
+    illus: "contract_doc",
     body: [
       { type: "lead", text: "Fixed price or time and materials, this is one of the most consequential decisions in a software engagement, and it is often made too quickly. Each model allocates risk differently between client and vendor, and each is the right answer in specific circumstances. Getting it wrong costs more than the price difference." },
       { type: "h2", text: "The fixed price model" },
@@ -671,7 +671,7 @@ const POSTS = [
     read: "5 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "cyan",
-    illus: "blueprint",
+    illus: "mission_board",
     body: [
       { type: "lead", text: "Most software projects fail not in development but in the lack of clarity before development begins. 7Code's Discovery Mission is a four-week, structured engagement that transforms a vision into a build-ready plan, producing the artefacts a team needs to start development with confidence, aligned expectations, and a realistic budget." },
       { type: "h2", text: "Why discovery matters" },
@@ -701,7 +701,7 @@ const POSTS = [
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "ops",
-    illus: "globe",
+    illus: "truck_route",
     body: [
       { type: "lead", text: "Logistics technology is being rewritten around AI. Generic transportation software still covers the easy 60 percent of the workflow and forces operations teams to absorb the rest in spreadsheets, email, and Slack threads. AI-native logistics software, agents that ingest events, LLMs that reason over the operational corpus, and evals that keep them honest, is what's replacing it. Here are the pains we hear from logistics teams every week, and the gains a tailored, AI-first system unlocks." },
       { type: "h2", text: "What is AI-native logistics software?" },
@@ -738,7 +738,7 @@ const POSTS = [
     read: "6 min read",
     author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "project/uploads/authors/daniela-cazac.jpg" },
     cover: "defence",
-    illus: "blueprint",
+    illus: "open_door",
     body: [
       { type: "lead", text: "Most clients stay with the wrong software service provider at least six months longer than they should. Sunk cost, the fear of starting over, and the hope that things will improve all push the decision out. With AI projects the delay is even more expensive: model choices age out, eval debt compounds, and the team that built the system loses the context required to maintain it. This is the playbook we use when a switch is overdue." },
       { type: "h2", text: "What signals it's time to switch software service provider" },
@@ -778,8 +778,8 @@ const POSTS = [
     date: "Oct 25, 2023",
     read: "8 min read",
     author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
-    cover: "ink",
-    illus: "circuit",
+    cover: "energy",
+    illus: "cloud_lift",
     body: [
       { type: "lead", text: "ECS on Fargate is the natural step up from AWS Elastic Beanstalk for AI engineering teams that have outgrown Beanstalk's deploy story but do not want to take on a full Kubernetes platform. Containerised LLM proxies, retrieval workers, and agent runtimes need predictable rollouts, real CI/CD, and observability that Beanstalk struggles to deliver. The migration is mechanical once the underlying primitives are in place. This is the recipe we use." },
       { type: "h2", text: "What we are aiming for" },
@@ -821,8 +821,8 @@ const POSTS = [
     date: "Oct 25, 2023",
     read: "5 min read",
     author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
-    cover: "ops",
-    illus: "circuit",
+    cover: "health",
+    illus: "cloud_compare",
     body: [
       { type: "lead", text: "I picked Elastic Beanstalk for an AWS deployment because it looked like the simplest place to start. After six months of running real production traffic on it, including LLM proxies and retrieval workers, I had collected enough small papercuts that I moved the workload to ECS + Fargate. The migration paid for itself in the first month. Here is the comparison I would make again today." },
       { type: "h2", text: "The AWS deployment ladder, simplified" },
@@ -854,17 +854,560 @@ const POSTS = [
 // Cover colours + illustration system
 // ─────────────────────────────────────────────────────────────────
 const COVER_COLORS = {
-  ink:     { bg: "linear-gradient(135deg, #0F172A 0%, #1E2939 100%)", fg: "#E2E8F0" },
-  cyan:    { bg: "linear-gradient(135deg, #082A35 0%, #0C3544 100%)", fg: "#67E8F9" },
-  finance: { bg: "linear-gradient(135deg, #0F1E2E 0%, #162437 100%)", fg: "#93C5FD" },
-  energy:  { bg: "linear-gradient(135deg, #1C1A10 0%, #2A2515 100%)", fg: "#FDE68A" },
-  ops:     { bg: "linear-gradient(135deg, #0D1F2D 0%, #132534 100%)", fg: "#6EE7B7" },
-  health:  { bg: "linear-gradient(135deg, #1A2535 0%, #243044 100%)", fg: "#BAE6FD" },
-  defence: { bg: "linear-gradient(135deg, #141A1F 0%, #1C2530 100%)", fg: "#CBD5E1" },
+  ink:     { bg: "linear-gradient(135deg, #1C0F4A 0%, #2D1B7E 100%)", fg: "#C4B5FD" },
+  cyan:    { bg: "linear-gradient(135deg, #023E57 0%, #0A5C7F 100%)", fg: "#22D3EE" },
+  finance: { bg: "linear-gradient(135deg, #0D2160 0%, #14338C 100%)", fg: "#60A5FA" },
+  energy:  { bg: "linear-gradient(135deg, #3D2100 0%, #5C3400 100%)", fg: "#FBBF24" },
+  ops:     { bg: "linear-gradient(135deg, #04351C 0%, #08522E 100%)", fg: "#34D399" },
+  health:  { bg: "linear-gradient(135deg, #073070 0%, #0A469E 100%)", fg: "#38BDF8" },
+  defence: { bg: "linear-gradient(135deg, #192336 0%, #243348 100%)", fg: "#94A3B8" },
 };
 
 // Topic-specific SVG illustrations, rendered on top of the gradient
 const ILLUSTRATIONS = {
+  // Radar sweep → strategy / discovery
+  radar: ({ fg }) => (
+    <>
+      {[70,130,190,250].map((r,i) => (
+        <circle key={"rr"+i} cx={360} cy={260} r={r} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.4-i*0.07}/>
+      ))}
+      <line x1={360} y1={260} x2={590} y2={105} stroke={fg} strokeWidth={2.5} opacity={0.75}/>
+      <path d="M360,260 L590,105 A250,250 0 0,0 500,490" fill={fg} opacity={0.09}/>
+      {[[430,150],[540,200],[590,310],[470,355],[340,420]].map(([x,y],i) => (
+        <g key={"rp"+i}>
+          <circle cx={x} cy={y} r={6} fill={fg} opacity={0.55+i*0.08}/>
+          <circle cx={x} cy={y} r={16} fill="none" stroke={fg} strokeWidth={1} opacity={0.28}/>
+        </g>
+      ))}
+      <circle cx={360} cy={260} r={12} fill={fg} opacity={0.45}/>
+      <circle cx={360} cy={260} r={5} fill={fg} opacity={0.9}/>
+    </>
+  ),
+
+  // Rocket + arc → ship / launch
+  rocket_arc: ({ fg }) => (
+    <>
+      <path d="M100,430 C250,430 480,290 680,80" fill="none" stroke={fg} strokeWidth={2} strokeDasharray="10 6" opacity={0.55}/>
+      {[[150,418],[275,375],[410,295],[545,195],[660,108]].map(([x,y],i) => (
+        <circle key={"rm"+i} cx={x} cy={y} r={4+i} fill={fg} opacity={0.22+i*0.12}/>
+      ))}
+      <g transform="translate(680,80) rotate(-42)">
+        <ellipse cx={0} cy={0} rx={18} ry={40} fill="none" stroke={fg} strokeWidth={2.5} opacity={0.85}/>
+        <ellipse cx={0} cy={-15} rx={8} ry={12} fill={fg} opacity={0.35}/>
+        <path d="M-18,25 L-32,48 L-18,36 Z" fill={fg} opacity={0.65}/>
+        <path d="M18,25 L32,48 L18,36 Z" fill={fg} opacity={0.65}/>
+        <circle cx={0} cy={-15} r={4} fill={fg} opacity={0.75}/>
+      </g>
+    </>
+  ),
+
+  // Balance scale → pricing / comparison
+  balance_scale: ({ fg }) => (
+    <>
+      <line x1={400} y1={110} x2={400} y2={380} stroke={fg} strokeWidth={2.5} opacity={0.7}/>
+      <circle cx={400} cy={110} r={10} fill={fg} opacity={0.7}/>
+      <line x1={170} y1={205} x2={630} y2={180} stroke={fg} strokeWidth={2.5} opacity={0.65}/>
+      <line x1={170} y1={205} x2={195} y2={315} stroke={fg} strokeWidth={1.5} opacity={0.6}/>
+      <line x1={630} y1={180} x2={608} y2={290} stroke={fg} strokeWidth={1.5} opacity={0.6}/>
+      <ellipse cx={195} cy={328} rx={70} ry={22} fill="none" stroke={fg} strokeWidth={2} opacity={0.7}/>
+      <rect x={130} y={306} width={130} height={30} rx={4} fill={fg} opacity={0.14}/>
+      <ellipse cx={608} cy={302} rx={70} ry={22} fill="none" stroke={fg} strokeWidth={2} opacity={0.7}/>
+      <rect x={543} y={280} width={130} height={30} rx={4} fill={fg} opacity={0.09}/>
+      {[155,178].map((y,i) => <circle key={"bc"+i} cx={195} cy={y} r={8} fill={fg} opacity={0.5}/>)}
+      <circle cx={608} cy={162} r={8} fill={fg} opacity={0.5}/>
+    </>
+  ),
+
+  // Robot arm + neural node → manufacturing AI
+  robot_arm: ({ fg }) => (
+    <>
+      <rect x={75} y={285} width={65} height={155} rx={6} fill="none" stroke={fg} strokeWidth={2} opacity={0.6}/>
+      <rect x={95} y={305} width={22} height={14} rx={2} fill={fg} opacity={0.38}/>
+      <line x1={108} y1={285} x2={108} y2={235} stroke={fg} strokeWidth={10} strokeLinecap="round" opacity={0.55}/>
+      <line x1={108} y1={235} x2={205} y2={175} stroke={fg} strokeWidth={8} strokeLinecap="round" opacity={0.5}/>
+      <line x1={205} y1={175} x2={335} y2={195} stroke={fg} strokeWidth={6} strokeLinecap="round" opacity={0.45}/>
+      <g transform="translate(335,195)">
+        <circle r={22} fill="none" stroke={fg} strokeWidth={2} opacity={0.72}/>
+        <line x1={-14} y1={0} x2={14} y2={0} stroke={fg} strokeWidth={2} opacity={0.72}/>
+        <line x1={0} y1={-14} x2={0} y2={14} stroke={fg} strokeWidth={2} opacity={0.72}/>
+      </g>
+      <circle cx={510} cy={175} r={72} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.5}/>
+      {[0,60,120,180,240,300].map((deg,i) => {
+        const r=57,x=510+r*Math.cos(deg*Math.PI/180),y=175+r*Math.sin(deg*Math.PI/180);
+        return <circle key={"na"+i} cx={x} cy={y} r={6} fill={fg} opacity={0.65}/>;
+      })}
+      <circle cx={510} cy={175} r={18} fill={fg} opacity={0.3}/>
+      <circle cx={510} cy={175} r={8} fill={fg} opacity={0.75}/>
+      <path d="M335,195 L510,175" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="6 4" opacity={0.45}/>
+    </>
+  ),
+
+  // Node mesh → automation / integration
+  mesh_net: ({ fg }) => (
+    <>
+      {[
+        [140,120],[320,80],[520,110],[700,90],
+        [80,260],[250,230],[440,270],[620,240],[745,268],
+        [160,390],[380,360],[580,390],[720,378],
+      ].map(([x,y],i) => (
+        <g key={"mn"+i}>
+          <circle cx={x} cy={y} r={i<4?14:i<9?11:9} fill={fg} opacity={0.2}/>
+          <circle cx={x} cy={y} r={i<4?6:i<9?5:4} fill={fg} opacity={0.7}/>
+        </g>
+      ))}
+      {[
+        [[140,120],[320,80]],[[320,80],[520,110]],[[520,110],[700,90]],
+        [[80,260],[250,230]],[[250,230],[440,270]],[[440,270],[620,240]],[[620,240],[745,268]],
+        [[160,390],[380,360]],[[380,360],[580,390]],[[580,390],[720,378]],
+        [[140,120],[80,260]],[[320,80],[250,230]],[[520,110],[440,270]],[[700,90],[620,240]],
+        [[80,260],[160,390]],[[250,230],[380,360]],[[440,270],[580,390]],[[620,240],[720,378]],
+        [[250,230],[160,390]],[[440,270],[380,360]],
+      ].map(([[x1,y1],[x2,y2]],i) => (
+        <line key={"ml"+i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={fg} strokeWidth={1} opacity={0.3}/>
+      ))}
+    </>
+  ),
+
+  // Debug loop pipeline → debugging case study
+  loop_debug: ({ fg }) => (
+    <>
+      <circle cx={400} cy={240} r={165} fill="none" stroke={fg} strokeWidth={2} strokeDasharray="22 8" opacity={0.55}/>
+      <circle cx={400} cy={240} r={105} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.3}/>
+      {[0,72,144,216,288].map((deg,i) => {
+        const rad=(deg-90)*Math.PI/180, x=400+165*Math.cos(rad), y=240+165*Math.sin(rad);
+        return (
+          <g key={"ld"+i}>
+            <rect x={x-32} y={y-14} width={64} height={28} rx={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.6}/>
+            <circle cx={x} cy={y} r={5} fill={fg} opacity={0.75}/>
+          </g>
+        );
+      })}
+      <circle cx={400} cy={240} r={24} fill="none" stroke={fg} strokeWidth={2} opacity={0.65}/>
+      <circle cx={400} cy={240} r={9} fill={fg} opacity={0.8}/>
+      <path d="M543,148 L558,133" stroke={fg} strokeWidth={2} opacity={0.65}/>
+      <polygon points="562,128 570,148 550,142" fill={fg} opacity={0.65}/>
+    </>
+  ),
+
+  // Lever + fulcrum → engineer leverage
+  lever_fulcrum: ({ fg }) => (
+    <>
+      <line x1={110} y1={340} x2={680} y2={178} stroke={fg} strokeWidth={4} strokeLinecap="round" opacity={0.68}/>
+      <polygon points="378,258 400,312 356,312" fill={fg} opacity={0.65}/>
+      <line x1={338} y1={312} x2={418} y2={312} stroke={fg} strokeWidth={3} opacity={0.55}/>
+      <circle cx={110} cy={340} r={30} fill="none" stroke={fg} strokeWidth={2} opacity={0.5}/>
+      <circle cx={110} cy={340} r={8} fill={fg} opacity={0.55}/>
+      <rect x={620} y={108} width={90} height={58} rx={6} fill="none" stroke={fg} strokeWidth={2} opacity={0.65}/>
+      <line x1={635} y1={124} x2={695} y2={124} stroke={fg} strokeWidth={1.5} opacity={0.55}/>
+      <line x1={635} y1={137} x2={685} y2={137} stroke={fg} strokeWidth={1.5} opacity={0.55}/>
+      <line x1={635} y1={150} x2={690} y2={150} stroke={fg} strokeWidth={1.5} opacity={0.55}/>
+      {[0,1,2,3].map(i => (
+        <line key={"la"+i} x1={648} y1={88} x2={648+(i+1)*18} y2={88-(i+1)*15} stroke={fg} strokeWidth={1} opacity={0.35}/>
+      ))}
+    </>
+  ),
+
+  // Document handoff arc → project handover
+  handover_docs: ({ fg }) => (
+    <>
+      <rect x={75} y={150} width={185} height={240} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.6}/>
+      {[185,210,235,260,285,310].map((y,i) => (
+        <line key={"hd"+i} x1={100} y1={y} x2={235} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      ))}
+      <circle cx={140} cy={164} r={9} fill={fg} opacity={0.55}/>
+      <rect x={540} y={120} width={185} height={240} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.6}/>
+      {[155,180,205,230,255,280].map((y,i) => (
+        <line key={"hr"+i} x1={565} y1={y} x2={700} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      ))}
+      <circle cx={688} cy={134} r={9} fill={fg} opacity={0.55}/>
+      <path d="M265,265 C345,220 465,200 540,232" fill="none" stroke={fg} strokeWidth={2.5} strokeDasharray="10 5" opacity={0.65}/>
+      <polygon points="540,222 558,232 536,245" fill={fg} opacity={0.7}/>
+      <circle cx={400} cy={242} r={22} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.45}/>
+      <line x1={388} y1={242} x2={412} y2={242} stroke={fg} strokeWidth={2} opacity={0.6}/>
+      <line x1={400} y1={230} x2={400} y2={254} stroke={fg} strokeWidth={2} opacity={0.6}/>
+    </>
+  ),
+
+  // Globe grid + pins → global engineering pods
+  world_grid: ({ fg }) => (
+    <>
+      <ellipse cx={400} cy={240} rx={220} ry={220} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.5}/>
+      {[-130,-65,0,65,130].map((dy,i) => {
+        const rx=Math.sqrt(Math.max(0,220*220-dy*dy));
+        return <ellipse key={"wg"+i} cx={400} cy={240+dy} rx={rx} ry={rx*0.3} fill="none" stroke={fg} strokeWidth={1} opacity={0.35}/>;
+      })}
+      {[-0.8,-0.4,0,0.4,0.8].map((f,i) => (
+        <ellipse key={"wm"+i} cx={400} cy={240} rx={Math.abs(Math.sin(f*1.5))*220+5} ry={220} fill="none" stroke={fg} strokeWidth={1} opacity={0.32}/>
+      ))}
+      {[[320,165],[480,148],[248,285],[562,295],[412,345],[340,228]].map(([x,y],i) => (
+        <g key={"wp"+i}>
+          <circle cx={x} cy={y} r={8} fill={fg} opacity={0.65}/>
+          <line x1={x} y1={y} x2={x} y2={y-26} stroke={fg} strokeWidth={1.5} opacity={0.55}/>
+          <circle cx={x} cy={y-26} r={4} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.5}/>
+        </g>
+      ))}
+      <path d="M320,165 Q400,132 480,148" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5}/>
+      <path d="M248,285 Q400,248 562,295" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5}/>
+    </>
+  ),
+
+  // Branching path → switching / pivot
+  fork_path: ({ fg }) => (
+    <>
+      <line x1={100} y1={240} x2={375} y2={240} stroke={fg} strokeWidth={3} opacity={0.7}/>
+      <circle cx={375} cy={240} r={15} fill={fg} opacity={0.4}/>
+      <circle cx={375} cy={240} r={6} fill={fg} opacity={0.85}/>
+      <line x1={375} y1={240} x2={645} y2={118} stroke={fg} strokeWidth={3} opacity={0.7}/>
+      <line x1={375} y1={240} x2={645} y2={362} stroke={fg} strokeWidth={1.5} strokeDasharray="8 5" opacity={0.38}/>
+      <rect x={645} y={88} width={105} height={60} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.7}/>
+      <circle cx={666} cy={118} r={6} fill={fg} opacity={0.6}/>
+      <line x1={678} y1={112} x2={730} y2={112} stroke={fg} strokeWidth={1.5} opacity={0.5}/>
+      <line x1={678} y1={126} x2={718} y2={126} stroke={fg} strokeWidth={1.5} opacity={0.5}/>
+      <rect x={645} y={332} width={105} height={60} rx={8} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      <line x1={665} y1={352} x2={725} y2={352} stroke={fg} strokeWidth={1} opacity={0.28}/>
+      <line x1={665} y1={366} x2={705} y2={366} stroke={fg} strokeWidth={1} opacity={0.28}/>
+      <polygon points="641,112 653,104 653,120" fill={fg} opacity={0.7}/>
+      <polygon points="641,358 653,350 653,366" fill={fg} opacity={0.38}/>
+    </>
+  ),
+
+  // Org tree hierarchy → outstaffing / team
+  org_tree: ({ fg }) => (
+    <>
+      <rect x={340} y={58} width={120} height={52} rx={6} fill="none" stroke={fg} strokeWidth={2} opacity={0.68}/>
+      <circle cx={400} cy={84} r={10} fill={fg} opacity={0.55}/>
+      <line x1={400} y1={110} x2={400} y2={155} stroke={fg} strokeWidth={1.5} opacity={0.58}/>
+      <line x1={160} y1={155} x2={640} y2={155} stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+      {[160,400,640].map((x,i) => (
+        <g key={"ot"+i}>
+          <line x1={x} y1={155} x2={x} y2={195} stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+          <rect x={x-62} y={195} width={124} height={52} rx={6} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+          <circle cx={x} cy={221} r={9} fill={fg} opacity={0.5}/>
+        </g>
+      ))}
+      <line x1={160} y1={247} x2={160} y2={292} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      <line x1={100} y1={292} x2={220} y2={292} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      {[100,220].map((x,i) => (
+        <g key={"ob"+i}>
+          <line x1={x} y1={292} x2={x} y2={328} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+          <rect x={x-42} y={328} width={84} height={40} rx={5} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+        </g>
+      ))}
+      <line x1={640} y1={247} x2={640} y2={292} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      <line x1={580} y1={292} x2={700} y2={292} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      {[580,700].map((x,i) => (
+        <g key={"oc"+i}>
+          <line x1={x} y1={292} x2={x} y2={328} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+          <rect x={x-42} y={328} width={84} height={40} rx={5} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+        </g>
+      ))}
+    </>
+  ),
+
+  // City skyline + speech bubble → conference / events
+  conf_skyline: ({ fg }) => (
+    <>
+      {[
+        {x:58,y:335,w:55,h:145},{x:123,y:295,w:48,h:185},{x:181,y:255,w:78,h:225},
+        {x:269,y:318,w:56,h:162},{x:335,y:235,w:68,h:245},{x:413,y:278,w:54,h:202},
+        {x:477,y:258,w:88,h:222},{x:575,y:298,w:62,h:182},{x:647,y:338,w:68,h:142},
+      ].map(({x,y,w,h},i) => (
+        <g key={"cs"+i}>
+          <rect x={x} y={y} width={w} height={h} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42+i%3*0.09}/>
+          {Array.from({length:Math.floor(h/28)}).map((_,j) => (
+            <rect key={"cw"+j} x={x+8} y={y+10+j*28} width={10} height={10} fill={fg} opacity={0.16}/>
+          ))}
+        </g>
+      ))}
+      <ellipse cx={400} cy={100} rx={92} ry={58} fill="none" stroke={fg} strokeWidth={2} opacity={0.5}/>
+      <path d="M380,158 L370,185 L395,162" fill={fg} opacity={0.45}/>
+      {[360,400,440].map((x,i) => <circle key={"cn"+i} cx={x} cy={100} r={5} fill={fg} opacity={0.55}/>)}
+    </>
+  ),
+
+  // Magnifying glass over code → debugging
+  magnify_code: ({ fg }) => (
+    <>
+      {[118,152,186,220,254,288,322].map((y,i) => (
+        <line key={"mc"+i} x1={78} y1={y} x2={375+i*8} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32+i%3*0.09}/>
+      ))}
+      {[78,120,162].map((x,i) => (
+        <line key={"mi"+i} x1={x} y1={118} x2={x} y2={322} stroke={fg} strokeWidth={1} opacity={0.22}/>
+      ))}
+      <circle cx={562} cy={255} r={142} fill="none" stroke={fg} strokeWidth={3} opacity={0.68}/>
+      <circle cx={562} cy={255} r={120} fill={fg} opacity={0.05}/>
+      {[198,228,258,288,318].map((y,i) => (
+        <line key={"ml2"+i} x1={440} y1={y} x2={684} y2={y} stroke={fg} strokeWidth={2} opacity={0.42+i%2*0.16}/>
+      ))}
+      <line x1={672} y1={367} x2={744} y2={438} stroke={fg} strokeWidth={6} strokeLinecap="round" opacity={0.65}/>
+      <line x1={682} y1={377} x2={754} y2={448} stroke={fg} strokeWidth={3} strokeLinecap="round" opacity={0.42}/>
+    </>
+  ),
+
+  // Stacked layers → MVP stack
+  stacked_layers: ({ fg }) => (
+    <>
+      {[
+        {y:368,w:500},{y:302,w:440},{y:236,w:380},{y:170,w:318},{y:104,w:256},
+      ].map(({y,w},i) => {
+        const x=400-w/2;
+        return (
+          <g key={"sl"+i}>
+            <rect x={x} y={y} width={w} height={50} rx={6} fill="none" stroke={fg} strokeWidth={2} opacity={0.5+i*0.09}/>
+            <rect x={x} y={y} width={w} height={50} rx={6} fill={fg} opacity={0.05+i*0.025}/>
+            {[...Array(Math.floor(w/32))].map((_,j) => (
+              <line key={"sv"+j} x1={x+26+j*32} y1={y+10} x2={x+26+j*32} y2={y+40} stroke={fg} strokeWidth={0.5} opacity={0.18}/>
+            ))}
+          </g>
+        );
+      })}
+    </>
+  ),
+
+  // Relay baton → seamless handover
+  relay_baton: ({ fg }) => (
+    <>
+      <path d="M90,348 C200,348 250,198 355,198 C460,198 510,348 620,348" fill="none" stroke={fg} strokeWidth={1.5} strokeDasharray="8 5" opacity={0.38}/>
+      <circle cx={195} cy={308} r={30} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <circle cx={195} cy={308} r={11} fill={fg} opacity={0.5}/>
+      <circle cx={605} cy={308} r={30} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <circle cx={605} cy={308} r={11} fill={fg} opacity={0.5}/>
+      <rect x={338} y={214} width={124} height={32} rx={16} fill="none" stroke={fg} strokeWidth={2.5} opacity={0.75}/>
+      <rect x={348} y={219} width={104} height={22} rx={11} fill={fg} opacity={0.22}/>
+      <line x1={225} y1={308} x2={338} y2={230} stroke={fg} strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5}/>
+      <line x1={462} y1={230} x2={575} y2={308} stroke={fg} strokeWidth={1.5} strokeDasharray="6 4" opacity={0.5}/>
+      <polygon points="336,230 322,242 335,254" fill={fg} opacity={0.65}/>
+      <polygon points="464,230 476,242 463,254" fill={fg} opacity={0.65}/>
+    </>
+  ),
+
+  // Two columns → comparison
+  two_columns: ({ fg }) => (
+    <>
+      <rect x={95} y={98} width={248} height={324} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <rect x={457} y={98} width={248} height={324} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <rect x={95} y={98} width={248} height={46} rx={8} fill={fg} opacity={0.2}/>
+      <rect x={457} y={98} width={248} height={46} rx={8} fill={fg} opacity={0.13}/>
+      {[168,202,236,270,304,338,372].map((y,i) => (
+        <line key={"tl"+i} x1={118} y1={y} x2={322} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32+i%2*0.12}/>
+      ))}
+      {[168,202,236,270,304,338,372].map((y,i) => (
+        <line key={"tr"+i} x1={480} y1={y} x2={684} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32+i%2*0.12}/>
+      ))}
+      <line x1={400} y1={78} x2={400} y2={452} stroke={fg} strokeWidth={1} strokeDasharray="5 5" opacity={0.28}/>
+      {[175,209,243,277].map((y,i) => (
+        <circle key={"tc"+i} cx={138} cy={y} r={6} fill={fg} opacity={0.55}/>
+      ))}
+      {[175,243].map((y,i) => (
+        <circle key={"tx"+i} cx={498} cy={y} r={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      ))}
+    </>
+  ),
+
+  // Neural brain outline → AI / ML
+  brain_neural: ({ fg }) => (
+    <>
+      <path d="M258,118 C198,98 148,148 148,218 C148,288 198,328 248,338 C268,378 328,398 400,398 C472,398 532,378 552,338 C602,328 652,288 652,218 C652,148 602,98 542,118 C522,78 462,58 400,58 C338,58 278,78 258,118 Z" fill="none" stroke={fg} strokeWidth={2} opacity={0.52}/>
+      {[
+        [318,158],[442,153],[278,238],[400,228],[532,233],[358,318],[452,313],
+        [218,183],[582,186],[308,288],[492,283],
+      ].map(([x,y],i) => (
+        <circle key={"bn"+i} cx={x} cy={y} r={7} fill={fg} opacity={0.58}/>
+      ))}
+      {[
+        [[318,158],[442,153]],[[318,158],[278,238]],[[442,153],[532,233]],
+        [[278,238],[400,228]],[[400,228],[532,233]],[[278,238],[308,288]],
+        [[532,233],[492,283]],[[400,228],[358,318]],[[400,228],[452,313]],
+        [[218,183],[278,238]],[[582,186],[532,233]],[[308,288],[358,318]],
+        [[492,283],[452,313]],[[318,158],[218,183]],[[442,153],[582,186]],
+      ].map(([[x1,y1],[x2,y2]],i) => (
+        <line key={"bl"+i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={fg} strokeWidth={1} opacity={0.33}/>
+      ))}
+    </>
+  ),
+
+  // Lego-style blocks → low-code / building blocks
+  building_blocks: ({ fg }) => (
+    <>
+      {[
+        {x:98,y:322,w:122,h:62,studs:3},{x:98,y:260,w:122,h:62,studs:3},
+        {x:220,y:291,w:122,h:62,studs:3},{x:198,y:362,w:182,h:62,studs:4},
+        {x:378,y:232,w:162,h:62,studs:4},{x:378,y:294,w:162,h:62,studs:4},
+        {x:378,y:356,w:162,h:62,studs:4},{x:538,y:262,w:142,h:62,studs:3},
+        {x:538,y:324,w:142,h:62,studs:3},
+      ].map(({x,y,w,h,studs},i) => (
+        <g key={"bb"+i}>
+          <rect x={x} y={y} width={w} height={h} rx={4} fill="none" stroke={fg} strokeWidth={2} opacity={0.56+i%3*0.1}/>
+          <rect x={x} y={y} width={w} height={h} rx={4} fill={fg} opacity={0.06+i%2*0.04}/>
+          {[...Array(studs)].map((_,s) => (
+            <ellipse key={"bs"+s} cx={x+w/(studs+1)*(s+1)} cy={y-8} rx={13} ry={7} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.52}/>
+          ))}
+        </g>
+      ))}
+    </>
+  ),
+
+  // Coin stacks + arrow → cost savings / nearshoring
+  coin_stack: ({ fg }) => (
+    <>
+      {[0,1,2,3,4,5,6].map(i => (
+        <ellipse key={"cs1"+i} cx={218} cy={352-i*28} rx={92} ry={22} fill="none" stroke={fg} strokeWidth={2} opacity={0.45+i*0.05}/>
+      ))}
+      {[0,1,2,3].map(i => (
+        <ellipse key={"cs2"+i} cx={552} cy={312-i*28} rx={72} ry={18} fill="none" stroke={fg} strokeWidth={2} opacity={0.45+i*0.05}/>
+      ))}
+      <path d="M332,218 C392,158 442,158 492,198" fill="none" stroke={fg} strokeWidth={2} strokeDasharray="8 5" opacity={0.58}/>
+      <polygon points="492,198 506,184 502,208" fill={fg} opacity={0.65}/>
+      <line x1={218} y1={118} x2={218} y2={163} stroke={fg} strokeWidth={2.5} opacity={0.55}/>
+      <polygon points="218,110 208,132 228,132" fill={fg} opacity={0.55}/>
+      <line x1={552} y1={172} x2={552} y2={212} stroke={fg} strokeWidth={2.5} opacity={0.55}/>
+      <polygon points="552,164 542,184 562,184" fill={fg} opacity={0.55}/>
+    </>
+  ),
+
+  // Data pipes → auth migration / data flow
+  data_flow_pipe: ({ fg }) => (
+    <>
+      <rect x={78} y={188} width={152} height={122} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+      <line x1={108} y1={214} x2={202} y2={214} stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <line x1={108} y1={234} x2={188} y2={234} stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <line x1={108} y1={254} x2={198} y2={254} stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <rect x={570} y={165} width={152} height={122} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+      <circle cx={628} cy={204} r={22} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.52}/>
+      <circle cx={628} cy={204} r={9} fill={fg} opacity={0.48}/>
+      <line x1={230} y1={250} x2={342} y2={250} stroke={fg} strokeWidth={3} opacity={0.58}/>
+      <line x1={342} y1={250} x2={342} y2={198} stroke={fg} strokeWidth={3} opacity={0.52}/>
+      <line x1={342} y1={198} x2={458} y2={198} stroke={fg} strokeWidth={3} opacity={0.52}/>
+      <line x1={458} y1={198} x2={458} y2={250} stroke={fg} strokeWidth={3} opacity={0.52}/>
+      <line x1={458} y1={250} x2={570} y2={250} stroke={fg} strokeWidth={3} opacity={0.58}/>
+      {[[282,250],[342,224],[400,198],[458,224],[514,250]].map(([x,y],i) => (
+        <circle key={"dp"+i} cx={x} cy={y} r={6} fill={fg} opacity={0.58}/>
+      ))}
+      <polygon points="564,242 570,258 554,250" fill={fg} opacity={0.65}/>
+    </>
+  ),
+
+  // Contract document → fixed-price / T&M
+  contract_doc: ({ fg }) => (
+    <>
+      <rect x={228} y={78} width={344} height={364} rx={10} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+      <rect x={228} y={78} width={344} height={52} rx={10} fill={fg} opacity={0.18}/>
+      {[162,192,222,252,282,312,342,372,402].map((y,i) => (
+        <line key={"cd"+i} x1={262} y1={y} x2={542} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32+i%3*0.09}/>
+      ))}
+      <line x1={262} y1={408} x2={375} y2={408} stroke={fg} strokeWidth={2.5} opacity={0.58}/>
+      <line x1={428} y1={408} x2={542} y2={408} stroke={fg} strokeWidth={2.5} opacity={0.58}/>
+      <line x1={262} y1={420} x2={375} y2={420} stroke={fg} strokeWidth={1} opacity={0.32}/>
+      <line x1={428} y1={420} x2={542} y2={420} stroke={fg} strokeWidth={1} opacity={0.32}/>
+      <circle cx={288} cy={99} r={15} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.52}/>
+      <line x1={282} y1={99} x2={294} y2={99} stroke={fg} strokeWidth={2} opacity={0.65}/>
+      <line x1={288} y1={93} x2={288} y2={105} stroke={fg} strokeWidth={2} opacity={0.65}/>
+    </>
+  ),
+
+  // Mission briefing board → discovery / planning
+  mission_board: ({ fg }) => (
+    <>
+      <rect x={78} y={78} width={644} height={384} rx={10} fill="none" stroke={fg} strokeWidth={2} opacity={0.52}/>
+      <line x1={78} y1={128} x2={722} y2={128} stroke={fg} strokeWidth={1.5} opacity={0.38}/>
+      <rect x={98} y={148} width={222} height={142} rx={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+      <rect x={338} y={148} width={364} height={62} rx={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+      <rect x={338} y={228} width={364} height={62} rx={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.48}/>
+      <rect x={98} y={308} width={608} height={134} rx={6} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      {[332,362,392].map((y,i) => <line key={"mb"+i} x1={118} y1={y} x2={686} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32}/>)}
+      <circle cx={532} cy={174} r={16} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.52}/>
+      <line x1={524} y1={174} x2={540} y2={174} stroke={fg} strokeWidth={2} opacity={0.6}/>
+      <line x1={532} y1={166} x2={532} y2={182} stroke={fg} strokeWidth={2} opacity={0.6}/>
+      <circle cx={532} cy={254} r={16} fill={fg} opacity={0.32}/>
+      <circle cx={532} cy={254} r={7} fill={fg} opacity={0.68}/>
+    </>
+  ),
+
+  // Truck on road route → logistics
+  truck_route: ({ fg }) => (
+    <>
+      <path d="M78,298 C178,298 198,218 318,218 C438,218 458,298 578,298 C638,298 678,268 722,248" fill="none" stroke={fg} strokeWidth={2} strokeDasharray="10 6" opacity={0.52}/>
+      {[[178,268],[318,218],[458,264],[578,293]].map(([x,y],i) => (
+        <g key={"tr"+i}>
+          <circle cx={x} cy={y} r={9} fill={fg} opacity={0.58}/>
+          <line x1={x} y1={y} x2={x} y2={y-22} stroke={fg} strokeWidth={1.5} opacity={0.45}/>
+          <circle cx={x} cy={y-22} r={4} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.45}/>
+        </g>
+      ))}
+      <g transform="translate(96,340)">
+        <rect x={0} y={-42} width={125} height={42} rx={4} fill="none" stroke={fg} strokeWidth={2} opacity={0.68}/>
+        <rect x={82} y={-68} width={43} height={26} rx={3} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.58}/>
+        <circle cx={22} cy={7} r={15} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+        <circle cx={22} cy={7} r={6} fill={fg} opacity={0.55}/>
+        <circle cx={98} cy={7} r={15} fill="none" stroke={fg} strokeWidth={2} opacity={0.62}/>
+        <circle cx={98} cy={7} r={6} fill={fg} opacity={0.55}/>
+      </g>
+    </>
+  ),
+
+  // Open door + closed door → switching provider
+  open_door: ({ fg }) => (
+    <>
+      <rect x={115} y={118} width={202} height={324} rx={8} fill="none" stroke={fg} strokeWidth={2.5} opacity={0.58}/>
+      <rect x={125} y={128} width={182} height={304} rx={6} fill={fg} opacity={0.08}/>
+      <circle cx={284} cy={280} r={9} fill={fg} opacity={0.58}/>
+      <rect x={482} y={98} width={202} height={344} rx={8} fill="none" stroke={fg} strokeWidth={2.5} opacity={0.68}/>
+      <rect x={492} y={108} width={182} height={324} rx={6} fill={fg} opacity={0.12}/>
+      <circle cx={502} cy={270} r={9} fill={fg} opacity={0.68}/>
+      {[140,165,190,215,240].map((y,i) => (
+        <line key={"od"+i} x1={502} y1={y} x2={668} y2={y} stroke={fg} strokeWidth={1} opacity={0.24}/>
+      ))}
+      <path d="M322,278 C372,258 422,258 480,268" fill="none" stroke={fg} strokeWidth={2} opacity={0.65}/>
+      <polygon points="480,260 495,268 479,278" fill={fg} opacity={0.68}/>
+      {[158,178,198,218,238,258].map((y,i) => (
+        <line key={"ol"+i} x1={126} y1={y} x2={296} y2={y} stroke={fg} strokeWidth={1} opacity={0.2}/>
+      ))}
+    </>
+  ),
+
+  // Container lifting to cloud → ECS migration
+  cloud_lift: ({ fg }) => (
+    <>
+      <ellipse cx={400} cy={128} rx={202} ry={82} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <ellipse cx={278} cy={162} rx={122} ry={56} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <ellipse cx={532} cy={154} rx={142} ry={62} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <rect x={308} y={294} width={184} height={122} rx={8} fill="none" stroke={fg} strokeWidth={2.5} opacity={0.68}/>
+      {[0,1,2,3].map(i => <line key={"cl"+i} x1={328+i*42} y1={294} x2={328+i*42} y2={416} stroke={fg} strokeWidth={1} opacity={0.22}/>)}
+      <line x1={318} y1={346} x2={482} y2={346} stroke={fg} strokeWidth={1} opacity={0.22}/>
+      <line x1={400} y1={210} x2={400} y2={294} stroke={fg} strokeWidth={2.5} strokeDasharray="9 5" opacity={0.58}/>
+      <polygon points="400,204 388,226 412,226" fill={fg} opacity={0.68}/>
+      <rect x={348} y={314} width={104} height={42} rx={4} fill={fg} opacity={0.2}/>
+      <line x1={238} y1={380} x2={562} y2={380} stroke={fg} strokeWidth={1} opacity={0.24}/>
+      {[238,310,380,450,520].map((x,i) => <line key={"cg"+i} x1={x} y1={380} x2={x} y2={416} stroke={fg} strokeWidth={1} opacity={0.2}/>)}
+    </>
+  ),
+
+  // Two clouds + comparison columns → ECS vs Beanstalk
+  cloud_compare: ({ fg }) => (
+    <>
+      <ellipse cx={228} cy={132} rx={147} ry={62} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <ellipse cx={142} cy={165} rx={92} ry={42} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <ellipse cx={338} cy={158} rx={107} ry={44} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <rect x={97} y={208} width={262} height={162} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      {[242,272,302,332].map((y,i) => (
+        <line key={"cc1"+i} x1={122} y1={y} x2={338} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      ))}
+      <ellipse cx={572} cy={112} rx={147} ry={62} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      <ellipse cx={486} cy={145} rx={92} ry={42} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <ellipse cx={682} cy={138} rx={107} ry={44} fill="none" stroke={fg} strokeWidth={1.5} opacity={0.42}/>
+      <rect x={441} y={188} width={262} height={162} rx={8} fill="none" stroke={fg} strokeWidth={2} opacity={0.58}/>
+      {[222,252,282,312].map((y,i) => (
+        <line key={"cc2"+i} x1={466} y1={y} x2={682} y2={y} stroke={fg} strokeWidth={1.5} opacity={0.32}/>
+      ))}
+      <circle cx={148} cy={290} r={9} fill={fg} opacity={0.48}/>
+      <circle cx={148} cy={320} r={9} fill={fg} opacity={0.48}/>
+      <rect x={466} y={236} width={52} height={19} rx={4} fill={fg} opacity={0.38}/>
+      <rect x={466} y={266} width={52} height={19} rx={4} fill={fg} opacity={0.38}/>
+      <rect x={466} y={296} width={52} height={19} rx={4} fill={fg} opacity={0.38}/>
+      <line x1={400} y1={78} x2={400} y2={452} stroke={fg} strokeWidth={1} strokeDasharray="5 5" opacity={0.22}/>
+    </>
+  ),
+
   // Rising chart + blueprint grid → strategy / discovery / planning
   blueprint: ({ fg }) => (
     <>
