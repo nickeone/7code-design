@@ -474,7 +474,7 @@ function WholesumHero() {
       </div>
       <img
         className="csd-ws-shot"
-        src="/project/uploads/wholesum%20hero.png"
+        src="/project/uploads/wholesum-hero.png"
         alt="WholeSum homepage hero, Get deeper insights from your richest data"
       />
     </div>
