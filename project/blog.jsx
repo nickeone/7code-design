@@ -1614,10 +1614,10 @@ function BlogListPage() {
     setMeta("og:title", t, "property");
     setMeta("og:description", d, "property");
     setMeta("og:type", "website", "property");
-    setMeta("og:url", SITE_ORIGIN_BL + "/#/blog", "property");
+    setMeta("og:url", SITE_ORIGIN_BL + "/blog", "property");
     setMeta("twitter:title", t, "name");
     setMeta("twitter:description", d, "name");
-    setCanonical(SITE_ORIGIN_BL + "/#/blog");
+    setCanonical(SITE_ORIGIN_BL + "/blog");
     setArticleJsonLd(null);
   }, []);
 
@@ -1741,7 +1741,7 @@ function BlogPostPage({ slug }) {
   useEffectBL(() => {
     const t = post.title + " | 7Code Blog";
     const d = post.subtitle;
-    const url = SITE_ORIGIN_BL + "/#/blog/" + post.slug;
+    const url = SITE_ORIGIN_BL + "/blog/" + post.slug;
     document.title = t;
     setMeta("description", d);
     setMeta("og:title", t, "property");
@@ -1761,7 +1761,7 @@ function BlogPostPage({ slug }) {
       <section className="blog-single-hero">
         <div className="container">
           <div className="blog-single-breadcrumb">
-            <a href="#/blog">Blog</a>
+            <a href="/blog">Blog</a>
             <span>·</span>
             <span>{post.cat}</span>
           </div>
@@ -1809,7 +1809,7 @@ function BlogPostPage({ slug }) {
               <div className="blog-sidebar-label" style={{ marginTop: 12 }}>Category</div>
               <span className="blog-cat-pill" style={{ marginTop: 6 }}>{post.cat}</span>
             </div>
-            <a href="#/contact" className="btn btn--primary" style={{ width: "100%", justifyContent: "center", marginTop: 16 }}>
+            <a href="/contact" className="btn btn--primary" style={{ width: "100%", justifyContent: "center", marginTop: 16 }}>
               Work with us <Icon.arrow />
             </a>
           </aside>

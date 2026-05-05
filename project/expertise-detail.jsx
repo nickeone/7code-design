@@ -390,7 +390,7 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
               ))}
             </div>
             <div className="exp-hero-cta">
-              <a href="#/contact" className="btn btn--primary btn--lg">Start a project <Icon.arrow /></a>
+              <a href="/contact" className="btn btn--primary btn--lg">Start a project <Icon.arrow /></a>
               <a href={"#/expertise/" + nextSlug} className="btn btn--ghost btn--lg">Next: {exp.next.title} <Icon.arrow /></a>
             </div>
           </div>

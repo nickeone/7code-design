@@ -405,7 +405,7 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
             ))}
           </div>
           <div className="svc-hero-cta">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
             <a href={"#/service/" + svc.next.slug} className="btn btn--ghost btn--lg">Next: {svc.next.title} <Icon.arrow /></a>
           </div>
         </div>
