@@ -296,7 +296,7 @@ function CaseStudiesShowcase() {
         </div>
         {filtered.length > 0 && (
           <div style={{ textAlign: "center", marginTop: 56 }}>
-            <a href="#/blog" className="btn btn--ghost">More case studies <Icon.arrow /></a>
+            <a href="/blog" className="btn btn--ghost">More case studies <Icon.arrow /></a>
           </div>
         )}
       </div>

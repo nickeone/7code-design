@@ -971,7 +971,7 @@ function CSDSticky() {
                 </div>
               ))}
             </div>
-            <a href="#/contact" className="btn btn--primary csd-sticky-cta">Start a project <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--primary csd-sticky-cta">Start a project <Icon.arrow /></a>
           </div>
         </aside>
 
