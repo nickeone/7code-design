@@ -74,7 +74,7 @@ const POSTS = [
     subtitle: "A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan, vision, evals, architecture, and a defensible budget.",
     date: "Apr 28, 2026",
     read: "9 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "cyan",
     illus: "blueprint",
     featured: true,
@@ -127,7 +127,7 @@ const POSTS = [
     subtitle: "AI projects break the assumptions behind fixed-price contracts. Here's a pricing framework that aligns incentives between AI vendors and clients.",
     date: "Apr 02, 2026",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "finance",
     illus: "blueprint",
     body: [
@@ -153,7 +153,7 @@ const POSTS = [
     subtitle: "Production-grade AI agents are quietly absorbing the manual coordination tax in factories. Here's the architecture that's actually working.",
     date: "Mar 18, 2026",
     read: "10 min read",
-    author: { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ops",
     illus: "gears",
     body: [
@@ -204,7 +204,7 @@ const POSTS = [
     subtitle: "How we partnered with the Adrenaline team to ship an LLM-powered debugger from MVP to AWS-scale production, in months, not years.",
     date: "Feb 20, 2026",
     read: "9 min read",
-    author: { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ink",
     illus: "circuit",
     body: [
@@ -255,7 +255,7 @@ const POSTS = [
     subtitle: "Handing over an AI product isn't just code and docs. It's evals, prompt versioning, and the operational runbooks that keep models trustworthy.",
     date: "Jan 22, 2026",
     read: "7 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "cyan",
     illus: "blueprint",
     body: [
@@ -304,7 +304,7 @@ const POSTS = [
     subtitle: "Five honest signals that your current vendor is holding back your AI roadmap, and how to make a clean transition.",
     date: "Dec 18, 2025",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "energy",
     illus: "launch",
     body: [
@@ -354,7 +354,7 @@ const POSTS = [
     subtitle: "What we heard about agentic workflows, evaluation, and AI go-to-market, and what we're betting on next.",
     date: "Nov 20, 2025",
     read: "5 min read",
-    author: { name: "Nicu Mardari", role: "Co-founder & CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "project/uploads/authors/nicu-mardari.jpg" },
     cover: "health",
     illus: "skyline",
     body: [
@@ -598,7 +598,7 @@ const POSTS = [
     subtitle: "A practical guide to the pitfalls, edge cases, and Python patterns for moving users from one Auth0 tenant to another, without data loss or downtime.",
     date: "Oct 25, 2023",
     read: "7 min read",
-    author: { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ops",
     illus: "circuit",
     body: [
@@ -777,7 +777,7 @@ const POSTS = [
     subtitle: "AI services need a deploy story Beanstalk cannot give them. A practical recipe for moving a containerised AI workload to ECS on Fargate, with VPC, load balancer, and a GitHub Actions deploy pipeline.",
     date: "Oct 25, 2023",
     read: "8 min read",
-    author: { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ink",
     illus: "circuit",
     body: [
@@ -820,7 +820,7 @@ const POSTS = [
     subtitle: "After six months on Elastic Beanstalk, the developer experience pushed me to ECS + Fargate. For containerised AI services with token budgets and eval gates, the case is even stronger.",
     date: "Oct 25, 2023",
     read: "5 min read",
-    author: { name: "Alessandro Merola", role: "CTO & Co-founder", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "project/uploads/authors/alessandro-merola.jpg" },
     cover: "ops",
     illus: "circuit",
     body: [
