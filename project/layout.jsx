@@ -59,6 +59,8 @@ function useReveal() {
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
+  const [mobileExpOpen, setMobileExpOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [svcOpen, setSvcOpen] = useState(false);
   const megaTimer = useRef(null);
@@ -182,9 +184,27 @@ function Nav() {
         </div>
       </header>
       <div className={"nav-mobile" + (mobileOpen ? " is-open" : "")}>
-        <a href="#/process">Services</a>
+        <div className="nav-mobile-group">
+          <button className="nav-mobile-group-btn" onClick={() => setMobileSvcOpen(o => !o)} aria-expanded={mobileSvcOpen}>
+            Services <Icon.caret />
+          </button>
+          <div className={"nav-mobile-sub" + (mobileSvcOpen ? " is-open" : "")}>
+            {services.map((s, i) => (
+              <a key={i} href={"#/service/" + s.slug}>{s.title}</a>
+            ))}
+          </div>
+        </div>
         <a href="#/case-studies">Case Studies</a>
-        <a href="#/expertise">Expertise</a>
+        <div className="nav-mobile-group">
+          <button className="nav-mobile-group-btn" onClick={() => setMobileExpOpen(o => !o)} aria-expanded={mobileExpOpen}>
+            Expertise <Icon.caret />
+          </button>
+          <div className={"nav-mobile-sub" + (mobileExpOpen ? " is-open" : "")}>
+            {expertise.map((e, i) => (
+              <a key={i} href={"#/expertise/" + e.slug}>{e.title}</a>
+            ))}
+          </div>
+        </div>
         <a href="#/about">About</a>
         <a href="#/blog">Blog</a>
         <a href="#/contact" className="btn btn--cyan">Get in touch <Icon.arrow /></a>
