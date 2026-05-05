@@ -9,13 +9,13 @@ const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
 // Trusted-by marquee
 function TrustedBy() {
   const logos = [
-    { src: "project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
-    { src: "project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
-    { src: "project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
-    { src: "project/uploads/daily8.png", alt: "Daily8" },
-    { src: "project/uploads/lendit.png", alt: "Lendit" },
-    { src: "project/uploads/Lidl-logo.png", alt: "Lidl" },
-    { src: "project/uploads/wholesum.webp", alt: "Wholesum" },
+    { src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
+    { src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
+    { src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
+    { src: "/project/uploads/daily8.png", alt: "Daily8" },
+    { src: "/project/uploads/lendit.png", alt: "Lendit" },
+    { src: "/project/uploads/Lidl-logo.png", alt: "Lidl" },
+    { src: "/project/uploads/wholesum.webp", alt: "Wholesum" },
   ];
   const all = [...logos, ...logos];
   return (
@@ -39,17 +39,17 @@ function TrustedBy() {
 // Photo covers for case studies that have a real hero image. Anything not
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
-  "wholesum":         { src: "project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
-  "daily8":           { src: "project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
-  "revote":           { src: "project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
-  "g42-fleet":        { src: "project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
-  "cloud-of-legacy":  { src: "project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
-  "lidl-road-safety": { src: "project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
-  "founders-factory": { src: "project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
-  "hera":             { src: "project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
-  "melsonic":         { src: "project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
-  "drum-bun":         { src: "project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
-  "numerize":         { src: "project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
+  "wholesum":         { src: "/project/uploads/wholesum%20hero.png",      alt: "WholeSum" },
+  "daily8":           { src: "/project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
+  "revote":           { src: "/project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
+  "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
+  "cloud-of-legacy":  { src: "/project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
+  "lidl-road-safety": { src: "/project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
+  "founders-factory": { src: "/project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
+  "hera":             { src: "/project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
+  "melsonic":         { src: "/project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
+  "drum-bun":         { src: "/project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
+  "numerize":         { src: "/project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
 };
 
 // Case study cover graphic
@@ -193,14 +193,14 @@ function WhyChoose() {
 // Verified & accredited section, credentials and listings
 function VerifiedAccredited() {
   const items = [
-    { src: "project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II, AICPA-aligned controls" },
-    { src: "project/uploads/hipa.webp",                       alt: "HIPAA Compliant, healthcare data safeguards" },
-    { src: "project/uploads/gdpr.png",                        alt: "GDPR Compliant, EU General Data Protection Regulation" },
-    { src: "project/uploads/iso%209001.png",                  alt: "ISO 9001:2015, quality management system certification" },
-    { src: "project/uploads/clutch.png",                      alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
-    { src: "project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
-    { src: "project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
-    { src: "project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
+    { src: "/project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II, AICPA-aligned controls" },
+    { src: "/project/uploads/hipa.webp",                       alt: "HIPAA Compliant, healthcare data safeguards" },
+    { src: "/project/uploads/gdpr.png",                        alt: "GDPR Compliant, EU General Data Protection Regulation" },
+    { src: "/project/uploads/iso%209001.png",                  alt: "ISO 9001:2015, quality management system certification" },
+    { src: "/project/uploads/clutch.png",                      alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
+    { src: "/project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
+    { src: "/project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
+    { src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
   ];
   return (
     <section className="section section--alt">
@@ -351,27 +351,27 @@ function Testimonials() {
       name: "Emily Kucharski",
       role: "CEO & Co-Founder",
       company: "WholeSum",
-      photoUrl: "project/uploads/emily%20.jpeg",
+      photoUrl: "/project/uploads/emily%20.jpeg",
     },
     {
       quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
       name: "Evyn White",
       role: "Co-Founder",
       company: "Hera Health Tech",
-      photoUrl: "project/uploads/evyn%20-%20hera.jpeg",
+      photoUrl: "/project/uploads/evyn%20-%20hera.jpeg",
     },
     {
       quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
       name: "Marcel Ionescu",
       role: "Chief Technology Officer",
-      photoUrl: "project/uploads/marcel%20ionescu%20.jpeg",
+      photoUrl: "/project/uploads/marcel%20ionescu%20.jpeg",
     },
     {
       quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
       name: "Paul Egan",
       role: "CTO",
       company: "Founders Factory",
-      photoUrl: "project/uploads/paul%20egan.jpeg",
+      photoUrl: "/project/uploads/paul%20egan.jpeg",
     },
   ];
 
