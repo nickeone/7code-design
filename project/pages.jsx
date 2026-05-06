@@ -39,8 +39,8 @@ function useSeoMeta(title, desc, ldJson) {
 // ──────────────────────────────────────────────────────────────────
 function HomePage({ heroVariant }) {
   useSeoMeta(
-    "7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania",
-    "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, agent workflows, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.",
+    "AI-Native Software Engineering Agency — 7code",
+    "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team.",
     { "@context": "https://schema.org", "@type": "ProfessionalService", "name": "7Code", "url": SITE_ROOT, "description": "AI-first software engineering agency, Cluj-Napoca, Romania.", "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" }, "areaServed": "Worldwide", "priceRange": "$$" }
   );
   const Hero = heroVariant === "terminal" ? HeroTerminal : heroVariant === "bold" ? HeroBoldSplit : HeroPatternMockup;

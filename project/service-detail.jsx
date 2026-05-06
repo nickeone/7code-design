@@ -45,7 +45,8 @@ const SERVICES_DATA = {
       { step: "03", title: "Production hardening and handoff", desc: "The final phase covers prompt management, model versioning, evaluation CI, observability, and cost controls. We do not hand off without an eval harness your team can run, dashboards for token spend and latency, and a runbook for when a model degrades. The engagement finishes when your team can operate the system independently." },
     ],
     cases: ["wholesum", "daily8", "hera"],
-    metaDescription: "AI-native product engineering by 7Code. We design and ship LLM-powered web and mobile products end-to-end, agents, RAG, evals, and the cloud infrastructure to run them in production.",
+    seoTitle: "AI Product Engineering — Nearshore Senior Team | 7code",
+    metaDescription: "AI-native product engineering by 7Code. LLM-powered web and mobile products, agents, RAG, evals, and cloud infrastructure for production.",
     faqs: [
       { q: "What does 'AI-native' mean in practice?", a: "It means LLMs, retrieval, and agents are designed into the product from week one, the data model, the API contracts, the evaluation harness, and the UX are all shaped around how AI features actually behave (streaming, latency, uncertainty). Most 'AI features' are bolted on later; AI-native products are architected for them from the start, which is why they ship faster and scale cleaner." },
       { q: "How long does it take to ship an AI-native product?", a: "Six weeks to a first production deploy is typical. From kick-off to a public launch usually takes 12–24 weeks depending on scope. We've shipped Daily8 (UAE news aggregator with AI moderation and summarisation) in six months and OctoLabs (AI support copilot) in six weeks. We do not run multi-quarter discovery phases, every two-week sprint ends with deployable software." },
@@ -95,7 +96,8 @@ const SERVICES_DATA = {
       { step: "03", title: "Observability, runbooks, and handoff", desc: "Every pipeline ships with a monitoring dashboard, alerting rules, and a runbook your team can follow when something breaks at 2am. We do not consider an integration finished until it has been in production long enough to fail once and recover cleanly." },
     ],
     cases: ["g42-fleet", "numerize", "revote"],
-    metaDescription: "System integrations by 7Code. We connect ERPs, CRMs, SaaS tools, data warehouses, and legacy systems into a single reliable data fabric, built to carry AI workloads on top.",
+    seoTitle: "System Integration Services for AI Workloads | 7code",
+    metaDescription: "System integrations by 7Code. We connect ERPs, CRMs, SaaS tools, data warehouses, and legacy systems into a reliable data fabric for AI workloads.",
     faqs: [
       { q: "How is this different from an iPaaS like Zapier or Workato?", a: "iPaaS tools are great for simple, low-volume workflows. They tend to break down on three things: high-throughput events, complex conflict resolution between bi-directional syncs, and observability you can audit. We build custom integration layers (often using Kafka, dbt, and a thin API gateway) when you need reliability, latency, and control beyond what an iPaaS provides, usually because an AI or operational system is consuming the data downstream." },
       { q: "Can you integrate with our legacy or on-prem systems?", a: "Yes, SOAP, mainframe exports, FTP batch files, and on-prem databases behind a VPN are all fair game. If it exposes any interface (file, database, API, or message queue), we can build a reliable connector for it. We've done this in healthcare (HL7, FHIR), banking (SWIFT, FIX), and energy (SCADA gateways)." },
@@ -144,7 +146,8 @@ const SERVICES_DATA = {
       { step: "03", title: "Production hardening and operate", desc: "Confidence thresholds, fallback paths, audit logging, eval CI, token-cost dashboards, and the drift monitoring that tells you when output quality degrades. We do not ship without these, and we can stay on to operate the system if you'd rather your team not learn it overnight." },
     ],
     cases: ["wholesum", "daily8", "melsonic"],
-    metaDescription: "AI & process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, and shipped to production in six weeks.",
+    seoTitle: "AI Process Automation Services — 7code | AI-Native Agency",
+    metaDescription: "AI process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, shipped to production.",
     faqs: [
       { q: "What is RAG, and why does it matter?", a: "Retrieval-augmented generation grounds an LLM's answer in your real data, documents, tickets, knowledge base, by retrieving relevant context at query time and including it in the prompt. It dramatically reduces hallucinations, lets the model cite sources, and means you don't need to fine-tune (or wait for the next model release) to teach it about your business. Almost every production copilot we ship is RAG-based." },
       { q: "How do you stop the AI from hallucinating?", a: "Three layers: (1) retrieval grounding so the model has the right context, (2) prompt design that requires citations and refuses confidently when context is missing, (3) a held-out evaluation set that scores hallucination rate as a metric we gate releases on. We also add confidence thresholds at runtime, when the model isn't confident, it escalates to a human instead of guessing." },
@@ -196,7 +199,8 @@ const SERVICES_DATA = {
       { step: "03", title: "Observability and handoff", desc: "Dashboards, eval pipelines, and runbooks your team owns. We consider the engagement done when your engineers can deploy a new agent, monitor its quality, and roll it back, without us in the loop." },
     ],
     cases: ["wholesum", "daily8", "hera", "g42-fleet"],
-    metaDescription: "Cloud and agentic infrastructure by 7Code. AWS, GCP, and Azure foundations for AI products, agent pipelines (LangGraph, Temporal), vector stores, eval CI, and cost optimisation.",
+    seoTitle: "Cloud & Agentic Infrastructure for AI Products | 7code",
+    metaDescription: "Cloud & agentic infrastructure by 7Code. AWS, GCP, and Azure for AI products, agent pipelines (LangGraph, Temporal), vector stores, and eval CI.",
     faqs: [
       { q: "Why does AI need different infrastructure from a normal web app?", a: "AI workloads behave differently: token-streaming responses (not HTTP request/response), GPU rather than CPU bottlenecks, vector search latency that varies with index size, agent loops that run for minutes instead of milliseconds. Standard auto-scaling and observability tools miss this. We size, scale, and monitor on the right metrics, token throughput, retrieval latency, eval score, not just request count." },
       { q: "Which cloud provider should we use?", a: "Whichever you already trust your security and procurement to. We work natively across AWS, GCP, and Azure, and our reference architectures are portable across all three. The deciding factors are usually existing relationships, regional availability for specific GPU SKUs, and whether you need first-party hosted models (Bedrock, Vertex, Azure OpenAI) or want to bring your own." },
@@ -246,7 +250,8 @@ const SERVICES_DATA = {
       { step: "03", title: "Ongoing engagement with a dedicated account lead", desc: "Monthly rolling contract. A dedicated account lead on our side handles performance, feedback, and any escalations, so you get the responsiveness of a direct hire without the HR overhead. Scale up or down with 30 days' notice." },
     ],
     cases: ["founders-factory", "drum-bun", "lidl-road-safety"],
-    metaDescription: "AI engineering outstaffing by 7Code. Senior AI and ML engineers, production LLM, RAG, and MLOps experience, embedded in your team in 72 hours. Monthly rolling, no lock-in.",
+    seoTitle: "AI Engineering Outstaffing — Senior Engineers | 7code",
+    metaDescription: "AI engineering outstaffing by 7Code. Senior AI and ML engineers with LLM, RAG, and MLOps experience, embedded in your team in 72 hours. No lock-in.",
     faqs: [
       { q: "How is outstaffing different from outsourcing?", a: "Outsourcing hands a project to a third party who delivers it (or doesn't) opaquely. Outstaffing embeds named senior engineers directly into your team, they join your Slack, your standups, your sprint cadence, and they report into your engineering management. You own the roadmap, code, and decisions. We own matching, retention, and replacement if the fit isn't right." },
       { q: "How fast can you actually staff a senior AI engineer?", a: "First matched profiles in 72 hours from a kicked-off requirements brief. Trial sprint usually starts within two weeks. We hold a curated bench of senior AI engineers with verified production experience, so most matches happen out of bench rather than from open recruiting, that's why the timeline is days, not the months a typical hire takes." },
@@ -298,7 +303,8 @@ const SERVICES_DATA = {
       { step: "03", title: "High-fidelity and handoff", desc: "Figma files with full component specs, design tokens, and interaction annotations, including streaming, latency, and error-state animations. Handed off in a format your engineers can build from without interpretation." },
     ],
     cases: ["hera", "wholesum", "lidl-road-safety"],
-    metaDescription: "Product strategy and design by 7Code. Discovery to design system for AI-native products, UX patterns for streaming, confidence, and fallback paths. Figma and code, ready to ship.",
+    seoTitle: "AI Product Strategy, Discovery & Design Services | 7code",
+    metaDescription: "Product strategy and design by 7Code. Discovery to design system for AI-native products, UX for streaming, confidence, and fallback paths. Figma to code.",
     faqs: [
       { q: "Do I need a 'product strategy' phase if I already know what I want to build?", a: "Sometimes no. If your discovery is done, your user research is solid, and your team has alignment on the problem, we can start at wireframes. But it is rare, most teams that come to us with 'we know what to build' have an unspoken disagreement that shows up at sprint three. A one-week strategy phase usually pays for itself many times over by avoiding rework." },
       { q: "How do you design for an LLM that is sometimes wrong?", a: "By treating uncertainty as a design primitive, not an edge case. Concretely: confidence indicators, source citations, easy escalation to a human, ' I don't know' patterns instead of confidently-wrong outputs, and fallback flows when the model is unavailable or slow. We prototype these failure cases early so users (and stakeholders) align on the product's behaviour on a bad day." },
@@ -343,7 +349,7 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
     const prevTitle = document.title;
     const descEl = document.querySelector('meta[name="description"]');
     const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = "7Code, " + svc.title;
+    document.title = svc.seoTitle || ("7Code, " + svc.title);
     if (descEl && svc.metaDescription) descEl.setAttribute("content", svc.metaDescription);
 
     const ld = {
