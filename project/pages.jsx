@@ -215,9 +215,9 @@ function AboutPage() {
     },
   ];
   const team = [
-    { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", photoContain: true },
+    { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
     { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
-    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", photoContain: true },
+    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
   ];
 
   return (
@@ -310,9 +310,9 @@ function AboutPage() {
           <div className="team-grid team-grid--3">
             {team.map((t, i) => (
               <div key={i} className="team-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-                <div className="team-photo" style={t.photoContain ? { background: "#f0f0f0" } : {}}>
+                <div className="team-photo">
                   {t.photo
-                    ? <img src={t.photo} alt={t.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: t.photoContain ? "contain" : "cover", objectPosition: "top center" }} />
+                    ? <img src={t.photo} alt={t.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
                     : <span>{t.initial}</span>
                   }
                 </div>
