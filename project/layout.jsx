@@ -22,7 +22,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];
@@ -84,6 +84,10 @@ function Nav() {
     {
       icon: Icon.cpu, title: "AI & Process Automation", slug: "ai-automation",
       bullets: ["Custom Copilots", "Workflow Automation", "LLM Evaluation"],
+    },
+    {
+      icon: Icon.cpu, title: "LLM & Agent Development", slug: "llm-agent-development",
+      bullets: ["LLM API Integrations", "Multi-step Agent Pipelines", "RAG System Design"],
     },
     {
       icon: Icon.cloud, title: "Cloud & Agentic Infrastructure", slug: "cloud-agentic-infra",
@@ -219,6 +223,7 @@ function Footer() {
               <li><a href="/service/ai-product-engineering">AI-Native Product Engineering</a></li>
               <li><a href="/service/system-integrations">System Integrations</a></li>
               <li><a href="/service/ai-automation">AI &amp; Process Automation</a></li>
+              <li><a href="/service/llm-agent-development">LLM &amp; Agent Development</a></li>
               <li><a href="/service/cloud-agentic-infra">Cloud &amp; Agentic Infra</a></li>
               <li><a href="/service/product-strategy">Product Strategy &amp; Design</a></li>
               <li><a href="/service/ai-outstaffing">AI Engineering Outstaffing</a></li>

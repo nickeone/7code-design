@@ -40,9 +40,33 @@ function useSeoMeta(title, desc, ldJson) {
 function HomePage({ heroVariant }) {
   useSeoMeta(
     "AI-Native Software Engineering Agency — 7code",
-    "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team.",
-    { "@context": "https://schema.org", "@type": "ProfessionalService", "name": "7Code", "url": SITE_ROOT, "description": "AI-first software engineering agency, Cluj-Napoca, Romania.", "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" }, "areaServed": "Worldwide", "priceRange": "$$" }
+    "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team."
   );
+  const homeFaqs = [
+    { q: "What does 7Code actually build?", a: "We design, build, and operate AI-native software products end-to-end. That includes LLM-powered web and mobile apps, RAG copilots grounded in your data, multi-step agent pipelines, system integrations (ERP, CRM, SaaS), and the cloud infrastructure to run them reliably in production. We've shipped across healthcare, fintech, defence, energy, and enterprise SaaS since 2019." },
+    { q: "How long does it take to ship an AI product?", a: "Six weeks to a first production deploy is our standard. An AI MVP with a scoped LLM capability, an evaluation harness, and production cloud infrastructure goes live in six weeks. Broader products — multi-agent systems, regulated-industry platforms, full-stack SaaS — typically run 12–24 weeks. We ship deployable software every two weeks, not at the end of a multi-month programme." },
+    { q: "Where are you based and who do you work with?", a: "We're based in Cluj-Napoca, Romania — one of Europe's strongest engineering hubs. Our clients are primarily UK, EU, and UAE companies: early-stage founders raising their first round, product teams at Series A/B scale-ups, and enterprise engineering leaders integrating AI into existing systems. We work in English, overlap comfortably with UK and EU timezones, and visit on-site when it matters." },
+    { q: "How do you price AI engineering projects?", a: "AI MVPs from £25k / €30k for a six-week fixed scope. Mid-scale products run £60k–£180k over 12–20 weeks. Ongoing sprint retainers and outstaffing are monthly rolling, typically £6k–£12k per engineer per month depending on seniority. We're transparent on pricing in the first call — no hidden change-order culture." },
+    { q: "What makes you different from a traditional software agency?", a: "Three things: (1) AI is not a feature we add at the end — we design LLMs, retrieval, and agents into the product architecture from week one. (2) We build evaluation harnesses before writing product code, so quality is measured, not assumed. (3) Every engineer is senior, minimum five years of production experience, and you have direct access to the people writing the code." },
+    { q: "Can you augment our existing engineering team?", a: "Yes. Our outstaffing service embeds senior AI engineers directly into your team — joining your Slack, your standups, and your sprint cadence. They report into your engineering management, not ours. First matched profiles in 72 hours from a brief. Monthly rolling contract, scale up or down with 30 days' notice." },
+  ];
+  useEffectP(() => {
+    const faqLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": homeFaqs.map(f => ({
+        "@type": "Question",
+        "name": f.q,
+        "acceptedAnswer": { "@type": "Answer", "text": f.a },
+      })),
+    };
+    const s = document.createElement("script");
+    s.type = "application/ld+json";
+    s.setAttribute("data-page-ld", "home-faq");
+    s.text = JSON.stringify(faqLd);
+    document.head.appendChild(s);
+    return () => s.remove();
+  }, []);
   const Hero = heroVariant === "terminal" ? HeroTerminal : heroVariant === "bold" ? HeroBoldSplit : HeroPatternMockup;
   return (
     <div className="page">
@@ -54,6 +78,29 @@ function HomePage({ heroVariant }) {
       <Expertise headTitle="Our Expertise" headDesc="We specialize in key sectors, delivering tailored digital solutions that drive growth and innovation." />
       <Services />
       <Testimonials />
+
+      <section className="section section--alt">
+        <div className="container svc-faq-wrap">
+          <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0, marginBottom: 32 }}>
+            <span className="eyebrow">Frequently asked</span>
+            <h2>Questions teams ask before they start</h2>
+          </div>
+          <div className="svc-faq">
+            {homeFaqs.map((f, i) => (
+              <details key={i} className="svc-faq-item reveal" style={{ transitionDelay: (i * 40) + "ms" }}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+          <div style={{ marginTop: 32 }} className="reveal">
+            <a href="/compare/agency-vs-freelancer" style={{ color: "var(--cyan-600)", fontWeight: 600, fontSize: 14, display: "inline-flex", alignItems: "center", gap: 6 }}>
+              Comparing an agency to a freelancer? <Icon.arrow />
+            </a>
+          </div>
+        </div>
+      </section>
+
       <CTAStrip />
     </div>
   );
@@ -620,9 +667,364 @@ function _CaseStudiesPage_DEPRECATED() {
   );
 }
 
+// ──────────────────────────────────────────────────────────────────
+// AI MVP DEVELOPMENT LANDING PAGE
+// ──────────────────────────────────────────────────────────────────
+function AiMvpPage() {
+  useSeoMeta(
+    "AI MVP Development — Ship in 6 Weeks | 7code",
+    "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.",
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI MVP Development",
+      "serviceType": "AI MVP Development",
+      "description": "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks.",
+      "provider": { "@type": "ProfessionalService", "name": "7Code", "url": SITE_ROOT },
+      "areaServed": "Worldwide",
+      "url": SITE_ROOT + "/ai-mvp-development",
+    }
+  );
+  const steps = [
+    { step: "01", title: "Week 1–2: Discovery & eval design", desc: "We map the product against LLM capabilities, define what 'good' looks like, and build the held-out evaluation dataset before writing a line of product code. Architecture decisions made here have a 10× impact on what's possible at week six." },
+    { step: "02", title: "Week 3–4: Build & score", desc: "Two-week sprint with a deployable build at the end. Every AI feature is scored against the held-out eval set at the sprint review — not demoed on cherry-picked prompts. Regressions are caught on day one, not month three." },
+    { step: "03", title: "Week 5–6: Harden & launch", desc: "Production hardening, observability, prompt versioning, cost controls, and a clean launch. You end week six with a shipped product, an eval harness your team can run, and dashboards for latency and token spend." },
+  ];
+  const deliverables = [
+    { icon: Icon.code, title: "LLM-powered product", desc: "Claude, GPT, or open-weight models integrated with streaming, structured outputs, and fallback paths designed from day one." },
+    { icon: Icon.cpu, title: "RAG or agent layer", desc: "Retrieval-augmented generation over your data, or a scoped agent pipeline with tool use and human-in-the-loop checkpoints." },
+    { icon: Icon.chart, title: "Evaluation harness", desc: "A held-out eval set and automated scoring that proves quality before every release and catches drift in production." },
+    { icon: Icon.cloud, title: "Production infrastructure", desc: "Cloud-native deployment (AWS, GCP, or Azure), CI/CD, monitoring, and cost controls included in the six-week scope." },
+    { icon: Icon.shield, title: "Prompt management", desc: "Versioned prompt library with A/B testing and regression tracking, not ad-hoc edits in a shared Notion doc." },
+    { icon: Icon.layers, title: "Handover package", desc: "Architecture docs, runbooks, and a working eval CI pipeline your engineering team can own from day one after launch." },
+  ];
+  const faqs = [
+    { q: "What is an AI MVP?", a: "An AI MVP is a minimum viable product built around a core LLM or agent capability — a copilot, a RAG search, an intelligent automation — shipped to real users in six weeks to validate the value proposition before a larger build investment. Unlike a traditional MVP, it needs an evaluation harness from day one, because AI quality degrades silently and you need a metric, not a vibe, to know if it's working." },
+    { q: "Can you really ship in six weeks?", a: "Yes. OctoLabs (AI support copilot) went from kick-off to a production system deflecting 47% of support tickets in six weeks. Daily8's AI moderation and summarisation features shipped inside a six-month engagement. The pattern: ruthlessly scoped capabilities, eval-gated sprints, and a team that doesn't need to learn the stack mid-project. The six-week clock starts with a real kick-off, not a discovery phase." },
+    { q: "What's included in the six-week scope?", a: "Product design (AI-aware UX), the LLM or agent integration, RAG pipeline if needed, evaluation harness, production cloud deployment, basic observability (latency, cost, error rate), and a handover package. It does not include extensive data migration, complex third-party integrations, or mobile apps, those extend the timeline." },
+    { q: "What if we want to build further after the MVP?", a: "Most clients do. We typically move to a sprint retainer (two-week sprints, rolling monthly) or an outstaffing arrangement where we embed one or two senior engineers in your team. The MVP's clean architecture and eval harness make it straightforward to add features without accumulating technical debt." },
+  ];
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow" style={{ justifyContent: "center" }}>AI MVP Development</span>
+          <h1>From idea to production AI<br/>in six weeks.</h1>
+          <p>We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope.</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start your AI MVP <Icon.arrow /></a>
+            <a href="/service/ai-product-engineering" className="btn btn--ghost btn--lg">See AI Product Engineering <Icon.arrow /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">The problem</span>
+            <h2>Most AI projects take 6 months to ship nothing.</h2>
+            <p style={{ maxWidth: 680, margin: "0 auto" }}>Discovery phases run long. The spec changes when the demo lands. Engineering starts before the eval set exists. By the time you have a production system, the model it was built on is two generations old. We've inherited enough of these projects to design against them.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">The 6-week process</span>
+            <h2>How we ship a production AI product in six weeks</h2>
+          </div>
+          <div className="exp-process">
+            {steps.map((s, i) => (
+              <div key={i} className="exp-process-step reveal" style={{ transitionDelay: (i * 80) + "ms" }}>
+                <div className="exp-process-num">{s.step}</div>
+                <div className="exp-process-body">
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">What you get</span>
+            <h2>Six deliverables in six weeks</h2>
+          </div>
+          <div className="svc-deliver-grid">
+            {deliverables.map((d, i) => {
+              const I = d.icon;
+              return (
+                <div key={i} className="svc-deliver-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
+                  <span className="icon-tile" style={{ marginBottom: 12 }}><I /></span>
+                  <h3>{d.title}</h3>
+                  <p>{d.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container svc-faq-wrap">
+          <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0, marginBottom: 32 }}>
+            <span className="eyebrow">FAQ</span>
+            <h2>Questions before you start</h2>
+          </div>
+          <div className="svc-faq">
+            {faqs.map((f, i) => (
+              <details key={i} className="svc-faq-item reveal" style={{ transitionDelay: (i * 40) + "ms" }}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTAStrip />
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────
+// UK GEO LANDING PAGE
+// ──────────────────────────────────────────────────────────────────
+function UkGeoPage() {
+  useSeoMeta(
+    "AI Development Agency for UK Companies | 7code Romania",
+    "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.",
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "7Code — AI Development Agency for UK Companies",
+      "description": "AI development agency serving UK companies from Cluj-Napoca, Romania.",
+      "url": SITE_ROOT + "/ai-development-agency-uk",
+      "areaServed": ["United Kingdom", "Europe"],
+      "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" },
+      "priceRange": "££",
+    }
+  );
+  const reasons = [
+    { icon: Icon.globe, title: "Timezone overlap", desc: "Cluj-Napoca is UTC+2 (UTC+3 in summer). UK teams get 7–8 hours of real-time overlap every workday — more than most US or Asian vendors." },
+    { icon: Icon.users, title: "Senior-only team", desc: "Every engineer is minimum 5 years of production experience. No juniors learning on your project. No outsourced subcontractors. Direct access to the people writing the code." },
+    { icon: Icon.zap, title: "AI-native from day one", desc: "We design LLMs, retrieval, and agents into the product from the first sprint — not bolted on after the architecture is set. Faster, cheaper, and categorically better outcomes." },
+    { icon: Icon.shield, title: "Compliance-ready", desc: "GDPR-native by default. HIPAA-compliant builds for healthcare clients. SOC 2-aligned practices for regulated industries. UK ICO familiarity across all active engagements." },
+    { icon: Icon.chart, title: "Nearshore rates", desc: "30–50% lower than equivalent London or Berlin agency rates. No compromise on quality — same seniority, same delivery standard, priced for a geography that gives us a structural cost advantage." },
+    { icon: Icon.layers, title: "Proven UK delivery", desc: "WholeSum (London), Melsonic (London), and multiple undisclosed UK scale-ups are among our active client base. References available from UK founders on request." },
+  ];
+  const faqs = [
+    { q: "Why Romania for UK AI development?", a: "Cluj-Napoca has become one of Europe's strongest engineering hubs — the same universities and talent pool that supply Google, UiPath, and Bitdefender. Paired with strong English fluency, 7–8 hours of daily overlap with the UK, and senior engineers at nearshore rates, it's the most structurally sound nearshore option for UK product companies." },
+    { q: "How do collaboration and communication work day-to-day?", a: "Your engineers join your Slack, your standups, and your sprint ceremonies. We document in your tools, review in your repo, and you have direct, unmediated access to the people writing the code. UK clients typically find us easier to communicate with than UK-based agencies, because we don't have layers between you and the engineering team." },
+    { q: "Are you familiar with UK contracts and procurement?", a: "Yes. We operate under UK-compatible service agreements (SoW, MSA, or project contracts), invoice in GBP or EUR, and can work inside most UK procurement frameworks. GDPR compliance is a default across all our engagements, not a bespoke add-on." },
+    { q: "How much does a typical project cost?", a: "AI MVPs start from £25k for a six-week engagement. Mid-scale products (12–20 weeks) typically run £60k–£180k. Ongoing outstaffing retainers are typically £6k–£12k per engineer per month depending on seniority and specialism. We're transparent on pricing in the first call — no hidden fees, no change-order culture." },
+  ];
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow" style={{ justifyContent: "center" }}>AI Development Agency UK</span>
+          <h1>The AI engineering partner<br/>UK companies actually use.</h1>
+          <p>Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks.</p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
+            <a href="/contact" className="btn btn--cyan btn--lg">Talk to the team <Icon.arrow /></a>
+            <a href="/case-studies" className="btn btn--ghost btn--lg">See our work <Icon.arrow /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">Why 7Code for UK teams</span>
+            <h2>Six structural advantages for UK-based product companies</h2>
+          </div>
+          <div className="svc-deliver-grid">
+            {reasons.map((r, i) => {
+              const I = r.icon;
+              return (
+                <div key={i} className="svc-deliver-card reveal" style={{ transitionDelay: (i % 3 * 60) + "ms" }}>
+                  <span className="icon-tile" style={{ marginBottom: 12 }}><I /></span>
+                  <h3>{r.title}</h3>
+                  <p>{r.desc}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <CaseStudies limit={3} />
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container svc-faq-wrap">
+          <div className="section-head reveal section-head--left" style={{ maxWidth: 720, margin: 0, marginBottom: 32 }}>
+            <span className="eyebrow">Frequently asked</span>
+            <h2>What UK founders typically ask</h2>
+          </div>
+          <div className="svc-faq">
+            {faqs.map((f, i) => (
+              <details key={i} className="svc-faq-item reveal" style={{ transitionDelay: (i * 40) + "ms" }}>
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CTAStrip />
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────
+// COMPARE: AGENCY VS FREELANCER
+// ──────────────────────────────────────────────────────────────────
+function CompareAgencyFreelancerPage() {
+  useSeoMeta(
+    "AI Agency vs AI Freelancer: Which Is Right for You? | 7code",
+    "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "AI Agency vs AI Freelancer: Which Is Right for You?",
+      "description": "A structured comparison of AI agencies and freelancers across delivery, quality, accountability, and total cost.",
+      "url": SITE_ROOT + "/compare/agency-vs-freelancer",
+      "publisher": { "@type": "Organization", "name": "7Code", "url": SITE_ROOT },
+    }
+  );
+  const rows = [
+    { aspect: "Team depth", agency: "Multi-discipline team: engineering, design, AI, devops, QA", freelancer: "One person across all roles, often sequentially" },
+    { aspect: "Delivery speed", agency: "Six weeks to production MVP with parallel tracks", freelancer: "Longer, single-threaded delivery with no buffer for illness or overload" },
+    { aspect: "AI quality controls", agency: "Eval harnesses, held-out test sets, CI gates, peer review", freelancer: "Prompt testing is typically manual and ad-hoc" },
+    { aspect: "Accountability", agency: "SoW, SLA, and a named engagement lead accountable to the contract", freelancer: "Contractual accountability harder to enforce in practice" },
+    { aspect: "Scaling up", agency: "Additional engineers on-demand from the same trusted team", freelancer: "Requires finding, onboarding, and trusting a new person" },
+    { aspect: "Bus factor", agency: "Knowledge distributed across the team and documented", freelancer: "High: all context is in one person's head" },
+    { aspect: "Cost (short-term)", agency: "Higher day rate, but fewer hidden costs from rework", freelancer: "Lower day rate, often higher total cost after iterations" },
+    { aspect: "Cost (long-term)", agency: "Predictable with retainer model, no re-onboarding cost", freelancer: "Unpredictable, re-onboarding cost each engagement" },
+    { aspect: "Compliance & security", agency: "GDPR, HIPAA, SOC 2 processes built into workflow", freelancer: "Varies widely by individual" },
+    { aspect: "Right for", agency: "Products, platforms, and AI systems that need to survive in production", freelancer: "Small integrations, clearly scoped scripts, or very early experiments" },
+  ];
+  const whenAgency = [
+    "The AI feature is user-facing and must work reliably under real traffic",
+    "You need streaming UX, confidence indicators, and fallback paths",
+    "There's a compliance requirement (GDPR, HIPAA, SOC 2)",
+    "You're building a multi-step agent or a RAG pipeline over real data",
+    "The project has more than 8 weeks of work or involves multiple disciplines",
+    "You need an eval harness and CI quality gates before every release",
+  ];
+  const whenFreelancer = [
+    "You need a single well-scoped API integration or script",
+    "It's a proof-of-concept with no production requirements",
+    "The budget is under £5k and the risk of failure is low",
+    "You already have a senior engineering team that needs one missing piece",
+  ];
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow" style={{ justifyContent: "center" }}>AI Agency vs Freelancer</span>
+          <h1>Agency or freelancer for<br/>your AI project?</h1>
+          <p>The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly.</p>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head reveal">
+            <span className="eyebrow">The comparison</span>
+            <h2>Agency vs freelancer across 10 dimensions</h2>
+          </div>
+          <div className="reveal" style={{ overflowX: "auto", marginTop: 32 }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, lineHeight: 1.6 }}>
+              <thead>
+                <tr style={{ borderBottom: "2px solid var(--slate-200)" }}>
+                  <th style={{ textAlign: "left", padding: "12px 16px", fontFamily: "var(--font-display)", color: "var(--slate-900)", width: "20%" }}>Dimension</th>
+                  <th style={{ textAlign: "left", padding: "12px 16px", fontFamily: "var(--font-display)", color: "var(--cyan-700)", width: "40%" }}>AI Agency (7Code)</th>
+                  <th style={{ textAlign: "left", padding: "12px 16px", fontFamily: "var(--font-display)", color: "var(--slate-500)", width: "40%" }}>Freelancer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr key={i} style={{ borderBottom: "1px solid var(--slate-100)", background: i % 2 === 0 ? "transparent" : "var(--slate-50)" }}>
+                    <td style={{ padding: "12px 16px", fontWeight: 600, color: "var(--slate-700)" }}>{r.aspect}</td>
+                    <td style={{ padding: "12px 16px", color: "var(--slate-700)" }}>{r.agency}</td>
+                    <td style={{ padding: "12px 16px", color: "var(--slate-500)" }}>{r.freelancer}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48 }}>
+            <div className="reveal">
+              <span className="eyebrow">Choose an agency when…</span>
+              <ul style={{ marginTop: 16, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                {whenAgency.map((item, i) => (
+                  <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "var(--slate-700)", fontSize: 15 }}>
+                    <Icon.zap style={{ width: 16, height: 16, color: "var(--cyan-600)", marginTop: 3, flexShrink: 0 }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="reveal">
+              <span className="eyebrow">A freelancer might be fine when…</span>
+              <ul style={{ marginTop: 16, listStyle: "none", padding: 0, display: "flex", flexDirection: "column", gap: 10 }}>
+                {whenFreelancer.map((item, i) => (
+                  <li key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "var(--slate-500)", fontSize: 15 }}>
+                    <span style={{ width: 16, height: 16, color: "var(--slate-400)", marginTop: 3, flexShrink: 0 }}>–</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container" style={{ maxWidth: 800 }}>
+          <div className="section-head reveal section-head--left" style={{ margin: 0, marginBottom: 24 }}>
+            <span className="eyebrow">Bottom line</span>
+            <h2>When to choose an AI agency</h2>
+          </div>
+          <p className="reveal" style={{ color: "var(--slate-600)", lineHeight: 1.8 }}>
+            If you're building a product that needs to survive real user traffic, a production LLM system is not a one-person job. You need engineering across the stack (AI, backend, frontend, cloud), an evaluation harness that proves quality before every deploy, and a team accountable to a contract — not a single person who can disappear between freelance gigs.
+          </p>
+          <p className="reveal" style={{ color: "var(--slate-600)", lineHeight: 1.8, marginTop: 16 }}>
+            Freelancers are the right choice for experiments, small integrations, and projects where the risk of failure is low. For everything else — production AI, regulated industries, user-facing copilots, multi-step agents — an agency gives you depth, accountability, and the quality controls that keep a production system trustworthy over time.
+          </p>
+          <div style={{ marginTop: 32 }} className="reveal">
+            <a href="/contact" className="btn btn--cyan btn--lg">Talk to 7Code <Icon.arrow /></a>
+          </div>
+        </div>
+      </section>
+
+      <CTAStrip />
+    </div>
+  );
+}
+
 window.HomePage = HomePage;
 window.ExpertisePage = ExpertisePage;
 window.ProcessPage = ProcessPage;
 window.AboutPage = AboutPage;
 window.BlogPage = BlogPage;
 window.ContactPage = ContactPage;
+window.AiMvpPage = AiMvpPage;
+window.UkGeoPage = UkGeoPage;
+window.CompareAgencyFreelancerPage = CompareAgencyFreelancerPage;

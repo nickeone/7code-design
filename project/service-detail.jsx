@@ -55,7 +55,7 @@ const SERVICES_DATA = {
       { q: "What happens after launch?", a: "We hand off prompt management, model versioning, evaluation CI, and observability for token cost and latency. Your team owns it, but we stay on as embedded engineers (via outstaffing) or on a maintenance retainer for the first few months, monitoring drift and helping with feature additions. Most clients keep us on long-term." },
       { q: "Are you compliance-ready for regulated industries?", a: "Yes. We've shipped HIPAA-compliant healthcare apps, SOC 2-aligned fintech tools, and security-cleared defence platforms. AI features add new compliance considerations (PII redaction, output filtering, audit logs for model decisions); we build for them from the start." },
     ],
-    next: { slug: "system-integrations", title: "System Integrations" },
+    next: { slug: "llm-agent-development", title: "LLM & Agent Development" },
   },
 
   "system-integrations": {
@@ -156,7 +156,7 @@ const SERVICES_DATA = {
       { q: "What's the difference between automation and agents?", a: "Automation runs a fixed sequence of steps. Agents decide what step to take next based on the situation. Most useful systems are a mix: deterministic workflows where the path is known, agent loops where the path depends on the data. We design which is which carefully, autonomous agents are powerful but harder to evaluate and govern." },
       { q: "Do you fine-tune models, or stick to prompting?", a: "Default is prompting + RAG, because it's faster, cheaper, and easier to evaluate. We fine-tune (LoRA or full) when the base model can't reach the eval target on a specific task, usually domain-specific reasoning, structured output formats, or proprietary tone. We always measure the fine-tuned model against the same held-out set to prove it actually helps." },
     ],
-    next: { slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure" },
+    next: { slug: "llm-agent-development", title: "LLM & Agent Development" },
   },
 
   "cloud-agentic-infra": {
@@ -262,6 +262,57 @@ const SERVICES_DATA = {
       { q: "How is pricing structured?", a: "Monthly rolling contracts at a transparent daily or monthly rate per engineer (varies by seniority and specialism). No long-term commitment. Scale up or down with 30 days' notice. No equity dilution, no recruiter fees, no severance exposure." },
     ],
     next: { slug: "ai-product-engineering", title: "AI-Native Product Engineering" },
+  },
+
+  "llm-agent-development": {
+    slug: "llm-agent-development",
+    title: "LLM & Agent Development",
+    shortTitle: "LLM & Agents",
+    tagline: "Custom LLM integrations and multi-step agent systems built for production, not demos. From OpenAI and Anthropic API integrations to LangGraph pipelines with full evaluation coverage.",
+    summary: "LLM and agent development is where most teams underestimate the gap between a working prototype and a reliable production system. We build that layer: prompt architectures that hold under adversarial input, retrieval pipelines tuned on held-out eval sets, multi-step agents with state persistence and human-in-the-loop checkpoints, and the observability to catch model drift before users file tickets. We've shipped LLM-first products across news, healthcare, legal, and enterprise SaaS — and we know the difference between a demo that impresses a boardroom and a system that earns trust at scale.",
+    icon: "cpu",
+    accentColor: "#7C3AED",
+    stats: [
+      { v: "6 wks", l: "to production LLM system" },
+      { v: "RAG + agents", l: "core architecture" },
+      { v: "Claude · GPT", l: "primary providers" },
+      { v: "Eval-gated", l: "every release" },
+    ],
+    problem: {
+      title: "Most LLM integrations fail between the demo and the first production incident.",
+      body: "The prompt works in the playground. It breaks at scale because edge cases weren't in the test set, retrieval degrades on real documents, and confidence thresholds were never defined. Most teams fix this reactively: a production incident, a round of prompt patching, a rollback. We build the evaluation harness, retrieval design, fallback paths, and confidence calibration before the first production deploy, so the system handles the real world on day one.",
+    },
+    whatWeDeliver: [
+      { title: "LLM API integrations", desc: "Production-ready integrations with Anthropic (Claude), OpenAI (GPT), Mistral, and open-weight models via Ollama or vLLM. Streaming, function calling, structured outputs, and the retry and rate-limit handling that keeps your system up under load." },
+      { title: "Multi-step agent pipelines", desc: "Agentic systems that plan, call tools, read results, and decide next steps — built on LangGraph or first-party SDKs with full state persistence, memory management, and human-in-the-loop escalation at configurable confidence thresholds." },
+      { title: "RAG system design and build", desc: "Retrieval-augmented generation tuned for your corpus: chunking strategy, embedding model selection, hybrid retrieval (semantic + keyword), reranking, and the held-out eval set that proves it. Not a template — designed to your documents and query patterns." },
+      { title: "Prompt engineering and management", desc: "Structured prompt libraries with versioning, A/B testing, and regression tracking. We treat prompts as first-class code artefacts: reviewed, tested, and deployed through CI with eval gates, not edited live in production." },
+      { title: "LLM evaluation harnesses", desc: "Custom eval frameworks (RAGAS, Braintrust, or bespoke) that score every release on your domain-specific prompt set. Evaluation is a gate, not a retrospective: a failing score blocks the deploy." },
+      { title: "Streaming and real-time LLM UX", desc: "Client-side streaming implementations (SSE, WebSockets) with skeleton states, confidence indicators, citation displays, and graceful fallback paths — the UX layer that turns a model response into a trustworthy user experience." },
+    ],
+    techStack: {
+      "LLM providers": ["Claude (Anthropic)", "GPT-4o (OpenAI)", "Mistral", "Llama via Ollama / vLLM"],
+      "Orchestration": ["LangGraph", "LangChain", "LlamaIndex", "first-party SDKs"],
+      "RAG & retrieval": ["pgvector", "Pinecone", "Qdrant", "Weaviate", "hybrid BM25 + vector"],
+      "Evaluation": ["RAGAS", "Braintrust", "Inspect AI", "custom harnesses"],
+    },
+    process: [
+      { step: "01", title: "Capability scoping and eval design", desc: "Before writing any code, we define what 'good' looks like: the user jobs the LLM owns, the failure modes it must not produce, and a held-out evaluation dataset built from your real queries and documents. This becomes the specification every sprint is scored against." },
+      { step: "02", title: "Iterative build with eval gates", desc: "Two-week cycles: build a narrow capability, run it against the eval set, measure quality on held-out examples (not cherry-picked demos), and iterate. You see the score delta at every review, and the specific failure cases driving the next sprint's focus." },
+      { step: "03", title: "Production hardening and handoff", desc: "Confidence thresholds, fallback paths, prompt versioning, evaluation CI, latency and cost dashboards, and drift monitoring. We do not consider an LLM system shipped until it has observability that catches degradation before users notice it." },
+    ],
+    cases: ["wholesum", "daily8", "hera"],
+    seoTitle: "LLM & Agent Development Services | 7code AI Agency",
+    metaDescription: "Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.",
+    faqs: [
+      { q: "What's the difference between LLM integration and agent development?", a: "An LLM integration connects your product to a model API to perform a scoped task — summarisation, classification, generation. An agent can plan across multiple steps, call external tools (APIs, databases, code runners), and decide what to do next based on intermediate results. Most production systems combine both: deterministic steps for predictable paths, agent loops where the path depends on the data. We design which is which carefully, because autonomous agents are powerful but harder to evaluate and govern." },
+      { q: "Which LLM provider should we use?", a: "We're provider-agnostic and benchmark on your specific eval set before committing to a provider. Claude (Anthropic) excels at long-context reasoning and instruction following. GPT-4o (OpenAI) has broader tool support and faster structured output. Open-weight models (Llama, Mistral) suit cost-sensitive or air-gapped deployments. We design the abstraction layer so the provider can change without a rewrite when a better model releases." },
+      { q: "How do you prevent the LLM from hallucinating in production?", a: "Three layers: (1) retrieval grounding so the model answers from your verified data, not parametric memory; (2) prompt design that requires citations and refuses confidently when context is missing; (3) a held-out evaluation set that scores hallucination rate as a metric we gate releases on. At runtime, confidence thresholds route low-confidence responses to a human reviewer instead of serving them to users." },
+      { q: "How long does it take to ship a production LLM system?", a: "Six weeks for a first production release — a scoped copilot, a RAG pipeline, or a single-domain agent. That includes eval harness, observability, and basic drift monitoring. Complex multi-agent systems with broad tool access run 12–20 weeks. We ship to production every two weeks, not at the end of a long programme." },
+      { q: "Do you build the evaluation framework from scratch?", a: "We start from established frameworks — RAGAS for RAG pipelines, Braintrust for general LLM tasks, Inspect AI for agentic evals — and extend them with domain-specific metrics for your use case. The eval set is built from your real data: actual user queries, real documents, and the failure cases you most want to prevent. It runs in CI and blocks deploys that regress quality." },
+      { q: "Can you take over an LLM system someone else built?", a: "Yes, and we do it regularly. We start with an audit: eval the current system on a held-out set we build ourselves, map the prompt architecture, assess retrieval quality, and identify the highest-risk gaps. We then stabilise before extending. Most handovers reveal prompt fragility and missing fallback paths; we fix those first before adding new capabilities." },
+    ],
+    next: { slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure" },
   },
 
   "product-strategy": {
