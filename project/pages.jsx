@@ -93,27 +93,6 @@ function HomePage({ heroVariant }) {
               </details>
             ))}
           </div>
-          <div style={{ marginTop: 40 }} className="reveal">
-            <a href="/compare/agency-vs-freelancer" style={{
-              display: "flex", alignItems: "center", justifyContent: "space-between",
-              gap: 16, padding: "20px 28px",
-              background: "var(--bg-cyan-50)", border: "1px solid var(--cyan-300)",
-              borderRadius: 14, textDecoration: "none",
-              transition: "border-color 0.15s, background 0.15s",
-            }}
-              onMouseEnter={e => { e.currentTarget.style.background = "var(--bg-cyan-100)"; e.currentTarget.style.borderColor = "var(--cyan-500)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "var(--bg-cyan-50)"; e.currentTarget.style.borderColor = "var(--cyan-300)"; }}
-            >
-              <div>
-                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 4 }}>Related guide</div>
-                <div style={{ fontSize: 16, fontWeight: 600, color: "var(--slate-800)" }}>Comparing an agency to a freelancer?</div>
-                <div style={{ fontSize: 13, color: "var(--slate-500)", marginTop: 2 }}>Delivery speed, accountability, quality, and total cost — compared honestly.</div>
-              </div>
-              <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: "50%", background: "var(--cyan-600)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
-                <Icon.arrow />
-              </span>
-            </a>
-          </div>
         </div>
       </section>
 

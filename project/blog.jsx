@@ -150,6 +150,7 @@ const POSTS = [
       { type: "bullets", items: ["Phase 1: Fixed-price discovery (4 weeks)", "Phase 2: Fixed-price MVP keyed to an eval pass-rate (6–8 weeks)", "Phase 3: T&M with a monthly spend cap and a quarterly review", "Throughout: Transparent token and infra costs, billed at-cost"] },
       { type: "p-html", text: "The true cost of AI engineering includes more than just development hours — <a href=\"https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai\" target=\"_blank\" rel=\"noopener noreferrer\">McKinsey estimates</a> that infrastructure, tooling, evaluation, and ongoing model maintenance account for 40–60% of total cost of ownership for a production AI system." },
       { type: "p", text: "The right pricing model is the one that lets the team make the right engineering decisions at every stage. For AI work, that almost always means a hybrid. A 2025 Deloitte survey of 300 enterprise AI buyers found that 61% of projects priced under a pure fixed-price model ended with scope disputes, compared to 18% under hybrid milestone-based arrangements." },
+      { type: "related-guide", href: "/compare/agency-vs-freelancer", title: "Comparing an agency to a freelancer?", desc: "Delivery speed, accountability, quality, and total cost — compared honestly." },
     ],
   },
   {
@@ -595,6 +596,7 @@ const POSTS = [
         "Low churn: the same engineers on the engagement from month four through month fourteen",
         "Eval and ownership accountability, the team owns outcomes, not just seat hours",
       ]},
+      { type: "related-guide", href: "/compare/agency-vs-freelancer", title: "Comparing an agency to a freelancer?", desc: "Delivery speed, accountability, quality, and total cost — compared honestly." },
     ],
   },
   {
@@ -896,6 +898,7 @@ const POSTS = [
         "Krakow, Poland: university town with strong CS graduates, growing quickly as a nearshore hub for UK and EU clients. UTC+1.",
       ]},
       { type: "p", text: "The pattern across all of them: strong university computer science programmes, senior engineers who've worked on production AI systems at scale, and timezone overlap that makes real-time collaboration with UK and EU teams natural, not forced." },
+      { type: "related-guide", href: "/compare/agency-vs-freelancer", title: "Comparing an agency to a freelancer?", desc: "Delivery speed, accountability, quality, and total cost — compared honestly." },
     ],
   },
   {
@@ -1807,6 +1810,27 @@ function PostBody({ blocks }) {
         if (b.type === "h2") return <h2 key={i} className="blog-post-h2">{b.text}</h2>;
         if (b.type === "p") return <p key={i} className="blog-post-p">{b.text}</p>;
         if (b.type === "p-html") return <p key={i} className="blog-post-p" dangerouslySetInnerHTML={{ __html: b.text }} />;
+        if (b.type === "related-guide") return (
+          <a key={i} href={b.href} style={{
+            display: "flex", alignItems: "center", justifyContent: "space-between",
+            gap: 16, padding: "20px 28px", margin: "32px 0",
+            background: "var(--bg-cyan-50)", border: "1px solid var(--cyan-300)",
+            borderRadius: 14, textDecoration: "none",
+            transition: "border-color 0.15s, background 0.15s",
+          }}
+            onMouseEnter={e => { e.currentTarget.style.background = "var(--bg-cyan-100)"; e.currentTarget.style.borderColor = "var(--cyan-500)"; }}
+            onMouseLeave={e => { e.currentTarget.style.background = "var(--bg-cyan-50)"; e.currentTarget.style.borderColor = "var(--cyan-300)"; }}
+          >
+            <div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--cyan-600)", marginBottom: 4 }}>Related guide</div>
+              <div style={{ fontSize: 16, fontWeight: 600, color: "var(--slate-800)" }}>{b.title}</div>
+              {b.desc && <div style={{ fontSize: 13, color: "var(--slate-500)", marginTop: 2 }}>{b.desc}</div>}
+            </div>
+            <span style={{ flexShrink: 0, width: 36, height: 36, borderRadius: "50%", background: "var(--cyan-600)", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff" }}>
+              <Icon.arrow />
+            </span>
+          </a>
+        );
         if (b.type === "callout") return (
           <div key={i} className="blog-callout">
             <div className="blog-callout-icon"><Icon.zap style={{ width: 18, height: 18 }} /></div>
