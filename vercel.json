@@ -29,6 +29,9 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/service/product-strategy", "destination": "/service/ai-product-engineering", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
     { "source": "/robots.txt", "destination": "/robots.txt" },

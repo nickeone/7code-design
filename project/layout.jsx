@@ -75,7 +75,7 @@ function Nav() {
   const services = [
     {
       icon: Icon.code, title: "AI-Native Product Engineering", slug: "ai-product-engineering",
-      bullets: ["AI-Powered Web Apps", "Intelligent Mobile Apps", "LLM-First Interfaces"],
+      bullets: ["AI-Powered Web Apps", "Intelligent Mobile Apps", "LLM-First Interfaces", "Product Discovery & UX Design"],
     },
     {
       icon: Icon.globe, title: "System Integrations", slug: "system-integrations",
@@ -92,10 +92,6 @@ function Nav() {
     {
       icon: Icon.cloud, title: "Cloud & Agentic Infrastructure", slug: "cloud-agentic-infra",
       bullets: ["Cloud-Native Deployments", "Agentic Pipelines & Orchestration", "AI Observability"],
-    },
-    {
-      icon: Icon.layers, title: "Product Strategy & Design", slug: "product-strategy",
-      bullets: ["Discovery", "UX Design", "Design Systems"],
     },
     {
       icon: Icon.users, title: "AI Engineering Outstaffing", slug: "ai-outstaffing",
@@ -225,7 +221,6 @@ function Footer() {
               <li><a href="/service/ai-automation">AI &amp; Process Automation</a></li>
               <li><a href="/service/llm-agent-development">LLM &amp; Agent Development</a></li>
               <li><a href="/service/cloud-agentic-infra">Cloud &amp; Agentic Infra</a></li>
-              <li><a href="/service/product-strategy">Product Strategy &amp; Design</a></li>
               <li><a href="/service/ai-outstaffing">AI Engineering Outstaffing</a></li>
             </ul>
           </div>

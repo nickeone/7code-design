@@ -11,7 +11,7 @@ const SERVICES_DATA = {
     slug: "ai-product-engineering",
     title: "AI-Native Product Engineering",
     shortTitle: "AI Product Engineering",
-    tagline: "We design and ship AI-native web and mobile products end-to-end, LLM features, agent workflows, and the backend infrastructure to run them reliably in production. Not retrofits. Not wrappers.",
+    tagline: "We discover, design, and ship AI-native web and mobile products end-to-end, from user research and UX design through LLM features, agent workflows, and the backend infrastructure to run them reliably in production. Not retrofits. Not wrappers.",
     summary: "7Code is an AI-first product engineering company. We treat AI as a foundational capability, not a layer bolted on at the end: the data model, the retrieval and inference loops, the evaluation harness, and the UX are designed together from week one. The products we ship, Daily8 (UAE news aggregator with AI moderation and summarisation), WholeSum (self-serve qualitative-data analytics), and OctoLabs (AI support copilot), improve with every user interaction and scale cleanly as data and traffic grow.",
     icon: "code",
     accentColor: "#06B6D4",
@@ -32,12 +32,14 @@ const SERVICES_DATA = {
       { title: "Agent and workflow infrastructure", desc: "Multi-step agent pipelines with tool use, memory, and human-in-the-loop checkpoints. Built on LangGraph or first-party SDKs (Anthropic, OpenAI), with eval harnesses and replay so behaviour is auditable." },
       { title: "AI-ready data and retrieval layer", desc: "The backend that makes AI possible: event streams, vector stores (pgvector, Pinecone), embedding pipelines, and the API contracts that keep your frontend fast while the model thinks." },
       { title: "Legacy integration and migration", desc: "We connect your AI-native product to the systems that hold your real data, EHRs, ERPs, CRMs, and the internal tools that predate modern APIs. No greenfield silos." },
+      { title: "Product discovery & UX design", desc: "User research, assumption mapping, information architecture, and AI-aware UX patterns, streaming states, confidence indicators, citation displays, and fallback flows, designed before engineering begins. We deliver Figma components and a design system your engineers can build from without interpretation." },
     ],
     techStack: {
       "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand"],
       "Mobile": ["React Native", "Expo", "Swift", "Kotlin"],
       "AI & LLM": ["Claude (Anthropic)", "GPT (OpenAI)", "LangGraph", "pgvector", "Pinecone", "Eval harnesses"],
       "Backend & Data": ["Node.js", "Nest.js", "PostgreSQL", "AWS Lambda", "Kafka", "Prisma"],
+      "Design & UX": ["Figma", "FigJam", "Storybook", "design tokens", "Maze"],
     },
     process: [
       { step: "01", title: "AI capability scoping, before the spec", desc: "We map product requirements against LLM and agent capabilities in week one, before any specification is written. Architecture decisions made early, data model, retrieval strategy, evaluation criteria, feedback loops, have a 10× impact on what's possible by month six. We get these right first." },
@@ -209,7 +211,7 @@ const SERVICES_DATA = {
       { q: "Is the infra you build vendor-locked?", a: "No. We default to portable foundations, Terraform / Pulumi for IaC, Kubernetes or container-based deployment, open-source orchestration (LangGraph / Temporal). Provider-specific services are used where they're decisively better (Bedrock, Cloud Run, Azure OpenAI), but the abstraction layer is yours and the data is yours." },
       { q: "What does 'eval CI' mean?", a: "A continuous-integration pipeline that, on every change to a prompt, model version, or retrieval setting, runs your held-out evaluation set, scores it, and gates the merge on the result. It's the AI equivalent of unit tests + code coverage, without it, you cannot tell whether a change improved or degraded the system." },
     ],
-    next: { slug: "product-strategy", title: "Product Strategy & Design" },
+    next: { slug: "ai-outstaffing", title: "AI Engineering Outstaffing" },
   },
 
   "ai-outstaffing": {
@@ -315,56 +317,6 @@ const SERVICES_DATA = {
     next: { slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure" },
   },
 
-  "product-strategy": {
-    slug: "product-strategy",
-    title: "Product Strategy & Design",
-    shortTitle: "Strategy & Design",
-    tagline: "From discovery to design system, building AI-native products that resonate with users, withstand engineering, and stay usable when the LLM is streaming, uncertain, or wrong.",
-    summary: "Product strategy is the work that makes everything else less expensive. When discovery is done right, the design emerges from it. When the design is done right, the engineering is faster, and the AI features actually work in the hands of users. We design for streaming responses, model uncertainty, and human-in-the-loop checkpoints from week one, because retrofitting them after launch is where most AI products fall over.",
-    icon: "layers",
-    accentColor: "#059669",
-    stats: [
-      { v: "Discovery", l: "week 1 deliverable" },
-      { v: "WCAG AA", l: "accessibility standard" },
-      { v: "Figma", l: "design platform" },
-      { v: "2 wks", l: "prototype to user test" },
-    ],
-    problem: {
-      title: "Most products are built before the problem is understood, and AI features ship before the UX is designed for them.",
-      body: "Teams jump to solutions because solutions feel like progress. The discovery phase, understanding users, mapping workflows, identifying assumptions baked into the brief, feels slow. It is not. With LLM features specifically, the failure mode is worse: the design treats AI as a regular form field, then breaks the moment a response streams, takes 8 seconds, or surfaces something confidently wrong. We design for those realities upfront.",
-    },
-    whatWeDeliver: [
-      { title: "Product discovery", desc: "User research, stakeholder interviews, assumption mapping, and a product strategy document that makes tradeoffs explicit. For AI products, we also map where models fit, where they don't, and where the human stays in the loop." },
-      { title: "Information architecture", desc: "Sitemaps, user flows, and navigation models that match how your users think about their work, not how the engineering team models the data, and not how the LLM happens to chunk text." },
-      { title: "AI-aware UX patterns", desc: "Streaming, skeleton states, confidence indicators, citation displays, fallback paths, and tool-use UX. The patterns that turn an LLM feature from a demo into something users actually trust day-to-day." },
-      { title: "Wireframes and prototypes", desc: "From rough flows to interactive prototypes, tested with real users, including failure-case prototypes (the LLM is wrong, slow, or down) so the team aligns on how the product behaves on a bad day." },
-      { title: "High-fidelity design", desc: "Pixel-precise Figma files, component specs, and design tokens. The artifacts your engineering team can build from without interpretation." },
-      { title: "Design systems", desc: "A component library in Figma and code, documented and maintained, with primitives for the AI patterns above (streamed text, citations, confidence states) so every new AI feature is faster and more consistent." },
-      { title: "Design QA", desc: "We stay in the loop during engineering to catch deviations before they ship, including the AI-specific ones (streaming behaviour, latency, error states) that visual QA alone misses." },
-    ],
-    techStack: {
-      "Design": ["Figma", "FigJam", "Lottie / Rive"],
-      "Research": ["Maze", "UserTesting", "Hotjar"],
-      "Handoff": ["Storybook", "design tokens (Style Dictionary)", "Zeroheight"],
-      "Accessibility": ["axe DevTools", "VoiceOver", "NVDA"],
-    },
-    process: [
-      { step: "01", title: "Discovery and research", desc: "User interviews, competitive analysis, and a structured assumption map. Output: a strategy document you can use to make decisions, not just describe the project, including a clear point of view on where AI helps and where it gets in the way." },
-      { step: "02", title: "Wireframe and test", desc: "Low-fidelity flows and prototypes, tested with 5–8 users. We run the tests, synthesise the findings, and iterate, including failure-case scenarios for AI features, all before high-fidelity design begins." },
-      { step: "03", title: "High-fidelity and handoff", desc: "Figma files with full component specs, design tokens, and interaction annotations, including streaming, latency, and error-state animations. Handed off in a format your engineers can build from without interpretation." },
-    ],
-    cases: ["hera", "wholesum", "lidl-road-safety"],
-    seoTitle: "AI Product Strategy, Discovery & Design Services | 7code",
-    metaDescription: "Product strategy and design by 7Code. Discovery to design system for AI-native products, UX for streaming, confidence, and fallback paths. Figma to code.",
-    faqs: [
-      { q: "Do I need a 'product strategy' phase if I already know what I want to build?", a: "Sometimes no. If your discovery is done, your user research is solid, and your team has alignment on the problem, we can start at wireframes. But it is rare, most teams that come to us with 'we know what to build' have an unspoken disagreement that shows up at sprint three. A one-week strategy phase usually pays for itself many times over by avoiding rework." },
-      { q: "How do you design for an LLM that is sometimes wrong?", a: "By treating uncertainty as a design primitive, not an edge case. Concretely: confidence indicators, source citations, easy escalation to a human, ' I don't know' patterns instead of confidently-wrong outputs, and fallback flows when the model is unavailable or slow. We prototype these failure cases early so users (and stakeholders) align on the product's behaviour on a bad day." },
-      { q: "Do you build the design system, or just deliver Figma?", a: "Both, depending on scope. We can deliver a Figma library only, or a Figma library plus a coded component library (React, Storybook, design tokens via Style Dictionary). For AI products we strongly recommend the coded version, the streaming and confidence components benefit from being implemented once, not re-built per screen." },
-      { q: "How do you handle accessibility?", a: "WCAG AA as a default, AAA where the user base demands it (healthcare, public-sector). We design with screen readers (VoiceOver, NVDA) in mind, audit with axe DevTools, and include accessibility acceptance criteria in every Figma handoff. AI-specific concerns, narration of streaming responses, alt-text generation, are part of that audit." },
-      { q: "How long does design typically take?", a: "Two weeks for discovery, two weeks of wireframe + user testing, two to four weeks of high-fidelity, depending on scope. Eight weeks total is common for a v1 product. We deliver in milestones, your team can start engineering against wireframes while high-fidelity is still in progress." },
-    ],
-    next: { slug: "ai-outstaffing", title: "AI Engineering Outstaffing" },
-  },
 };
 
 // ─────────────────────────────────────────────────────────────────
