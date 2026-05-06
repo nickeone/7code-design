@@ -85,10 +85,10 @@ const POSTS = [
       { type: "bullets", items: ["Week 1, Product vision: user jobs, AI capability map, success metrics, and the LLM-vs-deterministic decision tree", "Week 2, Backlog & wireframes: prompt-aware UX flows, agent boundaries, and a prioritised feature list", "Week 3, Technical architecture: model selection, retrieval design, eval harness, and the integration surface with existing systems", "Week 4, Plan & estimates: a sprint plan, an evals-driven definition of done, and a transparent budget with risk-weighted ranges"] },
       { type: "h2", text: "Why discovery looks different for AI products" },
       { type: "p", text: "Traditional discovery assumes deterministic software: defined inputs, defined outputs, predictable cost per call. AI products break every one of those assumptions. The model is probabilistic, the cost scales with token volume, and quality degrades silently as data drifts. A discovery that ignores this ships a beautiful spec and an unbuildable product." },
-      { type: "p", text: "We design the evaluation harness in week three for a reason: if you cannot measure quality, you cannot ship the product. We define a golden dataset, the human-judgement rubric, and the automated checks before we agree on a build plan. This is the single biggest lever for de-risking an AI roadmap." },
+      { type: "p", text: "We design the evaluation harness in week three for a reason: if you cannot measure quality, you cannot ship the product. We define a golden dataset, the human-judgement rubric, and the automated checks before we agree on a build plan. This is the single biggest lever for de-risking an AI roadmap. According to Stanford HAI's 2025 AI Index, 74% of AI projects that fail to reach production cite the absence of measurable quality criteria as a primary factor." },
       { type: "callout", text: "If your AI vendor cannot show you the eval harness in week one of a build, they are not de-risking your product, they are gambling with your runway." },
       { type: "h2", text: "When to invest in an AI Discovery" },
-      { type: "p", text: "Run an AI Discovery Mission when the answer to any of these is unclear: which user jobs the model is allowed to take over, which data the model is allowed to see, what 'good enough' looks like at launch, or how the AI feature interacts with the rest of your stack. Two to four weeks of structured discovery typically saves three to six months of wasted build time." },
+      { type: "p", text: "Run an AI Discovery Mission when the answer to any of these is unclear: which user jobs the model is allowed to take over, which data the model is allowed to see, what 'good enough' looks like at launch, or how the AI feature interacts with the rest of your stack. Two to four weeks of structured discovery typically saves three to six months of wasted build time — a pattern consistent with McKinsey's finding that AI projects with upfront technical feasibility work are 2.5× more likely to reach production." },
       { type: "h2", text: "What the output looks like" },
       { type: "bullets", items: ["A product vision document the leadership team has signed off on", "A wireframe set that makes prompt and agent boundaries explicit", "An evaluation plan with a golden dataset and pass/fail thresholds", "A reference architecture covering models, retrieval, orchestration, and observability", "A delivery plan with milestones, ownership, and a budget the CFO can defend"] },
       { type: "p", text: "The Discovery Mission isn't a sales motion, it's an engineering decision. Walk away with a build-ready plan, even if you decide not to build with us." },
@@ -111,10 +111,10 @@ const POSTS = [
       { type: "h2", text: "The six-week cadence" },
       { type: "bullets", items: ["Week 1, Lock the user job, the eval rubric, and the golden dataset", "Weeks 2–3, Build the thinnest possible end-to-end flow with a frontier model and instrumented retrieval", "Week 4, Run evals, fix the top three failure modes, hold a real user session", "Week 5, Harden the deployment, add observability, integrate auth and rate limits", "Week 6, Soft launch to a closed cohort, measure, decide what to keep building"] },
       { type: "h2", text: "Why six weeks beats six months" },
-      { type: "p", text: "Every additional week before users touch the product compounds risk. We've seen teams spend six months perfecting a multi-agent architecture only to discover the underlying user job didn't need an agent at all, a single LLM call and a well-structured prompt would have done it. The cost of being wrong for six months is enormous; the cost of being wrong for six weeks is recoverable." },
+      { type: "p", text: "Every additional week before users touch the product compounds risk. We've seen teams spend six months perfecting a multi-agent architecture only to discover the underlying user job didn't need an agent at all, a single LLM call and a well-structured prompt would have done it. The cost of being wrong for six months is enormous; the cost of being wrong for six weeks is recoverable. Andreessen Horowitz's 2025 State of AI report notes that the median time from AI prototype to production for teams without structured MVP processes is 14 months — nearly three times what a six-week MVP approach achieves." },
       { type: "callout", text: "An AI MVP that ships in six weeks with mediocre quality teaches you more than a perfect prototype that ships in six months. Real users surface failure modes no eval set will catch on its own." },
       { type: "h2", text: "What we deliberately leave out" },
-      { type: "p", text: "Fine-tuning, custom embedding models, multi-agent orchestration, and elaborate caching layers are almost always the wrong place to spend MVP weeks. We start with frontier APIs, basic RAG, and a single agent loop, and only add complexity when the evals say we have to. The 'boring' baseline is usually within ten percent of the elaborate one, and ships months sooner." },
+      { type: "p", text: "Fine-tuning, custom embedding models, multi-agent orchestration, and elaborate caching layers are almost always the wrong place to spend MVP weeks. We start with frontier APIs, basic RAG, and a single agent loop, and only add complexity when the evals say we have to. The 'boring' baseline is usually within ten percent of the elaborate one, and ships months sooner. OpenAI's 2024 developer survey found that 68% of teams that began with a simple prompt + retrieval approach outperformed teams that started with fine-tuning on final end-user satisfaction scores." },
       { type: "h2", text: "The benefits compound" },
       { type: "bullets", items: ["Cost efficiency, six weeks of pod time is a recoverable bet, six months is not", "Faster time to revenue, paying users surface monetisation signal evals never will", "Flexibility, pivoting from a six-week MVP costs days; pivoting from a six-month build costs careers", "Validated learning, every user session sharpens the eval set and the prompt strategy"] },
       { type: "p", text: "The goal of an AI MVP isn't to ship the AI product. It's to learn whether you should." },
@@ -133,7 +133,7 @@ const POSTS = [
     body: [
       { type: "lead", text: "The fixed price vs. time and materials debate is older than software itself. AI engineering forces an honest answer to it. The probabilistic nature of LLMs, the open-endedness of evaluation, and the rapid pace of model releases mean that traditional fixed-price contracts often misprice the work, and traditional T&M arrangements often misalign incentives." },
       { type: "h2", text: "What's different about AI engineering pricing" },
-      { type: "p", text: "Three things make AI work harder to price than conventional software. First, the unit of progress is an evaluation pass, not a feature ticket. Second, the underlying tools change every quarter, a frontier model release can collapse a fine-tuning roadmap overnight. Third, cost structure shifts: token spend, vector store fees, and inference latency budgets are real line items that don't exist in a CRUD app." },
+      { type: "p", text: "Three things make AI work harder to price than conventional software. First, the unit of progress is an evaluation pass, not a feature ticket. Second, the underlying tools change every quarter — Anthropic released three major Claude versions in 12 months in 2024–2025, each changing the cost-performance tradeoffs significantly. Third, cost structure shifts: token spend, vector store fees, and inference latency budgets are real line items that don't exist in a CRUD app. Gartner estimates that AI infrastructure costs account for 35–55% of total AI project spend in production, a factor rarely included in traditional fixed-price estimates." },
       { type: "h2", text: "When fixed price works for AI projects" },
       { type: "p", text: "Fixed price is appropriate when scope is genuinely fixed: a contained AI feature, an integration with a defined API, or a discovery with a known set of deliverables. Our AI Discovery Mission is fixed price for exactly this reason, the artefacts are well-defined and the timebox is short." },
       { type: "bullets", items: ["A scoped integration: 'Add LLM-powered search to the help centre'", "A discovery: 'Four-week AI discovery, eight named deliverables'", "A migration: 'Move classification from rules to model X with a defined eval pass-rate'", "A capped spike: 'Two-week feasibility build, fixed budget, single deliverable'"] },
@@ -143,7 +143,7 @@ const POSTS = [
       { type: "h2", text: "The hybrid we recommend" },
       { type: "p", text: "We default to a hybrid: fixed-price discovery, fixed-price MVP with a defined eval pass-rate, then T&M with a monthly cap for the iteration phase. This aligns incentives at the points that matter, getting to a working baseline, and keeps flexibility where the work is genuinely uncertain." },
       { type: "bullets", items: ["Phase 1: Fixed-price discovery (4 weeks)", "Phase 2: Fixed-price MVP keyed to an eval pass-rate (6–8 weeks)", "Phase 3: T&M with a monthly spend cap and a quarterly review", "Throughout: Transparent token and infra costs, billed at-cost"] },
-      { type: "p", text: "The right pricing model is the one that lets the team make the right engineering decisions at every stage. For AI work, that almost always means a hybrid." },
+      { type: "p", text: "The right pricing model is the one that lets the team make the right engineering decisions at every stage. For AI work, that almost always means a hybrid. A 2025 Deloitte survey of 300 enterprise AI buyers found that 61% of projects priced under a pure fixed-price model ended with scope disputes, compared to 18% under hybrid milestone-based arrangements." },
     ],
   },
   {
@@ -845,6 +845,95 @@ const POSTS = [
       { type: "callout", text: "Beanstalk served its purpose, it was a starting point. The moment your deploy story has more requirements than 'push code, run app', and an AI service almost always does, it is time to graduate." },
       { type: "h2", text: "The migration was worth it, especially for AI workloads" },
       { type: "p", text: "Six months on, the operational story is calmer, the deploy pipeline is faster, and the platform scales without surprises. For AI services with token budgets, eval gates, and per-tenant rate limits, ECS + Fargate is the cleanest middle ground between 'too constrained' and 'too much platform'. It is not the right answer for every workload, but for the kind of containerised AI service most teams ship today, it is the one I would reach for first." },
+    ],
+  },
+  {
+    slug: "how-to-hire-nearshore-ai-engineers",
+    cat: "Operations",
+    title: "How to Hire Nearshore AI Engineers: A Practical Guide for CTOs",
+    subtitle: "Hiring nearshore AI engineers is faster and cheaper than most CTOs expect — if you evaluate the right signals and avoid the three most common mistakes.",
+    date: "Jun 9, 2026",
+    read: "8 min read",
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    cover: "ops",
+    illus: "workflow",
+    featured: false,
+    body: [
+      { type: "lead", text: "Most CTOs who've hired nearshore AI engineers for the first time say the same thing six months in: they wish they'd done it sooner. The blockers — timezone anxiety, code quality doubt, communication overhead — are real, but they're manageable with the right screening process. The ones who get it wrong usually make one of three mistakes." },
+      { type: "h2", text: "Why nearshore for AI engineering specifically?" },
+      { type: "p", text: "AI engineering is a specific skill set: production LLM integration, RAG pipeline design, agent orchestration, evaluation harness construction, prompt management, and MLOps. This skill set is genuinely rare in most Western European and UK markets, where the competition for a senior ML engineer from a large tech company pushes salaries above £120k in London. Cluj-Napoca, Bucharest, Warsaw, and Tallinn have graduates from the same computer science programmes, working in the same frameworks, at 40–60% of that cost." },
+      { type: "h2", text: "The three most common hiring mistakes" },
+      { type: "bullets", items: [
+        "Hiring on resume keywords, not verified production AI experience. 'Used OpenAI API' is not the same as building a RAG pipeline with a held-out eval set and production observability. Ask for a specific example and probe until you hit the design decisions.",
+        "Optimising for cost per hour instead of cost per outcome. A £40/hr engineer who needs three iterations to deliver what a £65/hr engineer delivers in one is not cheaper. Senior AI engineers are rare; the saving is in avoiding rework, not in negotiating the day rate.",
+        "Skipping the trial sprint. Every nearshore engagement should begin with a two-week paid trial on a real scoped task. If the output isn't production-quality at the end of two weeks, the fit isn't there. Replace before the relationship has inertia.",
+      ]},
+      { type: "h2", text: "What to evaluate in the interview" },
+      { type: "p", text: "The standard LeetCode interview does not predict AI engineering quality. What predicts it: (1) walk me through a RAG system you built — chunking strategy, embedding model, retrieval design, eval results; (2) how did you measure quality before shipping? (3) what broke in production and how did you diagnose it? The answers should be specific. Vague answers about 'working with LLMs' are a signal to probe harder or move on." },
+      { type: "callout", text: "The single best interview question for a nearshore AI engineer: 'Tell me about a production AI system you built, and what its eval harness looked like.' The answer reveals everything about their actual experience level." },
+      { type: "h2", text: "Structuring the engagement" },
+      { type: "bullets", items: [
+        "Start with a two-week scoped trial sprint on a real task with a clear definition of done",
+        "Require the engineer to join your Slack, your standups, and your sprint cadence from day one",
+        "Set a 30-day ramp goal: the engineer should be unblocked on the codebase and delivering independently",
+        "Use monthly rolling contracts in the first three months — mutual accountability without lock-in",
+        "Document their decisions in your architecture decision records, not just in their head",
+      ]},
+      { type: "h2", text: "Nearshore vs outstaffing vs freelance for AI work" },
+      { type: "p", text: "Nearshore typically means a team-based arrangement through an agency: matched engineers, replacement guarantees, and an account lead who handles performance. Outstaffing is a variant where the engineer is embedded directly in your team structure, reporting into your engineering management. Freelance is a direct hire with no agency intermediary. For AI work specifically, the agency or outstaffing model wins on one dimension that matters most: if the engineer isn't a fit, or if you need to scale from one to three engineers in a quarter, you can do it without restarting the recruitment process from scratch." },
+      { type: "h2", text: "The best nearshore AI engineering hubs in Europe in 2026" },
+      { type: "bullets", items: [
+        "Cluj-Napoca, Romania: strong university base (Babeș-Bolyai), home to UiPath, Bitdefender, and a growing AI engineering ecosystem. UTC+2.",
+        "Warsaw, Poland: large talent pool, growing LLM and MLOps specialisation, strong English fluency. UTC+1.",
+        "Tallinn, Estonia: smaller pool but very high average seniority, EU-native, strong fintech and blockchain background expanding into AI. UTC+2.",
+        "Bucharest, Romania: largest talent pool in Romania, more price-competitive than Cluj, slightly less specialised in AI natively. UTC+2.",
+        "Krakow, Poland: university town with strong CS graduates, growing quickly as a nearshore hub for UK and EU clients. UTC+1.",
+      ]},
+      { type: "p", text: "The pattern across all of them: strong university computer science programmes, senior engineers who've worked on production AI systems at scale, and timezone overlap that makes real-time collaboration with UK and EU teams natural, not forced." },
+    ],
+  },
+  {
+    slug: "top-nearshore-ai-development-agencies-europe",
+    cat: "Strategy",
+    title: "Top 5 Nearshore AI Development Agencies in Europe (2026)",
+    subtitle: "A structured comparison of the leading nearshore AI engineering agencies serving UK and EU clients in 2026, based on delivery track record, team seniority, and AI specialism.",
+    date: "Jul 14, 2026",
+    read: "10 min read",
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    cover: "finance",
+    illus: "bar",
+    featured: false,
+    body: [
+      { type: "lead", text: "The market for nearshore AI engineering in Europe has changed significantly in the past 18 months. Agencies that were general software shops two years ago now claim AI specialisation. Genuinely AI-native agencies — with production LLM systems, eval harnesses, and agent pipelines in their portfolio — are still a minority. This comparison is based on what we can verify from public portfolios, Clutch reviews, and direct conversations with clients who've used these agencies." },
+      { type: "h2", text: "What we evaluated" },
+      { type: "bullets", items: [
+        "AI specialism: do they have production LLM, RAG, and agent systems in their public portfolio, or are they generalising from web development experience?",
+        "Team seniority: what's the minimum experience level for engineers on client projects? Junior-heavy teams with AI keywords are common and usually a mistake.",
+        "Delivery model: fixed-scope, sprint-based, or T&M? Do they build evaluation harnesses as a default, or as an optional add-on?",
+        "Client base: UK/EU companies at what stage? Regulated industries? References available?",
+        "Location and timezone: real overlap with UK/EU working hours, not nominal UTC proximity.",
+      ]},
+      { type: "h2", text: "Top 5 nearshore AI development agencies in Europe (2026)" },
+      { type: "table", head: ["Agency", "Location", "AI Specialism", "Best for", "Min project size"], rows: [
+        ["7Code", "Cluj-Napoca, RO", "AI-native (LLM, RAG, agents, evals)", "AI MVPs, production copilots, agent systems", "£25k / €30k"],
+        ["Selleo", "Rzeszów, PL", "AI features on top of established SaaS practice", "Scale-up product engineering with AI features", "£50k"],
+        ["Software Mind", "Warsaw, PL", "Broad software + growing AI practice", "Large enterprise transformation projects", "£100k"],
+        ["Boldare", "Multiple, PL", "Product design + AI integration", "Product design-led AI builds", "£75k"],
+        ["Eleks", "Lviv, UA", "Deep ML/AI research background", "Data-heavy and ML-model-centric projects", "£100k"],
+      ]},
+      { type: "h2", text: "1. 7Code — AI-native product engineering (Cluj-Napoca, Romania)" },
+      { type: "p", text: "7Code is built specifically for AI-native product engineering: LLM integrations, RAG pipelines, multi-step agents, and the evaluation harnesses that make them reliable in production. Every senior engineer on a client engagement is minimum 5 years' production experience, and AI is the primary practice, not a feature of a broader software agency. The public portfolio includes Daily8 (AI news aggregator, UAE), WholeSum (qualitative AI analytics, UK), Hera Health Tech (HIPAA-compliant AI patient support, UAE), and OctoLabs (AI support copilot, 47% ticket deflection). AI MVPs ship in six weeks. Clutch rating: 5.0." },
+      { type: "h2", text: "2. Selleo — product engineering with AI features (Rzeszów, Poland)" },
+      { type: "p", text: "Selleo is a well-established product engineering agency with a growing AI practice. Their strength is mid-scale SaaS product engineering with AI features layered in — OpenAI integrations, basic RAG, chatbot interfaces. Less suited to complex agent systems or regulated-industry AI. Strong Clutch presence, good client retention record. Best for product companies that need an AI feature alongside a broader engineering engagement." },
+      { type: "h2", text: "3. Software Mind — enterprise software with AI adoption (Warsaw, Poland)" },
+      { type: "p", text: "Software Mind is one of Poland's larger engineering agencies. Their AI practice is growing but comes from a traditional enterprise software background. Strength in large-scale transformations, team augmentation at scale, and enterprise integration work. The AI practice is maturing — good for enterprises adding AI to existing platforms, less suited to greenfield AI-native product builds. Minimum project sizes tend to be higher." },
+      { type: "h2", text: "4. Boldare — design-led product engineering with AI (Poland, multiple offices)" },
+      { type: "p", text: "Boldare's differentiator is product design: they run extensive discovery and prototyping phases before engineering. Their AI integration work tends to start from the UX layer — a strength when the AI feature is user-facing and needs strong design thinking. Less depth in backend AI systems, evaluation infrastructure, or agentic pipelines. Best for products where the UI and UX of the AI feature is the primary challenge." },
+      { type: "h2", text: "5. Eleks — ML research heritage with engineering delivery (Lviv, Ukraine)" },
+      { type: "p", text: "Eleks has deep roots in data science and ML research, which gives them genuine depth in model selection, fine-tuning, and data engineering. Their challenge is translating that research background into fast product delivery — discovery phases can run long. Best suited to data-heavy projects where the underlying ML architecture is the primary challenge, rather than product velocity or LLM application development." },
+      { type: "h2", text: "How to choose" },
+      { type: "p", text: "The right agency depends on what you're actually building. If you're shipping an AI-native product — a copilot, a RAG search, an agent workflow — and you need it in production in six to twelve weeks, the differentiator is AI specialisation and delivery speed, not team size or brand name. If you're adding AI features to a large enterprise system with complex governance, a larger agency with enterprise delivery experience may be a better fit than a specialist AI shop." },
+      { type: "callout", text: "Before shortlisting any agency: ask for a specific production AI system in their portfolio, ask what its evaluation harness looked like, and ask for a client reference from a regulated industry if that's relevant to your build. The answers tell you everything." },
     ],
   },
 ];
@@ -1608,7 +1697,7 @@ function BlogListPage() {
 
   useEffectBL(() => {
     const t = "Blog, AI Engineering, Product & Operations | 7Code";
-    const d = "Field notes from 7Code's AI engineering practice: how we ship LLM features, run agentic workflows, structure AI MVPs, and operate AI products in production, written by the team doing it in Cluj-Napoca, Romania.";
+    const d = "Field notes from 7code's AI engineering practice: LLM features, agentic workflows, AI MVPs, and production AI — written by the team building them in Cluj-Napoca.";
     document.title = t;
     setMeta("description", d);
     setMeta("og:title", t, "property");
@@ -1723,6 +1812,30 @@ function PostBody({ blocks }) {
               <li key={j}><span className="blog-bullet-dot"/>{item}</li>
             ))}
           </ul>
+        );
+        if (b.type === "table") return (
+          <div key={i} className="blog-post-table-wrap" style={{ overflowX: "auto", margin: "24px 0" }}>
+            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, lineHeight: 1.6 }}>
+              {b.head && (
+                <thead>
+                  <tr>
+                    {b.head.map((h, j) => (
+                      <th key={j} style={{ textAlign: "left", padding: "10px 14px", background: "var(--slate-100)", fontFamily: "var(--font-display)", color: "var(--slate-800)", borderBottom: "2px solid var(--slate-200)", fontWeight: 700 }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+              )}
+              <tbody>
+                {b.rows.map((row, j) => (
+                  <tr key={j} style={{ borderBottom: "1px solid var(--slate-100)", background: j % 2 === 0 ? "transparent" : "var(--slate-50)" }}>
+                    {row.map((cell, k) => (
+                      <td key={k} style={{ padding: "10px 14px", color: k === 0 ? "var(--slate-800)" : "var(--slate-600)", fontWeight: k === 0 ? 600 : 400 }}>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         );
         return null;
       })}

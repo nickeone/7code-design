@@ -56,7 +56,22 @@ const MAIN_PAGES = [
   {
     path: "/blog",
     title: "Blog — AI Engineering, Product, and Practice | 7Code",
-    description: "Field notes from 7Code on AI engineering, product strategy, RAG, agents, evaluation, and shipping LLM features to production.",
+    description: "Field notes from 7code's AI engineering practice: LLM features, agentic workflows, AI MVPs, and production AI — written by the team building them in Cluj-Napoca.",
+  },
+  {
+    path: "/ai-mvp-development",
+    title: "AI MVP Development — Ship in 6 Weeks | 7code",
+    description: "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.",
+  },
+  {
+    path: "/ai-development-agency-uk",
+    title: "AI Development Agency for UK Companies | 7code Romania",
+    description: "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.",
+  },
+  {
+    path: "/compare/agency-vs-freelancer",
+    title: "AI Agency vs AI Freelancer: Which Is Right for You? | 7code",
+    description: "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
   },
 ];
 
@@ -66,7 +81,8 @@ const SERVICES = [
   {"slug":"ai-automation","title":"AI & Process Automation","description":"AI & process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, and shipped to production in six weeks.","ogImage":"/project/uploads/wholesum%20hero.png"},
   {"slug":"cloud-agentic-infra","title":"Cloud & Agentic Infrastructure","description":"Cloud and agentic infrastructure by 7Code. AWS, GCP, and Azure foundations for AI products, agent pipelines (LangGraph, Temporal), vector stores, eval CI, and cost optimisation.","ogImage":"/project/uploads/g42-fleet-hero.jpg"},
   {"slug":"ai-outstaffing","title":"AI Engineering Outstaffing","description":"AI engineering outstaffing by 7Code. Senior AI and ML engineers, production LLM, RAG, and MLOps experience, embedded in your team in 72 hours. Monthly rolling, no lock-in.","ogImage":"/project/uploads/hera-hero.jpg"},
-  {"slug":"product-strategy","title":"Product Strategy & Design","description":"Product strategy and design by 7Code. Discovery to design system for AI-native products, UX patterns for streaming, confidence, and fallback paths. Figma and code, ready to ship.","ogImage":"/project/uploads/melsonic-hero.jpg"},
+  {"slug":"product-strategy","title":"Product Strategy & Design","description":"Product strategy and design by 7Code. Discovery to design system for AI-native products, UX for streaming, confidence, and fallback paths. Figma to code.","ogImage":"/project/uploads/melsonic-hero.jpg"},
+  {"slug":"llm-agent-development","title":"LLM & Agent Development","description":"Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.","ogImage":"/project/uploads/daily8-hero.png"},
 ];
 
 const EXPERTISE = [
@@ -119,6 +135,8 @@ const BLOG_POSTS = [
   {"slug":"migrating-users-auth0-python","title":"Migrating users between Auth0 tenants in Python: handling large payloads","description":"A practical guide to the pitfalls, edge cases, and Python patterns for moving users from one Auth0 tenant to another, without data loss or downtime.","datePublished":"2023-10-25"},
   {"slug":"fixed-price-vs-time-and-materials","title":"Fixed price vs. time and materials: a comparative analysis for software development","description":"The right pricing model depends on the nature of your project, your budget flexibility, and the level of scope certainty you actually have.","datePublished":"2023-09-13"},
   {"slug":"7code-discovery-mission","title":"7Code's Discovery Mission: pioneering successful software development","description":"A four-week Discovery Mission is the cornerstone of every successful build, producing the product vision, backlog, wireframes, architecture, and delivery plan that make development predictable.","datePublished":"2023-09-04"},
+  {"slug":"how-to-hire-nearshore-ai-engineers","title":"How to Hire Nearshore AI Engineers: A Practical Guide for CTOs","description":"Hiring nearshore AI engineers is faster and cheaper than most CTOs expect — if you evaluate the right signals and avoid the three most common mistakes.","datePublished":"2026-06-09"},
+  {"slug":"top-nearshore-ai-development-agencies-europe","title":"Top 5 Nearshore AI Development Agencies in Europe (2026)","description":"A structured comparison of the leading nearshore AI engineering agencies serving UK and EU clients in 2026, based on delivery track record, team seniority, and AI specialism.","datePublished":"2026-07-14"},
 ];
 
 // ──────────────────────────────────────────────────────────────────────────
@@ -316,6 +334,9 @@ const PAGE_TYPES = {
   "/case-studies": "CollectionPage",
   "/expertise": "CollectionPage",
   "/blog": "Blog",
+  "/ai-mvp-development": "WebPage",
+  "/ai-development-agency-uk": "WebPage",
+  "/compare/agency-vs-freelancer": "WebPage",
 };
 
 console.log("Main pages:");
@@ -325,9 +346,10 @@ for (const p of MAIN_PAGES) {
     title: p.title,
     description: p.description,
     ogImage: DEFAULT_OG,
-    schema: genericPageSchema(p, PAGE_TYPES[p.path]),
+    schema: genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage"),
   });
-  writeFile(p.path.slice(1) + ".html", html);
+  const relPath = p.path.startsWith("/") ? p.path.slice(1) : p.path;
+  writeFile(relPath + ".html", html);
 }
 
 console.log("\nServices:");

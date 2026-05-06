@@ -80,6 +80,23 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Landing pages -->
+  <url>
+    <loc>https://www.7code.tech/ai-mvp-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/ai-development-agency-uk</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/compare/agency-vs-freelancer</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Services -->
   <url>
     <loc>https://www.7code.tech/service/ai-product-engineering</loc>
@@ -108,6 +125,11 @@
   </url>
   <url>
     <loc>https://www.7code.tech/service/ai-outstaffing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/service/llm-agent-development</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -284,6 +306,16 @@
   </url>
   <url>
     <loc>https://www.7code.tech/blog/adrenaline-ai-debugger-case-study</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/blog/how-to-hire-nearshore-ai-engineers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/blog/top-nearshore-ai-development-agencies-europe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -15,6 +15,13 @@
   <url><loc>https://www.7code.tech/blog</loc>
     <lastmod>2026-05-05</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
 
+  <url><loc>https://www.7code.tech/ai-mvp-development</loc>
+    <lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.7code.tech/ai-development-agency-uk</loc>
+    <lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.7code.tech/compare/agency-vs-freelancer</loc>
+    <lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
   <url><loc>https://www.7code.tech/service/ai-product-engineering</loc>
     <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.7code.tech/service/system-integrations</loc>
@@ -27,6 +34,8 @@
     <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/service/ai-outstaffing</loc>
     <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.7code.tech/service/llm-agent-development</loc>
+    <lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
 
   <url><loc>https://www.7code.tech/expertise/healthcare</loc>
     <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -75,43 +84,47 @@
   <url><loc>https://www.7code.tech/blog/adrenaline-ai-debugger-case-study</loc>
     <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/senior-engineers-ai-leverage</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/ai-project-handover</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/running-ai-engineering-pods-across-continents</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/switch-ai-engineering-partner</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/ai-engineering-outstaffing</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/lessons-from-london-tech-week-ai</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/logistics-tech-tailored-solutions</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/changing-software-service-provider</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/aws-beanstalk-to-ecs-migration</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/aws-ecs-vs-beanstalk-perspective</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/adrenaline-ai-code-debugger</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/why-mvp-first</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/seamless-software-project-handover</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/cms-wordpress-vs-custom-development</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/osai-revolutionising-ai-interactions</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/low-code-no-code-vs-custom-development</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/reducing-costs-nearshoring-outstaffing</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/migrating-users-auth0-python</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/fixed-price-vs-time-and-materials</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.7code.tech/blog/7code-discovery-mission</loc>
-    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+    <lastmod>2026-05-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.7code.tech/blog/how-to-hire-nearshore-ai-engineers</loc>
+    <lastmod>2026-06-09</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.7code.tech/blog/top-nearshore-ai-development-agencies-europe</loc>
+    <lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
