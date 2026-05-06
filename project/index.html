@@ -3,9 +3,64 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>7Code — Modern engineering for products that scale</title>
+<title>7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania</title>
+<meta name="description" content="7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, agent workflows, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East." />
+<meta name="theme-color" content="#0C9CB5" />
+<link rel="canonical" href="https://www.7code.tech/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="7Code" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://www.7code.tech/" />
+<meta property="og:title" content="7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania" />
+<meta property="og:description" content="AI-first software engineering from Cluj-Napoca, Romania. We ship AI-native products, LLM integrations, agent workflows, and cloud infrastructure end-to-end for founders and product teams across Europe, the UK, and the Middle East." />
+<meta property="og:image" content="https://www.7code.tech/project/uploads/hera-hero.jpg" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="7Code, AI-Native Software Engineering Agency" />
+<meta name="twitter:description" content="AI-first software engineering from Cluj-Napoca, Romania. LLM features, agent workflows, and cloud infrastructure, shipped end-to-end." />
+<meta name="twitter:image" content="https://www.7code.tech/project/uploads/hera-hero.jpg" />
+
 <link rel="icon" type="image/svg+xml" href="assets/logo-favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.7code.tech/#organization",
+      "name": "7Code",
+      "url": "https://www.7code.tech/",
+      "logo": "https://www.7code.tech/assets/logo-favicon.svg",
+      "description": "AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end.",
+      "foundingDate": "2019",
+      "foundingLocation": { "@type": "Place", "name": "Cluj-Napoca, Romania" },
+      "address": { "@type": "PostalAddress", "addressLocality": "Cluj-Napoca", "addressCountry": "RO" },
+      "areaServed": ["Romania", "Europe", "United Kingdom", "United Arab Emirates", "Worldwide"],
+      "email": "office@7code.ro",
+      "sameAs": [
+        "https://www.linkedin.com/company/7-code/",
+        "https://github.com/7code",
+        "https://clutch.co/profile/7code"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.7code.tech/#website",
+      "url": "https://www.7code.tech/",
+      "name": "7Code",
+      "publisher": { "@id": "https://www.7code.tech/#organization" },
+      "inLanguage": "en-GB"
+    }
+  ]
+}
+</script>
 <link rel="stylesheet" href="styles.css" />
 <link rel="stylesheet" href="page-styles.css" />
 <link rel="stylesheet" href="case-studies.css" />
@@ -78,7 +133,7 @@ function App() {
   else if (page === "/expertise" && slug) Page = <ExpertiseDetailPage slug={slug} />;
   else if (page === "/expertise") Page = <ExpertisePage />;
   else if (page === "/case-studies") Page = <CaseStudiesPage variant={tweaks.caseStudiesVariant} />;
-  else if (page === "/case-study") Page = <CaseStudyPage slug={slug || "helix-health"} variant={tweaks.caseStudyVariant} />;
+  else if (page === "/case-study") Page = <CaseStudyPage slug={slug || "wholesum"} variant={tweaks.caseStudyVariant} />;
   else if (page === "/process") Page = <ProcessPage />;
   else if (page === "/about") Page = <AboutPage />;
   else if (page === "/blog" && slug) Page = <BlogRouter slug={slug} />;

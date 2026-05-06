@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KFNLGMZZQG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KFNLGMZZQG');
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why we ship AI MVPs in six weeks, not six months | 7Code Blog</title>
+<meta name="description" content="Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks." />
+<meta name="keywords" content="AI engineering partner, AI-native software, LLM development, agentic workflows, AI product engineering, production AI, AI consultancy" />
+<meta name="theme-color" content="#0C9CB5" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="author" content="7code" />
+    <link rel="alternate" hreflang="en" href="https://www.7code.tech/blog/ship-ai-mvp-six-weeks" />
+    <link rel="alternate" hreflang="en-gb" href="https://www.7code.tech/blog/ship-ai-mvp-six-weeks" />
+    <link rel="alternate" hreflang="x-default" href="https://www.7code.tech/blog/ship-ai-mvp-six-weeks" />
+    <meta name="geo.region" content="RO-CJ" />
+    <meta name="geo.placename" content="Cluj-Napoca, Romania" />
+
+<link rel="canonical" href="https://www.7code.tech/blog/ship-ai-mvp-six-weeks" />
+<link rel="icon" type="image/svg+xml" href="/project/assets/logo-favicon.svg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content="2026-04-16T00:00:00+00:00" />
+    <meta property="og:article:author" content="7code" />
+<meta property="og:site_name" content="7Code" />
+<meta property="og:locale" content="en_GB" />
+<meta property="og:url" content="https://www.7code.tech/blog/ship-ai-mvp-six-weeks" />
+<meta property="og:title" content="Why we ship AI MVPs in six weeks, not six months | 7Code Blog" />
+<meta property="og:description" content="Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks." />
+<meta property="og:image" content="https://www.7code.tech/project/uploads/hera-hero.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="7code — AI-First Software Engineering Partner" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why we ship AI MVPs in six weeks, not six months | 7Code Blog" />
+<meta name="twitter:description" content="Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks." />
+<meta name="twitter:image" content="https://www.7code.tech/project/uploads/hera-hero.jpg" />
+    <meta name="twitter:image:alt" content="7code — AI-First Software Engineering Partner" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.7code.tech/blog/ship-ai-mvp-six-weeks#post",
+      "headline": "Why we ship AI MVPs in six weeks, not six months",
+      "description": "Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks.",
+      "url": "https://www.7code.tech/blog/ship-ai-mvp-six-weeks",
+      "author": {
+        "@id": "https://www.7code.tech/#organization"
+      },
+      "publisher": {
+        "@id": "https://www.7code.tech/#organization"
+      },
+      "datePublished": "2026-04-16"
+    }
+  ]
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/project/styles.css?v=2" />
+<link rel="stylesheet" href="/project/page-styles.css?v=2" />
+<link rel="stylesheet" href="/project/case-studies.css?v=2" />
+<link rel="stylesheet" href="/project/case-studies-showcase.css?v=2" />
+<link rel="stylesheet" href="/project/case-studies-more.css?v=2" />
+<link rel="stylesheet" href="/project/case-study.css?v=2" />
+<link rel="stylesheet" href="/project/expertise-detail.css?v=2" />
+<link rel="stylesheet" href="/project/blog.css?v=2" />
+<link rel="stylesheet" href="/project/service-detail.css?v=2" />
+
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.7code.tech"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.7code.tech/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Why we ship AI MVPs in six weeks, not six months | 7Code Blog",
+      "item": "https://www.7code.tech/blog/ship-ai-mvp-six-weeks"
+    }
+  ]
+}
+    </script>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="/project/icons.jsx?v=2"></script>
+<script type="text/babel" src="/project/tweaks-panel.jsx?v=2"></script>
+<script type="text/babel" src="/project/layout.jsx?v=2"></script>
+<script type="text/babel" src="/project/heroes.jsx?v=2"></script>
+<script type="text/babel" src="/project/sections.jsx?v=2"></script>
+<script type="text/babel" src="/project/pages.jsx?v=2"></script>
+<script type="text/babel" src="/project/case-studies.jsx?v=2"></script>
+<script type="text/babel" src="/project/case-study.jsx?v=2"></script>
+<script type="text/babel" src="/project/expertise-detail.jsx?v=2"></script>
+<script type="text/babel" src="/project/blog.jsx?v=2"></script>
+<script type="text/babel" src="/project/service-detail.jsx?v=2"></script>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "heroVariant": "pattern",
+  "caseStudiesVariant": "stack",
+  "caseStudyVariant": "sticky",
+  "accent": "cyan",
+  "darkFooter": true
+}/*EDITMODE-END*/;
+
+const ACCENTS = {
+  cyan:    { c500: "#06B6D4", c600: "#0C9CB5", c700: "#0E7C90", c300: "#4DDFEA", c400: "#2EBFD0", bg50: "#ECFEFF", bg100: "#D8F7F9" },
+  indigo:  { c500: "#6366F1", c600: "#4F46E5", c700: "#4338CA", c300: "#A5B4FC", c400: "#818CF8", bg50: "#EEF2FF", bg100: "#E0E7FF" },
+  emerald: { c500: "#10B981", c600: "#059669", c700: "#047857", c300: "#6EE7B7", c400: "#34D399", bg50: "#ECFDF5", bg100: "#D1FAE5" },
+  orange:  { c500: "#F97316", c600: "#EA580C", c700: "#C2410C", c300: "#FDBA74", c400: "#FB923C", bg50: "#FFF7ED", bg100: "#FFEDD5" },
+};
+
+function applyAccent(name) {
+  const a = ACCENTS[name] || ACCENTS.cyan;
+  const r = document.documentElement.style;
+  r.setProperty("--cyan-500", a.c500);
+  r.setProperty("--cyan-600", a.c600);
+  r.setProperty("--cyan-700", a.c700);
+  r.setProperty("--cyan-300", a.c300);
+  r.setProperty("--cyan-400", a.c400);
+  r.setProperty("--bg-cyan-50", a.bg50);
+  r.setProperty("--bg-cyan-100", a.bg100);
+}
+
+function App() {
+  const route = useHashRoute();
+  useReveal();
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [page, slug] = parseRoute(route);
+
+  useEffect(() => { applyAccent(tweaks.accent); }, [tweaks.accent]);
+
+  let Page;
+  if (page === "/service" && slug) Page = <ServiceDetailPage slug={slug} />;
+  else if (page === "/expertise" && slug) Page = <ExpertiseDetailPage slug={slug} />;
+  else if (page === "/expertise") Page = <ExpertisePage />;
+  else if (page === "/case-studies") Page = <CaseStudiesPage variant={tweaks.caseStudiesVariant} />;
+  else if (page === "/case-study") Page = <CaseStudyPage slug={slug || "wholesum"} variant={tweaks.caseStudyVariant} />;
+  else if (page === "/process") Page = <ProcessPage />;
+  else if (page === "/about") Page = <AboutPage />;
+  else if (page === "/blog" && slug) Page = <BlogRouter slug={slug} />;
+  else if (page === "/blog") Page = <BlogRouter />;
+  else if (page === "/contact") Page = <ContactPage />;
+  else Page = <HomePage heroVariant={tweaks.heroVariant} />;
+
+  return (
+    <>
+      <Nav />
+      {Page}
+      <Footer />
+
+      <TweaksPanel title="Tweaks">
+        <TweakSection title="Hero variant (home page only)">
+          <TweakRadio
+            value={tweaks.heroVariant}
+            onChange={v => setTweak("heroVariant", v)}
+            options={[
+              { value: "pattern", label: "Mockup" },
+              { value: "terminal", label: "Terminal" },
+              { value: "bold", label: "Bold split" },
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="Case studies layout">
+          <TweakRadio
+            value={tweaks.caseStudiesVariant}
+            onChange={v => setTweak("caseStudiesVariant", v)}
+            options={[
+              { value: "grid", label: "Grid" },
+              { value: "editorial", label: "Editorial" },
+              { value: "featured", label: "Featured" },
+              { value: "timeline", label: "Timeline" },
+              { value: "showcase", label: "Showcase" },
+              { value: "magazine", label: "Magazine" },
+              { value: "stack", label: "Stack" },
+              { value: "mosaic", label: "Mosaic" },
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="Case study page layout">
+          <TweakRadio
+            value={tweaks.caseStudyVariant}
+            onChange={v => setTweak("caseStudyVariant", v)}
+            options={[
+              { value: "longread", label: "Long-read" },
+              { value: "metric", label: "Metric" },
+              { value: "visual", label: "Visual" },
+              { value: "sticky", label: "Sticky" },
+            ]}
+          />
+        </TweakSection>
+        <TweakSection title="Accent color">
+          <TweakRadio
+            value={tweaks.accent}
+            onChange={v => setTweak("accent", v)}
+            options={[
+              { value: "cyan", label: "Cyan" },
+              { value: "indigo", label: "Indigo" },
+              { value: "emerald", label: "Emerald" },
+              { value: "orange", label: "Orange" },
+            ]}
+          />
+        </TweakSection>
+      </TweaksPanel>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+</script>
+</body>
+</html>

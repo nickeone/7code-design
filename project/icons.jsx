@@ -186,7 +186,7 @@ const Icon = {
   ),
 };
 
-// 7Code Logo (single mark) — "7" stroke is cyan accent, rest is ink/inherit
+// 7Code Logo (single mark), "7" stroke is cyan accent, rest is ink/inherit
 function Logo({ height = 28, color }) {
   const accent = "var(--cyan-500)";
   return (

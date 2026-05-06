@@ -295,3 +295,41 @@
   .csd-sticky-body { grid-template-columns: 1fr; gap: 32px; }
   .csd-sticky-aside { position: static; }
 }
+
+/* ── Wholesum hero (real screenshot in browser frame) ────── */
+.csd-ws-browser .csd-browser-url { color: #C2410C; }
+.csd-ws-shot { display: block; width: 100%; height: auto; }
+.csd-photo-caption {
+  padding: 14px 24px 18px;
+  font-size: 13px;
+  color: var(--slate-500);
+  font-style: italic;
+  text-align: center;
+  border-top: 1px solid var(--slate-100);
+}
+
+.csd-phone--shot { padding: 8px; }
+.csd-phone--shot .csd-phone-screen { display: none; }
+.csd-phone-img { display: block; width: 100%; height: auto; border-radius: 28px; }
+
+/* ── Mobile: browser mockup, stat row, table ─────────────── */
+@media (max-width: 640px) {
+  .csd-browser-body { grid-template-columns: 1fr; }
+  .csd-browser-side { display: none; }
+  .csd-stat-row { grid-template-columns: 1fr 1fr; }
+  .csd-table-row { grid-template-columns: 56px 1fr 68px; }
+  .csd-table-row > div:nth-child(3) { display: none; }
+  .csd-table-head > div:nth-child(3) { display: none; }
+  .csd-lead { font-size: 18px; }
+  .csd-quote-text { font-size: 18px; }
+}
+
+@media (max-width: 540px) {
+  .csd-pillars { grid-template-columns: 1fr; }
+  .csd-next-title { font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  .csd-phone { width: 100%; max-width: 280px; }
+  .csd-result-v { font-size: 28px; }
+}

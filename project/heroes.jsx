@@ -6,7 +6,7 @@ const { useState: useStateH, useEffect: useEffectH } = React;
 // HERO VARIATIONS
 // ──────────────────────────────────────────────────────────────────
 
-// Variant A — Pattern grid + dashboard mockup (faithful to Figma)
+// Variant A, Pattern grid + dashboard mockup (faithful to Figma)
 function HeroPatternMockup() {
   return (
     <section className="hero hero--pattern">
@@ -35,19 +35,19 @@ function HeroPatternMockup() {
       </div>
       <div className="container hero-pattern-inner">
         <div className="hero-content reveal">
-          <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> Software product agency</span>
-          <h1>Modern engineering for products that <span className="text-cyan">scale</span>.</h1>
-          <p className="hero-sub">7Code partners with ambitious teams to ship reliable, scalable software — from product strategy through engineering, design, and beyond.</p>
+          <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> AI-first engineering partner</span>
+          <h1>AI-native software, engineered for <span className="text-cyan">production</span>.</h1>
+          <p className="hero-sub">We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the cloud infrastructure behind them. Strategy, design, and engineering under one roof.</p>
           <div className="hero-cta">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
-            <a href="#/process" className="btn btn--ghost btn--lg">How we work</a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
+            <a href="/process" className="btn btn--ghost btn--lg">How we work</a>
           </div>
           <div className="hero-meta">
-            <div className="hero-meta-item"><strong>50+</strong><span>Products shipped</span></div>
+            <div className="hero-meta-item"><strong>20+</strong><span>Projects delivered</span></div>
             <div className="hero-meta-divider"/>
-            <div className="hero-meta-item"><strong>12+ yrs</strong><span>Engineering practice</span></div>
+            <div className="hero-meta-item"><strong>8+ yrs</strong><span>Engineering practice</span></div>
             <div className="hero-meta-divider"/>
-            <div className="hero-meta-item"><strong>98%</strong><span>Client retention</span></div>
+            <div className="hero-meta-item"><strong>98%</strong><span>Satisfied clients</span></div>
           </div>
         </div>
         <div className="hero-mockup reveal">
@@ -118,7 +118,7 @@ function DashboardMockup() {
   );
 }
 
-// Variant B — Animated terminal / code rain
+// Variant B, Animated terminal / code rain
 function HeroTerminal() {
   const [lines, setLines] = useStateH([]);
   const all = [
@@ -144,12 +144,12 @@ function HeroTerminal() {
     <section className="hero hero--terminal">
       <div className="container hero-pattern-inner">
         <div className="hero-content reveal">
-          <span className="tag"><span className="tag-dot"/> Available for new partnerships — Q2 2026</span>
+          <span className="tag"><span className="tag-dot"/> Available for new partnerships, Q2 2026</span>
           <h1>Engineering teams that ship like a <span className="text-cyan">product team</span>.</h1>
           <p className="hero-sub">From the first whiteboard session to the hundredth deploy, 7Code becomes the engineering muscle behind your product roadmap.</p>
           <div className="hero-cta">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
-            <a href="#/process" className="btn btn--ghost btn--lg">See our process</a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
+            <a href="/process" className="btn btn--ghost btn--lg">See our process</a>
           </div>
         </div>
         <div className="hero-terminal reveal">
@@ -178,21 +178,21 @@ function HeroTerminal() {
   );
 }
 
-// Variant C — Bold split / type-forward, no mockup
+// Variant C, Bold split / type-forward, no mockup
 function HeroBoldSplit() {
   return (
     <section className="hero hero--split">
       <div className="container hero-split-inner">
         <div className="hero-split-left reveal">
-          <span className="tag"><Icon.star style={{ width: 14, height: 14 }}/> Trusted by 50+ teams worldwide</span>
+          <span className="tag"><Icon.star style={{ width: 14, height: 14 }}/> Trusted by 20+ teams worldwide</span>
           <h1 className="hero-mega">
             We build <span className="text-cyan">software</span><br/>
             that compounds.
           </h1>
           <p className="hero-sub">Long-term engineering partners for ambitious products. Every line of code is a bet on your future leverage.</p>
           <div className="hero-cta">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
-            <a href="#/about" className="btn-link">Meet the team <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Start a project <Icon.arrow /></a>
+            <a href="/about" className="btn-link">Meet the team <Icon.arrow /></a>
           </div>
         </div>
         <div className="hero-split-right reveal">

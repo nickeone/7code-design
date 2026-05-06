@@ -3,19 +3,22 @@
 const { useState, useEffect, useRef } = React;
 
 // ──────────────────────────────────────────────────────────────────
-// Routing (hash-based)
+// Routing (path-based)
 // ──────────────────────────────────────────────────────────────────
 function useHashRoute() {
-  const [hash, setHash] = useState(() => (typeof window !== "undefined" ? window.location.hash.slice(1) || "/" : "/"));
+  const [path, setPath] = useState(() => {
+    if (typeof window === "undefined") return "/";
+    return window.location.hash.slice(1) || window.location.pathname || "/";
+  });
   useEffect(() => {
-    const onHash = () => { setHash(window.location.hash.slice(1) || "/"); window.scrollTo(0, 0); };
+    const onHash = () => { setPath(window.location.hash.slice(1) || "/"); window.scrollTo(0, 0); };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
   }, []);
-  return hash;
+  return path;
 }
 
-// Returns [page, slug] e.g. ["/case-study", "helix-health"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
+// Returns [page, slug] e.g. ["/case-study", "wholesum"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
@@ -26,17 +29,8 @@ function parseRoute(hash) {
 }
 
 function NavLinkA({ to, children, className = "nav-link", activeClass = "is-active" }) {
-  const [active, setActive] = useState(false);
-  useEffect(() => {
-    const check = () => {
-      const h = window.location.hash.slice(1) || "/";
-      setActive(h === to);
-    };
-    check();
-    window.addEventListener("hashchange", check);
-    return () => window.removeEventListener("hashchange", check);
-  }, [to]);
-  return <a href={"#" + to} className={className + (active ? " " + activeClass : "")}>{children}</a>;
+  const active = typeof window !== "undefined" && window.location.hash.slice(1) === to;
+  return <a href={to} className={className + (active ? " " + activeClass : "")}>{children}</a>;
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -59,6 +53,8 @@ function useReveal() {
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
+  const [mobileExpOpen, setMobileExpOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const [svcOpen, setSvcOpen] = useState(false);
   const megaTimer = useRef(null);
@@ -69,12 +65,6 @@ function Nav() {
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const close = () => setMobileOpen(false);
-    window.addEventListener("hashchange", close);
-    return () => window.removeEventListener("hashchange", close);
   }, []);
 
   const openMega = () => { clearTimeout(megaTimer.current); setMegaOpen(true); };
@@ -122,10 +112,10 @@ function Nav() {
     <>
       <header className={"nav" + (scrolled ? " is-scrolled" : "")}>
         <div className="nav-inner">
-          <a href="#/" className="brand"><Logo height={28} /></a>
+          <a href="/" className="brand"><Logo height={28} /></a>
           <nav className="nav-links">
             <div style={{ position: "static" }} onMouseEnter={openSvc} onMouseLeave={closeSvc}>
-              <a href="#/process" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen}>
+              <a href="/service/ai-product-engineering" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen} onClick={e => { e.preventDefault(); setSvcOpen(o => !o); }}>
                 Services <Icon.caret />
               </a>
               <div className={"svc-mega" + (svcOpen ? " is-open" : "")}>
@@ -133,7 +123,7 @@ function Nav() {
                   {services.map((s, i) => {
                     const I = s.icon;
                     return (
-                      <a key={i} href={"#/service/" + s.slug} className="svc-mega-card">
+                      <a key={i} href={"/service/" + s.slug} className="svc-mega-card">
                         <span className="svc-mega-icon"><I /></span>
                         <h4 className="svc-mega-title">{s.title}</h4>
                         <ul className="svc-mega-list">
@@ -146,20 +136,20 @@ function Nav() {
                 </div>
                 <div className="svc-mega-foot">
                   <span>Tailored solutions for every need</span>
-                <a href="#/contact" className="svc-mega-cta">Book a meeting <Icon.arrow /></a>
+                <a href="/contact" className="svc-mega-cta">Book a meeting <Icon.arrow /></a>
                 </div>
               </div>
             </div>
             <NavLinkA to="/case-studies">Case Studies</NavLinkA>
             <div style={{ position: "relative" }} onMouseEnter={openMega} onMouseLeave={closeMega}>
-              <a href="#/expertise" className={"nav-link" + (megaOpen ? " is-active" : "")} aria-expanded={megaOpen}>
+              <a href="/expertise" className={"nav-link" + (megaOpen ? " is-active" : "")} aria-expanded={megaOpen}>
                 Expertise <Icon.caret />
               </a>
               <div className={"megamenu" + (megaOpen ? " is-open" : "")}>
                 {expertise.map((e, i) => {
                   const I = e.icon;
                   return (
-                    <a key={i} href={"#/expertise/" + e.slug} className="mm-item">
+                    <a key={i} href={"/expertise/" + e.slug} className="mm-item">
                       <span className="mm-icon"><I /></span>
                       <span>
                         <span className="mm-title">{e.title}</span>
@@ -174,7 +164,7 @@ function Nav() {
             <NavLinkA to="/blog">Blog</NavLinkA>
           </nav>
           <div className="nav-cta">
-            <a href="#/contact" className="btn btn--cyan btn--sm">Get in touch <Icon.arrow /></a>
+            <a href="/contact" className="btn btn--cyan btn--sm">Get in touch <Icon.arrow /></a>
             <button className="nav-mobile-toggle" onClick={() => setMobileOpen(o => !o)} aria-label="Menu">
               {mobileOpen ? <Icon.x /> : <Icon.menu />}
             </button>
@@ -182,13 +172,30 @@ function Nav() {
         </div>
       </header>
       <div className={"nav-mobile" + (mobileOpen ? " is-open" : "")}>
-        <a href="#/service/ai-outstaffing">AI Outstaffing</a>
-        <a href="#/process">Services</a>
-        <a href="#/case-studies">Case Studies</a>
-        <a href="#/expertise">Expertise</a>
-        <a href="#/about">About</a>
-        <a href="#/blog">Blog</a>
-        <a href="#/contact" className="btn btn--cyan">Get in touch <Icon.arrow /></a>
+        <div className="nav-mobile-group">
+          <button className="nav-mobile-group-btn" onClick={() => setMobileSvcOpen(o => !o)} aria-expanded={mobileSvcOpen}>
+            Services <Icon.caret />
+          </button>
+          <div className={"nav-mobile-sub" + (mobileSvcOpen ? " is-open" : "")}>
+            {services.map((s, i) => (
+              <a key={i} href={"/service/" + s.slug}>{s.title}</a>
+            ))}
+          </div>
+        </div>
+        <a href="/case-studies">Case Studies</a>
+        <div className="nav-mobile-group">
+          <button className="nav-mobile-group-btn" onClick={() => setMobileExpOpen(o => !o)} aria-expanded={mobileExpOpen}>
+            Expertise <Icon.caret />
+          </button>
+          <div className={"nav-mobile-sub" + (mobileExpOpen ? " is-open" : "")}>
+            {expertise.map((e, i) => (
+              <a key={i} href={"/expertise/" + e.slug}>{e.title}</a>
+            ))}
+          </div>
+        </div>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact" className="btn btn--cyan">Get in touch <Icon.arrow /></a>
       </div>
     </>
   );
@@ -203,42 +210,56 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#/" className="brand"><Logo height={32} color="#fff" /></a>
-            <p>We build scalable digital products for long-term impact. Modern engineering, thoughtful design, and a partnership model that grows with you.</p>
+            <a href="/" className="brand"><Logo height={32} color="#fff" /></a>
+            <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the production cloud behind them.</p>
           </div>
           <div>
-            <h4>Company</h4>
+            <h4>Services</h4>
             <ul>
-              <li><a href="#/about">About</a></li>
-              <li><a href="#/process">Our Process</a></li>
-              <li><a href="#/blog">Blog</a></li>
-              <li><a href="#/contact">Contact</a></li>
+              <li><a href="/service/ai-product-engineering">AI-Native Product Engineering</a></li>
+              <li><a href="/service/system-integrations">System Integrations</a></li>
+              <li><a href="/service/ai-automation">AI &amp; Process Automation</a></li>
+              <li><a href="/service/cloud-agentic-infra">Cloud &amp; Agentic Infra</a></li>
+              <li><a href="/service/product-strategy">Product Strategy &amp; Design</a></li>
+              <li><a href="/service/ai-outstaffing">AI Engineering Outstaffing</a></li>
             </ul>
           </div>
           <div>
             <h4>Expertise</h4>
             <ul>
-              <li><a href="#/expertise/healthcare">Healthcare</a></li>
-              <li><a href="#/expertise/finance">Finance</a></li>
-              <li><a href="#/expertise/defence">Defence</a></li>
-              <li><a href="#/expertise/energy">Energy</a></li>
+              <li><a href="/expertise/healthcare">Healthcare</a></li>
+              <li><a href="/expertise/finance">Finance</a></li>
+              <li><a href="/expertise/energy">Energy &amp; Utilities</a></li>
+              <li><a href="/expertise/defence">Defence &amp; Security</a></li>
+              <li><a href="/expertise/hr">HR</a></li>
+              <li><a href="/expertise/operations">Operations</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about">About</a></li>
+              <li><a href="/case-studies">Case Studies</a></li>
+              <li><a href="/process">Our Process</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="https://clutch.co/profile/7code#reviews" target="_blank" rel="noopener noreferrer">Reviews on Clutch</a></li>
             </ul>
           </div>
           <div>
             <h4>Contact</h4>
             <ul>
-              <li><a href="mailto:hello@7code.ro">hello@7code.ro</a></li>
-              <li><a href="tel:+40700000000">+40 700 000 000</a></li>
-              <li>Bucharest, Romania</li>
+              <li><a href="mailto:office@7code.ro">office@7code.ro</a></li>
+              <li><a href="https://share.google/kSWr5AJABJj33MMVu" target="_blank" rel="noopener noreferrer">Cluj-Napoca, Romania</a></li>
             </ul>
           </div>
         </div>
         <div className="footer-bottom">
           <span>© 2026 7Code. All rights reserved.</span>
           <div className="footer-social">
-            <a href="#" aria-label="GitHub"><Icon.github /></a>
-            <a href="#" aria-label="LinkedIn"><Icon.linkedin /></a>
-            <a href="#" aria-label="Twitter"><Icon.twitter /></a>
+            <a href="https://github.com/7code" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Icon.github /></a>
+            <a href="https://www.linkedin.com/company/7-code/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Icon.linkedin /></a>
+            <a href="https://clutch.co/profile/7code" target="_blank" rel="noopener noreferrer" aria-label="Clutch profile"><Icon.award /></a>
           </div>
         </div>
       </div>

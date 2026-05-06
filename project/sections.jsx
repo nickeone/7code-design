@@ -9,13 +9,13 @@ const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
 // Trusted-by marquee
 function TrustedBy() {
   const logos = [
-    { src: "project/assets/ac6d1a3c3a83587f4996f01fca1420142402e2ad.png", alt: "Synergo Group" },
-    { src: "project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
-    { src: "project/assets/402fcd955d62dfdddb53d0e6fa8d6fb28ce88d99.png", alt: "The Digital Tree" },
-    { src: "project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
-    { src: "project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
-    { src: "project/assets/660b6acfe4043cf93f893611004ecfda7d68b7c0.png", alt: "SmartSpot" },
-    { src: "project/assets/d2e070228b257dd47e56e1cd367b8bc1bccb08f0.png", alt: "Lendit" },
+    { src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
+    { src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
+    { src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
+    { src: "/project/uploads/daily8.png", alt: "Daily8" },
+    { src: "/project/uploads/lendit.png", alt: "Lendit" },
+    { src: "/project/uploads/Lidl-logo.png", alt: "Lidl" },
+    { src: "/project/uploads/wholesum.webp", alt: "Wholesum" },
   ];
   const all = [...logos, ...logos];
   return (
@@ -36,8 +36,32 @@ function TrustedBy() {
   );
 }
 
+// Photo covers for case studies that have a real hero image. Anything not
+// listed falls back to the kind-based pattern card below.
+const CS_PHOTO_COVERS = {
+  "wholesum":         { src: "/project/uploads/wholesum-hero.png",        alt: "WholeSum" },
+  "daily8":           { src: "/project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
+  "revote":           { src: "/project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
+  "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
+  "cloud-of-legacy":  { src: "/project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
+  "lidl-road-safety": { src: "/project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
+  "founders-factory": { src: "/project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
+  "hera":             { src: "/project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
+  "melsonic":         { src: "/project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
+  "drum-bun":         { src: "/project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
+  "numerize":         { src: "/project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
+};
+
 // Case study cover graphic
-function CSCover({ kind, label }) {
+function CSCover({ kind, label, slug }) {
+  const photo = CS_PHOTO_COVERS[slug];
+  if (photo) {
+    return (
+      <div className="cs-cover cs-cover--photo">
+        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img"/>
+      </div>
+    );
+  }
   const map = {
     health:   { cls: "cover--health",   icon: <Icon.heart /> },
     finance:  { cls: "cover--finance",  icon: <Icon.briefcase /> },
@@ -71,12 +95,19 @@ function CSCover({ kind, label }) {
 // Case studies section
 function CaseStudies({ limit }) {
   const items = [
-    { slug: "helix-health", kind: "health", title: "Telehealth platform for a national clinic network", meta: ["Healthcare", "12 weeks"], tag: "Featured" },
-    { slug: "northbank", kind: "finance", title: "Real-time treasury dashboard for fintech ops team", meta: ["Finance", "8 weeks"] },
-    { slug: "atlas-energy", kind: "energy", title: "IoT monitoring + predictive maintenance for utility", meta: ["Energy", "16 weeks"] },
-    { slug: "northwind-logistics", kind: "ops", title: "Workflow automation for global logistics provider", meta: ["Operations", "10 weeks"] },
-    { slug: "vector-defence", kind: "defence", title: "Situational awareness platform for defence agency", meta: ["Defence", "20 weeks"] },
-    { slug: "octolabs", kind: "cyan", title: "AI-powered support copilot for B2B SaaS", meta: ["AI / SaaS", "6 weeks"] },
+    // First six surface on the homepage (pages.jsx caps CaseStudies at limit={6}).
+    { slug: "wholesum", kind: "cyan", title: "Self-serve AI analytics platform for unstructured text", meta: ["Data / AI", "16 weeks"], tag: "Featured" },
+    { slug: "daily8", kind: "cyan", title: "AI-powered news aggregator for the MENA region", meta: ["Mobile / Media", "6 months"] },
+    { slug: "revote", kind: "defence", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"] },
+    { slug: "lidl-road-safety", kind: "cyan", title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"] },
+    { slug: "hera", kind: "health", title: "AI-powered patient-support app for fertility clinics", meta: ["Healthcare / FemTech", "3 months MVP"] },
+    { slug: "melsonic", kind: "cyan", title: "AI-powered guitar-learning web app with real-time feedback", meta: ["Music / EdTech", "5 months MVP"] },
+    // Remaining cases, visible on /case-studies, hidden from the homepage grid.
+    { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
+    { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
+    { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
+    { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
+    { slug: "numerize", kind: "ops", title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (
@@ -89,8 +120,8 @@ function CaseStudies({ limit }) {
         </div>
         <div className="cs-grid">
           {list.map((c, i) => (
-            <a key={i} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
-              <CSCover kind={c.kind} label={c.meta[0]} />
+            <a key={i} href={"/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+              <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
                 <div className="cs-meta">
@@ -103,7 +134,7 @@ function CaseStudies({ limit }) {
           ))}
         </div>
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#/blog" className="btn btn--ghost">View all projects <Icon.arrow /></a>
+          <a href="/case-studies" className="btn btn--ghost">View all projects <Icon.arrow /></a>
         </div>
       </div>
     </section>
@@ -113,15 +144,15 @@ function CaseStudies({ limit }) {
 // Why-choose section
 function WhyChoose() {
   const why = [
-    { icon: Icon.award, title: "Proven Track Record", desc: "Our portfolio spans multiple industries with measurable results: increased conversions, improved engagement, and scalable architectures." },
-    { icon: Icon.message, title: "Agile & Transparent", desc: "Regular updates, iterative development, and clear communication ensure you're always in the loop and can adapt quickly." },
-    { icon: Icon.target, title: "Future-Proof Solutions", desc: "We build with scalability in mind, using modern tech stacks and best practices that grow with your business." },
-    { icon: Icon.pulse, title: "Always-On Partnership", desc: "Beyond launch, we monitor, iterate, and evolve your product. Long-term partners, not vendors." },
+    { icon: Icon.cpu, title: "AI-native by default", desc: "We design products around LLMs and agents from day one. Retrieval, evaluation, observability and guardrails are built in, not bolted on, so AI features behave predictably in production." },
+    { icon: Icon.chart, title: "Outcomes you can audit", desc: "Every engagement opens with a baseline and closes with the numbers: conversion lift, deflection rate, cost per task, eval scores. We commit to measurable business impact, not deliverables." },
+    { icon: Icon.cloud, title: "Production-grade cloud & agent infra", desc: "AWS, GCP, and Azure native. Vector stores, model gateways, eval harnesses, and CI for prompts and code, built to scale, audit, and recover, not just to demo." },
+    { icon: Icon.users, title: "Embedded long-term partnership", desc: "Senior AI engineers matched in 72 hours and embedded inside your team. Monthly rolling contracts, no lock-in, and 24/7 production support after launch." },
   ];
   const stats = [
-    { v: "50+", l: "Products shipped" },
-    { v: "98%", l: "Client retention" },
-    { v: "12 yrs", l: "Engineering practice" },
+    { v: "20+", l: "Projects delivered" },
+    { v: "98%", l: "Satisfied clients" },
+    { v: "8+ yrs", l: "Engineering practice" },
     { v: "24/7", l: "Production support" },
   ];
   return (
@@ -129,8 +160,8 @@ function WhyChoose() {
       <div className="container">
         <div className="section-head reveal">
           <span className="eyebrow">Why 7Code</span>
-          <h2>Why teams choose us as their engineering partner</h2>
-          <p>We combine technical excellence with business strategy to deliver solutions that make a real impact.</p>
+          <h2>Your AI-first engineering partner for production-grade products</h2>
+          <p>We design, build, and operate AI-native software end-to-end, LLM features, agentic workflows, and the cloud foundations that keep them reliable. Strategy, design, and engineering under one roof, shipping in weeks, not quarters.</p>
         </div>
         <div className="why-grid">
           {why.map((w, i) => {
@@ -153,6 +184,54 @@ function WhyChoose() {
               <div className="stat-label">{s.l}</div>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Verified & accredited section, credentials and listings
+function VerifiedAccredited() {
+  const items = [
+    { src: "/project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II, AICPA-aligned controls" },
+    { src: "/project/uploads/hipa.webp",                       alt: "HIPAA Compliant, healthcare data safeguards" },
+    { src: "/project/uploads/gdpr.png",                        alt: "GDPR Compliant, EU General Data Protection Regulation" },
+    { src: "/project/uploads/iso%209001.png",                  alt: "ISO 9001:2015, quality management system certification" },
+    { src: "/project/uploads/clutch.png",                      alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
+    { src: "/project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
+    { src: "/project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
+    { src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
+  ];
+  return (
+    <section className="section section--alt">
+      <div className="container">
+        <div className="section-head reveal">
+          <span className="eyebrow">Verified & accredited</span>
+          <h2>The credentials behind the work</h2>
+          <p>Audited where it matters, listed where buyers look, certified for the regulated industries we ship in.</p>
+        </div>
+        <div className="trust-grid">
+          {items.map((item, i) => {
+            const inner = (
+              <img
+                src={item.src}
+                alt={item.alt}
+                className={"trust-logo" + (item.className ? " " + item.className : "")}
+                loading="lazy"
+              />
+            );
+            return item.href ? (
+              <a key={i} href={item.href} target="_blank" rel="noopener noreferrer"
+                 className="trust-card reveal" style={{ transitionDelay: (i % 4 * 50) + "ms" }}
+                 aria-label={item.alt}>
+                {inner}
+              </a>
+            ) : (
+              <div key={i} className="trust-card reveal" style={{ transitionDelay: (i % 4 * 50) + "ms" }}>
+                {inner}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -184,7 +263,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
     },
     {
       icon: Icon.users, title: "HR",
-      desc: "Recruitment, onboarding, payroll and workforce analytics — unified.",
+      desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
       bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"],
     },
     {
@@ -212,7 +291,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
                 <ul className="exp-list">
                   {e.bullets.map((b, j) => <li key={j}><Icon.checkCircle /> {b}</li>)}
                 </ul>
-                <a href="#/expertise" className="btn-link">Learn more <Icon.arrow /></a>
+                <a href="/expertise" className="btn-link">Learn more <Icon.arrow /></a>
               </div>
             );
           })}
@@ -225,12 +304,12 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 // Services section
 function Services() {
   const services = [
-    { icon: Icon.code, title: "AI-Native Product Engineering", desc: "AI-first web and mobile products — LLM interfaces, smart workflows, and scalable architectures built to compound." },
-    { icon: Icon.globe, title: "System Integrations", desc: "Connect your stack — ERPs, CRMs, data warehouses, and legacy systems — into a single, reliable data fabric." },
-    { icon: Icon.cpu, title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
-    { icon: Icon.cloud, title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration — so your AI products run reliably, scale automatically, and cost what they should." },
-    { icon: Icon.layers, title: "Product Strategy & Design", desc: "From discovery to design system — building products that resonate with users and hold up under engineering." },
-    { icon: Icon.users, title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team — matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
+    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "AI-first web and mobile products, LLM interfaces, smart workflows, and scalable architectures built to compound." },
+    { icon: Icon.globe, slug: "system-integrations", title: "System Integrations", desc: "Connect your stack, ERPs, CRMs, data warehouses, and legacy systems, into a single, reliable data fabric." },
+    { icon: Icon.cpu, slug: "ai-automation", title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
+    { icon: Icon.cloud, slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration, so your AI products run reliably, scale automatically, and cost what they should." },
+    { icon: Icon.layers, slug: "product-strategy", title: "Product Strategy & Design", desc: "From discovery to design system, building products that resonate with users and hold up under engineering." },
+    { icon: Icon.users, slug: "ai-outstaffing", title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team, matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
   ];
   return (
     <section className="section section--alt">
@@ -238,113 +317,86 @@ function Services() {
         <div className="section-head reveal">
           <span className="eyebrow">Our services</span>
           <h2>End-to-end product engineering</h2>
-          <p>Comprehensive digital services to take your product from concept to launch — and beyond.</p>
+          <p>Comprehensive digital services to take your product from concept to launch, and beyond.</p>
         </div>
         <div className="reveal" style={{ maxWidth: 880, margin: "0 auto" }}>
           {services.map((s, i) => {
             const I = s.icon;
             return (
-              <div key={i} className="svc-card">
+              <a key={i} href={"/service/" + s.slug} className="svc-card">
                 <span className="icon-tile"><I /></span>
                 <div>
                   <h3>{s.title}</h3>
                   <p>{s.desc}</p>
                 </div>
                 <Icon.arrow style={{ width: 20, height: 20, color: "var(--slate-400)" }} />
-              </div>
+              </a>
             );
           })}
         </div>
         <div style={{ textAlign: "center", marginTop: 48 }}>
-          <a href="#/contact" className="btn btn--cyan">Discuss your project <Icon.arrow /></a>
+          <a href="/contact" className="btn btn--cyan">Discuss your project <Icon.arrow /></a>
         </div>
       </div>
     </section>
   );
 }
 
-// Testimonial slider
-// Testimonial slider — dark full-bleed cards, photo slot, logo panel
+// Testimonials, verified Clutch reviews, 2x2 grid with client photos
 function Testimonials() {
+  // All quotes verified on clutch.co/profile/7code
   const items = [
     {
-      quote: "7Code became the engineering team we always wished we had. They turned a six-month roadmap into a six-week sprint, and the quality is exactly what we needed.",
-      name: "Maria Petrescu",
-      role: "VP Product",
-      company: "NorthBank",
-      initial: "M",
-      // photoUrl: "url-to-photo.jpg" — add real photo URLs here
+      quote: "The self-serve MVP is live and in use. 7Code has excellent communication and project management skills. The team is quick to respond to the client's needs. The client is pleased with the outcome and the team's technical leadership.",
+      name: "Emily Kucharski",
+      role: "CEO & Co-Founder",
+      company: "WholeSum",
+      photoUrl: "/project/uploads/emily%20.jpeg",
     },
     {
-      quote: "What sets them apart is the strategic thinking. They didn't just build what we asked for — they helped us figure out what we actually needed to build.",
-      name: "James Halloran",
+      quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
+      name: "Evyn White",
+      role: "Co-Founder",
+      company: "Hera Health Tech",
+      photoUrl: "/project/uploads/evyn-hera.jpeg",
+    },
+    {
+      quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
+      name: "Marcel Ionescu",
       role: "Chief Technology Officer",
-      company: "Helix Health",
-      initial: "J",
+      photoUrl: "/project/uploads/marcel%20ionescu%20.jpeg",
     },
     {
-      quote: "From discovery through launch, 7Code felt like a true partner. Communication was constant, decisions were transparent, and the product shipped on time.",
-      name: "Sofia Andreescu",
-      role: "Founder",
-      company: "Atlas Energy",
-      initial: "S",
+      quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
+      name: "Paul Egan",
+      role: "CTO",
+      company: "Founders Factory",
+      photoUrl: "/project/uploads/paul%20egan.jpeg",
     },
   ];
-  const [idx, setIdx] = useStateS(0);
-  const next = () => setIdx(i => (i + 1) % items.length);
-  const prev = () => setIdx(i => (i - 1 + items.length) % items.length);
-  const item = items[idx];
 
   return (
     <section className="section">
       <div className="container">
-        <div className="testi-new reveal" key={idx}>
-          {/* Left — quote + name + logo panel */}
-          <div className="testi-new-left">
-            <div className="testi-new-quote-mark">&ldquo;</div>
-            <blockquote className="testi-new-quote">{item.quote}</blockquote>
-            <div className="testi-new-author">
-              <div className="testi-new-name">{item.name}</div>
-              <div className="testi-new-role">{item.role}, {item.company}</div>
-            </div>
-            {/* Company logo placeholder */}
-            <div className="testi-new-logo-row">
-              <div className="testi-new-logo">
-                <div className="testi-new-logo-text">{item.company}</div>
+        <div className="section-head reveal">
+          <span className="eyebrow">Testimonials</span>
+          <h2>What clients say after the launch</h2>
+          <p>Verified, named reviews from the founders and CTOs we work with.</p>
+        </div>
+        <div className="testi-grid">
+          {items.map((t, i) => (
+            <article key={i} className="testi-card reveal" style={{ transitionDelay: (i % 2 * 60) + "ms" }}>
+              <div className="testi-quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote className="testi-quote">{t.quote}</blockquote>
+              <div className="testi-author">
+                <img src={t.photoUrl} alt={t.name} className="testi-photo" loading="lazy"/>
+                <div>
+                  <div className="testi-name">{t.name}</div>
+                  <div className="testi-role">{t.role}{t.company ? ", " + t.company : ""}</div>
+                </div>
               </div>
-              <div className="testi-new-logo-divider"/>
-              <div className="testi-new-logo">
-                <div className="testi-new-logo-badge">Technology partner</div>
-              </div>
-            </div>
-            {/* Controls */}
-            <div className="testi-new-controls">
-              <button className="testi-new-arrow" onClick={prev} aria-label="Previous">
-                <Icon.arrowLeft style={{ width: 18, height: 18 }} />
-              </button>
-              <div className="testi-new-dots">
-                {items.map((_, j) => (
-                  <span key={j} className={"testi-new-dot" + (idx === j ? " is-active" : "")} onClick={() => setIdx(j)}/>
-                ))}
-              </div>
-              <button className="testi-new-arrow" onClick={next} aria-label="Next">
-                <Icon.arrow style={{ width: 18, height: 18 }} />
-              </button>
-              <span className="testi-new-counter">{String(idx + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}</span>
-            </div>
-          </div>
-
-          {/* Right — person photo (or gradient placeholder) */}
-          <div className="testi-new-photo">
-            {item.photoUrl ? (
-              <img src={item.photoUrl} alt={item.name} className="testi-new-photo-img"/>
-            ) : (
-              <div className="testi-new-photo-placeholder">
-                <div className="testi-new-initials">{item.initial}</div>
-                <div className="testi-new-photo-grad"/>
-              </div>
-            )}
-          </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
@@ -363,8 +415,7 @@ function CTAStrip() {
             <p>Tell us about your project. We'll respond within one business day with next steps.</p>
           </div>
           <div className="cta-strip-actions">
-            <a href="#/contact" className="btn btn--cyan btn--lg">Book a discovery call <Icon.arrow /></a>
-            <a href="mailto:hello@7code.ro" className="btn btn--ghost-light btn--lg">hello@7code.ro</a>
+            <a href="/contact" className="btn btn--cyan btn--lg">Book a discovery call <Icon.arrow /></a>
           </div>
         </div>
       </div>
@@ -375,6 +426,7 @@ function CTAStrip() {
 window.TrustedBy = TrustedBy;
 window.CaseStudies = CaseStudies;
 window.WhyChoose = WhyChoose;
+window.VerifiedAccredited = VerifiedAccredited;
 window.Expertise = Expertise;
 window.Services = Services;
 window.Testimonials = Testimonials;

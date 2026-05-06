@@ -3,26 +3,30 @@
 const { useState: useStateCS } = React;
 
 const CS_ITEMS = [
-  { slug: "helix-health",       kind: "health",   num: "01", year: "2026", client: "Helix Health",       title: "Telehealth platform for a national clinic network",      meta: ["Healthcare", "12 weeks"],  result: "+38% appointment volume", metric: { v: "+38%",  l: "appointment volume" }, tag: "Featured", excerpt: "We rebuilt the booking and consult flow from scratch — async-first, accessible, and HIPAA-compliant from day one." },
-  { slug: "northbank",          kind: "finance",  num: "02", year: "2026", client: "NorthBank",          title: "Real-time treasury dashboard for fintech ops team",       meta: ["Finance",     "8 weeks"],  result: "Cut close time by 60%",   metric: { v: "−60%",  l: "close time" },         excerpt: "Real-time positions, automated reconciliation, and an audit trail the CFO actually trusts." },
-  { slug: "atlas-energy",       kind: "energy",   num: "03", year: "2025", client: "Atlas Energy",       title: "IoT monitoring + predictive maintenance for utility",     meta: ["Energy",     "16 weeks"],  result: "12% energy savings YoY",  metric: { v: "−12%",  l: "energy / year" },      excerpt: "20,000 sensors, one operations cockpit. We shipped predictive alerts that actually reduce truck rolls." },
-  { slug: "northwind-logistics", kind: "ops",     num: "04", year: "2025", client: "Northwind Logistics", title: "Workflow automation for global logistics provider",       meta: ["Operations", "10 weeks"],  result: "$4.2M annual savings",    metric: { v: "$4.2M", l: "annual savings" },     excerpt: "Replaced six legacy tools with one workflow engine. Onboarding dropped from days to minutes." },
-  { slug: "vector-defence",     kind: "defence",  num: "05", year: "2025", client: "Vector Defence",     title: "Situational awareness platform for defence agency",      meta: ["Defence",    "20 weeks"],  result: "8× faster threat triage", metric: { v: "8×",    l: "faster triage" },       excerpt: "A single pane of glass across radar, comms, and intel feeds — built for operators, not analysts." },
-  { slug: "octolabs",           kind: "cyan",     num: "06", year: "2024", client: "OctoLabs",           title: "AI-powered support copilot for B2B SaaS",                 meta: ["AI / SaaS",   "6 weeks"],  result: "47% deflection rate",     metric: { v: "47%",   l: "ticket deflection" },  excerpt: "RAG + tools + a thoughtful escalation path. Customers got faster answers, agents got their afternoons back." },
+  { slug: "wholesum",           kind: "cyan",     num: "01", year: "2025", client: "WholeSum",           title: "Self-serve AI analytics platform for unstructured text",   meta: ["Data / AI",   "16 weeks"], result: "Launched on time, raised funding", metric: { v: "On time", l: "launch & funding" }, tag: "Featured", excerpt: "Upload surveys, reviews, and interviews and get structured, AI-powered insights, built end-to-end on Next.js, Nest.js, and AWS." },
+  { slug: "daily8",             kind: "cyan",     num: "02", year: "2022", client: "Daily8",             title: "AI-powered news aggregator for the MENA region",           meta: ["Mobile / Media", "6 months"], result: "Shipped iOS + Android in 6 months", metric: { v: "iOS + Android", l: "stores ready" }, excerpt: "News, podcasts, and videos tailored by interest and country, moderated, summarised, and surfaced by AI on React Native + AWS Lambda + OpenAI." },
+  { slug: "revote",             kind: "defence",  num: "03", year: "2023", client: "Eurel International", title: "Remote electronic voting platform for the European Parliament", meta: ["E-Government", "8 months"], result: "Released May 2023 to the EU Parliament", metric: { v: "EU Parliament", l: "live deployment" }, excerpt: "Modern remote voting for MEPs across the EU, five modules, EP-grade infrastructure, eight months from discovery to release. Partner: Eurel International." },
+  { slug: "g42-fleet",          kind: "energy",   num: "04", year: "2022", client: "Group 42 (G42)",     title: "Real-time fleet tracking platform for EXPO 2020 Dubai",     meta: ["IoT / Smart Buildings", "2 years"], result: "Deployed for EXPO 2020 Dubai", metric: { v: "EXPO 2020", l: "deployed at scale" }, excerpt: "Custom TCP ingestion, geofence rules, real-time map and trip playback, built for the world's largest expo on React Native + Node.js." },
+  { slug: "cloud-of-legacy",    kind: "cyan",     num: "05", year: "2024", client: "Cloud of Legacy",    title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"], result: "MVP launched", metric: { v: "MVP", l: "launched in 8 months" }, excerpt: "Subscription cloud where users designate two heirs who can access documents, photos, and credit cards after death, Next.js, React, Keycloak, 2FA." },
+  { slug: "lidl-road-safety",   kind: "cyan",     num: "06", year: "2022", client: "Lidl Romania",       title: "Children's road-safety gamification web app for Lidl Romania", meta: ["Education / Retail CSR", "6 months"], result: "8th edition running with Romanian Police", metric: { v: "8 editions", l: "annual programme" }, excerpt: "Public + private web app for kids and parents, episodes, levels, quizzes, gamification, built with Lidl and the Romanian Police on React + Nest.js." },
+  { slug: "hera",               kind: "health",   num: "08", year: "2025", client: "Hera Health Tech",   title: "AI-powered patient-support app for fertility clinics",        meta: ["Healthcare / FemTech", "3 months MVP"], result: "MVP shipped in 3 months, ongoing engagement", metric: { v: "RAG", l: "verified clinical AI" }, excerpt: "React Native + Serverless on AWS with a LlamaIndex RAG layer over verified clinical content, and a Strapi-powered Admin + Clinic CMS, HIPAA + GDPR ready from day one." },
+  { slug: "melsonic",           kind: "cyan",     num: "09", year: "2025", client: "Melsonic",           title: "AI-powered guitar-learning web app with real-time feedback",  meta: ["Music / EdTech", "5 months MVP"], result: "MVP shipped in 5 months", metric: { v: "Real-time", l: "AI feedback" }, excerpt: "Next.js + Nest.js + pixi.js wraps Melsonic's AI engine, record, score against the original, and surface notes correct, missed, or wrong." },
+  { slug: "drum-bun",           kind: "ops",      num: "10", year: "2024", client: "Explorom (Drum Bun)", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"], result: "Live on App Store and Play Store", metric: { v: "3-in-1", l: "compliance app" }, excerpt: "React Native + Node.js with an OCR document pipeline and per-car expiry alerts, verify, purchase, and track every Romanian driver obligation." },
+  { slug: "numerize",           kind: "ops",      num: "11", year: "2024", client: "Numerize",           title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"], result: "Responsive overhaul live for 6,000+ accounts", metric: { v: "6,000+", l: "customer accounts" }, excerpt: "React + Material-UI overhaul of a 17-year French GED platform, OCR-trained invoice pipeline, YouSign e-signatures, Stripe + 3D Secure billing." },
 ];
 
-const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS"];
+const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS", "Data / AI"];
 
 // ──────────────────────────────────────────────────────────────────
-// V1 — Grid + filter (existing default)
+// V1, Grid + filter (existing default)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesGrid() {
   const [active, setActive] = useStateCS("All");
   const filtered = active === "All" ? CS_ITEMS : CS_ITEMS.filter(i => i.meta[0] === active);
   const stats = [
-    { v: "50+", l: "Products shipped" },
+    { v: "20+", l: "Projects delivered" },
     { v: "12", l: "Industries served" },
-    { v: "98%", l: "Client retention" },
+    { v: "98%", l: "Satisfied clients" },
     { v: "$120M+", l: "Revenue impact" },
   ];
   return (
@@ -43,8 +47,8 @@ function CaseStudiesGrid() {
         </div>
         <div className="cs-grid">
           {filtered.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
-              <CSCover kind={c.kind} label={c.meta[0]} />
+            <a key={c.title} href={"/case-study/" + c.slug} className="cs-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+              <CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} />
               {c.tag && <div className="cs-tag-row"><span className="tag tag--ink">{c.tag}</span></div>}
               <div className="cs-body">
                 <div className="cs-meta">
@@ -65,7 +69,7 @@ function CaseStudiesGrid() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V2 — Editorial Index (large numbered list)
+// V2, Editorial Index (large numbered list)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesEditorial() {
   return (
@@ -73,10 +77,8 @@ function CaseStudiesEditorial() {
       <div className="container" style={{ maxWidth: 1080 }}>
         <div className="cs-edit-list">
           {CS_ITEMS.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
-              <div className="cs-edit-num">{c.num}</div>
+            <a key={c.title} href={"/case-study/" + c.slug} className="cs-edit-row reveal" style={{ transitionDelay: (i * 50) + "ms" }}>
               <div className="cs-edit-meta">
-                <div className="cs-edit-year">{c.year}</div>
                 <div className="cs-edit-tag">{c.meta[0]}</div>
               </div>
               <div className="cs-edit-body">
@@ -98,7 +100,7 @@ function CaseStudiesEditorial() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V3 — Featured story + tab switcher
+// V3, Featured story + tab switcher
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesFeatured() {
   const [i, setI] = useStateCS(0);
@@ -108,11 +110,11 @@ function CaseStudiesFeatured() {
       <div className="container">
         <div className="cs-feat reveal">
           <div className="cs-feat-cover">
-            <CSCover kind={item.kind} label={item.meta[0]} />
+            <CSCover kind={item.kind} label={item.meta[0]} slug={item.slug} />
           </div>
           <div className="cs-feat-body">
             <span className="tag tag--ink"><span className="tag-dot"/> Case study</span>
-            <div className="cs-feat-client">{item.client} · {item.year}</div>
+            <div className="cs-feat-client">{item.client}</div>
             <h2 className="cs-feat-title">{item.title}</h2>
             <p className="cs-feat-excerpt">{item.excerpt}</p>
             <div className="cs-feat-metrics">
@@ -129,13 +131,12 @@ function CaseStudiesFeatured() {
                 <div className="cs-feat-metric-l">industry</div>
               </div>
             </div>
-            <a href={"#/case-study/" + item.slug} className="btn btn--primary">Read full case study <Icon.arrow /></a>
+            <a href={"/case-study/" + item.slug} className="btn btn--primary">Read full case study <Icon.arrow /></a>
           </div>
         </div>
         <div className="cs-feat-tabs">
           {CS_ITEMS.map((c, j) => (
             <button key={c.title} className={"cs-feat-tab" + (i === j ? " is-active" : "")} onClick={() => setI(j)}>
-              <span className="cs-feat-tab-num">{c.num}</span>
               <span className="cs-feat-tab-client">{c.client}</span>
               <span className="cs-feat-tab-meta">{c.meta[0]}</span>
             </button>
@@ -147,7 +148,7 @@ function CaseStudiesFeatured() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V4 — Vertical timeline
+// V4, Vertical timeline
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesTimeline() {
   return (
@@ -159,8 +160,6 @@ function CaseStudiesTimeline() {
             <div key={c.title} className={"cs-tl-row reveal " + (i % 2 === 0 ? "is-left" : "is-right")} style={{ transitionDelay: (i * 60) + "ms" }}>
               <div className="cs-tl-card">
                 <div className="cs-tl-meta">
-                  <span className="cs-tl-year">{c.year}</span>
-                  <span className="cs-tl-dot">·</span>
                   <span>{c.meta[0]}</span>
                 </div>
                 <div className="cs-tl-client">{c.client}</div>
@@ -169,10 +168,10 @@ function CaseStudiesTimeline() {
                 <div className="cs-tl-result">
                   <Icon.zap style={{ width: 16, height: 16 }} /> {c.result}
                 </div>
-                <a href={"#/case-study/" + c.slug} className="cs-link">Read case study <Icon.arrow /></a>
+                <a href={"/case-study/" + c.slug} className="cs-link">Read case study <Icon.arrow /></a>
               </div>
               <div className="cs-tl-node">
-                <div className="cs-tl-node-inner">{c.num}</div>
+                <div className="cs-tl-node-inner"/>
               </div>
             </div>
           ))}
@@ -183,11 +182,11 @@ function CaseStudiesTimeline() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V5 — Showcase (Tallium-inspired large cards w/ glow + mockup)
+// V5, Showcase (Tallium-inspired large cards w/ glow + mockup)
 // ──────────────────────────────────────────────────────────────────
 function ShowcaseMockup({ kind }) {
   // Inline product mockup illustrations per kind. Browser/phone chrome
-  // with abstract content blocks — keeps brand cyan accent throughout.
+  // with abstract content blocks, keeps brand cyan accent throughout.
   if (kind === "health" || kind === "cyan") {
     // Mobile app mockup
     return (
@@ -273,7 +272,7 @@ function CaseStudiesShowcase() {
         </div>
         <div className="sc-grid">
           {filtered.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="sc-card reveal" style={{ transitionDelay: (i % 2 * 100) + "ms" }}>
+            <a key={c.title} href={"/case-study/" + c.slug} className="sc-card reveal" style={{ transitionDelay: (i % 2 * 100) + "ms" }}>
               <div className="sc-glow"/>
               <div className="sc-card-inner">
                 <div className="sc-card-text">
@@ -297,7 +296,7 @@ function CaseStudiesShowcase() {
         </div>
         {filtered.length > 0 && (
           <div style={{ textAlign: "center", marginTop: 56 }}>
-            <a href="#/blog" className="btn btn--ghost">More case studies <Icon.arrow /></a>
+            <a href="/blog" className="btn btn--ghost">More case studies <Icon.arrow /></a>
           </div>
         )}
       </div>
@@ -306,7 +305,7 @@ function CaseStudiesShowcase() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V6 — Magazine (asymmetric: one hero + smaller cards)
+// V6, Magazine (asymmetric: one hero + smaller cards)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesMagazine() {
   const [hero, ...rest] = CS_ITEMS;
@@ -314,10 +313,10 @@ function CaseStudiesMagazine() {
     <section className="section">
       <div className="container">
         <div className="mag-grid">
-          <a href={"#/case-study/" + hero.slug} className="mag-hero reveal">
-            <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} /></div>
+          <a href={"/case-study/" + hero.slug} className="mag-hero reveal">
+            <div className="mag-hero-cover"><CSCover kind={hero.kind} label={hero.meta[0]} slug={hero.slug} /></div>
             <div className="mag-hero-body">
-              <span className="mag-kicker"><span className="mag-dot"/> Featured story · {hero.year}</span>
+              <span className="mag-kicker"><span className="mag-dot"/> Featured story</span>
               <h2 className="mag-hero-title">{hero.title}</h2>
               <p className="mag-hero-excerpt">{hero.excerpt}</p>
               <div className="mag-hero-row">
@@ -331,10 +330,9 @@ function CaseStudiesMagazine() {
           </a>
           <div className="mag-side">
             {rest.slice(0, 3).map((c, i) => (
-              <a key={c.title} href={"#/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-                <div className="mag-mini-num">{c.num}</div>
+              <a key={c.title} href={"/case-study/" + c.slug} className="mag-mini reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="mag-mini-body">
-                  <div className="mag-mini-meta">{c.meta[0]} · {c.year}</div>
+                  <div className="mag-mini-meta">{c.meta[0]}</div>
                   <div className="mag-mini-title">{c.title}</div>
                   <div className="mag-mini-metric">{c.metric.v} <span>{c.metric.l}</span></div>
                 </div>
@@ -345,10 +343,10 @@ function CaseStudiesMagazine() {
         </div>
         <div className="mag-row">
           {rest.slice(3).map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
-              <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+            <a key={c.title} href={"/case-study/" + c.slug} className="mag-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
+              <div className="mag-card-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="mag-card-body">
-                <div className="mag-mini-meta">{c.meta[0]} · {c.year}</div>
+                <div className="mag-mini-meta">{c.meta[0]}</div>
                 <h3>{c.title}</h3>
                 <div className="mag-mini-metric">{c.metric.v} <span>{c.metric.l}</span></div>
               </div>
@@ -361,7 +359,7 @@ function CaseStudiesMagazine() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V7 — Stack (full-width alternating stories)
+// V7, Stack (full-width alternating stories)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesStack() {
   return (
@@ -369,13 +367,10 @@ function CaseStudiesStack() {
       <div className="container" style={{ maxWidth: 1200 }}>
         <div className="stk-list">
           {CS_ITEMS.map((c, i) => (
-            <a key={c.title} href={"#/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
-              <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+            <a key={c.title} href={"/case-study/" + c.slug} className={"stk-row reveal " + (i % 2 === 0 ? "is-even" : "is-odd")} style={{ transitionDelay: (i * 60) + "ms" }}>
+              <div className="stk-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
               <div className="stk-body">
-                <div className="stk-num">{c.num} / 06</div>
                 <div className="stk-meta">
-                  <span className="stk-year">{c.year}</span>
-                  <span className="stk-divider"/>
                   <span>{c.meta[0]}</span>
                   <span className="stk-divider"/>
                   <span>{c.meta[1]}</span>
@@ -398,7 +393,7 @@ function CaseStudiesStack() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// V8 — Mosaic (bento grid, mixed sizes)
+// V8, Mosaic (bento grid, mixed sizes)
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesMosaic() {
   // Layout slots: each item gets a spec on the bento grid.
@@ -418,12 +413,12 @@ function CaseStudiesMosaic() {
           {CS_ITEMS.map((c, i) => {
             const L = layout[i] || layout[0];
             return (
-              <a key={c.title} href={"#/case-study/" + c.slug} className={"mos-card reveal " + L.span + " mos--" + L.variant} style={{ transitionDelay: (i * 50) + "ms" }}>
+              <a key={c.title} href={"/case-study/" + c.slug} className={"mos-card reveal " + L.span + " mos--" + L.variant} style={{ transitionDelay: (i * 50) + "ms" }}>
                 {L.variant === "image" && (
                   <>
-                    <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} /></div>
+                    <div className="mos-cover"><CSCover kind={c.kind} label={c.meta[0]} slug={c.slug} /></div>
                     <div className="mos-overlay">
-                      <div className="mos-meta">{c.meta[0]} · {c.year}</div>
+                      <div className="mos-meta">{c.meta[0]}</div>
                       <div className="mos-title">{c.title}</div>
                       <div className="mos-arrow"><Icon.arrow /></div>
                     </div>
@@ -447,7 +442,7 @@ function CaseStudiesMosaic() {
                     <div className="mos-quote-foot">
                       <div>
                         <div className="mos-quote-client">{c.client}</div>
-                        <div className="mos-quote-meta">{c.meta[0]} · {c.year}</div>
+                        <div className="mos-quote-meta">{c.meta[0]}</div>
                       </div>
                       <Icon.arrow />
                     </div>
@@ -463,18 +458,26 @@ function CaseStudiesMosaic() {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// Page wrapper — switches body by variant prop
+// Page wrapper, switches body by variant prop
 // ──────────────────────────────────────────────────────────────────
 function CaseStudiesPage({ variant = "grid" }) {
+  React.useEffect(() => {
+    const prev = document.title;
+    document.title = "Case Studies, AI & Software Engineering Projects | 7Code Romania";
+    const d = document.querySelector('meta[name="description"]');
+    const pd = d ? d.getAttribute("content") : null;
+    if (d) d.setAttribute("content", "10+ case studies from 7Code's AI and software engineering practice: HealthTech, FinTech, IoT, GovTech, EdTech, and SaaS products built for clients across Europe, the UK, and the Middle East.");
+    return () => { document.title = prev; if (d && pd !== null) d.setAttribute("content", pd); };
+  }, []);
   const headlines = {
-    grid:      { eyebrow: "Case studies", h1: "Outcomes, not just deliverables", sub: "A selection of products we've shipped with our partners — across healthcare, finance, energy, defence and beyond." },
+    grid:      { eyebrow: "Case studies", h1: "Outcomes, not just deliverables", sub: "A selection of products we've shipped with our partners, across healthcare, finance, energy, defence and beyond." },
     editorial: { eyebrow: "Selected work · 2024–2026", h1: "Six stories, six outcomes.", sub: "An editorial index of the work we're proudest of, with the numbers attached." },
     featured:  { eyebrow: "Featured case studies", h1: "Each one moved a metric.", sub: "Hover any project below to dig into how we built it and the results it produced." },
-    timeline:  { eyebrow: "A short history", h1: "How we've spent the last two years", sub: "From early-stage MVPs to large-scale platform launches — in roughly the order they shipped." },
+    timeline:  { eyebrow: "A short history", h1: "How we've spent the last two years", sub: "From early-stage MVPs to large-scale platform launches, in roughly the order they shipped." },
     showcase:  { eyebrow: "Recent case studies", h1: "Work we're proud to ship", sub: "Learn more about our clients, the types of projects we work with, our process, and the technologies we use to build software." },
-    magazine:  { eyebrow: "The portfolio", h1: "Stories worth telling", sub: "An editorial look at the products we've shipped — what they do, who they're for, and what they moved." },
-    stack:     { eyebrow: "Selected work", h1: "Six in-depth stories", sub: "Take your time — each one is a full case, top to bottom." },
-    mosaic:    { eyebrow: "Portfolio", h1: "A snapshot of recent work", sub: "Every project earned its real estate — by what it shipped, what it changed, or what someone said about it." },
+    magazine:  { eyebrow: "The portfolio", h1: "Stories worth telling", sub: "An editorial look at the products we've shipped, what they do, who they're for, and what they moved." },
+    stack:     { eyebrow: "Selected work", h1: "In-depth stories", sub: "Take your time, each one is a full case, top to bottom." },
+    mosaic:    { eyebrow: "Portfolio", h1: "A snapshot of recent work", sub: "Every project earned its real estate, by what it shipped, what it changed, or what someone said about it." },
   };
   const h = headlines[variant] || headlines.grid;
   let Body;
