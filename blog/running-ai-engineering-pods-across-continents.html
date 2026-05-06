@@ -161,6 +161,7 @@ function App() {
   else if (page === "/blog"       && slug)  Page = <BlogRouter slug={slug} />;
   else if (page === "/blog"              )  Page = <BlogRouter />;
   else if (page === "/contact"           )  Page = <ContactPage />;
+  else if (page === "/compare"           )  Page = <CompareAgencyFreelancerPage />;
   else                                      Page = <HomePage heroVariant={tweaks.heroVariant} />;
   return (
     <>
