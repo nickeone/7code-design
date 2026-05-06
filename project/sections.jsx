@@ -304,11 +304,10 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
 // Services section
 function Services() {
   const services = [
-    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "AI-first web and mobile products, LLM interfaces, smart workflows, and scalable architectures built to compound." },
+    { icon: Icon.code, slug: "ai-product-engineering", title: "AI-Native Product Engineering", desc: "Discovery, UX design, and full-stack engineering in one team, AI-first web and mobile products built to compound." },
     { icon: Icon.globe, slug: "system-integrations", title: "System Integrations", desc: "Connect your stack, ERPs, CRMs, data warehouses, and legacy systems, into a single, reliable data fabric." },
     { icon: Icon.cpu, slug: "ai-automation", title: "AI & Process Automation", desc: "LLM integrations, custom copilots, and workflow automation that eliminates manual work and compounds over time." },
     { icon: Icon.cloud, slug: "cloud-agentic-infra", title: "Cloud & Agentic Infrastructure", desc: "Cloud-native foundations and agentic pipeline orchestration, so your AI products run reliably, scale automatically, and cost what they should." },
-    { icon: Icon.layers, slug: "product-strategy", title: "Product Strategy & Design", desc: "From discovery to design system, building products that resonate with users and hold up under engineering." },
     { icon: Icon.users, slug: "ai-outstaffing", title: "AI Engineering Outstaffing", desc: "Senior AI engineers embedded in your team, matched in 72 hours, monthly rolling contracts, no long-term lock-in." },
   ];
   return (
