@@ -70,7 +70,7 @@ const POSTS = [
   {
     slug: "ai-discovery-mission-de-risk-ai-products",
     cat: "Strategy",
-    title: "The AI Discovery Mission: how we de-risk AI products in four weeks",
+    title: "The AI Discovery Mission: de-risk AI in four weeks",
     subtitle: "A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan, vision, evals, architecture, and a defensible budget.",
     date: "Apr 28, 2026",
     read: "9 min read",
@@ -123,7 +123,7 @@ const POSTS = [
   {
     slug: "ai-engineering-pricing-fixed-vs-time-materials",
     cat: "Strategy",
-    title: "Fixed price vs. T&M for AI engineering: how to budget for LLM work",
+    title: "Fixed price vs. T&M for AI engineering: LLM budgets",
     subtitle: "AI projects break the assumptions behind fixed-price contracts. Here's a pricing framework that aligns incentives between AI vendors and clients.",
     date: "Apr 02, 2026",
     read: "8 min read",
@@ -226,7 +226,7 @@ const POSTS = [
   {
     slug: "senior-engineers-ai-leverage",
     cat: "Engineering",
-    title: "Why senior engineers with AI beat juniors with copilots",
+    title: "Why senior engineers with AI beat junior copilots",
     subtitle: "AI copilots compress the productivity gap, but they amplify the architectural one. Why we lean on senior-led pods for AI work.",
     date: "Feb 06, 2026",
     read: "6 min read",
@@ -350,7 +350,7 @@ const POSTS = [
   {
     slug: "lessons-from-london-tech-week-ai",
     cat: "Strategy",
-    title: "Lessons from London Tech Week, through an AI-first lens",
+    title: "Lessons from London Tech Week: an AI-first lens",
     subtitle: "What we heard about agentic workflows, evaluation, and AI go-to-market, and what we're betting on next.",
     date: "Nov 20, 2025",
     read: "5 min read",
@@ -412,7 +412,7 @@ const POSTS = [
   {
     slug: "why-mvp-first",
     cat: "Strategy",
-    title: "Why MVP first? The advantages of a minimum viable product approach",
+    title: "Why MVP first? The case for minimum viable products",
     subtitle: "Starting lean, learning fast, and building what users actually need, the MVP approach is the most efficient path from idea to product-market fit.",
     date: "Dec 11, 2023",
     read: "5 min read",
@@ -443,7 +443,7 @@ const POSTS = [
   {
     slug: "seamless-software-project-handover",
     cat: "Operations",
-    title: "The art of seamless software project handover: a client-centric approach",
+    title: "The art of a seamless software project handover",
     subtitle: "A successful handover is not an event, it is a process. How 7Code ensures clients have full control, full understanding, and full confidence when we hand over the keys.",
     date: "Dec 12, 2023",
     read: "6 min read",
@@ -475,7 +475,7 @@ const POSTS = [
   {
     slug: "cms-wordpress-vs-custom-development",
     cat: "Engineering",
-    title: "CMS (WordPress) vs. custom development: making the right choice for your business",
+    title: "WordPress vs. custom development: how to choose",
     subtitle: "WordPress can launch a web presence in days. Custom development can build a competitive moat that lasts years. Here's how to decide which one your business actually needs.",
     date: "Oct 11, 2023",
     read: "6 min read",
@@ -504,7 +504,7 @@ const POSTS = [
   {
     slug: "osai-revolutionising-ai-interactions",
     cat: "Case Study",
-    title: "Osai: revolutionising AI interactions with 7Code's cutting-edge expertise",
+    title: "Osai: revolutionising AI interactions with 7Code",
     subtitle: "How we built Osai, a prompt-sharing platform that unlocks collective intelligence across teams working with GPT-4, Midjourney, and DALL-E.",
     date: "Oct 11, 2023",
     read: "5 min read",
@@ -532,7 +532,7 @@ const POSTS = [
   {
     slug: "low-code-no-code-vs-custom-development",
     cat: "Engineering",
-    title: "Low code / no code vs. custom development: making the right choice for your product",
+    title: "Low-code vs. custom development: how to choose",
     subtitle: "Low-code platforms are powerful for standard needs. Custom code is the only answer when your product demands performance, flexibility, and long-term viability.",
     date: "Oct 10, 2023",
     read: "6 min read",
@@ -561,7 +561,7 @@ const POSTS = [
   {
     slug: "reducing-costs-nearshoring-outstaffing",
     cat: "Strategy",
-    title: "Reducing development team costs through nearshoring and outstaffing",
+    title: "Dev cost savings through nearshoring and outstaffing",
     subtitle: "10–30% cost savings are possible, but that is not the headline. Velocity, continuity, and access to senior talent are.",
     date: "Oct 11, 2023",
     read: "6 min read",
@@ -594,7 +594,7 @@ const POSTS = [
   {
     slug: "migrating-users-auth0-python",
     cat: "Engineering",
-    title: "Migrating users between Auth0 tenants in Python: handling large payloads",
+    title: "Migrating users between Auth0 tenants in Python",
     subtitle: "A practical guide to the pitfalls, edge cases, and Python patterns for moving users from one Auth0 tenant to another, without data loss or downtime.",
     date: "Oct 25, 2023",
     read: "7 min read",
@@ -630,7 +630,7 @@ const POSTS = [
   {
     slug: "fixed-price-vs-time-and-materials",
     cat: "Strategy",
-    title: "Fixed price vs. time and materials: a comparative analysis for software development",
+    title: "Fixed price vs. time and materials for software",
     subtitle: "The right pricing model depends on the nature of your project, your budget flexibility, and the level of scope certainty you actually have.",
     date: "Sep 13, 2023",
     read: "6 min read",
@@ -665,7 +665,7 @@ const POSTS = [
   {
     slug: "7code-discovery-mission",
     cat: "Strategy",
-    title: "7Code's Discovery Mission: pioneering successful software development",
+    title: "7Code's Discovery Mission: de-risk software builds",
     subtitle: "A four-week Discovery Mission is the cornerstone of every successful build, producing the product vision, backlog, wireframes, architecture, and delivery plan that make development predictable.",
     date: "Sep 04, 2023",
     read: "5 min read",
@@ -695,7 +695,7 @@ const POSTS = [
   {
     slug: "logistics-tech-tailored-solutions",
     cat: "Engineering",
-    title: "AI-native logistics software: turning the coordination tax into competitive advantage",
+    title: "AI-native logistics: beating the coordination tax",
     subtitle: "Generic logistics platforms cover 60% of the workflow and force teams to absorb the rest in spreadsheets. AI-native, integrated systems absorb the coordination tax and turn real-time data into faster, better operational decisions.",
     date: "Dec 10, 2023",
     read: "6 min read",
@@ -732,7 +732,7 @@ const POSTS = [
   {
     slug: "changing-software-service-provider",
     cat: "Strategy",
-    title: "How to change your software service provider, with an AI-first lens",
+    title: "How to change your software service provider",
     subtitle: "Sunk cost keeps clients with the wrong vendor for months too long. With AI projects the cost of waiting is higher, model choices age out, eval debt compounds. A practical playbook for assessing, securing assets, and switching cleanly.",
     date: "Nov 27, 2023",
     read: "6 min read",
@@ -773,7 +773,7 @@ const POSTS = [
   {
     slug: "aws-beanstalk-to-ecs-migration",
     cat: "Engineering",
-    title: "Migrating from AWS Beanstalk to ECS on Fargate, the AI-engineering recipe",
+    title: "AWS Beanstalk to ECS Fargate: AI-engineering recipe",
     subtitle: "AI services need a deploy story Beanstalk cannot give them. A practical recipe for moving a containerised AI workload to ECS on Fargate, with VPC, load balancer, and a GitHub Actions deploy pipeline.",
     date: "Oct 25, 2023",
     read: "8 min read",
@@ -816,7 +816,7 @@ const POSTS = [
   {
     slug: "aws-ecs-vs-beanstalk-perspective",
     cat: "Engineering",
-    title: "Why I moved AI workloads from AWS Beanstalk to ECS + Fargate, a personal perspective",
+    title: "Why I moved AI workloads from Beanstalk to Fargate",
     subtitle: "After six months on Elastic Beanstalk, the developer experience pushed me to ECS + Fargate. For containerised AI services with token budgets and eval gates, the case is even stronger.",
     date: "Oct 25, 2023",
     read: "5 min read",
