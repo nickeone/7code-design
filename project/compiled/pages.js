@@ -415,8 +415,6 @@ function AboutPage() {
   }, t.photo ? /*#__PURE__*/React.createElement("img", {
     src: t.photo,
     alt: t.name,
-    loading: "lazy",
-    decoding: "async",
     style: {
       position: "absolute",
       inset: 0,
