@@ -20,7 +20,7 @@ function useRoute() {
 
 // Returns [page, slug] e.g. ["/case-study", "wholesum"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
 function parseRoute(path) {
-  const parts = path.split("/").filter(Boolean);
+  const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
   if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare")) {
     return ["/" + parts[0], parts[1]];
