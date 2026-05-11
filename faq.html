@@ -20,7 +20,6 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://unpkg.com" crossorigin />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -164,13 +163,16 @@
 }
 </script>
 
-<link rel="stylesheet" href="/project/bundle.css?v=3" />
+<link rel="stylesheet" href="/project/bundle.min.css?v=3" />
+<link rel="preload" href="/project/compiled/react.production.min.js?v=3" as="script" />
+<link rel="preload" href="/project/compiled/react-dom.production.min.js?v=3" as="script" />
+<link rel="preload" href="/project/compiled/bundle.min.js?v=3" as="script" />
 </head>
 <body>
 <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="/project/compiled/react.production.min.js?v=3"></script>
+<script src="/project/compiled/react-dom.production.min.js?v=3"></script>
 <script src="/project/compiled/bundle.min.js?v=3"></script>
 </body>
 </html>
