@@ -1,4 +1,15 @@
 /* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, useState, useEffect */
+// LoadingPage shown for route components that are in the deferred bundle
+function LoadingPage() {
+  return React.createElement('div', {
+    style: {
+      padding: '160px 0',
+      textAlign: 'center',
+      color: 'var(--slate-500)',
+      fontSize: '15px'
+    }
+  }, 'Loading…');
+}
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "heroVariant": "pattern",
   "caseStudiesVariant": "stack",
@@ -59,23 +70,31 @@ function App() {
   const route = useHashRoute();
   useReveal();
   const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [routesReady, setRoutesReady] = useState(typeof BlogRouter !== 'undefined');
   const [page, slug] = parseRoute(route);
   useEffect(() => {
     applyAccent(tweaks.accent);
   }, [tweaks.accent]);
+  useEffect(() => {
+    if (!routesReady) {
+      const onLoad = () => setRoutesReady(true);
+      window.addEventListener('routes-loaded', onLoad);
+      return () => window.removeEventListener('routes-loaded', onLoad);
+    }
+  }, [routesReady]);
   let Page;
-  if (page === "/service" && slug) Page = /*#__PURE__*/React.createElement(ServiceDetailPage, {
+  if (page === "/service" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ServiceDetailPage, {
     slug: slug
-  });else if (page === "/expertise" && slug) Page = /*#__PURE__*/React.createElement(ExpertiseDetailPage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/expertise" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ExpertiseDetailPage, {
     slug: slug
-  });else if (page === "/expertise") Page = /*#__PURE__*/React.createElement(ExpertisePage, null);else if (page === "/case-studies") Page = /*#__PURE__*/React.createElement(CaseStudiesPage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/expertise") Page = /*#__PURE__*/React.createElement(ExpertisePage, null);else if (page === "/case-studies") Page = routesReady ? /*#__PURE__*/React.createElement(CaseStudiesPage, {
     variant: tweaks.caseStudiesVariant
-  });else if (page === "/case-study") Page = /*#__PURE__*/React.createElement(CaseStudyPage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/case-study") Page = routesReady ? /*#__PURE__*/React.createElement(CaseStudyPage, {
     slug: slug || "wholesum",
     variant: tweaks.caseStudyVariant
-  });else if (page === "/process") Page = /*#__PURE__*/React.createElement(ProcessPage, null);else if (page === "/about") Page = /*#__PURE__*/React.createElement(AboutPage, null);else if (page === "/blog" && slug) Page = /*#__PURE__*/React.createElement(BlogRouter, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/process") Page = /*#__PURE__*/React.createElement(ProcessPage, null);else if (page === "/about") Page = /*#__PURE__*/React.createElement(AboutPage, null);else if (page === "/blog" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(BlogRouter, {
     slug: slug
-  });else if (page === "/blog") Page = /*#__PURE__*/React.createElement(BlogRouter, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/blog") Page = routesReady ? /*#__PURE__*/React.createElement(BlogRouter, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
     heroVariant: tweaks.heroVariant
   });
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(TweaksPanel, {
