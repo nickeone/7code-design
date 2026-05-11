@@ -354,7 +354,7 @@ function AboutPage() {
               <div key={i} className="team-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="team-photo">
                   {t.photo
-                    ? <img src={t.photo} alt={t.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
+                    ? <img src={t.photo} alt={t.name} loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
                     : <span>{t.initial}</span>
                   }
                 </div>

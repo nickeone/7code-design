@@ -26,7 +26,7 @@ function TrustedBy() {
           <div className="marquee-track">
             {all.map((l, i) => (
               <div key={i} className="marquee-logo" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 48, padding: "0 8px" }}>
-                <img src={l.src} alt={l.alt} style={{ height: 44, width: "auto", maxWidth: 160, objectFit: "contain", display: "block" }} />
+                <img src={l.src} alt={l.alt} loading="lazy" decoding="async" width="160" height="44" style={{ height: 44, width: "auto", maxWidth: 160, objectFit: "contain", display: "block" }} />
               </div>
             ))}
           </div>
@@ -58,7 +58,7 @@ function CSCover({ kind, label, slug }) {
   if (photo) {
     return (
       <div className="cs-cover cs-cover--photo">
-        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img"/>
+        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img" loading="lazy" decoding="async" width="724" height="500"/>
       </div>
     );
   }
