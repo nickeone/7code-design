@@ -58,10 +58,6 @@ function TrustedBy() {
   }, /*#__PURE__*/React.createElement("img", {
     src: l.src,
     alt: l.alt,
-    loading: "lazy",
-    decoding: "async",
-    width: "160",
-    height: "44",
     style: {
       height: 44,
       width: "auto",
@@ -134,11 +130,7 @@ function CSCover({
     }, /*#__PURE__*/React.createElement("img", {
       src: photo.src,
       alt: label || photo.alt,
-      className: "cs-cover-img",
-      loading: "lazy",
-      decoding: "async",
-      width: "724",
-      height: "500"
+      className: "cs-cover-img"
     }));
   }
   const map = {
