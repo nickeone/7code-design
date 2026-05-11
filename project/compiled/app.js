@@ -1,0 +1,167 @@
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, useState, useEffect */
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "heroVariant": "pattern",
+  "caseStudiesVariant": "stack",
+  "caseStudyVariant": "sticky",
+  "accent": "cyan",
+  "darkFooter": true
+} /*EDITMODE-END*/;
+const ACCENTS = {
+  cyan: {
+    c500: "#06B6D4",
+    c600: "#0C9CB5",
+    c700: "#0E7C90",
+    c300: "#4DDFEA",
+    c400: "#2EBFD0",
+    bg50: "#ECFEFF",
+    bg100: "#D8F7F9"
+  },
+  indigo: {
+    c500: "#6366F1",
+    c600: "#4F46E5",
+    c700: "#4338CA",
+    c300: "#A5B4FC",
+    c400: "#818CF8",
+    bg50: "#EEF2FF",
+    bg100: "#E0E7FF"
+  },
+  emerald: {
+    c500: "#10B981",
+    c600: "#059669",
+    c700: "#047857",
+    c300: "#6EE7B7",
+    c400: "#34D399",
+    bg50: "#ECFDF5",
+    bg100: "#D1FAE5"
+  },
+  orange: {
+    c500: "#F97316",
+    c600: "#EA580C",
+    c700: "#C2410C",
+    c300: "#FDBA74",
+    c400: "#FB923C",
+    bg50: "#FFF7ED",
+    bg100: "#FFEDD5"
+  }
+};
+function applyAccent(name) {
+  const a = ACCENTS[name] || ACCENTS.cyan;
+  const r = document.documentElement.style;
+  r.setProperty("--cyan-500", a.c500);
+  r.setProperty("--cyan-600", a.c600);
+  r.setProperty("--cyan-700", a.c700);
+  r.setProperty("--cyan-300", a.c300);
+  r.setProperty("--cyan-400", a.c400);
+  r.setProperty("--bg-cyan-50", a.bg50);
+  r.setProperty("--bg-cyan-100", a.bg100);
+}
+function App() {
+  const route = useHashRoute();
+  useReveal();
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [page, slug] = parseRoute(route);
+  useEffect(() => {
+    applyAccent(tweaks.accent);
+  }, [tweaks.accent]);
+  let Page;
+  if (page === "/service" && slug) Page = /*#__PURE__*/React.createElement(ServiceDetailPage, {
+    slug: slug
+  });else if (page === "/expertise" && slug) Page = /*#__PURE__*/React.createElement(ExpertiseDetailPage, {
+    slug: slug
+  });else if (page === "/expertise") Page = /*#__PURE__*/React.createElement(ExpertisePage, null);else if (page === "/case-studies") Page = /*#__PURE__*/React.createElement(CaseStudiesPage, {
+    variant: tweaks.caseStudiesVariant
+  });else if (page === "/case-study") Page = /*#__PURE__*/React.createElement(CaseStudyPage, {
+    slug: slug || "wholesum",
+    variant: tweaks.caseStudyVariant
+  });else if (page === "/process") Page = /*#__PURE__*/React.createElement(ProcessPage, null);else if (page === "/about") Page = /*#__PURE__*/React.createElement(AboutPage, null);else if (page === "/blog" && slug) Page = /*#__PURE__*/React.createElement(BlogRouter, {
+    slug: slug
+  });else if (page === "/blog") Page = /*#__PURE__*/React.createElement(BlogRouter, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
+    heroVariant: tweaks.heroVariant
+  });
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(TweaksPanel, {
+    title: "Tweaks"
+  }, /*#__PURE__*/React.createElement(TweakSection, {
+    title: "Hero variant (home page only)"
+  }, /*#__PURE__*/React.createElement(TweakRadio, {
+    value: tweaks.heroVariant,
+    onChange: v => setTweak("heroVariant", v),
+    options: [{
+      value: "pattern",
+      label: "Mockup"
+    }, {
+      value: "terminal",
+      label: "Terminal"
+    }, {
+      value: "bold",
+      label: "Bold split"
+    }]
+  })), /*#__PURE__*/React.createElement(TweakSection, {
+    title: "Case studies layout"
+  }, /*#__PURE__*/React.createElement(TweakRadio, {
+    value: tweaks.caseStudiesVariant,
+    onChange: v => setTweak("caseStudiesVariant", v),
+    options: [{
+      value: "grid",
+      label: "Grid"
+    }, {
+      value: "editorial",
+      label: "Editorial"
+    }, {
+      value: "featured",
+      label: "Featured"
+    }, {
+      value: "timeline",
+      label: "Timeline"
+    }, {
+      value: "showcase",
+      label: "Showcase"
+    }, {
+      value: "magazine",
+      label: "Magazine"
+    }, {
+      value: "stack",
+      label: "Stack"
+    }, {
+      value: "mosaic",
+      label: "Mosaic"
+    }]
+  })), /*#__PURE__*/React.createElement(TweakSection, {
+    title: "Case study page layout"
+  }, /*#__PURE__*/React.createElement(TweakRadio, {
+    value: tweaks.caseStudyVariant,
+    onChange: v => setTweak("caseStudyVariant", v),
+    options: [{
+      value: "longread",
+      label: "Long-read"
+    }, {
+      value: "metric",
+      label: "Metric"
+    }, {
+      value: "visual",
+      label: "Visual"
+    }, {
+      value: "sticky",
+      label: "Sticky"
+    }]
+  })), /*#__PURE__*/React.createElement(TweakSection, {
+    title: "Accent color"
+  }, /*#__PURE__*/React.createElement(TweakRadio, {
+    value: tweaks.accent,
+    onChange: v => setTweak("accent", v),
+    options: [{
+      value: "cyan",
+      label: "Cyan"
+    }, {
+      value: "indigo",
+      label: "Indigo"
+    }, {
+      value: "emerald",
+      label: "Emerald"
+    }, {
+      value: "orange",
+      label: "Orange"
+    }]
+  }))));
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(/*#__PURE__*/React.createElement(App, null));
