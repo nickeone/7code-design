@@ -19,7 +19,7 @@ function useSeoMeta(title, desc, ldJson) {
     const twDesc = document.querySelector('meta[name="twitter:description"]');
     if (ogTitle) ogTitle.setAttribute("content", title);
     if (ogDesc && desc) ogDesc.setAttribute("content", desc);
-    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.pathname || "/"));
+    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || window.location.pathname || "/"));
     if (twTitle) twTitle.setAttribute("content", title);
     if (twDesc && desc) twDesc.setAttribute("content", desc);
     let s;
