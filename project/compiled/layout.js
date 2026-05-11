@@ -9,24 +9,24 @@ const {
 // ──────────────────────────────────────────────────────────────────
 // Routing (path-based)
 // ──────────────────────────────────────────────────────────────────
-function useHashRoute() {
+function useRoute() {
   const [path, setPath] = useState(() => {
     if (typeof window === "undefined") return "/";
-    return window.location.hash.slice(1) || window.location.pathname || "/";
+    return window.location.pathname || "/";
   });
   useEffect(() => {
-    const onHash = () => {
-      setPath(window.location.hash.slice(1) || "/");
+    const onPop = () => {
+      setPath(window.location.pathname || "/");
       window.scrollTo(0, 0);
     };
-    window.addEventListener("hashchange", onHash);
-    return () => window.removeEventListener("hashchange", onHash);
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
   }, []);
   return path;
 }
 
 // Returns [page, slug] e.g. ["/case-study", "wholesum"] or ["/expertise", "healthcare"] or ["/blog", "my-post"]
-function parseRoute(hash) {
+function parseRoute(path) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
   if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare")) {
@@ -40,7 +40,7 @@ function NavLinkA({
   className = "nav-link",
   activeClass = "is-active"
 }) {
-  const active = typeof window !== "undefined" && window.location.hash.slice(1) === to;
+  const active = typeof window !== "undefined" && window.location.pathname === to;
   return /*#__PURE__*/React.createElement("a", {
     href: to,
     className: className + (active ? " " + activeClass : "")
@@ -374,6 +374,6 @@ function Footer() {
 }
 window.Nav = Nav;
 window.Footer = Footer;
-window.useHashRoute = useHashRoute;
+window.useRoute = useRoute;
 window.parseRoute = parseRoute;
 window.useReveal = useReveal;
