@@ -1,0 +1,70 @@
+# 7code — AI-First Software Engineering Partner
+# https://www.7code.tech/
+
+> 7code is an AI-native software engineering agency headquartered in Cluj-Napoca, Romania.
+> We design, build, and operate AI-native products, LLM features, agentic workflows, and production-grade cloud infrastructure for founders and product teams in the UK, EU, and UAE.
+> Founded 2019. Senior-only teams. Strategy, design, and engineering under one roof.
+
+## Company
+
+- **Name**: 7code (Seven Code Development SRL)
+- **Founded**: 2019, Cluj-Napoca, Romania
+- **Employees**: 10–50 engineers
+- **Markets**: United Kingdom, Western Europe, UAE, United States
+- **Contact**: office@7code.ro
+- **CEO**: Nicu Mardari
+
+## Core Services
+
+- AI-Native Product Engineering — LLM-powered web and mobile products, agents, RAG, evals
+- System Integrations — ERP, CRM, API connectors, data pipelines
+- AI & Process Automation — Custom copilots, workflow automation
+- LLM & Agent Development — Multi-step agent pipelines, tool use, memory
+- Cloud & Agentic Infrastructure — AWS/GCP/Azure, observability, cost controls
+- AI Engineering Outstaffing — Senior engineers embedded in your team, 72-hour matching
+
+## Industry Expertise
+
+- Healthcare (HIPAA-compliant EHR, clinical decision support, patient engagement)
+- Finance (real-time dashboards, ERP integration, accounting automation)
+- Energy & Utilities (IoT integration, predictive analytics)
+- Defence & Security (secure systems, situational awareness)
+- HR Tech (recruitment, payroll, workforce analytics)
+- Operations (workflow automation, dashboards)
+
+## Key Facts
+
+- 20+ products shipped across 12 industries
+- 6 weeks to first production deploy (AI MVP)
+- 98% client satisfaction rate
+- Rates: Mid €30–35/h · Senior €40–50/h · Architect €60–80/h
+- AI MVP from £25k / €30k fixed price
+- SOC 2 aligned, HIPAA compliant, GDPR compliant, ISO 9001:2015
+
+## Key Pages
+
+- Homepage: https://www.7code.tech/
+- Services: https://www.7code.tech/service/ai-product-engineering
+- Case Studies: https://www.7code.tech/case-studies
+- Expertise: https://www.7code.tech/expertise
+- Blog: https://www.7code.tech/blog
+- Contact: https://www.7code.tech/contact
+- Process: https://www.7code.tech/process
+- About: https://www.7code.tech/about
+
+## Notable Case Studies
+
+- WholeSum — self-serve AI analytics platform for unstructured text (16 weeks)
+- Daily8 — AI-powered news aggregator for MENA region (6 months)
+- Revote — remote e-voting platform for European Parliament (8 months)
+- Hera — AI patient support app for fertility clinics (3-month MVP)
+- G42 ESTS — real-time fleet tracking for EXPO 2020 Dubai (2 years)
+- Lidl Road Safety — children's gamification web app for Lidl Romania CSR
+
+## Social Profiles
+
+- LinkedIn: https://www.linkedin.com/company/7-code/
+- GitHub: https://github.com/7code
+- Clutch: https://clutch.co/profile/7code
+- GoodFirms: https://www.goodfirms.co/company/7code
+- Crunchbase: https://www.crunchbase.com/organization/7code

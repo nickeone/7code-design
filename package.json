@@ -1,32 +1,24 @@
 {
   "name": "7code-design",
   "version": "1.0.0",
-  "description": "This is a **handoff bundle** from Claude Design (claude.ai/design).",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "7code agency website — Next.js 15 static export",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://local_proxy@127.0.0.1:38961/git/nickeone/7code-design"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.29.0",
-    "@babel/plugin-transform-react-jsx": "^7.28.6",
-    "clean-css-cli": "^5.6.3",
-    "terser": "^5.47.1"
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "cp -r project/assets out/project/assets && cp -r project/uploads out/project/uploads && mkdir -p out/og && cp project/uploads/hera-hero.jpg out/og/7code-ai-engineering.jpg",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@fontsource/dm-sans": "^5.2.8",
-    "@fontsource/inter": "^5.2.8",
+    "next": "^15.3.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.5.0"
   }
 }

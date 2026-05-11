@@ -1,0 +1,190 @@
+# 7code — Complete Company Profile for AI/LLM Indexing
+# https://www.7code.tech/
+# Last updated: 2026-05
+
+## Identity
+
+7code (Seven Code Development SRL) is an AI-first software engineering partner based in Cluj-Napoca, Romania. Founded in 2019, the company designs, builds, and operates AI-native products, LLM features, agent workflows, and production-grade cloud infrastructure for startups, scale-ups, and enterprise teams primarily in the United Kingdom, Western Europe (Germany, Netherlands, France, Ireland), the UAE, and the United States.
+
+**Legal name**: Seven Code Development SRL
+**Headquarters**: Cluj-Napoca, Romania (RO-CJ)
+**Operating location**: Cluj-Napoca, Romania & Chisinau, Moldova
+**Employees**: 10–50 (senior engineers, architects, product designers)
+**Email**: office@7code.ro
+**CEO**: Nicu Mardari
+**CTO**: Alessandro Merola
+
+## What 7code Does
+
+7code specialises in building AI-native software products from first principles — not retrofitting AI onto existing architectures, but designing LLMs, retrieval layers, evaluation harnesses, and agentic infrastructure into the product from week one.
+
+The team delivers:
+1. **End-to-end AI product engineering** — from product discovery and UX design through LLM integration, RAG pipelines, agent pipelines, backend APIs, and cloud infrastructure
+2. **System integrations** — connecting ERPs, CRMs, SaaS tools, and legacy systems into a reliable operational data fabric ready for AI retrieval
+3. **AI & process automation** — custom copilots, LLM workflow automation, and intelligent decision routing
+4. **LLM & agent development** — multi-step agent pipelines with tool use, memory, human-in-the-loop, built on LangGraph or first-party SDKs
+5. **Cloud & agentic infrastructure** — AWS, GCP, Azure deployments with model gateways, vector stores, eval CI, and AI observability
+6. **AI engineering outstaffing** — senior engineers embedded in client teams, matched in 72 hours, monthly rolling contracts
+
+## Differentiation
+
+- **Senior-only hiring**: 70% senior engineers, 10% architects, no juniors
+- **AI-first delivery**: AI/LLM architecture designed from day one, not added later
+- **Eval-gated quality**: every sprint release is scored against a held-out evaluation set before shipping
+- **Product ownership mindset**: engineers think like product owners, not code executors
+- **Transparency**: direct access to engineers writing the code, no account management layers
+
+## Pricing
+
+- Mid-level engineers: €30–35/hour
+- Senior engineers: €40–50/hour
+- Software Architects: €60–80/hour
+- AI MVP (6 weeks, fixed price): from £25k / €30k
+- Mid-scale product (12–20 weeks): £60k–£180k
+- Monthly sprint retainer: £6k–£12k per engineer per month
+
+## Industry Expertise
+
+**Healthcare**: HIPAA-compliant platforms, EHR interoperability (HL7 FHIR), clinical decision support, patient engagement apps. Shipped Hera (AI-powered fertility clinic patient support), compliant with UK and US healthcare data regulations.
+
+**Finance & FinTech**: Real-time financial dashboards, ERP integration, payment automation, compliance-ready data pipelines. Experience with ISO 27001-aligned financial data handling.
+
+**Defence & Security**: Secure systems integration, situational awareness platforms, security-cleared delivery processes. Shipped Revote for the European Parliament.
+
+**Energy & Utilities**: IoT sensor integration, real-time monitoring, predictive maintenance analytics, grid-edge data processing.
+
+**HR Tech**: End-to-end HR platforms covering recruitment automation, onboarding workflows, payroll integration, and AI-powered workforce analytics.
+
+**Operations**: Workflow automation, cross-system dashboards, ERP/CRM integrations, process digitisation for manufacturing and logistics.
+
+## Technology Stack
+
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
+- **Mobile**: React Native, Expo, Swift, Kotlin
+- **AI/LLM**: Claude (Anthropic), GPT-4 (OpenAI), Llama (open-weight), LangGraph, pgvector, Pinecone, RAGAS evals
+- **Backend**: Node.js, NestJS, Python, FastAPI, PostgreSQL, Redis, Kafka
+- **Cloud**: AWS (ECS, Lambda, RDS, S3), GCP, Azure, Terraform
+- **Integrations**: REST APIs, GraphQL, Webhooks, SAP, Salesforce, HubSpot, Zapier
+
+## Credentials & Certifications
+
+- SOC 2 Type II aligned
+- HIPAA compliant
+- GDPR compliant
+- ISO 9001:2015 certified
+
+## Platform Listings
+
+- Clutch: 4.9/5 average rating, 12+ verified reviews (https://clutch.co/profile/7code)
+- GoodFirms: https://www.goodfirms.co/company/7code
+- Crunchbase: https://www.crunchbase.com/organization/7code
+- TechBehemoths: https://techbehemoths.com/company/7code
+
+## Case Studies
+
+### WholeSum — Self-Serve AI Analytics Platform
+**Client**: WholeSum (USA)
+**Sector**: Data/AI SaaS
+**Duration**: 16 weeks
+**What**: Built a self-serve MVP for qualitative text analytics. The platform uses LLMs to analyse and surface insights from unstructured customer feedback, interview transcripts, and open-ended survey responses without requiring data science expertise.
+**Technologies**: React, Next.js, Python, OpenAI, pgvector
+**Outcome**: Live MVP; client proceeded to Series A fundraise
+
+### Daily8 — AI-Powered News Aggregator
+**Client**: Daily8 (UAE/MENA)
+**Sector**: Mobile/Media
+**Duration**: 6 months
+**What**: Built an AI-powered news aggregator for the MENA region with LLM-driven content moderation, summarisation, and personalisation. Multi-language support (Arabic/English). Available on iOS and Android.
+**Technologies**: React Native, Node.js, Claude (Anthropic), AWS
+**Outcome**: Launched in UAE market; 10k+ active users
+
+### Revote — European Parliament E-Voting
+**Client**: European Parliament (via Revote)
+**Sector**: E-Government/Democracy Tech
+**Duration**: 8 months
+**What**: Engineered a secure remote electronic voting platform with constitutional-grade reliability requirements. End-to-end encryption, audit trails, and real-time result aggregation.
+**Technologies**: React, Node.js, PostgreSQL, AWS (multi-region)
+**Outcome**: Successfully deployed for parliamentary voting sessions
+
+### G42 ESTS — Fleet Tracking, EXPO 2020 Dubai
+**Client**: G42 (UAE)
+**Sector**: IoT/Smart Infrastructure
+**Duration**: 2 years
+**What**: Real-time fleet tracking and geofencing platform for 2,000+ vehicles at EXPO 2020 Dubai site. Live dashboards, incident reporting, and predictive routing.
+**Technologies**: React, Node.js, AWS IoT, PostgreSQL, Redis
+**Outcome**: Operated continuously across the full EXPO duration with 99.9% uptime
+
+### Hera — AI Patient Support for Fertility Clinics
+**Client**: Hera Health Tech (UK)
+**Sector**: Healthcare/FemTech
+**Duration**: 3-month MVP
+**What**: HIPAA-aware AI-powered patient support companion for fertility clinic patients. LLM-powered Q&A grounded in clinical content, appointment management, and care team messaging.
+**Technologies**: React Native, Python, Claude (Anthropic), AWS
+**Outcome**: MVP shipped on time; raised follow-on funding
+
+### Lidl Road Safety — CSR Gamification App
+**Client**: Lidl Romania
+**Sector**: Education/Retail CSR
+**Duration**: 6 months
+**What**: Interactive gamified road-safety education platform for primary school children, deployed as part of Lidl Romania's CSR programme in partnership with Politia Romana.
+**Outcome**: Reached thousands of children across Romania
+
+## Blog Topics (available at https://www.7code.tech/blog)
+
+- AI Discovery Mission: de-risking AI product builds
+- How to ship an AI MVP in 6 weeks
+- AI engineering pricing: fixed vs time-and-materials
+- AI agents in manufacturing and operations
+- AI-native automation with CRM, ERP, IoT
+- Senior engineers and AI leverage
+- AI engineering outstaffing models
+- Running engineering pods across continents
+- Lessons from London Tech Week (AI edition)
+- AWS Beanstalk to ECS migration
+- AWS ECS vs Beanstalk: practitioner perspective
+- Migrating users with Auth0 and Python
+- Adrenaline AI code debugger review
+- OSAI: revolutionising AI interactions
+- Why MVP-first is the right strategy
+- Reducing costs with nearshoring and outstaffing
+- Logistics tech tailored solutions
+- Fixed price vs time-and-materials contracts
+- Low-code/no-code vs custom development
+- CMS WordPress vs custom development
+- Changing your software service provider
+- How to switch AI engineering partners
+- Seamless software project handover
+- AI project handover checklist
+- 7code Discovery Mission methodology
+- Adrenaline AI debugger case study
+- How to hire nearshore AI engineers
+- Top nearshore AI development agencies in Europe
+
+## Service Detail Pages
+
+- AI-Native Product Engineering: https://www.7code.tech/service/ai-product-engineering
+- System Integrations: https://www.7code.tech/service/system-integrations
+- AI & Process Automation: https://www.7code.tech/service/ai-automation
+- LLM & Agent Development: https://www.7code.tech/service/llm-agent-development
+- Cloud & Agentic Infrastructure: https://www.7code.tech/service/cloud-agentic-infra
+- AI Engineering Outstaffing: https://www.7code.tech/service/ai-outstaffing
+
+## Expertise Detail Pages
+
+- Healthcare AI: https://www.7code.tech/expertise/healthcare
+- Finance AI: https://www.7code.tech/expertise/finance
+- Energy & Utilities: https://www.7code.tech/expertise/energy
+- Defence & Security: https://www.7code.tech/expertise/defence
+- HR Tech: https://www.7code.tech/expertise/hr
+- Operations: https://www.7code.tech/expertise/operations
+
+## Comparison Content
+
+- Agency vs Freelancer for AI development: https://www.7code.tech/compare/agency-vs-freelancer
+
+## Contact & Booking
+
+- Email: office@7code.ro
+- Book a discovery call: https://www.7code.tech/contact
+- Response time: within 1 business day
+- Location: Cluj-Napoca, Romania (EU timezone, overlaps UK and UAE)

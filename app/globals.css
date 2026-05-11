@@ -1,0 +1,10 @@
+/* Import all source CSS from the existing project */
+@import '../project/styles.css';
+@import '../project/page-styles.css';
+@import '../project/service-detail.css';
+@import '../project/expertise-detail.css';
+@import '../project/case-studies.css';
+@import '../project/case-studies-showcase.css';
+@import '../project/case-studies-more.css';
+@import '../project/case-study.css';
+@import '../project/blog.css';
