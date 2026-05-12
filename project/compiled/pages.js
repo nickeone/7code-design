@@ -5,7 +5,7 @@ const {
   useEffect: useEffectP
 } = React;
 const SITE_ROOT = "https://www.7code.tech";
-function useSeoMeta(title, desc, ldJson) {
+function useSeoMeta(title, desc) {
   useEffectP(() => {
     const prevTitle = document.title;
     document.title = title;
@@ -22,18 +22,9 @@ function useSeoMeta(title, desc, ldJson) {
     if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || window.location.pathname || "/"));
     if (twTitle) twTitle.setAttribute("content", title);
     if (twDesc && desc) twDesc.setAttribute("content", desc);
-    let s;
-    if (ldJson) {
-      s = document.createElement("script");
-      s.type = "application/ld+json";
-      s.setAttribute("data-page-ld", "1");
-      s.text = JSON.stringify(ldJson);
-      document.head.appendChild(s);
-    }
     return () => {
       document.title = prevTitle;
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-      if (s) s.remove();
     };
   }, []);
 }
@@ -64,26 +55,6 @@ function HomePage({
     q: "Can you augment our existing engineering team?",
     a: "Yes. Our outstaffing service embeds senior AI engineers directly into your team — joining your Slack, your standups, and your sprint cadence. They report into your engineering management, not ours. First matched profiles in 72 hours from a brief. Monthly rolling contract, scale up or down with 30 days' notice."
   }];
-  useEffectP(() => {
-    const faqLd = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": homeFaqs.map(f => ({
-        "@type": "Question",
-        "name": f.q,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": f.a
-        }
-      }))
-    };
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.setAttribute("data-page-ld", "home-faq");
-    s.text = JSON.stringify(faqLd);
-    document.head.appendChild(s);
-    return () => s.remove();
-  }, []);
   const Hero = heroVariant === "terminal" ? HeroTerminal : heroVariant === "bold" ? HeroBoldSplit : HeroPatternMockup;
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -208,39 +179,9 @@ function AboutPage() {
     const descEl = document.querySelector('meta[name="description"]');
     const prevDesc = descEl ? descEl.getAttribute("content") : null;
     if (descEl) descEl.setAttribute("content", "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.");
-    const ld = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "7Code",
-      "url": "https://www.7code.tech/",
-      "logo": "https://www.7code.tech/project/logo.svg",
-      "description": "AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end.",
-      "foundingLocation": {
-        "@type": "Place",
-        "name": "Cluj-Napoca, Romania"
-      },
-      "areaServed": ["Romania", "Europe", "United Kingdom", "United Arab Emirates", "Worldwide"],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Cluj-Napoca",
-        "addressCountry": "RO"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "office@7code.ro",
-        "contactType": "sales"
-      },
-      "sameAs": ["https://www.linkedin.com/company/7-code/", "https://github.com/7code", "https://clutch.co/profile/7code"]
-    };
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.id = "about-ld";
-    s.text = JSON.stringify(ld);
-    document.head.appendChild(s);
     return () => {
       document.title = prev;
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-      s.remove();
     };
   }, []);
   const stats = [{
@@ -558,23 +499,7 @@ function BlogPage() {
 // CONTACT
 // ──────────────────────────────────────────────────────────────────
 function ContactPage() {
-  useSeoMeta("Contact 7Code, Start a Project | Cluj-Napoca, Romania", "Get in touch with 7Code, an AI-native software engineering agency based in Cluj-Napoca, Romania. Tell us about your project and we'll respond within one business day.", {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact 7Code",
-    "url": SITE_ROOT + "/contact",
-    "description": "Contact 7Code to start a software engineering or AI project.",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "7Code",
-      "email": "office@7code.ro",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Cluj-Napoca",
-        "addressCountry": "RO"
-      }
-    }
-  });
+  useSeoMeta("Contact 7Code, Start a Project | Cluj-Napoca, Romania", "Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.");
   const [form, setForm] = useStateP({
     name: "",
     email: "",
@@ -910,20 +835,7 @@ function _CaseStudiesPage_DEPRECATED() {
 // AI MVP DEVELOPMENT LANDING PAGE
 // ──────────────────────────────────────────────────────────────────
 function AiMvpPage() {
-  useSeoMeta("AI MVP Development — Ship in 6 Weeks | 7code", "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.", {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "AI MVP Development",
-    "serviceType": "AI MVP Development",
-    "description": "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks.",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "7Code",
-      "url": SITE_ROOT
-    },
-    "areaServed": "Worldwide",
-    "url": SITE_ROOT + "/ai-mvp-development"
-  });
+  useSeoMeta("AI MVP Development — Ship in 6 Weeks | 7code", "AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.");
   const steps = [{
     step: "01",
     title: "Week 1–2: Discovery & eval design",
@@ -1085,20 +997,7 @@ function AiMvpPage() {
 // UK GEO LANDING PAGE
 // ──────────────────────────────────────────────────────────────────
 function UkGeoPage() {
-  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.", {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "7Code — AI Development Agency for UK Companies",
-    "description": "AI development agency serving UK companies from Cluj-Napoca, Romania.",
-    "url": SITE_ROOT + "/ai-development-agency-uk",
-    "areaServed": ["United Kingdom", "Europe"],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Cluj-Napoca",
-      "addressCountry": "RO"
-    },
-    "priceRange": "££"
-  });
+  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.");
   const reasons = [{
     icon: Icon.globe,
     title: "Timezone overlap",
@@ -1220,18 +1119,7 @@ function UkGeoPage() {
 // COMPARE: AGENCY VS FREELANCER
 // ──────────────────────────────────────────────────────────────────
 function CompareAgencyFreelancerPage() {
-  useSeoMeta("AI Agency vs AI Freelancer: Which Is Right for You? | 7code", "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.", {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "AI Agency vs AI Freelancer: Which Is Right for You?",
-    "description": "A structured comparison of AI agencies and freelancers across delivery, quality, accountability, and total cost.",
-    "url": SITE_ROOT + "/compare/agency-vs-freelancer",
-    "publisher": {
-      "@type": "Organization",
-      "name": "7Code",
-      "url": SITE_ROOT
-    }
-  });
+  useSeoMeta("AI Agency vs AI Freelancer: Which Is Right for You? | 7code", "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.");
   const rows = [{
     aspect: "Team depth",
     agency: "Multi-discipline team: engineering, design, AI, devops, QA",
@@ -1538,24 +1426,7 @@ function FAQPage() {
     q: "How do I start a project with 7code?",
     a: "Contact us at office@7code.ro or book a discovery call at 7code.tech/contact. We run a 60-minute discovery session to understand your needs and constraints, then propose an engagement model and scope. Once agreed, team allocation begins within 2â4 weeks. For AI projects, we typically recommend starting with an Operational Quick Scan before committing to a build â it de-risks the investment and clarifies ROI."
   }];
-  const ldJson = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": "FAQ â 7code AI-Native Software Engineering",
-    "url": SITE_ROOT + "/faq",
-    "mainEntity": faqs.map(({
-      q,
-      a
-    }) => ({
-      "@type": "Question",
-      "name": q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": a
-      }
-    }))
-  };
-  useSeoMeta("FAQ â AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.", ldJson);
+  useSeoMeta("FAQ â AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.");
   const [open, setOpen] = useStateP(null);
   const toggle = i => setOpen(open === i ? null : i);
   return /*#__PURE__*/React.createElement("div", {

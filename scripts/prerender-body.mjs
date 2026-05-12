@@ -32,6 +32,7 @@ const ROUTES = [
   "/about",
   "/process",
   "/contact",
+  "/faq",
   "/case-studies",
   "/expertise",
   "/blog",

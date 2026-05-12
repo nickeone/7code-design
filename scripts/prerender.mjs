@@ -41,7 +41,7 @@ const MAIN_PAGES = [
   {
     path: "/contact",
     title: "Contact 7Code — Start an AI Engineering Project",
-    description: "Get in touch with 7Code to discuss your AI engineering, product, or platform project. Based in Cluj-Napoca, Romania, working worldwide.",
+    description: "Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.",
   },
   {
     path: "/case-studies",
