@@ -1,0 +1,24 @@
+name: Weekly schema validation
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # every Monday at 06:00 UTC
+  workflow_dispatch:       # allow manual trigger
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Validate schema against live site
+        run: node scripts/validate-schema-live.mjs
+        env:
+          BASE_URL: https://www.7code.tech
