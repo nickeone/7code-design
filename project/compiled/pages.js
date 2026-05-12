@@ -46,23 +46,20 @@ function HomePage({
 }) {
   useSeoMeta("AI-Native Software Engineering Agency — 7code", "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team.");
   const homeFaqs = [{
-    q: "What does 7Code actually build?",
-    a: "We design, build, and operate AI-native software products end-to-end. That includes LLM-powered web and mobile apps, RAG copilots grounded in your data, multi-step agent pipelines, system integrations (ERP, CRM, SaaS), and the cloud infrastructure to run them reliably in production. We've shipped across healthcare, fintech, defence, energy, and enterprise SaaS since 2016."
+    q: "Where is 7code located?",
+    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe's leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code operates remotely across UK, EU, UAE, and US client time zones."
   }, {
-    q: "How long does it take to ship an AI product?",
-    a: "Six weeks to a first production deploy is our standard. An AI MVP with a scoped LLM capability, an evaluation harness, and production cloud infrastructure goes live in six weeks. Broader products — multi-agent systems, regulated-industry platforms, full-stack SaaS — typically run 12–24 weeks. We ship deployable software every two weeks, not at the end of a multi-month programme."
+    q: "What countries does 7code serve?",
+    a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
   }, {
-    q: "Where are you based and who do you work with?",
-    a: "We're based in Cluj-Napoca, Romania — one of Europe's strongest engineering hubs. Our clients are primarily UK, EU, and UAE companies: early-stage founders raising their first round, product teams at Series A/B scale-ups, and enterprise engineering leaders integrating AI into existing systems. We work in English, overlap comfortably with UK and EU timezones, and visit on-site when it matters."
+    q: "How quickly can 7code start a new project?",
+    a: "7code can typically begin a Discovery Sprint within one to two weeks of agreement signature. Full team mobilisation for a build engagement follows two to three weeks after Discovery. For urgent requirements, a fast-track onboarding process is available. Contact office@7code.ro to discuss your timeline — 7code will confirm availability within 48 hours."
   }, {
-    q: "How do you price AI engineering projects?",
-    a: "AI MVPs from £25k / €30k for a six-week fixed scope. Mid-scale products run £60k–£180k over 12–20 weeks. Ongoing sprint retainers and outstaffing are monthly rolling, typically £6k–£12k per engineer per month depending on seniority. We're transparent on pricing in the first call — no hidden change-order culture."
+    q: "What is 7code's Clutch rating?",
+    a: "7code holds a 4.9-star rating on Clutch.co based on 11 verified client reviews (as of 2025). Clutch reviews cover engagement quality, delivery timeliness, communication, and willingness to recommend. All reviews are verified by Clutch's research team through direct client interviews. View 7code's Clutch profile at clutch.co/profile/7code."
   }, {
-    q: "What makes you different from a traditional software agency?",
-    a: "Three things: (1) AI is not a feature we add at the end — we design LLMs, retrieval, and agents into the product architecture from week one. (2) We build evaluation harnesses before writing product code, so quality is measured, not assumed. (3) Every engineer is senior, minimum five years of production experience, and you have direct access to the people writing the code."
-  }, {
-    q: "Can you augment our existing engineering team?",
-    a: "Yes. Our outstaffing service embeds senior AI engineers directly into your team — joining your Slack, your standups, and your sprint cadence. They report into your engineering management, not ours. First matched profiles in 72 hours from a brief. Monthly rolling contract, scale up or down with 30 days' notice."
+    q: "What makes 7code different from other software agencies?",
+    a: "7code is senior-only and AI-first — no juniors, no generalist teams learning AI on the job. Every engagement is led by engineers who have shipped AI products in production. 7code's nearshore Romania base delivers Western-quality engineering at nearshore rates, with timezone alignment to UK and EU clients. Business-outcome focus means we measure success by your KPIs, not hours billed."
   }];
   useEffectP(() => {
     const faqLd = {
@@ -292,19 +289,22 @@ function AboutPage() {
   }];
   const team = [{
     name: "Nicu Mardari",
-    role: "CEO",
+    role: "CEO & Founder",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.jpg",
+    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
   }, {
-    name: "Alessandro Merola",
-    role: "CTO",
-    initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    name: "Igor Mardari",
+    role: "CTO & Co-Founder",
+    initial: "I",
+    photo: null,
+    bio: "Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in 2016, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model."
   }, {
     name: "Daniela Cazac",
     role: "CMO",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.jpg",
+    bio: null
   }];
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -333,7 +333,17 @@ function AboutPage() {
     style: {
       marginTop: 16
     }
-  }, "Cluj-Napoca gives us a structural advantage: a deep pool of senior engineering talent, a lower cost base than Western Europe, and a timezone that overlaps comfortably with the UK, EU, and even UAE teams. We're Romanian-built and globally delivered.")), /*#__PURE__*/React.createElement("div", {
+  }, "Cluj-Napoca gives us a structural advantage: a deep pool of senior engineering talent, a lower cost base than Western Europe, and a timezone that overlaps comfortably with the UK, EU, and even UAE teams. We're Romanian-built and globally delivered."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/resources/nearshore-romania-vs-offshore-asia",
+    style: {
+      color: "var(--cyan-600)",
+      fontWeight: 600
+    }
+  }, "Compare nearshore Romania vs offshore Asia \u2192"))), /*#__PURE__*/React.createElement("div", {
     className: "about-split-stats reveal"
   }, stats.map((s, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
@@ -427,7 +437,14 @@ function AboutPage() {
     className: "team-name"
   }, t.name), /*#__PURE__*/React.createElement("div", {
     className: "team-role"
-  }, t.role)))))), /*#__PURE__*/React.createElement(CTAStrip, null));
+  }, t.role), t.bio && /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 12,
+      fontSize: 14,
+      color: "var(--slate-500)",
+      lineHeight: 1.6
+    }
+  }, t.bio)))))), /*#__PURE__*/React.createElement(CTAStrip, null));
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -1478,65 +1495,41 @@ window.CompareAgencyFreelancerPage = CompareAgencyFreelancerPage;
 // ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 function FAQPage() {
   const faqs = [{
-    q: "What does 7code do?",
-    a: "7code is an AI-native nearshore software engineering partner based in Cluj-Napoca, Romania. We build custom software, LLM integrations, agentic workflows, and system integrations for startups and SMEs in the UK, EU, and UAE. Our team is senior-only (70%+ senior engineers) and we operate an AI-first delivery model â every project is assessed for automation and AI opportunities from day one."
+    q: "Where is 7code located?",
+    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe’s leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code operates remotely across UK, EU, UAE, and US client time zones."
   }, {
-    q: "What is nearshore software development?",
-    a: "Nearshore software development means working with an engineering team in a nearby country with timezone overlap, shared working culture, and EU legal alignment. For UK and EU companies, Romania is a leading nearshore destination â 1â2 hour timezone difference with the UK, GDPR-native environment, and a deep pool of senior engineering talent. 7code operates from Cluj-Napoca, Romania, serving clients across the UK, Europe, and UAE."
+    q: "What countries does 7code serve?",
+    a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
   }, {
-    q: "What AI services does 7code offer?",
-    a: "7code offers five core AI service lines: LLM integration (embedding GPT-4o, Claude, Gemini into existing products); agentic workflow automation (multi-step AI agents for complex business processes); RAG systems (connecting AI to proprietary data); AI copilots (custom AI assistants for internal or customer-facing use); and AI process automation (replacing manual workflows with intelligent pipelines). We also offer an Operational Quick Scan to identify and prioritise automation opportunities."
+    q: "How much does a project with 7code cost?",
+    a: "7code’s rate card runs from EUR 30–35/h for mid-level engineers to EUR 40–50/h for seniors and EUR 60–80/h for architects. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
   }, {
-    q: "How do you integrate LLMs into an existing product?",
-    a: "7code follows a five-step LLM integration process: (1) Use-case mapping â identifying whether your need is extraction, generation, classification, or agentic reasoning; (2) Context architecture â designing RAG pipelines, conversation history, or summarisation chains; (3) Model selection â matching capability to latency and cost; (4) Evaluation framework â golden datasets and regression tests before shipping; (5) Observability â cost-per-query tracking from sprint one. Most production LLM features take 6â10 weeks from spec to deployment."
+    q: "Does 7code sign NDAs?",
+    a: "Yes. 7code signs NDAs before any substantive technical discussion. Clients may use their own NDA paper or 7code’s standard mutual NDA. All engineers placed on client projects sign individual confidentiality agreements. IP developed under a 7code engagement belongs to the client by default, with explicit assignment clauses included in the master services agreement."
   }, {
-    q: "What is the difference between staff augmentation and a dedicated team?",
-    a: "In staff augmentation, 7code provides engineers who join your existing team under your management. You direct the work. A dedicated team means 7code manages delivery end-to-end â engineers, tech lead, and delivery governance included. Staff augmentation is best for teams with internal technical leadership that need extra capacity. A dedicated team is best when you don't have internal engineering leadership or want to move faster than hiring allows."
+    q: "What is 7code’s engagement process?",
+    a: "7code’s standard process has four phases: Discovery (requirements, architecture, team scoping — typically two weeks); Proposal (fixed-price or T&M scope with milestones); Build (two-week sprints with demos and sign-off); and Handover or Retainer (documentation, knowledge transfer, and optional ongoing support). Clients have a named account lead throughout the engagement."
   }, {
-    q: "How quickly can 7code allocate a team?",
-    a: "7code can allocate a team in 2â4 weeks from signed contract. This is significantly faster than hiring, which typically takes 3â6 months for senior roles. We maintain a bench of available engineers and pre-vet candidates continuously so we can move fast without compromising on quality."
+    q: "How quickly can 7code start a new project?",
+    a: "7code can typically begin a Discovery Sprint within one to two weeks of agreement signature. Full team mobilisation for a build engagement follows two to three weeks after Discovery. For urgent requirements, a fast-track onboarding process is available. Contact office@7code.ro to discuss your timeline — 7code will confirm availability within 48 hours."
   }, {
-    q: "What are 7code's engineering rates?",
-    a: "7code's rates: Mid-level engineers â¬30â35/hour; Senior engineers â¬40â50/hour; Architect-level engineers â¬60â80/hour. These are 40â60% below London market rates with equivalent or higher seniority. All rates are transparent with no hidden markups."
+    q: "What makes 7code different from other software agencies?",
+    a: "7code is senior-only and AI-first — no juniors, no generalist teams learning AI on the job. Every engagement is led by engineers who have shipped AI products in production. 7code’s nearshore Romania base delivers Western-quality engineering at nearshore rates, with timezone alignment to UK and EU clients. Business-outcome focus means we measure success by your KPIs, not hours billed."
   }, {
-    q: "Is 7code GDPR compliant?",
-    a: "Yes. 7code operates under Romanian and EU law, meaning GDPR compliance is built-in â not an add-on. Our engineers understand EU data processing requirements and can correctly configure data processing agreements with model providers (OpenAI, Anthropic, Google). For UK clients post-Brexit, we structure arrangements to comply with UK GDPR equivalents. This is a key nearshore advantage: EU-jurisdiction teams are GDPR-native by default."
+    q: "Does 7code work with startups?",
+    a: "Yes. 7code works with funded startups from Seed stage upward, as well as scale-ups and enterprise clients. For early-stage companies, 7code offers a Startup Track with a phased engagement model — beginning with a focused Discovery and MVP build before scaling the team. Equity arrangements in lieu of partial fees can be discussed for the right opportunities."
   }, {
-    q: "What industries does 7code work in?",
-    a: "7code has delivered production software across: FinTech (lending platforms, treasury dashboards, payment integrations), HealthTech (EHR systems, AI-powered onboarding, clinical decision tools), Logistics (workflow automation, fleet management), Operations (ERP/CRM integrations, process automation), Defence & Security (situational awareness platforms), Energy & Utilities (IoT monitoring, predictive analytics), and SaaS products across multiple verticals."
+    q: "What is 7code’s Clutch rating?",
+    a: "7code holds a 4.9-star rating on Clutch.co based on 11 verified client reviews (as of 2025). Clutch reviews cover engagement quality, delivery timeliness, communication, and willingness to recommend. All reviews are verified by Clutch’s research team through direct client interviews. View 7code’s Clutch profile at clutch.co/profile/7code."
   }, {
-    q: "What is an agentic workflow?",
-    a: "An agentic workflow is an AI system that uses multi-step reasoning, tool use, and decision loops to complete complex tasks autonomously. Unlike a simple LLM call, an agent can search the web, read files, call APIs, write code, and make sequential decisions. In production, 7code implements agentic workflows using an orchestrator-worker architecture: a reasoning model coordinates specialised worker agents. Common use cases: document processing pipelines, automated onboarding, compliance checking, multi-source data reconciliation."
+    q: "Does 7code offer fixed-price or time-and-materials contracts?",
+    a: "7code offers both. Fixed-price contracts are available for well-defined scopes — typically used for Discovery Sprints, MVP builds, and integration projects. Time-and-materials is the default for ongoing product development and outstaffing engagements where requirements evolve. Hybrid models are also available: fixed-price phases within a broader T&M programme."
   }, {
-    q: "What is RAG and when should I use it?",
-    a: "RAG (Retrieval-Augmented Generation) retrieves relevant documents from a knowledge base and injects them into the LLM's context at query time. Use RAG when your AI feature needs to answer questions from your proprietary data â support documentation, product manuals, legal contracts, internal wikis. Without RAG, the model answers from its training data only and will hallucinate company-specific information. 7code has built production RAG systems for document Q&A, compliance tools, and customer support copilots."
+    q: "What industries does 7code have experience in?",
+    a: "7code has delivered projects across healthcare, financial services, energy and utilities, defence, HR technology, and operations/logistics. Each industry brings specific compliance, data sensitivity, and integration requirements that 7code’s senior team is familiar with — from GDPR and HIPAA-adjacent data handling to sector-specific system integrations and regulatory reporting requirements."
   }, {
     q: "How does 7code ensure quality?",
-    a: "Quality is enforced through: senior-only hiring (70% of engineers are senior-level); multi-stage technical screening including case studies; delivery governance with weekly sprint demos and monthly steering committees; and AI-specific quality gates â golden datasets, regression tests on every model version change, and human-in-the-loop checkpoints for high-stakes outputs. We track velocity, predictability, bug escape rate, and team utilisation as standard KPIs."
-  }, {
-    q: "What engagement models does 7code offer?",
-    a: "Three primary models: Staff Augmentation (client-managed, 7code provides engineers); Dedicated Teams (7code-managed delivery with full governance); End-to-End Product Development (7code owns the full lifecycle). We also offer four productized packages: Operational Quick Scan (2â3 weeks), AI-Ready Ops Blueprint (4â6 weeks), Automation Pilot (6â10 weeks), and Department Automation Sprint (10â16 weeks)."
-  }, {
-    q: "Why choose a Romanian engineering team?",
-    a: "Romania is a tier-1 European engineering hub. Cluj-Napoca hosts R&D centres for major EU tech companies and produces thousands of IT graduates annually. Key advantages: 1â2 hour timezone overlap with UK; 40â60% below London rates (15â25% below Poland); EU legal framework (GDPR-native); strong technical education and high English proficiency. 7code adds a senior-only hiring model on top of this baseline."
-  }, {
-    q: "How does 7code handle AI projects that change scope mid-build?",
-    a: "AI projects are inherently non-linear â architectures that look correct in the spec often need 2â3 pivots before they're production-ready. 7code manages this through transparent communication on architecture decisions as they emerge; time-and-materials contracts for AI work; weekly steering committees where scope changes are assessed and repriced; and a culture of strategic opinions, not just execution."
-  }, {
-    q: "Does 7code work with startups or only large companies?",
-    a: "7code's sweet spot is Series AâB startups and SMEs with â¬5Mââ¬50M revenue that need to move fast and are serious about AI. We also work with larger enterprises â we've built platforms for a Monaco-based yacht engineering firm and a UAE fleet management company. We don't take pre-revenue projects or pure MVPs under â¬25k â our senior-only model has a minimum engagement threshold."
-  }, {
-    q: "What is the Operational Quick Scan?",
-    a: "The Operational Quick Scan is 7code's entry-point productized service. Over 2â3 weeks, we audit your processes, identify manual bottlenecks, map automation opportunities, and produce an ROI estimate per initiative. Output: a prioritised automation roadmap with effort, timeline, and expected return for each item. Designed for companies evaluating AI that don't know where to start. Cost: typically â¬5,000ââ¬10,000 depending on scope."
-  }, {
-    q: "How does 7code handle AI observability?",
-    a: "7code instruments every agent action: inputs, tool calls, intermediate reasoning, outputs, latency, and cost per query. We use structured logging and build replay systems so failures can be debugged against real inputs. For LLM observability tooling we work with Langfuse, Helicone, and Braintrust. Cost-per-query is tracked as a first-class metric from sprint one."
-  }, {
-    q: "What makes 7code different from a standard software agency?",
-    a: "Three things: (1) AI-first by default â every project is assessed for AI opportunities from discovery, not as an afterthought; (2) Senior-only engineers â no juniors, no padding headcount. Every engineer can make architecture decisions; (3) Business outcome focus â we track ROI, not just velocity. Time saved, error rate reduced, revenue impact. We also provide business process consulting alongside technical delivery."
-  }, {
-    q: "How do I start a project with 7code?",
-    a: "Contact us at office@7code.ro or book a discovery call at 7code.tech/contact. We run a 60-minute discovery session to understand your needs and constraints, then propose an engagement model and scope. Once agreed, team allocation begins within 2â4 weeks. For AI projects, we typically recommend starting with an Operational Quick Scan before committing to a build â it de-risks the investment and clarifies ROI."
+    a: "Quality is enforced through a senior-only hiring policy, mandatory peer code review on all pull requests, AI-specific evaluation frameworks for model outputs, automated test suites (unit, integration, and end-to-end), and a pre-launch quality gate sign-off process. Each project has a named QA engineer. 7code does not ship without a passing test suite and architecture review sign-off."
   }];
   const ldJson = {
     "@context": "https://schema.org",
