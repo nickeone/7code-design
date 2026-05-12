@@ -199,18 +199,21 @@ function caseStudySchema(c) {
 }
 
 function blogPostSchema(p) {
+  const url = SITE + "/blog/" + p.slug;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "BlogPosting",
-        "@id": SITE + "/blog/" + p.slug + "#post",
+        "@type": "Article",
+        "@id": url + "#article",
         "headline": p.title,
         "description": p.description,
-        "url": SITE + "/blog/" + p.slug,
-        "author": ORG_REF,
+        "image": p.ogImage ? SITE + p.ogImage : DEFAULT_OG,
+        "url": url,
+        "mainEntityOfPage": url,
+        "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
         "publisher": ORG_REF,
-        ...(p.datePublished ? { "datePublished": p.datePublished } : {}),
+        ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": p.datePublished } : {}),
       },
     ],
   };
