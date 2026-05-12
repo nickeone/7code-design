@@ -295,6 +295,22 @@ function setCanonical(html, url) {
   );
 }
 
+function setHreflang(html, url) {
+  return html
+    .replace(
+      /(<link rel="alternate" hreflang="en" href=")[^"]*(")/,
+      `$1${escapeAttr(url)}$2`,
+    )
+    .replace(
+      /(<link rel="alternate" hreflang="en-gb" href=")[^"]*(")/,
+      `$1${escapeAttr(url)}$2`,
+    )
+    .replace(
+      /(<link rel="alternate" hreflang="x-default" href=")[^"]*(")/,
+      `$1${escapeAttr(url)}$2`,
+    );
+}
+
 function replaceJsonLd(html, schemaObj) {
   return html.replace(
     /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
@@ -316,6 +332,7 @@ function renderPage({ pathname, title, description, ogImage, schema }) {
   html = setTitle(html, title);
   html = setMeta(html, "name", "description", description);
   html = setCanonical(html, url);
+  html = setHreflang(html, url);
   html = setMeta(html, "property", "og:url", url);
   html = setMeta(html, "property", "og:title", title);
   html = setMeta(html, "property", "og:description", description);
