@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run prebuild && node scripts/validate-schema.mjs",
+  "buildCommand": "npm run prebuild && node scripts/validate-schema.mjs && node scripts/check-duplicate-schema.mjs",
   "outputDirectory": ".",
   "framework": null,
   "cleanUrls": true,
