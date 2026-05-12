@@ -43,7 +43,7 @@ function HomePage({ heroVariant }) {
     "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team."
   );
   const homeFaqs = [
-    { q: "What does 7Code actually build?", a: "We design, build, and operate AI-native software products end-to-end. That includes LLM-powered web and mobile apps, RAG copilots grounded in your data, multi-step agent pipelines, system integrations (ERP, CRM, SaaS), and the cloud infrastructure to run them reliably in production. We've shipped across healthcare, fintech, defence, energy, and enterprise SaaS since 2019." },
+    { q: "What does 7Code actually build?", a: "We design, build, and operate AI-native software products end-to-end. That includes LLM-powered web and mobile apps, RAG copilots grounded in your data, multi-step agent pipelines, system integrations (ERP, CRM, SaaS), and the cloud infrastructure to run them reliably in production. We've shipped across healthcare, fintech, defence, energy, and enterprise SaaS since 2016." },
     { q: "How long does it take to ship an AI product?", a: "Six weeks to a first production deploy is our standard. An AI MVP with a scoped LLM capability, an evaluation harness, and production cloud infrastructure goes live in six weeks. Broader products — multi-agent systems, regulated-industry platforms, full-stack SaaS — typically run 12–24 weeks. We ship deployable software every two weeks, not at the end of a multi-month programme." },
     { q: "Where are you based and who do you work with?", a: "We're based in Cluj-Napoca, Romania — one of Europe's strongest engineering hubs. Our clients are primarily UK, EU, and UAE companies: early-stage founders raising their first round, product teams at Series A/B scale-ups, and enterprise engineering leaders integrating AI into existing systems. We work in English, overlap comfortably with UK and EU timezones, and visit on-site when it matters." },
     { q: "How do you price AI engineering projects?", a: "AI MVPs from £25k / €30k for a six-week fixed scope. Mid-scale products run £60k–£180k over 12–20 weeks. Ongoing sprint retainers and outstaffing are monthly rolling, typically £6k–£12k per engineer per month depending on seniority. We're transparent on pricing in the first call — no hidden change-order culture." },
@@ -207,7 +207,7 @@ function AboutPage() {
   }, []);
 
   const stats = [
-    { v: "2019", l: "Founded in Cluj-Napoca" },
+    { v: "2016", l: "Founded in Cluj-Napoca" },
     { v: "20+", l: "Products shipped" },
     { v: "12", l: "Industries served" },
     { v: "4", l: "Countries with active clients" },
@@ -270,7 +270,7 @@ function AboutPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
           <h1>The AI engineering partner that actually ships</h1>
-          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2019, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
+          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
         </div>
       </section>
 
