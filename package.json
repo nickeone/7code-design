@@ -12,6 +12,7 @@
     "prerender": "node scripts/prerender.mjs",
     "prerender:body": "node scripts/prerender-body.mjs",
     "build": "node scripts/prerender.mjs && node scripts/prerender-body.mjs",
+    "postdeploy": "node scripts/ping-sitemap.mjs",
     "prebuild": "node scripts/check-encoding.mjs && node scripts/check-hreflang.mjs"
   },
   "repository": {
