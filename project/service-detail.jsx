@@ -378,39 +378,9 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
     const prevDesc = descEl ? descEl.getAttribute("content") : null;
     document.title = svc.seoTitle || ("7Code, " + svc.title);
     if (descEl && svc.metaDescription) descEl.setAttribute("content", svc.metaDescription);
-
-    const ld = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Service",
-          "name": svc.title,
-          "serviceType": svc.title,
-          "description": svc.metaDescription || svc.tagline,
-          "provider": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
-          "areaServed": "Worldwide",
-          "url": "https://www.7code.tech/service/" + svc.slug,
-        },
-        ...(svc.faqs && svc.faqs.length ? [{
-          "@type": "FAQPage",
-          "mainEntity": svc.faqs.map(f => ({
-            "@type": "Question",
-            "name": f.q,
-            "acceptedAnswer": { "@type": "Answer", "text": f.a },
-          })),
-        }] : []),
-      ],
-    };
-    const scriptEl = document.createElement("script");
-    scriptEl.type = "application/ld+json";
-    scriptEl.id = "svc-ld";
-    scriptEl.text = JSON.stringify(ld);
-    document.head.appendChild(scriptEl);
-
     return () => {
       document.title = prevTitle;
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-      scriptEl.remove();
     };
   }, [slug]);
 

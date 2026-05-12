@@ -41,7 +41,7 @@ const MAIN_PAGES = [
   {
     path: "/contact",
     title: "Contact 7Code — Start an AI Engineering Project",
-    description: "Get in touch with 7Code to discuss your AI engineering, product, or platform project. Based in Cluj-Napoca, Romania, working worldwide.",
+    description: "Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.",
   },
   {
     path: "/case-studies",
@@ -72,6 +72,11 @@ const MAIN_PAGES = [
     path: "/compare/agency-vs-freelancer",
     title: "AI Agency vs AI Freelancer: Which Is Right for You? | 7code",
     description: "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
+  },
+  {
+    path: "/services",
+    title: "Services — AI Engineering, Integrations & Automation | 7Code",
+    description: "7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, product strategy, and LLM & agent development.",
   },
 ];
 
@@ -154,55 +159,86 @@ const BLOG_POSTS = [
 
 const ORG_REF = { "@id": SITE + "/#organization" };
 
+// items: [{name, url?}] — url is optional on the last item but included for completeness
+function breadcrumbEntity(pageUrl, items) {
+  return {
+    "@type": "BreadcrumbList",
+    "@id": pageUrl + "#breadcrumb",
+    "itemListElement": items.map((item, i) => {
+      const li = { "@type": "ListItem", "position": i + 1, "name": item.name };
+      if (item.url) li.item = item.url;
+      return li;
+    }),
+  };
+}
+
 function serviceSchema(s) {
+  const url = SITE + "/service/" + s.slug;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Service",
-        "@id": SITE + "/service/" + s.slug + "#service",
+        "@id": url + "#service",
         "name": s.title,
         "serviceType": s.title,
         "description": s.description,
         "provider": ORG_REF,
         "areaServed": "Worldwide",
-        "url": SITE + "/service/" + s.slug,
+        "url": url,
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: "Services", url: SITE + "/services" },
+        { name: s.title, url: url },
+      ]),
     ],
   };
 }
 
 function expertiseSchema(e) {
+  const url = SITE + "/expertise/" + e.slug;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Service",
-        "@id": SITE + "/expertise/" + e.slug + "#service",
+        "@id": url + "#service",
         "name": "7Code — " + e.title,
         "serviceType": e.title,
         "description": e.description,
         "provider": ORG_REF,
         "areaServed": "Worldwide",
-        "url": SITE + "/expertise/" + e.slug,
+        "url": url,
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: "Expertise", url: SITE + "/expertise" },
+        { name: e.title, url: url },
+      ]),
     ],
   };
 }
 
 function caseStudySchema(c) {
+  const url = SITE + "/case-study/" + c.slug;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "CreativeWork",
-        "@id": SITE + "/case-study/" + c.slug + "#case",
+        "@id": url + "#case",
         "name": c.title,
         "headline": c.title,
         "description": c.description,
         "creator": ORG_REF,
-        "url": SITE + "/case-study/" + c.slug,
+        "url": url,
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: "Case Studies", url: SITE + "/case-studies" },
+        { name: c.title, url: url },
+      ]),
     ],
   };
 }
@@ -224,6 +260,11 @@ function blogPostSchema(p) {
         "publisher": ORG_REF,
         ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": p.datePublished } : {}),
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: "Blog", url: SITE + "/blog" },
+        { name: p.title, url: url },
+      ]),
     ],
   };
 }
@@ -250,35 +291,40 @@ function resourceSchema(r) {
   };
 }
 
-function listingSchema(p, pageType, items) {
+// breadcrumbItems: [{name, url?}] — pass null to omit breadcrumb (home page only)
+function listingSchema(p, pageType, items, breadcrumbItems) {
+  const url = SITE + p.path;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": pageType,
-        "@id": SITE + p.path + "#page",
+        "@id": url + "#page",
         "name": p.title,
         "description": p.description,
-        "url": SITE + p.path,
+        "url": url,
         "isPartOf": { "@id": SITE + "/#website" },
         ...(items ? { "hasPart": items.map(i => ({ "@id": i })) } : {}),
       },
+      ...(breadcrumbItems ? [breadcrumbEntity(url, breadcrumbItems)] : []),
     ],
   };
 }
 
-function genericPageSchema(p, pageType) {
+function genericPageSchema(p, pageType, breadcrumbItems) {
+  const url = SITE + p.path;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": pageType,
-        "@id": SITE + p.path + "#page",
+        "@id": url + "#page",
         "name": p.title,
         "description": p.description,
-        "url": SITE + p.path,
+        "url": url,
         "isPartOf": { "@id": SITE + "/#website" },
       },
+      ...(breadcrumbItems ? [breadcrumbEntity(url, breadcrumbItems)] : []),
     ],
   };
 }
@@ -401,15 +447,49 @@ const PAGE_TYPES = {
   "/ai-mvp-development": "WebPage",
   "/ai-development-agency-uk": "WebPage",
   "/compare/agency-vs-freelancer": "WebPage",
+  "/services": "CollectionPage",
 };
+
+// Short display names used in breadcrumb trails for main pages
+const PAGE_CRUMB_NAMES = {
+  "/about": "About 7Code",
+  "/process": "Our Process",
+  "/contact": "Contact",
+  "/case-studies": "Case Studies",
+  "/expertise": "Expertise",
+  "/blog": "Blog",
+  "/ai-mvp-development": "AI MVP Development",
+  "/ai-development-agency-uk": "AI Development Agency UK",
+  "/compare/agency-vs-freelancer": "Agency vs Freelancer",
+  "/services": "Services",
+};
+
+// Intermediate crumb for nested paths (e.g. /compare/* gets a "Compare" parent)
+const PAGE_CRUMB_PARENT = {
+  "/compare/agency-vs-freelancer": { name: "Compare" },
+};
+
+// Service URLs used for /services CollectionPage hasPart
+const SERVICE_URLS = SERVICES.map(s => SITE + "/service/" + s.slug);
 
 console.log("Main pages:");
 for (const p of MAIN_PAGES) {
+  const url = SITE + p.path;
+  const crumbName = PAGE_CRUMB_NAMES[p.path] || p.title;
+  const parent = PAGE_CRUMB_PARENT[p.path];
+  const breadcrumbItems = [
+    { name: "Home", url: SITE + "/" },
+    ...(parent ? [parent] : []),
+    { name: crumbName, url: url },
+  ];
+  const isServiceListing = p.path === "/services";
   const isAbout = p.path === "/about";
-  let pageSchema;
-  if (isAbout) {
-    pageSchema = genericPageSchema(p, "AboutPage");
-    pageSchema["@graph"].push(
+  let schema;
+  if (isServiceListing) {
+    schema = listingSchema(p, "CollectionPage", SERVICE_URLS, breadcrumbItems);
+  } else if (isAbout) {
+    schema = genericPageSchema(p, "AboutPage", breadcrumbItems);
+    schema["@graph"].push(
       {
         "@type": "Person",
         "@id": SITE + "/#nicu-mardari",
@@ -426,14 +506,14 @@ for (const p of MAIN_PAGES) {
       },
     );
   } else {
-    pageSchema = genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage");
+    schema = genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems);
   }
   const html = renderPage({
     pathname: p.path,
     title: p.title,
     description: p.description,
     ogImage: DEFAULT_OG,
-    schema: pageSchema,
+    schema,
   });
   const relPath = p.path.startsWith("/") ? p.path.slice(1) : p.path;
   writeFile(relPath + ".html", html);

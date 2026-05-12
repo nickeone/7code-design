@@ -34,41 +34,6 @@ function setCanonical(href) {
   }
   el.setAttribute("href", href);
 }
-function setArticleJsonLd(post) {
-  if (typeof document === "undefined") return;
-  const existing = document.head.querySelector('script[data-blog-jsonld="1"]');
-  if (existing) existing.remove();
-  if (!post) return;
-  const url = SITE_ORIGIN_BL + "/blog/" + post.slug;
-  const data = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.subtitle,
-    "datePublished": post.date,
-    "url": url,
-    "articleSection": post.cat,
-    "author": {
-      "@type": "Person",
-      "name": post.author.name,
-      "jobTitle": post.author.role
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "7Code",
-      "url": SITE_ORIGIN_BL
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url
-    }
-  };
-  const script = document.createElement("script");
-  script.type = "application/ld+json";
-  script.setAttribute("data-blog-jsonld", "1");
-  script.text = JSON.stringify(data);
-  document.head.appendChild(script);
-}
 
 // ─────────────────────────────────────────────────────────────────
 // Blog post data
@@ -4462,7 +4427,6 @@ function BlogListPage() {
     setMeta("twitter:title", t, "name");
     setMeta("twitter:description", d, "name");
     setCanonical(SITE_ORIGIN_BL + "/blog");
-    setArticleJsonLd(null);
   }, []);
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -4728,10 +4692,7 @@ function BlogPostPage({
     setMeta("twitter:title", t, "name");
     setMeta("twitter:description", d, "name");
     setCanonical(url);
-    setArticleJsonLd(post);
-    return () => {
-      setArticleJsonLd(null);
-    };
+    return () => {};
   }, [post.slug]);
   return /*#__PURE__*/React.createElement("div", {
     className: "page"

@@ -664,41 +664,9 @@ function ExpertiseDetailPage({
     const prevDesc = descEl ? descEl.getAttribute("content") : null;
     document.title = "7Code, " + e.title + " software engineering";
     if (descEl && e.metaDescription) descEl.setAttribute("content", e.metaDescription);
-    const ld = {
-      "@context": "https://schema.org",
-      "@graph": [{
-        "@type": "Service",
-        "name": e.title + " software engineering",
-        "serviceType": e.title,
-        "description": e.metaDescription || e.tagline,
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "7Code",
-          "url": "https://www.7code.tech/"
-        },
-        "areaServed": "Worldwide",
-        "url": "https://www.7code.tech/expertise/" + e.slug
-      }, ...(e.faqs && e.faqs.length ? [{
-        "@type": "FAQPage",
-        "mainEntity": e.faqs.map(f => ({
-          "@type": "Question",
-          "name": f.q,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": f.a
-          }
-        }))
-      }] : [])]
-    };
-    const scriptEl = document.createElement("script");
-    scriptEl.type = "application/ld+json";
-    scriptEl.id = "exp-ld";
-    scriptEl.text = JSON.stringify(ld);
-    document.head.appendChild(scriptEl);
     return () => {
       document.title = prevTitle;
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-      scriptEl.remove();
     };
   }, [slug]);
   return /*#__PURE__*/React.createElement("div", {

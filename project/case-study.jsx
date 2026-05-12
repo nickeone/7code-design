@@ -1042,42 +1042,9 @@ function CaseStudyPage({ slug = "wholesum", variant = "longread" }) {
     const prevDesc = descEl ? descEl.getAttribute("content") : null;
     document.title = "7Code, " + c.client + ": " + c.title;
     if (descEl && c.metaDescription) descEl.setAttribute("content", c.metaDescription);
-
-    const url = "https://www.7code.tech/case-study/" + c.slug;
-    const ld = {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Article",
-          "headline": c.title,
-          "description": c.metaDescription || c.tagline,
-          "articleSection": "Case Study",
-          "about": { "@type": "Organization", "name": c.client },
-          "author": { "@type": "ProfessionalService", "name": "7Code", "url": "https://www.7code.tech/" },
-          "publisher": { "@type": "ProfessionalService", "name": "7Code" },
-          "datePublished": String(c.year),
-          "url": url,
-          "keywords": (c.industry || "") + ", " + (c.region || ""),
-        },
-        ...(c.testimonial && c.testimonial.quote ? [{
-          "@type": "Review",
-          "reviewBody": c.testimonial.quote,
-          "author": { "@type": "Person", "name": c.testimonial.name, "jobTitle": c.testimonial.role },
-          "itemReviewed": { "@type": "ProfessionalService", "name": "7Code" },
-          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-        }] : []),
-      ],
-    };
-    const scriptEl = document.createElement("script");
-    scriptEl.type = "application/ld+json";
-    scriptEl.id = "csd-ld";
-    scriptEl.text = JSON.stringify(ld);
-    document.head.appendChild(scriptEl);
-
     return () => {
       document.title = prevTitle;
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-      scriptEl.remove();
     };
   }, [slug]);
 
