@@ -257,10 +257,22 @@ const TEMPLATE = fs.readFileSync(path.join(ROOT, "index.html"), "utf-8");
 
 // Strip the path→hash bootstrap from a template — pre-rendered files don't
 // need it (we want the URL to stay clean as /service/X, not /#/service/X).
+// The bootstrap is the IIFE that calls window.history.replaceState to
+// convert a pathname into a hash. Match it by the unique replaceState call.
 function stripBootstrap(html) {
   return html.replace(
-    /<script>\n\/\/ Path → hash bootstrap[\s\S]*?<\/script>\n\n/,
+    /<script>\s*\(function\s*\(\s*\)\s*\{[\s\S]*?replaceState[\s\S]*?<\/script>/,
     "",
+  );
+}
+
+// Clear the pre-rendered homepage content from <div id="root"> so that
+// sub-pages don't briefly flash homepage HTML before React hydrates.
+// Leaves a lightweight loading shell that matches the initial paint.
+function clearRoot(html) {
+  return html.replace(
+    /<div id="root">[\s\S]*?<\/div>(?=\s*<script)/,
+    '<div id="root"></div>',
   );
 }
 
@@ -300,6 +312,7 @@ function escapeText(s) {
 function renderPage({ pathname, title, description, ogImage, schema }) {
   const url = SITE + pathname;
   let html = stripBootstrap(TEMPLATE);
+  html = clearRoot(html);
   html = setTitle(html, title);
   html = setMeta(html, "name", "description", description);
   html = setCanonical(html, url);
