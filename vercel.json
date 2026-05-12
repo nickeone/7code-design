@@ -42,7 +42,22 @@
     }
   ],
   "redirects": [
-    { "source": "/service/product-strategy", "destination": "/service/ai-product-engineering", "permanent": true }
+    { "source": "/service/product-strategy", "destination": "/service/ai-product-engineering", "permanent": true },
+    { "source": "/blog-7code/", "destination": "/blog", "permanent": true },
+    { "source": "/blog-7code", "destination": "/blog", "permanent": true },
+    { "source": "/2025/09/04/7codes-discovery-mission-pioneering-successful-software-development/", "destination": "/blog/7code-discovery-mission", "permanent": true },
+    { "source": "/2025/09/04/7codes-discovery-mission-pioneering-successful-software-development", "destination": "/blog/7code-discovery-mission", "permanent": true },
+    { "source": "/2025/07/03/from-cluj-to-london-what-we-brought-home-from-tech-week/", "destination": "/blog/lessons-from-london-tech-week-ai", "permanent": true },
+    { "source": "/2025/07/03/from-cluj-to-london-what-we-brought-home-from-tech-week", "destination": "/blog/lessons-from-london-tech-week-ai", "permanent": true },
+    { "source": "/2025/10/16/employees-level-of-experience-and-impact-on-projects/", "destination": "/blog/senior-engineers-ai-leverage", "permanent": true },
+    { "source": "/2025/10/16/employees-level-of-experience-and-impact-on-projects", "destination": "/blog/senior-engineers-ai-leverage", "permanent": true },
+    { "source": "/pf/case-study-revote/", "destination": "/case-study/revote", "permanent": true },
+    { "source": "/pf/case-study-revote", "destination": "/case-study/revote", "permanent": true },
+    { "source": "/home/", "destination": "/", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy/", "destination": "/privacy-policy", "permanent": true },
+    { "source": "/cookie-policy/", "destination": "/cookie-policy", "permanent": true },
+    { "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
