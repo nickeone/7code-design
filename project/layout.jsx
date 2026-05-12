@@ -22,7 +22,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];

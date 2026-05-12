@@ -112,6 +112,15 @@ const CASES = [
   {"slug":"numerize","title":"Numerize: EDM platform with OCR and digital signatures","description":"Responsive electronic document management (GED / EDM) and e-signature platform for Numerize (France), built by 7Code on React + Material-UI + Laravel + AWS. OCR-trained invoice pipeline, YouSign multi-signatories e-signatures, Stripe + 3D Secure billing across 6,000+ enterprise accounts.","ogImage":"/project/uploads/numerize-hero.jpg"},
 ];
 
+const RESOURCES = [
+  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12" },
+  { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
+  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12" },
+  { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12" },
+  { slug: "nearshore-romania-vs-offshore-asia", title: "Nearshore Romania vs Offshore Asia: A Practical Guide for European Businesses", description: "A data-driven comparison of nearshore Romania and offshore India for European tech buyers — time zones, cost, quality, GDPR, and total cost of ownership.", datePublished: "2026-05-12" },
+  { slug: "build-ai-in-house-vs-partner", title: "Build AI In-House vs With a Partner: The 2026 Decision Framework", description: "A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.", datePublished: "2026-05-12" },
+];
+
 // Blog posts that appear in sitemap.xml
 const BLOG_POSTS = [
   {"slug":"ai-discovery-mission-de-risk-ai-products","title":"The AI Discovery Mission: how we de-risk AI products in four weeks","description":"A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan, vision, evals, architecture, and a defensible budget.","datePublished":"2026-04-28"},
@@ -256,6 +265,28 @@ function blogPostSchema(p) {
         { name: "Blog", url: SITE + "/blog" },
         { name: p.title, url: url },
       ]),
+    ],
+  };
+}
+
+function resourceSchema(r) {
+  const url = SITE + "/resources/" + r.slug;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": url + "#article",
+        "headline": r.title,
+        "description": r.description,
+        "image": DEFAULT_OG,
+        "url": url,
+        "mainEntityOfPage": url,
+        "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
+        "publisher": ORG_REF,
+        "datePublished": r.datePublished,
+        "dateModified": r.datePublished,
+      },
     ],
   };
 }
@@ -452,9 +483,31 @@ for (const p of MAIN_PAGES) {
     { name: crumbName, url: url },
   ];
   const isServiceListing = p.path === "/services";
-  const schema = isServiceListing
-    ? listingSchema(p, "CollectionPage", SERVICE_URLS, breadcrumbItems)
-    : genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems);
+  const isAbout = p.path === "/about";
+  let schema;
+  if (isServiceListing) {
+    schema = listingSchema(p, "CollectionPage", SERVICE_URLS, breadcrumbItems);
+  } else if (isAbout) {
+    schema = genericPageSchema(p, "AboutPage", breadcrumbItems);
+    schema["@graph"].push(
+      {
+        "@type": "Person",
+        "@id": SITE + "/#nicu-mardari",
+        "name": "Nicu Mardari",
+        "jobTitle": "CEO & Founder",
+        "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
+      },
+      {
+        "@type": "Person",
+        "@id": SITE + "/#igor-mardari",
+        "name": "Igor Mardari",
+        "jobTitle": "CTO & Co-Founder",
+        "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
+      },
+    );
+  } else {
+    schema = genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems);
+  }
   const html = renderPage({
     pathname: p.path,
     title: p.title,
@@ -514,5 +567,17 @@ for (const p of BLOG_POSTS) {
   writeFile("blog/" + p.slug + ".html", html);
 }
 
-const total = MAIN_PAGES.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length;
+console.log("\nResources:");
+for (const r of RESOURCES) {
+  const html = renderPage({
+    pathname: "/resources/" + r.slug,
+    title: r.title + " | 7code",
+    description: r.description,
+    ogImage: DEFAULT_OG,
+    schema: resourceSchema(r),
+  });
+  writeFile("resources/" + r.slug + ".html", html);
+}
+
+const total = MAIN_PAGES.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length + RESOURCES.length;
 console.log(`\nDone. ${total} pages pre-rendered.`);
