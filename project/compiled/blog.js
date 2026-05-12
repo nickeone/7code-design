@@ -49,7 +49,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "cyan",
   illus: "radar",
@@ -111,7 +111,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "ink",
   illus: "rocket_arc",
@@ -172,7 +172,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "finance",
   illus: "balance_scale",
@@ -238,7 +238,7 @@ const POSTS = [{
     name: "Alessandro Merola",
     role: "CTO",
     initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    photo: "/project/uploads/authors/alessandro-merola.webp"
   },
   cover: "ops",
   illus: "robot_arm",
@@ -293,7 +293,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "energy",
   illus: "mesh_net",
@@ -345,7 +345,7 @@ const POSTS = [{
     name: "Alessandro Merola",
     role: "CTO",
     initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    photo: "/project/uploads/authors/alessandro-merola.webp"
   },
   cover: "ink",
   illus: "loop_debug",
@@ -400,7 +400,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "finance",
   illus: "lever_fulcrum",
@@ -452,7 +452,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "defence",
   illus: "handover_docs",
@@ -501,7 +501,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "cyan",
   illus: "world_grid",
@@ -553,7 +553,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "energy",
   illus: "fork_path",
@@ -605,7 +605,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "health",
   illus: "org_tree",
@@ -657,7 +657,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "ops",
   illus: "conf_skyline",
@@ -711,7 +711,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "ink",
   illus: "magnify_code",
@@ -763,7 +763,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "cyan",
   illus: "stacked_layers",
@@ -815,7 +815,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "defence",
   illus: "relay_baton",
@@ -867,7 +867,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "finance",
   illus: "two_columns",
@@ -913,7 +913,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "health",
   illus: "brain_neural",
@@ -959,7 +959,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "energy",
   illus: "building_blocks",
@@ -1005,7 +1005,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "ops",
   illus: "coin_stack",
@@ -1056,7 +1056,7 @@ const POSTS = [{
     name: "Alessandro Merola",
     role: "CTO",
     initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    photo: "/project/uploads/authors/alessandro-merola.webp"
   },
   cover: "ink",
   illus: "data_flow_pipe",
@@ -1108,7 +1108,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "finance",
   illus: "contract_doc",
@@ -1160,7 +1160,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "cyan",
   illus: "mission_board",
@@ -1208,7 +1208,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "ops",
   illus: "truck_route",
@@ -1260,7 +1260,7 @@ const POSTS = [{
     name: "Daniela Cazac",
     role: "Business Development Manager",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
+    photo: "/project/uploads/authors/daniela-cazac.webp"
   },
   cover: "defence",
   illus: "open_door",
@@ -1318,7 +1318,7 @@ const POSTS = [{
     name: "Alessandro Merola",
     role: "CTO",
     initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    photo: "/project/uploads/authors/alessandro-merola.webp"
   },
   cover: "energy",
   illus: "cloud_lift",
@@ -1382,7 +1382,7 @@ const POSTS = [{
     name: "Alessandro Merola",
     role: "CTO",
     initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
+    photo: "/project/uploads/authors/alessandro-merola.webp"
   },
   cover: "health",
   illus: "cloud_compare",
@@ -1431,7 +1431,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "ops",
   illus: "workflow",
@@ -1498,7 +1498,7 @@ const POSTS = [{
     name: "Nicu Mardari",
     role: "CEO",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    photo: "/project/uploads/authors/nicu-mardari.webp"
   },
   cover: "finance",
   illus: "bar",
