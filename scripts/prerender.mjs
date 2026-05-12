@@ -73,6 +73,11 @@ const MAIN_PAGES = [
     title: "AI Agency vs AI Freelancer: Which Is Right for You? | 7code",
     description: "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
   },
+  {
+    path: "/services",
+    title: "Services — AI Engineering, Integrations & Automation | 7Code",
+    description: "7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, product strategy, and LLM & agent development.",
+  },
 ];
 
 const SERVICES = [
@@ -411,6 +416,7 @@ const PAGE_TYPES = {
   "/ai-mvp-development": "WebPage",
   "/ai-development-agency-uk": "WebPage",
   "/compare/agency-vs-freelancer": "WebPage",
+  "/services": "CollectionPage",
 };
 
 // Short display names used in breadcrumb trails for main pages
@@ -424,12 +430,16 @@ const PAGE_CRUMB_NAMES = {
   "/ai-mvp-development": "AI MVP Development",
   "/ai-development-agency-uk": "AI Development Agency UK",
   "/compare/agency-vs-freelancer": "Agency vs Freelancer",
+  "/services": "Services",
 };
 
 // Intermediate crumb for nested paths (e.g. /compare/* gets a "Compare" parent)
 const PAGE_CRUMB_PARENT = {
   "/compare/agency-vs-freelancer": { name: "Compare" },
 };
+
+// Service URLs used for /services CollectionPage hasPart
+const SERVICE_URLS = SERVICES.map(s => SITE + "/service/" + s.slug);
 
 console.log("Main pages:");
 for (const p of MAIN_PAGES) {
@@ -441,12 +451,16 @@ for (const p of MAIN_PAGES) {
     ...(parent ? [parent] : []),
     { name: crumbName, url: url },
   ];
+  const isServiceListing = p.path === "/services";
+  const schema = isServiceListing
+    ? listingSchema(p, "CollectionPage", SERVICE_URLS, breadcrumbItems)
+    : genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems);
   const html = renderPage({
     pathname: p.path,
     title: p.title,
     description: p.description,
     ogImage: DEFAULT_OG,
-    schema: genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems),
+    schema,
   });
   const relPath = p.path.startsWith("/") ? p.path.slice(1) : p.path;
   writeFile(relPath + ".html", html);
