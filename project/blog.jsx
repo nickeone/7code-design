@@ -46,7 +46,7 @@ const POSTS = [
     subtitle: "A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan, vision, evals, architecture, and a defensible budget.",
     date: "Apr 28, 2026",
     read: "9 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "cyan",
     illus: "radar",
     featured: true,
@@ -75,7 +75,7 @@ const POSTS = [
     subtitle: "Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks.",
     date: "Apr 16, 2026",
     read: "7 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "ink",
     illus: "rocket_arc",
     body: [
@@ -103,7 +103,7 @@ const POSTS = [
     subtitle: "AI projects break the assumptions behind fixed-price contracts. Here's a pricing framework that aligns incentives between AI vendors and clients.",
     date: "Apr 02, 2026",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "finance",
     illus: "balance_scale",
     body: [
@@ -132,7 +132,7 @@ const POSTS = [
     subtitle: "Production-grade AI agents are quietly absorbing the manual coordination tax in factories. Here's the architecture that's actually working.",
     date: "Mar 18, 2026",
     read: "10 min read",
-    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.webp" },
     cover: "ops",
     illus: "robot_arm",
     body: [
@@ -158,7 +158,7 @@ const POSTS = [
     subtitle: "What changes when LLMs and agents sit at the centre of your business systems, not bolted on, but architecturally native.",
     date: "Mar 04, 2026",
     read: "8 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "energy",
     illus: "mesh_net",
     body: [
@@ -183,7 +183,7 @@ const POSTS = [
     subtitle: "How we partnered with the Adrenaline team to ship an LLM-powered debugger from MVP to AWS-scale production, in months, not years.",
     date: "Feb 20, 2026",
     read: "9 min read",
-    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.webp" },
     cover: "ink",
     illus: "loop_debug",
     body: [
@@ -209,7 +209,7 @@ const POSTS = [
     subtitle: "AI copilots compress the productivity gap, but they amplify the architectural one. Why we lean on senior-led pods for AI work.",
     date: "Feb 06, 2026",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "finance",
     illus: "lever_fulcrum",
     body: [
@@ -234,7 +234,7 @@ const POSTS = [
     subtitle: "Handing over an AI product isn't just code and docs. It's evals, prompt versioning, and the operational runbooks that keep models trustworthy.",
     date: "Jan 22, 2026",
     read: "7 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "defence",
     illus: "handover_docs",
     body: [
@@ -258,7 +258,7 @@ const POSTS = [
     subtitle: "How we operate distributed AI teams without losing the tight feedback loops that LLM work demands.",
     date: "Jan 08, 2026",
     read: "7 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "cyan",
     illus: "world_grid",
     body: [
@@ -283,7 +283,7 @@ const POSTS = [
     subtitle: "Five honest signals that your current vendor is holding back your AI roadmap, and how to make a clean transition.",
     date: "Dec 18, 2025",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "energy",
     illus: "fork_path",
     body: [
@@ -308,7 +308,7 @@ const POSTS = [
     subtitle: "Cost is not the headline. Velocity, ownership, and AI fluency are. How we set up nearshore AI pods that actually ship.",
     date: "Dec 04, 2025",
     read: "7 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "health",
     illus: "org_tree",
     body: [
@@ -333,7 +333,7 @@ const POSTS = [
     subtitle: "What we heard about agentic workflows, evaluation, and AI go-to-market, and what we're betting on next.",
     date: "Nov 20, 2025",
     read: "5 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "ops",
     illus: "conf_skyline",
     body: [
@@ -360,7 +360,7 @@ const POSTS = [
     subtitle: "How GetAdrenaline partnered with 7Code to build an AI-powered debugger that diagnoses and fixes code issues in seconds, from MVP to production on AWS.",
     date: "Nov 21, 2024",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "ink",
     illus: "magnify_code",
     body: [
@@ -395,7 +395,7 @@ const POSTS = [
     subtitle: "Starting lean, learning fast, and building what users actually need, the MVP approach is the most efficient path from idea to product-market fit.",
     date: "Dec 11, 2023",
     read: "5 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "cyan",
     illus: "stacked_layers",
     body: [
@@ -426,7 +426,7 @@ const POSTS = [
     subtitle: "A successful handover is not an event, it is a process. How 7Code ensures clients have full control, full understanding, and full confidence when we hand over the keys.",
     date: "Dec 12, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "defence",
     illus: "relay_baton",
     body: [
@@ -458,7 +458,7 @@ const POSTS = [
     subtitle: "WordPress can launch a web presence in days. Custom development can build a competitive moat that lasts years. Here's how to decide which one your business actually needs.",
     date: "Oct 11, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "finance",
     illus: "two_columns",
     body: [
@@ -487,7 +487,7 @@ const POSTS = [
     subtitle: "How we built Osai, a prompt-sharing platform that unlocks collective intelligence across teams working with GPT-4, Midjourney, and DALL-E.",
     date: "Oct 11, 2023",
     read: "5 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "health",
     illus: "brain_neural",
     body: [
@@ -515,7 +515,7 @@ const POSTS = [
     subtitle: "Low-code platforms are powerful for standard needs. Custom code is the only answer when your product demands performance, flexibility, and long-term viability.",
     date: "Oct 10, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "energy",
     illus: "building_blocks",
     body: [
@@ -544,7 +544,7 @@ const POSTS = [
     subtitle: "10–30% cost savings are possible, but that is not the headline. Velocity, continuity, and access to senior talent are.",
     date: "Oct 11, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "ops",
     illus: "coin_stack",
     body: [
@@ -578,7 +578,7 @@ const POSTS = [
     subtitle: "A practical guide to the pitfalls, edge cases, and Python patterns for moving users from one Auth0 tenant to another, without data loss or downtime.",
     date: "Oct 25, 2023",
     read: "7 min read",
-    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.webp" },
     cover: "ink",
     illus: "data_flow_pipe",
     body: [
@@ -614,7 +614,7 @@ const POSTS = [
     subtitle: "The right pricing model depends on the nature of your project, your budget flexibility, and the level of scope certainty you actually have.",
     date: "Sep 13, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "finance",
     illus: "contract_doc",
     body: [
@@ -649,7 +649,7 @@ const POSTS = [
     subtitle: "A four-week Discovery Mission is the cornerstone of every successful build, producing the product vision, backlog, wireframes, architecture, and delivery plan that make development predictable.",
     date: "Sep 04, 2023",
     read: "5 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "cyan",
     illus: "mission_board",
     body: [
@@ -679,7 +679,7 @@ const POSTS = [
     subtitle: "Generic logistics platforms cover 60% of the workflow and force teams to absorb the rest in spreadsheets. AI-native, integrated systems absorb the coordination tax and turn real-time data into faster, better operational decisions.",
     date: "Dec 10, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "ops",
     illus: "truck_route",
     body: [
@@ -716,7 +716,7 @@ const POSTS = [
     subtitle: "Sunk cost keeps clients with the wrong vendor for months too long. With AI projects the cost of waiting is higher, model choices age out, eval debt compounds. A practical playbook for assessing, securing assets, and switching cleanly.",
     date: "Nov 27, 2023",
     read: "6 min read",
-    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
+    author: { name: "Daniela Cazac", role: "Business Development Manager", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp" },
     cover: "defence",
     illus: "open_door",
     body: [
@@ -757,7 +757,7 @@ const POSTS = [
     subtitle: "AI services need a deploy story Beanstalk cannot give them. A practical recipe for moving a containerised AI workload to ECS on Fargate, with VPC, load balancer, and a GitHub Actions deploy pipeline.",
     date: "Oct 25, 2023",
     read: "8 min read",
-    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.webp" },
     cover: "energy",
     illus: "cloud_lift",
     body: [
@@ -800,7 +800,7 @@ const POSTS = [
     subtitle: "After six months on Elastic Beanstalk, the developer experience pushed me to ECS + Fargate. For containerised AI services with token budgets and eval gates, the case is even stronger.",
     date: "Oct 25, 2023",
     read: "5 min read",
-    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg" },
+    author: { name: "Alessandro Merola", role: "CTO", initial: "A", photo: "/project/uploads/authors/alessandro-merola.webp" },
     cover: "health",
     illus: "cloud_compare",
     body: [
@@ -834,7 +834,7 @@ const POSTS = [
     subtitle: "Hiring nearshore AI engineers is faster and cheaper than most CTOs expect — if you evaluate the right signals and avoid the three most common mistakes.",
     date: "Jun 9, 2026",
     read: "8 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "ops",
     illus: "workflow",
     featured: false,
@@ -880,7 +880,7 @@ const POSTS = [
     subtitle: "A structured comparison of the leading nearshore AI engineering agencies serving UK and EU clients in 2026, based on delivery track record, team seniority, and AI specialism.",
     date: "Jul 14, 2026",
     read: "10 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp" },
     cover: "finance",
     illus: "bar",
     featured: false,

@@ -9,12 +9,12 @@ const { useState: useStateS, useEffect: useEffectS, useRef: useRefS } = React;
 // Trusted-by marquee
 function TrustedBy() {
   const logos = [
-    { src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png", alt: "Founders Factory" },
-    { src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png", alt: "G42" },
-    { src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png", alt: "Ronins" },
-    { src: "/project/uploads/daily8.png", alt: "Daily8" },
-    { src: "/project/uploads/lendit.png", alt: "Lendit" },
-    { src: "/project/uploads/Lidl-logo.png", alt: "Lidl" },
+    { src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.webp", alt: "Founders Factory" },
+    { src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.webp", alt: "G42" },
+    { src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.webp", alt: "Ronins" },
+    { src: "/project/uploads/daily8.webp", alt: "Daily8" },
+    { src: "/project/uploads/lendit.webp", alt: "Lendit" },
+    { src: "/project/uploads/Lidl-logo.webp", alt: "Lidl" },
     { src: "/project/uploads/wholesum.webp", alt: "Wholesum" },
   ];
   const all = [...logos, ...logos];
@@ -26,7 +26,7 @@ function TrustedBy() {
           <div className="marquee-track">
             {all.map((l, i) => (
               <div key={i} className="marquee-logo" style={{ display: "flex", alignItems: "center", justifyContent: "center", height: 48, padding: "0 8px" }}>
-                <img src={l.src} alt={l.alt} style={{ height: 44, width: "auto", maxWidth: 160, objectFit: "contain", display: "block" }} />
+                <img src={l.src} alt={l.alt} width="160" height="44" loading="lazy" decoding="async" style={{ height: 44, width: "auto", maxWidth: 160, objectFit: "contain", display: "block" }} />
               </div>
             ))}
           </div>
@@ -39,17 +39,17 @@ function TrustedBy() {
 // Photo covers for case studies that have a real hero image. Anything not
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
-  "wholesum":         { src: "/project/uploads/wholesum-hero.png",        alt: "WholeSum" },
-  "daily8":           { src: "/project/uploads/daily8-website.jpg",       alt: "Daily8, daily8.com/en" },
-  "revote":           { src: "/project/uploads/revote-hero.jpg",          alt: "Revote, European Parliament chamber" },
-  "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
-  "cloud-of-legacy":  { src: "/project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
-  "lidl-road-safety": { src: "/project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
-  "founders-factory": { src: "/project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
-  "hera":             { src: "/project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
-  "melsonic":         { src: "/project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
-  "drum-bun":         { src: "/project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
-  "numerize":         { src: "/project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
+  "wholesum":         { src: "/project/uploads/wholesum-hero.webp",        alt: "WholeSum" },
+  "daily8":           { src: "/project/uploads/daily8-website.webp",       alt: "Daily8, daily8.com/en" },
+  "revote":           { src: "/project/uploads/revote-hero.webp",          alt: "Revote, European Parliament chamber" },
+  "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.webp",       alt: "G42 ESTS fleet-tracking dashboard" },
+  "cloud-of-legacy":  { src: "/project/uploads/cloud-of-legacy-hero.webp", alt: "Cloud of Legacy landing page" },
+  "lidl-road-safety": { src: "/project/uploads/lidl-road-safety-hero.webp", alt: "Lidl + Politia Romana road-safety app" },
+  "founders-factory": { src: "/project/uploads/founders-factory-hero.webp", alt: "Founders Factory homepage, Power to founders" },
+  "hera":             { src: "/project/uploads/hera-hero.webp",             alt: "Hera Health Tech, fertility-clinic patient support app" },
+  "melsonic":         { src: "/project/uploads/melsonic-hero.webp",         alt: "Melsonic, AI-powered guitar learning" },
+  "drum-bun":         { src: "/project/uploads/drum-bun-hero.webp",         alt: "Drum Bun, Romanian car-services mobile app" },
+  "numerize":         { src: "/project/uploads/numerize-hero.webp",         alt: "Numerize, French document management and e-signature platform" },
 };
 
 // Case study cover graphic
@@ -58,7 +58,7 @@ function CSCover({ kind, label, slug }) {
   if (photo) {
     return (
       <div className="cs-cover cs-cover--photo">
-        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img"/>
+        <img src={photo.src} alt={label || photo.alt} className="cs-cover-img" width="800" height="450" loading="lazy" decoding="async" />
       </div>
     );
   }
@@ -193,14 +193,14 @@ function WhyChoose() {
 // Verified & accredited section, credentials and listings
 function VerifiedAccredited() {
   const items = [
-    { src: "/project/uploads/SOC-2-Type-2-Logo.webp",          alt: "SOC 2 Type II, AICPA-aligned controls" },
-    { src: "/project/uploads/hipa.webp",                       alt: "HIPAA Compliant, healthcare data safeguards" },
-    { src: "/project/uploads/gdpr.png",                        alt: "GDPR Compliant, EU General Data Protection Regulation" },
-    { src: "/project/uploads/iso%209001.png",                  alt: "ISO 9001:2015, quality management system certification" },
-    { src: "/project/uploads/clutch.png",                      alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
-    { src: "/project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
-    { src: "/project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
-    { src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
+    { src: "/project/uploads/SOC-2-Type-2-Logo.webp",              alt: "SOC 2 Type II, AICPA-aligned controls" },
+    { src: "/project/uploads/hipa.webp",                           alt: "HIPAA Compliant, healthcare data safeguards" },
+    { src: "/project/uploads/gdpr.webp",                           alt: "GDPR Compliant, EU General Data Protection Regulation" },
+    { src: "/project/uploads/iso%209001.webp",                     alt: "ISO 9001:2015, quality management system certification" },
+    { src: "/project/uploads/clutch.webp",                         alt: "Clutch, Top Web Developers · Government, Romania", href: "https://clutch.co/profile/7code" },
+    { src: "/project/uploads/sortlist%20logo%20.webp",             alt: "Sortlist Verified Agency" },
+    { src: "/project/uploads/crunchbase.webp",                     alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
+    { src: "/project/uploads/Goodfirms-Logo-Vector.svg-.webp",     alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
   ];
   return (
     <section className="section section--alt">
@@ -216,8 +216,11 @@ function VerifiedAccredited() {
               <img
                 src={item.src}
                 alt={item.alt}
+                width="160"
+                height="60"
                 className={"trust-logo" + (item.className ? " " + item.className : "")}
                 loading="lazy"
+                decoding="async"
               />
             );
             return item.href ? (
@@ -242,32 +245,32 @@ function VerifiedAccredited() {
 function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in key sectors, delivering tailored digital solutions that drive growth, efficiency, and innovation." }) {
   const items = [
     {
-      icon: Icon.heart, title: "Healthcare",
+      icon: Icon.heart, title: "Healthcare", slug: "healthcare",
       desc: "HIPAA-compliant platforms that connect clinicians, patients, and data.",
       bullets: ["EHR interoperability", "Clinical decision support", "Patient engagement"],
     },
     {
-      icon: Icon.briefcase, title: "Finance",
+      icon: Icon.briefcase, title: "Finance", slug: "finance",
       desc: "Real-time dashboards, ERP integration, and automation that scales.",
       bullets: ["Real-time dashboards", "ERP integration", "Accounting automation"],
     },
     {
-      icon: Icon.energy, title: "Energy & Utilities",
+      icon: Icon.energy, title: "Energy & Utilities", slug: "energy",
       desc: "IoT-driven monitoring and predictive analytics for critical infrastructure.",
       bullets: ["IoT integration", "Predictive analytics", "Real-time monitoring"],
     },
     {
-      icon: Icon.shield, title: "Defence & Security",
+      icon: Icon.shield, title: "Defence & Security", slug: "defence",
       desc: "Secure systems integration and situational-awareness platforms.",
       bullets: ["Situational awareness", "Systems integration", "Predictive analytics"],
     },
     {
-      icon: Icon.users, title: "HR",
+      icon: Icon.users, title: "HR", slug: "hr",
       desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
       bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"],
     },
     {
-      icon: Icon.chart, title: "Operations",
+      icon: Icon.chart, title: "Operations", slug: "operations",
       desc: "Workflow automation and dashboards across the operational stack.",
       bullets: ["Workflow automation", "Operations dashboards", "Predictive analytics"],
     },
@@ -291,7 +294,7 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
                 <ul className="exp-list">
                   {e.bullets.map((b, j) => <li key={j}><Icon.checkCircle /> {b}</li>)}
                 </ul>
-                <a href="/expertise" className="btn-link">Learn more <Icon.arrow /></a>
+                <a href={"/expertise/" + e.slug} className="btn-link" aria-label={"Learn more about our " + e.title + " expertise"}>Learn more <Icon.arrow /></a>
               </div>
             );
           })}
@@ -351,27 +354,27 @@ function Testimonials() {
       name: "Emily Kucharski",
       role: "CEO & Co-Founder",
       company: "WholeSum",
-      photoUrl: "/project/uploads/emily%20.jpeg",
+      photoUrl: "/project/uploads/emily%20.webp",
     },
     {
       quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
       name: "Evyn White",
       role: "Co-Founder",
       company: "Hera Health Tech",
-      photoUrl: "/project/uploads/evyn-hera.jpeg",
+      photoUrl: "/project/uploads/evyn-hera.webp",
     },
     {
       quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
       name: "Marcel Ionescu",
       role: "Chief Technology Officer",
-      photoUrl: "/project/uploads/marcel%20ionescu%20.jpeg",
+      photoUrl: "/project/uploads/marcel%20ionescu%20.webp",
     },
     {
       quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
       name: "Paul Egan",
       role: "CTO",
       company: "Founders Factory",
-      photoUrl: "/project/uploads/paul%20egan.jpeg",
+      photoUrl: "/project/uploads/paul%20egan.webp",
     },
   ];
 
@@ -389,7 +392,7 @@ function Testimonials() {
               <div className="testi-quote-mark" aria-hidden="true">&ldquo;</div>
               <blockquote className="testi-quote">{t.quote}</blockquote>
               <div className="testi-author">
-                <img src={t.photoUrl} alt={t.name} className="testi-photo" loading="lazy"/>
+                <img src={t.photoUrl} alt={t.name} width="56" height="56" className="testi-photo" loading="lazy" decoding="async" />
                 <div>
                   <div className="testi-name">{t.name}</div>
                   <div className="testi-role">{t.role}{t.company ? ", " + t.company : ""}</div>

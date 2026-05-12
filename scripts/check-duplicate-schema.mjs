@@ -8,7 +8,8 @@
  * Nested types (e.g. Service items inside hasOfferCatalog, or Question inside
  * FAQPage) are not counted — only the outermost @type of each entity matters.
  *
- * Allowlist: BreadcrumbList is exempt (may coexist with other types per page).
+ * Allowlist: BreadcrumbList and Person are exempt — multiple persons on an About
+ * page (e.g. founders) is valid Schema.org and must not be flagged.
  *
  * Usage: node scripts/check-duplicate-schema.mjs
  */
@@ -20,7 +21,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // @type values that may appear more than once on a page without triggering an error.
-const ALLOWLIST = new Set(["BreadcrumbList"]);
+const ALLOWLIST = new Set(["BreadcrumbList", "Person"]);
 
 function collectHtmlFiles(dir) {
   const results = [];

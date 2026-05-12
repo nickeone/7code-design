@@ -434,7 +434,7 @@ function PhoneMockup({ accent = "var(--cyan-500)" }) {
     return (
       <div className="csd-phone csd-phone--shot">
         <div className="csd-phone-notch"/>
-        <img className="csd-phone-img" src="/project/uploads/daily8-notifications.png" alt="Daily8 notifications screen"/>
+        <img className="csd-phone-img" src="/project/uploads/daily8-notifications.webp" alt="Daily8 notifications screen" width="390" height="620" loading="lazy" decoding="async" />
       </div>
     );
   }
@@ -474,8 +474,9 @@ function WholesumHero() {
       </div>
       <img
         className="csd-ws-shot"
-        src="/project/uploads/wholesum-hero.png"
+        src="/project/uploads/wholesum-hero.webp"
         alt="WholeSum homepage hero, Get deeper insights from your richest data"
+        width="800" height="500" loading="lazy" decoding="async"
       />
     </div>
   );
@@ -490,7 +491,7 @@ function PhotoHero({ src, alt, urlBar, caption }) {
           <div className="csd-browser-url">{urlBar}</div>
         </div>
       ) : null}
-      <img className="csd-ws-shot" src={src} alt={alt}/>
+      <img className="csd-ws-shot" src={src} alt={alt} width="800" height="500" loading="lazy" decoding="async" />
       {caption ? <div className="csd-photo-caption">{caption}</div> : null}
     </div>
   );
@@ -499,46 +500,46 @@ function PhotoHero({ src, alt, urlBar, caption }) {
 function BrowserMockup({ kind = "calendar" }) {
   if (CSD.slug === "wholesum") return <WholesumHero/>;
   if (CSD.slug === "daily8") return <PhotoHero
-    src="/project/uploads/daily8-website.jpg"
+    src="/project/uploads/daily8-website.webp"
     urlBar="daily8.com/en"
     alt="Daily8 website (daily8.com/en), Get Started Now: Download the App"
   />;
   if (CSD.slug === "revote") return <PhotoHero
-    src="/project/uploads/revote-hero.jpg"
+    src="/project/uploads/revote-hero.webp"
     alt="Igor Mardari (CTO, 7Code) with Massimo Locorotondo (Eurel) inside the European Parliament chamber, Brussels"
     caption="Igor Mardari (CTO, 7Code) and Massimo Locorotondo (Eurel) at the European Parliament, Brussels, 2023"
   />;
   if (CSD.slug === "g42-fleet") return <PhotoHero
-    src="/project/uploads/g42-fleet-hero.jpg"
+    src="/project/uploads/g42-fleet-hero.webp"
     urlBar="g42.ai · ESTS Fleet Tracking"
     alt="G42 ESTS fleet-tracking dashboard with all-trip alerts and live vehicle map"
   />;
   if (CSD.slug === "cloud-of-legacy") return <PhotoHero
-    src="/project/uploads/cloud-of-legacy-hero.jpg"
+    src="/project/uploads/cloud-of-legacy-hero.webp"
     urlBar="cloudoflegacy.com"
     alt="Cloud of Legacy landing page, digital-heritage cloud with subscription"
   />;
   if (CSD.slug === "lidl-road-safety") return <PhotoHero
-    src="/project/uploads/lidl-road-safety-hero.jpg"
+    src="/project/uploads/lidl-road-safety-hero.webp"
     alt="Lidl Romania + Politia Romana road-safety web app for children"
   />;
   if (CSD.slug === "hera") return <PhotoHero
-    src="/project/uploads/hera-hero.jpg"
+    src="/project/uploads/hera-hero.webp"
     urlBar="herahealthtech.com"
     alt="Hera Health Tech, Introducing Hera, AI-powered fertility-clinic patient app"
   />;
   if (CSD.slug === "melsonic") return <PhotoHero
-    src="/project/uploads/melsonic-hero.jpg"
+    src="/project/uploads/melsonic-hero.webp"
     urlBar="app.melsonic.com"
     alt="Melsonic, Learn your favourite song today, AI-powered guitar learning"
   />;
   if (CSD.slug === "drum-bun") return <PhotoHero
-    src="/project/uploads/drum-bun-hero.jpg"
+    src="/project/uploads/drum-bun-hero.webp"
     urlBar="drumbun.ro"
     alt="Drum Bun, Aplicația șoferilor responsabili (Romanian car-services app)"
   />;
   if (CSD.slug === "numerize") return <PhotoHero
-    src="/project/uploads/numerize-hero.jpg"
+    src="/project/uploads/numerize-hero.webp"
     urlBar="numerize.com"
     alt="Numerize, Société de numérisation de documents et d'archivage"
   />;

@@ -13,22 +13,22 @@ const {
 // Trusted-by marquee
 function TrustedBy() {
   const logos = [{
-    src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.png",
+    src: "/project/assets/b6d98b61cd02d867e9a2cd2d32465eb8ba06203f.webp",
     alt: "Founders Factory"
   }, {
-    src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.png",
+    src: "/project/assets/9681e775df296ad64c7b5a041883805a82c3d2a1.webp",
     alt: "G42"
   }, {
-    src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.png",
+    src: "/project/assets/4436e02038b9c61bca6a16aa049b705ba895505c.webp",
     alt: "Ronins"
   }, {
-    src: "/project/uploads/daily8.png",
+    src: "/project/uploads/daily8.webp",
     alt: "Daily8"
   }, {
-    src: "/project/uploads/lendit.png",
+    src: "/project/uploads/lendit.webp",
     alt: "Lendit"
   }, {
-    src: "/project/uploads/Lidl-logo.png",
+    src: "/project/uploads/Lidl-logo.webp",
     alt: "Lidl"
   }, {
     src: "/project/uploads/wholesum.webp",
@@ -58,6 +58,10 @@ function TrustedBy() {
   }, /*#__PURE__*/React.createElement("img", {
     src: l.src,
     alt: l.alt,
+    width: "160",
+    height: "44",
+    loading: "lazy",
+    decoding: "async",
     style: {
       height: 44,
       width: "auto",
@@ -72,47 +76,47 @@ function TrustedBy() {
 // listed falls back to the kind-based pattern card below.
 const CS_PHOTO_COVERS = {
   "wholesum": {
-    src: "/project/uploads/wholesum-hero.png",
+    src: "/project/uploads/wholesum-hero.webp",
     alt: "WholeSum"
   },
   "daily8": {
-    src: "/project/uploads/daily8-website.jpg",
+    src: "/project/uploads/daily8-website.webp",
     alt: "Daily8, daily8.com/en"
   },
   "revote": {
-    src: "/project/uploads/revote-hero.jpg",
+    src: "/project/uploads/revote-hero.webp",
     alt: "Revote, European Parliament chamber"
   },
   "g42-fleet": {
-    src: "/project/uploads/g42-fleet-hero.jpg",
+    src: "/project/uploads/g42-fleet-hero.webp",
     alt: "G42 ESTS fleet-tracking dashboard"
   },
   "cloud-of-legacy": {
-    src: "/project/uploads/cloud-of-legacy-hero.jpg",
+    src: "/project/uploads/cloud-of-legacy-hero.webp",
     alt: "Cloud of Legacy landing page"
   },
   "lidl-road-safety": {
-    src: "/project/uploads/lidl-road-safety-hero.jpg",
+    src: "/project/uploads/lidl-road-safety-hero.webp",
     alt: "Lidl + Politia Romana road-safety app"
   },
   "founders-factory": {
-    src: "/project/uploads/founders-factory-hero.jpg",
+    src: "/project/uploads/founders-factory-hero.webp",
     alt: "Founders Factory homepage, Power to founders"
   },
   "hera": {
-    src: "/project/uploads/hera-hero.jpg",
+    src: "/project/uploads/hera-hero.webp",
     alt: "Hera Health Tech, fertility-clinic patient support app"
   },
   "melsonic": {
-    src: "/project/uploads/melsonic-hero.jpg",
+    src: "/project/uploads/melsonic-hero.webp",
     alt: "Melsonic, AI-powered guitar learning"
   },
   "drum-bun": {
-    src: "/project/uploads/drum-bun-hero.jpg",
+    src: "/project/uploads/drum-bun-hero.webp",
     alt: "Drum Bun, Romanian car-services mobile app"
   },
   "numerize": {
-    src: "/project/uploads/numerize-hero.jpg",
+    src: "/project/uploads/numerize-hero.webp",
     alt: "Numerize, French document management and e-signature platform"
   }
 };
@@ -130,7 +134,11 @@ function CSCover({
     }, /*#__PURE__*/React.createElement("img", {
       src: photo.src,
       alt: label || photo.alt,
-      className: "cs-cover-img"
+      className: "cs-cover-img",
+      width: "800",
+      height: "450",
+      loading: "lazy",
+      decoding: "async"
     }));
   }
   const map = {
@@ -415,24 +423,24 @@ function VerifiedAccredited() {
     src: "/project/uploads/hipa.webp",
     alt: "HIPAA Compliant, healthcare data safeguards"
   }, {
-    src: "/project/uploads/gdpr.png",
+    src: "/project/uploads/gdpr.webp",
     alt: "GDPR Compliant, EU General Data Protection Regulation"
   }, {
-    src: "/project/uploads/iso%209001.png",
+    src: "/project/uploads/iso%209001.webp",
     alt: "ISO 9001:2015, quality management system certification"
   }, {
-    src: "/project/uploads/clutch.png",
+    src: "/project/uploads/clutch.webp",
     alt: "Clutch, Top Web Developers · Government, Romania",
     href: "https://clutch.co/profile/7code"
   }, {
-    src: "/project/uploads/sortlist%20logo%20.png",
+    src: "/project/uploads/sortlist%20logo%20.webp",
     alt: "Sortlist Verified Agency"
   }, {
-    src: "/project/uploads/crunchbase.png",
+    src: "/project/uploads/crunchbase.webp",
     alt: "Listed on Crunchbase",
     href: "https://www.crunchbase.com/organization/7code"
   }, {
-    src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",
+    src: "/project/uploads/Goodfirms-Logo-Vector.svg-.webp",
     alt: "Listed on GoodFirms",
     href: "https://www.goodfirms.co/company/7code"
   }];
@@ -450,8 +458,11 @@ function VerifiedAccredited() {
     const inner = /*#__PURE__*/React.createElement("img", {
       src: item.src,
       alt: item.alt,
+      width: "160",
+      height: "60",
       className: "trust-logo" + (item.className ? " " + item.className : ""),
-      loading: "lazy"
+      loading: "lazy",
+      decoding: "async"
     });
     return item.href ? /*#__PURE__*/React.createElement("a", {
       key: i,
@@ -481,31 +492,37 @@ function Expertise({
   const items = [{
     icon: Icon.heart,
     title: "Healthcare",
+    slug: "healthcare",
     desc: "HIPAA-compliant platforms that connect clinicians, patients, and data.",
     bullets: ["EHR interoperability", "Clinical decision support", "Patient engagement"]
   }, {
     icon: Icon.briefcase,
     title: "Finance",
+    slug: "finance",
     desc: "Real-time dashboards, ERP integration, and automation that scales.",
     bullets: ["Real-time dashboards", "ERP integration", "Accounting automation"]
   }, {
     icon: Icon.energy,
     title: "Energy & Utilities",
+    slug: "energy",
     desc: "IoT-driven monitoring and predictive analytics for critical infrastructure.",
     bullets: ["IoT integration", "Predictive analytics", "Real-time monitoring"]
   }, {
     icon: Icon.shield,
     title: "Defence & Security",
+    slug: "defence",
     desc: "Secure systems integration and situational-awareness platforms.",
     bullets: ["Situational awareness", "Systems integration", "Predictive analytics"]
   }, {
     icon: Icon.users,
     title: "HR",
+    slug: "hr",
     desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
     bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"]
   }, {
     icon: Icon.chart,
     title: "Operations",
+    slug: "operations",
     desc: "Workflow automation and dashboards across the operational stack.",
     bullets: ["Workflow automation", "Operations dashboards", "Predictive analytics"]
   }];
@@ -534,8 +551,9 @@ function Expertise({
     }, e.bullets.map((b, j) => /*#__PURE__*/React.createElement("li", {
       key: j
     }, /*#__PURE__*/React.createElement(Icon.checkCircle, null), " ", b))), /*#__PURE__*/React.createElement("a", {
-      href: "/expertise",
-      className: "btn-link"
+      href: "/expertise/" + e.slug,
+      className: "btn-link",
+      "aria-label": "Learn more about our " + e.title + " expertise"
     }, "Learn more ", /*#__PURE__*/React.createElement(Icon.arrow, null)));
   }))));
 }
@@ -621,24 +639,24 @@ function Testimonials() {
     name: "Emily Kucharski",
     role: "CEO & Co-Founder",
     company: "WholeSum",
-    photoUrl: "/project/uploads/emily%20.jpeg"
+    photoUrl: "/project/uploads/emily%20.webp"
   }, {
     quote: "7Code's work resulted in a functional MVP, and the client's internal testing yielded positive results. The team followed a structured sprint process, held regular stand-ups, and communicated consistently during the project. 7Code was responsive, proactive, flexible, transparent, and collaborative.",
     name: "Evyn White",
     role: "Co-Founder",
     company: "Hera Health Tech",
-    photoUrl: "/project/uploads/evyn-hera.jpeg"
+    photoUrl: "/project/uploads/evyn-hera.webp"
   }, {
     quote: "The client was happy with 7Code's work, daily status reports, and on-time delivery of milestones. Their project management was well-organized, and they used virtual meetings for communication. 7Code's professionalism, flexibility, and commitment also contributed to the project's success.",
     name: "Marcel Ionescu",
     role: "Chief Technology Officer",
-    photoUrl: "/project/uploads/marcel%20ionescu%20.jpeg"
+    photoUrl: "/project/uploads/marcel%20ionescu%20.webp"
   }, {
     quote: "7Code has steadily progressed through the client's development backlog. Their team demonstrates proactiveness, timely delivery, and proactive engagement. They also ensure strong communication through email, messaging apps, and virtual meetings.",
     name: "Paul Egan",
     role: "CTO",
     company: "Founders Factory",
-    photoUrl: "/project/uploads/paul%20egan.jpeg"
+    photoUrl: "/project/uploads/paul%20egan.webp"
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "section"
@@ -666,8 +684,11 @@ function Testimonials() {
   }, /*#__PURE__*/React.createElement("img", {
     src: t.photoUrl,
     alt: t.name,
+    width: "56",
+    height: "56",
     className: "testi-photo",
-    loading: "lazy"
+    loading: "lazy",
+    decoding: "async"
   }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
     className: "testi-name"
   }, t.name), /*#__PURE__*/React.createElement("div", {

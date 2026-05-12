@@ -232,7 +232,7 @@ function AboutPage() {
     name: "Nicu Mardari",
     role: "CEO & Founder",
     initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg",
+    photo: "/project/uploads/authors/nicu-mardari.webp",
     bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
   }, {
     name: "Igor Mardari",
@@ -244,7 +244,7 @@ function AboutPage() {
     name: "Daniela Cazac",
     role: "CMO",
     initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg",
+    photo: "/project/uploads/authors/daniela-cazac.webp",
     bio: null
   }];
   return /*#__PURE__*/React.createElement("div", {
@@ -366,6 +366,10 @@ function AboutPage() {
   }, t.photo ? /*#__PURE__*/React.createElement("img", {
     src: t.photo,
     alt: t.name,
+    width: "320",
+    height: "320",
+    loading: "lazy",
+    decoding: "async",
     style: {
       position: "absolute",
       inset: 0,

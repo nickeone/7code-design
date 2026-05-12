@@ -212,9 +212,9 @@ function AboutPage() {
     },
   ];
   const team = [
-    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
+    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.webp", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
     { name: "Igor Mardari", role: "CTO & Co-Founder", initial: "I", photo: null, bio: "Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in 2016, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model." },
-    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", bio: null },
+    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.webp", bio: null },
   ];
 
   return (
@@ -310,7 +310,7 @@ function AboutPage() {
               <div key={i} className="team-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="team-photo">
                   {t.photo
-                    ? <img src={t.photo} alt={t.name} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
+                    ? <img src={t.photo} alt={t.name} width="320" height="320" loading="lazy" decoding="async" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
                     : <span>{t.initial}</span>
                   }
                 </div>
