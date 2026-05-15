@@ -481,31 +481,37 @@ function Expertise({
   const items = [{
     icon: Icon.heart,
     title: "Healthcare",
+    slug: "healthcare",
     desc: "HIPAA-compliant platforms that connect clinicians, patients, and data.",
     bullets: ["EHR interoperability", "Clinical decision support", "Patient engagement"]
   }, {
     icon: Icon.briefcase,
     title: "Finance",
+    slug: "finance",
     desc: "Real-time dashboards, ERP integration, and automation that scales.",
     bullets: ["Real-time dashboards", "ERP integration", "Accounting automation"]
   }, {
     icon: Icon.energy,
     title: "Energy & Utilities",
+    slug: "energy",
     desc: "IoT-driven monitoring and predictive analytics for critical infrastructure.",
     bullets: ["IoT integration", "Predictive analytics", "Real-time monitoring"]
   }, {
     icon: Icon.shield,
     title: "Defence & Security",
+    slug: "defence",
     desc: "Secure systems integration and situational-awareness platforms.",
     bullets: ["Situational awareness", "Systems integration", "Predictive analytics"]
   }, {
     icon: Icon.users,
     title: "HR",
+    slug: "hr",
     desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
     bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"]
   }, {
     icon: Icon.chart,
     title: "Operations",
+    slug: "operations",
     desc: "Workflow automation and dashboards across the operational stack.",
     bullets: ["Workflow automation", "Operations dashboards", "Predictive analytics"]
   }];
@@ -521,11 +527,15 @@ function Expertise({
     className: "exp-grid"
   }, items.map((e, i) => {
     const I = e.icon;
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React.createElement("a", {
       key: i,
+      href: "/expertise/" + e.slug,
       className: "exp-card reveal",
       style: {
-        transitionDelay: i % 3 * 80 + "ms"
+        transitionDelay: i % 3 * 80 + "ms",
+        display: "block",
+        textDecoration: "none",
+        color: "inherit"
       }
     }, /*#__PURE__*/React.createElement("span", {
       className: "icon-tile"
@@ -533,8 +543,7 @@ function Expertise({
       className: "exp-list"
     }, e.bullets.map((b, j) => /*#__PURE__*/React.createElement("li", {
       key: j
-    }, /*#__PURE__*/React.createElement(Icon.checkCircle, null), " ", b))), /*#__PURE__*/React.createElement("a", {
-      href: "/expertise",
+    }, /*#__PURE__*/React.createElement(Icon.checkCircle, null), " ", b))), /*#__PURE__*/React.createElement("span", {
       className: "btn-link"
     }, "Learn more ", /*#__PURE__*/React.createElement(Icon.arrow, null)));
   }))));

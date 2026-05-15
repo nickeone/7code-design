@@ -242,32 +242,32 @@ function VerifiedAccredited() {
 function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in key sectors, delivering tailored digital solutions that drive growth, efficiency, and innovation." }) {
   const items = [
     {
-      icon: Icon.heart, title: "Healthcare",
+      icon: Icon.heart, title: "Healthcare", slug: "healthcare",
       desc: "HIPAA-compliant platforms that connect clinicians, patients, and data.",
       bullets: ["EHR interoperability", "Clinical decision support", "Patient engagement"],
     },
     {
-      icon: Icon.briefcase, title: "Finance",
+      icon: Icon.briefcase, title: "Finance", slug: "finance",
       desc: "Real-time dashboards, ERP integration, and automation that scales.",
       bullets: ["Real-time dashboards", "ERP integration", "Accounting automation"],
     },
     {
-      icon: Icon.energy, title: "Energy & Utilities",
+      icon: Icon.energy, title: "Energy & Utilities", slug: "energy",
       desc: "IoT-driven monitoring and predictive analytics for critical infrastructure.",
       bullets: ["IoT integration", "Predictive analytics", "Real-time monitoring"],
     },
     {
-      icon: Icon.shield, title: "Defence & Security",
+      icon: Icon.shield, title: "Defence & Security", slug: "defence",
       desc: "Secure systems integration and situational-awareness platforms.",
       bullets: ["Situational awareness", "Systems integration", "Predictive analytics"],
     },
     {
-      icon: Icon.users, title: "HR",
+      icon: Icon.users, title: "HR", slug: "hr",
       desc: "Recruitment, onboarding, payroll and workforce analytics, unified.",
       bullets: ["Recruitment & onboarding", "Performance & payroll", "Workforce analytics"],
     },
     {
-      icon: Icon.chart, title: "Operations",
+      icon: Icon.chart, title: "Operations", slug: "operations",
       desc: "Workflow automation and dashboards across the operational stack.",
       bullets: ["Workflow automation", "Operations dashboards", "Predictive analytics"],
     },
@@ -284,15 +284,15 @@ function Expertise({ headTitle = "Our Expertise", headDesc = "We specialize in k
           {items.map((e, i) => {
             const I = e.icon;
             return (
-              <div key={i} className="exp-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms" }}>
+              <a key={i} href={"/expertise/" + e.slug} className="exp-card reveal" style={{ transitionDelay: (i % 3 * 80) + "ms", display: "block", textDecoration: "none", color: "inherit" }}>
                 <span className="icon-tile"><I /></span>
                 <h3>{e.title}</h3>
                 <p>{e.desc}</p>
                 <ul className="exp-list">
                   {e.bullets.map((b, j) => <li key={j}><Icon.checkCircle /> {b}</li>)}
                 </ul>
-                <a href="/expertise" className="btn-link">Learn more <Icon.arrow /></a>
-              </div>
+                <span className="btn-link">Learn more <Icon.arrow /></span>
+              </a>
             );
           })}
         </div>
