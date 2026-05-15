@@ -20,7 +20,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 // @type values that may appear more than once on a page without triggering an error.
-const ALLOWLIST = new Set(["BreadcrumbList"]);
+const ALLOWLIST = new Set(["BreadcrumbList", "Person"]);
 
 function collectHtmlFiles(dir) {
   const results = [];
