@@ -265,11 +265,6 @@ function Footer() {
             </ul>
           </div>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,.12)", paddingTop: 20, marginTop: 8 }}>
-          <p style={{ margin: "0 0 6px", fontSize: 12, color: "rgba(255,255,255,.4)", lineHeight: 1.6 }}>
-            SEVEN CODE DEVELOPMENT SRL · CUI 38088795 · Onisifor Ghibu 20A, Cluj-Napoca 400185, Romania · office@7code.ro
-          </p>
-        </div>
         <div className="footer-bottom">
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
             <span>© 2026 7Code. All rights reserved.</span>

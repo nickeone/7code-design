@@ -360,19 +360,6 @@ function Footer() {
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Cluj-Napoca, Romania"))))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      borderTop: "1px solid rgba(255,255,255,.12)",
-      paddingTop: 20,
-      marginTop: 8
-    }
-  }, /*#__PURE__*/React.createElement("p", {
-    style: {
-      margin: "0 0 6px",
-      fontSize: 12,
-      color: "rgba(255,255,255,.4)",
-      lineHeight: 1.6
-    }
-  }, "SEVEN CODE DEVELOPMENT SRL \xB7 CUI 38088795 \xB7 Onisifor Ghibu 20A, Cluj-Napoca 400185, Romania \xB7 office@7code.ro")), /*#__PURE__*/React.createElement("div", {
     className: "footer-bottom"
   }, /*#__PURE__*/React.createElement("div", {
     style: {
