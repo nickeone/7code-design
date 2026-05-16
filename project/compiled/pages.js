@@ -1542,3 +1542,439 @@ function FAQPage() {
   }, "Book a discovery call ", /*#__PURE__*/React.createElement(Icon.arrow, null)))));
 }
 window.FAQPage = FAQPage;
+
+// ──────────────────────────────────────────────────────────────────
+// LEGAL — shared helpers
+// ──────────────────────────────────────────────────────────────────
+const thStyle = {
+  padding: "10px 12px",
+  textAlign: "left",
+  fontWeight: 600,
+  fontSize: 13,
+  letterSpacing: ".04em",
+  borderBottom: "1px solid var(--slate-200)",
+  color: "var(--ink)"
+};
+const tdStyle = {
+  padding: "10px 12px",
+  borderBottom: "1px solid var(--slate-200)",
+  color: "var(--slate-700)",
+  verticalAlign: "top",
+  fontSize: 14,
+  lineHeight: 1.6
+};
+function LegalContactBlock() {
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      padding: 28,
+      background: "var(--bg-alt)",
+      borderRadius: "var(--radius-lg)",
+      border: "1px solid var(--slate-200)"
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      margin: "0 0 16px",
+      fontSize: 16
+    }
+  }, "Get in touch"), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: "none",
+      padding: 0,
+      margin: 0,
+      display: "grid",
+      gap: 8,
+      fontSize: 15,
+      color: "var(--slate-700)"
+    }
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Email: "), /*#__PURE__*/React.createElement("a", {
+    href: "mailto:office@7code.ro",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "office@7code.ro")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Phone: "), /*#__PURE__*/React.createElement("a", {
+    href: "tel:+40774542081",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "+4 0774 542 081")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Address: "), "Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Contact form: "), /*#__PURE__*/React.createElement("a", {
+    href: "/contact",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "7code.tech/contact"))));
+}
+
+// ──────────────────────────────────────────────────────────────────
+// PRIVACY POLICY
+// ──────────────────────────────────────────────────────────────────
+function PrivacyPolicyPage() {
+  useSeoMeta("Privacy & Cookie Policy | 7code — SEVEN CODE DEVELOPMENT SRL", "How 7code collects, uses and protects personal data, and how we use cookies. GDPR-compliant — operated by SEVEN CODE DEVELOPMENT SRL, Cluj-Napoca, Romania.");
+  useEffectP(() => {
+    if (window.location.hash === "#cookies") {
+      setTimeout(() => {
+        const el = document.getElementById("cookies");
+        if (el) el.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+    }
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/React.createElement("section", {
+    className: "page-hero"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "tag",
+    style: {
+      marginBottom: 16,
+      display: "inline-flex"
+    }
+  }, "Legal"), /*#__PURE__*/React.createElement("h1", null, "Privacy & Cookie Policy"), /*#__PURE__*/React.createElement("p", null, "7code (SEVEN CODE DEVELOPMENT SRL) \u2014 CUI: 38088795 \u2014 Cluj-Napoca, Romania"))), /*#__PURE__*/React.createElement("section", {
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      maxWidth: 800
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      lineHeight: 1.75,
+      color: "var(--slate-700)",
+      marginBottom: 48
+    }
+  }, "This Privacy & Cookie Policy explains how 7code collects, uses and protects personal data when you visit", " ", /*#__PURE__*/React.createElement("a", {
+    href: "https://www.7code.tech",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "www.7code.tech"), " or contact us, and how we use cookies. We comply with the EU General Data Protection Regulation (GDPR), the ePrivacy Directive, and Romanian Law 190/2018."), [null, /*#__PURE__*/React.createElement("div", {
+    key: "s1"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "1. Data Controller"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal name: "), "SEVEN CODE DEVELOPMENT SRL"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "CUI: "), "38088795"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Address: "), "Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Email: "), /*#__PURE__*/React.createElement("a", {
+    href: "mailto:office@7code.ro",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "office@7code.ro")))), /*#__PURE__*/React.createElement("div", {
+    key: "s2"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "2. Data We Collect"), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "Contact Form"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "When you submit our contact form, we collect: Name, Email address, Phone number (optional), Company name (optional), Project details / message."), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal basis: "), "Article 6(1)(b) GDPR \u2014 steps prior to entering into a contract."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Purpose: "), "Respond to your enquiry and prepare a commercial offer."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Retention: "), "12 months from last contact, then deleted or anonymised.")), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "Website Analytics"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "If you accept analytics cookies, we use Google Analytics to collect anonymised data: IP address (anonymised), Browser and device type, Pages visited, time on page, referrer."), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal basis: "), "Article 6(1)(a) GDPR \u2014 your consent (via cookie banner)."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Retention: "), "14 months."))), /*#__PURE__*/React.createElement("div", {
+    key: "s3"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "3. Who We Share Data With"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We share data only with the following processors under signed Data Processing Agreements:"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, "Google Ireland Ltd \u2014 Google Analytics"), /*#__PURE__*/React.createElement("li", null, "Email provider \u2014 to receive and respond to contact form submissions")), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We never sell or rent your personal data.")), /*#__PURE__*/React.createElement("div", {
+    key: "s4"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "4. International Data Transfers"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Some processors (e.g., Google) may transfer data outside the EU/EEA. Such transfers are protected by EU Standard Contractual Clauses (SCCs) and supplementary safeguards.")), /*#__PURE__*/React.createElement("div", {
+    key: "s5"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "5. Your Rights"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Under GDPR you have the right to: Access, Rectification, Erasure (\"right to be forgotten\"), Restriction or objection to processing, Data portability, Withdraw consent at any time, Lodge a complaint with the Romanian DPA (ANSPDCP) \u2014", " ", /*#__PURE__*/React.createElement("a", {
+    href: "https://www.dataprotection.ro",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "www.dataprotection.ro"), "."), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "To exercise any right, email ", /*#__PURE__*/React.createElement("a", {
+    href: "mailto:office@7code.ro",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "office@7code.ro"), ". We respond within 30 days.")), /*#__PURE__*/React.createElement("div", {
+    key: "s6"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "6. Security"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We use TLS encryption, secure hosting, and access controls. Your information is treated with care and never sold to third parties.")), /*#__PURE__*/React.createElement("div", {
+    key: "s7",
+    id: "cookies"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "7. Cookies"), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "7.1 What Are Cookies?"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Cookies are small text files stored on your device when you visit a website. They help websites function and collect anonymised information about usage."), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "7.2 Cookies We Use"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      overflowX: "auto",
+      margin: "16px 0"
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: "100%",
+      borderCollapse: "collapse"
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+    style: {
+      background: "var(--slate-100)"
+    }
+  }, /*#__PURE__*/React.createElement("th", {
+    style: thStyle
+  }, "Category"), /*#__PURE__*/React.createElement("th", {
+    style: thStyle
+  }, "Cookie"), /*#__PURE__*/React.createElement("th", {
+    style: thStyle
+  }, "Purpose"), /*#__PURE__*/React.createElement("th", {
+    style: thStyle
+  }, "Duration"))), /*#__PURE__*/React.createElement("tbody", null, /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Essential"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, /*#__PURE__*/React.createElement("code", null, "7code_consent")), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Stores your cookie preferences"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "12 months")), /*#__PURE__*/React.createElement("tr", {
+    style: {
+      background: "var(--slate-50)"
+    }
+  }, /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Analytics"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, /*#__PURE__*/React.createElement("code", null, "_ga"), ", ", /*#__PURE__*/React.createElement("code", null, "_ga_*")), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Google Analytics \u2014 anonymised usage data"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "14 months"))))), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Essential cookies are always active. Analytics cookies load only after you accept them."), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "7.3 Managing Cookies"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "You can:"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, "Open the cookie banner via \"Cookie settings\" in the footer at any time"), /*#__PURE__*/React.createElement("li", null, "Delete cookies in your browser settings"), /*#__PURE__*/React.createElement("li", null, "Block cookies entirely in your browser settings")), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Step-by-step guide: ", /*#__PURE__*/React.createElement("a", {
+    href: "https://www.allaboutcookies.org/manage-cookies",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "allaboutcookies.org/manage-cookies"))), /*#__PURE__*/React.createElement("div", {
+    key: "s8"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "8. Changes to This Policy"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We may update this Privacy & Cookie Policy from time to time. The current version is always published on this page with the latest update date."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      color: "var(--slate-400)",
+      fontSize: 13,
+      marginTop: 8
+    }
+  }, "Last updated: May 2026")), /*#__PURE__*/React.createElement("div", {
+    key: "s9"
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "9. Contact"), /*#__PURE__*/React.createElement(LegalContactBlock, null))].filter(Boolean))));
+}
+
+// ──────────────────────────────────────────────────────────────────
+// TERMS & CONDITIONS
+// ──────────────────────────────────────────────────────────────────
+function TermsPage() {
+  useSeoMeta("Terms & Conditions | 7code — SEVEN CODE DEVELOPMENT SRL", "Terms & Conditions governing your use of 7code.tech and services provided by SEVEN CODE DEVELOPMENT SRL, Cluj-Napoca, Romania.");
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/React.createElement("section", {
+    className: "page-hero"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "tag",
+    style: {
+      marginBottom: 16,
+      display: "inline-flex"
+    }
+  }, "Legal"), /*#__PURE__*/React.createElement("h1", null, "Terms & Conditions"), /*#__PURE__*/React.createElement("p", null, "7code (SEVEN CODE DEVELOPMENT SRL) \u2014 CUI: 38088795 \u2014 Cluj-Napoca, Romania"))), /*#__PURE__*/React.createElement("section", {
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      maxWidth: 800
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      lineHeight: 1.75,
+      color: "var(--slate-700)",
+      marginBottom: 48
+    }
+  }, "Welcome to 7code. These Terms & Conditions (\"Terms\") govern your access to and use of", " ", /*#__PURE__*/React.createElement("a", {
+    href: "https://www.7code.tech",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "www.7code.tech"), " (the \"Website\") and any services provided by SEVEN CODE DEVELOPMENT SRL (\"7code\", \"we\", \"us\"). By accessing the Website or engaging our services, you agree to be bound by these Terms."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "1. About Us"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal name: "), "SEVEN CODE DEVELOPMENT SRL"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "CUI: "), "38088795"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Registered office: "), "Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania"), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Email: "), /*#__PURE__*/React.createElement("a", {
+    href: "mailto:office@7code.ro",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "office@7code.ro")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Phone: "), /*#__PURE__*/React.createElement("a", {
+    href: "tel:+40774542081",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "+4 0774 542 081"))), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "2. Services"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "7code provides nearshore software development and AI automation services, including:"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, "Staff augmentation and dedicated teams"), /*#__PURE__*/React.createElement("li", null, "End-to-end product development"), /*#__PURE__*/React.createElement("li", null, "AI automation and system integrations"), /*#__PURE__*/React.createElement("li", null, "Technical consulting and workshops")), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Service scope, deliverables, timelines and fees are defined in a separate written agreement (MSA or SOW) signed between 7code and the client. In case of conflict, the signed agreement prevails over these Terms."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "3. Use of the Website"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "You may use the Website for lawful purposes only. You agree not to:"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, "Use the Website in any way that breaches applicable law"), /*#__PURE__*/React.createElement("li", null, "Attempt to gain unauthorised access to the Website or its systems"), /*#__PURE__*/React.createElement("li", null, "Interfere with the Website's operation, security or performance"), /*#__PURE__*/React.createElement("li", null, "Scrape, copy or republish content without our prior written consent"), /*#__PURE__*/React.createElement("li", null, "Submit false, misleading or harmful information via our contact form")), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "4. Intellectual Property"), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "Website Content"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "All content on the Website \u2014 text, graphics, logos, icons, images, code, design \u2014 is owned by or licensed to 7code and protected by Romanian, EU and international IP laws. You may not reproduce, distribute or modify any content without our prior written consent."), /*#__PURE__*/React.createElement("h3", {
+    style: h3s
+  }, "Client Deliverables"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Ownership of work product developed for clients is defined in the applicable signed agreement. Pre-existing IP and reusable components remain the property of 7code unless stated otherwise."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "5. Engagement Process"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Any engagement with 7code follows this process: Initial enquiry via contact form, email or call; Discovery and qualification; Proposal and commercial offer; Signed contract (MSA / SOW / NDA as required); Kickoff and delivery."), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Contact form submissions do not constitute a binding offer or contract."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "6. Fees & Payment"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "All fees, rates and payment terms are set out in the signed contract or SOW. Unless otherwise agreed:"), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, "Invoices are issued monthly"), /*#__PURE__*/React.createElement("li", null, "Payment is due within 14 days from the invoice date"), /*#__PURE__*/React.createElement("li", null, "Late payments may incur statutory interest under Romanian law"), /*#__PURE__*/React.createElement("li", null, "All amounts are exclusive of VAT, where applicable")), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "7. Confidentiality"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Both parties agree to keep confidential any non-public business, technical or commercial information shared during the engagement. Specific obligations are formalised through an NDA when required."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "8. Warranties & Disclaimers"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "The Website and its content are provided \"as is\" and \"as available\", without warranties of any kind, express or implied. We do not warrant that the content is complete, current or error-free, or that access will be uninterrupted."), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Service-specific warranties for client engagements are defined in the signed contract."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "9. Limitation of Liability"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "To the maximum extent permitted by law, 7code shall not be liable for any indirect, incidental, special or consequential damages, or any loss of profits, revenue, data, or business opportunities, arising out of or related to your use of the Website."), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "For paid client engagements, liability is limited as set out in the signed contract."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "10. Third-Party Links & Services"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "The Website may contain links to third-party websites or embed third-party services (e.g., Google Analytics, LinkedIn, YouTube). We are not responsible for the content, policies or practices of any third party."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "11. Data Protection"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "Personal data is processed in line with our", " ", /*#__PURE__*/React.createElement("a", {
+    href: "/privacy-policy",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "Privacy & Cookie Policy"), ", which forms part of these Terms."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "12. Termination"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We may suspend or terminate your access to the Website at any time, without notice, if we believe you have violated these Terms. Termination of client services is governed by the signed contract."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "13. Governing Law & Jurisdiction"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "These Terms are governed by the laws of Romania. Any dispute shall be submitted to the exclusive jurisdiction of the competent courts of Cluj-Napoca, Romania, unless otherwise agreed in writing."), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "14. Changes to These Terms"), /*#__PURE__*/React.createElement("p", {
+    style: ps
+  }, "We may update these Terms from time to time. The latest version will always be published on this page. Continued use of the Website after changes constitutes acceptance."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      color: "var(--slate-400)",
+      fontSize: 13,
+      marginTop: 8
+    }
+  }, "Last updated: May 2026"), /*#__PURE__*/React.createElement("h2", {
+    style: h2s
+  }, "15. Contact Us"), /*#__PURE__*/React.createElement(LegalContactBlock, null))));
+}
+
+// shared style objects for legal pages
+const h2s = {
+  fontSize: 20,
+  fontWeight: 700,
+  margin: "40px 0 12px",
+  paddingTop: 8,
+  borderTop: "1px solid var(--slate-200)",
+  color: "var(--ink)"
+};
+const h3s = {
+  fontSize: 16,
+  fontWeight: 600,
+  margin: "24px 0 8px",
+  color: "var(--ink)"
+};
+const ps = {
+  fontSize: 15,
+  lineHeight: 1.75,
+  color: "var(--slate-700)",
+  margin: "0 0 12px"
+};
+const uls = {
+  paddingLeft: 20,
+  margin: "8px 0 16px",
+  color: "var(--slate-700)",
+  fontSize: 15,
+  lineHeight: 1.75
+};
+window.PrivacyPolicyPage = PrivacyPolicyPage;
+window.TermsPage = TermsPage;
