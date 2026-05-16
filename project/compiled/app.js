@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {
@@ -76,6 +76,9 @@ function App() {
     applyAccent(tweaks.accent);
   }, [tweaks.accent]);
   useEffect(() => {
+    initAnalytics();
+  }, []);
+  useEffect(() => {
     if (!routesReady) {
       const onLoad = () => setRoutesReady(true);
       window.addEventListener('routes-loaded', onLoad);
@@ -96,10 +99,10 @@ function App() {
     slug: slug
   }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/blog") Page = routesReady ? /*#__PURE__*/React.createElement(BlogRouter, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else if (page === "/resources" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ResourcePage, {
     slug: slug
-  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/privacy-policy") Page = /*#__PURE__*/React.createElement(PrivacyPolicyPage, null);else if (page === "/terms-and-conditions") Page = /*#__PURE__*/React.createElement(TermsPage, null);else if (page === "/faq") Page = /*#__PURE__*/React.createElement(FAQPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
     heroVariant: tweaks.heroVariant
   });
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(TweaksPanel, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(CookieConsent, null), /*#__PURE__*/React.createElement(TweaksPanel, {
     title: "Tweaks"
   }, /*#__PURE__*/React.createElement(TweakSection, {
     title: "Hero variant (home page only)"

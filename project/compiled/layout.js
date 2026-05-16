@@ -10,14 +10,22 @@ const {
 // Routing (path-based)
 // ──────────────────────────────────────────────────────────────────
 function useHashRoute() {
-  const [path, setPath] = useState(() => {
+  const getPath = () => {
     if (typeof window === "undefined") return "/";
-    return window.location.hash.slice(1) || window.location.pathname || "/";
-  });
+    const hash = window.location.hash.slice(1);
+    // Only use hash as route if it looks like a path (starts with "/")
+    if (hash.startsWith("/")) return hash;
+    return window.location.pathname || "/";
+  };
+  const [path, setPath] = useState(getPath);
   useEffect(() => {
     const onHash = () => {
-      setPath(window.location.hash.slice(1) || "/");
-      window.scrollTo(0, 0);
+      const next = getPath();
+      setPath(next);
+      // Only scroll to top if not navigating to a hash anchor on the same path
+      if (!window.location.hash || window.location.hash.startsWith("/#")) {
+        window.scrollTo(0, 0);
+      }
     };
     window.addEventListener("hashchange", onHash);
     return () => window.removeEventListener("hashchange", onHash);
@@ -352,8 +360,54 @@ function Footer() {
     target: "_blank",
     rel: "noopener noreferrer"
   }, "Cluj-Napoca, Romania"))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderTop: "1px solid rgba(255,255,255,.12)",
+      paddingTop: 20,
+      marginTop: 8
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "0 0 6px",
+      fontSize: 12,
+      color: "rgba(255,255,255,.4)",
+      lineHeight: 1.6
+    }
+  }, "SEVEN CODE DEVELOPMENT SRL \xB7 CUI 38088795 \xB7 Onisifor Ghibu 20A, Cluj-Napoca 400185, Romania \xB7 office@7code.ro")), /*#__PURE__*/React.createElement("div", {
     className: "footer-bottom"
-  }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 7Code. All rights reserved."), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 16,
+      flexWrap: "wrap",
+      alignItems: "center"
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "\xA9 2026 7Code. All rights reserved."), /*#__PURE__*/React.createElement("a", {
+    href: "/privacy-policy",
+    style: {
+      color: "rgba(255,255,255,.55)",
+      fontSize: 13,
+      textDecoration: "none"
+    }
+  }, "Privacy & Cookies"), /*#__PURE__*/React.createElement("a", {
+    href: "/terms-and-conditions",
+    style: {
+      color: "rgba(255,255,255,.55)",
+      fontSize: 13,
+      textDecoration: "none"
+    }
+  }, "Terms & Conditions"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => openCookieSettings(),
+    style: {
+      background: "none",
+      border: "none",
+      color: "rgba(255,255,255,.55)",
+      fontSize: 13,
+      cursor: "pointer",
+      padding: 0,
+      fontFamily: "inherit",
+      textDecoration: "underline"
+    }
+  }, "Cookie settings")), /*#__PURE__*/React.createElement("div", {
     className: "footer-social"
   }, /*#__PURE__*/React.createElement("a", {
     href: "https://github.com/7code",
@@ -372,8 +426,263 @@ function Footer() {
     "aria-label": "Clutch profile"
   }, /*#__PURE__*/React.createElement(Icon.award, null))))));
 }
+
+// ──────────────────────────────────────────────────────────────────
+// Analytics — consent-gated GA loader
+// ──────────────────────────────────────────────────────────────────
+const GA_ID = "G-109V5ZWVD8";
+let _gaLoaded = false;
+function loadGA() {
+  if (_gaLoaded) return;
+  _gaLoaded = true;
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  window.gtag = gtag;
+  gtag("js", new Date());
+  gtag("config", GA_ID, {
+    anonymize_ip: true
+  });
+}
+function initAnalytics() {
+  try {
+    const raw = localStorage.getItem("7code_consent");
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed.analytics === true) loadGA();
+    }
+  } catch (_) {}
+  window.addEventListener("7code:consent", function (e) {
+    if (e.detail && e.detail.analytics === true) loadGA();
+  });
+}
+
+// ──────────────────────────────────────────────────────────────────
+// Cookie Consent Banner
+// ──────────────────────────────────────────────────────────────────
+const CONSENT_KEY = "7code_consent";
+const CONSENT_VER = "1";
+function readConsent() {
+  try {
+    const raw = localStorage.getItem(CONSENT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (parsed.version !== CONSENT_VER) return null;
+    return parsed;
+  } catch (_) {
+    return null;
+  }
+}
+function writeConsent(analytics) {
+  const consent = {
+    version: CONSENT_VER,
+    essential: true,
+    analytics: analytics,
+    decidedAt: new Date().toISOString()
+  };
+  localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  window.dispatchEvent(new CustomEvent("7code:consent", {
+    detail: consent
+  }));
+}
+function openCookieSettings() {
+  window.dispatchEvent(new CustomEvent("7code:open-cookie-settings"));
+}
+function CookieConsent() {
+  const [visible, setVisible] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
+  const [analytics, setAnalytics] = useState(false);
+  useEffect(() => {
+    const existing = readConsent();
+    if (!existing) setVisible(true);else setAnalytics(!!existing.analytics);
+    const openHandler = () => {
+      const c = readConsent();
+      setAnalytics(c ? !!c.analytics : false);
+      setShowSettings(true);
+      setVisible(true);
+    };
+    window.addEventListener("7code:open-cookie-settings", openHandler);
+    return () => window.removeEventListener("7code:open-cookie-settings", openHandler);
+  }, []);
+  function save(analyticsVal) {
+    writeConsent(analyticsVal);
+    setVisible(false);
+    setShowSettings(false);
+  }
+  if (!visible) return null;
+  const btnPrimary = {
+    background: "var(--cyan-500)",
+    color: "#fff",
+    border: 0,
+    borderRadius: 999,
+    padding: "10px 18px",
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: "pointer",
+    fontFamily: "inherit"
+  };
+  const btnSecondary = {
+    background: "#fff",
+    color: "var(--ink)",
+    border: "1px solid var(--slate-200)",
+    borderRadius: 999,
+    padding: "10px 18px",
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: "pointer",
+    fontFamily: "inherit"
+  };
+  const btnGhost = {
+    background: "transparent",
+    color: "var(--slate-500)",
+    border: 0,
+    borderRadius: 999,
+    padding: "10px 14px",
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: "pointer",
+    textDecoration: "underline",
+    fontFamily: "inherit"
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    role: "dialog",
+    "aria-label": "Cookie consent",
+    style: {
+      position: "fixed",
+      left: 16,
+      right: 16,
+      bottom: 16,
+      zIndex: 9999,
+      maxWidth: 720,
+      margin: "0 auto",
+      background: "#fff",
+      border: "1px solid var(--slate-200)",
+      borderRadius: "var(--radius-lg)",
+      boxShadow: "var(--shadow-lg)",
+      padding: 24,
+      fontFamily: "var(--font-body)",
+      color: "var(--ink)"
+    }
+  }, !showSettings ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      margin: "0 0 8px",
+      fontSize: 18,
+      fontWeight: 700
+    }
+  }, "We use cookies"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: "0 0 16px",
+      fontSize: 14,
+      lineHeight: 1.65,
+      color: "var(--slate-500)"
+    }
+  }, "We use essential cookies for the site to work, and analytics cookies (Google Analytics) to understand how you use it.", " ", /*#__PURE__*/React.createElement("a", {
+    href: "/privacy-policy#cookies",
+    style: {
+      color: "var(--cyan-600)",
+      textDecoration: "none"
+    }
+  }, "Cookie Policy"), "."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      flexWrap: "wrap"
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => save(true),
+    style: btnPrimary
+  }, "Accept all"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => save(false),
+    style: btnSecondary
+  }, "Reject non-essential"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => setShowSettings(true),
+    style: btnGhost
+  }, "Customise"))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      margin: "0 0 16px",
+      fontSize: 18,
+      fontWeight: 700
+    }
+  }, "Cookie settings"), /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: "flex",
+      gap: 12,
+      padding: "12px 0",
+      borderBottom: "1px solid var(--slate-200)",
+      cursor: "default"
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: true,
+    disabled: true,
+    style: {
+      marginTop: 4
+    }
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600
+    }
+  }, "Essential"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "var(--slate-500)",
+      marginTop: 2
+    }
+  }, "Required for the website to function. Always active."))), /*#__PURE__*/React.createElement("label", {
+    style: {
+      display: "flex",
+      gap: 12,
+      padding: "12px 0",
+      borderBottom: "1px solid var(--slate-200)",
+      cursor: "pointer"
+    }
+  }, /*#__PURE__*/React.createElement("input", {
+    type: "checkbox",
+    checked: analytics,
+    onChange: e => setAnalytics(e.target.checked),
+    style: {
+      marginTop: 4
+    }
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600
+    }
+  }, "Analytics"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "var(--slate-500)",
+      marginTop: 2
+    }
+  }, "Google Analytics \u2014 anonymised usage to improve the site."))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 8,
+      flexWrap: "wrap",
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: () => save(analytics),
+    style: btnPrimary
+  }, "Save preferences"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => save(true),
+    style: btnSecondary
+  }, "Accept all"), /*#__PURE__*/React.createElement("button", {
+    onClick: () => save(false),
+    style: btnGhost
+  }, "Reject non-essential"))));
+}
 window.Nav = Nav;
 window.Footer = Footer;
 window.useHashRoute = useHashRoute;
 window.parseRoute = parseRoute;
 window.useReveal = useReveal;
+window.CookieConsent = CookieConsent;
+window.openCookieSettings = openCookieSettings;
+window.initAnalytics = initAnalytics;

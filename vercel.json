@@ -62,7 +62,10 @@
     { "source": "/7code-blog/", "destination": "/blog", "permanent": true },
     { "source": "/7code-blog", "destination": "/blog", "permanent": true },
     { "source": "/privacy-policy/", "destination": "/privacy-policy", "permanent": true },
-    { "source": "/cookie-policy/", "destination": "/cookie-policy", "permanent": true },
+    { "source": "/cookie-policy/", "destination": "/privacy-policy#cookies", "permanent": true },
+    { "source": "/cookie-policy", "destination": "/privacy-policy#cookies", "permanent": true },
+    { "source": "/terms/", "destination": "/terms-and-conditions", "permanent": true },
+    { "source": "/terms", "destination": "/terms-and-conditions", "permanent": true },
     { "source": "/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [

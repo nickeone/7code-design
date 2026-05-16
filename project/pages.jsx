@@ -1028,3 +1028,288 @@ function FAQPage() {
 
 
 window.FAQPage = FAQPage;
+
+// ──────────────────────────────────────────────────────────────────
+// LEGAL — shared helpers
+// ──────────────────────────────────────────────────────────────────
+const thStyle = { padding: "10px 12px", textAlign: "left", fontWeight: 600, fontSize: 13, letterSpacing: ".04em", borderBottom: "1px solid var(--slate-200)", color: "var(--ink)" };
+const tdStyle = { padding: "10px 12px", borderBottom: "1px solid var(--slate-200)", color: "var(--slate-700)", verticalAlign: "top", fontSize: 14, lineHeight: 1.6 };
+
+function LegalContactBlock() {
+  return (
+    <div style={{ marginTop: 40, padding: 28, background: "var(--bg-alt)", borderRadius: "var(--radius-lg)", border: "1px solid var(--slate-200)" }}>
+      <h3 style={{ margin: "0 0 16px", fontSize: 16 }}>Get in touch</h3>
+      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gap: 8, fontSize: 15, color: "var(--slate-700)" }}>
+        <li><strong>Email: </strong><a href="mailto:office@7code.ro" style={{ color: "var(--cyan-600)" }}>office@7code.ro</a></li>
+        <li><strong>Phone: </strong><a href="tel:+40774542081" style={{ color: "var(--cyan-600)" }}>+4 0774 542 081</a></li>
+        <li><strong>Address: </strong>Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania</li>
+        <li><strong>Contact form: </strong><a href="/contact" style={{ color: "var(--cyan-600)" }}>7code.tech/contact</a></li>
+      </ul>
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────
+// PRIVACY POLICY
+// ──────────────────────────────────────────────────────────────────
+function PrivacyPolicyPage() {
+  useSeoMeta(
+    "Privacy & Cookie Policy | 7code — SEVEN CODE DEVELOPMENT SRL",
+    "How 7code collects, uses and protects personal data, and how we use cookies. GDPR-compliant — operated by SEVEN CODE DEVELOPMENT SRL, Cluj-Napoca, Romania."
+  );
+
+  useEffectP(() => {
+    if (window.location.hash === "#cookies") {
+      setTimeout(() => {
+        const el = document.getElementById("cookies");
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 100);
+    }
+  }, []);
+
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="tag" style={{ marginBottom: 16, display: "inline-flex" }}>Legal</span>
+          <h1>Privacy &amp; Cookie Policy</h1>
+          <p>7code (SEVEN CODE DEVELOPMENT SRL) — CUI: 38088795 — Cluj-Napoca, Romania</p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container" style={{ maxWidth: 800 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--slate-700)", marginBottom: 48 }}>
+            This Privacy &amp; Cookie Policy explains how 7code collects, uses and protects personal data when you visit{" "}
+            <a href="https://www.7code.tech" style={{ color: "var(--cyan-600)" }}>www.7code.tech</a> or contact us,
+            and how we use cookies. We comply with the EU General Data Protection Regulation (GDPR),
+            the ePrivacy Directive, and Romanian Law 190/2018.
+          </p>
+
+          {[
+            null,
+            <div key="s1">
+              <h2 style={h2s}>1. Data Controller</h2>
+              <ul style={uls}>
+                <li><strong>Legal name: </strong>SEVEN CODE DEVELOPMENT SRL</li>
+                <li><strong>CUI: </strong>38088795</li>
+                <li><strong>Address: </strong>Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania</li>
+                <li><strong>Email: </strong><a href="mailto:office@7code.ro" style={{ color: "var(--cyan-600)" }}>office@7code.ro</a></li>
+              </ul>
+            </div>,
+            <div key="s2">
+              <h2 style={h2s}>2. Data We Collect</h2>
+              <h3 style={h3s}>Contact Form</h3>
+              <p style={ps}>When you submit our contact form, we collect: Name, Email address, Phone number (optional), Company name (optional), Project details / message.</p>
+              <ul style={uls}>
+                <li><strong>Legal basis: </strong>Article 6(1)(b) GDPR — steps prior to entering into a contract.</li>
+                <li><strong>Purpose: </strong>Respond to your enquiry and prepare a commercial offer.</li>
+                <li><strong>Retention: </strong>12 months from last contact, then deleted or anonymised.</li>
+              </ul>
+              <h3 style={h3s}>Website Analytics</h3>
+              <p style={ps}>If you accept analytics cookies, we use Google Analytics to collect anonymised data: IP address (anonymised), Browser and device type, Pages visited, time on page, referrer.</p>
+              <ul style={uls}>
+                <li><strong>Legal basis: </strong>Article 6(1)(a) GDPR — your consent (via cookie banner).</li>
+                <li><strong>Retention: </strong>14 months.</li>
+              </ul>
+            </div>,
+            <div key="s3">
+              <h2 style={h2s}>3. Who We Share Data With</h2>
+              <p style={ps}>We share data only with the following processors under signed Data Processing Agreements:</p>
+              <ul style={uls}>
+                <li>Google Ireland Ltd — Google Analytics</li>
+                <li>Email provider — to receive and respond to contact form submissions</li>
+              </ul>
+              <p style={ps}>We never sell or rent your personal data.</p>
+            </div>,
+            <div key="s4">
+              <h2 style={h2s}>4. International Data Transfers</h2>
+              <p style={ps}>Some processors (e.g., Google) may transfer data outside the EU/EEA. Such transfers are protected by EU Standard Contractual Clauses (SCCs) and supplementary safeguards.</p>
+            </div>,
+            <div key="s5">
+              <h2 style={h2s}>5. Your Rights</h2>
+              <p style={ps}>Under GDPR you have the right to: Access, Rectification, Erasure ("right to be forgotten"), Restriction or objection to processing, Data portability, Withdraw consent at any time, Lodge a complaint with the Romanian DPA (ANSPDCP) —{" "}
+                <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan-600)" }}>www.dataprotection.ro</a>.
+              </p>
+              <p style={ps}>To exercise any right, email <a href="mailto:office@7code.ro" style={{ color: "var(--cyan-600)" }}>office@7code.ro</a>. We respond within 30 days.</p>
+            </div>,
+            <div key="s6">
+              <h2 style={h2s}>6. Security</h2>
+              <p style={ps}>We use TLS encryption, secure hosting, and access controls. Your information is treated with care and never sold to third parties.</p>
+            </div>,
+            <div key="s7" id="cookies">
+              <h2 style={h2s}>7. Cookies</h2>
+              <h3 style={h3s}>7.1 What Are Cookies?</h3>
+              <p style={ps}>Cookies are small text files stored on your device when you visit a website. They help websites function and collect anonymised information about usage.</p>
+              <h3 style={h3s}>7.2 Cookies We Use</h3>
+              <div style={{ overflowX: "auto", margin: "16px 0" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                  <thead>
+                    <tr style={{ background: "var(--slate-100)" }}>
+                      <th style={thStyle}>Category</th>
+                      <th style={thStyle}>Cookie</th>
+                      <th style={thStyle}>Purpose</th>
+                      <th style={thStyle}>Duration</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={tdStyle}>Essential</td>
+                      <td style={tdStyle}><code>7code_consent</code></td>
+                      <td style={tdStyle}>Stores your cookie preferences</td>
+                      <td style={tdStyle}>12 months</td>
+                    </tr>
+                    <tr style={{ background: "var(--slate-50)" }}>
+                      <td style={tdStyle}>Analytics</td>
+                      <td style={tdStyle}><code>_ga</code>, <code>_ga_*</code></td>
+                      <td style={tdStyle}>Google Analytics — anonymised usage data</td>
+                      <td style={tdStyle}>14 months</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style={ps}>Essential cookies are always active. Analytics cookies load only after you accept them.</p>
+              <h3 style={h3s}>7.3 Managing Cookies</h3>
+              <p style={ps}>You can:</p>
+              <ul style={uls}>
+                <li>Open the cookie banner via "Cookie settings" in the footer at any time</li>
+                <li>Delete cookies in your browser settings</li>
+                <li>Block cookies entirely in your browser settings</li>
+              </ul>
+              <p style={ps}>Step-by-step guide: <a href="https://www.allaboutcookies.org/manage-cookies" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan-600)" }}>allaboutcookies.org/manage-cookies</a></p>
+            </div>,
+            <div key="s8">
+              <h2 style={h2s}>8. Changes to This Policy</h2>
+              <p style={ps}>We may update this Privacy &amp; Cookie Policy from time to time. The current version is always published on this page with the latest update date.</p>
+              <p style={{ color: "var(--slate-400)", fontSize: 13, marginTop: 8 }}>Last updated: May 2026</p>
+            </div>,
+            <div key="s9">
+              <h2 style={h2s}>9. Contact</h2>
+              <LegalContactBlock />
+            </div>,
+          ].filter(Boolean)}
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────
+// TERMS & CONDITIONS
+// ──────────────────────────────────────────────────────────────────
+function TermsPage() {
+  useSeoMeta(
+    "Terms & Conditions | 7code — SEVEN CODE DEVELOPMENT SRL",
+    "Terms & Conditions governing your use of 7code.tech and services provided by SEVEN CODE DEVELOPMENT SRL, Cluj-Napoca, Romania."
+  );
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="tag" style={{ marginBottom: 16, display: "inline-flex" }}>Legal</span>
+          <h1>Terms &amp; Conditions</h1>
+          <p>7code (SEVEN CODE DEVELOPMENT SRL) — CUI: 38088795 — Cluj-Napoca, Romania</p>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container" style={{ maxWidth: 800 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: "var(--slate-700)", marginBottom: 48 }}>
+            Welcome to 7code. These Terms &amp; Conditions ("Terms") govern your access to and use of{" "}
+            <a href="https://www.7code.tech" style={{ color: "var(--cyan-600)" }}>www.7code.tech</a> (the "Website") and any
+            services provided by SEVEN CODE DEVELOPMENT SRL ("7code", "we", "us"). By accessing the Website or engaging our
+            services, you agree to be bound by these Terms.
+          </p>
+
+          <h2 style={h2s}>1. About Us</h2>
+          <ul style={uls}>
+            <li><strong>Legal name: </strong>SEVEN CODE DEVELOPMENT SRL</li>
+            <li><strong>CUI: </strong>38088795</li>
+            <li><strong>Registered office: </strong>Onisifor Ghibu 20A, Cluj-Napoca, 400185, Romania</li>
+            <li><strong>Email: </strong><a href="mailto:office@7code.ro" style={{ color: "var(--cyan-600)" }}>office@7code.ro</a></li>
+            <li><strong>Phone: </strong><a href="tel:+40774542081" style={{ color: "var(--cyan-600)" }}>+4 0774 542 081</a></li>
+          </ul>
+
+          <h2 style={h2s}>2. Services</h2>
+          <p style={ps}>7code provides nearshore software development and AI automation services, including:</p>
+          <ul style={uls}>
+            <li>Staff augmentation and dedicated teams</li>
+            <li>End-to-end product development</li>
+            <li>AI automation and system integrations</li>
+            <li>Technical consulting and workshops</li>
+          </ul>
+          <p style={ps}>Service scope, deliverables, timelines and fees are defined in a separate written agreement (MSA or SOW) signed between 7code and the client. In case of conflict, the signed agreement prevails over these Terms.</p>
+
+          <h2 style={h2s}>3. Use of the Website</h2>
+          <p style={ps}>You may use the Website for lawful purposes only. You agree not to:</p>
+          <ul style={uls}>
+            <li>Use the Website in any way that breaches applicable law</li>
+            <li>Attempt to gain unauthorised access to the Website or its systems</li>
+            <li>Interfere with the Website's operation, security or performance</li>
+            <li>Scrape, copy or republish content without our prior written consent</li>
+            <li>Submit false, misleading or harmful information via our contact form</li>
+          </ul>
+
+          <h2 style={h2s}>4. Intellectual Property</h2>
+          <h3 style={h3s}>Website Content</h3>
+          <p style={ps}>All content on the Website — text, graphics, logos, icons, images, code, design — is owned by or licensed to 7code and protected by Romanian, EU and international IP laws. You may not reproduce, distribute or modify any content without our prior written consent.</p>
+          <h3 style={h3s}>Client Deliverables</h3>
+          <p style={ps}>Ownership of work product developed for clients is defined in the applicable signed agreement. Pre-existing IP and reusable components remain the property of 7code unless stated otherwise.</p>
+
+          <h2 style={h2s}>5. Engagement Process</h2>
+          <p style={ps}>Any engagement with 7code follows this process: Initial enquiry via contact form, email or call; Discovery and qualification; Proposal and commercial offer; Signed contract (MSA / SOW / NDA as required); Kickoff and delivery.</p>
+          <p style={ps}>Contact form submissions do not constitute a binding offer or contract.</p>
+
+          <h2 style={h2s}>6. Fees &amp; Payment</h2>
+          <p style={ps}>All fees, rates and payment terms are set out in the signed contract or SOW. Unless otherwise agreed:</p>
+          <ul style={uls}>
+            <li>Invoices are issued monthly</li>
+            <li>Payment is due within 14 days from the invoice date</li>
+            <li>Late payments may incur statutory interest under Romanian law</li>
+            <li>All amounts are exclusive of VAT, where applicable</li>
+          </ul>
+
+          <h2 style={h2s}>7. Confidentiality</h2>
+          <p style={ps}>Both parties agree to keep confidential any non-public business, technical or commercial information shared during the engagement. Specific obligations are formalised through an NDA when required.</p>
+
+          <h2 style={h2s}>8. Warranties &amp; Disclaimers</h2>
+          <p style={ps}>The Website and its content are provided "as is" and "as available", without warranties of any kind, express or implied. We do not warrant that the content is complete, current or error-free, or that access will be uninterrupted.</p>
+          <p style={ps}>Service-specific warranties for client engagements are defined in the signed contract.</p>
+
+          <h2 style={h2s}>9. Limitation of Liability</h2>
+          <p style={ps}>To the maximum extent permitted by law, 7code shall not be liable for any indirect, incidental, special or consequential damages, or any loss of profits, revenue, data, or business opportunities, arising out of or related to your use of the Website.</p>
+          <p style={ps}>For paid client engagements, liability is limited as set out in the signed contract.</p>
+
+          <h2 style={h2s}>10. Third-Party Links &amp; Services</h2>
+          <p style={ps}>The Website may contain links to third-party websites or embed third-party services (e.g., Google Analytics, LinkedIn, YouTube). We are not responsible for the content, policies or practices of any third party.</p>
+
+          <h2 style={h2s}>11. Data Protection</h2>
+          <p style={ps}>Personal data is processed in line with our{" "}
+            <a href="/privacy-policy" style={{ color: "var(--cyan-600)" }}>Privacy &amp; Cookie Policy</a>,
+            which forms part of these Terms.
+          </p>
+
+          <h2 style={h2s}>12. Termination</h2>
+          <p style={ps}>We may suspend or terminate your access to the Website at any time, without notice, if we believe you have violated these Terms. Termination of client services is governed by the signed contract.</p>
+
+          <h2 style={h2s}>13. Governing Law &amp; Jurisdiction</h2>
+          <p style={ps}>These Terms are governed by the laws of Romania. Any dispute shall be submitted to the exclusive jurisdiction of the competent courts of Cluj-Napoca, Romania, unless otherwise agreed in writing.</p>
+
+          <h2 style={h2s}>14. Changes to These Terms</h2>
+          <p style={ps}>We may update these Terms from time to time. The latest version will always be published on this page. Continued use of the Website after changes constitutes acceptance.</p>
+          <p style={{ color: "var(--slate-400)", fontSize: 13, marginTop: 8 }}>Last updated: May 2026</p>
+
+          <h2 style={h2s}>15. Contact Us</h2>
+          <LegalContactBlock />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+// shared style objects for legal pages
+const h2s = { fontSize: 20, fontWeight: 700, margin: "40px 0 12px", paddingTop: 8, borderTop: "1px solid var(--slate-200)", color: "var(--ink)" };
+const h3s = { fontSize: 16, fontWeight: 600, margin: "24px 0 8px", color: "var(--ink)" };
+const ps  = { fontSize: 15, lineHeight: 1.75, color: "var(--slate-700)", margin: "0 0 12px" };
+const uls = { paddingLeft: 20, margin: "8px 0 16px", color: "var(--slate-700)", fontSize: 15, lineHeight: 1.75 };
+
+window.PrivacyPolicyPage = PrivacyPolicyPage;
+window.TermsPage = TermsPage;

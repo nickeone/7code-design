@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {style:{padding:'160px 0',textAlign:'center',color:'var(--slate-500)',fontSize:'15px'}}, 'Loading…');
@@ -25,6 +25,7 @@ function App() {
   const [routesReady, setRoutesReady] = useState(typeof BlogRouter !== 'undefined');
   const [page, slug] = parseRoute(route);
   useEffect(() => { applyAccent(tweaks.accent); }, [tweaks.accent]);
+  useEffect(() => { initAnalytics(); }, []);
   useEffect(() => {
     if (!routesReady) {
       const onLoad = () => setRoutesReady(true);
@@ -47,12 +48,16 @@ function App() {
   else if (page === "/ai-mvp-development" )  Page = <AiMvpPage />;
   else if (page === "/ai-development-agency-uk") Page = <UkGeoPage />;
   else if (page === "/resources"    && slug) Page = routesReady ? <ResourcePage slug={slug} /> : <LoadingPage />;
+  else if (page === "/privacy-policy"      )  Page = <PrivacyPolicyPage />;
+  else if (page === "/terms-and-conditions")  Page = <TermsPage />;
+  else if (page === "/faq"                 )  Page = <FAQPage />;
   else                                      Page = <HomePage heroVariant={tweaks.heroVariant} />;
   return (
     <>
       <Nav />
       {Page}
       <Footer />
+      <CookieConsent />
       <TweaksPanel title="Tweaks">
         <TweakSection title="Hero variant (home page only)">
           <TweakRadio value={tweaks.heroVariant} onChange={v => setTweak("heroVariant", v)} options={[
