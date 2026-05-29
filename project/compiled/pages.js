@@ -515,6 +515,59 @@ function BlogPage() {
 // ──────────────────────────────────────────────────────────────────
 // CONTACT
 // ──────────────────────────────────────────────────────────────────
+// Reads UTM params + referrer + landing_page from the current URL/document.
+function getAttribution() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    utm_source: p.get("utm_source") || "",
+    utm_medium: p.get("utm_medium") || "",
+    utm_campaign: p.get("utm_campaign") || "",
+    utm_term: p.get("utm_term") || "",
+    utm_content: p.get("utm_content") || "",
+    landing_page: window.location.href,
+    referrer: document.referrer
+  };
+}
+
+// Persists first-touch attribution in localStorage so return visits still carry the original source.
+const FIRST_TOUCH_KEY = "7c_firsttouch";
+function ensureFirstTouch() {
+  try {
+    if (!localStorage.getItem(FIRST_TOUCH_KEY)) {
+      localStorage.setItem(FIRST_TOUCH_KEY, JSON.stringify(getAttribution()));
+    }
+  } catch {/* storage blocked — ignore */}
+}
+function getFirstTouch() {
+  try {
+    const raw = localStorage.getItem(FIRST_TOUCH_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+// Resolves the GA4 client_id asynchronously; falls back to parsing the _ga cookie.
+function resolveGaClientId() {
+  return new Promise(resolve => {
+    try {
+      if (typeof window.gtag === "function") {
+        window.gtag("get", "G-109V5ZWVD8", "client_id", cid => resolve(cid || ""));
+        return;
+      }
+    } catch {/* gtag not ready */}
+    // Fallback: parse _ga cookie value "GA1.1.<cid_part1>.<cid_part2>"
+    try {
+      const match = document.cookie.match(/(?:^|;\s*)_ga=([^;]+)/);
+      if (match) {
+        const parts = decodeURIComponent(match[1]).split(".");
+        resolve(parts.length >= 4 ? parts.slice(2).join(".") : "");
+        return;
+      }
+    } catch {/* ignore */}
+    resolve("");
+  });
+}
 function ContactPage() {
   useSeoMeta("Contact 7Code, Start a Project | Cluj-Napoca, Romania", "Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.");
   const [form, setForm] = useStateP({
@@ -528,6 +581,27 @@ function ContactPage() {
   const [sent, setSent] = useStateP(false);
   const [submitting, setSubmitting] = useStateP(false);
   const [serverError, setServerError] = useStateP(null);
+  // IP geolocation is collected on mount to enrich lead context with approximate visitor location.
+  const [geo, setGeo] = useStateP({
+    city: "",
+    region: "",
+    country: ""
+  });
+  useEffectP(() => {
+    ensureFirstTouch();
+    // Fetch approximate location from ipapi.co — non-blocking, failure leaves geo blank.
+    (async () => {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const d = await res.json();
+        setGeo({
+          city: d.city || "",
+          region: d.region || "",
+          country: d.country_name || ""
+        });
+      } catch {/* geo unavailable — form still works */}
+    })();
+  }, []);
   const update = k => e => setForm({
     ...form,
     [k]: e.target.value
@@ -542,6 +616,38 @@ function ContactPage() {
     if (Object.keys(errs).length > 0) return;
     setSubmitting(true);
     setServerError(null);
+
+    // Resolve GA4 client_id — non-blocking, 1.5 s timeout so submit never hangs.
+    let gaClientId = "";
+    try {
+      gaClientId = await Promise.race([resolveGaClientId(), new Promise(res => setTimeout(() => res(""), 1500))]);
+    } catch {/* ignore */}
+    const current = getAttribution();
+    const firstTouch = getFirstTouch();
+    const enriched = {
+      ...form,
+      // Current-session attribution
+      utm_source: current.utm_source,
+      utm_medium: current.utm_medium,
+      utm_campaign: current.utm_campaign,
+      utm_term: current.utm_term,
+      utm_content: current.utm_content,
+      landing_page: current.landing_page,
+      referrer: current.referrer,
+      ga_client_id: gaClientId,
+      // First-touch attribution (preserved across return visits)
+      ft_utm_source: firstTouch ? firstTouch.utm_source : current.utm_source,
+      ft_utm_medium: firstTouch ? firstTouch.utm_medium : current.utm_medium,
+      ft_utm_campaign: firstTouch ? firstTouch.utm_campaign : current.utm_campaign,
+      ft_utm_term: firstTouch ? firstTouch.utm_term : current.utm_term,
+      ft_utm_content: firstTouch ? firstTouch.utm_content : current.utm_content,
+      ft_landing_page: firstTouch ? firstTouch.landing_page : current.landing_page,
+      ft_referrer: firstTouch ? firstTouch.referrer : current.referrer,
+      // Approximate visitor location (see privacy policy)
+      city: geo.city,
+      region: geo.region,
+      country: geo.country
+    };
     try {
       const res = await fetch("https://formspree.io/f/xdabgopp", {
         method: "POST",
@@ -549,7 +655,7 @@ function ContactPage() {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify(form)
+        body: JSON.stringify(enriched)
       });
       const data = await res.json();
       if (data.ok) {
