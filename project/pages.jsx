@@ -1204,10 +1204,16 @@ function PrivacyPolicyPage() {
             <div key="s2">
               <h2 style={h2s}>2. Data We Collect</h2>
               <h3 style={h3s}>Contact Form</h3>
-              <p style={ps}>When you submit our contact form, we collect: Name, Email address, Phone number (optional), Company name (optional), Project details / message.</p>
+              <p style={ps}>When you submit our contact form, we collect:</p>
+              <ul style={uls}>
+                <li>Name, email address, company name (optional), budget range (optional), project details / message</li>
+                <li>Traffic source — UTM parameters, landing page URL, and HTTP referrer (first-touch and current session)</li>
+                <li>Google Analytics client ID (<code>_ga</code> cookie value)</li>
+                <li>Approximate location — city, region, and country derived from your IP address via <a href="https://ipapi.co" target="_blank" rel="noopener noreferrer" style={{ color: "var(--cyan-600)" }}>ipapi.co</a> at the moment of submission. We do not store or log your precise IP address.</li>
+              </ul>
               <ul style={uls}>
                 <li><strong>Legal basis: </strong>Article 6(1)(b) GDPR — steps prior to entering into a contract.</li>
-                <li><strong>Purpose: </strong>Respond to your enquiry and prepare a commercial offer.</li>
+                <li><strong>Purpose: </strong>Respond to your enquiry, prepare a commercial offer, and understand how visitors find us so we can improve our marketing.</li>
                 <li><strong>Retention: </strong>12 months from last contact, then deleted or anonymised.</li>
               </ul>
               <h3 style={h3s}>Website Analytics</h3>
@@ -1222,6 +1228,8 @@ function PrivacyPolicyPage() {
               <p style={ps}>We share data only with the following processors under signed Data Processing Agreements:</p>
               <ul style={uls}>
                 <li>Google Ireland Ltd — Google Analytics</li>
+                <li>Formspree Inc — to receive and store contact form submissions (including traffic-source and approximate location data listed above)</li>
+                <li>ipapi.co (Kloudend Inc) — to resolve approximate city/region/country from your IP at form submission time; only the derived location fields are retained by us</li>
                 <li>Email provider — to receive and respond to contact form submissions</li>
               </ul>
               <p style={ps}>We never sell or rent your personal data.</p>
@@ -1269,6 +1277,12 @@ function PrivacyPolicyPage() {
                       <td style={tdStyle}>Google Analytics — anonymised usage data</td>
                       <td style={tdStyle}>14 months</td>
                     </tr>
+                    <tr>
+                      <td style={tdStyle}>Functional</td>
+                      <td style={tdStyle}><code>7c_firsttouch</code> (localStorage)</td>
+                      <td style={tdStyle}>Remembers the first traffic source (UTM / referrer / landing page) when you first visit, so that if you return and submit the contact form, we can attribute the lead to the original campaign</td>
+                      <td style={tdStyle}>Until cleared by browser</td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -1285,7 +1299,7 @@ function PrivacyPolicyPage() {
             <div key="s8">
               <h2 style={h2s}>8. Changes to This Policy</h2>
               <p style={ps}>We may update this Privacy &amp; Cookie Policy from time to time. The current version is always published on this page with the latest update date.</p>
-              <p style={{ color: "var(--slate-400)", fontSize: 13, marginTop: 8 }}>Last updated: May 2026</p>
+              <p style={{ color: "var(--slate-400)", fontSize: 13, marginTop: 8 }}>Last updated: 29 May 2026</p>
             </div>,
             <div key="s9">
               <h2 style={h2s}>9. Contact</h2>

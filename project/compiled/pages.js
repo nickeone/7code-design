@@ -1777,9 +1777,18 @@ function PrivacyPolicyPage() {
     style: h3s
   }, "Contact Form"), /*#__PURE__*/React.createElement("p", {
     style: ps
-  }, "When you submit our contact form, we collect: Name, Email address, Phone number (optional), Company name (optional), Project details / message."), /*#__PURE__*/React.createElement("ul", {
+  }, "When you submit our contact form, we collect:"), /*#__PURE__*/React.createElement("ul", {
     style: uls
-  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal basis: "), "Article 6(1)(b) GDPR \u2014 steps prior to entering into a contract."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Purpose: "), "Respond to your enquiry and prepare a commercial offer."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Retention: "), "12 months from last contact, then deleted or anonymised.")), /*#__PURE__*/React.createElement("h3", {
+  }, /*#__PURE__*/React.createElement("li", null, "Name, email address, company name (optional), budget range (optional), project details / message"), /*#__PURE__*/React.createElement("li", null, "Traffic source \u2014 UTM parameters, landing page URL, and HTTP referrer (first-touch and current session)"), /*#__PURE__*/React.createElement("li", null, "Google Analytics client ID (", /*#__PURE__*/React.createElement("code", null, "_ga"), " cookie value)"), /*#__PURE__*/React.createElement("li", null, "Approximate location \u2014 city, region, and country derived from your IP address via ", /*#__PURE__*/React.createElement("a", {
+    href: "https://ipapi.co",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    style: {
+      color: "var(--cyan-600)"
+    }
+  }, "ipapi.co"), " at the moment of submission. We do not store or log your precise IP address.")), /*#__PURE__*/React.createElement("ul", {
+    style: uls
+  }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Legal basis: "), "Article 6(1)(b) GDPR \u2014 steps prior to entering into a contract."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Purpose: "), "Respond to your enquiry, prepare a commercial offer, and understand how visitors find us so we can improve our marketing."), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("strong", null, "Retention: "), "12 months from last contact, then deleted or anonymised.")), /*#__PURE__*/React.createElement("h3", {
     style: h3s
   }, "Website Analytics"), /*#__PURE__*/React.createElement("p", {
     style: ps
@@ -1793,7 +1802,7 @@ function PrivacyPolicyPage() {
     style: ps
   }, "We share data only with the following processors under signed Data Processing Agreements:"), /*#__PURE__*/React.createElement("ul", {
     style: uls
-  }, /*#__PURE__*/React.createElement("li", null, "Google Ireland Ltd \u2014 Google Analytics"), /*#__PURE__*/React.createElement("li", null, "Email provider \u2014 to receive and respond to contact form submissions")), /*#__PURE__*/React.createElement("p", {
+  }, /*#__PURE__*/React.createElement("li", null, "Google Ireland Ltd \u2014 Google Analytics"), /*#__PURE__*/React.createElement("li", null, "Formspree Inc \u2014 to receive and store contact form submissions (including traffic-source and approximate location data listed above)"), /*#__PURE__*/React.createElement("li", null, "ipapi.co (Kloudend Inc) \u2014 to resolve approximate city/region/country from your IP at form submission time; only the derived location fields are retained by us"), /*#__PURE__*/React.createElement("li", null, "Email provider \u2014 to receive and respond to contact form submissions")), /*#__PURE__*/React.createElement("p", {
     style: ps
   }, "We never sell or rent your personal data.")), /*#__PURE__*/React.createElement("div", {
     key: "s4"
@@ -1880,7 +1889,15 @@ function PrivacyPolicyPage() {
     style: tdStyle
   }, "Google Analytics \u2014 anonymised usage data"), /*#__PURE__*/React.createElement("td", {
     style: tdStyle
-  }, "14 months"))))), /*#__PURE__*/React.createElement("p", {
+  }, "14 months")), /*#__PURE__*/React.createElement("tr", null, /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Functional"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, /*#__PURE__*/React.createElement("code", null, "7c_firsttouch"), " (localStorage)"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Remembers the first traffic source (UTM / referrer / landing page) when you first visit, so that if you return and submit the contact form, we can attribute the lead to the original campaign"), /*#__PURE__*/React.createElement("td", {
+    style: tdStyle
+  }, "Until cleared by browser"))))), /*#__PURE__*/React.createElement("p", {
     style: ps
   }, "Essential cookies are always active. Analytics cookies load only after you accept them."), /*#__PURE__*/React.createElement("h3", {
     style: h3s
@@ -1909,7 +1926,7 @@ function PrivacyPolicyPage() {
       fontSize: 13,
       marginTop: 8
     }
-  }, "Last updated: May 2026")), /*#__PURE__*/React.createElement("div", {
+  }, "Last updated: 29 May 2026")), /*#__PURE__*/React.createElement("div", {
     key: "s9"
   }, /*#__PURE__*/React.createElement("h2", {
     style: h2s
