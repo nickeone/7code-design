@@ -1040,7 +1040,15 @@ function AiMvpPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI MVP Development"), /*#__PURE__*/React.createElement("h1", null, "AI MVP Development \u2014 Production-Ready in Weeks"), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
+  }, "AI MVP Development"), /*#__PURE__*/React.createElement("h1", null, "AI MVP Development \u2014 Production-Ready in Weeks"), /*#__PURE__*/React.createElement("p", {
+    className: "answer-first",
+    style: {
+      maxWidth: 720,
+      margin: "16px auto 0",
+      fontSize: 18,
+      color: "var(--slate-700)"
+    }
+  }, "AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks \u2014 including an evaluation harness, cloud infrastructure, and a real production launch \u2014 with fixed scope and pricing from \xA325k."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1189,7 +1197,15 @@ function UkGeoPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI Development Agency UK"), /*#__PURE__*/React.createElement("h1", null, "AI Development Agency for UK Companies"), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
+  }, "AI Development Agency UK"), /*#__PURE__*/React.createElement("h1", null, "AI Development Agency for UK Companies"), /*#__PURE__*/React.createElement("p", {
+    className: "answer-first",
+    style: {
+      maxWidth: 720,
+      margin: "16px auto 0",
+      fontSize: 18,
+      color: "var(--slate-700)"
+    }
+  }, "7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates \u2014 with LLM products shipped in as little as six weeks and projects starting from \xA325k."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1316,7 +1332,15 @@ function CompareAgencyFreelancerPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI Agency vs Freelancer"), /*#__PURE__*/React.createElement("h1", null, "AI Agency vs Freelancer: Which to Choose"), /*#__PURE__*/React.createElement("p", null, "The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly."))), /*#__PURE__*/React.createElement("section", {
+  }, "AI Agency vs Freelancer"), /*#__PURE__*/React.createElement("h1", null, "AI Agency vs Freelancer: Which to Choose"), /*#__PURE__*/React.createElement("p", {
+    className: "answer-first",
+    style: {
+      maxWidth: 720,
+      margin: "16px auto 0",
+      fontSize: 18,
+      color: "var(--slate-700)"
+    }
+  }, "For most AI projects, an agency suits production builds that need accountability, multiple skill sets, and senior oversight, while a freelancer fits small, low-risk tasks on a tight budget. The right choice depends on your timeline, complexity, and risk tolerance \u2014 below we compare both across ten decision factors."), /*#__PURE__*/React.createElement("p", null, "The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly."))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"

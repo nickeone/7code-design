@@ -17,6 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { SERVICE_FAQS, EXPERTISE_FAQS, faqPageEntity } from "./faq-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -174,6 +175,7 @@ function breadcrumbEntity(pageUrl, items) {
 
 function serviceSchema(s) {
   const url = SITE + "/service/" + s.slug;
+  const faqs = SERVICE_FAQS[s.slug];
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -192,12 +194,14 @@ function serviceSchema(s) {
         { name: "Services", url: SITE + "/services" },
         { name: s.title, url: url },
       ]),
+      ...(faqs ? [faqPageEntity(url, faqs)] : []),
     ],
   };
 }
 
 function expertiseSchema(e) {
   const url = SITE + "/expertise/" + e.slug;
+  const faqs = EXPERTISE_FAQS[e.slug];
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -216,6 +220,7 @@ function expertiseSchema(e) {
         { name: "Expertise", url: SITE + "/expertise" },
         { name: e.title, url: url },
       ]),
+      ...(faqs ? [faqPageEntity(url, faqs)] : []),
     ],
   };
 }

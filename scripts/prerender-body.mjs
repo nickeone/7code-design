@@ -36,6 +36,7 @@ const ROUTES = [
   "/case-studies",
   "/expertise",
   "/blog",
+  "/services",
   "/ai-mvp-development",
   "/ai-development-agency-uk",
   "/compare/agency-vs-freelancer",
@@ -90,6 +91,14 @@ const ROUTES = [
   "/blog/7code-discovery-mission",
   "/blog/how-to-hire-nearshore-ai-engineers",
   "/blog/top-nearshore-ai-development-agencies-europe",
+  "/resources/ai-automation-for-smes",
+  "/resources/ai-native-product-engineering",
+  "/resources/nearshore-software-romania",
+  "/resources/staff-augmentation-vs-dedicated-team",
+  "/resources/nearshore-romania-vs-offshore-asia",
+  "/resources/build-ai-in-house-vs-partner",
+  "/privacy-policy",
+  "/terms-and-conditions",
 ];
 
 // ── minimal static file server ────────────────────────────────────────────────
@@ -151,20 +160,49 @@ function startServer(port) {
 
 // ── Puppeteer render + inject ─────────────────────────────────────────────────
 
-async function renderRoute(page, baseUrl, route) {
-  await page.goto(baseUrl + route, { waitUntil: "networkidle0", timeout: 30000 });
+// Wait until #root has fully rendered content. The nav <header> renders
+// immediately from bundle-core, so checking children.length is not enough —
+// async route components (blog/service/expertise) from bundle-routes are loaded
+// with `async` and briefly show a "Loading…" placeholder. We navigate with
+// `domcontentloaded` (fast, not blocked by analytics keep-alives) and then poll
+// for a real <h1> with no loading state, retrying the navigation if needed.
+async function renderRouteOnce(page, baseUrl, route) {
+  await page.goto(baseUrl + route, { waitUntil: "domcontentloaded", timeout: 30000 });
 
-  // Wait until #root has meaningful content (not just an empty div)
   await page.waitForFunction(
     () => {
       const root = document.getElementById("root");
-      return root && root.children.length > 0;
+      if (!root || root.children.length === 0) return false;
+      if (root.querySelector("h1") === null) return false;
+      // Reject if the deferred-route LoadingPage is still showing.
+      if (/Loading…/.test(root.textContent || "")) return false;
+      return true;
     },
-    { timeout: 15000 },
+    { timeout: 30000, polling: 100 },
   );
 
-  const rootInnerHTML = await page.$eval("#root", el => el.innerHTML);
-  return rootInnerHTML;
+  return page.$eval("#root", el => el.innerHTML);
+}
+
+async function renderRoute(browser, baseUrl, route) {
+  const ATTEMPTS = 3;
+  let lastErr;
+  for (let i = 1; i <= ATTEMPTS; i++) {
+    // Use a fresh page per attempt. Reusing one page across all ~70 routes
+    // accumulates memory/state and makes later renders slow enough to time out.
+    const page = await browser.newPage();
+    page.on("console", () => {});
+    page.on("pageerror", () => {});
+    try {
+      return await renderRouteOnce(page, baseUrl, route);
+    } catch (err) {
+      lastErr = err;
+      if (i < ATTEMPTS) console.warn(`  retry ${i}/${ATTEMPTS - 1}  ${route}`);
+    } finally {
+      await page.close();
+    }
+  }
+  throw lastErr;
 }
 
 function injectRoot(html, innerHTML) {
@@ -202,11 +240,6 @@ try {
     ],
   });
 
-  const page = await browser.newPage();
-  // Suppress console noise from the page
-  page.on("console", () => {});
-  page.on("pageerror", () => {});
-
   const baseUrl = `http://127.0.0.1:${PORT}`;
   let success = 0;
   let failed = 0;
@@ -219,7 +252,7 @@ try {
     }
 
     try {
-      const innerHTML = await renderRoute(page, baseUrl, route);
+      const innerHTML = await renderRoute(browser, baseUrl, route);
       const original = await readFile(filePath, "utf8");
       const updated = injectRoot(original, innerHTML);
 

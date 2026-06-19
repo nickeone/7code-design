@@ -28,6 +28,12 @@ function App() {
   useEffect(() => { initAnalytics(); }, []);
   useEffect(() => {
     if (!routesReady) {
+      // Guard against a race: bundle-routes.min.js loads `async` and dispatches
+      // 'routes-loaded' on completion. If that event fired between this
+      // component mounting and this effect attaching its listener, we'd miss it
+      // and stay stuck on the Loading… placeholder forever. Re-check the global
+      // the bundle defines so we recover even if the event was already missed.
+      if (typeof BlogRouter !== 'undefined') { setRoutesReady(true); return; }
       const onLoad = () => setRoutesReady(true);
       window.addEventListener('routes-loaded', onLoad);
       return () => window.removeEventListener('routes-loaded', onLoad);

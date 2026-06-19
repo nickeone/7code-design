@@ -779,6 +779,7 @@ function AiMvpPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI MVP Development</span>
           <h1>AI MVP Development — Production-Ready in Weeks</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks — including an evaluation harness, cloud infrastructure, and a real production launch — with fixed scope and pricing from £25k.</p>
           <p>We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
             <a href="/contact" className="btn btn--cyan btn--lg">Start your AI MVP <Icon.arrow /></a>
@@ -888,6 +889,7 @@ function UkGeoPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI Development Agency UK</span>
           <h1>AI Development Agency for UK Companies</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates — with LLM products shipped in as little as six weeks and projects starting from £25k.</p>
           <p>Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
             <a href="/contact" className="btn btn--cyan btn--lg">Talk to the team <Icon.arrow /></a>
@@ -985,6 +987,7 @@ function CompareAgencyFreelancerPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI Agency vs Freelancer</span>
           <h1>AI Agency vs Freelancer: Which to Choose</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>For most AI projects, an agency suits production builds that need accountability, multiple skill sets, and senior oversight, while a freelancer fits small, low-risk tasks on a tight budget. The right choice depends on your timeline, complexity, and risk tolerance — below we compare both across ten decision factors.</p>
           <p>The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly.</p>
         </div>
       </section>
