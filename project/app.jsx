@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {style:{padding:'160px 0',textAlign:'center',color:'var(--slate-500)',fontSize:'15px'}}, 'Loading…');
@@ -51,6 +51,7 @@ function App() {
   else if (page === "/privacy-policy"      )  Page = <PrivacyPolicyPage />;
   else if (page === "/terms-and-conditions")  Page = <TermsPage />;
   else if (page === "/faq"                 )  Page = <FAQPage />;
+  else if (page === "/services"            )  Page = <ServicesPage />;
   else                                      Page = <HomePage heroVariant={tweaks.heroVariant} />;
   return (
     <>

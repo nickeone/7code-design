@@ -85,6 +85,25 @@ function HomePage({
 }
 
 // ──────────────────────────────────────────────────────────────────
+// SERVICES HUB
+// ──────────────────────────────────────────────────────────────────
+function ServicesPage() {
+  useSeoMeta("Services — AI Engineering, Integrations & Automation | 7Code", "7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, and LLM & agent development.");
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page"
+  }, /*#__PURE__*/React.createElement("section", {
+    className: "page-hero"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow",
+    style: {
+      justifyContent: "center"
+    }
+  }, "Services"), /*#__PURE__*/React.createElement("h1", null, "AI Engineering, Integrations & Automation Services"), /*#__PURE__*/React.createElement("p", null, "End-to-end AI and software engineering across product builds, system integrations, cloud infrastructure, and outstaffing \u2014 delivered by a senior team with 20+ products shipped."))), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(CTAStrip, null));
+}
+
+// ──────────────────────────────────────────────────────────────────
 // EXPERTISE
 // ──────────────────────────────────────────────────────────────────
 function ExpertisePage() {
@@ -145,7 +164,7 @@ function ProcessPage() {
     style: {
       justifyContent: "center"
     }
-  }, "Our process"), /*#__PURE__*/React.createElement("h1", null, "How we turn ideas into shipped products"), /*#__PURE__*/React.createElement("p", null, "A repeatable five-stage process that balances speed with quality. Built around outcomes, not deliverables."))), /*#__PURE__*/React.createElement("section", {
+  }, "Our process"), /*#__PURE__*/React.createElement("h1", null, "How We Build AI-Native Products"), /*#__PURE__*/React.createElement("p", null, "A repeatable five-stage process that balances speed with quality. Built around outcomes, not deliverables."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
@@ -258,7 +277,7 @@ function AboutPage() {
     style: {
       justifyContent: "center"
     }
-  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "The AI engineering partner that actually ships"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
+  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container about-split"
@@ -680,7 +699,7 @@ function ContactPage() {
     style: {
       justifyContent: "center"
     }
-  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Let's build something together"), /*#__PURE__*/React.createElement("p", null, "Tell us a bit about your project, we'll get back to you within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
+  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Start Your AI Engineering Project"), /*#__PURE__*/React.createElement("p", null, "Tell us a bit about your project, we'll get back to you within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
@@ -1021,7 +1040,7 @@ function AiMvpPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI MVP Development"), /*#__PURE__*/React.createElement("h1", null, "From idea to production AI", /*#__PURE__*/React.createElement("br", null), "in six weeks."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
+  }, "AI MVP Development"), /*#__PURE__*/React.createElement("h1", null, "AI MVP Development \u2014 Production-Ready in Weeks"), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1170,7 +1189,7 @@ function UkGeoPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI Development Agency UK"), /*#__PURE__*/React.createElement("h1", null, "The AI engineering partner", /*#__PURE__*/React.createElement("br", null), "UK companies actually use."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
+  }, "AI Development Agency UK"), /*#__PURE__*/React.createElement("h1", null, "AI Development Agency for UK Companies"), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1297,7 +1316,7 @@ function CompareAgencyFreelancerPage() {
     style: {
       justifyContent: "center"
     }
-  }, "AI Agency vs Freelancer"), /*#__PURE__*/React.createElement("h1", null, "Agency or freelancer for", /*#__PURE__*/React.createElement("br", null), "your AI project?"), /*#__PURE__*/React.createElement("p", null, "The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly."))), /*#__PURE__*/React.createElement("section", {
+  }, "AI Agency vs Freelancer"), /*#__PURE__*/React.createElement("h1", null, "AI Agency vs Freelancer: Which to Choose"), /*#__PURE__*/React.createElement("p", null, "The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly."))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
@@ -1477,6 +1496,7 @@ function CompareAgencyFreelancerPage() {
   }, "Talk to 7Code ", /*#__PURE__*/React.createElement(Icon.arrow, null))))), /*#__PURE__*/React.createElement(CTAStrip, null));
 }
 window.HomePage = HomePage;
+window.ServicesPage = ServicesPage;
 window.ExpertisePage = ExpertisePage;
 window.ProcessPage = ProcessPage;
 window.AboutPage = AboutPage;
