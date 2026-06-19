@@ -77,6 +77,29 @@ function HomePage({ heroVariant }) {
 }
 
 // ──────────────────────────────────────────────────────────────────
+// SERVICES HUB
+// ──────────────────────────────────────────────────────────────────
+function ServicesPage() {
+  useSeoMeta(
+    "Services — AI Engineering, Integrations & Automation | 7Code",
+    "7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, and LLM & agent development."
+  );
+  return (
+    <div className="page">
+      <section className="page-hero">
+        <div className="container">
+          <span className="eyebrow" style={{ justifyContent: "center" }}>Services</span>
+          <h1>AI Engineering, Integrations & Automation Services</h1>
+          <p>End-to-end AI and software engineering across product builds, system integrations, cloud infrastructure, and outstaffing — delivered by a senior team with 20+ products shipped.</p>
+        </div>
+      </section>
+      <Services />
+      <CTAStrip />
+    </div>
+  );
+}
+
+// ──────────────────────────────────────────────────────────────────
 // EXPERTISE
 // ──────────────────────────────────────────────────────────────────
 function ExpertisePage() {
@@ -120,7 +143,7 @@ function ProcessPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Our process</span>
-          <h1>How we turn ideas into shipped products</h1>
+          <h1>How We Build AI-Native Products</h1>
           <p>A repeatable five-stage process that balances speed with quality. Built around outcomes, not deliverables.</p>
         </div>
       </section>
@@ -224,7 +247,7 @@ function AboutPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
-          <h1>The AI engineering partner that actually ships</h1>
+          <h1>About 7code — Senior AI Engineering Team</h1>
           <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
         </div>
       </section>
@@ -558,7 +581,7 @@ function ContactPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Contact</span>
-          <h1>Let's build something together</h1>
+          <h1>Start Your AI Engineering Project</h1>
           <p>Tell us a bit about your project, we'll get back to you within one business day with next steps.</p>
         </div>
       </section>
@@ -755,7 +778,8 @@ function AiMvpPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI MVP Development</span>
-          <h1>From idea to production AI<br/>in six weeks.</h1>
+          <h1>AI MVP Development — Production-Ready in Weeks</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks — including an evaluation harness, cloud infrastructure, and a real production launch — with fixed scope and pricing from £25k.</p>
           <p>We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
             <a href="/contact" className="btn btn--cyan btn--lg">Start your AI MVP <Icon.arrow /></a>
@@ -864,7 +888,8 @@ function UkGeoPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI Development Agency UK</span>
-          <h1>The AI engineering partner<br/>UK companies actually use.</h1>
+          <h1>AI Development Agency for UK Companies</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates — with LLM products shipped in as little as six weeks and projects starting from £25k.</p>
           <p>Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks.</p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", marginTop: 32, flexWrap: "wrap" }}>
             <a href="/contact" className="btn btn--cyan btn--lg">Talk to the team <Icon.arrow /></a>
@@ -961,7 +986,8 @@ function CompareAgencyFreelancerPage() {
       <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>AI Agency vs Freelancer</span>
-          <h1>Agency or freelancer for<br/>your AI project?</h1>
+          <h1>AI Agency vs Freelancer: Which to Choose</h1>
+          <p className="answer-first" style={{ maxWidth: 720, margin: "16px auto 0", fontSize: 18, color: "var(--slate-700)" }}>For most AI projects, an agency suits production builds that need accountability, multiple skill sets, and senior oversight, while a freelancer fits small, low-risk tasks on a tight budget. The right choice depends on your timeline, complexity, and risk tolerance — below we compare both across ten decision factors.</p>
           <p>The right answer depends on what you're building, your timeline, and your risk tolerance. Here's how the two options compare, honestly.</p>
         </div>
       </section>
@@ -1048,6 +1074,7 @@ function CompareAgencyFreelancerPage() {
 }
 
 window.HomePage = HomePage;
+window.ServicesPage = ServicesPage;
 window.ExpertisePage = ExpertisePage;
 window.ProcessPage = ProcessPage;
 window.AboutPage = AboutPage;

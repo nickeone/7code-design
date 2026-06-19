@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {style:{padding:'160px 0',textAlign:'center',color:'var(--slate-500)',fontSize:'15px'}}, 'Loading…');
@@ -28,6 +28,12 @@ function App() {
   useEffect(() => { initAnalytics(); }, []);
   useEffect(() => {
     if (!routesReady) {
+      // Guard against a race: bundle-routes.min.js loads `async` and dispatches
+      // 'routes-loaded' on completion. If that event fired between this
+      // component mounting and this effect attaching its listener, we'd miss it
+      // and stay stuck on the Loading… placeholder forever. Re-check the global
+      // the bundle defines so we recover even if the event was already missed.
+      if (typeof BlogRouter !== 'undefined') { setRoutesReady(true); return; }
       const onLoad = () => setRoutesReady(true);
       window.addEventListener('routes-loaded', onLoad);
       return () => window.removeEventListener('routes-loaded', onLoad);
@@ -51,6 +57,7 @@ function App() {
   else if (page === "/privacy-policy"      )  Page = <PrivacyPolicyPage />;
   else if (page === "/terms-and-conditions")  Page = <TermsPage />;
   else if (page === "/faq"                 )  Page = <FAQPage />;
+  else if (page === "/services"            )  Page = <ServicesPage />;
   else                                      Page = <HomePage heroVariant={tweaks.heroVariant} />;
   return (
     <>

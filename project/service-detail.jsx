@@ -69,6 +69,7 @@ const SERVICES_DATA = {
   "system-integrations": {
     slug: "system-integrations",
     title: "System Integrations",
+    h1: "System & API Integrations",
     shortTitle: "System Integrations",
     tagline: "We connect your stack, ERPs, CRMs, data warehouses, SaaS tools, and legacy systems, into one reliable, observable data fabric ready to carry an AI layer on top.",
     summary: "Most companies don't have a data problem. They have a fragmentation problem. The data exists, but it's spread across a CRM, an ERP, a dozen SaaS tools, and a handful of databases nobody fully understands. We build the integration layer that connects them, Kafka or webhooks for events, dbt or Airbyte for batch, clean APIs in front, so your operational data is reliable, auditable, and ready to be retrieved by an LLM or agent without surprises.",
@@ -234,6 +235,7 @@ const SERVICES_DATA = {
   "ai-outstaffing": {
     slug: "ai-outstaffing",
     title: "AI Engineering Outstaffing",
+    h1: "AI Engineering Outstaffing & Staff Augmentation",
     shortTitle: "AI Outstaffing",
     tagline: "Senior AI engineers embedded in your team, matched in days, not months. Your roadmap, your rituals, our engineers.",
     summary: "The AI talent market is broken for most companies. Senior engineers with production LLM experience are expensive, rare, and not responding to LinkedIn. The teams winning with AI right now aren't the ones with the biggest recruiting budgets, they're the ones who found a smarter way to access the talent. We embed our engineers directly into your team: your Slack, your standups, your sprint cadence. You get the leverage of a specialist without the overhead of a hire.",
@@ -291,6 +293,7 @@ const SERVICES_DATA = {
   "llm-agent-development": {
     slug: "llm-agent-development",
     title: "LLM & Agent Development",
+    h1: "LLM & AI Agent Development",
     shortTitle: "LLM & Agents",
     tagline: "Custom LLM integrations and multi-step agent systems built for production, not demos. From OpenAI and Anthropic API integrations to LangGraph pipelines with full evaluation coverage.",
     summary: "LLM and agent development is where most teams underestimate the gap between a working prototype and a reliable production system. We build that layer: prompt architectures that hold under adversarial input, retrieval pipelines tuned on held-out eval sets, multi-step agents with state persistence and human-in-the-loop checkpoints, and the observability to catch model drift before users file tickets. We've shipped LLM-first products across news, healthcare, legal, and enterprise SaaS — and we know the difference between a demo that impresses a boardroom and a system that earns trust at scale.",
@@ -395,7 +398,7 @@ function ServiceDetailPage({ slug = "ai-product-engineering" }) {
           <div className="svc-hero-text">
             <div className="svc-hero-icon"><SvcIcon /></div>
             <span className="csd-kicker"><span className="csd-dot"/> Service offering</span>
-            <h1>{svc.title}</h1>
+            <h1>{svc.h1 || svc.title}</h1>
             <div className="exp-hero-divider"/>
             <p className="svc-hero-sub">{svc.tagline}</p>
           </div>

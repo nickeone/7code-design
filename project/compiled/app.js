@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {
@@ -80,6 +80,15 @@ function App() {
   }, []);
   useEffect(() => {
     if (!routesReady) {
+      // Guard against a race: bundle-routes.min.js loads `async` and dispatches
+      // 'routes-loaded' on completion. If that event fired between this
+      // component mounting and this effect attaching its listener, we'd miss it
+      // and stay stuck on the Loading… placeholder forever. Re-check the global
+      // the bundle defines so we recover even if the event was already missed.
+      if (typeof BlogRouter !== 'undefined') {
+        setRoutesReady(true);
+        return;
+      }
       const onLoad = () => setRoutesReady(true);
       window.addEventListener('routes-loaded', onLoad);
       return () => window.removeEventListener('routes-loaded', onLoad);
@@ -99,7 +108,7 @@ function App() {
     slug: slug
   }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/blog") Page = routesReady ? /*#__PURE__*/React.createElement(BlogRouter, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else if (page === "/resources" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ResourcePage, {
     slug: slug
-  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/privacy-policy") Page = /*#__PURE__*/React.createElement(PrivacyPolicyPage, null);else if (page === "/terms-and-conditions") Page = /*#__PURE__*/React.createElement(TermsPage, null);else if (page === "/faq") Page = /*#__PURE__*/React.createElement(FAQPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/privacy-policy") Page = /*#__PURE__*/React.createElement(PrivacyPolicyPage, null);else if (page === "/terms-and-conditions") Page = /*#__PURE__*/React.createElement(TermsPage, null);else if (page === "/faq") Page = /*#__PURE__*/React.createElement(FAQPage, null);else if (page === "/services") Page = /*#__PURE__*/React.createElement(ServicesPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
     heroVariant: tweaks.heroVariant
   });
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(CookieConsent, null), /*#__PURE__*/React.createElement(TweaksPanel, {

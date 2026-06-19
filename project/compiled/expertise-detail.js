@@ -12,6 +12,7 @@ const EXPERTISE = {
   "healthcare": {
     slug: "healthcare",
     title: "Healthcare",
+    h1: "AI Software Development for Healthcare",
     tagline: "HealthTech engineering for clinics, hospitals, and FemTech founders: HIPAA + GDPR-compliant platforms with HL7 / FHIR EHR interoperability, telehealth, patient engagement, and clinically-grounded AI.",
     summary: "HealthTech software has to be clinician-grade in reliability and compliance and patient-grade in usability, at the same time. 7Code ships platforms that do both, across HL7 / FHIR EHR interoperability, clinical decision support, telehealth, patient engagement, and AI features grounded in verified clinical knowledge. Recent work includes Hera Health Tech's AI-powered fertility-clinic patient app (3-month MVP, HIPAA + GDPR ready).",
     icon: "heart",
@@ -99,6 +100,7 @@ const EXPERTISE = {
   "finance": {
     slug: "finance",
     title: "Finance",
+    h1: "AI Software Development for Finance",
     tagline: "FinTech and finance software engineering: real-time treasury dashboards, ERP integration (SAP, Oracle, NetSuite, Dynamics), accounting automation, regulatory reporting, and venture / MarTech platforms, for finance teams that can't afford to be wrong.",
     summary: "Finance software operates at the intersection of speed and correctness, a dashboard that's 60 seconds stale is fine; one that's wrong is a compliance event. 7Code has shipped treasury platforms, ERP integrations (SAP, Oracle, NetSuite, Dynamics), accounting automation, regulatory reporting tools, Stripe + 3D Secure billing engines, and MarTech platforms for venture studios, including Founders Factory's Gatsby + Storyblok + Tailwind site overhaul.",
     icon: "briefcase",
@@ -186,6 +188,7 @@ const EXPERTISE = {
   "energy": {
     slug: "energy",
     title: "Energy & Utilities",
+    h1: "AI Software Development for Energy & Utilities",
     tagline: "Energy, utilities, and IoT engineering: real-time SCADA / Modbus / MQTT ingestion, predictive maintenance, geofencing, and operations cockpits, for 24/7 critical infrastructure that can't go down.",
     summary: "Energy and utilities infrastructure runs 24/7 with zero tolerance for downtime. 7Code builds IoT operations platforms that fuse telemetry from thousands of sensors over SCADA, Modbus, MQTT, and custom TCP, predict equipment failures with 10-day lead time, and give control-room operators a single cockpit instead of six screens. Recent work: G42's ESTS fleet-tracking platform deployed at EXPO 2020 Dubai, custom TCP ingestion, geofence rule engine, and real-time map dashboard.",
     icon: "energy",
@@ -273,6 +276,7 @@ const EXPERTISE = {
   "defence": {
     slug: "defence",
     title: "Defence & Security",
+    h1: "AI Software Development for Defence & Security",
     tagline: "Defence, security, and GovTech / E-Government engineering: multi-domain fusion, information assurance, secure remote-voting (built for the European Parliament), and mission-critical operator interfaces.",
     summary: "Defence and GovTech software operates where the stakes are absolute. 7Code builds platforms that fuse multi-domain intelligence (radar, comms, SIGINT, structured intel), enforce strict information-assurance controls, and give operators the clarity they need under pressure, without the cognitive load of six disjointed screens. Recent work: Revote, the remote electronic voting platform for the European Parliament (with Eurel International, released May 2023).",
     icon: "shield",
@@ -360,6 +364,7 @@ const EXPERTISE = {
   "hr": {
     slug: "hr",
     title: "HR",
+    h1: "AI Software Development for HR",
     tagline: "HR Tech engineering: ATS / HRIS integration (Workday, SAP SuccessFactors, BambooHR), recruitment, onboarding, payroll automation, workforce analytics, and compliance reporting, unified into platforms people actually use.",
     summary: "HR Tech is uniquely hard to get right: it touches every employee in the organisation, integrates with more systems than almost anything else in the stack, and the consequences of getting it wrong, a missed payroll run, a failed compliance filing, are immediately visible to the whole company. 7Code builds HRIS, ATS, payroll, and workforce-analytics platforms with multi-jurisdiction labour-law and GDPR controls baked in.",
     icon: "users",
@@ -447,6 +452,7 @@ const EXPERTISE = {
   "operations": {
     slug: "operations",
     title: "Operations",
+    h1: "AI Software Development for Operations",
     tagline: "Operations software engineering: workflow automation, real-time dashboards, OCR document pipelines, systems integration, and process intelligence, for teams that have outgrown spreadsheets, Slack, and heroic individuals.",
     summary: "Operations software is the connective tissue of a business, workflows, dashboards, OCR pipelines, and integrations that make everything else run. 7Code builds it for companies that have grown past their tooling: too many systems, too much manual work, too little visibility. Recent work includes G42's ESTS real-time fleet operations at EXPO 2020, Drum Bun's OCR-driven car-services pipeline, and Numerize's responsive GED / EDM platform.",
     icon: "chart",
@@ -681,7 +687,7 @@ function ExpertiseDetailPage({
     className: "csd-kicker"
   }, /*#__PURE__*/React.createElement("span", {
     className: "csd-dot"
-  }), " Industry expertise"), /*#__PURE__*/React.createElement("h1", null, exp.title), /*#__PURE__*/React.createElement("div", {
+  }), " Industry expertise"), /*#__PURE__*/React.createElement("h1", null, exp.h1 || exp.title), /*#__PURE__*/React.createElement("div", {
     className: "exp-hero-divider"
   }), /*#__PURE__*/React.createElement("p", {
     className: "exp-hero-sub"
