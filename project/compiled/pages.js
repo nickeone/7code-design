@@ -1568,8 +1568,56 @@ function FAQPage() {
   }, {
     q: "How does 7code ensure quality?",
     a: "Quality is enforced through a senior-only hiring policy, mandatory peer code review on all pull requests, AI-specific evaluation frameworks for model outputs, automated test suites (unit, integration, and end-to-end), and a pre-launch quality gate sign-off process. Each project has a named QA engineer. 7code does not ship without a passing test suite and architecture review sign-off."
+  }, {
+    q: "What does 7code do?",
+    a: "7code is an AI-native nearshore software engineering partner based in Cluj-Napoca, Romania. We build custom software, LLM integrations, agentic workflows, and system integrations for startups and SMEs in the UK, EU, and UAE. Our team is senior-only (70%+ senior engineers) and we operate an AI-first delivery model — every project is assessed for automation and AI opportunities from day one."
+  }, {
+    q: "What is nearshore software development?",
+    a: "Nearshore software development means working with an engineering team in a nearby country with timezone overlap, shared working culture, and EU legal alignment. For UK and EU companies, Romania is a leading nearshore destination — 1–2 hour timezone difference with the UK, GDPR-native environment, and a deep pool of senior engineering talent. 7code operates from Cluj-Napoca, Romania, serving clients across the UK, Europe, and UAE."
+  }, {
+    q: "What AI services does 7code offer?",
+    a: "7code offers five core AI service lines: LLM integration (embedding GPT-4o, Claude, Gemini into existing products); agentic workflow automation (multi-step AI agents for complex business processes); RAG systems (connecting AI to proprietary data); AI copilots (custom AI assistants for internal or customer-facing use); and AI process automation (replacing manual workflows with intelligent pipelines). We also offer an Operational Quick Scan to identify and prioritise automation opportunities."
+  }, {
+    q: "How do you integrate LLMs into an existing product?",
+    a: "7code follows a five-step LLM integration process: (1) Use-case mapping — identifying whether your need is extraction, generation, classification, or agentic reasoning; (2) Context architecture — designing RAG pipelines, conversation history, or summarisation chains; (3) Model selection — matching capability to latency and cost; (4) Evaluation framework — golden datasets and regression tests before shipping; (5) Observability — cost-per-query tracking from sprint one. Most production LLM features take 6–10 weeks from spec to deployment."
+  }, {
+    q: "What is the difference between staff augmentation and a dedicated team?",
+    a: "In staff augmentation, 7code provides engineers who join your existing team under your management. You direct the work. A dedicated team means 7code manages delivery end-to-end — engineers, tech lead, and delivery governance included. Staff augmentation is best for teams with internal technical leadership that need extra capacity. A dedicated team is best when you don't have internal engineering leadership or want to move faster than hiring allows."
+  }, {
+    q: "What are 7code's engineering rates?",
+    a: "7code's rates: Mid-level engineers €30–35/hour; Senior engineers €40–50/hour; Architect-level engineers €60–80/hour. These are 40–60% below London market rates with equivalent or higher seniority. All rates are transparent with no hidden markups."
+  }, {
+    q: "Is 7code GDPR compliant?",
+    a: "Yes. 7code operates under Romanian and EU law, meaning GDPR compliance is built-in — not an add-on. Our engineers understand EU data processing requirements and can correctly configure data processing agreements with model providers (OpenAI, Anthropic, Google). For UK clients post-Brexit, we structure arrangements to comply with UK GDPR equivalents. This is a key nearshore advantage: EU-jurisdiction teams are GDPR-native by default."
+  }, {
+    q: "What is an agentic workflow?",
+    a: "An agentic workflow is an AI system that uses multi-step reasoning, tool use, and decision loops to complete complex tasks autonomously. Unlike a simple LLM call, an agent can search the web, read files, call APIs, write code, and make sequential decisions. In production, 7code implements agentic workflows using an orchestrator-worker architecture: a reasoning model coordinates specialised worker agents. Common use cases: document processing pipelines, automated onboarding, compliance checking, multi-source data reconciliation."
+  }, {
+    q: "What is RAG and when should I use it?",
+    a: "RAG (Retrieval-Augmented Generation) retrieves relevant documents from a knowledge base and injects them into the LLM's context at query time. Use RAG when your AI feature needs to answer questions from your proprietary data — support documentation, product manuals, legal contracts, internal wikis. Without RAG, the model answers from its training data only and will hallucinate company-specific information. 7code has built production RAG systems for document Q&A, compliance tools, and customer support copilots."
+  }, {
+    q: "How does 7code ensure quality?",
+    a: "Quality is enforced through: senior-only hiring (70% of engineers are senior-level); multi-stage technical screening including case studies; delivery governance with weekly sprint demos and monthly steering committees; and AI-specific quality gates — golden datasets, regression tests on every model version change, and human-in-the-loop checkpoints for high-stakes outputs. We track velocity, predictability, bug escape rate, and team utilisation as standard KPIs."
+  }, {
+    q: "What engagement models does 7code offer?",
+    a: "Three primary models: Staff Augmentation (client-managed, 7code provides engineers); Dedicated Teams (7code-managed delivery with full governance); End-to-End Product Development (7code owns the full lifecycle). We also offer four productized packages: Operational Quick Scan (2–3 weeks), AI-Ready Ops Blueprint (4–6 weeks), Automation Pilot (6–10 weeks), and Department Automation Sprint (10–16 weeks)."
+  }, {
+    q: "Why choose a Romanian engineering team?",
+    a: "Romania is a tier-1 European engineering hub. Cluj-Napoca hosts R&D centres for major EU tech companies and produces thousands of IT graduates annually. Key advantages: 1–2 hour timezone overlap with the UK; 40–60% below London rates (15–25% below Poland); EU legal framework (GDPR-native); strong technical education and high English proficiency. 7code adds a senior-only hiring model on top of this baseline."
+  }, {
+    q: "How does 7code handle AI projects that change scope mid-build?",
+    a: "AI projects are inherently non-linear — architectures that look correct in the spec often need 2–3 pivots before they're production-ready. 7code manages this through transparent communication on architecture decisions as they emerge; time-and-materials contracts for AI work; weekly steering committees where scope changes are assessed and repriced; and a culture of strategic opinions, not just execution."
+  }, {
+    q: "What is the Operational Quick Scan?",
+    a: "The Operational Quick Scan is 7code's entry-point productized service. Over 2–3 weeks, we audit your processes, identify manual bottlenecks, map automation opportunities, and produce an ROI estimate per initiative. Output: a prioritised automation roadmap with effort, timeline, and expected return for each item. Designed for companies evaluating AI that don't know where to start. Cost: typically €5,000–€10,000 depending on scope."
+  }, {
+    q: "How does 7code handle AI observability?",
+    a: "7code instruments every agent action: inputs, tool calls, intermediate reasoning, outputs, latency, and cost per query. We use structured logging and build replay systems so failures can be debugged against real inputs. For LLM observability tooling we work with Langfuse, Helicone, and Braintrust. Cost-per-query is tracked as a first-class metric from sprint one."
+  }, {
+    q: "How do I start a project with 7code?",
+    a: "Contact us at office@7code.ro or book a discovery call at 7code.tech/contact. We run a 60-minute discovery session to understand your needs and constraints, then propose an engagement model and scope. Once agreed, team allocation begins within 2–4 weeks. For AI projects, we typically recommend starting with an Operational Quick Scan before committing to a build — it de-risks the investment and clarifies ROI."
   }];
-  useSeoMeta("FAQ â AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.");
+  useSeoMeta("FAQ — AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.");
   const [open, setOpen] = useStateP(null);
   const toggle = i => setOpen(open === i ? null : i);
   return /*#__PURE__*/React.createElement("div", {
@@ -1652,14 +1700,7 @@ function FAQPage() {
       stroke: isOpen ? "#fff" : "var(--slate-500)",
       strokeWidth: "1.8",
       strokeLinecap: "round"
-    })))), isOpen && /*#__PURE__*/React.createElement("div", {
-      style: {
-        paddingBottom: 24,
-        color: "var(--slate-700)",
-        fontSize: 15,
-        lineHeight: 1.7
-      }
-    }, item.a));
+    })))), React.createElement("div", { style: { display: isOpen ? "block" : "none", paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 } }, item.a));
   }))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt",
     style: {

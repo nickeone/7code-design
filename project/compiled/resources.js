@@ -48,6 +48,15 @@ const RESOURCES_DATA = {
       }, {
         q: "What if the AI makes mistakes?",
         a: "All 7code automations include human-in-the-loop gates for consequential decisions — outputs below a confidence threshold are routed to a human reviewer rather than acted upon automatically. No automation goes live without a validated accuracy baseline."
+      }, {
+        q: "How can AI automation help small businesses?",
+        a: "AI automation lets small businesses process invoices, screen CVs, answer customer queries, and generate reports without adding headcount. Typical results are 20–40% productivity gains in the automated function and payback within 6–18 months. Unlike enterprise AI programmes, focused SME automations go live in four to eight weeks."
+      }, {
+        q: "What is the 30% rule for AI?",
+        a: "The 30% rule says AI should handle roughly 30% of a workflow — the repetitive, high-volume part — while humans keep the remaining 70% that requires judgment, relationships, or creativity. It is a guardrail against over-automation: automate the toil first, keep humans on decisions, and expand AI's share only after accuracy is proven."
+      }, {
+        q: "What is the 10-20-70 rule for AI?",
+        a: "The 10-20-70 rule states that successful AI adoption is about 10% algorithms, 20% technology and data infrastructure, and 70% people and process change. For SMEs the lesson is practical: model choice matters less than clean data, clear workflows, and staff who trust and use the automation. Budget accordingly."
       }]
     }]
   },
@@ -189,6 +198,12 @@ const RESOURCES_DATA = {
       }, {
         q: "Can I switch from staff aug to a dedicated team mid-project?",
         a: "Yes. 7code supports transitions between models. The most common pattern is starting with one or two augmented engineers who build context, then transitioning to a dedicated team structure as the engagement scope grows."
+      }, {
+        q: "What does staff augmentation mean?",
+        a: "Staff augmentation means adding external engineers to your existing team on a temporary or ongoing basis. The engineers work under your direct management, inside your sprints and tools, filling specific skill gaps without the cost and delay of permanent hiring. You keep full control of the work; the provider handles employment, payroll, and replacement risk."
+      }, {
+        q: "What is the difference between staff augmentation and RPO?",
+        a: "Staff augmentation supplies working engineers who remain employed by the provider and embedded in your team. RPO (Recruitment Process Outsourcing) outsources your hiring process itself — the RPO firm recruits candidates who become your own employees. Choose staff augmentation for immediate capacity; choose RPO when you want to grow permanent internal headcount."
       }]
     }]
   },
