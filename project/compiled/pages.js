@@ -1569,7 +1569,7 @@ function FAQPage() {
     q: "How does 7code ensure quality?",
     a: "Quality is enforced through a senior-only hiring policy, mandatory peer code review on all pull requests, AI-specific evaluation frameworks for model outputs, automated test suites (unit, integration, and end-to-end), and a pre-launch quality gate sign-off process. Each project has a named QA engineer. 7code does not ship without a passing test suite and architecture review sign-off."
   }];
-  useSeoMeta("FAQ â AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.");
+  useSeoMeta("FAQ — AI Engineering, Nearshore Dev & LLM Integration | 7code", "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.");
   const [open, setOpen] = useStateP(null);
   const toggle = i => setOpen(open === i ? null : i);
   return /*#__PURE__*/React.createElement("div", {
@@ -1652,14 +1652,7 @@ function FAQPage() {
       stroke: isOpen ? "#fff" : "var(--slate-500)",
       strokeWidth: "1.8",
       strokeLinecap: "round"
-    })))), isOpen && /*#__PURE__*/React.createElement("div", {
-      style: {
-        paddingBottom: 24,
-        color: "var(--slate-700)",
-        fontSize: 15,
-        lineHeight: 1.7
-      }
-    }, item.a));
+    })))), React.createElement("div", { style: { display: isOpen ? "block" : "none", paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 } }, item.a));
   }))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt",
     style: {

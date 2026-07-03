@@ -1102,7 +1102,7 @@ function FAQPage() {
   ];
 
   useSeoMeta(
-    "FAQ â AI Engineering, Nearshore Dev & LLM Integration | 7code",
+    "FAQ — AI Engineering, Nearshore Dev & LLM Integration | 7code",
     "Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.",
   );
 
@@ -1137,9 +1137,7 @@ function FAQPage() {
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6h10" stroke={isOpen ? "#fff" : "var(--slate-500)"} strokeWidth="1.8" strokeLinecap="round"/></svg>
                   </span>
                 </button>
-                {isOpen && (
-                  <div style={{ paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 }}>{item.a}</div>
-                )}
+                <div style={{ display: isOpen ? "block" : "none", paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 }}>{item.a}</div>
               </div>
             );
           })}
