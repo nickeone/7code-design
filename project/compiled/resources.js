@@ -382,5 +382,4 @@ function ResourcePage({
 }
 window.ResourcePage = ResourcePage;
 window.RESOURCES_DATA = RESOURCES_DATA;
-
-window.dispatchEvent(new Event("routes-loaded"));
+window.dispatchEvent(new Event('routes-loaded'));
