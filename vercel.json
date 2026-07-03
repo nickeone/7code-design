@@ -42,6 +42,9 @@
     }
   ],
   "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "^(www\\.)?7code\\.ro$" }], "destination": "https://www.7code.tech/:path*", "statusCode": 301 },
+    { "source": "/service", "destination": "/services", "statusCode": 301 },
+    { "source": "/service/", "destination": "/services", "statusCode": 301 },
     { "source": "/service/product-strategy", "destination": "/service/ai-product-engineering", "permanent": true },
     { "source": "/blog-7code/", "destination": "/blog", "permanent": true },
     { "source": "/blog-7code", "destination": "/blog", "permanent": true },
