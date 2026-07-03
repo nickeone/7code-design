@@ -27,6 +27,8 @@ const CASES = [
   },
   { from: "/pf/case-study-revote/", to: "/case-study/revote" },
   { from: "/pf/case-study-revote",  to: "/case-study/revote" },
+  { from: "/service",               to: "/services" },
+  { from: "/service/",              to: "/services" },
   { from: "/home/",                 to: "/" },
   { from: "/home",                  to: "/" },
   { from: "/privacy-policy/",       to: "/privacy-policy" },
