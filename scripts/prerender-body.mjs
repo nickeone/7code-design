@@ -23,12 +23,15 @@ import { fileURLToPath } from "node:url";
 import { createReadStream, statSync } from "node:fs";
 import { extname } from "node:path";
 import puppeteer from "puppeteer";
+import SITE_CONFIG from "../project/site-config.js";
+import CONTENT_DATA from "../project/content-data.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 // ── route list (keep in sync with prerender.mjs) ─────────────────────────────
 
 const ROUTES = [
+  "/",
   "/about",
   "/process",
   "/contact",
@@ -99,6 +102,13 @@ const ROUTES = [
   "/resources/build-ai-in-house-vs-partner",
   "/privacy-policy",
   "/terms-and-conditions",
+  "/resources",
+  "/packages",
+  "/hub",
+  ...Object.keys(CONTENT_DATA.MONEY_PAGES).map(slug => "/" + slug),
+  ...Object.keys(CONTENT_DATA.PACKAGES).map(slug => "/packages/" + slug),
+  ...Object.keys(CONTENT_DATA.HUB_ARTICLES).map(slug => "/hub/" + slug),
+  ...Object.keys(SITE_CONFIG.BOOKING_ROUTES).map(slug => "/book/" + slug),
 ];
 
 // ── minimal static file server ────────────────────────────────────────────────
@@ -213,6 +223,7 @@ function injectRoot(html, innerHTML) {
 }
 
 function routeToFilePath(route) {
+  if (route === "/") return join(ROOT, "index.html");
   const rel = route.startsWith("/") ? route.slice(1) : route;
   return join(ROOT, rel + ".html");
 }

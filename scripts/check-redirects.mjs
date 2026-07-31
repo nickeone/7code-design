@@ -33,6 +33,8 @@ const CASES = [
   { from: "/home",                  to: "/" },
   { from: "/privacy-policy/",       to: "/privacy-policy" },
   { from: "/cookie-policy/",        to: "/cookie-policy" },
+  { from: "/frequently-asked-questions-faqs/", to: "/faq" },
+  { from: "/frequently-asked-questions-faqs",  to: "/faq" },
 ];
 
 let passed = 0;
