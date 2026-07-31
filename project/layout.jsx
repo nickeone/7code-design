@@ -33,7 +33,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources" || parts[0] === "book" || parts[0] === "packages" || parts[0] === "hub")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];
@@ -123,10 +123,10 @@ function Nav() {
     <>
       <header className={"nav" + (scrolled ? " is-scrolled" : "")}>
         <div className="nav-inner">
-          <a href="/" className="brand"><Logo height={28} /></a>
+          <a href="/" className="brand" aria-label="7code home"><Logo height={28} /></a>
           <nav className="nav-links">
             <div style={{ position: "static" }} onMouseEnter={openSvc} onMouseLeave={closeSvc}>
-              <a href="/service/ai-product-engineering" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen} onClick={e => { e.preventDefault(); setSvcOpen(o => !o); }}>
+              <a href="/services" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen} onClick={e => { e.preventDefault(); setSvcOpen(o => !o); }}>
                 Services <Icon.caret />
               </a>
               <div className={"svc-mega" + (svcOpen ? " is-open" : "")}>
@@ -221,7 +221,7 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="/" className="brand"><Logo height={32} color="#fff" /></a>
+            <a href="/" className="brand" aria-label="7code home"><Logo height={32} color="#fff" /></a>
             <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the production cloud behind them.</p>
           </div>
           <div>
@@ -253,6 +253,8 @@ function Footer() {
               <li><a href="/case-studies">Case Studies</a></li>
               <li><a href="/process">Our Process</a></li>
               <li><a href="/blog">Blog</a></li>
+              <li><a href="/hub">Hub</a></li>
+              <li><a href="/resources">Resources</a></li>
               <li><a href="/contact">Contact</a></li>
               <li><a href="https://clutch.co/profile/7code#reviews" target="_blank" rel="noopener noreferrer">Reviews on Clutch</a></li>
             </ul>
@@ -389,7 +391,7 @@ function CookieConsent() {
           <h2 style={{ margin: "0 0 8px", fontSize: 18, fontWeight: 700 }}>We use cookies</h2>
           <p style={{ margin: "0 0 16px", fontSize: 14, lineHeight: 1.65, color: "var(--slate-500)" }}>
             We use essential cookies for the site to work, and analytics cookies (Google Analytics) to understand how you use it.{" "}
-            <a href="/privacy-policy#cookies" style={{ color: "var(--cyan-600)", textDecoration: "none" }}>Cookie Policy</a>.
+            <a href="/privacy-policy#cookies" style={{ color: "var(--cyan-600)", textDecoration: "underline" }}>Cookie Policy</a>.
           </p>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
             <button onClick={() => save(true)} style={btnPrimary}>Accept all</button>

@@ -18,6 +18,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { SERVICE_FAQS, EXPERTISE_FAQS, faqPageEntity } from "./faq-data.mjs";
+import { flattenInline } from "./parse-content.mjs";
+import SITE_CONFIG from "../project/site-config.js";
+import CONTENT_DATA from "../project/content-data.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -32,7 +35,7 @@ const MAIN_PAGES = [
   {
     path: "/about",
     title: "About 7Code — AI-First Software Engineering Partner",
-    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2019.",
+    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2017.",
   },
   {
     path: "/process",
@@ -173,12 +176,295 @@ function breadcrumbEntity(pageUrl, items) {
   };
 }
 
+// Site-wide Organization + LocalBusiness nodes, sourced from COMPANY /
+// CLUTCH_RATING in project/site-config.js so these facts exist in exactly
+// one place. Spread into every page's @graph (not just the homepage's,
+// which is the only place they lived before this rebuild).
+function siteWideNodes() {
+  const { COMPANY, CLUTCH_RATING } = SITE_CONFIG;
+  return [
+    {
+      "@type": "Organization",
+      "@id": SITE + "/#organization",
+      "name": "7code",
+      "legalName": COMPANY.legalName,
+      "alternateName": "Seven Code Development",
+      "url": COMPANY.url,
+      "logo": { "@type": "ImageObject", "url": SITE + "/project/assets/logo-favicon.svg", "width": 512, "height": 512 },
+      "foundingDate": COMPANY.founded,
+      "foundingLocation": { "@type": "Place", "name": "Cluj-Napoca, Romania" },
+      "email": COMPANY.email,
+      "telephone": COMPANY.phone,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": COMPANY.streetAddress,
+        "addressLocality": COMPANY.addressLocality,
+        "postalCode": COMPANY.postalCode,
+        "addressCountry": COMPANY.addressCountry,
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/7-code/",
+        "https://github.com/7codeRO",
+        CLUTCH_RATING.url,
+        "https://techbehemoths.com/company/7code",
+        "https://www.goodfirms.co/company/7code",
+        "https://www.crunchbase.com/organization/7code",
+      ],
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": SITE + "/#localbusiness",
+      "name": "7code",
+      "url": COMPANY.url,
+      "email": COMPANY.email,
+      "telephone": COMPANY.phone,
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": COMPANY.streetAddress,
+        "addressLocality": COMPANY.addressLocality,
+        "addressRegion": "CJ",
+        "postalCode": COMPANY.postalCode,
+        "addressCountry": COMPANY.addressCountry,
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": 46.7712, "longitude": 23.6236 },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00",
+      }],
+    },
+  ];
+}
+
+function aggregateRatingNode(ratingSpec) {
+  if (!ratingSpec) return null;
+  return {
+    "@type": "AggregateRating",
+    "ratingValue": String(ratingSpec.ratingValue),
+    "reviewCount": String(ratingSpec.reviewCount),
+    "bestRating": "5",
+    "worstRating": "1",
+  };
+}
+
+function faqPageFromBlocks(url, faqEntries) {
+  if (!faqEntries || !faqEntries.length) return null;
+  return {
+    "@type": "FAQPage",
+    "@id": url + "#faq",
+    "mainEntity": faqEntries.map(f => ({
+      "@type": "Question",
+      "name": f.question,
+      "acceptedAnswer": { "@type": "Answer", "text": flattenInline(f.answerInline) },
+    })),
+  };
+}
+
+// Money pages sit at the site root (deliberately not under /service/), so
+// their breadcrumb is Home > Page — two levels, not three.
+function moneyPageSchema(entry) {
+  const { spec, blocks } = entry;
+  const url = SITE + "/" + spec.meta.slug;
+  const rating = spec.schema.aggregateRating ? aggregateRatingNode(spec.schema.aggregateRating) : null;
+  const graph = [
+    ...siteWideNodes(),
+    {
+      "@type": "Service",
+      "@id": url + "#service",
+      "name": blocks.hero.h1,
+      "serviceType": spec.targeting.primaryKeyword,
+      "description": spec.meta.metaDescription,
+      "provider": ORG_REF,
+      "areaServed": "Worldwide",
+      "url": url,
+      ...(rating ? { "aggregateRating": rating } : {}),
+    },
+    breadcrumbEntity(url, [{ name: "Home", url: SITE + "/" }, { name: blocks.hero.h1, url }]),
+  ];
+  const faq = faqPageFromBlocks(url, blocks.faq);
+  if (faq) graph.push(faq);
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+function packagePageSchema(entry) {
+  const { spec, blocks } = entry;
+  const url = SITE + "/packages/" + spec.meta.slug.replace(/^packages\//, "");
+  const graph = [
+    ...siteWideNodes(),
+    {
+      "@type": "Service",
+      "@id": url + "#service",
+      "name": blocks.hero.h1,
+      "serviceType": spec.targeting.primaryKeyword,
+      "description": spec.meta.metaDescription,
+      "provider": ORG_REF,
+      "areaServed": "Worldwide",
+      "url": url,
+    },
+    breadcrumbEntity(url, [
+      { name: "Home", url: SITE + "/" },
+      { name: "Packages", url: SITE + "/packages" },
+      { name: blocks.hero.h1, url },
+    ]),
+  ];
+  const faq = faqPageFromBlocks(url, blocks.faq);
+  if (faq) graph.push(faq);
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+// Hub articles: breadcrumb rendered "in both directions" — the article's own
+// BreadcrumbList climbs article → hub → home, and the /hub index's
+// CollectionPage lists every article as a `hasPart`, so the relationship is
+// discoverable from either end.
+function hubArticleSchema(entry) {
+  const { spec, blocks } = entry;
+  const slug = spec.meta.slug.replace(/^hub\//, "");
+  const url = SITE + "/hub/" + slug;
+  const graph = [
+    ...siteWideNodes(),
+    {
+      "@type": "Article",
+      "@id": url + "#article",
+      "headline": blocks.hero.h1,
+      "description": spec.meta.metaDescription,
+      "image": SITE + spec.meta.ogImage,
+      "url": url,
+      "mainEntityOfPage": url,
+      "author": { "@type": "Person", "name": spec.authorship.author },
+      "reviewedBy": { "@type": "Person", "name": spec.authorship.reviewer },
+      "publisher": ORG_REF,
+      "datePublished": spec.authorship.published,
+      "dateModified": spec.authorship.updated,
+    },
+    breadcrumbEntity(url, [
+      { name: "Home", url: SITE + "/" },
+      { name: "Hub", url: SITE + "/hub" },
+      { name: blocks.hero.h1, url },
+    ]),
+  ];
+  const faq = faqPageFromBlocks(url, blocks.faq);
+  if (faq) graph.push(faq);
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
+function hubIndexSchema() {
+  const url = SITE + "/hub";
+  const articleUrls = Object.keys(CONTENT_DATA.HUB_ARTICLES).map(slug => SITE + "/hub/" + slug);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...siteWideNodes(),
+      {
+        "@type": "CollectionPage",
+        "@id": url + "#page",
+        "name": "Hub",
+        "description": "Long-form guides on AI automation cost, vendor evaluation and data residency.",
+        "url": url,
+        "isPartOf": { "@id": SITE + "/#website" },
+        "hasPart": articleUrls.map(u => ({ "@id": u })),
+      },
+      breadcrumbEntity(url, [{ name: "Home", url: SITE + "/" }, { name: "Hub", url }]),
+    ],
+  };
+}
+
+function packagesIndexSchema() {
+  const url = SITE + "/packages";
+  const packageUrls = Object.keys(CONTENT_DATA.PACKAGES).map(slug => SITE + "/packages/" + slug);
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...siteWideNodes(),
+      {
+        "@type": "CollectionPage",
+        "@id": url + "#page",
+        "name": "Packages",
+        "description": "Fixed-scope productised offers: process audits, blueprints, automation pilots and department sprints.",
+        "url": url,
+        "isPartOf": { "@id": SITE + "/#website" },
+        "hasPart": packageUrls.map(u => ({ "@id": u })),
+      },
+      breadcrumbEntity(url, [{ name: "Home", url: SITE + "/" }, { name: "Packages", url }]),
+    ],
+  };
+}
+
+function bookPageSchema(slug, title) {
+  const url = SITE + "/book/" + slug;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...siteWideNodes(),
+      {
+        "@type": "WebPage",
+        "@id": url + "#page",
+        "name": title,
+        "url": url,
+        "isPartOf": { "@id": SITE + "/#website" },
+      },
+      breadcrumbEntity(url, [{ name: "Home", url: SITE + "/" }, { name: title, url }]),
+    ],
+  };
+}
+
+function resourcesIndexSchema(resourceUrls) {
+  const url = SITE + "/resources";
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      ...siteWideNodes(),
+      {
+        "@type": "CollectionPage",
+        "@id": url + "#page",
+        "name": "Resources",
+        "description": "Comparison guides for nearshore, staff augmentation and build-vs-partner decisions.",
+        "url": url,
+        "isPartOf": { "@id": SITE + "/#website" },
+        "hasPart": resourceUrls.map(u => ({ "@id": u })),
+      },
+      breadcrumbEntity(url, [{ name: "Home", url: SITE + "/" }, { name: "Resources", url }]),
+    ],
+  };
+}
+
+function homeSchema() {
+  const { spec, blocks } = CONTENT_DATA.HOME_CONTENT;
+  const rating = spec.schema.aggregateRating ? aggregateRatingNode(spec.schema.aggregateRating) : null;
+  const graph = [
+    ...siteWideNodes(),
+    {
+      "@type": "WebSite",
+      "@id": SITE + "/#website",
+      "url": SITE + "/",
+      "name": "7code",
+      "publisher": ORG_REF,
+      "inLanguage": "en-GB",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": { "@type": "EntryPoint", "urlTemplate": SITE + "/?q={search_term_string}" },
+        "query-input": "required name=search_term_string",
+      },
+    },
+  ];
+  if (rating) {
+    // Attach the rating to the Organization node already pushed by siteWideNodes().
+    const org = graph.find(n => n["@type"] === "Organization");
+    if (org) org.aggregateRating = rating;
+  }
+  const faq = faqPageFromBlocks(SITE + "/", blocks.faq);
+  if (faq) graph.push(faq);
+  return { "@context": "https://schema.org", "@graph": graph };
+}
+
 function serviceSchema(s) {
   const url = SITE + "/service/" + s.slug;
   const faqs = SERVICE_FAQS[s.slug];
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": "Service",
         "@id": url + "#service",
@@ -205,6 +491,7 @@ function expertiseSchema(e) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": "Service",
         "@id": url + "#service",
@@ -230,6 +517,7 @@ function caseStudySchema(c) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": "CreativeWork",
         "@id": url + "#case",
@@ -253,6 +541,7 @@ function blogPostSchema(p) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": "Article",
         "@id": url + "#article",
@@ -279,6 +568,7 @@ function resourceSchema(r) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": "Article",
         "@id": url + "#article",
@@ -302,6 +592,7 @@ function listingSchema(p, pageType, items, breadcrumbItems) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": pageType,
         "@id": url + "#page",
@@ -321,6 +612,7 @@ function genericPageSchema(p, pageType, breadcrumbItems) {
   return {
     "@context": "https://schema.org",
     "@graph": [
+      ...siteWideNodes(),
       {
         "@type": pageType,
         "@id": url + "#page",
@@ -584,5 +876,114 @@ for (const r of RESOURCES) {
   writeFile("resources/" + r.slug + ".html", html);
 }
 
-const total = MAIN_PAGES.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length + RESOURCES.length;
+console.log("\nResources index:");
+{
+  const resourceUrls = RESOURCES.map(r => SITE + "/resources/" + r.slug);
+  const html = renderPage({
+    pathname: "/resources",
+    title: "Resources — Nearshore, Staff Augmentation & AI Guides | 7code",
+    description: "Comparison guides for buyers weighing build-vs-partner, nearshore-vs-offshore, and staff augmentation-vs-dedicated-team decisions.",
+    ogImage: DEFAULT_OG,
+    schema: resourcesIndexSchema(resourceUrls),
+  });
+  writeFile("resources.html", html);
+}
+
+console.log("\nMoney pages:");
+for (const [slug, entry] of Object.entries(CONTENT_DATA.MONEY_PAGES)) {
+  const { spec, blocks } = entry;
+  const html = renderPage({
+    pathname: "/" + slug,
+    title: spec.meta.title,
+    description: spec.meta.metaDescription,
+    ogImage: spec.meta.ogImage ? SITE + spec.meta.ogImage : DEFAULT_OG,
+    schema: moneyPageSchema(entry),
+  });
+  writeFile(slug + ".html", html);
+}
+
+console.log("\nPackage pages:");
+for (const [slug, entry] of Object.entries(CONTENT_DATA.PACKAGES)) {
+  const { spec } = entry;
+  const html = renderPage({
+    pathname: "/packages/" + slug,
+    title: spec.meta.title,
+    description: spec.meta.metaDescription,
+    ogImage: spec.meta.ogImage ? SITE + spec.meta.ogImage : DEFAULT_OG,
+    schema: packagePageSchema(entry),
+  });
+  writeFile("packages/" + slug + ".html", html);
+}
+
+console.log("\nPackages index:");
+{
+  const html = renderPage({
+    pathname: "/packages",
+    title: "Packages — Fixed-Scope Ways to Start | 7code",
+    description: "Fixed-scope productised offers: an operational quick scan, an AI-ready ops blueprint, an automation pilot, and a department automation sprint.",
+    ogImage: DEFAULT_OG,
+    schema: packagesIndexSchema(),
+  });
+  writeFile("packages.html", html);
+}
+
+console.log("\nHub articles:");
+for (const [slug, entry] of Object.entries(CONTENT_DATA.HUB_ARTICLES)) {
+  const { spec } = entry;
+  const html = renderPage({
+    pathname: "/hub/" + slug,
+    title: spec.meta.title,
+    description: spec.meta.metaDescription,
+    ogImage: spec.meta.ogImage ? SITE + spec.meta.ogImage : DEFAULT_OG,
+    schema: hubArticleSchema(entry),
+  });
+  writeFile("hub/" + slug + ".html", html);
+}
+
+console.log("\nHub index:");
+{
+  const html = renderPage({
+    pathname: "/hub",
+    title: "Hub — AI Automation, Cost & Vendor Guides | 7code",
+    description: "Long-form guides on AI automation cost, vendor evaluation and data residency, feeding the money pages this content pack builds around.",
+    ogImage: DEFAULT_OG,
+    schema: hubIndexSchema(),
+  });
+  writeFile("hub.html", html);
+}
+
+console.log("\nBook routes:");
+for (const [slug, route] of Object.entries(SITE_CONFIG.BOOKING_ROUTES)) {
+  const html = renderPage({
+    pathname: "/book/" + slug,
+    title: route.title + " | 7code",
+    description: route.title + " with a 7code senior engineer — live calendar, no sales sequence.",
+    ogImage: DEFAULT_OG,
+    schema: bookPageSchema(slug, route.title),
+  });
+  writeFile("book/" + slug + ".html", html);
+}
+
+console.log("\nHomepage:");
+{
+  const homeUrl = SITE + "/";
+  const home = CONTENT_DATA.HOME_CONTENT;
+  const html = renderPage({
+    pathname: "/",
+    title: home.spec.meta.title,
+    description: home.spec.meta.metaDescription,
+    ogImage: home.spec.meta.ogImage ? SITE + home.spec.meta.ogImage : DEFAULT_OG,
+    schema: homeSchema(),
+  });
+  writeFile("index.html", html);
+  void homeUrl;
+}
+
+const total = MAIN_PAGES.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length +
+  RESOURCES.length + 1 /* resources index */ +
+  Object.keys(CONTENT_DATA.MONEY_PAGES).length +
+  Object.keys(CONTENT_DATA.PACKAGES).length + 1 /* packages index */ +
+  Object.keys(CONTENT_DATA.HUB_ARTICLES).length + 1 /* hub index */ +
+  Object.keys(SITE_CONFIG.BOOKING_ROUTES).length +
+  1 /* homepage */;
 console.log(`\nDone. ${total} pages pre-rendered.`);

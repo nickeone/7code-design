@@ -1,9 +1,23 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, ResourcesIndexPage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, BookPage, MoneyPage, PackagePage, HubPage, HubIndexPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {style:{padding:'160px 0',textAlign:'center',color:'var(--slate-500)',fontSize:'15px'}}, 'Loading…');
 }
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{ "heroVariant": "pattern", "caseStudiesVariant": "stack", "caseStudyVariant": "sticky", "accent": "cyan", "darkFooter": true }/*EDITMODE-END*/;
+// The 9 root-level money page slugs from 7code-build/content/pages/*.mdx (excludes home.mdx,
+// which renders as HomePage). Kept as a Set here so App()'s route dispatch can match any of them
+// without a 9-line if/else chain; MoneyPage itself pulls per-slug content from MONEY_PAGES.
+const MONEY_PAGE_SLUGS = new Set([
+  "ai-automation-agency-uk",
+  "ai-development-company-uk",
+  "mvp-development-agency-uk",
+  "staff-augmentation-company-uk",
+  "ai-agent-development-company",
+  "rag-development-company",
+  "ai-consultancy-uk",
+  "nearshore-software-development-uk",
+  "ai-agency-uk",
+]);
 const ACCENTS = {
   cyan:    { c500: "#06B6D4", c600: "#0C9CB5", c700: "#0E7C90", c300: "#4DDFEA", c400: "#2EBFD0", bg50: "#ECFEFF", bg100: "#D8F7F9" },
   indigo:  { c500: "#6366F1", c600: "#4F46E5", c700: "#4338CA", c300: "#A5B4FC", c400: "#818CF8", bg50: "#EEF2FF", bg100: "#E0E7FF" },
@@ -54,11 +68,17 @@ function App() {
   else if (page === "/ai-mvp-development" )  Page = <AiMvpPage />;
   else if (page === "/ai-development-agency-uk") Page = <UkGeoPage />;
   else if (page === "/resources"    && slug) Page = routesReady ? <ResourcePage slug={slug} /> : <LoadingPage />;
+  else if (page === "/resources"           )  Page = routesReady ? <ResourcesIndexPage /> : <LoadingPage />;
   else if (page === "/privacy-policy"      )  Page = <PrivacyPolicyPage />;
   else if (page === "/terms-and-conditions")  Page = <TermsPage />;
   else if (page === "/faq"                 )  Page = <FAQPage />;
   else if (page === "/services"            )  Page = <ServicesPage />;
-  else                                      Page = <HomePage heroVariant={tweaks.heroVariant} />;
+  else if (page === "/book"         && slug) Page = routesReady ? <BookPage slug={slug} /> : <LoadingPage />;
+  else if (page === "/packages"     && slug) Page = routesReady ? <PackagePage slug={slug} /> : <LoadingPage />;
+  else if (page === "/hub"          && slug) Page = routesReady ? <HubPage slug={slug} /> : <LoadingPage />;
+  else if (page === "/hub"                 )  Page = routesReady ? <HubIndexPage /> : <LoadingPage />;
+  else if (MONEY_PAGE_SLUGS.has(page.slice(1))) Page = routesReady ? <MoneyPage slug={page.slice(1)} /> : <LoadingPage />;
+  else                                      Page = <HomePage />;
   return (
     <>
       <Nav />

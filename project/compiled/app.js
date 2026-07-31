@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, ResourcesIndexPage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, BookPage, MoneyPage, PackagePage, HubPage, HubIndexPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {
@@ -17,6 +17,10 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "cyan",
   "darkFooter": true
 } /*EDITMODE-END*/;
+// The 9 root-level money page slugs from 7code-build/content/pages/*.mdx (excludes home.mdx,
+// which renders as HomePage). Kept as a Set here so App()'s route dispatch can match any of them
+// without a 9-line if/else chain; MoneyPage itself pulls per-slug content from MONEY_PAGES.
+const MONEY_PAGE_SLUGS = new Set(["ai-automation-agency-uk", "ai-development-company-uk", "mvp-development-agency-uk", "staff-augmentation-company-uk", "ai-agent-development-company", "rag-development-company", "ai-consultancy-uk", "nearshore-software-development-uk", "ai-agency-uk"]);
 const ACCENTS = {
   cyan: {
     c500: "#06B6D4",
@@ -108,9 +112,15 @@ function App() {
     slug: slug
   }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/blog") Page = routesReady ? /*#__PURE__*/React.createElement(BlogRouter, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/contact") Page = /*#__PURE__*/React.createElement(ContactPage, null);else if (page === "/compare") Page = /*#__PURE__*/React.createElement(CompareAgencyFreelancerPage, null);else if (page === "/ai-mvp-development") Page = /*#__PURE__*/React.createElement(AiMvpPage, null);else if (page === "/ai-development-agency-uk") Page = /*#__PURE__*/React.createElement(UkGeoPage, null);else if (page === "/resources" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ResourcePage, {
     slug: slug
-  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/privacy-policy") Page = /*#__PURE__*/React.createElement(PrivacyPolicyPage, null);else if (page === "/terms-and-conditions") Page = /*#__PURE__*/React.createElement(TermsPage, null);else if (page === "/faq") Page = /*#__PURE__*/React.createElement(FAQPage, null);else if (page === "/services") Page = /*#__PURE__*/React.createElement(ServicesPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, {
-    heroVariant: tweaks.heroVariant
-  });
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/resources") Page = routesReady ? /*#__PURE__*/React.createElement(ResourcesIndexPage, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/privacy-policy") Page = /*#__PURE__*/React.createElement(PrivacyPolicyPage, null);else if (page === "/terms-and-conditions") Page = /*#__PURE__*/React.createElement(TermsPage, null);else if (page === "/faq") Page = /*#__PURE__*/React.createElement(FAQPage, null);else if (page === "/services") Page = /*#__PURE__*/React.createElement(ServicesPage, null);else if (page === "/book" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(BookPage, {
+    slug: slug
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/packages" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(PackagePage, {
+    slug: slug
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/hub" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(HubPage, {
+    slug: slug
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/hub") Page = routesReady ? /*#__PURE__*/React.createElement(HubIndexPage, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (MONEY_PAGE_SLUGS.has(page.slice(1))) Page = routesReady ? /*#__PURE__*/React.createElement(MoneyPage, {
+    slug: page.slice(1)
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else Page = /*#__PURE__*/React.createElement(HomePage, null);
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Nav, null), Page, /*#__PURE__*/React.createElement(Footer, null), /*#__PURE__*/React.createElement(CookieConsent, null), /*#__PURE__*/React.createElement(TweaksPanel, {
     title: "Tweaks"
   }, /*#__PURE__*/React.createElement(TweakSection, {

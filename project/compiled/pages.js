@@ -1,4 +1,4 @@
-/* global React, Icon, TrustedBy, CaseStudies, WhyChoose, VerifiedAccredited, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover */
+/* global React, Icon, TrustedBy, CaseStudies, WhyChoose, VerifiedAccredited, Expertise, Services, Testimonials, CTAStrip, HeroPatternMockup, HeroTerminal, HeroBoldSplit, CSCover, HeroBlock, TrustStripBlock, RouterBlock, ProofBlock, CtaBlock, RichSection, FaqBlock, CloseBlock */
 
 const {
   useState: useStateP,
@@ -30,58 +30,56 @@ function useSeoMeta(title, desc) {
 }
 
 // ──────────────────────────────────────────────────────────────────
-// HOME
+// HOME — rebuilt around the 7code-build/content/pages/home.mdx spec: a
+// four-door ICP router, proof above the first CTA, and one CTA label
+// repeated ("Book a discovery call") instead of the two competing buttons
+// ("Start a project" / "How we work") the previous hero ran. See
+// content-spec.types.ts's homepage block order:
+//   hero, trustStrip, router, diagnosis, proof, cta, whyUs, packages, faq,
+//   testimonials, close
 // ──────────────────────────────────────────────────────────────────
-function HomePage({
-  heroVariant
-}) {
-  useSeoMeta("AI-Native Software Engineering Agency — 7code", "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team.");
-  const homeFaqs = [{
-    q: "Where is 7code located?",
-    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe's leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code operates remotely across UK, EU, UAE, and US client time zones."
-  }, {
-    q: "What countries does 7code serve?",
-    a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
-  }, {
-    q: "How quickly can 7code start a new project?",
-    a: "7code can typically begin a Discovery Sprint within one to two weeks of agreement signature. Full team mobilisation for a build engagement follows two to three weeks after Discovery. For urgent requirements, a fast-track onboarding process is available. Contact office@7code.ro to discuss your timeline — 7code will confirm availability within 48 hours."
-  }, {
-    q: "What is 7code's Clutch rating?",
-    a: "7code holds a 4.9-star rating on Clutch.co based on 11 verified client reviews (as of 2025). Clutch reviews cover engagement quality, delivery timeliness, communication, and willingness to recommend. All reviews are verified by Clutch's research team through direct client interviews. View 7code's Clutch profile at clutch.co/profile/7code."
-  }, {
-    q: "What makes 7code different from other software agencies?",
-    a: "7code is senior-only and AI-first — no juniors, no generalist teams learning AI on the job. Every engagement is led by engineers who have shipped AI products in production. 7code's nearshore Romania base delivers Western-quality engineering at nearshore rates, with timezone alignment to UK and EU clients. Business-outcome focus means we measure success by your KPIs, not hours billed."
-  }];
-  const Hero = heroVariant === "terminal" ? HeroTerminal : heroVariant === "bold" ? HeroBoldSplit : HeroPatternMockup;
+function HomePage() {
+  const home = window.CONTENT_DATA && window.CONTENT_DATA.HOME_CONTENT;
+  useSeoMeta(home ? home.spec.meta.title : "AI-Native Software Engineering Agency — 7code", home ? home.spec.meta.metaDescription : undefined);
+  if (!home) {
+    // Defensive fallback if content-data.js failed to load — should never
+    // happen in production, but avoids a blank homepage over a build glitch.
+    return /*#__PURE__*/React.createElement("div", {
+      className: "page"
+    }, /*#__PURE__*/React.createElement(TrustedBy, null), /*#__PURE__*/React.createElement(CaseStudies, {
+      limit: 6
+    }), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(CTAStrip, null));
+  }
+  const {
+    spec,
+    blocks
+  } = home;
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
-  }, /*#__PURE__*/React.createElement(Hero, null), /*#__PURE__*/React.createElement(TrustedBy, null), /*#__PURE__*/React.createElement(CaseStudies, {
-    limit: 6
-  }), /*#__PURE__*/React.createElement(WhyChoose, null), /*#__PURE__*/React.createElement(VerifiedAccredited, null), /*#__PURE__*/React.createElement(Expertise, {
-    headTitle: "Our Expertise",
-    headDesc: "We specialize in key sectors, delivering tailored digital solutions that drive growth and innovation."
-  }), /*#__PURE__*/React.createElement(Services, null), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement("section", {
-    className: "section section--alt"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "container svc-faq-wrap"
-  }, /*#__PURE__*/React.createElement("div", {
-    className: "section-head reveal section-head--left",
-    style: {
-      maxWidth: 720,
-      margin: 0,
-      marginBottom: 32
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    className: "eyebrow"
-  }, "Frequently asked"), /*#__PURE__*/React.createElement("h2", null, "Questions teams ask before they start")), /*#__PURE__*/React.createElement("div", {
-    className: "svc-faq"
-  }, homeFaqs.map((f, i) => /*#__PURE__*/React.createElement("details", {
-    key: i,
-    className: "svc-faq-item reveal",
-    style: {
-      transitionDelay: i * 40 + "ms"
-    }
-  }, /*#__PURE__*/React.createElement("summary", null, f.q), /*#__PURE__*/React.createElement("p", null, f.a)))))), /*#__PURE__*/React.createElement(CTAStrip, null));
+  }, /*#__PURE__*/React.createElement(HeroBlock, {
+    hero: blocks.hero,
+    cta: spec.cta
+  }), /*#__PURE__*/React.createElement(TrustStripBlock, {
+    trustStrip: blocks.trustStrip
+  }), /*#__PURE__*/React.createElement(RouterBlock, {
+    router: blocks.router
+  }), /*#__PURE__*/React.createElement(RichSection, {
+    nodes: blocks.diagnosis.rich
+  }), /*#__PURE__*/React.createElement(ProofBlock, {
+    proof: spec.proof
+  }), /*#__PURE__*/React.createElement(CtaBlock, {
+    cta: spec.cta
+  }), /*#__PURE__*/React.createElement(RichSection, {
+    nodes: blocks.whyUs.rich,
+    alt: true
+  }), /*#__PURE__*/React.createElement(RichSection, {
+    nodes: blocks.packages.rich
+  }), /*#__PURE__*/React.createElement(FaqBlock, {
+    faq: blocks.faq
+  }), /*#__PURE__*/React.createElement(Testimonials, null), /*#__PURE__*/React.createElement(CloseBlock, {
+    close: blocks.close,
+    cta: spec.cta
+  }));
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -200,8 +198,9 @@ function AboutPage() {
       if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
     };
   }, []);
+  const foundedYear = (typeof window !== "undefined" && window.SITE_CONFIG && window.SITE_CONFIG.COMPANY.founded || "2017-08-10").slice(0, 4);
   const stats = [{
-    v: "2016",
+    v: foundedYear,
     l: "Founded in Cluj-Napoca"
   }, {
     v: "20+",
@@ -252,13 +251,13 @@ function AboutPage() {
     role: "CEO & Founder",
     initial: "N",
     photo: "/project/uploads/authors/nicu-mardari.jpg",
-    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
+    bio: `Nicu Mardari founded 7code in Cluj-Napoca in ${foundedYear}, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy.`
   }, {
     name: "Igor Mardari",
     role: "CTO & Co-Founder",
     initial: "I",
     photo: null,
-    bio: "Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in 2016, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model."
+    bio: `Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in ${foundedYear}, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model.`
   }, {
     name: "Daniela Cazac",
     role: "CMO",
@@ -277,7 +276,7 @@ function AboutPage() {
     style: {
       justifyContent: "center"
     }
-  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
+  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since ", foundedYear, ", we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container about-split"
@@ -1558,7 +1557,7 @@ function FAQPage() {
     a: "Yes. 7code works with funded startups from Seed stage upward, as well as scale-ups and enterprise clients. For early-stage companies, 7code offers a Startup Track with a phased engagement model — beginning with a focused Discovery and MVP build before scaling the team. Equity arrangements in lieu of partial fees can be discussed for the right opportunities."
   }, {
     q: "What is 7code’s Clutch rating?",
-    a: "7code holds a 4.9-star rating on Clutch.co based on 11 verified client reviews (as of 2025). Clutch reviews cover engagement quality, delivery timeliness, communication, and willingness to recommend. All reviews are verified by Clutch’s research team through direct client interviews. View 7code’s Clutch profile at clutch.co/profile/7code."
+    a: "7code holds a 4.8-star rating on Clutch.co based on 11 verified client reviews (as of 2025). Clutch reviews cover engagement quality, delivery timeliness, communication, and willingness to recommend. All reviews are verified by Clutch’s research team through direct client interviews. View 7code’s Clutch profile at clutch.co/profile/7code."
   }, {
     q: "Does 7code offer fixed-price or time-and-materials contracts?",
     a: "7code offers both. Fixed-price contracts are available for well-defined scopes — typically used for Discovery Sprints, MVP builds, and integration projects. Time-and-materials is the default for ongoing product development and outstaffing engagements where requirements evolve. Hybrid models are also available: fixed-price phases within a broader T&M programme."
@@ -1700,7 +1699,15 @@ function FAQPage() {
       stroke: isOpen ? "#fff" : "var(--slate-500)",
       strokeWidth: "1.8",
       strokeLinecap: "round"
-    })))), React.createElement("div", { style: { display: isOpen ? "block" : "none", paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 } }, item.a));
+    })))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: isOpen ? "block" : "none",
+        paddingBottom: 24,
+        color: "var(--slate-700)",
+        fontSize: 15,
+        lineHeight: 1.7
+      }
+    }, item.a));
   }))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt",
     style: {
