@@ -37,7 +37,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources" || parts[0] === "book" || parts[0] === "packages" || parts[0] === "hub")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];
@@ -176,7 +176,8 @@ function Nav() {
     className: "nav-inner"
   }, /*#__PURE__*/React.createElement("a", {
     href: "/",
-    className: "brand"
+    className: "brand",
+    "aria-label": "7code home"
   }, /*#__PURE__*/React.createElement(Logo, {
     height: 28
   })), /*#__PURE__*/React.createElement("nav", {
@@ -188,7 +189,7 @@ function Nav() {
     onMouseEnter: openSvc,
     onMouseLeave: closeSvc
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/service/ai-product-engineering",
+    href: "/services",
     className: "nav-link" + (svcOpen ? " is-active" : ""),
     "aria-expanded": svcOpen,
     onClick: e => {
@@ -311,7 +312,8 @@ function Footer() {
     className: "footer-brand"
   }, /*#__PURE__*/React.createElement("a", {
     href: "/",
-    className: "brand"
+    className: "brand",
+    "aria-label": "7code home"
   }, /*#__PURE__*/React.createElement(Logo, {
     height: 32,
     color: "#fff"
@@ -348,6 +350,10 @@ function Footer() {
   }, "Our Process")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "/blog"
   }, "Blog")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/hub"
+  }, "Hub")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/resources"
+  }, "Resources")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "/contact"
   }, "Contact")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "https://clutch.co/profile/7code#reviews",
@@ -572,7 +578,7 @@ function CookieConsent() {
     href: "/privacy-policy#cookies",
     style: {
       color: "var(--cyan-600)",
-      textDecoration: "none"
+      textDecoration: "underline"
     }
   }, "Cookie Policy"), "."), /*#__PURE__*/React.createElement("div", {
     style: {
