@@ -1,0 +1,421 @@
+---
+status: approved
+kind: hub
+
+meta:
+  slug: hub/questions-to-ask-an-ai-development-partner
+  title: "Questions to Ask an AI Development Company | 15 to Use"
+  metaDescription: "15 questions to ask an AI development company, with what a good answer sounds like and what a bad one sounds like. Written by engineers who answer them."
+  canonical: "https://www.7code.tech/hub/questions-to-ask-an-ai-development-partner/"
+  ogImage: "/og/questions-to-ask-an-ai-development-partner.jpg"
+  ogImageDimensions: { width: 1200, height: 630 }
+  locale: en_GB
+
+targeting:
+  primaryKeyword: "questions to ask an ai development company"
+  secondaryKeywords:
+    - "how to choose an ai development partner"
+    - "how to vet an ai agency"
+    - "ai development company evaluation criteria"
+    - "questions to ask an ai agency"
+    - "choosing an llm development partner"
+  icpSegment: outstaffing
+  searchIntent: commercial-investigation
+  flywheelStage: find
+  difficultyNote: >
+    A crowded genre where every existing version is generic — "do they understand your business",
+    "check their portfolio". None of the incumbent lists contain a question a non-engineering agency
+    would struggle to answer. The differentiator is specificity: eval coverage, retrieval metrics,
+    prompt ownership, token attribution, model deprecation and rollback are questions that separate
+    a delivery firm from a prototype shop. Qualitative only; no verified volume data available.
+
+cta:
+  label: "Book a technical call"
+  action: booking
+  href: "/book/technical-call"
+  reassurance: "45 minutes with the engineer who would build it, not a salesperson. Bring the hardest question on this list."
+
+blocks:
+  [hero, trustStrip, howToUse, questions, fairness, scorecard, faq, close]
+
+proof:
+  - caseStudySlug: hera
+    metric: "Clinical intake from days to minutes — RAG-verified, MVP in 3 months"
+    tags:
+      - { label: "RAG development", href: "/rag-development-company" }
+      - { label: "LLM & agent development", href: "/service/llm-agent-development" }
+  - caseStudySlug: g42-fleet
+    metric: "Fleet platform deployed at EXPO 2020 scale, over a two-year engagement"
+    tags:
+      - { label: "AI product engineering", href: "/service/ai-product-engineering" }
+      - { label: "System integrations", href: "/service/system-integrations" }
+
+internalLinks:
+  - { anchor: "AI development company",        href: "/ai-development-company-uk",       placement: howToUse }
+  - { anchor: "AI agent development",          href: "/ai-agent-development-company",    placement: questions }
+  - { anchor: "RAG development",               href: "/rag-development-company",         placement: questions }
+  - { anchor: "how we work",                   href: "/process",                         placement: scorecard }
+  - { anchor: "LLM and agent development",     href: "/service/llm-agent-development",   placement: questions }
+
+schema:
+  service: false
+  faqPage: true
+  breadcrumbList: true
+  organization: true
+  aggregateRating: { ratingValue: 4.8, reviewCount: 11, source: "https://clutch.co/profile/7code" }
+
+authorship:
+  author: "Nicu Mardari"
+  reviewer: "{{REVIEWER_NAME}}"
+  published: "2026-08-04"
+  updated: "2026-08-04"
+  readTime: "12 min read"
+
+openItems: []
+---
+
+## BLOCK: hero
+
+**H1:** Questions to ask an AI development company before you hire
+
+**Sub:** Fifteen questions a prototype shop cannot answer well, with what a good answer sounds like
+and what a bad one sounds like. Written by the people who get asked them.
+
+**By** Nicu Mardari, CEO & Co-founder, 7code · **Reviewed by** {{REVIEWER_NAME}} ·
+**Published** 4 August 2026 · **Updated** 4 August 2026 · **12 min read**
+
+---
+
+## BLOCK: trustStrip
+
+- **20+** products delivered
+- **8+ years** engineering practice
+- **4.8/5** on Clutch, 11 reviews
+- **2–4 weeks** from contract to a working team
+
+Logos: Lidl Romania · G42 · Founders Factory · Life is Hard
+
+---
+
+## BLOCK: howToUse
+
+**H2:** Why the usual list is useless
+
+Most buying guides tell you to check the portfolio, ask about the process and see whether they
+understand your industry. Every agency passes that. The demo will be good, because demos are easy,
+and the gap between a demo and a system that survives real users is where projects die.
+
+The questions below are about what happens after the model returns something wrong at 2am on a
+Tuesday. A firm that has run AI features in production answers them without preparation. A firm that
+has only built prototypes answers them with philosophy.
+
+Use them in a technical call, not a sales call. You are not testing whether they can say the words.
+You are testing for specifics: a number, a tool, a story about the time it went wrong.
+
+One fair warning. No supplier passes every question perfectly, and a firm that claims to should worry
+you more than one admitting a gap. You want a pattern of concrete answers and honesty about the
+edges. Our [AI development company](/ai-development-company-uk) page sets out how we scope and
+deliver, if you want the shape of a full engagement first.
+
+---
+
+## BLOCK: questions
+
+**H2:** The fifteen questions
+
+### 1. Which engineer will write this code, and can I meet them this week?
+
+**Why it matters.** The single most common failure in agency work is the bait and switch: senior
+people sell it, juniors build it. This question surfaces that in one move, because a firm that
+intends to hand your project to whoever is free cannot produce a name.
+
+**A good answer sounds like:** a name, a short summary of what that person last shipped, and an offer
+to put them on a call in the next few days. Better still, they were already on your first call.
+
+**A bad answer sounds like:** "we allocate from our talent pool based on availability at kickoff", or
+a promise that you will meet the team after signature.
+
+### 2. What does your eval suite look like for a feature like mine?
+
+**Why it matters.** Evals are the automated tests of AI engineering. Without them, nobody can tell
+whether a change improved the system or quietly broke it. A firm that does not run evals is shipping
+on vibes and will be unable to tell you why quality dropped.
+
+**A good answer sounds like:** they describe a labelled dataset built from your real data, a scoring
+method per task type, a threshold that blocks a release, and how the set grows when a bug is found in
+production. They will tell you how many examples they typically start with and why.
+
+**A bad answer sounds like:** "we test it thoroughly", "our prompts are well engineered", or eval
+described as something they do at the end before handover.
+
+### 3. How do you measure retrieval quality, separately from answer quality?
+
+**Why it matters.** In a retrieval system, most wrong answers are retrieval failures wearing a
+generation costume. If you only measure the final answer, you cannot tell whether to fix the index,
+the chunking, the query rewriting or the prompt. Teams that conflate the two debug by guessing.
+
+**A good answer sounds like:** they measure whether the right document made it into context at all,
+before judging the answer. They will name the metrics they use, explain how they built the set of
+question-to-correct-document pairs, and describe what they changed when recall was poor. Anyone doing
+serious [RAG development](/rag-development-company) has these numbers.
+
+**A bad answer sounds like:** "we use a vector database", as if the choice of database were the
+answer. Naming a tool is not naming a measurement.
+
+### 4. What is your guardrail strategy, and what specifically does it block?
+
+**Why it matters.** Guardrails are where legal and brand risk live. Vague ones are worse than none,
+because they create the impression of safety without a specification anyone can check.
+
+**A good answer sounds like:** a layered description. Input validation, output schema enforcement,
+refusal handling for out-of-scope questions, a check on anything leaving the system, and a defined
+behaviour when a guardrail fires — retry, escalate, or fail closed. They should also say what they
+deliberately do not block, and why over-blocking has a cost.
+
+**A bad answer sounds like:** "the model provider handles safety". That covers their risk, not yours.
+
+### 5. Who owns the prompts, and where do they live?
+
+**Why it matters.** Prompts are product logic. If they live in a proprietary platform you cannot
+export, you have bought a dependency, not a system. If they live inside code with no versioning, you
+cannot roll one back or run an A/B comparison.
+
+**A good answer sounds like:** you own them, they are versioned in your repository, they are
+reviewable in a pull request, and changing one triggers the eval suite. Prompt changes are treated as
+code changes because they are.
+
+**A bad answer sounds like:** prompts held in the agency's tooling, or "we keep them internally
+because they are our secret sauce". Your business logic is not their intellectual property.
+
+### 6. How do you attribute token cost per feature?
+
+**Why it matters.** An unattributed AI bill is a bill you cannot manage. When spend triples you need
+to know which feature did it, and whether it came from more usage or a worse prompt. Without
+attribution, your only control is turning things off.
+
+**A good answer sounds like:** every call tagged by feature, tenant and environment, cost visible per
+run in a dashboard, and an alert when spend per unit of work moves. They can quote the cost of a
+single transaction, not just the monthly total.
+
+**A bad answer sounds like:** "we monitor the provider console". That is one aggregate number and it
+tells you nothing about which part of your product is expensive.
+
+### 7. What happens when the model we build on is deprecated?
+
+**Why it matters.** Providers retire models on their own schedule. If your system is welded to one
+model's exact behaviour, that announcement is an emergency. This question tests whether the
+architecture anticipates something that is certain to happen.
+
+**A good answer sounds like:** an abstraction layer over the provider, evals that can be re-run
+against a candidate replacement to quantify the difference, and a migration process they have
+actually performed. They should be candid that migration is real work, not free.
+
+**A bad answer sounds like:** "we always use the latest model", or a claim that swapping models is
+trivial. Anyone who has done it knows prompts do not transfer cleanly.
+
+### 8. What is your rollback plan when a change makes output worse?
+
+**Why it matters.** Quality regressions in AI systems are often silent. Nothing throws an error; the
+answers just get slightly worse. You need to know how they detect that and how fast they can undo it.
+
+**A good answer sounds like:** prompts, model version and configuration are all versioned together
+and deployable as a unit, releases go out behind a flag or to a subset of traffic first, and there is
+a documented path back that has been rehearsed. They should quote a time: minutes, not days.
+
+**A bad answer sounds like:** rollback described only for application code, with prompts and model
+configuration edited live in a console.
+
+### 9. How do you handle data residency, and what exactly leaves our environment?
+
+**Why it matters.** Most teams cannot answer precisely which data reaches which third party. That is
+a problem in any regulated context, and an awkward one in a supplier due-diligence questionnaire.
+
+**A good answer sounds like:** a specific data-flow answer. What is sent to the model provider, in
+what form, whether it is redacted first, which region processes it, what is retained and for how
+long, and what the alternative is when data cannot leave your environment at all. They should raise
+the option of running an open-weight model in your own infrastructure without being prompted.
+
+**A bad answer sounds like:** "it is all encrypted and GDPR compliant". Encryption in transit is not
+a residency answer, and compliance is not a description of where data goes.
+
+### 10. What will you refuse to build with an LLM?
+
+**Why it matters.** A firm that will put a model into anything is optimising for the invoice. Serious
+engineers have a list of things that should be plain deterministic code, and they will argue for it
+against their own commercial interest.
+
+**A good answer sounds like:** arithmetic, anything requiring exact reproducibility, decisions with a
+hard legal or financial consequence and no human review, and any rule that can be written as a rule.
+They will suggest hybrid designs where the model handles the fuzzy part and code handles the rest.
+
+**A bad answer sounds like:** enthusiasm without limits. If everything is an agent, nothing has been
+thought about.
+
+### 11. How do you write acceptance criteria for a non-deterministic system?
+
+**Why it matters.** Traditional acceptance testing assumes the same input gives the same output.
+Models do not work that way. If nobody has solved this contractually, you will argue about whether
+the thing works at the exact moment you are due to pay for it.
+
+**A good answer sounds like:** acceptance defined statistically against a labelled set that you have
+seen and agreed. A stated pass rate per task category, an agreed behaviour for the failing tail, and
+a named person on your side who signs off the test set before the build starts.
+
+**A bad answer sounds like:** "you will know it when you see it", or a demo used as acceptance.
+
+### 12. What does your production observability look like?
+
+**Why it matters.** When a user says the assistant gave a bad answer last Thursday, someone has to
+reconstruct exactly what happened. Without traces, that investigation is impossible and every bug
+report becomes an argument.
+
+**A good answer sounds like:** every run is traced end to end — inputs, retrieved context, tool calls,
+model output, latency, cost — with the trace linkable from a support ticket. They will tell you the
+retention period and how personal data is masked in the traces.
+
+**A bad answer sounds like:** application logs only, or a dashboard that shows request counts and
+error rates but not what the model actually saw.
+
+### 13. Tell me about a project that went badly, and what you changed afterwards.
+
+**Why it matters.** This is the fairness question, and it is the most revealing one on the list.
+Everybody has a project that went wrong. A firm that cannot describe one is either very new or not
+being straight with you. You are listening for ownership rather than blame, and for a specific change
+to how they work.
+
+**A good answer sounds like:** a real situation, a clear description of what they misjudged, what it
+cost, and the concrete practice they adopted afterwards. Good firms are comfortable here. It tends to
+be the moment the conversation becomes honest.
+
+**A bad answer sounds like:** a story where the client was the problem, or a non-answer dressed as
+discretion. Confidentiality prevents naming a client. It does not prevent describing a mistake.
+
+### 14. Who owns the IP, and at what moment does it transfer?
+
+**Why it matters.** "You own everything" is easy to say and often untrue in the contract. The details
+matter: their internal frameworks, third-party components, the model weights if anything was
+fine-tuned, and the timing of transfer.
+
+**A good answer sounds like:** a clear statement of what transfers and when, usually on full payment,
+with any retained internal tooling named and licensed to you. They will point to the clause rather
+than paraphrase it. Anything built on their own scaffolding is called out explicitly.
+
+**A bad answer sounds like:** a verbal assurance not reflected in the draft agreement, or silence
+about pre-existing components embedded in your system.
+
+### 15. What does handover look like if we take this in-house in six months?
+
+**Why it matters.** The best test of whether a supplier is building for you or for their retainer.
+Ask it early, while it is hypothetical and nobody is defensive.
+
+**A good answer sounds like:** an actual list. Repository access, infrastructure as code in your
+cloud account, runbooks, the eval suite and its dataset, prompt history, an architecture decision
+record, and a paid handover period with your engineers shadowing theirs. They will treat it as a
+normal outcome rather than a threat.
+
+**A bad answer sounds like:** hesitation, or a handover fee that appears for the first time in this
+conversation. If a supplier cannot describe how you leave, you should assume leaving is difficult.
+
+---
+
+## BLOCK: fairness
+
+**H2:** Being fair to the supplier
+
+A checklist can be used badly. Three notes so this one is not.
+
+**Do not expect fifteen perfect answers.** A small firm may not run per-feature cost attribution on
+every project. What matters is whether the gaps are acknowledged and what they would do instead.
+
+**Weight the questions to your risk.** For an internal tool used by twelve people, guardrails and
+rollback matter less than speed. Where output touches customers or regulated decisions, questions
+four, nine and eleven are the whole conversation.
+
+**Give them the context to answer well.** Several of these have no good answer in the abstract.
+Retrieval quality depends on your corpus; cost attribution depends on your architecture. Send the
+problem in advance. A considered answer teaches you more than an ambush.
+
+---
+
+## BLOCK: scorecard
+
+**H2:** How to score the conversation
+
+Three signals separate the firms worth shortlisting, whatever the individual answers were.
+
+**Specificity.** Good answers contain nouns: a tool, a metric, a threshold, a number. Weak answers
+contain adjectives. Count them.
+
+**Volunteered limits.** A supplier who tells you what they would not build, or where their approach
+gets expensive, is describing real experience. Nobody who has shipped this work thinks it is easy.
+
+**Consistency between the call and the contract.** Everything said about IP, handover, data residency
+and ownership should appear in the draft agreement without you asking. If it does not, the call was
+marketing.
+
+We set out scoping, evals, delivery and handover on [how we work](/process), and what we build on
+[AI agent development](/ai-agent-development-company) and
+[LLM and agent development](/service/llm-agent-development).
+
+---
+
+## BLOCK: faq
+
+**H2:** Questions we get asked before we're hired
+
+**1. How many suppliers should I run this with?** `objection: other`
+Three is usually enough, and more than four wastes everyone's time including yours. Run the same
+questions with each, in the same order, and write the answers down during the call. The differences
+are obvious on paper and much less obvious from memory a week later.
+
+**2. Can I ask these if I am not technical?** `objection: seniority`
+Yes, and you should. You do not need to evaluate the technical content to evaluate the answer. Note
+whether they gave you something specific, whether they explained it in language you followed, and
+whether they were comfortable being pinned down. Bring a technical colleague or advisor for the
+follow-up if you have one.
+
+**3. What if a supplier refuses to let me meet the engineer?** `objection: seniority`
+Treat it as an answer. There are legitimate scheduling reasons for a delay of a few days, but not for
+a refusal. The person who will build the system should be reachable before you sign, and at 7code
+they are usually already on the first call.
+
+**4. Are these questions unfair to smaller firms?** `objection: other`
+No, and small firms often do better on them. A two-person team can name the engineer immediately and
+usually knows their own cost per transaction. Where small suppliers struggle is continuity, so add a
+question about what happens if their lead engineer is unavailable for a month.
+
+**5. Should I send the list in advance?** `objection: other`
+Send it. You are hiring for engineering judgement, not improvisation. A prepared answer with real
+artefacts behind it beats a fluent one invented on the call.
+
+**6. What if their answers are good but the price is high?** `objection: price`
+Compare what is included rather than the headline. Evals, guardrails, traces and cost dashboards are
+either in the quote or they are work your team does later. A cheaper quote that omits them is a
+deferred invoice, not a saving.
+
+**7. How do I check what they tell me?** `objection: other`
+Ask for a reference from a client whose system is still in production a year later, and put the
+rollback and handover questions to them. Review platforms help with the relationship questions.
+Neither substitutes for a technical conversation with the engineer.
+
+**8. Do you mind being asked these?** `objection: other`
+Not at all. We wrote them. Buyers who ask hard questions early make good clients later, because
+expectations are set before there is a contract to protect.
+
+---
+
+## BLOCK: close
+
+**H2:** Bring the hardest question on the list
+
+**Sub:** A technical call with the engineer who would do the work. No slides, no account manager, and
+a straight answer about anything on this page.
+
+**Booking:** live calendar embed via `{{BOOKING_PROVIDER}}`.
+
+**Named human:** Nicu Mardari, CEO & Co-founder — photo, name, role.
+
+**Fallback:** contact form, for people who will not book.
+
+**Reassurance line:** We reply within one business day. No obligation, no sales sequence, and we will
+sign an NDA before the call if you would prefer.

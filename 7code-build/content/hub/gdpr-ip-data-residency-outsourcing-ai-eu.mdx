@@ -1,0 +1,391 @@
+---
+status: approved
+kind: hub
+
+meta:
+  slug: hub/gdpr-ip-data-residency-outsourcing-ai-eu
+  title: "GDPR & Outsourcing Software Development to the EU | 7code"
+  metaDescription: "Practitioner guidance on GDPR, IP ownership and data residency when a UK company outsources AI and software development to an EU supplier. Not legal advice."
+  canonical: "https://www.7code.tech/hub/gdpr-ip-data-residency-outsourcing-ai-eu/"
+  ogImage: "/og/gdpr-ip-data-residency-outsourcing-ai-eu.jpg"
+  ogImageDimensions: { width: 1200, height: 630 }
+  locale: en_GB
+
+targeting:
+  primaryKeyword: "gdpr outsourcing software development eu"
+  secondaryKeywords:
+    - "data residency ai development"
+    - "gdpr nearshore development uk"
+    - "ip ownership outsourcing software romania"
+    - "dpa software development supplier"
+    - "sending personal data to an eu supplier post brexit"
+  icpSegment: outstaffing
+  searchIntent: informational
+  flywheelStage: find
+  difficultyNote: >
+    Near-zero direct competition. Existing content is either law-firm marketing written for lawyers,
+    or supplier pages asserting "we are GDPR compliant" with no mechanics. The gap is practitioner
+    guidance: what a buyer actually has to arrange, in what order, with the engineering consequences
+    spelled out. High anxiety, low supply. Qualitative only; no verified volume data available.
+
+cta:
+  label: "Book a technical call"
+  action: booking
+  href: "/book/technical-call"
+  reassurance: "45 minutes with an engineer. Bring your security questionnaire — we would rather answer it before there is a contract than after."
+
+blocks:
+  [hero, notLegalAdvice, trustStrip, adequacy, dpa, subProcessors, residencyVsProcessing, hostedVsOpenWeight, ipOwnership, ndas, whatToAsk, faq, close]
+
+proof:
+  - caseStudySlug: hera
+    metric: "Clinical intake from days to minutes — RAG-verified, MVP in 3 months"
+    tags:
+      - { label: "AI product engineering", href: "/service/ai-product-engineering" }
+      - { label: "RAG development", href: "/rag-development-company" }
+  - caseStudySlug: lidl-road-safety
+    metric: "Road-safety programme platform delivered for Lidl Romania"
+    tags:
+      - { label: "Nearshore development", href: "/nearshore-software-development-uk" }
+      - { label: "System integrations", href: "/service/system-integrations" }
+
+internalLinks:
+  - { anchor: "nearshore software development",  href: "/nearshore-software-development-uk", placement: adequacy }
+  - { anchor: "AI consultancy",                  href: "/ai-consultancy-uk",                 placement: whatToAsk }
+  - { anchor: "how we work",                     href: "/process",                           placement: whatToAsk }
+
+schema:
+  service: false
+  faqPage: true
+  breadcrumbList: true
+  organization: true
+  aggregateRating: { ratingValue: 4.8, reviewCount: 11, source: "https://clutch.co/profile/7code" }
+
+authorship:
+  author: "Nicu Mardari"
+  reviewer: "{{REVIEWER_NAME}}"
+  published: "2026-08-04"
+  updated: "2026-08-04"
+  readTime: "10 min read"
+
+openItems: []
+---
+
+## BLOCK: hero
+
+**H1:** GDPR, IP and data residency: outsourcing software development to the EU
+
+**Sub:** What a UK company actually has to arrange before sending data to an EEA supplier, and what
+changes once an AI model is in the pipeline. Written from the supplier side of the table.
+
+**By** Nicu Mardari, CEO & Co-founder, 7code · **Reviewed by** {{REVIEWER_NAME}} ·
+**Published** 4 August 2026 · **Updated** 4 August 2026 · **10 min read**
+
+---
+
+## BLOCK: notLegalAdvice
+
+> **We are engineers, not lawyers.** This article describes the practical mechanics we deal with on
+> every engagement — the documents that get signed, the questions that get asked, and the
+> architectural choices behind them. It is not legal advice and it is not a substitute for it.
+> Anything contractual should be reviewed by your own counsel before you sign it. Data protection
+> law, and the adequacy arrangements described below, change over time and vary by jurisdiction.
+> Verify the current position with a qualified adviser rather than relying on any article, including
+> this one.
+
+---
+
+## BLOCK: trustStrip
+
+- **20+** products delivered
+- **8+ years** engineering practice
+- **4.8/5** on Clutch, 11 reviews
+- **EU company**, delivering from Cluj-Napoca, Romania
+
+Logos: Lidl Romania · G42 · Founders Factory · Life is Hard
+
+---
+
+## BLOCK: adequacy
+
+**H2:** The UK–EU position, in practical terms
+
+Since Brexit the UK and the EU run two parallel data protection regimes that started from the same
+text. The practical question is narrow: what has to be in place before personal data moves from your
+systems to a supplier inside the European Economic Area?
+
+For most of the period since Brexit that transfer has been treated as unrestricted in both
+directions, because each side recognised the other as offering an adequate level of protection.
+Adequacy decisions are time-limited, subject to review, and can be amended or withdrawn. Buyers
+routinely treat adequacy as a permanent fact rather than a status with an expiry date.
+
+So the answer is conditional. **If adequacy is in force when you transfer**, no additional mechanism
+is needed and the work is about the contract and the security posture. **If it is not**, you fall
+back to a mechanism such as standard contractual clauses plus a documented transfer risk assessment.
+Have your counsel confirm the current status before relying on either path.
+
+Two consequences either way. Sensible suppliers sign the contractual clauses regardless, so a change
+in status does not stop the project. And adequacy settles only the legality of the transfer, not
+whether the arrangement is well run.
+
+This is one of the quieter arguments for [nearshore software development](/nearshore-software-development-uk)
+inside the EEA. The transfer conversation is shorter, and the supplier sits inside a regime your
+counsel already understands.
+
+---
+
+## BLOCK: dpa
+
+**H2:** What a data processing agreement actually has to do
+
+If a supplier handles personal data on your behalf, you are the controller and they are the
+processor. That relationship is documented in a data processing agreement, usually a schedule to the
+main contract. Most suppliers have one. Fewer have one that describes what they actually do.
+
+A DPA doing its job covers the following in specifics rather than boilerplate:
+
+- **Subject matter, duration, nature and purpose.** What data, whose, for how long, to do what.
+- **Categories of data subject and personal data**, noting explicitly whether special-category data is
+  involved, because that changes the risk profile and often the architecture.
+- **Instructions.** The processor acts only on your documented instructions. This clause is what
+  stops a supplier using your data for something you did not ask for.
+- **Confidentiality of personnel**, covering everyone with access.
+- **Security measures.** The part most often left vague. Access control, encryption, environment
+  separation, logging and retention, as actually implemented.
+- **Sub-processors** — who else touches the data, and how you are told before a new one is added.
+- **Assistance obligations** — data subject requests, breach notification within an agreed window,
+  support for impact assessments.
+- **Deletion or return at the end**, including copies in backups and development environments.
+- **Audit and information rights**, and the practical form they take.
+
+A useful test: read the security section and ask whether an engineer could implement your system from
+it. If it could describe any supplier in any industry, it is decoration.
+
+---
+
+## BLOCK: subProcessors
+
+**H2:** Sub-processors, and why the model provider is one
+
+This is where AI projects differ from ordinary software projects, and where older DPA templates fall
+over.
+
+When your supplier builds a feature that sends text to a hosted model API, that provider is
+processing your data. In practical terms it is a sub-processor of your processor, and it belongs on
+the sub-processor list alongside the cloud host, the error tracker and the logging platform.
+
+**The list must be current and specific.** Naming the provider is not enough. Which service, which
+region, under which commercial terms? Consumer and business tiers of the same product frequently
+differ on retention and training.
+
+**Training and retention have to be pinned down.** Business and enterprise tiers of the major
+providers generally do not train on customer content by default, and offer configurable retention.
+Defaults differ and change with contract terms, so confirm this against the agreement your supplier
+actually holds, not a marketing page.
+
+**Logging is the quiet leak.** Prompts and completions often land in an observability tool, an error
+tracker or a support ticket. That is a second copy, in a second system, frequently in another region
+with longer retention than the model provider itself. Trace masking should be a stated requirement.
+
+Ask for the data-flow diagram of one AI feature, showing every third party a payload reaches. If it
+cannot be produced in a day, nobody has done the exercise.
+
+---
+
+## BLOCK: residencyVsProcessing
+
+**H2:** Data residency is not the same as data processing
+
+The two terms get used interchangeably in sales conversations. They mean different things.
+
+**Residency** is where data sits at rest: a database in an EU region, backups in an EU region. Easy
+to configure, easy to evidence.
+
+**Processing** is everywhere data is handled in flight, including by people. The region inference
+runs in, the region logs land in, the laptop of the engineer debugging production, and any support
+tooling in between.
+
+A supplier can honestly say your data is stored in the EU while inference happens elsewhere. Both
+statements can be true at once. Ask about each separately, in writing.
+
+Two related distinctions matter. **Personal data is not the same as your data** — commercially
+sensitive information may carry none, and it is your contract rather than data protection law that
+protects it. And **production is not the same as development**: many leaks are simply a copy of a
+production database sitting in a test environment so someone could reproduce a bug. How a supplier
+answers on test data tells you more than the residency section of their DPA.
+
+---
+
+## BLOCK: hostedVsOpenWeight
+
+**H2:** Hosted model APIs versus open-weight models in your own environment
+
+Every AI project makes this choice, deliberately or by default. The trade is capability against
+control.
+
+**Hosted APIs** give you the strongest models, no infrastructure to run and fast iteration. Most
+offer regional processing and enterprise terms covering retention and training. For most business
+workloads this is the right answer, and the compliance work is contractual: confirm the region, the
+retention and the training position, then record it in the sub-processor list.
+
+**Open-weight models in your own environment** mean data never leaves infrastructure you control. No
+third-party sub-processor, no cross-border question at inference, full control over logging. The
+costs are real: you run the hardware or managed instances, and on the hardest reasoning tasks the
+quality gap can matter.
+
+In practice the answer is usually a hybrid. Classification, extraction, routing and summarisation
+over sensitive documents run well on a smaller open-weight model in your own environment. The
+genuinely difficult tasks go to a hosted API, with sensitive fields stripped first.
+
+Three engineering points decide whether that works. Redaction happens before the call, because
+removing an identifier from a stored response does not unsend it. A provider abstraction layer is
+worth building early, so a change in the compliance answer does not mean rewriting the feature. And
+evals make the choice measurable: one labelled test set against both options compares accuracy
+against control with numbers rather than opinions.
+
+We are model agnostic for this reason. The model is chosen per use case and per data-sensitivity
+requirement, not by a vendor relationship.
+
+---
+
+## BLOCK: ipOwnership
+
+**H2:** IP ownership when your supplier is an EU company
+
+A common worry: if the work is done in Romania, does the client really own it?
+
+The mechanics are less exotic than the anxiety suggests. Ownership of what is created for you is
+determined by the contract and by the law it says governs it. Jurisdictions differ on who owns work
+made by an employee or contractor absent an agreement. That is why the agreement exists.
+
+Six things to check in a supplier's paperwork, and to have counsel confirm.
+
+**Does assignment cover everything, present and future?** Code, designs, documentation, prompts, eval
+datasets, infrastructure definitions. Prompts and eval sets are missing from older templates and are
+now core product assets.
+
+**When does transfer happen?** Usually on full payment, which is normal. What matters is that the
+trigger is unambiguous and you know what you hold before it fires.
+
+**Does the supplier's team assign to the supplier?** The chain matters. Employment contracts should
+assign work product upward, so the supplier has something to pass to you. If any part of the team is
+subcontracted, the same must hold one level down.
+
+**What is retained, and under what licence?** Every experienced firm reuses internal scaffolding, and
+that makes your project cheaper. Discovering after handover that a component you depend on is not
+yours does not. Retained items should be named and licensed to you perpetually and irrevocably.
+
+**Open-source components.** Ask for a dependency inventory with licences. Awkward to reconstruct
+later.
+
+**Governing law and forum.** Often English law for a UK client, sometimes the supplier's. Both work.
+It should be a conscious choice rather than whatever the template said.
+
+---
+
+## BLOCK: ndas
+
+**H2:** NDAs, and what they do not cover
+
+Sign one before the first detailed technical conversation. Any serious supplier will.
+
+**Mutual beats one-way.** You will see their methods and internal tooling as well as the reverse, and
+a mutual agreement is quicker to negotiate because nobody is arguing about asymmetry.
+
+**An NDA is not a DPA and not an IP assignment.** It governs confidentiality between two businesses.
+It says nothing about who owns the code, and it does not make a transfer of personal data lawful. It
+is the first of three documents, not a substitute for the other two.
+
+---
+
+## BLOCK: whatToAsk
+
+**H2:** What to actually ask a supplier
+
+Ten questions. Written answers, before contract, not reassurance on a call.
+
+1. Where is personal data stored at rest, and in which region is it processed in flight?
+2. The full sub-processor list for my engagement, including the model provider's specific service and
+   region.
+3. Under which commercial terms is your model provider account held, and what are the retention and
+   training positions under them?
+4. A data-flow diagram for one AI feature, marking every third party a payload reaches.
+5. What appears in traces and logs, how is it masked, where does it live, and for how long?
+6. Do your engineers work with production data? Under what controls, or how is test data generated?
+7. Which transfer mechanism does the contract rely on, and what happens if adequacy changes mid-engagement?
+8. The IP clause, the transfer trigger, and the list of retained internal components.
+9. What is your breach notification window to us, and who makes the call?
+10. How is data deleted at the end, including backups and development environments, and how is that
+    evidenced?
+
+Quick, specific answers mean the supplier has done this before. A certification badge and a paragraph
+about taking security seriously means keep asking.
+
+We settle all ten during scoping rather than mid-build. The sequence is on [how we work](/process),
+and where it fits a broader engagement on our [AI consultancy](/ai-consultancy-uk) page.
+
+---
+
+## BLOCK: faq
+
+**H2:** Questions we get asked before we're hired
+
+**1. Is it still straightforward for a UK company to use an EU supplier after Brexit?** `objection: data-residency`
+In day-to-day practice, yes, and it is common. The position depends on the adequacy status in force
+at the time, which is reviewed periodically and can change. Sensible suppliers keep standard
+contractual clauses in the pack as a fallback. Have your counsel confirm the current position rather
+than relying on an article.
+
+**2. Where does our data sit if we work with you?** `objection: data-residency`
+Inside the EEA by default. We are a Romanian company delivering from Cluj-Napoca, and we deploy into
+your own cloud account in an EU region unless you say otherwise. Where data cannot leave your
+environment at all, we run open-weight models inside your infrastructure.
+
+**3. Do you sign our DPA or do we sign yours?** `objection: other`
+Either. Most clients prefer their own, which is sensible when they are the controller. We review it,
+flag anything that does not match what we actually do, and sign.
+
+**4. Does the model provider train on our data?** `objection: data-residency`
+Under business and enterprise terms the major providers generally do not train on customer content by
+default, and offer configurable retention. Terms differ and change, so we confirm it in writing
+against the agreement in place for your project and record it in the sub-processor list.
+
+**5. Who owns the code and when?** `objection: ip-ownership`
+You do, transferring on full payment. That covers code, designs, documentation, prompts, eval
+datasets and infrastructure definitions. Anything built on our internal scaffolding is named
+explicitly and licensed to you for use in the delivered system.
+
+**6. Can you complete our security questionnaire and sign an NDA first?** `objection: other`
+Yes to both, and we prefer a mutual NDA. Send the questionnaire before the technical call. Anything
+we cannot answer we mark as such rather than guess.
+
+**7. What happens to our data when the engagement ends?** `objection: after-launch`
+Access is revoked and working copies are deleted on the schedule agreed in the DPA, including
+development environments and backups. Because we deploy into your cloud account, production data was
+in your control throughout.
+
+**8. Should we run a data protection impact assessment?** `objection: other`
+That is a question for your own adviser. Where one is needed we supply the technical detail: data
+flows, sub-processors, retention, security measures. We do not decide whether it is required.
+
+**9. Does any of this slow a project down?** `objection: timeline`
+Only if it starts late. Handled during scoping it costs no calendar time. Handled mid-build, a
+security review can hold a project for weeks.
+
+---
+
+## BLOCK: close
+
+**H2:** Bring the security questionnaire to the first call
+
+**Sub:** We would rather answer the compliance questions before there is a contract than after. Data
+flows, sub-processors, residency and IP, settled during scoping.
+
+**Booking:** live calendar embed via `{{BOOKING_PROVIDER}}`.
+
+**Named human:** Nicu Mardari, CEO & Co-founder — photo, name, role.
+
+**Fallback:** contact form, for people who will not book.
+
+**Reassurance line:** We reply within one business day. No obligation, no sales sequence, and we will
+sign a mutual NDA before the call if you would prefer.
