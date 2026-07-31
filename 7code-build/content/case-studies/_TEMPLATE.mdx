@@ -1,0 +1,180 @@
+---
+status: draft
+kind: case-study
+meta:
+  # Must match the caseStudySlug used in every money page's `proof` block. Check before inventing a new one.
+  slug: "case-studies/{{SLUG}}"
+  # 50–60 chars, outcome first. "Clinical Intake in Minutes | Hera Health Tech" beats "Hera Health Tech Case Study".
+  title: "{{TITLE_TAG}}"
+  # 140–158 chars, must contain the headline number. This is the sentence an AI assistant quotes when it cites the study.
+  metaDescription: "{{META_DESCRIPTION}}"
+  canonical: "https://www.7code.tech/case-study/{{SLUG}}/"
+  ogImage: "/og/{{SLUG}}.jpg"
+  ogImageDimensions: { width: 1200, height: 630 }
+  locale: en_GB
+targeting:
+  # Capability plus sector, e.g. "ai document extraction logistics". Never the client name — nobody searches for it.
+  primaryKeyword: "{{PRIMARY_KEYWORD}}"
+  secondaryKeywords: ["{{SECONDARY_KEYWORD_1}}", "{{SECONDARY_KEYWORD_2}}", "{{SECONDARY_KEYWORD_3}}"]
+  # Exactly ONE of: new-product | outstaffing | smb-automation | partners. The segment of the buyer this study must convince, not the client's own segment.
+  icpSegment: "{{ICP_SEGMENT}}"
+  searchIntent: commercial-investigation
+  flywheelStage: closing
+  # Why this study earns its place: which money pages link to it, which objection it kills. No unverified volume numbers.
+  difficultyNote: "{{DIFFICULTY_NOTE}}"
+cta:
+  # Must be the CTA of the money page this study supports, used verbatim everywhere. Do not invent new wording.
+  label: "{{CTA_LABEL}}"
+  action: booking
+  href: "{{CTA_HREF}}"
+  reassurance: "{{CTA_REASSURANCE}}"
+blocks: [hero, resultStrip, problem, users, constraints, whatWeBuilt, impact, tags, testimonial, close]
+internalLinks:
+  # Minimum three. At least one must point back to the money page listing this study in its `proof` block.
+  - { anchor: "{{LINK_1_ANCHOR}}", href: "{{LINK_1_HREF}}", placement: whatWeBuilt }
+  - { anchor: "{{LINK_2_ANCHOR}}", href: "{{LINK_2_HREF}}", placement: impact }
+  - { anchor: "{{LINK_3_ANCHOR}}", href: "{{LINK_3_HREF}}", placement: close }
+schema: { service: false, faqPage: false, breadcrumbList: true, organization: true }
+authorship:
+  author: "Nicu Mardari"
+  reviewer: "{{REVIEWER_NAME}}"
+  published: "{{PUBLISHED_DATE}}"
+  updated: "{{UPDATED_DATE}}"
+  readTime: "{{READ_TIME}}"
+# Every unsigned number, unapproved quote and pending permission goes here. MUST be empty before status becomes approved.
+openItems: ["{{OPEN_ITEM_1}}"]
+---
+
+## BLOCK: hero
+<!-- H1 is the OUTCOME as a full sentence, under 12 words, sentence case.
+     Good: "Supplier invoices processed in minutes instead of two days"
+     Bad:  "Acme Logistics" / "How we helped Acme" / "A transformation story"
+     The client name belongs in the sub, never in the H1. -->
+**H1:** {{OUTCOME_H1}}
+<!-- One sentence: client, sector, size, and what they engaged us to do. The client is named here. -->
+**Sub:** {{CLIENT_NAME}}, {{CLIENT_SECTOR}} — {{ENGAGEMENT_ONE_LINER}}
+<!-- Three facts, no adjectives: engagement length, team shape, live date. -->
+**At a glance:** {{DURATION}} · {{TEAM_SHAPE}} · live since {{GO_LIVE}}
+
+---
+
+## BLOCK: resultStrip
+<!-- Three hard numbers, directly under the H1. This block is why the page gets cited. Each entry is a
+     NUMBER plus a short label: a percentage, a count, a duration, a currency figure. If three real
+     numbers cannot be approved by the client, the study is not ready to publish. "Significantly
+     faster" is not a number. Neither is "improved accuracy". -->
+- **{{RESULT_1_NUMBER}}** — {{RESULT_1_LABEL}}
+- **{{RESULT_2_NUMBER}}** — {{RESULT_2_LABEL}}
+- **{{RESULT_3_NUMBER}}** — {{RESULT_3_LABEL}}
+
+---
+
+## BLOCK: problem
+**H2:** {{PROBLEM_H2}}
+<!-- Two or three paragraphs on the situation BEFORE us, in the client's operational terms. Name the
+     cost of the status quo concretely: hours, headcount, error rate, missed deadlines, blocked
+     revenue. Do not mention 7code anywhere in this block. If the reader does not recognise their own
+     company here, the study fails. -->
+{{PROBLEM_NARRATIVE}}
+<!-- One sentence: what made them act in that quarter rather than the next one. -->
+**What forced the decision:** {{TRIGGER_EVENT}}
+
+---
+
+## BLOCK: users
+**H2:** Who this had to work for
+<!-- The people who touch the system daily: role, volume, what they did before. Two or three entries.
+     This is what stops a study reading like a press release. -->
+- **{{USER_ROLE_1}}** — {{USER_CONTEXT_1}}
+- **{{USER_ROLE_2}}** — {{USER_CONTEXT_2}}
+- **{{USER_ROLE_3}}** — {{USER_CONTEXT_3}}
+
+---
+
+## BLOCK: constraints
+**H2:** What we had to work around
+<!-- Hard limits: legacy system with no API, regulated data, fixed deadline, small internal team,
+     budget ceiling, incumbent vendor. Three to five bullets. Constraints are the most credible part
+     of any case study, because nobody invents them. -->
+- {{CONSTRAINT_1}}
+- {{CONSTRAINT_2}}
+- {{CONSTRAINT_3}}
+
+---
+
+## BLOCK: whatWeBuilt
+**H2:** What we built
+<!-- Deliverables as nouns, not adjectives. Five to eight bullets, each naming a decision a technical
+     reader would care about and why it was made. Include the production-hardening work — evals,
+     guardrails, traces, cost controls — because that is what separates this from a prototype. Link
+     every capability named here to its service page. -->
+- **{{DELIVERABLE_1}}** — {{DELIVERABLE_1_DETAIL}}
+- **{{DELIVERABLE_2}}** — {{DELIVERABLE_2_DETAIL}}
+- **{{DELIVERABLE_3}}** — {{DELIVERABLE_3_DETAIL}}
+- **{{DELIVERABLE_4}}** — {{DELIVERABLE_4_DETAIL}}
+- **{{DELIVERABLE_5}}** — {{DELIVERABLE_5_DETAIL}}
+<!-- Plain list. No logos, no version numbers nobody asked for. -->
+**Stack:** {{STACK_LIST}}
+<!-- One contested decision, why we chose as we did, and the trade-off we accepted. -->
+**The call we had to make:** {{KEY_DECISION}}
+
+---
+
+## BLOCK: impact
+**H2:** What changed
+<!-- Expand each resultStrip number: before, after, how it was measured, over what period. A number
+     without a measurement method is a claim, not evidence. -->
+- **{{IMPACT_1_METRIC}}** — from {{IMPACT_1_BEFORE}} to {{IMPACT_1_AFTER}}, measured by {{IMPACT_1_METHOD}} over {{IMPACT_1_PERIOD}}.
+- **{{IMPACT_2_METRIC}}** — from {{IMPACT_2_BEFORE}} to {{IMPACT_2_AFTER}}, measured by {{IMPACT_2_METHOD}} over {{IMPACT_2_PERIOD}}.
+- **{{IMPACT_3_METRIC}}** — from {{IMPACT_3_BEFORE}} to {{IMPACT_3_AFTER}}, measured by {{IMPACT_3_METHOD}} over {{IMPACT_3_PERIOD}}.
+<!-- One paragraph on the second-order effect: what the team now does with the capacity. -->
+{{SECOND_ORDER_EFFECT}}
+<!-- Optional but strong: one thing that did not go to plan. Buyers trust studies that admit something. -->
+**What we would do differently:** {{HONEST_NOTE}}
+
+---
+
+## BLOCK: tags
+<!-- NON-NEGOTIABLE: service tags render as LINKS to money pages, never plain text. Two reasons.
+     First, this is the internal-linking mechanism that passes authority from the study to the page we
+     want to rank — a plain-text tag passes nothing. Second, a reader arriving here from an AI answer
+     needs one click to the commercial page, and a decorative tag is a dead end. The build fails on an
+     unlinked tag. -->
+Tags: [{{TAG_1_LABEL}}]({{TAG_1_HREF}}) · [{{TAG_2_LABEL}}]({{TAG_2_HREF}}) · [{{TAG_3_LABEL}}]({{TAG_3_HREF}})
+
+---
+
+## BLOCK: testimonial
+<!-- Full name, role, company. An anonymous quote is worth less than no quote. The best ones name a
+     number, a moment or a doubt that was overcome. Delete any quote that could have been written by
+     us about any client. -->
+> {{QUOTE_TEXT}}
+
+**{{QUOTE_NAME}}**, {{QUOTE_ROLE}}, {{QUOTE_COMPANY}}
+
+---
+
+## BLOCK: close
+**H2:** {{CLOSE_H2}}
+<!-- One sentence connecting this client's situation to the reader's. No hard sell. -->
+**Sub:** {{CLOSE_SUB}}
+**CTA:** {{CTA_LABEL}}
+**Booking:** live calendar embed via `{{BOOKING_PROVIDER}}`.
+**Named human:** Nicu Mardari, CEO & Co-founder — photo, name, role.
+**Fallback:** contact form, for people who will not book.
+**Reassurance line:** {{CTA_REASSURANCE}}
+
+<!-- ============ AUTHORING CHECKLIST — clear every line before status: approved ============
+ 1. NUMBERS ARE CLIENT-APPROVED IN WRITING. Every resultStrip and impact figure has signed sign-off behind it; status stays draft until it does, including for numbers we measured ourselves.
+ 2. NO ADJECTIVE WHERE A NUMBER BELONGS. "Dramatically reduced", "significantly faster", "greatly improved" are failures. If the number is not approved, cut the claim rather than soften it.
+ 3. THE TESTIMONIAL IS NAMED, WITH COMPANY. No "CTO of a leading logistics firm". If the client will not be named, drop the block instead of anonymising it.
+ 4. H1 IS AN OUTCOME SENTENCE, NOT A CLIENT NAME. Read it aloud; if it does not tell a stranger what changed, rewrite it.
+ 5. EVERY SERVICE TAG IS A LINK. Plain text fails the build.
+ 6. THE PROBLEM BLOCK DOES NOT MENTION 7CODE. Verify by search.
+ 7. EXACTLY THREE NUMBERS IN resultStrip, each with its measurement method stated in impact.
+ 8. NAME, LOGO AND QUOTE PERMISSION CONFIRMED IN WRITING, filed with the numbers approval.
+ 9. openItems IS EMPTY and no unverified-claim markers remain anywhere in the file.
+10. ONE CTA LABEL, USED VERBATIM, matching the money page this study supports.
+11. SENTENCE LENGTH AVERAGES 12–22 WORDS. No banned terms.
+12. slug MATCHES the caseStudySlug in every money page proof block that links here.
+======================================================================================== -->
