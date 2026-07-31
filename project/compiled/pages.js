@@ -1700,7 +1700,15 @@ function FAQPage() {
       stroke: isOpen ? "#fff" : "var(--slate-500)",
       strokeWidth: "1.8",
       strokeLinecap: "round"
-    })))), React.createElement("div", { style: { display: isOpen ? "block" : "none", paddingBottom: 24, color: "var(--slate-700)", fontSize: 15, lineHeight: 1.7 } }, item.a));
+    })))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: isOpen ? "block" : "none",
+        paddingBottom: 24,
+        color: "var(--slate-700)",
+        fontSize: 15,
+        lineHeight: 1.7
+      }
+    }, item.a));
   }))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt",
     style: {

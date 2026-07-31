@@ -1008,8 +1008,35 @@ function TestimonialCard({
     className: "csd-quote-role"
   }, CSD.testimonial.role))));
 }
+function RelatedCases() {
+  const slugs = Object.keys(CASES);
+  const picks = [];
+  let i = slugs.indexOf(CSD.slug);
+  while (picks.length < 2 && picks.length < slugs.length - 2) {
+    i = (i + 1) % slugs.length;
+    const s = slugs[i];
+    if (s !== CSD.slug && s !== CSD.next.slug) picks.push(CASES[s]);
+  }
+  return /*#__PURE__*/React.createElement("div", {
+    className: "csd-related"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "csd-related-label"
+  }, "More case studies"), /*#__PURE__*/React.createElement("div", {
+    className: "csd-related-grid"
+  }, picks.map(c => /*#__PURE__*/React.createElement("a", {
+    key: c.slug,
+    href: "/case-study/" + c.slug,
+    className: "csd-related-card"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "csd-related-client"
+  }, c.client), /*#__PURE__*/React.createElement("span", {
+    className: "csd-related-title"
+  }, c.title), /*#__PURE__*/React.createElement("span", {
+    className: "csd-related-industry"
+  }, c.industry)))));
+}
 function NextCaseCTA() {
-  return /*#__PURE__*/React.createElement("a", {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("a", {
     href: "/case-study/" + CSD.next.slug,
     className: "csd-next"
   }, /*#__PURE__*/React.createElement("div", {
@@ -1022,7 +1049,7 @@ function NextCaseCTA() {
     className: "csd-next-title"
   }, CSD.next.title)), /*#__PURE__*/React.createElement("span", {
     className: "csd-next-arrow"
-  }, /*#__PURE__*/React.createElement(Icon.arrow, null))));
+  }, /*#__PURE__*/React.createElement(Icon.arrow, null)))), /*#__PURE__*/React.createElement(RelatedCases, null));
 }
 
 // ──────────────────────────────────────────────────────────────────
