@@ -327,8 +327,8 @@ p { margin: 0; color: var(--slate-700); }
 .footer { background: var(--ink); color: #fff; padding: 80px 0 32px; }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.6fr 1.2fr 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.5fr 1.1fr 1fr 1.2fr 1fr 1fr;
+  gap: 40px;
   margin-bottom: 64px;
 }
 @media (max-width: 1100px) {
@@ -2102,6 +2102,26 @@ p { margin: 0; color: var(--slate-700); }
 .csd-next-arrow { width: 56px; height: 56px; border-radius: 999px; background: var(--cyan-500); display: grid; place-items: center; flex-shrink: 0; transition: transform .2s ease; }
 .csd-next-arrow svg { width: 18px; height: 18px; color: #fff; }
 .csd-next:hover .csd-next-arrow { transform: translate(4px, -4px); }
+
+/* ── Related case studies ────────────────────────────────── */
+.csd-related { margin-top: 24px; display: grid; gap: 12px; }
+.csd-related-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--slate-500); }
+.csd-related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.csd-related-card {
+  display: grid; gap: 4px; align-content: start;
+  padding: 20px 24px;
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.csd-related-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.csd-related-client { font-family: var(--font-display); font-weight: 600; font-size: 12px; color: var(--cyan-600); text-transform: uppercase; letter-spacing: 0.06em; }
+.csd-related-title { font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: -0.01em; color: var(--ink); }
+.csd-related-industry { font-size: 13px; color: var(--slate-500); }
+@media (max-width: 700px) {
+  .csd-related-grid { grid-template-columns: 1fr; }
+}
 
 /* ── Phone mockup ────────────────────────────────────────── */
 .csd-phone {

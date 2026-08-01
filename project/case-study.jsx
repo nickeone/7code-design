@@ -640,18 +640,46 @@ function TestimonialCard({ flat = false }) {
   );
 }
 
+function RelatedCases() {
+  const slugs = Object.keys(CASES);
+  const picks = [];
+  let i = slugs.indexOf(CSD.slug);
+  while (picks.length < 2 && picks.length < slugs.length - 2) {
+    i = (i + 1) % slugs.length;
+    const s = slugs[i];
+    if (s !== CSD.slug && s !== CSD.next.slug) picks.push(CASES[s]);
+  }
+  return (
+    <div className="csd-related">
+      <div className="csd-related-label">More case studies</div>
+      <div className="csd-related-grid">
+        {picks.map((c) => (
+          <a key={c.slug} href={"/case-study/" + c.slug} className="csd-related-card">
+            <span className="csd-related-client">{c.client}</span>
+            <span className="csd-related-title">{c.title}</span>
+            <span className="csd-related-industry">{c.industry}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function NextCaseCTA() {
   return (
-    <a href={"/case-study/" + CSD.next.slug} className="csd-next">
-      <div className="csd-next-meta">Next case study</div>
-      <div className="csd-next-row">
-        <div>
-          <div className="csd-next-client">{CSD.next.client}</div>
-          <div className="csd-next-title">{CSD.next.title}</div>
+    <React.Fragment>
+      <a href={"/case-study/" + CSD.next.slug} className="csd-next">
+        <div className="csd-next-meta">Next case study</div>
+        <div className="csd-next-row">
+          <div>
+            <div className="csd-next-client">{CSD.next.client}</div>
+            <div className="csd-next-title">{CSD.next.title}</div>
+          </div>
+          <span className="csd-next-arrow"><Icon.arrow /></span>
         </div>
-        <span className="csd-next-arrow"><Icon.arrow /></span>
-      </div>
-    </a>
+      </a>
+      <RelatedCases />
+    </React.Fragment>
   );
 }
 

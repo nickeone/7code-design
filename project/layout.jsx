@@ -244,6 +244,18 @@ function Footer() {
               <li><a href="/expertise/defence">Defence &amp; Security</a></li>
               <li><a href="/expertise/hr">HR</a></li>
               <li><a href="/expertise/operations">Operations</a></li>
+              <li><a href="/expertise">All industries</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/resources/ai-automation-for-smes">AI Automation for SMEs</a></li>
+              <li><a href="/resources/ai-native-product-engineering">AI-Native Product Engineering</a></li>
+              <li><a href="/resources/nearshore-software-romania">Nearshore Software Romania</a></li>
+              <li><a href="/resources/staff-augmentation-vs-dedicated-team">Staff Augmentation vs Dedicated Team</a></li>
+              <li><a href="/resources/nearshore-romania-vs-offshore-asia">Nearshore vs Offshore</a></li>
+              <li><a href="/resources/build-ai-in-house-vs-partner">Build AI In-House vs Partner</a></li>
             </ul>
           </div>
           <div>
