@@ -95,10 +95,6 @@ const CS_PHOTO_COVERS = {
     src: "/project/uploads/lidl-road-safety-hero.jpg",
     alt: "Lidl + Politia Romana road-safety app"
   },
-  "founders-factory": {
-    src: "/project/uploads/founders-factory-hero.jpg",
-    alt: "Founders Factory homepage, Power to founders"
-  },
   "hera": {
     src: "/project/uploads/hera-hero.jpg",
     alt: "Hera Health Tech, fertility-clinic patient support app"
@@ -281,11 +277,6 @@ function CaseStudies({
     kind: "cyan",
     title: "Cloud-based digital-heritage platform with secure inheritance access",
     meta: ["Consumer SaaS", "8 months"]
-  }, {
-    slug: "founders-factory",
-    kind: "finance",
-    title: "UI overhaul + ongoing engineering for a UK venture studio",
-    meta: ["Venture Studio / VC", "Ongoing"]
   }, {
     slug: "drum-bun",
     kind: "ops",

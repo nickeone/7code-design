@@ -45,7 +45,6 @@ const CS_PHOTO_COVERS = {
   "g42-fleet":        { src: "/project/uploads/g42-fleet-hero.jpg",       alt: "G42 ESTS fleet-tracking dashboard" },
   "cloud-of-legacy":  { src: "/project/uploads/cloud-of-legacy-hero.jpg", alt: "Cloud of Legacy landing page" },
   "lidl-road-safety": { src: "/project/uploads/lidl-road-safety-hero.jpg", alt: "Lidl + Politia Romana road-safety app" },
-  "founders-factory": { src: "/project/uploads/founders-factory-hero.jpg", alt: "Founders Factory homepage, Power to founders" },
   "hera":             { src: "/project/uploads/hera-hero.jpg",             alt: "Hera Health Tech, fertility-clinic patient support app" },
   "melsonic":         { src: "/project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
   "drum-bun":         { src: "/project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
@@ -106,7 +105,6 @@ function CaseStudies({ limit }) {
     // Remaining cases, visible on /case-studies, hidden from the homepage grid.
     { slug: "g42-fleet", kind: "energy", title: "Real-time fleet tracking platform for EXPO 2020 Dubai", meta: ["IoT / Smart Buildings", "2 years"] },
     { slug: "cloud-of-legacy", kind: "cyan", title: "Cloud-based digital-heritage platform with secure inheritance access", meta: ["Consumer SaaS", "8 months"] },
-    { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
     { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
     { slug: "numerize", kind: "ops", title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"] },
     { slug: "lendit", kind: "cyan", title: "Peer-to-peer rental marketplace for local communities", meta: ["Marketplace / Sharing Economy", "Ongoing"] },
