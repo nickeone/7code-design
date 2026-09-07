@@ -114,6 +114,10 @@ const CS_PHOTO_COVERS = {
   "numerize": {
     src: "/project/uploads/numerize-hero.jpg",
     alt: "Numerize, French document management and e-signature platform"
+  },
+  "lendit": {
+    src: "/project/uploads/lendit-hero.jpg",
+    alt: "Lendit, UK peer-to-peer rental marketplace"
   }
 };
 
@@ -292,6 +296,11 @@ function CaseStudies({
     kind: "ops",
     title: "Responsive electronic document management + e-signature platform",
     meta: ["DocTech / Enterprise", "Ongoing"]
+  }, {
+    slug: "lendit",
+    kind: "cyan",
+    title: "Peer-to-peer rental marketplace for local communities",
+    meta: ["Marketplace / Sharing Economy", "Ongoing"]
   }];
   const list = limit ? items.slice(0, limit) : items;
   return /*#__PURE__*/React.createElement("section", {

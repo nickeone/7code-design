@@ -63,6 +63,7 @@ const ROUTES = [
   "/case-study/melsonic",
   "/case-study/drum-bun",
   "/case-study/numerize",
+  "/case-study/lendit",
   "/blog/ai-discovery-mission-de-risk-ai-products",
   "/blog/ship-ai-mvp-six-weeks",
   "/blog/ai-engineering-pricing-fixed-vs-time-materials",

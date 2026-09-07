@@ -50,6 +50,7 @@ const CS_PHOTO_COVERS = {
   "melsonic":         { src: "/project/uploads/melsonic-hero.jpg",         alt: "Melsonic, AI-powered guitar learning" },
   "drum-bun":         { src: "/project/uploads/drum-bun-hero.jpg",         alt: "Drum Bun, Romanian car-services mobile app" },
   "numerize":         { src: "/project/uploads/numerize-hero.jpg",         alt: "Numerize, French document management and e-signature platform" },
+  "lendit":           { src: "/project/uploads/lendit-hero.jpg",           alt: "Lendit, UK peer-to-peer rental marketplace" },
 };
 
 // Case study cover graphic
@@ -108,6 +109,7 @@ function CaseStudies({ limit }) {
     { slug: "founders-factory", kind: "finance", title: "UI overhaul + ongoing engineering for a UK venture studio", meta: ["Venture Studio / VC", "Ongoing"] },
     { slug: "drum-bun", kind: "ops", title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap", meta: ["InsurTech / Automotive", "Ongoing"] },
     { slug: "numerize", kind: "ops", title: "Responsive electronic document management + e-signature platform", meta: ["DocTech / Enterprise", "Ongoing"] },
+    { slug: "lendit", kind: "cyan", title: "Peer-to-peer rental marketplace for local communities", meta: ["Marketplace / Sharing Economy", "Ongoing"] },
   ];
   const list = limit ? items.slice(0, limit) : items;
   return (

@@ -667,6 +667,72 @@ const CASES = {
     },
     metaDescription: "Responsive electronic document management (GED / EDM) and e-signature platform for Numerize (France), built by 7Code on React + Material-UI + Laravel + AWS. OCR-trained invoice pipeline, YouSign multi-signatory e-signatures, Stripe + 3D Secure billing across 6,000+ enterprise accounts.",
     next: {
+      slug: "lendit",
+      client: "Lendit",
+      title: "Peer-to-peer rental marketplace for local communities",
+      kind: "cyan"
+    }
+  },
+  "lendit": {
+    slug: "lendit",
+    client: "Lendit",
+    industry: "Marketplace / Sharing Economy",
+    year: "2025",
+    duration: "Ongoing, since Nov 2025",
+    team: "1 PM · 1 architect · 1 designer · 1 web engineer · 1 mobile engineer · 1 back-end engineer",
+    region: "United Kingdom",
+    kind: "cyan",
+    title: "Peer-to-peer rental marketplace for local communities",
+    tagline: "Web, mobile, and backend for a UK peer-to-peer rental marketplace: list an item, borrow from a neighbour, and settle it through a KYC-verified payments rail, built on Next.js + Nest.js + AWS with Stripe and Ondato.",
+    summary: "Lendit is a UK peer-to-peer rental platform on a mission to turn rarely-used tools and equipment into accessible, income-generating assets inside local communities. 7Code built the product end to end: a brand and design system created from the founders' initial inspiration, a web application covering the full rental lifecycle, an iOS and Android app for on-the-go discovery and messaging, and a backend powering listings, search, payments, and KYC, engineered to capture the behavioural data a community-led launch depends on.",
+    challenge: {
+      eyebrow: "The challenge",
+      title: "A neighbourhood marketplace needs a brand, a payments rail strangers can trust, and one product across three surfaces.",
+      body: "Lendit set out to build a trusted marketplace where neighbours rent everyday items to each other. That meant a recognisable brand built from scratch, a payment flow safe enough for two strangers to transact through, and a coherent experience across web, mobile, and the services behind them, all engineered to support a community-led launch.",
+      pains: ["Creating a recognisable, distinctive brand image from initial inspiration sources", "A frictionless but secure payment flow between lenders and borrowers", "One consistent experience across web, mobile, and AI-powered services", "A backend capable of capturing extensive user-behaviour data from day one"]
+    },
+    approach: {
+      eyebrow: "Our approach",
+      title: "One design system, three surfaces, and a verified payments rail underneath.",
+      body: "We ran the full product lifecycle: brand and design system first, then a Next.js web application, an iOS and Android app, and a Nest.js backend on AWS. Stripe moves money between lenders and borrowers, Ondato verifies identity so both sides know who they are transacting with, and AI services support discovery and listing. Ten modules shipped across the rental lifecycle, from Explore to Payment.",
+      pillars: [{
+        title: "Brand and design system",
+        desc: "A recognisable brand built from the founders' initial inspiration, extended into one comprehensive design system shared by web and mobile."
+      }, {
+        title: "Web and mobile as one product",
+        desc: "A web app for browsing, listing, and managing rentals, plus an iOS and Android app for on-the-go discovery and messaging, same flows, same language."
+      }, {
+        title: "Verified, secure payments rail",
+        desc: "Stripe payments between lenders and borrowers with Ondato KYC, so identity checks and money movement sit inside the same trusted flow."
+      }, {
+        title: "A backend built for behavioural data",
+        desc: "Nest.js services on AWS powering listings, search, payments, and KYC, capturing the extensive behavioural data Lendit needs for community insight."
+      }]
+    },
+    results: [{
+      v: "Web + mobile",
+      l: "platform live",
+      sub: "browser, iOS, and Android"
+    }, {
+      v: "10",
+      l: "modules shipped",
+      sub: "from Explore to Payment"
+    }, {
+      v: "Stripe",
+      l: "payments + Ondato KYC",
+      sub: "verified lenders and borrowers"
+    }, {
+      v: "Ongoing",
+      l: "development partnership",
+      sub: "continuous delivery with the Lendit team"
+    }],
+    testimonial: {
+      quote: "Their ability to deliver on time and budget has been impressive. 7code has kept sprints well managed and met deadlines, which has improved the client's planning and the end-client uptake and engagement. The team has also successfully helped the client overcome hurdles while managing budgets exceptionally well.",
+      name: "Ross Cooper",
+      role: "Director, Brightside Connect"
+    },
+    metaDescription: "Peer-to-peer rental marketplace for UK local communities, built end-to-end by 7Code for Lendit. Web app, iOS and Android app, and a Next.js + Nest.js + AWS backend with Stripe payments and Ondato KYC. Ten modules shipped, ongoing partnership.",
+    next: {
       slug: "wholesum",
       client: "WholeSum",
       title: "Self-serve AI analytics platform for unstructured text",
@@ -693,6 +759,17 @@ function PhoneMockup({
       className: "csd-phone-img",
       src: "/project/uploads/daily8-notifications.png",
       alt: "Daily8 notifications screen"
+    }));
+  }
+  if (CSD.slug === "lendit") {
+    return /*#__PURE__*/React.createElement("div", {
+      className: "csd-phone csd-phone--shot"
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "csd-phone-notch"
+    }), /*#__PURE__*/React.createElement("img", {
+      className: "csd-phone-img",
+      src: "/project/uploads/lendit-mobile.jpg",
+      alt: "Lendit mobile app explore screen, browse tools to borrow near you"
     }));
   }
   return /*#__PURE__*/React.createElement("div", {
@@ -848,6 +925,11 @@ function BrowserMockup({
     urlBar: "numerize.com",
     alt: "Numerize, Soci\xE9t\xE9 de num\xE9risation de documents et d'archivage"
   });
+  if (CSD.slug === "lendit") return /*#__PURE__*/React.createElement(PhotoHero, {
+    src: "/project/uploads/lendit-hero.jpg",
+    urlBar: "lendit.co.uk",
+    alt: "Lendit web app search results, ladders available to rent near Hampstead, London"
+  });
   return /*#__PURE__*/React.createElement("div", {
     className: "csd-browser"
   }, /*#__PURE__*/React.createElement("div", {
@@ -944,7 +1026,7 @@ function BrowserMockup({
   }, "Booked"))))));
 }
 function hasPhoneShot() {
-  return CSD.slug === "daily8";
+  return CSD.slug === "daily8" || CSD.slug === "lendit";
 }
 function FactsList({
   inline = false
