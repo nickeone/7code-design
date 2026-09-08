@@ -95,10 +95,6 @@ const CS_PHOTO_COVERS = {
     src: "/project/uploads/lidl-road-safety-hero.jpg",
     alt: "Lidl + Politia Romana road-safety app"
   },
-  "founders-factory": {
-    src: "/project/uploads/founders-factory-hero.jpg",
-    alt: "Founders Factory homepage, Power to founders"
-  },
   "hera": {
     src: "/project/uploads/hera-hero.jpg",
     alt: "Hera Health Tech, fertility-clinic patient support app"
@@ -114,6 +110,10 @@ const CS_PHOTO_COVERS = {
   "numerize": {
     src: "/project/uploads/numerize-hero.jpg",
     alt: "Numerize, French document management and e-signature platform"
+  },
+  "lendit": {
+    src: "/project/uploads/lendit-hero.jpg",
+    alt: "Lendit, UK peer-to-peer rental marketplace"
   }
 };
 
@@ -278,11 +278,6 @@ function CaseStudies({
     title: "Cloud-based digital-heritage platform with secure inheritance access",
     meta: ["Consumer SaaS", "8 months"]
   }, {
-    slug: "founders-factory",
-    kind: "finance",
-    title: "UI overhaul + ongoing engineering for a UK venture studio",
-    meta: ["Venture Studio / VC", "Ongoing"]
-  }, {
     slug: "drum-bun",
     kind: "ops",
     title: "Romanian car-services mobile app, RCA, ITP, vignette in one tap",
@@ -292,6 +287,11 @@ function CaseStudies({
     kind: "ops",
     title: "Responsive electronic document management + e-signature platform",
     meta: ["DocTech / Enterprise", "Ongoing"]
+  }, {
+    slug: "lendit",
+    kind: "cyan",
+    title: "Peer-to-peer rental marketplace for local communities",
+    meta: ["Marketplace / Sharing Economy", "Ongoing"]
   }];
   const list = limit ? items.slice(0, limit) : items;
   return /*#__PURE__*/React.createElement("section", {

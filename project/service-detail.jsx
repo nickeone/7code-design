@@ -270,7 +270,7 @@ const SERVICES_DATA = {
       { step: "02", title: "Two-week embedded trial", desc: "The engineer joins your team for a trial sprint, real work, your codebase, your processes. If the fit isn't right technically or culturally, we replace at no cost and no delay. Most engagements pass the trial and move straight to ongoing." },
       { step: "03", title: "Ongoing engagement with a dedicated account lead", desc: "Monthly rolling contract. A dedicated account lead on our side handles performance, feedback, and any escalations, so you get the responsiveness of a direct hire without the HR overhead. Scale up or down with 30 days' notice." },
     ],
-    cases: ["founders-factory", "drum-bun", "lidl-road-safety"],
+    cases: ["numerize", "drum-bun", "lidl-road-safety"],
     seoTitle: "AI Engineering Outstaffing — Senior Engineers | 7code",
     metaDescription: "AI engineering outstaffing by 7Code. Senior AI and ML engineers with LLM, RAG, and MLOps experience, embedded in your team in 72 hours. No lock-in.",
     faqs: [

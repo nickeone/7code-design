@@ -144,6 +144,20 @@ const CS_ITEMS = [{
     l: "customer accounts"
   },
   excerpt: "React + Material-UI overhaul of a 17-year French GED platform, OCR-trained invoice pipeline, YouSign e-signatures, Stripe + 3D Secure billing."
+}, {
+  slug: "lendit",
+  kind: "cyan",
+  num: "12",
+  year: "2025",
+  client: "Lendit",
+  title: "Peer-to-peer rental marketplace for local communities",
+  meta: ["Marketplace / Sharing Economy", "Ongoing"],
+  result: "Web + mobile marketplace live in the UK",
+  metric: {
+    v: "Web + mobile",
+    l: "marketplace live"
+  },
+  excerpt: "Rent tools and equipment from your neighbours, brand, design system, web app, iOS and Android app, and a Next.js + Nest.js + AWS backend with Stripe payments and Ondato KYC."
 }];
 const CS_CATS = ["All", "Healthcare", "Finance", "Energy", "Operations", "Defence", "AI / SaaS", "Data / AI"];
 
