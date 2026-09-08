@@ -504,13 +504,6 @@ for (const p of MAIN_PAGES) {
       },
       {
         "@type": "Person",
-        "@id": SITE + "/#igor-mardari",
-        "name": "Igor Mardari",
-        "jobTitle": "CTO & Co-Founder",
-        "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
-      },
-      {
-        "@type": "Person",
         "@id": SITE + "/#alessandro-merola",
         "name": "Alessandro Merola",
         "jobTitle": "CTO & Co-Founder",
