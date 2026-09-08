@@ -260,11 +260,17 @@ function AboutPage() {
     photo: null,
     bio: "Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in 2016, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model."
   }, {
+    name: "Alessandro Merola",
+    role: "CTO & Co-Founder",
+    initial: "A",
+    photo: "/project/uploads/authors/alessandro-merola.jpg",
+    bio: "Alessandro Merola is a co-founder and CTO of 7code, focused on solution architecture and the engineering standards behind day-to-day client delivery. He works at the point where a client's requirements become a system \u2014 data models, integrations, cloud infrastructure, and the AI components that sit on top of them \u2014 and stays hands-on from technical scoping through to launch and post-release support. His remit is making sure the architecture 7code proposes is the one that survives production."
+  }, {
     name: "Daniela Cazac",
     role: "CMO",
     initial: "D",
     photo: "/project/uploads/authors/daniela-cazac.jpg",
-    bio: null
+    bio: "Daniela Cazac leads marketing and business development at 7code, covering positioning, content, and the first conversations with prospective clients. She runs 7code's inbound and outbound channels, writes and edits much of the firm's published articles and case studies, and works with founders and product leaders to turn an early idea into a scoped engagement. Her focus is keeping what 7code says publicly aligned with what its engineers actually deliver."
   }];
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -373,7 +379,7 @@ function AboutPage() {
   }, /*#__PURE__*/React.createElement("span", {
     className: "eyebrow"
   }, "The team"), /*#__PURE__*/React.createElement("h2", null, "The people behind the work"), /*#__PURE__*/React.createElement("p", null, "A tight-knit leadership team with deep technical roots, a shared obsession with quality, and enough client work under their belts to know what actually matters when a project is under pressure.")), /*#__PURE__*/React.createElement("div", {
-    className: "team-grid team-grid--3"
+    className: "team-grid"
   }, team.map((t, i) => /*#__PURE__*/React.createElement("div", {
     key: i,
     className: "team-card reveal",

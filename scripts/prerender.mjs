@@ -509,6 +509,20 @@ for (const p of MAIN_PAGES) {
         "jobTitle": "CTO & Co-Founder",
         "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
       },
+      {
+        "@type": "Person",
+        "@id": SITE + "/#alessandro-merola",
+        "name": "Alessandro Merola",
+        "jobTitle": "CTO & Co-Founder",
+        "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
+      },
+      {
+        "@type": "Person",
+        "@id": SITE + "/#daniela-cazac",
+        "name": "Daniela Cazac",
+        "jobTitle": "CMO",
+        "worksFor": { "@type": "Organization", "name": "7code", "url": SITE },
+      },
     );
   } else {
     schema = genericPageSchema(p, PAGE_TYPES[p.path] || "WebPage", breadcrumbItems);

@@ -237,7 +237,8 @@ function AboutPage() {
   const team = [
     { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
     { name: "Igor Mardari", role: "CTO & Co-Founder", initial: "I", photo: null, bio: "Igor Mardari is the co-founder and CTO of 7code, responsible for technical strategy, engineering standards, and the architecture of client AI systems. Since co-founding 7code in 2016, Igor has led the technical evolution of the company from general software development into AI-native product engineering and cloud agentic infrastructure. He brings deep expertise in LLM system design, cloud architecture at scale, and AI product evaluation frameworks, and sets the technical quality standards that underpin 7code's senior-only delivery model." },
-    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", bio: null },
+    { name: "Alessandro Merola", role: "CTO & Co-Founder", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg", bio: "Alessandro Merola is a co-founder and CTO of 7code, focused on solution architecture and the engineering standards behind day-to-day client delivery. He works at the point where a client's requirements become a system \u2014 data models, integrations, cloud infrastructure, and the AI components that sit on top of them \u2014 and stays hands-on from technical scoping through to launch and post-release support. His remit is making sure the architecture 7code proposes is the one that survives production." },
+    { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", bio: "Daniela Cazac leads marketing and business development at 7code, covering positioning, content, and the first conversations with prospective clients. She runs 7code's inbound and outbound channels, writes and edits much of the firm's published articles and case studies, and works with founders and product leaders to turn an early idea into a scoped engagement. Her focus is keeping what 7code says publicly aligned with what its engineers actually deliver." },
   ];
 
   return (
@@ -328,7 +329,7 @@ function AboutPage() {
             <h2>The people behind the work</h2>
             <p>A tight-knit leadership team with deep technical roots, a shared obsession with quality, and enough client work under their belts to know what actually matters when a project is under pressure.</p>
           </div>
-          <div className="team-grid team-grid--3">
+          <div className="team-grid">
             {team.map((t, i) => (
               <div key={i} className="team-card reveal" style={{ transitionDelay: (i * 60) + "ms" }}>
                 <div className="team-photo">
