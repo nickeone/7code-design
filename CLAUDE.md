@@ -41,12 +41,15 @@ nothing else broken. Follow this file exactly.
      `illus` is one of: radar, blueprint, launch, circuit, gears, globe, skyline.
    - `[Booking link]` → link to `/contact`.
 3. Add the same slug to `BLOG_POSTS` in `scripts/prerender.mjs` (title,
-   description, `datePublished`; `faqs` only if there are 3+ questions),
-   to `ROUTES` in `scripts/prerender-body.mjs`, and to both `sitemap.xml`
-   and `project/sitemap.xml`.
-4. If any `project/compiled/bundle-*.min.js` content changed, bump its
-   `?v=` number in `index.html` (the template for every page).
-5. `npm run build` — compiles, pre-renders, then runs `npm run verify`.
+   description, `datePublished`), to `ROUTES` in `scripts/prerender-body.mjs`,
+   and to both `sitemap.xml` and `project/sitemap.xml`. In `sitemap.xml` use
+   `<loc>` + `<lastmod>` only (no `<priority>`/`<changefreq>`), with
+   `lastmod` on or after `datePublished`. No FAQPage JSON-LD (retired).
+4. Bump the bundle cache-bust: `node scripts/bump-bundle-version.mjs routes`
+   (or `core` / `both`, depending on which bundle changed).
+5. `npm run build` — compiles (`scripts/build-assets.mjs`), pre-renders, then
+   runs `npm run verify`. Before building, merge the latest `origin/main`:
+   other sessions publish too.
 6. Preview: serve the repo locally, screenshot each new page (desktop and
    mobile) and send the screenshots to the user. **Do not push to `main`
    until the user has seen the preview and said to publish.**
