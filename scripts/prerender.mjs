@@ -31,7 +31,7 @@ const MAIN_PAGES = [
   {
     path: "/about",
     title: "About 7Code — AI-First Software Engineering Partner",
-    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2019.",
+    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2017.",
   },
   {
     path: "/process",

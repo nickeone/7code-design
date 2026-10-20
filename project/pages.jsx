@@ -185,7 +185,7 @@ function AboutPage() {
   }, []);
 
   const stats = [
-    { v: "2016", l: "Founded in Cluj-Napoca" },
+    { v: "2017", l: "Founded in Cluj-Napoca" },
     { v: "20+", l: "Products shipped" },
     { v: "12", l: "Industries served" },
     { v: "4", l: "Countries with active clients" },
@@ -235,7 +235,7 @@ function AboutPage() {
     },
   ];
   const team = [
-    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
+    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
     { name: "Alessandro Merola", role: "CTO & Co-Founder", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg", bio: "Alessandro Merola is a co-founder and CTO of 7code, focused on solution architecture and the engineering standards behind day-to-day client delivery. He works at the point where a client's requirements become a system \u2014 data models, integrations, cloud infrastructure, and the AI components that sit on top of them \u2014 and stays hands-on from technical scoping through to launch and post-release support. His remit is making sure the architecture 7code proposes is the one that survives production." },
     { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", bio: "Daniela Cazac leads marketing and business development at 7code, covering positioning, content, and the first conversations with prospective clients. She runs 7code's inbound and outbound channels, writes and edits much of the firm's published articles and case studies, and works with founders and product leaders to turn an early idea into a scoped engagement. Her focus is keeping what 7code says publicly aligned with what its engineers actually deliver." },
   ];
@@ -248,7 +248,7 @@ function AboutPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
           <h1>About 7code — Senior AI Engineering Team</h1>
-          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
+          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
         </div>
       </section>
 

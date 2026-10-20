@@ -120,4 +120,4 @@ There is also a `project/robots.txt` file (inside the project directory) — thi
 | Medium | `robots.txt` missing AI bot allowlist | Update root `robots.txt` |
 | Medium | No automated sitemap generation | Extend `prerender.mjs` to write `sitemap.xml` |
 | Low | Duplicate GA4 tag on some sub-pages | Consolidate to single tag ID |
-| Low | `foundingDate: "2019"` in JSON-LD vs. "2016" in brand context | Verify and correct |
+| Done | Founding year confirmed as 2017 (Oct 2026) | foundingDate and copy aligned to 2017 |
