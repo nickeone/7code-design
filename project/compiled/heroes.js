@@ -63,7 +63,7 @@ function HeroPatternMockup() {
   })))), /*#__PURE__*/React.createElement("div", {
     className: "container hero-pattern-inner"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "hero-content reveal"
+    className: "hero-content"
   }, /*#__PURE__*/React.createElement("span", {
     className: "tag"
   }, /*#__PURE__*/React.createElement(Icon.zap, {
@@ -96,7 +96,7 @@ function HeroPatternMockup() {
   }), /*#__PURE__*/React.createElement("div", {
     className: "hero-meta-item"
   }, /*#__PURE__*/React.createElement("strong", null, "98%"), /*#__PURE__*/React.createElement("span", null, "Satisfied clients")))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-mockup reveal"
+    className: "hero-mockup"
   }, /*#__PURE__*/React.createElement(DashboardMockup, null))));
 }
 
@@ -219,7 +219,7 @@ function HeroTerminal() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "container hero-pattern-inner"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "hero-content reveal"
+    className: "hero-content"
   }, /*#__PURE__*/React.createElement("span", {
     className: "tag"
   }, /*#__PURE__*/React.createElement("span", {
@@ -237,7 +237,7 @@ function HeroTerminal() {
     href: "/process",
     className: "btn btn--ghost btn--lg"
   }, "See our process"))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-terminal reveal"
+    className: "hero-terminal"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hero-terminal-bar"
   }, /*#__PURE__*/React.createElement("span", {
@@ -283,7 +283,7 @@ function HeroBoldSplit() {
   }, /*#__PURE__*/React.createElement("div", {
     className: "container hero-split-inner"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "hero-split-left reveal"
+    className: "hero-split-left"
   }, /*#__PURE__*/React.createElement("span", {
     className: "tag"
   }, /*#__PURE__*/React.createElement(Icon.star, {
@@ -306,7 +306,7 @@ function HeroBoldSplit() {
     href: "/about",
     className: "btn-link"
   }, "Meet the team ", /*#__PURE__*/React.createElement(Icon.arrow, null)))), /*#__PURE__*/React.createElement("div", {
-    className: "hero-split-right reveal"
+    className: "hero-split-right"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hero-orb"
   }, /*#__PURE__*/React.createElement("svg", {

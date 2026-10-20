@@ -34,7 +34,7 @@ function HeroPatternMockup() {
         </svg>
       </div>
       <div className="container hero-pattern-inner">
-        <div className="hero-content reveal">
+        <div className="hero-content">
           <span className="tag"><Icon.zap style={{ width: 14, height: 14 }} /> AI-first engineering partner</span>
           <h1>AI-native software, engineered for <span className="text-cyan">production</span>.</h1>
           <p className="hero-sub">We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the cloud infrastructure behind them. Strategy, design, and engineering under one roof.</p>
@@ -50,7 +50,7 @@ function HeroPatternMockup() {
             <div className="hero-meta-item"><strong>98%</strong><span>Satisfied clients</span></div>
           </div>
         </div>
-        <div className="hero-mockup reveal">
+        <div className="hero-mockup">
           <DashboardMockup />
         </div>
       </div>
@@ -143,7 +143,7 @@ function HeroTerminal() {
   return (
     <section className="hero hero--terminal">
       <div className="container hero-pattern-inner">
-        <div className="hero-content reveal">
+        <div className="hero-content">
           <span className="tag"><span className="tag-dot"/> Available for new partnerships, Q2 2026</span>
           <h1>Engineering teams that ship like a <span className="text-cyan">product team</span>.</h1>
           <p className="hero-sub">From the first whiteboard session to the hundredth deploy, 7Code becomes the engineering muscle behind your product roadmap.</p>
@@ -152,7 +152,7 @@ function HeroTerminal() {
             <a href="/process" className="btn btn--ghost btn--lg">See our process</a>
           </div>
         </div>
-        <div className="hero-terminal reveal">
+        <div className="hero-terminal">
           <div className="hero-terminal-bar">
             <span className="mockup-dot" style={{ background: "#FF5F57" }}/>
             <span className="mockup-dot" style={{ background: "#FEBC2E" }}/>
@@ -183,7 +183,7 @@ function HeroBoldSplit() {
   return (
     <section className="hero hero--split">
       <div className="container hero-split-inner">
-        <div className="hero-split-left reveal">
+        <div className="hero-split-left">
           <span className="tag"><Icon.star style={{ width: 14, height: 14 }}/> Trusted by 20+ teams worldwide</span>
           <h1 className="hero-mega">
             We build <span className="text-cyan">software</span><br/>
@@ -195,7 +195,7 @@ function HeroBoldSplit() {
             <a href="/about" className="btn-link">Meet the team <Icon.arrow /></a>
           </div>
         </div>
-        <div className="hero-split-right reveal">
+        <div className="hero-split-right">
           <div className="hero-orb">
             <svg viewBox="0 0 400 400" width="100%" height="100%">
               <defs>
