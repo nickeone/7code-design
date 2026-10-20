@@ -757,6 +757,12 @@ function AiMvpPage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container" style={{ maxWidth: 820 }}>
+          <h2>What is an AI MVP?</h2>
+          <p style={{ marginTop: 16, fontSize: 18 }}>An AI MVP is the smallest version of an AI product that real users can try. It has one core use case, a model connected to your data, and a way to measure whether its answers are good enough. It shows whether the AI solves the problem before you fund the full product. At 7code that first version ships in about six weeks.</p>
+        </div>
+      </section>
       <section className="section section--alt">
         <div className="container">
           <div className="section-head reveal">

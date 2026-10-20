@@ -1051,6 +1051,18 @@ function AiMvpPage() {
     href: "/service/ai-product-engineering",
     className: "btn btn--ghost btn--lg"
   }, "See AI Product Engineering ", /*#__PURE__*/React.createElement(Icon.arrow, null))))), /*#__PURE__*/React.createElement("section", {
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      maxWidth: 820
+    }
+  }, /*#__PURE__*/React.createElement("h2", null, "What is an AI MVP?"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16,
+      fontSize: 18
+    }
+  }, "An AI MVP is the smallest version of an AI product that real users can try. It has one core use case, a model connected to your data, and a way to measure whether its answers are good enough. It shows whether the AI solves the problem before you fund the full product. At 7code that first version ships in about six weeks."))), /*#__PURE__*/React.createElement("section", {
     className: "section section--alt"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"

@@ -62,7 +62,8 @@ const POST_UPDATED = {
   "ai-engineering-pricing-fixed-vs-time-materials": "May 06, 2026",
   "ship-ai-mvp-six-weeks": "May 06, 2026",
   "ai-discovery-mission-de-risk-ai-products": "May 06, 2026",
-  "top-nearshore-ai-development-agencies-europe": "Oct 20, 2026"
+  "top-nearshore-ai-development-agencies-europe": "Oct 20, 2026",
+  "how-to-hire-nearshore-ai-engineers": "Oct 20, 2026"
 };
 const POSTS = [{
   slug: "reduce-admin-work-medical-clinic",
@@ -1286,7 +1287,7 @@ const POSTS = [{
     text: "Why nearshore for AI engineering specifically?"
   }, {
     type: "p",
-    text: "AI engineering is a specific skill set: production LLM integration, RAG pipeline design, agent orchestration, evaluation harness construction, prompt management, and MLOps. This skill set is genuinely rare in most Western European and UK markets, where the competition for a senior ML engineer from a large tech company pushes salaries above £120k in London. Cluj-Napoca, Bucharest, Warsaw, and Tallinn have graduates from the same computer science programmes, working in the same frameworks, at 40–60% of that cost."
+    text: "AI engineering is a specific skill set: production LLM integration, RAG pipeline design, agent orchestration, evaluation harness construction, prompt management, and MLOps. This skill set is genuinely rare in most Western European and UK markets, where the competition for a senior ML engineer from a large tech company pushes salaries up sharply in London. Cluj-Napoca, Bucharest, Warsaw, and Tallinn have graduates from the same computer science programmes, working in the same frameworks, at a lower cost (figures below)."
   }, {
     type: "h2",
     text: "The three most common hiring mistakes"
@@ -1302,6 +1303,12 @@ const POSTS = [{
   }, {
     type: "callout",
     text: "The single best interview question for a nearshore AI engineer: 'Tell me about a production AI system you built, and what its eval harness looked like.' The answer reveals everything about their actual experience level."
+  }, {
+    type: "h2",
+    text: "How much does it cost to hire an AI engineer?"
+  }, {
+    type: "p-html",
+    text: "In the UK, the median advertised salary for a machine learning engineer was £70,000 in the six months to 15 September 2026, with the 90th percentile at £110,000 (<a href=\"https://www.itjobswatch.co.uk/jobs/uk/machine%20learning%20engineer.do\" target=\"_blank\" rel=\"noopener noreferrer\">ITJobsWatch</a>). Employer costs come on top. Nearshore contractors cost less per hour. <a href=\"https://lemon.io/rate-calculator/\" target=\"_blank\" rel=\"noopener noreferrer\">Lemon.io</a>'s September 2026 data puts AI specialists in Romania at about $52/hr median and in Portugal at about $53/hr. <a href=\"https://alcor.com/romanian-developers-benefits-pitfalls-rates-insights/\" target=\"_blank\" rel=\"noopener noreferrer\">Alcor</a>'s 2026 research puts a senior LLM engineer in Romania at about $8,150 a month gross. Agency rates include management and cover, so they sit above freelance rates. 7code's rate card runs from €30–35/h for mid-level engineers and €40–50/h for seniors to €60–80/h for AI architects."
   }, {
     type: "h2",
     text: "Structuring the engagement"
@@ -1396,7 +1403,10 @@ const POSTS = [{
     text: "Eleks has deep roots in data science and ML research, which gives them genuine depth in model selection, fine-tuning, and data engineering. Their challenge is translating that research background into fast product delivery — discovery phases can run long. Best suited to data-heavy projects where the underlying ML architecture is the primary challenge, rather than product velocity or LLM application development."
   }, {
     type: "h2",
-    text: "How to choose"
+    text: "How do you choose a nearshore AI development agency?"
+  }, {
+    type: "p",
+    text: "Check four things. First, production AI work you can see: LLM, RAG or agent systems live with real users, not demos. Second, senior engineers on your project, not juniors with copilots. Third, a delivery model that fits your scope, fixed price or time and materials. Fourth, clients like you in the UK or EU. Time zone and GDPR come after that."
   }, {
     type: "p",
     text: "The right agency depends on what you're actually building. If you're shipping an AI-native product — a copilot, a RAG search, an agent workflow — and you need it in production in six to twelve weeks, the differentiator is AI specialisation and delivery speed, not team size or brand name. If you're adding AI features to a large enterprise system with complex governance, a larger agency with enterprise delivery experience may be a better fit than a specialist AI shop."
