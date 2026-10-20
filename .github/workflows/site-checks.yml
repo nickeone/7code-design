@@ -1,0 +1,23 @@
+name: Site checks
+
+# Runs the same checks Vercel runs before a deploy, on every push and pull
+# request, so a problem shows up as a red ✗ on GitHub with a readable message.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "1"
+      - name: Check the site (links, sitemap, placeholders, compiled files, schema)
+        run: npm run verify

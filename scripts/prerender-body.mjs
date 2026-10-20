@@ -232,8 +232,11 @@ try {
   server = await startServer(PORT);
   console.log(`  Server listening on http://127.0.0.1:${PORT}`);
 
+  // Cloud sessions ship Chromium here instead of puppeteer's own download.
+  const localChromium = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome";
   browser = await puppeteer.launch({
     headless: true,
+    ...(!process.env.PUPPETEER_EXECUTABLE_PATH && existsSync(localChromium) ? { executablePath: localChromium } : {}),
     args: [
       "--no-sandbox",
       "--disable-setuid-sandbox",

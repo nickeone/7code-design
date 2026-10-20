@@ -1,0 +1,21 @@
+name: Live site check
+
+# After Vercel finishes a production deploy, and every morning, visit every
+# page in the live sitemap and confirm it loads with real content.
+on:
+  deployment_status:
+  schedule:
+    - cron: "15 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  live:
+    if: github.event_name != 'deployment_status' || (github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Visit every live page
+        run: node scripts/check-live.mjs https://www.7code.tech
