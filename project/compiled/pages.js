@@ -1540,7 +1540,7 @@ function FAQPage() {
     a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
   }, {
     q: "How much does a project with 7code cost?",
-    a: "7code’s rate card runs from EUR 35–40/h for mid-level engineers to EUR 45–55/h for seniors and EUR 60–65/h for architects. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
+    a: "Senior engineers start from EUR 45/h, and projects start from EUR 50,000. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
   }, {
     q: "Does 7code sign NDAs?",
     a: "Yes. 7code signs NDAs before any substantive technical discussion. Clients may use their own NDA paper or 7code’s standard mutual NDA. All engineers placed on client projects sign individual confidentiality agreements. IP developed under a 7code engagement belongs to the client by default, with explicit assignment clauses included in the master services agreement."
@@ -1585,7 +1585,7 @@ function FAQPage() {
     a: "In staff augmentation, 7code provides engineers who join your existing team under your management. You direct the work. A dedicated team means 7code manages delivery end-to-end — engineers, tech lead, and delivery governance included. Staff augmentation is best for teams with internal technical leadership that need extra capacity. A dedicated team is best when you don't have internal engineering leadership or want to move faster than hiring allows."
   }, {
     q: "What are 7code's engineering rates?",
-    a: "7code's rates: Mid-level engineers €35–40/hour; Senior engineers €45–55/hour; Architect-level engineers €60–65/hour. These are 40–60% below London market rates with equivalent or higher seniority. All rates are transparent with no hidden markups."
+    a: "Senior engineers start from €45/hour, and projects start from €50,000. The final rate depends on seniority, scope and team size. Contact office@7code.ro for an estimate."
   }, {
     q: "Is 7code GDPR compliant?",
     a: "Yes. 7code operates under Romanian and EU law, meaning GDPR compliance is built-in — not an add-on. Our engineers understand EU data processing requirements and can correctly configure data processing agreements with model providers (OpenAI, Anthropic, Google). For UK clients post-Brexit, we structure arrangements to comply with UK GDPR equivalents. This is a key nearshore advantage: EU-jurisdiction teams are GDPR-native by default."
