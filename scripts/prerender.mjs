@@ -130,6 +130,7 @@ const BLOG_POSTS = [
     {"q":"Can we automate admin without changing our patient record system?","a":"Usually yes. We build around the systems you already use."},
     {"q":"Will it replace our staff?","a":"No. It removes repetitive typing and chasing, so your team spends more time with patients."},
   ]},
+  {"slug":"hire-or-automate-which-costs-less","title":"Hire or Automate: Which Costs Less?","description":"Automation usually costs less than hiring when the work is repetitive and follows clear rules. Hiring is the better choice when the work needs judgment or changes every week.","datePublished":"2026-10-20"},
   {"slug":"ai-discovery-mission-de-risk-ai-products","title":"The AI Discovery Mission: how we de-risk AI products in four weeks","description":"A four-week structured discovery is how we turn a vague AI ambition into a build-ready plan, vision, evals, architecture, and a defensible budget.","datePublished":"2026-04-28"},
   {"slug":"ship-ai-mvp-six-weeks","title":"Why we ship AI MVPs in six weeks, not six months","description":"Validated learning beats elaborate roadmaps. The cadence we use to put an AI product in front of real users, and real evals, in six weeks.","datePublished":"2026-04-16"},
   {"slug":"ai-engineering-pricing-fixed-vs-time-materials","title":"Fixed price vs. T&M for AI engineering: how to budget for LLM work","description":"AI projects break the assumptions behind fixed-price contracts. Here's a pricing framework that aligns incentives between AI vendors and clients.","datePublished":"2026-04-02"},

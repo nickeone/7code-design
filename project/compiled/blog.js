@@ -164,6 +164,71 @@ const POSTS = [{
     text: "<strong>Will it replace our staff?</strong><br />No. It removes repetitive typing and chasing, so your team spends more time with patients."
   }]
 }, {
+  slug: "hire-or-automate-which-costs-less",
+  cat: "Operations",
+  title: "Hire or Automate: Which Costs Less?",
+  subtitle: "Automation usually costs less than hiring when the work is repetitive and follows clear rules. Hiring is the better choice when the work needs judgment or changes every week.",
+  date: "Oct 20, 2026",
+  read: "3 min read",
+  author: {
+    name: "Daniela Cazac",
+    role: "CMO",
+    initial: "D",
+    photo: "/project/uploads/authors/daniela-cazac.jpg"
+  },
+  cover: "finance",
+  illus: "circuit",
+  featured: false,
+  body: [{
+    type: "lead",
+    text: "Automation usually costs less than hiring when the work is repetitive and follows clear rules. Hiring is the better choice when the work needs judgment or changes every week."
+  }, {
+    type: "p",
+    text: "Here’s how to check which one fits you."
+  }, {
+    type: "h2",
+    text: "How much does it cost to hire someone?"
+  }, {
+    type: "p",
+    text: "Add up the real cost of one person doing this work for a year:"
+  }, {
+    type: "bullets",
+    items: ["Salary", "Taxes and benefits", "Recruiter fees", "Time spent hiring and training", "Mistakes and delays"]
+  }, {
+    type: "p",
+    text: "Most companies only count the salary. The full cost is usually higher."
+  }, {
+    type: "h2",
+    text: "How much does it cost to automate?"
+  }, {
+    type: "p",
+    text: "You pay once, then a small amount each month to keep it running."
+  }, {
+    type: "h2",
+    text: "When to automate"
+  }, {
+    type: "bullets",
+    items: ["The same steps happen every time", "People copy data between systems", "The work is slow or full of small mistakes", "You’re hiring just to keep up with volume"]
+  }, {
+    type: "h2",
+    text: "When to hire"
+  }, {
+    type: "bullets",
+    items: ["The work needs human judgment", "The process changes often", "Only one person ever does it", "You need someone who talks to clients"]
+  }, {
+    type: "h2",
+    text: "Not sure which fits you?"
+  }, {
+    type: "p-html",
+    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us the process, and we’ll tell you honestly whether to automate or hire."
+  }, {
+    type: "h2",
+    text: "Common questions"
+  }, {
+    type: "p-html",
+    text: "<strong>Is automation cheaper than hiring?</strong><br />For repetitive work, usually yes. For work that needs judgment, usually no."
+  }]
+}, {
   slug: "ai-discovery-mission-de-risk-ai-products",
   cat: "Strategy",
   title: "The AI Discovery Mission: de-risk AI in four weeks",

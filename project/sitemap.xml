@@ -185,6 +185,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.7code.tech/blog/hire-or-automate-which-costs-less</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.7code.tech/blog/ai-discovery-mission-de-risk-ai-products</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
