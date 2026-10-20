@@ -1036,7 +1036,7 @@ function AiMvpPage() {
       fontSize: 18,
       color: "var(--slate-700)"
     }
-  }, "AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks \u2014 including an evaluation harness, cloud infrastructure, and a real production launch \u2014 with fixed scope and pricing from \xA325k."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
+  }, "AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks \u2014 including an evaluation harness, cloud infrastructure, and a real production launch \u2014 with fixed scope and pricing from \u20AC50,000."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1147,7 +1147,7 @@ function AiMvpPage() {
 // UK GEO LANDING PAGE
 // ──────────────────────────────────────────────────────────────────
 function UkGeoPage() {
-  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.");
+  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From €50,000.");
   const reasons = [{
     icon: Icon.globe,
     title: "Timezone overlap",
@@ -1184,7 +1184,7 @@ function UkGeoPage() {
     a: "Yes. We operate under UK-compatible service agreements (SoW, MSA, or project contracts), invoice in GBP or EUR, and can work inside most UK procurement frameworks. GDPR compliance is a default across all our engagements, not a bespoke add-on."
   }, {
     q: "How much does a typical project cost?",
-    a: "AI MVPs start from £25k for a six-week engagement. Mid-scale products (12–20 weeks) typically run £60k–£180k. Ongoing outstaffing retainers are typically £6k–£12k per engineer per month depending on seniority and specialism. We're transparent on pricing in the first call — no hidden fees, no change-order culture."
+    a: "Projects start from €50,000. Mid-scale products (12–20 weeks) typically run £60k–£180k. Ongoing outstaffing retainers are typically £6k–£12k per engineer per month depending on seniority and specialism. We're transparent on pricing in the first call — no hidden fees, no change-order culture."
   }];
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -1205,7 +1205,7 @@ function UkGeoPage() {
       fontSize: 18,
       color: "var(--slate-700)"
     }
-  }, "7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates \u2014 with LLM products shipped in as little as six weeks and projects starting from \xA325k."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
+  }, "7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates \u2014 with LLM products shipped in as little as six weeks and projects starting from \u20AC50,000."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1540,7 +1540,7 @@ function FAQPage() {
     a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
   }, {
     q: "How much does a project with 7code cost?",
-    a: "7code’s rate card runs from EUR 30–35/h for mid-level engineers to EUR 40–50/h for seniors and EUR 60–80/h for architects. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
+    a: "Senior engineers start from EUR 45/h, and projects start from EUR 50,000. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
   }, {
     q: "Does 7code sign NDAs?",
     a: "Yes. 7code signs NDAs before any substantive technical discussion. Clients may use their own NDA paper or 7code’s standard mutual NDA. All engineers placed on client projects sign individual confidentiality agreements. IP developed under a 7code engagement belongs to the client by default, with explicit assignment clauses included in the master services agreement."
@@ -1585,7 +1585,7 @@ function FAQPage() {
     a: "In staff augmentation, 7code provides engineers who join your existing team under your management. You direct the work. A dedicated team means 7code manages delivery end-to-end — engineers, tech lead, and delivery governance included. Staff augmentation is best for teams with internal technical leadership that need extra capacity. A dedicated team is best when you don't have internal engineering leadership or want to move faster than hiring allows."
   }, {
     q: "What are 7code's engineering rates?",
-    a: "7code's rates: Mid-level engineers €30–35/hour; Senior engineers €40–50/hour; Architect-level engineers €60–80/hour. These are 40–60% below London market rates with equivalent or higher seniority. All rates are transparent with no hidden markups."
+    a: "Senior engineers start from €45/hour, and projects start from €50,000. The final rate depends on seniority, scope and team size. Contact office@7code.ro for an estimate."
   }, {
     q: "Is 7code GDPR compliant?",
     a: "Yes. 7code operates under Romanian and EU law, meaning GDPR compliance is built-in — not an add-on. Our engineers understand EU data processing requirements and can correctly configure data processing agreements with model providers (OpenAI, Anthropic, Google). For UK clients post-Brexit, we structure arrangements to comply with UK GDPR equivalents. This is a key nearshore advantage: EU-jurisdiction teams are GDPR-native by default."

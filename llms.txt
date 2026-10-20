@@ -25,7 +25,7 @@
 ## Guides
 
 - [AI MVP Development — Ship in 6 Weeks](https://www.7code.tech/ai-mvp-development): AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.
-- [AI Development Agency for UK Companies Romania](https://www.7code.tech/ai-development-agency-uk): AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.
+- [AI Development Agency for UK Companies Romania](https://www.7code.tech/ai-development-agency-uk): AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From €50,000.
 - [AI Agency vs AI Freelancer: Which Is Right for You?](https://www.7code.tech/compare/agency-vs-freelancer): Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.
 - [AI Automation for SMEs: The Complete Guide (2026)](https://www.7code.tech/resources/ai-automation-for-smes): A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.
 - [AI-Native Product Engineering: How to Build AI Products That Actually Work](https://www.7code.tech/resources/ai-native-product-engineering): A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.

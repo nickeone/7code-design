@@ -162,7 +162,7 @@ const RESOURCES_DATA = {
         a: "Yes. Romania has been an EU member state since 2007. Romanian software companies operate under EU data protection law (GDPR), EU IP protection frameworks, and EU employment regulations."
       }, {
         q: "How much cheaper is nearshore Romania compared with the UK?",
-        a: "Rates vary by seniority and role. 7code's rate card runs from EUR 30–35/h for mid-level engineers to EUR 60–80/h for AI architects."
+        a: "Rates vary by seniority and role. At 7code, senior engineers start from EUR 45/h."
       }, {
         q: "Does working with a Romanian team require Romanian language skills?",
         a: "No. Business English is the standard working language across Romania's technology sector. 7code communicates with all clients exclusively in English."
