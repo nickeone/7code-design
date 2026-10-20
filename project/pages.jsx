@@ -614,27 +614,27 @@ function ContactPage() {
                   <p style={{ marginTop: 8, color: "var(--slate-500)" }}>We'll be in touch within one business day.</p>
                 </div>
               ) : (
-                <form onSubmit={submit} noValidate>
+                <form onSubmit={submit} noValidate toolname="contact_7code" tooldescription="Send a project enquiry to 7code: AI product engineering, process automation, LLM agents, or engineering outstaffing.">
                   <div className="form-row">
                     <div className={"field" + (errors.name ? " field--error" : "")}>
-                      <label>Name</label>
-                      <input value={form.name} onChange={update("name")} placeholder="Jane Doe"/>
+                      <label htmlFor="contact-name">Name</label>
+                      <input id="contact-name" name="name" type="text" autoComplete="name" required value={form.name} onChange={update("name")} placeholder="Jane Doe" toolparamdescription="Full name of the person sending the enquiry."/>
                       {errors.name && <span className="field-error">{errors.name}</span>}
                     </div>
                     <div className={"field" + (errors.email ? " field--error" : "")}>
-                      <label>Email</label>
-                      <input value={form.email} onChange={update("email")} placeholder="jane@company.com"/>
+                      <label htmlFor="contact-email">Email</label>
+                      <input id="contact-email" name="email" type="email" autoComplete="email" required value={form.email} onChange={update("email")} placeholder="jane@company.com" toolparamdescription="Work email address 7code should reply to."/>
                       {errors.email && <span className="field-error">{errors.email}</span>}
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="field">
-                      <label>Company</label>
-                      <input value={form.company} onChange={update("company")} placeholder="Acme Inc."/>
+                      <label htmlFor="contact-company">Company</label>
+                      <input id="contact-company" name="company" type="text" autoComplete="organization" value={form.company} onChange={update("company")} placeholder="Acme Inc." toolparamdescription="Company or organisation name (optional)."/>
                     </div>
                     <div className="field">
-                      <label>Budget</label>
-                      <select value={form.budget} onChange={update("budget")}>
+                      <label htmlFor="contact-budget">Budget</label>
+                      <select id="contact-budget" name="budget" value={form.budget} onChange={update("budget")} toolparamdescription="Approximate project budget range in USD (optional): $25k – $50k, $50k – $150k, $150k – $500k, or $500k+.">
                         <option value="">Select...</option>
                         <option>$25k – $50k</option>
                         <option>$50k – $150k</option>
@@ -644,8 +644,8 @@ function ContactPage() {
                     </div>
                   </div>
                   <div className={"field" + (errors.message ? " field--error" : "")}>
-                    <label>Tell us about your project</label>
-                    <textarea rows="5" value={form.message} onChange={update("message")} placeholder="What are you trying to build? Any constraints, timelines, or success metrics we should know about?"/>
+                    <label htmlFor="contact-message">Tell us about your project</label>
+                    <textarea id="contact-message" name="message" required rows="5" value={form.message} onChange={update("message")} toolparamdescription="What you want to build, plus any constraints, timelines or success metrics (at least 10 characters)." placeholder="What are you trying to build? Any constraints, timelines, or success metrics we should know about?"/>
                     {errors.message && <span className="field-error">{errors.message}</span>}
                   </div>
                   {serverError && (

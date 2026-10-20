@@ -772,46 +772,82 @@ function ContactPage() {
     }
   }, "We'll be in touch within one business day.")) : /*#__PURE__*/React.createElement("form", {
     onSubmit: submit,
-    noValidate: true
+    noValidate: true,
+    toolname: "contact_7code",
+    tooldescription: "Send a project enquiry to 7code: AI product engineering, process automation, LLM agents, or engineering outstaffing."
   }, /*#__PURE__*/React.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.name ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Name"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-name"
+  }, "Name"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-name",
+    name: "name",
+    type: "text",
+    autoComplete: "name",
+    required: true,
     value: form.name,
     onChange: update("name"),
-    placeholder: "Jane Doe"
+    placeholder: "Jane Doe",
+    toolparamdescription: "Full name of the person sending the enquiry."
   }), errors.name && /*#__PURE__*/React.createElement("span", {
     className: "field-error"
   }, errors.name)), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.email ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Email"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-email"
+  }, "Email"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-email",
+    name: "email",
+    type: "email",
+    autoComplete: "email",
+    required: true,
     value: form.email,
     onChange: update("email"),
-    placeholder: "jane@company.com"
+    placeholder: "jane@company.com",
+    toolparamdescription: "Work email address 7code should reply to."
   }), errors.email && /*#__PURE__*/React.createElement("span", {
     className: "field-error"
   }, errors.email))), /*#__PURE__*/React.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "field"
-  }, /*#__PURE__*/React.createElement("label", null, "Company"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-company"
+  }, "Company"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-company",
+    name: "company",
+    type: "text",
+    autoComplete: "organization",
     value: form.company,
     onChange: update("company"),
-    placeholder: "Acme Inc."
+    placeholder: "Acme Inc.",
+    toolparamdescription: "Company or organisation name (optional)."
   })), /*#__PURE__*/React.createElement("div", {
     className: "field"
-  }, /*#__PURE__*/React.createElement("label", null, "Budget"), /*#__PURE__*/React.createElement("select", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-budget"
+  }, "Budget"), /*#__PURE__*/React.createElement("select", {
+    id: "contact-budget",
+    name: "budget",
     value: form.budget,
-    onChange: update("budget")
+    onChange: update("budget"),
+    toolparamdescription: "Approximate project budget range in USD (optional): $25k \u2013 $50k, $50k \u2013 $150k, $150k \u2013 $500k, or $500k+."
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
   }, "Select..."), /*#__PURE__*/React.createElement("option", null, "$25k \u2013 $50k"), /*#__PURE__*/React.createElement("option", null, "$50k \u2013 $150k"), /*#__PURE__*/React.createElement("option", null, "$150k \u2013 $500k"), /*#__PURE__*/React.createElement("option", null, "$500k+")))), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.message ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Tell us about your project"), /*#__PURE__*/React.createElement("textarea", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-message"
+  }, "Tell us about your project"), /*#__PURE__*/React.createElement("textarea", {
+    id: "contact-message",
+    name: "message",
+    required: true,
     rows: "5",
     value: form.message,
     onChange: update("message"),
+    toolparamdescription: "What you want to build, plus any constraints, timelines or success metrics (at least 10 characters).",
     placeholder: "What are you trying to build? Any constraints, timelines, or success metrics we should know about?"
   }), errors.message && /*#__PURE__*/React.createElement("span", {
     className: "field-error"
