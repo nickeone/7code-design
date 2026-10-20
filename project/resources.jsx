@@ -275,7 +275,7 @@ const RESOURCES_DATA = {
       },
       {
         heading: "What Nearshore Means (vs Offshore, Onshore, Blended)",
-        body: "Onshore software development means working with a team in your own country. Costs are highest, time zone alignment is perfect, cultural proximity is maximum. Offshore development typically refers to engaging teams in low-cost geographies with significant time zone distance: India, the Philippines, Vietnam. The cost advantage can be substantial — 60–70% below UK or US rates — but carries communication friction, cultural differences, and variable quality. Nearshore splits the difference: for UK and EU buyers, Central or Eastern Europe — Poland, Romania, Bulgaria, the Czech Republic. It costs less than onshore while preserving time zone overlap (one to three hours difference) and cultural alignment. For most UK and EU SMEs and mid-market companies, nearshore Central/Eastern Europe offers the best combination of cost, quality, proximity, and compliance.",
+        body: "Onshore software development means working with a team in your own country. Costs are highest, time zone alignment is perfect, cultural proximity is maximum. Offshore development typically refers to engaging teams in low-cost geographies with significant time zone distance: India, the Philippines, Vietnam. It is usually the cheapest option, but carries communication friction, cultural differences, and variable quality. Nearshore splits the difference: for UK and EU buyers, Central or Eastern Europe — Poland, Romania, Bulgaria, the Czech Republic. It costs less than onshore while preserving time zone overlap (one to three hours difference) and cultural alignment. For most UK and EU SMEs and mid-market companies, nearshore Central/Eastern Europe offers the best combination of cost, quality, proximity, and compliance.",
       },
       {
         heading: "Why Romania: The Structural Case",
@@ -304,7 +304,7 @@ const RESOURCES_DATA = {
       {
         heading: "Frequently Asked Questions",
         faqs: [
-          { q: "What is nearshore software development?", a: "Nearshore software development means engaging an engineering team in a country geographically and time-zone adjacent to your own. For UK and EU buyers, nearshore typically means Central or Eastern Europe. It offers significant cost advantages over onshore (25–50%) while maintaining time zone overlap, cultural proximity, and compliance alignment." },
+          { q: "What is nearshore software development?", a: "Nearshore software development means engaging an engineering team in a country geographically and time-zone adjacent to your own. For UK and EU buyers, nearshore typically means Central or Eastern Europe. It costs less than onshore while maintaining time zone overlap, cultural proximity, and compliance alignment." },
           { q: "Is Romania in the EU?", a: "Yes. Romania has been an EU member state since 2007. Romanian software companies operate under EU data protection law (GDPR), EU IP protection frameworks, and EU employment regulations." },
           { q: "How much cheaper is nearshore Romania compared with the UK?", a: "Rates vary by seniority and role. At 7code, senior engineers start from EUR 45/h." },
           { q: "Does working with a Romanian team require Romanian language skills?", a: "No. Business English is the standard working language across Romania's technology sector. 7code communicates with all clients exclusively in English." },
