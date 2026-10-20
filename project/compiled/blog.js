@@ -342,6 +342,10 @@ const POSTS = [{
     type: "lead",
     text: "These ranges come from projects we’ve delivered, not from a rate card. Where you land inside them depends on five things, listed below. If you only have two minutes, read the section on hiring versus automating, because that is the decision most teams are really making."
   }, {
+    type: "table",
+    head: ["Scope", "Typical price", "Time"],
+    rows: [["One process, one or two tools", "\u20ac25,000 to \u20ac40,000", "4 to 6 weeks"], ["Several connected processes", "\u20ac60,000 to \u20ac150,000", "3 to 6 months"]]
+  }, {
     type: "h2",
     text: "What decides the price"
   }, {
@@ -355,7 +359,7 @@ const POSTS = [{
     text: "If you’re keeping a role open for weeks to handle repetitive work, you already have a price to compare against."
   }, {
     type: "p",
-    text: "Take the yearly cost of the people doing the process today: salaries, plus the errors, rework and delays. Put that next to the project price. For the projects we’ve delivered, payback has been around [N months]."
+    text: "Take the yearly cost of the people doing the process today: salaries, plus the errors, rework and delays. Put that next to the project price. For the projects we’ve delivered, payback has been around 6 to 18 months."
   }, {
     type: "p",
     text: "Automation isn’t always the better choice. If the process changes every month, or only one person ever does it, a hire may be cheaper. We’ll tell you if that’s the case, and we’d rather say it on a 20-minute call than after a three-month project."
