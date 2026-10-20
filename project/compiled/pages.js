@@ -1036,7 +1036,7 @@ function AiMvpPage() {
       fontSize: 18,
       color: "var(--slate-700)"
     }
-  }, "AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks \u2014 including an evaluation harness, cloud infrastructure, and a real production launch \u2014 with fixed scope and pricing from \xA325k."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
+  }, "AI MVP development is the process of designing, building, and launching a production-ready AI product around one core LLM or agent capability. 7code ships AI MVPs in six weeks \u2014 including an evaluation harness, cloud infrastructure, and a real production launch \u2014 with fixed scope and pricing from \u20AC50,000."), /*#__PURE__*/React.createElement("p", null, "We design, build, and ship LLM-powered products end-to-end, with an evaluation harness, cloud infrastructure, and a clean production launch, all inside a six-week fixed scope."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,
@@ -1147,7 +1147,7 @@ function AiMvpPage() {
 // UK GEO LANDING PAGE
 // ──────────────────────────────────────────────────────────────────
 function UkGeoPage() {
-  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.");
+  useSeoMeta("AI Development Agency for UK Companies | 7code Romania", "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From €50,000.");
   const reasons = [{
     icon: Icon.globe,
     title: "Timezone overlap",
@@ -1184,7 +1184,7 @@ function UkGeoPage() {
     a: "Yes. We operate under UK-compatible service agreements (SoW, MSA, or project contracts), invoice in GBP or EUR, and can work inside most UK procurement frameworks. GDPR compliance is a default across all our engagements, not a bespoke add-on."
   }, {
     q: "How much does a typical project cost?",
-    a: "AI MVPs start from £25k for a six-week engagement. Mid-scale products (12–20 weeks) typically run £60k–£180k. Ongoing outstaffing retainers are typically £6k–£12k per engineer per month depending on seniority and specialism. We're transparent on pricing in the first call — no hidden fees, no change-order culture."
+    a: "Projects start from €50,000. Mid-scale products (12–20 weeks) typically run £60k–£180k. Ongoing outstaffing retainers are typically £6k–£12k per engineer per month depending on seniority and specialism. We're transparent on pricing in the first call — no hidden fees, no change-order culture."
   }];
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
@@ -1205,7 +1205,7 @@ function UkGeoPage() {
       fontSize: 18,
       color: "var(--slate-700)"
     }
-  }, "7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates \u2014 with LLM products shipped in as little as six weeks and projects starting from \xA325k."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
+  }, "7code is an AI development agency serving UK companies from Cluj-Napoca, Romania. UK clients get senior AI engineers, around seven hours of daily timezone overlap, GDPR-native delivery, and nearshore rates \u2014 with LLM products shipped in as little as six weeks and projects starting from \u20AC50,000."), /*#__PURE__*/React.createElement("p", null, "Senior AI engineers from Cluj-Napoca, Romania. Seven hours of daily UK timezone overlap. Nearshore rates. GDPR-native delivery. LLM products shipped in six weeks."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       gap: 12,

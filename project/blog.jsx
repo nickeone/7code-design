@@ -948,7 +948,7 @@ const POSTS = [
       ]},
       { type: "h2", text: "Top 5 nearshore AI development agencies in Europe (2026)" },
       { type: "table", head: ["Agency", "Location", "AI Specialism", "Best for", "Min project size"], rows: [
-        ["7Code", "Cluj-Napoca, RO", "AI-native (LLM, RAG, agents, evals)", "AI MVPs, production copilots, agent systems", "£25k / €30k"],
+        ["7Code", "Cluj-Napoca, RO", "AI-native (LLM, RAG, agents, evals)", "AI MVPs, production copilots, agent systems", "€50k"],
         ["Selleo", "Rzeszów, PL", "AI features on top of established SaaS practice", "Scale-up product engineering with AI features", "£50k"],
         ["Software Mind", "Warsaw, PL", "Broad software + growing AI practice", "Large enterprise transformation projects", "£100k"],
         ["Boldare", "Multiple, PL", "Product design + AI integration", "Product design-led AI builds", "£75k"],

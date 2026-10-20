@@ -131,7 +131,7 @@ const MAIN_PAGES = [
   {
     path: "/ai-development-agency-uk",
     title: "AI Development Agency for UK Companies | 7code Romania",
-    description: "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.",
+    description: "AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From €50,000.",
   },
   {
     path: "/compare/agency-vs-freelancer",
