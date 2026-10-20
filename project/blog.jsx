@@ -46,7 +46,7 @@ const POSTS = [
     subtitle: "Most clinic admin comes from the same few tasks. Here is how to tell whether ready-made clinic software is enough, or whether custom automation is worth it.",
     date: "Oct 20, 2026",
     read: "5 min read",
-    author: { name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" },
+    author: { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" },
     cover: "health",
     illus: "gears",
     featured: true,

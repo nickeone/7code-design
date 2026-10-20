@@ -46,10 +46,10 @@ const POSTS = [{
   date: "Oct 20, 2026",
   read: "5 min read",
   author: {
-    name: "Nicu Mardari",
-    role: "CEO",
-    initial: "N",
-    photo: "/project/uploads/authors/nicu-mardari.jpg"
+    name: "Daniela Cazac",
+    role: "CMO",
+    initial: "D",
+    photo: "/project/uploads/authors/daniela-cazac.jpg"
   },
   cover: "health",
   illus: "gears",
