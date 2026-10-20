@@ -69,6 +69,39 @@ const SEO_TITLES = {
   "/blog/7code-discovery-mission": "7Code's Discovery Mission: de-risk software builds | 7code"
 };
 
+// Last substantive content update per post (from git history: May 2026 rewrite/migration,
+// 20 Oct 2026 disclosure). Only set when content really changed — never bump for freshness.
+// Keep in sync with POST_UPDATED in project/blog.jsx.
+const BLOG_UPDATED = {
+  "7code-discovery-mission": "2026-05-06",
+  "fixed-price-vs-time-and-materials": "2026-05-06",
+  "low-code-no-code-vs-custom-development": "2026-05-06",
+  "cms-wordpress-vs-custom-development": "2026-05-06",
+  "osai-revolutionising-ai-interactions": "2026-05-06",
+  "reducing-costs-nearshoring-outstaffing": "2026-05-06",
+  "aws-beanstalk-to-ecs-migration": "2026-05-06",
+  "aws-ecs-vs-beanstalk-perspective": "2026-05-06",
+  "migrating-users-auth0-python": "2026-05-06",
+  "changing-software-service-provider": "2026-05-06",
+  "logistics-tech-tailored-solutions": "2026-05-06",
+  "why-mvp-first": "2026-05-06",
+  "seamless-software-project-handover": "2026-05-06",
+  "adrenaline-ai-code-debugger": "2026-05-05",
+  "lessons-from-london-tech-week-ai": "2026-05-06",
+  "ai-engineering-outstaffing": "2026-05-05",
+  "switch-ai-engineering-partner": "2026-05-04",
+  "running-ai-engineering-pods-across-continents": "2026-05-05",
+  "ai-project-handover": "2026-05-04",
+  "senior-engineers-ai-leverage": "2026-05-06",
+  "adrenaline-ai-debugger-case-study": "2026-05-05",
+  "ai-native-automation-crm-erp-iot": "2026-05-05",
+  "ai-agents-manufacturing-operations": "2026-05-05",
+  "ai-engineering-pricing-fixed-vs-time-materials": "2026-05-06",
+  "ship-ai-mvp-six-weeks": "2026-05-06",
+  "ai-discovery-mission-de-risk-ai-products": "2026-05-06",
+  "top-nearshore-ai-development-agencies-europe": "2026-10-20"
+};
+
 const MAIN_PAGES = [
   {
     path: "/about",
@@ -302,7 +335,7 @@ function blogPostSchema(p) {
         "mainEntityOfPage": url,
         "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
         "publisher": ORG_REF,
-        ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": p.datePublished } : {}),
+        ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": BLOG_UPDATED[p.slug] || p.datePublished } : {}),
       },
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },

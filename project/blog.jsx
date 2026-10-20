@@ -38,6 +38,39 @@ function setCanonical(href) {
 // ─────────────────────────────────────────────────────────────────
 // Blog post data
 // ─────────────────────────────────────────────────────────────────
+// Last substantive content update per post (from git history: May 2026 rewrite/migration,
+// 20 Oct 2026 disclosure). Only set when content really changed — never bump for freshness.
+// Keep in sync with BLOG_UPDATED in scripts/prerender.mjs.
+const POST_UPDATED = {
+  "7code-discovery-mission": "May 06, 2026",
+  "fixed-price-vs-time-and-materials": "May 06, 2026",
+  "low-code-no-code-vs-custom-development": "May 06, 2026",
+  "cms-wordpress-vs-custom-development": "May 06, 2026",
+  "osai-revolutionising-ai-interactions": "May 06, 2026",
+  "reducing-costs-nearshoring-outstaffing": "May 06, 2026",
+  "aws-beanstalk-to-ecs-migration": "May 06, 2026",
+  "aws-ecs-vs-beanstalk-perspective": "May 06, 2026",
+  "migrating-users-auth0-python": "May 06, 2026",
+  "changing-software-service-provider": "May 06, 2026",
+  "logistics-tech-tailored-solutions": "May 06, 2026",
+  "why-mvp-first": "May 06, 2026",
+  "seamless-software-project-handover": "May 06, 2026",
+  "adrenaline-ai-code-debugger": "May 05, 2026",
+  "lessons-from-london-tech-week-ai": "May 06, 2026",
+  "ai-engineering-outstaffing": "May 05, 2026",
+  "switch-ai-engineering-partner": "May 04, 2026",
+  "running-ai-engineering-pods-across-continents": "May 05, 2026",
+  "ai-project-handover": "May 04, 2026",
+  "senior-engineers-ai-leverage": "May 06, 2026",
+  "adrenaline-ai-debugger-case-study": "May 05, 2026",
+  "ai-native-automation-crm-erp-iot": "May 05, 2026",
+  "ai-agents-manufacturing-operations": "May 05, 2026",
+  "ai-engineering-pricing-fixed-vs-time-materials": "May 06, 2026",
+  "ship-ai-mvp-six-weeks": "May 06, 2026",
+  "ai-discovery-mission-de-risk-ai-products": "May 06, 2026",
+  "top-nearshore-ai-development-agencies-europe": "Oct 20, 2026"
+};
+
 const POSTS = [
   {
     slug: "reduce-admin-work-medical-clinic",
@@ -1929,7 +1962,7 @@ function BlogPostPage({ slug }) {
           </div>
           <div className="blog-single-meta">
             <span className="blog-cat-pill">{post.cat}</span>
-            <span className="blog-single-date">{post.date} · {post.read}</span>
+            <span className="blog-single-date">{post.date}{POST_UPDATED[post.slug] ? " · Updated " + POST_UPDATED[post.slug] : ""} · {post.read}</span>
           </div>
           <h1 className="blog-single-title">{post.title}</h1>
           <p className="blog-single-sub">{post.subtitle}</p>
@@ -1966,6 +1999,10 @@ function BlogPostPage({ slug }) {
               </div>
               <div className="blog-sidebar-label" style={{ marginTop: 20 }}>Published</div>
               <div className="blog-sidebar-date">{post.date}</div>
+              {POST_UPDATED[post.slug] && (<>
+                <div className="blog-sidebar-label" style={{ marginTop: 12 }}>Updated</div>
+                <div className="blog-sidebar-date">{POST_UPDATED[post.slug]}</div>
+              </>)}
               <div className="blog-sidebar-label" style={{ marginTop: 12 }}>Reading time</div>
               <div className="blog-sidebar-date">{post.read}</div>
               <div className="blog-sidebar-label" style={{ marginTop: 12 }}>Category</div>
