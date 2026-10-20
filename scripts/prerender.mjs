@@ -333,7 +333,7 @@ function blogPostSchema(p) {
         "image": p.ogImage ? SITE + p.ogImage : DEFAULT_OG,
         "url": url,
         "mainEntityOfPage": url,
-        "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
+        "author": authorEntity(POST_AUTHORS[p.slug]),
         "publisher": ORG_REF,
         ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": BLOG_UPDATED[p.slug] || p.datePublished } : {}),
       },
@@ -343,6 +343,33 @@ function blogPostSchema(p) {
         { name: p.title, url: url },
       ]),
     ],
+  };
+}
+
+
+// Article authors: read from the visible bylines in project/blog.jsx (single source of truth),
+// linked to the Person entities on /about. LinkedIn only where confirmed.
+const AUTHOR_SAMEAS = {
+  "Nicu Mardari": ["https://www.linkedin.com/in/nicu-mardari-b39a3477/"],
+};
+const POST_AUTHORS = (() => {
+  const src = fs.readFileSync(path.join(ROOT, "project", "blog.jsx"), "utf-8");
+  const map = {};
+  const re = /slug:\s*"([^"]+)"[\s\S]*?author:\s*\{\s*name:\s*"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(src))) map[m[1]] = m[2];
+  return map;
+})();
+function authorEntity(name) {
+  if (!name) return { "@type": "Organization", "name": "7code", "url": SITE + "/" };
+  const id = SITE + "/#" + name.toLowerCase().replace(/[^a-z]+/g, "-");
+  return {
+    "@type": "Person",
+    "@id": id,
+    "name": name,
+    "url": SITE + "/about",
+    ...(AUTHOR_SAMEAS[name] ? { "sameAs": AUTHOR_SAMEAS[name] } : {}),
+    "worksFor": ORG_REF,
   };
 }
 
@@ -364,6 +391,10 @@ function resourceSchema(r) {
         "datePublished": r.datePublished,
         "dateModified": r.datePublished,
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: r.title, url: url },
+      ]),
     ],
   };
 }
