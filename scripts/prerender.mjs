@@ -27,6 +27,48 @@ const DEFAULT_OG = SITE + "/project/uploads/hera-hero.jpg";
 // Page metadata (extracted from JSX data sources)
 // ──────────────────────────────────────────────────────────────────────────
 
+// SEO titles: one per route, used for <title>, og:title and twitter:title (approved by Nicu 2026-10-20).
+// Routes not listed fall back to the template default.
+const SEO_TITLES = {
+  "/about": "About 7code — AI Engineering Team in Cluj-Napoca",
+  "/process": "How We Build AI-Native Products | 7code",
+  "/contact": "Contact 7code — Start an AI Engineering Project",
+  "/case-studies": "AI & Software Case Studies | 7code",
+  "/service/ai-product-engineering": "AI Product Engineering — Senior Nearshore Team | 7code",
+  "/service/system-integrations": "System Integration Services for AI Workloads | 7code",
+  "/service/ai-automation": "AI Process Automation Services | 7code",
+  "/service/cloud-agentic-infra": "Cloud & Agentic Infrastructure for AI Products | 7code",
+  "/service/ai-outstaffing": "AI Engineering Outstaffing — Senior Engineers | 7code",
+  "/service/llm-agent-development": "LLM & AI Agent Development Services | 7code",
+  "/case-study/revote": "ReVote: Remote Voting for the European Parliament | 7code",
+  "/case-study/cloud-of-legacy": "Cloud of Legacy: Secure Digital Inheritance | 7code",
+  "/case-study/melsonic": "Melsonic: AI Guitar Learning with Live Feedback | 7code",
+  "/case-study/lendit": "Lendit: Peer-to-Peer Rental Marketplace | 7code",
+  "/expertise/healthcare": "AI Software Development for Healthcare | 7code",
+  "/expertise/finance": "AI Software Development for Finance | 7code",
+  "/expertise/energy": "AI Software Development for Energy & Utilities | 7code",
+  "/expertise/defence": "AI Software Development for Defence & Security | 7code",
+  "/expertise/hr": "AI Software Development for HR | 7code",
+  "/expertise/operations": "AI Software Development for Operations | 7code",
+  "/blog/ai-discovery-mission-de-risk-ai-products": "The AI Discovery Mission: de-risk AI in four weeks | 7code",
+  "/blog/ai-engineering-pricing-fixed-vs-time-materials": "Fixed price vs. T&M for AI engineering: LLM budgets | 7code",
+  "/blog/senior-engineers-ai-leverage": "Why senior engineers with AI beat junior copilots | 7code",
+  "/blog/lessons-from-london-tech-week-ai": "Lessons from London Tech Week: an AI-first lens | 7code",
+  "/blog/logistics-tech-tailored-solutions": "AI-native logistics: beating the coordination tax | 7code",
+  "/blog/changing-software-service-provider": "How to change your software service provider | 7code",
+  "/blog/aws-beanstalk-to-ecs-migration": "AWS Beanstalk to ECS Fargate: AI-engineering recipe | 7code",
+  "/blog/aws-ecs-vs-beanstalk-perspective": "Why I moved AI workloads from Beanstalk to Fargate | 7code",
+  "/blog/why-mvp-first": "Why MVP first? The case for minimum viable products | 7code",
+  "/blog/seamless-software-project-handover": "The art of a seamless software project handover | 7code",
+  "/blog/cms-wordpress-vs-custom-development": "WordPress vs. custom development: how to choose | 7code",
+  "/blog/osai-revolutionising-ai-interactions": "Osai: revolutionising AI interactions with 7Code | 7code",
+  "/blog/low-code-no-code-vs-custom-development": "Low-code vs. custom development: how to choose | 7code",
+  "/blog/reducing-costs-nearshoring-outstaffing": "Dev cost savings through nearshoring and outstaffing | 7code",
+  "/blog/migrating-users-auth0-python": "Migrating users between Auth0 tenants in Python | 7code",
+  "/blog/fixed-price-vs-time-and-materials": "Fixed price vs. time and materials for software | 7code",
+  "/blog/7code-discovery-mission": "7Code's Discovery Mission: de-risk software builds | 7code"
+};
+
 const MAIN_PAGES = [
   {
     path: "/about",
@@ -519,7 +561,7 @@ for (const p of MAIN_PAGES) {
   }
   const html = renderPage({
     pathname: p.path,
-    title: p.title,
+    title: SEO_TITLES[p.path] || p.title,
     description: p.description,
     ogImage: DEFAULT_OG,
     schema,
@@ -532,7 +574,7 @@ console.log("\nServices:");
 for (const s of SERVICES) {
   const html = renderPage({
     pathname: "/service/" + s.slug,
-    title: s.title + " — 7Code",
+    title: SEO_TITLES["/service/" + s.slug] || (s.title + " | 7code"),
     description: s.description,
     ogImage: s.ogImage ? SITE + s.ogImage : DEFAULT_OG,
     schema: serviceSchema(s),
@@ -544,7 +586,7 @@ console.log("\nExpertise:");
 for (const e of EXPERTISE) {
   const html = renderPage({
     pathname: "/expertise/" + e.slug,
-    title: e.title + " — 7Code",
+    title: SEO_TITLES["/expertise/" + e.slug] || (e.title + " | 7code"),
     description: e.description,
     ogImage: e.ogImage ? SITE + e.ogImage : DEFAULT_OG,
     schema: expertiseSchema(e),
@@ -556,7 +598,7 @@ console.log("\nCase studies:");
 for (const c of CASES) {
   const html = renderPage({
     pathname: "/case-study/" + c.slug,
-    title: c.title + " | 7Code",
+    title: SEO_TITLES["/case-study/" + c.slug] || (c.title + " | 7code"),
     description: c.description,
     ogImage: c.ogImage ? SITE + c.ogImage : DEFAULT_OG,
     schema: caseStudySchema(c),
@@ -568,7 +610,7 @@ console.log("\nBlog posts:");
 for (const p of BLOG_POSTS) {
   const html = renderPage({
     pathname: "/blog/" + p.slug,
-    title: p.title + " | 7Code Blog",
+    title: SEO_TITLES["/blog/" + p.slug] || (p.title + " | 7code"),
     description: p.description,
     ogImage: DEFAULT_OG,
     schema: blogPostSchema(p),

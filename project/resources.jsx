@@ -267,18 +267,7 @@ const RESOURCES_DATA = {
 function ResourcePage({ slug }) {
   const page = RESOURCES_DATA[slug];
 
-  React.useEffect(() => {
-    if (!page) return;
-    const prevTitle = document.title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = page.title + " | 7code";
-    if (descEl && page.metaDescription) descEl.setAttribute("content", page.metaDescription);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, [slug]);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   if (!page) {
     return (

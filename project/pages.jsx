@@ -4,27 +4,7 @@ const { useState: useStateP, useEffect: useEffectP } = React;
 const SITE_ROOT = "https://www.7code.tech";
 
 function useSeoMeta(title, desc) {
-  useEffectP(() => {
-    const prevTitle = document.title;
-    document.title = title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl && desc) descEl.setAttribute("content", desc);
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    const twTitle = document.querySelector('meta[name="twitter:title"]');
-    const twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (ogTitle) ogTitle.setAttribute("content", title);
-    if (ogDesc && desc) ogDesc.setAttribute("content", desc);
-    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || window.location.pathname || "/"));
-    if (twTitle) twTitle.setAttribute("content", title);
-    if (twDesc && desc) twDesc.setAttribute("content", desc);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth).
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -175,14 +155,7 @@ function ProcessPage() {
 // ABOUT
 // ──────────────────────────────────────────────────────────────────
 function AboutPage() {
-  React.useEffect(() => {
-    const prev = document.title;
-    document.title = "About 7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania";
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl) descEl.setAttribute("content", "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.");
-    return () => { document.title = prev; if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc); };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   const stats = [
     { v: "2017", l: "Founded in Cluj-Napoca" },

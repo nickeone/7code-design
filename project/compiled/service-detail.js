@@ -655,17 +655,9 @@ function ServiceDetailPage({
   };
   const SvcIcon = iconMap[svc.icon] || Icon.code;
   const relatedCases = svc.cases.map(s => typeof CASES !== "undefined" && CASES[s] ? CASES[s] : null).filter(Boolean);
-  React.useEffect(() => {
-    const prevTitle = document.title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = svc.seoTitle || "7Code, " + svc.title;
-    if (descEl && svc.metaDescription) descEl.setAttribute("content", svc.metaDescription);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, [slug]);
+
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
+
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
   }, /*#__PURE__*/React.createElement("section", {

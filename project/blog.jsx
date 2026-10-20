@@ -1750,19 +1750,7 @@ function BlogListPage() {
   const filtered = active === "All" ? rest : POSTS.filter(p => p.cat === active);
   const showFeatured = active === "All";
 
-  useEffectBL(() => {
-    const t = "Blog, AI Engineering, Product & Operations | 7Code";
-    const d = "Field notes from 7code's AI engineering practice: LLM features, agentic workflows, AI MVPs, and production AI — written by the team building them in Cluj-Napoca.";
-    document.title = t;
-    setMeta("description", d);
-    setMeta("og:title", t, "property");
-    setMeta("og:description", d, "property");
-    setMeta("og:type", "website", "property");
-    setMeta("og:url", SITE_ORIGIN_BL + "/blog", "property");
-    setMeta("twitter:title", t, "name");
-    setMeta("twitter:description", d, "name");
-    setCanonical(SITE_ORIGIN_BL + "/blog");
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   return (
     <div className="page">
@@ -1927,21 +1915,7 @@ function BlogPostPage({ slug }) {
   const related = POSTS.filter(p => p.slug !== post.slug && p.cat === post.cat).slice(0, 2);
   const nextPost = POSTS[(POSTS.indexOf(post) + 1) % POSTS.length];
 
-  useEffectBL(() => {
-    const t = post.title + " | 7Code Blog";
-    const d = post.subtitle;
-    const url = SITE_ORIGIN_BL + "/blog/" + post.slug;
-    document.title = t;
-    setMeta("description", d);
-    setMeta("og:title", t, "property");
-    setMeta("og:description", d, "property");
-    setMeta("og:type", "article", "property");
-    setMeta("og:url", url, "property");
-    setMeta("twitter:title", t, "name");
-    setMeta("twitter:description", d, "name");
-    setCanonical(url);
-    return () => {};
-  }, [post.slug]);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   return (
     <div className="page">
