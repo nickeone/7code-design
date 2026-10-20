@@ -706,26 +706,7 @@ function ContactPage() {
     style: {
       color: "var(--slate-500)"
     }
-  }, "Cluj-Napoca, Romania"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: "var(--bg-cyan-50)",
-      border: "1px solid var(--bg-cyan-100)",
-      borderRadius: "var(--radius-lg)",
-      padding: 24,
-      marginTop: 16
-    }
-  }, /*#__PURE__*/React.createElement("strong", {
-    style: {
-      display: "block",
-      marginBottom: 6,
-      fontFamily: "var(--font-display)"
-    }
-  }, "Currently accepting new partnerships"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--slate-500)",
-      fontSize: 14
-    }
-  }, "For Q2 2026. We typically respond within 24 hours."))), /*#__PURE__*/React.createElement("div", {
+  }, "Cluj-Napoca, Romania")))), /*#__PURE__*/React.createElement("div", {
     className: "form-card reveal"
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "form-success"

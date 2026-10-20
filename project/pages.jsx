@@ -573,10 +573,6 @@ function ContactPage() {
                 <span className="icon-tile"><Icon.pin /></span>
                 <div><strong>Office</strong><a href="https://share.google/kSWr5AJABJj33MMVu" target="_blank" rel="noopener noreferrer" style={{ color: "var(--slate-500)" }}>Cluj-Napoca, Romania</a></div>
               </div>
-              <div style={{ background: "var(--bg-cyan-50)", border: "1px solid var(--bg-cyan-100)", borderRadius: "var(--radius-lg)", padding: 24, marginTop: 16 }}>
-                <strong style={{ display: "block", marginBottom: 6, fontFamily: "var(--font-display)" }}>Currently accepting new partnerships</strong>
-                <span style={{ color: "var(--slate-500)", fontSize: 14 }}>For Q2 2026. We typically respond within 24 hours.</span>
-              </div>
             </div>
 
             <div className="form-card reveal">
