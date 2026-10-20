@@ -1540,7 +1540,7 @@ function FAQPage() {
     a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
   }, {
     q: "How much does a project with 7code cost?",
-    a: "Senior engineers start from EUR 45/h, and projects start from EUR 50,000. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
+    a: "Senior engineers start from EUR 45/h. Product and engineering projects start from EUR 50,000; automation pilots start from EUR 10,000. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
   }, {
     q: "Does 7code sign NDAs?",
     a: "Yes. 7code signs NDAs before any substantive technical discussion. Clients may use their own NDA paper or 7code’s standard mutual NDA. All engineers placed on client projects sign individual confidentiality agreements. IP developed under a 7code engagement belongs to the client by default, with explicit assignment clauses included in the master services agreement."
@@ -1585,7 +1585,7 @@ function FAQPage() {
     a: "In staff augmentation, 7code provides engineers who join your existing team under your management. You direct the work. A dedicated team means 7code manages delivery end-to-end — engineers, tech lead, and delivery governance included. Staff augmentation is best for teams with internal technical leadership that need extra capacity. A dedicated team is best when you don't have internal engineering leadership or want to move faster than hiring allows."
   }, {
     q: "What are 7code's engineering rates?",
-    a: "Senior engineers start from €45/hour, and projects start from €50,000. The final rate depends on seniority, scope and team size. Contact office@7code.ro for an estimate."
+    a: "Senior engineers start from €45/hour. Product and engineering projects start from €50,000; automation pilots start from €10,000. The final rate depends on seniority, scope and team size. Contact office@7code.ro for an estimate."
   }, {
     q: "Is 7code GDPR compliant?",
     a: "Yes. 7code operates under Romanian and EU law, meaning GDPR compliance is built-in — not an add-on. Our engineers understand EU data processing requirements and can correctly configure data processing agreements with model providers (OpenAI, Anthropic, Google). For UK clients post-Brexit, we structure arrangements to comply with UK GDPR equivalents. This is a key nearshore advantage: EU-jurisdiction teams are GDPR-native by default."
@@ -1600,7 +1600,7 @@ function FAQPage() {
     a: "Quality is enforced through: senior-only hiring (70% of engineers are senior-level); multi-stage technical screening including case studies; delivery governance with weekly sprint demos and monthly steering committees; and AI-specific quality gates — golden datasets, regression tests on every model version change, and human-in-the-loop checkpoints for high-stakes outputs. We track velocity, predictability, bug escape rate, and team utilisation as standard KPIs."
   }, {
     q: "What engagement models does 7code offer?",
-    a: "Three primary models: Staff Augmentation (client-managed, 7code provides engineers); Dedicated Teams (7code-managed delivery with full governance); End-to-End Product Development (7code owns the full lifecycle). We also offer four productized packages: Operational Quick Scan (2–3 weeks), AI-Ready Ops Blueprint (4–6 weeks), Automation Pilot (6–10 weeks), and Department Automation Sprint (10–16 weeks)."
+    a: "Three primary models: Staff Augmentation (client-managed, 7code provides engineers); Dedicated Teams (7code-managed delivery with full governance); End-to-End Product Development (7code owns the full lifecycle). We also offer four productized packages: Operational Quick Scan (2–3 weeks), AI-Ready Ops Blueprint (4–6 weeks), Automation Pilot (4–6 weeks), and Department Automation Sprint (10–16 weeks)."
   }, {
     q: "Why choose a Romanian engineering team?",
     a: "Romania is a tier-1 European engineering hub. Cluj-Napoca hosts R&D centres for major EU tech companies and produces thousands of IT graduates annually. Key advantages: 1–2 hour timezone overlap with the UK; 40–60% below London rates (15–25% below Poland); EU legal framework (GDPR-native); strong technical education and high English proficiency. 7code adds a senior-only hiring model on top of this baseline."
