@@ -64,6 +64,7 @@ const RESOURCES_DATA = {
     title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)",
     metaDescription: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.",
     datePublished: "2026-10-20",
+    author: "Nicu Mardari, CEO",
     sections: [
       {
         heading: "Does AI automation pay off for a small business?",
@@ -419,7 +420,7 @@ function ResourcePage({ slug }) {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Resource</span>
           <h1 style={{ maxWidth: 800, margin: "0 auto" }}>{page.title}</h1>
-          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished}{page.dateModified ? " · Updated " + page.dateModified : ""} · 7code AI Engineering</p>
+          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished}{page.dateModified ? " · Updated " + page.dateModified : ""} · {page.author ? "By " + page.author : "7code AI Engineering"}</p>
         </div>
       </section>
 

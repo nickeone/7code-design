@@ -76,6 +76,7 @@ const RESOURCES_DATA = {
     title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)",
     metaDescription: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.",
     datePublished: "2026-10-20",
+    author: "Nicu Mardari, CEO",
     sections: [{
       heading: "Does AI automation pay off for a small business?",
       blocks: [{
@@ -514,7 +515,7 @@ function ResourcePage({
       color: "var(--slate-500)",
       marginTop: 8
     }
-  }, "Published ", page.datePublished, page.dateModified ? " · Updated " + page.dateModified : "", " \xB7 7code AI Engineering"))), /*#__PURE__*/React.createElement("section", {
+  }, "Published ", page.datePublished, page.dateModified ? " · Updated " + page.dateModified : "", " \xB7 ", page.author ? "By " + page.author : "7code AI Engineering"))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container",
