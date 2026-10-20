@@ -88,7 +88,8 @@ const BLOG_UPDATED = {
   "ai-engineering-pricing-fixed-vs-time-materials": "2026-05-06",
   "ship-ai-mvp-six-weeks": "2026-05-06",
   "ai-discovery-mission-de-risk-ai-products": "2026-05-06",
-  "top-nearshore-ai-development-agencies-europe": "2026-10-20"
+  "top-nearshore-ai-development-agencies-europe": "2026-10-20",
+  "how-to-hire-nearshore-ai-engineers": "2026-10-20"
 };
 
 const MAIN_PAGES = [
@@ -178,10 +179,10 @@ const CASES = [
 ];
 
 const RESOURCES = [
-  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12" },
+  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
-  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12" },
-  { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12" },
+  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
+  { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "nearshore-romania-vs-offshore-asia", title: "Nearshore Romania vs Offshore Asia: A Practical Guide for European Businesses", description: "A data-driven comparison of nearshore Romania and offshore India for European tech buyers — time zones, cost, quality, GDPR, and total cost of ownership.", datePublished: "2026-05-12" },
   { slug: "build-ai-in-house-vs-partner", title: "Build AI In-House vs With a Partner: The 2026 Decision Framework", description: "A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.", datePublished: "2026-05-12" },
 ];
@@ -372,7 +373,7 @@ function resourceSchema(r) {
         "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
         "publisher": ORG_REF,
         "datePublished": r.datePublished,
-        "dateModified": r.datePublished,
+        "dateModified": r.dateModified || r.datePublished,
       },
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },

@@ -7,6 +7,7 @@ const RESOURCES_DATA = {
     title: "AI Automation for SMEs: The Complete Guide (2026)",
     metaDescription: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.",
     datePublished: "2026-05-12",
+    dateModified: "2026-10-20",
     sections: [
       {
         heading: "Introduction",
@@ -39,6 +40,8 @@ const RESOURCES_DATA = {
       {
         heading: "Frequently Asked Questions",
         faqs: [
+          { q: "How are SMEs using AI?", a: "Most small and mid-sized firms start with work they already do by hand every day: reading invoices and documents, answering routine customer questions, sorting emails and leads, and pulling numbers into reports. They connect an AI model to the systems they already use, such as their accounting, CRM or helpdesk, and keep a person checking the output." },
+          { q: "What are good AI automation services for small businesses?", a: "Most SME AI automation services fall into five types: document processing (reading invoices, matching them to orders and posting them to Xero or NetSuite); customer support assistants that answer common questions from your own content and pass hard cases to a person; recruitment screening that ranks CVs against a role; reporting and anomaly alerts on finance dashboards; and sales data enrichment in HubSpot or Salesforce. Pick the service that removes the most manual hours from one process, and check it connects to the systems you already use." },
           { q: "How long does AI automation take to implement?", a: "A focused automation for a single process — invoice processing, CV screening, report generation — typically takes four to eight weeks from kick-off to go-live. More complex multi-process programmes run twelve to twenty weeks. 7code uses two-week sprint cycles so you see working software throughout." },
           { q: "What does AI automation cost?", a: "Project costs vary by scope. Ongoing cloud infrastructure and API costs are typically £200–£1,500 per month depending on volume. 7code provides a fixed-price proposal after a two-week Blueprint phase. Contact office@7code.ro for a scoped estimate." },
           { q: "Do I need technical staff to use AI automation?", a: "No. 7code builds automations with business-user interfaces — exception queues, dashboards, and alert notifications — that require no technical knowledge to operate." },
@@ -110,7 +113,12 @@ const RESOURCES_DATA = {
     title: "Nearshore Software Development in Romania: The 2026 Guide",
     metaDescription: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.",
     datePublished: "2026-05-12",
+    dateModified: "2026-10-20",
     sections: [
+      {
+        heading: "What is nearshore software development in Romania?",
+        body: "Nearshore software development in Romania means hiring engineers based in Romania to build or maintain your software while you work from the UK or elsewhere in Europe. Romania is in the EU, so GDPR applies. It is two hours ahead of the UK, which leaves most of the working day shared.",
+      },
       {
         heading: "Introduction",
         body: "The question of where to build your software team — onshore, nearshore, or offshore — has become more nuanced, and more consequential, than at any point in the industry's history. Remote-first norms, AI-assisted development, and the globalisation of engineering talent have reshaped the calculus. Yet despite all this change, geography still matters: for time zone alignment, for compliance, for cultural fit, and for the sustained quality that only comes from engineers who treat their work as a career, not a contract. This guide makes the case for Romania as the leading nearshore software destination for UK and EU technology buyers in 2026.",
@@ -121,15 +129,15 @@ const RESOURCES_DATA = {
       },
       {
         heading: "Why Romania: The Structural Case",
-        body: "Romania's emergence as a tier-one nearshore engineering destination is the product of three decades of investment in technical education, EU accession in 2007, and a software industry that has grown consistently faster than the broader economy. EU Membership since 2007 means GDPR compliance by default — Romanian companies operating under Romanian law are EU data processors. IP protection under EU law provides a familiar legal context for UK and EU buyers. Engineering Education: Romania has two universities consistently ranked among Europe's strongest for computer science — the Polytechnic University of Bucharest (Politehnica) and the Technical University of Cluj-Napoca (UTCN). English Proficiency: Romania ranks consistently in the top ten globally for English proficiency among non-native speakers. Time Zone: Romania operates in Eastern European Time (EET, UTC+2 in winter / UTC+3 in summer — CET+1 relative to UK year-round), giving approximately seven hours of genuine daily overlap with UK clients.",
+        body: "Romania's emergence as a tier-one nearshore engineering destination is the product of three decades of investment in technical education, EU accession in 2007, and a software industry that has grown consistently faster than the broader economy. EU Membership since 2007 means GDPR compliance by default — Romanian companies operating under Romanian law are EU data processors. IP protection under EU law provides a familiar legal context for UK and EU buyers. Engineering Education: Romania has two universities consistently ranked among Europe's strongest for computer science — the Polytechnic University of Bucharest (Politehnica) and the Technical University of Cluj-Napoca (UTCN). English Proficiency: the EF English Proficiency Index 2025 ranks Romania 11th of 123 countries. Time Zone: Romania operates in Eastern European Time (EET, UTC+2 in winter / UTC+3 in summer), two hours ahead of the UK year-round, which leaves most of the working day shared with UK clients.",
       },
       {
         heading: "Cluj-Napoca as a Technology Hub",
-        body: "Cluj-Napoca is Romania's second-largest city and its undisputed technology capital. With a population of approximately 330,000 and one of Romania's largest engineering faculties at UTCN, Cluj has the talent density and infrastructure of a mature tech hub. Major companies with Cluj engineering presence include Bosch, Continental, Emerson, Cognizant, and Endava. Senior software engineer total employment cost in Cluj-Napoca is approximately 25–35% of the equivalent cost in London. Cluj-Napoca has direct flight connections to London, Amsterdam, Frankfurt, and other major European hubs — important when in-person collaboration is required.",
+        body: "Cluj-Napoca is Romania's second-largest city and its undisputed technology capital. With a population of approximately 330,000 and one of Romania's largest engineering faculties at UTCN, Cluj has the talent density and infrastructure of a mature tech hub. Major companies with Cluj engineering presence include Bosch, Continental, Emerson, Cognizant, and Endava. Cluj-Napoca has direct flight connections to London, Amsterdam, Frankfurt, and other major European hubs — important when in-person collaboration is required.",
       },
       {
         heading: "Romanian Engineering Culture",
-        body: "Four characteristics define Romanian engineering culture: Formal CS training as the norm — the majority of Romanian software engineers hold CS or engineering degrees. Attention to quality and completeness — Romanian engineering culture tends toward thoroughness, with lower defect rates and more complete documentation. Low turnover compared with India and Ukraine — Romanian engineers in established companies tend to build long-term careers, which matters enormously for clients who rely on accumulated product knowledge. Direct communication style — Romanian professional culture is more direct than many offshore locations. Engineers will raise concerns, flag technical debt, and push back on unrealistic timelines — in English, in real time.",
+        body: "Four characteristics define Romanian engineering culture: Formal CS training as the norm — the majority of Romanian software engineers hold CS or engineering degrees. Attention to quality and completeness — Romanian engineering culture tends toward thoroughness, with lower defect rates and more complete documentation. Direct communication style — Romanian professional culture is more direct than many offshore locations. Engineers will raise concerns, flag technical debt, and push back on unrealistic timelines — in English, in real time.",
       },
       {
         heading: "How to Evaluate a Romanian Software Partner: 5 Criteria",
@@ -140,11 +148,15 @@ const RESOURCES_DATA = {
         body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
       },
       {
+        heading: "Romania vs Poland vs Portugal for UK companies",
+        body: "All three are EU members: Portugal since 1986, Poland since 2004 and Romania since 2007. GDPR applies in each. Mainland Portugal shares UK time. Poland is one hour ahead and Romania two, so all three give a near-full shared working day. On English, the EF English Proficiency Index 2025 ranks Portugal 6th, Romania 11th and Poland 15th of 123 countries. On cost, Lemon.io's September 2026 contract data puts senior median rates at about $45/hr in Romania, $41.70/hr in Poland and $40–45/hr in Portugal. That makes rate a weak way to choose between them. Poland has the largest market of the three. Portugal suits teams that want no time difference. Romania suits teams that want EU-based engineers in a smaller, less crowded market.",
+      },
+      {
         heading: "Frequently Asked Questions",
         faqs: [
           { q: "What is nearshore software development?", a: "Nearshore software development means engaging an engineering team in a country geographically and time-zone adjacent to your own. For UK and EU buyers, nearshore typically means Central or Eastern Europe. It offers significant cost advantages over onshore (25–50%) while maintaining time zone overlap, cultural proximity, and compliance alignment." },
           { q: "Is Romania in the EU?", a: "Yes. Romania has been an EU member state since 2007. Romanian software companies operate under EU data protection law (GDPR), EU IP protection frameworks, and EU employment regulations." },
-          { q: "How much cheaper is nearshore Romania compared with the UK?", a: "Senior software engineer costs in Cluj-Napoca are approximately 25–35% of the equivalent total cost in London. 7code's rate card runs from EUR 30–35/h for mid-level engineers to EUR 60–80/h for AI architects." },
+          { q: "How much cheaper is nearshore Romania compared with the UK?", a: "Rates vary by seniority and role. 7code's rate card runs from EUR 30–35/h for mid-level engineers to EUR 60–80/h for AI architects." },
           { q: "Does working with a Romanian team require Romanian language skills?", a: "No. Business English is the standard working language across Romania's technology sector. 7code communicates with all clients exclusively in English." },
           { q: "How do I visit my Romanian development team in person?", a: "Cluj-Napoca has direct flights from London, Amsterdam, Frankfurt, Vienna, and other major European hubs. Flight time from London is approximately three hours. 7code welcomes on-site visits and recommends quarterly in-person sessions for longer-term engagements." },
           { q: "Is my data safe with a Romanian software company?", a: "Romanian companies operating under Romanian law are EU data processors — subject to the same GDPR obligations as UK and EU companies. 7code is happy to operate within the client's own data processing framework. All 7code systems are hosted in EU-region cloud infrastructure by default." },
@@ -158,6 +170,7 @@ const RESOURCES_DATA = {
     title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?",
     metaDescription: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.",
     datePublished: "2026-05-12",
+    dateModified: "2026-10-20",
     sections: [
       {
         heading: "Overview",
@@ -185,6 +198,9 @@ const RESOURCES_DATA = {
           { q: "Which model does 7code recommend?", a: "7code recommends a dedicated team for most ongoing AI product development engagements, and staff augmentation for specific skill-gap fills within a client's existing team. The deciding factor is usually management capacity: if the client has a strong technical lead who can manage individuals, staff aug works. If the client wants to manage outcomes and have the team manage itself, dedicated is stronger." },
           { q: "Can I switch from staff aug to a dedicated team mid-project?", a: "Yes. 7code supports transitions between models. The most common pattern is starting with one or two augmented engineers who build context, then transitioning to a dedicated team structure as the engagement scope grows." },
           { q: "What does staff augmentation mean?", a: "Staff augmentation means adding external engineers to your existing team on a temporary or ongoing basis. The engineers work under your direct management, inside your sprints and tools, filling specific skill gaps without the cost and delay of permanent hiring. You keep full control of the work; the provider handles employment, payroll, and replacement risk." },
+          { q: "What are the different types of staff augmentation?", a: "There are three common types. Individual augmentation adds one or two engineers to fill a skill gap in your team. Team extension adds a small group that works inside your process under your lead. A dedicated team is a full squad, with its own lead and QA, working only on your product. You direct the work in all three." },
+          { q: "What is the difference between staff augmentation and outsourcing?", a: "With staff augmentation, you add external engineers to your own team. You direct their work, and you own delivery and risk. You usually pay per person on time and materials. With project outsourcing, you hand a defined scope to a vendor. The vendor plans and delivers it and is accountable to the specification. Pricing is usually a fixed bid or tied to milestones. A simple test: when something goes wrong, whose problem is it? If it is yours, it is augmentation. If it is the vendor's, it is outsourcing. Augmentation suits changing work you want to steer. Outsourcing suits clear, fixed-scope projects." },
+          { q: "What is the difference between staff augmentation and managed services?", a: "Staff augmentation gives you people. Managed services give you an outcome. Augmented engineers join your team, you manage them, and you pay for their time. A managed service provider runs a whole function, such as support or infrastructure, to an agreed service level. The provider manages its own staff, carries the SLA risk and usually bills a monthly retainer. Choose augmentation when you need extra hands on work you lead. Choose managed services when the function is stable and you do not want to run it day to day." },
           { q: "What is the difference between staff augmentation and RPO?", a: "Staff augmentation supplies working engineers who remain employed by the provider and embedded in your team. RPO (Recruitment Process Outsourcing) outsources your hiring process itself — the RPO firm recruits candidates who become your own employees. Choose staff augmentation for immediate capacity; choose RPO when you want to grow permanent internal headcount." },
         ],
       },
@@ -287,7 +303,7 @@ function ResourcePage({ slug }) {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Resource</span>
           <h1 style={{ maxWidth: 800, margin: "0 auto" }}>{page.title}</h1>
-          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished} · 7code AI Engineering</p>
+          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished}{page.dateModified ? " · Updated " + page.dateModified : ""} · 7code AI Engineering</p>
         </div>
       </section>
 
