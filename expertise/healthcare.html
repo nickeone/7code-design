@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="https://www.7code.tech/project/uploads/hera-hero.jpg" />
 <meta name="twitter:image:alt" content="AI-Native Software Engineering Agency — 7code" />
 
-<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService · FAQPage -->
+<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,52 +102,6 @@
           "position": 3,
           "name": "Healthcare",
           "item": "https://www.7code.tech/expertise/healthcare"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.7code.tech/expertise/healthcare#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Are you HIPAA-compliant by default?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Every healthcare engagement starts with a compliance architecture review, encryption in transit and at rest, audit logs, RBAC, BAA-ready vendor stack, and the technical safeguards your compliance team can sign off in week one. We've shipped HIPAA-compliant platforms for fertility (Hera Health Tech), telehealth, and hospital settings, and we ship GDPR controls alongside HIPAA so cross-border deployments don't need re-architecting."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you do EHR / EMR integrations?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. HL7 v2 and FHIR R4 are our defaults. We've integrated with Epic, Cerner, Meditech, and custom HL7 systems, including the parts most teams skip, clinical vocabulary mapping (SNOMED, LOINC, ICD-10), conflict resolution on bi-directional sync, and the audit trail your auditors actually want to see."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you build LLM / AI features for healthcare?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, but always grounded. We use RAG over verified clinical content (with frameworks like LlamaIndex), citation-required answers, refusal patterns when confidence is low, and a held-out evaluation set scored on hallucination rate. AI features in healthcare have to be clinically reliable and auditable; we treat that as a hard constraint, not a stretch goal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you handle clinician workflow integration?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "We run structured observation sessions and co-design workshops with the clinicians who'll use the system. Alert fatigue and workflow friction are caught here, not in production. UI iterations continue against simulated and shadow workflows until triage time drops measurably, only then do we ship."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does a healthcare MVP take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Three months for a focused MVP with one core clinical workflow (Hera shipped in three months). 12-week telehealth platforms are typical. Full enterprise EHR-integrated platforms run 16–24 weeks. Compliance work starts in week one regardless, we do not ship clinical systems without it."
-          }
         }
       ]
     }

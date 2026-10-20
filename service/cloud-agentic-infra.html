@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="https://www.7code.tech/project/uploads/g42-fleet-hero.jpg" />
 <meta name="twitter:image:alt" content="AI-Native Software Engineering Agency — 7code" />
 
-<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService · FAQPage -->
+<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,76 +102,6 @@
           "position": 3,
           "name": "Cloud & Agentic Infrastructure",
           "item": "https://www.7code.tech/service/cloud-agentic-infra"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.7code.tech/service/cloud-agentic-infra#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is cloud agentic infrastructure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Cloud agentic infrastructure is the set of cloud-native services, orchestration layers, data pipelines, and security controls that underpin AI agent systems in production. It covers compute for inference, vector databases, message queues for agent coordination, observability tooling, and the networking and IAM policies that keep agentic workloads secure and compliant at scale."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which cloud providers does 7code support for agentic infrastructure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "7code designs and deploys agentic infrastructure on AWS, Google Cloud Platform, and Microsoft Azure. For clients with existing cloud commitments, 7code works within the incumbent provider. Multi-cloud and hybrid architectures — where sensitive model inference stays on-premises while orchestration runs in the cloud — are supported for regulated industries."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Why does AI require specialised cloud infrastructure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "AI workloads have fundamentally different profiles from conventional applications: they require GPU or TPU compute for inference, low-latency access to vector databases, high-throughput pipelines for data ingestion, and sophisticated observability to monitor model behaviour over time. Standard cloud setups are inadequate — purpose-built agentic infrastructure reduces cost, latency, and operational risk significantly."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does 7code optimise AI infrastructure for latency and cost?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "7code uses a combination of model quantisation, intelligent caching of frequent LLM responses, spot/preemptible compute for batch inference, auto-scaling groups calibrated to actual traffic patterns, and CDN-layer caching for static AI outputs. Infrastructure is right-sized during a two-week Architecture Review before build, preventing over-provisioning from day one."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does 7code ensure agentic infrastructure scales with demand?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "7code designs infrastructure with horizontal scalability as a first principle: stateless inference services behind load balancers, Kubernetes-managed autoscaling, queue-based decoupling of agent tasks from inference compute, and database sharding strategies for vector stores. Load and stress testing is conducted before go-live; scaling thresholds are documented so clients can manage growth without emergency rearchitecting."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does 7code handle security and compliance for AI infrastructure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Security is embedded at design time: IAM roles follow least-privilege principles, all data at rest and in transit is encrypted, network segmentation isolates AI workloads from general systems, and audit logs capture all model interactions. For EU clients, infrastructure is GDPR-compliant by design. Regulated sectors receive additional controls aligned to sector-specific frameworks."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What monitoring and observability does 7code build into AI infrastructure?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard observability includes: model latency and error rate dashboards, token usage and cost tracking per agent, anomaly detection on output distributions, human-in-the-loop review queues for flagged outputs, and alerting for infrastructure events. 7code typically delivers observability via Grafana, Datadog, or AWS CloudWatch depending on the client’s existing tooling."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does 7code support migration from legacy infrastructure to cloud agentic architecture?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "7code conducts a Legacy Infrastructure Assessment to map existing systems, identify integration points, and define a phased migration path that keeps current operations running throughout. Migration is staged: infrastructure is rebuilt in parallel, workloads are migrated incrementally with rollback capability, and the legacy system is decommissioned only after the new architecture is validated in production."
-          }
         }
       ]
     }

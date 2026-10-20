@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="https://www.7code.tech/project/uploads/numerize-hero.jpg" />
 <meta name="twitter:image:alt" content="AI-Native Software Engineering Agency — 7code" />
 
-<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService · FAQPage -->
+<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,52 +102,6 @@
           "position": 3,
           "name": "Finance",
           "item": "https://www.7code.tech/expertise/finance"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.7code.tech/expertise/finance#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What do you mean by 'finance software'?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Two strands: (1) software for finance teams inside companies, treasury dashboards, ERP integrations, accounting automation, regulatory reporting; (2) FinTech products, payments, lending, embedded finance, venture-studio platforms. We've shipped both, including the marketing platform for Founders Factory (UK venture studio) and treasury-grade tooling with multi-entity consolidation."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which ERPs do you integrate with?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Native connectors for SAP, Oracle (Fusion + EBS), NetSuite, Microsoft Dynamics 365, and custom on-prem ERPs via SOAP / REST / file-drop. We handle the data-model mapping, delta sync, and the conflict resolution that generic iPaaS tools skip, including the reconciliation breaks that always show up at month-end."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you build for FinTech compliance (SOC 2, PCI-DSS, PSD2)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We design the technical safeguards into the architecture: encryption, audit logs, key rotation, segregation of duties, and an evidence pack for the audit. SOC 2 Type II readiness, PCI-DSS scope minimisation (using tokenisation), and PSD2 SCA / 3D Secure are within our defaults, not stretch goals."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do you handle correctness in finance dashboards?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Every aggregation is double-verified against source records. We ship a reconciliation test suite alongside the product, parallel-run the new system against the old for 30 days with daily variance reporting, and only cut over when the numbers match to the cent. Finance is unforgiving of schema mistakes, we treat correctness as a non-negotiable."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you handle payments and Stripe + 3D Secure billing?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, we've shipped Stripe + 3D Secure billing with bank-transfer fallback for enterprise procurement (Numerize, France: 6,000+ accounts), as well as multi-jurisdiction billing engines. We design subscription tiers, upgrade/downgrade flows, and the audit trail finance and tax teams expect."
-          }
         }
       ]
     }

@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="https://www.7code.tech/project/uploads/daily8-hero.png" />
 <meta name="twitter:image:alt" content="AI-Native Software Engineering Agency — 7code" />
 
-<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService · FAQPage -->
+<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,76 +102,6 @@
           "position": 3,
           "name": "LLM & Agent Development",
           "item": "https://www.7code.tech/service/llm-agent-development"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.7code.tech/service/llm-agent-development#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are LLM agents?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "LLM agents are AI systems that use large language models as a reasoning engine to plan, make decisions, and take actions — calling tools, querying databases, browsing the web, or triggering other systems — in pursuit of a defined goal. Unlike a simple chatbot, an agent can decompose complex tasks, retry on failure, and operate autonomously over multiple steps."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are common use cases for LLM agents in business?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Common enterprise use cases include: AI research agents that gather and synthesise information; customer support agents that resolve queries end-to-end; sales agents that enrich CRM records and draft outreach; compliance agents that monitor documents for regulatory changes; and operations agents that orchestrate multi-system workflows without human handoffs. 7code builds purpose-built agents for each context."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How much does it cost to build an LLM agent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Costs depend on scope and complexity. 7code provides fixed-price Discovery Sprints so clients understand architecture and cost before committing to the full build. Contact office@7code.ro for a scoped estimate."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does it take to build an LLM agent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A production-ready single-purpose LLM agent typically takes four to eight weeks to build, including discovery, architecture, development, evaluation, and deployment. Multi-agent systems or agents requiring deep integration with enterprise systems may take twelve to twenty weeks. 7code uses two-week sprint cycles with working demos at the end of each sprint."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the difference between prompt engineering and fine-tuning for LLM agents?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Prompt engineering shapes model behaviour through careful instruction design — it is fast, cheap, and reversible. Fine-tuning retrains a model on domain-specific data to bake in specialised knowledge or style — it is slower, more expensive, and harder to iterate. 7code defaults to prompt engineering and RAG for most business cases, reserving fine-tuning for when retrieval cannot meet accuracy requirements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does 7code handle hallucination and safety in LLM agent systems?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "7code implements guardrails at multiple levels: retrieval-augmented generation (RAG) to ground answers in verified data, output validation layers that check agent responses before acting, confidence thresholds that trigger human escalation, and audit logging of all agent decisions. For high-stakes domains — healthcare, finance, legal — additional human-in-the-loop checkpoints are mandatory design requirements."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are multi-agent systems and when does 7code recommend them?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Multi-agent systems are architectures where multiple specialised AI agents collaborate — one researches, one writes, one validates — coordinated by an orchestrator. 7code recommends multi-agent designs when tasks are too complex for a single agent, when parallel processing is needed for speed, or when separation of concerns reduces hallucination risk in high-stakes workflows."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which LLM does 7code recommend — OpenAI, Anthropic, or open-source?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Model selection depends on the use case. OpenAI GPT-4o suits broad reasoning and tool use. Anthropic Claude excels at long-context tasks and safety-critical applications. Open-source models (Llama, Mistral) are preferred when data must remain on-premises or costs at scale demand it. 7code is model-agnostic and selects based on accuracy, cost, latency, and compliance requirements."
-          }
         }
       ]
     }

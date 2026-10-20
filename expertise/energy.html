@@ -64,7 +64,7 @@
 <meta name="twitter:image" content="https://www.7code.tech/project/uploads/g42-fleet-hero.jpg" />
 <meta name="twitter:image:alt" content="AI-Native Software Engineering Agency — 7code" />
 
-<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService · FAQPage -->
+<!-- STRUCTURED DATA: Organization · WebSite · ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -102,52 +102,6 @@
           "position": 3,
           "name": "Energy & Utilities",
           "item": "https://www.7code.tech/expertise/energy"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.7code.tech/expertise/energy#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What IoT protocols and sensor stacks do you support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Protocol-agnostic ingestion: SCADA, Modbus (RTU + TCP), MQTT, OPC UA, custom TCP, and proprietary sensor stacks. We've built the device TCP server behind G42's ESTS fleet platform at EXPO 2020 Dubai, real-time telemetry, geofence rules, and trip event detection across the expo grounds. We normalise into a single canonical schema so analytics and ML pipelines downstream work with one model, not fifty."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you build predictive maintenance models?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. We train per-asset health models on historical failure data, maintenance logs, and environmental inputs, with the goal of giving operators actionable 10-day lead time, not binary alerts. The models are paired with a feedback loop so prediction accuracy improves as new failure events are labelled."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you handle real-time at scale?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. ESTS for EXPO 2020 ran a custom TCP server ingesting live telemetry across thousands of vehicles, with geofence rule evaluation in near real time and trip playback for incident reconstruction. We architect for 24/7 critical-infrastructure SLAs, no scheduled downtime, automated failover, and full observability."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you handle compliance for OT (operational technology)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, NERC CIP, IEC 62443, and ISO 27019 for the OT side, plus the IT-side compliance that matters for the data and reporting layer. We work alongside your security team from week one and treat segmentation between IT and OT as a hard architectural constraint."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How long does an energy / IoT platform take?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Six to nine months for a focused operations cockpit with predictive analytics. ESTS at EXPO 2020 ran 18 months of focused build plus 6 months of production maintenance, a full multi-tenant fleet platform at expo scale."
-          }
         }
       ]
     }
