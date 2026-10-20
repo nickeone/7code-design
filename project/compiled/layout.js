@@ -176,7 +176,8 @@ function Nav() {
     className: "nav-inner"
   }, /*#__PURE__*/React.createElement("a", {
     href: "/",
-    className: "brand"
+    className: "brand",
+    "aria-label": "7code home"
   }, /*#__PURE__*/React.createElement(Logo, {
     height: 28
   })), /*#__PURE__*/React.createElement("nav", {
@@ -311,7 +312,8 @@ function Footer() {
     className: "footer-brand"
   }, /*#__PURE__*/React.createElement("a", {
     href: "/",
-    className: "brand"
+    className: "brand",
+    "aria-label": "7code home"
   }, /*#__PURE__*/React.createElement(Logo, {
     height: 32,
     color: "#fff"

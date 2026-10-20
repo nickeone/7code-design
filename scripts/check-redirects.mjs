@@ -11,6 +11,7 @@
 const BASE = process.argv[2] || "https://www.7code.tech";
 
 const CASES = [
+  { from: "/blog/",                 to: "/blog" },
   { from: "/blog-7code/",           to: "/blog" },
   { from: "/blog-7code",            to: "/blog" },
   {
@@ -29,6 +30,8 @@ const CASES = [
   { from: "/pf/case-study-revote",  to: "/case-study/revote" },
   { from: "/service",               to: "/services" },
   { from: "/service/",              to: "/services" },
+  { from: "/case-study",            to: "/case-studies" },
+  { from: "/case-study/",           to: "/case-studies" },
   { from: "/home/",                 to: "/" },
   { from: "/home",                  to: "/" },
   { from: "/privacy-policy/",       to: "/privacy-policy" },

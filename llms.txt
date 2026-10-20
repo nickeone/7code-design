@@ -1,0 +1,62 @@
+# 7code
+
+> AI-native software engineering partner in Cluj-Napoca, Romania (Seven Code Development SRL, founded 2017). We design, build and operate AI products, LLM features, agent workflows and process automation for companies in the UK and Europe, and embed senior engineers in client teams.
+
+## Services
+
+- [Services — AI Engineering, Integrations & Automation | 7Code](https://www.7code.tech/services): 7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, product strategy, and LLM & agent development.
+- [AI Product Engineering — Senior Nearshore Team](https://www.7code.tech/service/ai-product-engineering): AI-native product engineering by 7Code. We design and ship LLM-powered web and mobile products end-to-end, agents, RAG, evals, and the cloud infrastructure to run them in production.
+- [System Integration Services for AI Workloads](https://www.7code.tech/service/system-integrations): System integrations by 7Code. We connect ERPs, CRMs, SaaS tools, data warehouses, and legacy systems into a single reliable data fabric, built to carry AI workloads on top.
+- [AI Process Automation Services](https://www.7code.tech/service/ai-automation): AI & process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, and shipped to production in six weeks.
+- [Cloud & Agentic Infrastructure for AI Products](https://www.7code.tech/service/cloud-agentic-infra): Cloud and agentic infrastructure by 7Code. AWS, GCP, and Azure foundations for AI products, agent pipelines (LangGraph, Temporal), vector stores, eval CI, and cost optimisation.
+- [AI Engineering Outstaffing — Senior Engineers](https://www.7code.tech/service/ai-outstaffing): AI engineering outstaffing by 7Code. Senior AI and ML engineers, production LLM, RAG, and MLOps experience, embedded in your team in 72 hours. Monthly rolling, no lock-in.
+- [LLM & AI Agent Development Services](https://www.7code.tech/service/llm-agent-development): Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.
+
+## Industries
+
+- [Industry Expertise — Healthcare, Finance, Energy, Defence | 7Code](https://www.7code.tech/expertise): 7Code's industry expertise across healthcare (HIPAA + HL7/FHIR), finance (ERP + treasury), energy (IoT + SCADA), defence and security, HR, and operations.
+- [AI Software Development for Healthcare](https://www.7code.tech/expertise/healthcare): HealthTech engineering by 7Code. HIPAA + GDPR-compliant clinical platforms, EHR (HL7 / FHIR) interoperability, telehealth, patient engagement, and AI-grounded clinical support, built end-to-end for clinics, hospitals, and FemTech / FertilityTech founders.
+- [AI Software Development for Finance](https://www.7code.tech/expertise/finance): FinTech and finance software engineering by 7Code. Real-time treasury dashboards, ERP integration (SAP, Oracle, NetSuite), accounting automation, regulatory reporting, payments, and venture/MarTech platforms for VCs.
+- [AI Software Development for Energy & Utilities](https://www.7code.tech/expertise/energy): Energy, utilities, and IoT software engineering by 7Code. SCADA / Modbus / MQTT ingestion, predictive maintenance, real-time operations cockpits, geofencing, and grid optimisation, built for 24/7 critical infrastructure.
+- [AI Software Development for Defence & Security](https://www.7code.tech/expertise/defence): Defence, security, and GovTech / E-Government engineering by 7Code. Mission-critical platforms with multi-domain fusion, information assurance, secure remote-voting (built for the European Parliament), and after-action review tooling.
+- [AI Software Development for HR](https://www.7code.tech/expertise/hr): HR Tech engineering by 7Code. ATS / HRIS integration (Workday, SAP SuccessFactors, BambooHR), recruitment and onboarding workflows, payroll automation, workforce analytics, and compliance reporting (EEO, GDPR, local labour law).
+- [AI Software Development for Operations](https://www.7code.tech/expertise/operations): Operations software engineering by 7Code. Workflow automation, real-time operations dashboards, OCR-driven document pipelines, systems integration, and process intelligence, for teams that have outgrown spreadsheets, Slack, and heroic individuals.
+
+## Guides
+
+- [AI MVP Development — Ship in 6 Weeks](https://www.7code.tech/ai-mvp-development): AI MVP development by 7Code. LLM-powered products designed, built, and shipped in six weeks. Evaluation harness, cloud infrastructure, and production launch included.
+- [AI Development Agency for UK Companies Romania](https://www.7code.tech/ai-development-agency-uk): AI development agency serving UK companies from Cluj-Napoca, Romania. Same timezone overlap, senior engineers, LLM products, and nearshore rates. From £25k.
+- [AI Agency vs AI Freelancer: Which Is Right for You?](https://www.7code.tech/compare/agency-vs-freelancer): Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.
+- [AI Automation for SMEs: The Complete Guide (2026)](https://www.7code.tech/resources/ai-automation-for-smes): A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.
+- [AI-Native Product Engineering: How to Build AI Products That Actually Work](https://www.7code.tech/resources/ai-native-product-engineering): A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.
+- [Nearshore Software Development in Romania: The 2026 Guide](https://www.7code.tech/resources/nearshore-software-romania): Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.
+- [Staff Augmentation vs Dedicated Team: Which Is Right for You?](https://www.7code.tech/resources/staff-augmentation-vs-dedicated-team): A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.
+- [Nearshore Romania vs Offshore Asia: A Practical Guide for European Businesses](https://www.7code.tech/resources/nearshore-romania-vs-offshore-asia): A data-driven comparison of nearshore Romania and offshore India for European tech buyers — time zones, cost, quality, GDPR, and total cost of ownership.
+- [Build AI In-House vs With a Partner: The 2026 Decision Framework](https://www.7code.tech/resources/build-ai-in-house-vs-partner): A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.
+
+## Case studies
+
+- [AI & Software Case Studies](https://www.7code.tech/case-studies): Selected work from 7Code: AI products, integrations, and platforms shipped for clients in healthcare, finance, government, energy, media, and SaaS.
+- [Daily8: AI-powered news aggregator for the MENA region](https://www.7code.tech/case-study/daily8): AI-powered news aggregator for the MENA region by 7Code. Daily8 (UAE), live at daily8.com/en, with React Native mobile, web, AI moderation, daily wrap-up, and unbiased opinion on AWS Lambda + OpenAI. Shipped iOS + Android in 6 months.
+- [WholeSum: Self-serve AI analytics for unstructured text](https://www.7code.tech/case-study/wholesum): Self-serve AI analytics platform for unstructured text by 7Code. Built end-to-end on Next.js + Nest.js + AWS for WholeSum (UK), 16-week design and build, launched on time and raised funding.
+- [ReVote: Remote Voting for the European Parliament](https://www.7code.tech/case-study/revote): Remote electronic voting platform for the European Parliament, built by 7Code with Eurel International. Secure multi-device voting on the EP network, five modules, eight months, released May 2023.
+- [G42 Fleet: Real-time fleet tracking for EXPO 2020 Dubai](https://www.7code.tech/case-study/g42-fleet): Real-time IoT fleet tracking for EXPO 2020 Dubai by 7Code, partnered with Group 42 (G42, UAE). Custom TCP ingestion, geofence rules, real-time map, and trip playback, 18 months build + 6 months maintenance.
+- [Cloud of Legacy: Secure Digital Inheritance](https://www.7code.tech/case-study/cloud-of-legacy): Cloud-based digital-heritage platform for Cloud of Legacy (Germany), built by 7Code in 8 months on Next.js + React + Keycloak with 2FA. Subscription cloud where users designate two heirs.
+- [Lidl Road Safety: Children's gamification web app](https://www.7code.tech/case-study/lidl-road-safety): Children's road-safety gamification web app for Lidl Romania and the Romanian Police, built by 7Code on React + Nest.js + Heroku in 6 months. Public + private split, episodes, levels, and a points engine.
+- [Hera: AI patient-support app for fertility clinics](https://www.7code.tech/case-study/hera): AI-powered patient-support app for fertility clinics, built by 7Code for Hera Health Tech (UAE). FemTech / FertilityTech MVP on React Native + Serverless on AWS Lambda, LlamaIndex RAG over verified clinical content, HIPAA + GDPR compliant. Shipped in 3 months.
+- [Melsonic: AI Guitar Learning with Live Feedback](https://www.7code.tech/case-study/melsonic): AI-powered guitar-learning web app for Melsonic (UK) by 7Code. Real-time Web Audio API capture, pixi.js canvas rendering, and AI scoring against the original, built on Next.js + Nest.js + PostgreSQL + AWS. Music EdTech MVP shipped in 5 months.
+- [Drum Bun: Mobile car-services app for Romanian drivers](https://www.7code.tech/case-study/drum-bun): Romanian InsurTech mobile app (Drum Bun) for Explorom, built by 7Code on React Native + Node.js + Heroku with an OCR document pipeline. Verify and purchase RCA, ITP, and road vignette in one tap, live on App Store and Play Store.
+- [Numerize: EDM platform with OCR and digital signatures](https://www.7code.tech/case-study/numerize): Responsive electronic document management (GED / EDM) and e-signature platform for Numerize (France), built by 7Code on React + Material-UI + Laravel + AWS. OCR-trained invoice pipeline, YouSign multi-signatories e-signatures, Stripe + 3D Secure billing across 6,000+ enterprise accounts.
+- [Lendit: Peer-to-Peer Rental Marketplace](https://www.7code.tech/case-study/lendit): Peer-to-peer rental marketplace for UK local communities, built end-to-end by 7Code for Lendit. Web app, iOS and Android app, and a Next.js + Nest.js + AWS backend with Stripe payments and Ondato KYC. Ten modules shipped, ongoing partnership.
+
+## Company
+
+- [About 7code — AI Engineering Team in Cluj-Napoca](https://www.7code.tech/about): 7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2017.
+- [How We Build AI-Native Products](https://www.7code.tech/process): How 7Code engagements run, four-week discovery, two-week sprints with AI eval checkpoints, production hardening, and a clean handover with prompt management and observability.
+- [Contact 7code — Start an AI Engineering Project](https://www.7code.tech/contact): Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.
+- [FAQ — AI Engineering, Nearshore Dev & LLM Integration](https://www.7code.tech/faq): Answers to common questions about 7code's AI engineering services, nearshore development from Romania, LLM integration, pricing, GDPR compliance, and how to start a project.
+
+## Optional
+
+- [Blog](https://www.7code.tech/blog): field notes on AI engineering, product and delivery
+- [Contact](https://www.7code.tech/contact): office@7code.ro

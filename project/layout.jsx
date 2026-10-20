@@ -123,7 +123,7 @@ function Nav() {
     <>
       <header className={"nav" + (scrolled ? " is-scrolled" : "")}>
         <div className="nav-inner">
-          <a href="/" className="brand"><Logo height={28} /></a>
+          <a href="/" className="brand" aria-label="7code home"><Logo height={28} /></a>
           <nav className="nav-links">
             <div style={{ position: "static" }} onMouseEnter={openSvc} onMouseLeave={closeSvc}>
               <a href="/service/ai-product-engineering" className={"nav-link" + (svcOpen ? " is-active" : "")} aria-expanded={svcOpen} onClick={e => { e.preventDefault(); setSvcOpen(o => !o); }}>
@@ -221,7 +221,7 @@ function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="/" className="brand"><Logo height={32} color="#fff" /></a>
+            <a href="/" className="brand" aria-label="7code home"><Logo height={32} color="#fff" /></a>
             <p>AI-first software engineering partner. We design, build, and operate AI-native products end-to-end, LLM features, agent workflows, and the production cloud behind them.</p>
           </div>
           <div>

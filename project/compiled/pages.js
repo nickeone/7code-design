@@ -6,27 +6,7 @@ const {
 } = React;
 const SITE_ROOT = "https://www.7code.tech";
 function useSeoMeta(title, desc) {
-  useEffectP(() => {
-    const prevTitle = document.title;
-    document.title = title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl && desc) descEl.setAttribute("content", desc);
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    const twTitle = document.querySelector('meta[name="twitter:title"]');
-    const twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (ogTitle) ogTitle.setAttribute("content", title);
-    if (ogDesc && desc) ogDesc.setAttribute("content", desc);
-    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || window.location.pathname || "/"));
-    if (twTitle) twTitle.setAttribute("content", title);
-    if (twDesc && desc) twDesc.setAttribute("content", desc);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth).
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -189,19 +169,10 @@ function ProcessPage() {
 // ABOUT
 // ──────────────────────────────────────────────────────────────────
 function AboutPage() {
-  React.useEffect(() => {
-    const prev = document.title;
-    document.title = "About 7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania";
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl) descEl.setAttribute("content", "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.");
-    return () => {
-      document.title = prev;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
+
   const stats = [{
-    v: "2016",
+    v: "2017",
     l: "Founded in Cluj-Napoca"
   }, {
     v: "20+",
@@ -252,7 +223,7 @@ function AboutPage() {
     role: "CEO & Founder",
     initial: "N",
     photo: "/project/uploads/authors/nicu-mardari.jpg",
-    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
+    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
   }, {
     name: "Alessandro Merola",
     role: "CTO & Co-Founder",
@@ -277,7 +248,7 @@ function AboutPage() {
     style: {
       justifyContent: "center"
     }
-  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
+  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container about-split"
@@ -735,26 +706,7 @@ function ContactPage() {
     style: {
       color: "var(--slate-500)"
     }
-  }, "Cluj-Napoca, Romania"))), /*#__PURE__*/React.createElement("div", {
-    style: {
-      background: "var(--bg-cyan-50)",
-      border: "1px solid var(--bg-cyan-100)",
-      borderRadius: "var(--radius-lg)",
-      padding: 24,
-      marginTop: 16
-    }
-  }, /*#__PURE__*/React.createElement("strong", {
-    style: {
-      display: "block",
-      marginBottom: 6,
-      fontFamily: "var(--font-display)"
-    }
-  }, "Currently accepting new partnerships"), /*#__PURE__*/React.createElement("span", {
-    style: {
-      color: "var(--slate-500)",
-      fontSize: 14
-    }
-  }, "For Q2 2026. We typically respond within 24 hours."))), /*#__PURE__*/React.createElement("div", {
+  }, "Cluj-Napoca, Romania")))), /*#__PURE__*/React.createElement("div", {
     className: "form-card reveal"
   }, sent ? /*#__PURE__*/React.createElement("div", {
     className: "form-success"
@@ -772,46 +724,82 @@ function ContactPage() {
     }
   }, "We'll be in touch within one business day.")) : /*#__PURE__*/React.createElement("form", {
     onSubmit: submit,
-    noValidate: true
+    noValidate: true,
+    toolname: "contact_7code",
+    tooldescription: "Send a project enquiry to 7code: AI product engineering, process automation, LLM agents, or engineering outstaffing."
   }, /*#__PURE__*/React.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.name ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Name"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-name"
+  }, "Name"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-name",
+    name: "name",
+    type: "text",
+    autoComplete: "name",
+    required: true,
     value: form.name,
     onChange: update("name"),
-    placeholder: "Jane Doe"
+    placeholder: "Jane Doe",
+    toolparamdescription: "Full name of the person sending the enquiry."
   }), errors.name && /*#__PURE__*/React.createElement("span", {
     className: "field-error"
   }, errors.name)), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.email ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Email"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-email"
+  }, "Email"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-email",
+    name: "email",
+    type: "email",
+    autoComplete: "email",
+    required: true,
     value: form.email,
     onChange: update("email"),
-    placeholder: "jane@company.com"
+    placeholder: "jane@company.com",
+    toolparamdescription: "Work email address 7code should reply to."
   }), errors.email && /*#__PURE__*/React.createElement("span", {
     className: "field-error"
   }, errors.email))), /*#__PURE__*/React.createElement("div", {
     className: "form-row"
   }, /*#__PURE__*/React.createElement("div", {
     className: "field"
-  }, /*#__PURE__*/React.createElement("label", null, "Company"), /*#__PURE__*/React.createElement("input", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-company"
+  }, "Company"), /*#__PURE__*/React.createElement("input", {
+    id: "contact-company",
+    name: "company",
+    type: "text",
+    autoComplete: "organization",
     value: form.company,
     onChange: update("company"),
-    placeholder: "Acme Inc."
+    placeholder: "Acme Inc.",
+    toolparamdescription: "Company or organisation name (optional)."
   })), /*#__PURE__*/React.createElement("div", {
     className: "field"
-  }, /*#__PURE__*/React.createElement("label", null, "Budget"), /*#__PURE__*/React.createElement("select", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-budget"
+  }, "Budget"), /*#__PURE__*/React.createElement("select", {
+    id: "contact-budget",
+    name: "budget",
     value: form.budget,
-    onChange: update("budget")
+    onChange: update("budget"),
+    toolparamdescription: "Approximate project budget range in USD (optional): $25k \u2013 $50k, $50k \u2013 $150k, $150k \u2013 $500k, or $500k+."
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
   }, "Select..."), /*#__PURE__*/React.createElement("option", null, "$25k \u2013 $50k"), /*#__PURE__*/React.createElement("option", null, "$50k \u2013 $150k"), /*#__PURE__*/React.createElement("option", null, "$150k \u2013 $500k"), /*#__PURE__*/React.createElement("option", null, "$500k+")))), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.message ? " field--error" : "")
-  }, /*#__PURE__*/React.createElement("label", null, "Tell us about your project"), /*#__PURE__*/React.createElement("textarea", {
+  }, /*#__PURE__*/React.createElement("label", {
+    htmlFor: "contact-message"
+  }, "Tell us about your project"), /*#__PURE__*/React.createElement("textarea", {
+    id: "contact-message",
+    name: "message",
+    required: true,
     rows: "5",
     value: form.message,
     onChange: update("message"),
+    toolparamdescription: "What you want to build, plus any constraints, timelines or success metrics (at least 10 characters).",
     placeholder: "What are you trying to build? Any constraints, timelines, or success metrics we should know about?"
   }), errors.message && /*#__PURE__*/React.createElement("span", {
     className: "field-error"

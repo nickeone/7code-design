@@ -4,27 +4,7 @@ const { useState: useStateP, useEffect: useEffectP } = React;
 const SITE_ROOT = "https://www.7code.tech";
 
 function useSeoMeta(title, desc) {
-  useEffectP(() => {
-    const prevTitle = document.title;
-    document.title = title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl && desc) descEl.setAttribute("content", desc);
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    const twTitle = document.querySelector('meta[name="twitter:title"]');
-    const twDesc = document.querySelector('meta[name="twitter:description"]');
-    if (ogTitle) ogTitle.setAttribute("content", title);
-    if (ogDesc && desc) ogDesc.setAttribute("content", desc);
-    if (ogUrl) ogUrl.setAttribute("content", SITE_ROOT + (window.location.hash.slice(1) || window.location.pathname || "/"));
-    if (twTitle) twTitle.setAttribute("content", title);
-    if (twDesc && desc) twDesc.setAttribute("content", desc);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth).
 }
 
 // ──────────────────────────────────────────────────────────────────
@@ -175,17 +155,10 @@ function ProcessPage() {
 // ABOUT
 // ──────────────────────────────────────────────────────────────────
 function AboutPage() {
-  React.useEffect(() => {
-    const prev = document.title;
-    document.title = "About 7Code, AI-Native Software Engineering Agency, Cluj-Napoca, Romania";
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    if (descEl) descEl.setAttribute("content", "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. We design, build, and operate AI-native products, LLM features, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East.");
-    return () => { document.title = prev; if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc); };
-  }, []);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   const stats = [
-    { v: "2016", l: "Founded in Cluj-Napoca" },
+    { v: "2017", l: "Founded in Cluj-Napoca" },
     { v: "20+", l: "Products shipped" },
     { v: "12", l: "Industries served" },
     { v: "4", l: "Countries with active clients" },
@@ -235,7 +208,7 @@ function AboutPage() {
     },
   ];
   const team = [
-    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
+    { name: "Nicu Mardari", role: "CEO & Founder", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg", bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy." },
     { name: "Alessandro Merola", role: "CTO & Co-Founder", initial: "A", photo: "/project/uploads/authors/alessandro-merola.jpg", bio: "Alessandro Merola is a co-founder and CTO of 7code, focused on solution architecture and the engineering standards behind day-to-day client delivery. He works at the point where a client's requirements become a system \u2014 data models, integrations, cloud infrastructure, and the AI components that sit on top of them \u2014 and stays hands-on from technical scoping through to launch and post-release support. His remit is making sure the architecture 7code proposes is the one that survives production." },
     { name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg", bio: "Daniela Cazac leads marketing and business development at 7code, covering positioning, content, and the first conversations with prospective clients. She runs 7code's inbound and outbound channels, writes and edits much of the firm's published articles and case studies, and works with founders and product leaders to turn an early idea into a scoped engagement. Her focus is keeping what 7code says publicly aligned with what its engineers actually deliver." },
   ];
@@ -248,7 +221,7 @@ function AboutPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>About 7Code</span>
           <h1>About 7code — Senior AI Engineering Team</h1>
-          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
+          <p>7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time.</p>
         </div>
       </section>
 
@@ -600,10 +573,6 @@ function ContactPage() {
                 <span className="icon-tile"><Icon.pin /></span>
                 <div><strong>Office</strong><a href="https://share.google/kSWr5AJABJj33MMVu" target="_blank" rel="noopener noreferrer" style={{ color: "var(--slate-500)" }}>Cluj-Napoca, Romania</a></div>
               </div>
-              <div style={{ background: "var(--bg-cyan-50)", border: "1px solid var(--bg-cyan-100)", borderRadius: "var(--radius-lg)", padding: 24, marginTop: 16 }}>
-                <strong style={{ display: "block", marginBottom: 6, fontFamily: "var(--font-display)" }}>Currently accepting new partnerships</strong>
-                <span style={{ color: "var(--slate-500)", fontSize: 14 }}>For Q2 2026. We typically respond within 24 hours.</span>
-              </div>
             </div>
 
             <div className="form-card reveal">
@@ -614,27 +583,27 @@ function ContactPage() {
                   <p style={{ marginTop: 8, color: "var(--slate-500)" }}>We'll be in touch within one business day.</p>
                 </div>
               ) : (
-                <form onSubmit={submit} noValidate>
+                <form onSubmit={submit} noValidate toolname="contact_7code" tooldescription="Send a project enquiry to 7code: AI product engineering, process automation, LLM agents, or engineering outstaffing.">
                   <div className="form-row">
                     <div className={"field" + (errors.name ? " field--error" : "")}>
-                      <label>Name</label>
-                      <input value={form.name} onChange={update("name")} placeholder="Jane Doe"/>
+                      <label htmlFor="contact-name">Name</label>
+                      <input id="contact-name" name="name" type="text" autoComplete="name" required value={form.name} onChange={update("name")} placeholder="Jane Doe" toolparamdescription="Full name of the person sending the enquiry."/>
                       {errors.name && <span className="field-error">{errors.name}</span>}
                     </div>
                     <div className={"field" + (errors.email ? " field--error" : "")}>
-                      <label>Email</label>
-                      <input value={form.email} onChange={update("email")} placeholder="jane@company.com"/>
+                      <label htmlFor="contact-email">Email</label>
+                      <input id="contact-email" name="email" type="email" autoComplete="email" required value={form.email} onChange={update("email")} placeholder="jane@company.com" toolparamdescription="Work email address 7code should reply to."/>
                       {errors.email && <span className="field-error">{errors.email}</span>}
                     </div>
                   </div>
                   <div className="form-row">
                     <div className="field">
-                      <label>Company</label>
-                      <input value={form.company} onChange={update("company")} placeholder="Acme Inc."/>
+                      <label htmlFor="contact-company">Company</label>
+                      <input id="contact-company" name="company" type="text" autoComplete="organization" value={form.company} onChange={update("company")} placeholder="Acme Inc." toolparamdescription="Company or organisation name (optional)."/>
                     </div>
                     <div className="field">
-                      <label>Budget</label>
-                      <select value={form.budget} onChange={update("budget")}>
+                      <label htmlFor="contact-budget">Budget</label>
+                      <select id="contact-budget" name="budget" value={form.budget} onChange={update("budget")} toolparamdescription="Approximate project budget range in USD (optional): $25k – $50k, $50k – $150k, $150k – $500k, or $500k+.">
                         <option value="">Select...</option>
                         <option>$25k – $50k</option>
                         <option>$50k – $150k</option>
@@ -644,8 +613,8 @@ function ContactPage() {
                     </div>
                   </div>
                   <div className={"field" + (errors.message ? " field--error" : "")}>
-                    <label>Tell us about your project</label>
-                    <textarea rows="5" value={form.message} onChange={update("message")} placeholder="What are you trying to build? Any constraints, timelines, or success metrics we should know about?"/>
+                    <label htmlFor="contact-message">Tell us about your project</label>
+                    <textarea id="contact-message" name="message" required rows="5" value={form.message} onChange={update("message")} toolparamdescription="What you want to build, plus any constraints, timelines or success metrics (at least 10 characters)." placeholder="What are you trying to build? Any constraints, timelines, or success metrics we should know about?"/>
                     {errors.message && <span className="field-error">{errors.message}</span>}
                   </div>
                   {serverError && (

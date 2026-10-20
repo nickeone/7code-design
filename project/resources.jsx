@@ -137,7 +137,7 @@ const RESOURCES_DATA = {
       },
       {
         heading: "7code's Position in the Romanian Market",
-        body: "7code (Seven Code Development SRL) was founded in 2016 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
+        body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
       },
       {
         heading: "Frequently Asked Questions",
@@ -267,18 +267,7 @@ const RESOURCES_DATA = {
 function ResourcePage({ slug }) {
   const page = RESOURCES_DATA[slug];
 
-  React.useEffect(() => {
-    if (!page) return;
-    const prevTitle = document.title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = page.title + " | 7code";
-    if (descEl && page.metaDescription) descEl.setAttribute("content", page.metaDescription);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, [slug]);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   if (!page) {
     return (

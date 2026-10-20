@@ -29,6 +29,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 // ── route list (keep in sync with prerender.mjs) ─────────────────────────────
 
 const ROUTES = [
+  "/", // homepage → index.html (injected last so the template pass above is unaffected)
   "/about",
   "/process",
   "/contact",
@@ -215,6 +216,7 @@ function injectRoot(html, innerHTML) {
 }
 
 function routeToFilePath(route) {
+  if (route === "/") return join(ROOT, "index.html");
   const rel = route.startsWith("/") ? route.slice(1) : route;
   return join(ROOT, rel + ".html");
 }
