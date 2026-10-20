@@ -16,7 +16,7 @@ const CASES = [
   { from: "/blog-7code",            to: "/blog" },
   {
     from: "/2025/09/04/7codes-discovery-mission-pioneering-successful-software-development/",
-    to:   "/blog/7code-discovery-mission",
+    to:   "/blog/ai-discovery-mission-de-risk-ai-products",
   },
   {
     from: "/2025/07/03/from-cluj-to-london-what-we-brought-home-from-tech-week/",
