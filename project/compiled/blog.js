@@ -1635,6 +1635,9 @@ const POSTS = [{
     type: "h2",
     text: "What we evaluated"
   }, {
+    type: "p",
+    text: "Disclosure: 7code publishes this list and includes itself. The scoring criteria below apply to every agency, us included."
+  }, {
     type: "bullets",
     items: ["AI specialism: do they have production LLM, RAG, and agent systems in their public portfolio, or are they generalising from web development experience?", "Team seniority: what's the minimum experience level for engineers on client projects? Junior-heavy teams with AI keywords are common and usually a mistake.", "Delivery model: fixed-scope, sprint-based, or T&M? Do they build evaluation harnesses as a default, or as an optional add-on?", "Client base: UK/EU companies at what stage? Regulated industries? References available?", "Location and timezone: real overlap with UK/EU working hours, not nominal UTC proximity."]
   }, {

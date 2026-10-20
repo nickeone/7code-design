@@ -960,6 +960,7 @@ const POSTS = [
     body: [
       { type: "lead", text: "The market for nearshore AI engineering in Europe has changed significantly in the past 18 months. Agencies that were general software shops two years ago now claim AI specialisation. Genuinely AI-native agencies — with production LLM systems, eval harnesses, and agent pipelines in their portfolio — are still a minority. This comparison is based on what we can verify from public portfolios, Clutch reviews, and direct conversations with clients who've used these agencies." },
       { type: "h2", text: "What we evaluated" },
+      { type: "p", text: "Disclosure: 7code publishes this list and includes itself. The scoring criteria below apply to every agency, us included." },
       { type: "bullets", items: [
         "AI specialism: do they have production LLM, RAG, and agent systems in their public portfolio, or are they generalising from web development experience?",
         "Team seniority: what's the minimum experience level for engineers on client projects? Junior-heavy teams with AI keywords are common and usually a mistake.",
