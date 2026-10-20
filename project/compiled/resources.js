@@ -71,6 +71,79 @@ const RESOURCES_DATA = {
       }]
     }]
   },
+  "ai-customer-experience-for-smes": {
+    slug: "ai-customer-experience-for-smes",
+    title: "AI for Customer Experience in SMEs: Support, Sales Follow-up and Productivity (2026)",
+    metaDescription: "Where AI actually helps a small company's customers: support triage, fast sales follow-up and onboarding. What the research shows, what to keep human, and how to start in 30 days.",
+    datePublished: "2026-10-20",
+    author: "Nicu Mardari, CEO",
+    sections: [{
+      heading: "Where does AI improve customer experience in a small company?",
+      blocks: [{
+        type: "p",
+        text: "In three jobs: answering and routing support requests, following up new leads within minutes instead of days, and guiding new customers through onboarding. In each, AI drafts or routes and a person decides. Start with the one where customers wait longest today."
+      }, {
+        type: "p",
+        text: "A small company rarely loses customers because its product is wrong. It loses them because a quote went out three days late, a support email sat in an inbox over the weekend, or a new client did not know what to do next. These are the gaps AI closes best, and they are cheap to measure."
+      }]
+    }, {
+      heading: "The three jobs AI does well, and what the research shows",
+      blocks: [{
+        type: "p-html",
+        text: "<strong>1. Support triage and drafted replies.</strong> AI reads each incoming request, tags it, routes it to the right person and drafts an answer from your own documentation. In the largest field study so far, 5,179 customer support agents using an AI assistant resolved 14% more issues per hour on average, and newer, less experienced agents 34% more (<a href=\"https://www.nber.org/papers/w31161\" target=\"_blank\" rel=\"noopener\">Brynjolfsson, Li and Raymond, Generative AI at Work, NBER / Quarterly Journal of Economics 2025</a>). The gain was largest for the people a small company is most likely to have: generalists, not specialists."
+      }, {
+        type: "p-html",
+        text: "<strong>2. Sales follow-up within minutes.</strong> Most leads from a website form or a quote request go cold because nobody answers fast. Companies that tried to contact online leads within an hour were nearly 7 times as likely to have a qualifying conversation as those that waited longer (<a href=\"https://hbr.org/2011/03/the-short-life-of-online-sales-leads\" target=\"_blank\" rel=\"noopener\">Oldroyd, McElheran and Elkington, Harvard Business Review, 2011</a>). The study is older than today's AI tools, but the effect it measures is exactly what AI follow-up fixes: an instant, personal first reply, then a reminder to the salesperson."
+      }, {
+        type: "p-html",
+        text: "<strong>3. Onboarding and repeat questions.</strong> New customers ask the same ten questions. An assistant grounded in your own documents answers them at any hour, and hands over to a person when it is not sure."
+      }, {
+        type: "p-html",
+        text: "More broadly, people who use generative AI at work report saving about 5.4% of their working hours (<a href=\"https://www.stlouisfed.org/open-vault/2025/oct/generative-ai-productivity-future-work\" target=\"_blank\" rel=\"noopener\">Federal Reserve Bank of St. Louis, 2025</a>)."
+      }]
+    }, {
+      heading: "Example: sales follow-up at EcoPro Picard",
+      blocks: [{
+        type: "p-html",
+        text: "<strong>The company.</strong> EcoPro Picard, a renovation company in Alsace, France, that wins most of its work through prescribers: architects, property managers (syndics), project managers and estate agencies within about 45 km. Quote requests arrive by form, email and phone, and used to be answered when the owner had time."
+      }, {
+        type: "p-html",
+        text: "<strong>What 7code set up.</strong> A list of the prescribers in the area, a short personal first message for each type of prescriber, and a follow-up sequence so that no request or introduction waits more than a working day. The goal set at the start: 3 to 5 new jobs a month from this channel."
+      }, {
+        type: "p",
+        text: "Illustrative numbers (a worked example of what this kind of setup changes, not measured results from EcoPro Picard):"
+      }, {
+        type: "table",
+        head: ["", "Before", "After"],
+        rows: [["Quote requests a month", "40", "40"], ["Typical first reply", "2 days", "under 1 hour"], ["Time spent writing follow-ups", "6 hours a week", "2 hours a week"], ["Requests that never got a follow-up", "1 in 4", "0"]]
+      }, {
+        type: "p",
+        text: "The point the example makes: the gain is not more leads, it is fewer lost ones, which is what the response-time research above predicts."
+      }]
+    }, {
+      heading: "What to keep human, tools or custom, first 30 days",
+      blocks: [{
+        type: "p-html",
+        text: "<strong>Keep human:</strong> complaints and anything emotional, prices and discounts, commitments on dates, and the final word on any reply that goes out under the company's name in the first weeks."
+      }, {
+        type: "p-html",
+        text: "<strong>Off-the-shelf tool or custom build:</strong>"
+      }, {
+        type: "table",
+        head: ["Situation", "Usually the better choice"],
+        rows: [["One inbox, one CRM that already has an AI add-on", "The add-on"], ["Requests spread over email, forms, phone notes and WhatsApp", "A small custom layer that collects them in one place"], ["Answers must come from your own documents, prices or stock", "Custom, grounded in those sources"], ["Personal or health data involved", "Custom, with logging and GDPR controls from day one"]]
+      }, {
+        type: "p-html",
+        text: "<strong>First 30 days:</strong>"
+      }, {
+        type: "ol",
+        items: ["<strong>Week 1:</strong> pick the one job where customers wait longest; measure today's first-reply time and the share of requests that never get an answer.", "<strong>Weeks 2–3:</strong> set up drafting and routing for that job only; a person approves every reply.", "<strong>Week 4:</strong> compare against week 1; keep, adjust or stop. At 7code this is run as an automation pilot, from €10,000."]
+      }, {
+        type: "p-html",
+        text: "Further reading: <a href=\"/resources/ai-automation-roi-for-smes\">AI automation ROI for SMEs</a>, <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>."
+      }]
+    }]
+  },
   "ai-automation-roi-for-smes": {
     slug: "ai-automation-roi-for-smes",
     title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)",
@@ -145,7 +218,7 @@ const RESOURCES_DATA = {
         items: ["<strong>Pick one process</strong> with you: frequent, rules-heavy, and painful today.", "<strong>Measure the baseline</strong>: hours per week, corrections per month, cycle time.", "<strong>Build the pilot</strong> on that one process, from €10,000.", "<strong>Run it for 30 days</strong> next to the old way and compare against the baseline.", "<strong>Decide</strong>: scale it to more processes, adjust it, or stop. Bigger projects are scoped only after this."]
       }, {
         type: "p-html",
-        text: "Further reading: <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a>, <a href=\"/blog/which-business-process-to-automate-first\">Which business process should you automate first?</a>, <a href=\"/blog/hire-or-automate-which-costs-less\">Hire or automate: which costs less?</a>, <a href=\"/resources/build-ai-in-house-vs-partner\">Build AI in-house vs with a partner</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>."
+        text: "Further reading: <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a>, <a href=\"/blog/which-business-process-to-automate-first\">Which business process should you automate first?</a>, <a href=\"/blog/hire-or-automate-which-costs-less\">Hire or automate: which costs less?</a>, <a href=\"/resources/build-ai-in-house-vs-partner\">Build AI in-house vs with a partner</a>, <a href=\"/resources/ai-customer-experience-for-smes\">AI for customer experience in SMEs</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>."
       }]
     }]
   },

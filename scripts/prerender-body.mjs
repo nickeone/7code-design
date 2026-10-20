@@ -92,6 +92,7 @@ const ROUTES = [
   "/blog/how-to-hire-nearshore-ai-engineers",
   "/blog/top-nearshore-ai-development-agencies-europe",
   "/resources/ai-automation-for-smes",
+  "/resources/ai-customer-experience-for-smes",
   "/resources/ai-automation-roi-for-smes",
   "/resources/ai-native-product-engineering",
   "/resources/nearshore-software-romania",
