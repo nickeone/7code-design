@@ -377,7 +377,12 @@ function genericPageSchema(p, pageType, breadcrumbItems) {
 // Template + per-page rewrite
 // ──────────────────────────────────────────────────────────────────────────
 
-const TEMPLATE = fs.readFileSync(path.join(ROOT, "index.html"), "utf-8");
+// index.html is both the homepage and the template for every other route.
+// Since the homepage body is now prerendered into index.html, empty #root here so
+// no route ever inherits homepage content; scripts/prerender-body.mjs fills each route.
+const TEMPLATE = fs
+  .readFileSync(path.join(ROOT, "index.html"), "utf-8")
+  .replace(/<div id="root">[\s\S]*?<\/div>(?=\s*<script)/, '<div id="root"></div>');
 
 // Strip the path→hash bootstrap from a template — pre-rendered files don't
 // need it (we want the URL to stay clean as /service/X, not /#/service/X).
