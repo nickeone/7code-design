@@ -201,7 +201,7 @@ function AboutPage() {
     };
   }, []);
   const stats = [{
-    v: "2016",
+    v: "2017",
     l: "Founded in Cluj-Napoca"
   }, {
     v: "20+",
@@ -252,7 +252,7 @@ function AboutPage() {
     role: "CEO & Founder",
     initial: "N",
     photo: "/project/uploads/authors/nicu-mardari.jpg",
-    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2016, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
+    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
   }, {
     name: "Alessandro Merola",
     role: "CTO & Co-Founder",
@@ -277,7 +277,7 @@ function AboutPage() {
     style: {
       justifyContent: "center"
     }
-  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2016, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
+  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container about-split"
