@@ -19,3 +19,7 @@ jobs:
           node-version: "22"
       - name: Visit every live page
         run: node scripts/check-live.mjs https://www.7code.tech
+      - name: Tell Bing about new pages (IndexNow)
+        if: github.event_name == 'deployment_status' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
