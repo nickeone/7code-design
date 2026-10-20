@@ -66,6 +66,7 @@ const ROUTES = [
   "/case-study/lendit",
   "/blog/reduce-admin-work-medical-clinic",
   "/blog/hire-or-automate-which-costs-less",
+  "/blog/which-business-process-to-automate-first",
   "/blog/ai-discovery-mission-de-risk-ai-products",
   "/blog/ship-ai-mvp-six-weeks",
   "/blog/ai-engineering-pricing-fixed-vs-time-materials",

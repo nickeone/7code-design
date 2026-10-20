@@ -229,6 +229,100 @@ const POSTS = [{
     text: "<strong>Is automation cheaper than hiring?</strong><br />For repetitive work, usually yes. For work that needs judgment, usually no."
   }]
 }, {
+  slug: "which-business-process-to-automate-first",
+  cat: "Operations",
+  title: "Which Business Process Should You Automate First?",
+  subtitle: "Start with the process that repeats often, follows clear rules, wastes the most hours, and connects to only one or two tools. Here is a 10-minute way to pick yours.",
+  date: "Oct 20, 2026",
+  read: "5 min read",
+  author: {
+    name: "Daniela Cazac",
+    role: "CMO",
+    initial: "D",
+    photo: "/project/uploads/authors/daniela-cazac.jpg"
+  },
+  cover: "ops",
+  illus: "blueprint",
+  featured: false,
+  body: [{
+    type: "lead",
+    text: "Start with the process that repeats often, follows clear rules, wastes the most hours, and connects to only one or two tools. Don’t start with the biggest or most painful process. Start with the one that is easiest to get right and easiest to measure."
+  }, {
+    type: "p",
+    text: "Here is a 10-minute way to pick yours."
+  }, {
+    type: "h2",
+    text: "How to score each process"
+  }, {
+    type: "p",
+    text: "Write down 4 to 6 processes your team does by hand. Score each one from 1 to 5 on these four questions:"
+  }, {
+    type: "table",
+    head: ["Question", "1 point", "5 points"],
+    rows: [["How many hours a month does it take?", "Under 5", "Over 40"], ["How often does it go wrong?", "Rarely", "Almost every week"], ["Are the rules clear? Could you write the steps on one page?", "No, it depends on the person", "Yes, the same every time"], ["How many tools does it touch?", "4 or more", "1 or 2"]]
+  }, {
+    type: "p",
+    text: "Add up the points. Maximum is 20."
+  }, {
+    type: "bullets",
+    items: ["15 or more: start here.", "10 to 14: do it second.", "Under 10: leave it for now."]
+  }, {
+    type: "h2",
+    text: "Example (use your own numbers)"
+  }, {
+    type: "table",
+    head: ["Process", "Hours", "Mistakes", "Clear rules", "Few tools", "Total"],
+    rows: [["Invoice entry", "5", "4", "5", "4", "18"], ["Monthly report", "4", "2", "4", "3", "13"], ["Client onboarding", "3", "3", "3", "2", "11"], ["Contract review", "2", "3", "1", "3", "9"]]
+  }, {
+    type: "p",
+    text: "The winner is invoice entry. It isn’t the most exciting process, but it is the safest first win."
+  }, {
+    type: "h2",
+    text: "What should you not automate first?"
+  }, {
+    type: "bullets",
+    items: ["Work that needs judgment. Automate the preparation around it, not the decision.", "Processes that change every month. You would rebuild it every time.", "Processes nobody owns. If three people think someone else is responsible, automation only moves the problem faster.", "Anything you can’t describe in simple steps. Fix the process first."]
+  }, {
+    type: "h2",
+    text: "How do you know it’s worth it?"
+  }, {
+    type: "p",
+    text: "Before you build, calculate this:"
+  }, {
+    type: "callout",
+    text: "Price of automation ÷ monthly cost of the manual work = months to pay back. Under 12 months is a good first project. Over 24 months, look for another process."
+  }, {
+    type: "h2",
+    text: "What can go wrong?"
+  }, {
+    type: "bullets",
+    items: ["You pick the biggest process. It’s slow, has many exceptions, and the first project loses trust.", "You skip the measuring. If you don’t know today’s hours, you can’t prove the saving later.", "You automate a messy process. The mess gets faster."]
+  }, {
+    type: "h2",
+    text: "How to do it with us"
+  }, {
+    type: "p",
+    text: "We offer a short check called the Operational Quick Scan. A senior consultant looks at your five most expensive processes, picks the two or three worth automating, and gives you the expected return in numbers."
+  }, {
+    type: "p",
+    text: "If nothing is worth automating, we’ll tell you."
+  }, {
+    type: "h2",
+    text: "Not sure where to start?"
+  }, {
+    type: "p-html",
+    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us your top three manual processes and we’ll tell you which one to do first."
+  }, {
+    type: "h2",
+    text: "Common questions"
+  }, {
+    type: "p-html",
+    text: "<strong>Do I need to change my current software?</strong><br />No. We build around the tools you already use."
+  }, {
+    type: "p-html",
+    text: "<strong>What if I pick the wrong process?</strong><br />That’s what the Quick Scan is for."
+  }]
+}, {
   slug: "ai-discovery-mission-de-risk-ai-products",
   cat: "Strategy",
   title: "The AI Discovery Mission: de-risk AI in four weeks",
