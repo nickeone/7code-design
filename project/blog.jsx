@@ -97,7 +97,7 @@ const POSTS = [
         "What happens to the data if we stop working together?",
       ]},
       { type: "h2", text: "How much does it cost, and how long does it take?" },
-      { type: "p", text: "One automated process usually costs [€X to €Y] and takes [N weeks]. Several connected processes cost [€X to €Y] and take [N months]." },
+      { type: "p", text: "One automated process usually costs \u20ac25,000 to \u20ac40,000 and takes 4 to 6 weeks. Several connected processes cost \u20ac60,000 to \u20ac150,000 and take 3 to 6 months." },
       { type: "p", text: "Pay-back formula you can use yourself:" },
       { type: "callout", text: "Price of automation ÷ monthly cost of the manual work = months to pay back. If the answer is under 12 months, it is worth a closer look." },
       { type: "h2", text: "How to find out if it fits your clinic" },
