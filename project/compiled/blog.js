@@ -38,6 +38,33 @@ function setCanonical(href) {
 // ─────────────────────────────────────────────────────────────────
 // Blog post data
 // ─────────────────────────────────────────────────────────────────
+// Last substantive content update per post (from git history: May 2026 rewrite/migration,
+// 20 Oct 2026 disclosure). Only set when content really changed — never bump for freshness.
+// Keep in sync with BLOG_UPDATED in scripts/prerender.mjs.
+const POST_UPDATED = {
+  "low-code-no-code-vs-custom-development": "May 06, 2026",
+  "cms-wordpress-vs-custom-development": "May 06, 2026",
+  "osai-revolutionising-ai-interactions": "May 06, 2026",
+  "reducing-costs-nearshoring-outstaffing": "May 06, 2026",
+  "aws-beanstalk-to-ecs-migration": "May 06, 2026",
+  "migrating-users-auth0-python": "May 06, 2026",
+  "logistics-tech-tailored-solutions": "May 06, 2026",
+  "why-mvp-first": "May 06, 2026",
+  "lessons-from-london-tech-week-ai": "May 06, 2026",
+  "ai-engineering-outstaffing": "May 05, 2026",
+  "switch-ai-engineering-partner": "May 04, 2026",
+  "running-ai-engineering-pods-across-continents": "May 05, 2026",
+  "ai-project-handover": "May 04, 2026",
+  "senior-engineers-ai-leverage": "May 06, 2026",
+  "adrenaline-ai-debugger-case-study": "May 05, 2026",
+  "ai-native-automation-crm-erp-iot": "May 05, 2026",
+  "ai-agents-manufacturing-operations": "May 05, 2026",
+  "ai-engineering-pricing-fixed-vs-time-materials": "May 06, 2026",
+  "ship-ai-mvp-six-weeks": "May 06, 2026",
+  "ai-discovery-mission-de-risk-ai-products": "May 06, 2026",
+  "top-nearshore-ai-development-agencies-europe": "Oct 20, 2026",
+  "how-to-hire-nearshore-ai-engineers": "Oct 20, 2026"
+};
 const POSTS = [{
   slug: "reduce-admin-work-medical-clinic",
   cat: "Operations",
@@ -1056,58 +1083,6 @@ const POSTS = [{
 },
 // ── Transferred from 7code.tech ──────────────────────────────
 {
-  slug: "adrenaline-ai-code-debugger",
-  cat: "Case Study",
-  title: "Adrenaline: revolutionising code debugging with AI",
-  subtitle: "How GetAdrenaline partnered with 7Code to build an AI-powered debugger that diagnoses and fixes code issues in seconds, from MVP to production on AWS.",
-  date: "Nov 21, 2024",
-  read: "6 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "ink",
-  illus: "magnify_code",
-  body: [{
-    type: "lead",
-    text: "Adrenaline is a groundbreaking AI-powered debugger developed by GetAdrenaline in partnership with 7Code. Leveraging the capabilities of OpenAI Codex, Adrenaline is designed to make the debugging process faster and more efficient, diagnosing and fixing code issues in seconds, and transforming how developers interact with their codebases."
-  }, {
-    type: "h2",
-    text: "The challenge: debugging at the speed of development"
-  }, {
-    type: "p",
-    text: "Modern software teams lose enormous amounts of time to debugging cycles that haven't fundamentally changed in decades. GetAdrenaline came to us with a clear vision: an AI debugger that could import a codebase from GitHub, analyse it in context, and surface explanations and fixes instantly, without requiring the developer to context-switch into a separate tool."
-  }, {
-    type: "h2",
-    text: "What we built"
-  }, {
-    type: "bullets",
-    items: ["A repository ingestion pipeline that chunks code semantically for accurate, context-aware retrieval", "An LLM orchestration layer using OpenAI Codex tuned for symbol-aware lookups across large codebases", "An AWS deployment with autoscaling, per-tenant rate limits, and cost guardrails approved by finance", "An eval harness running against real bug reports, not synthetic queries, to measure quality continuously"]
-  }, {
-    type: "h2",
-    text: "Seamless developer workflow integration"
-  }, {
-    type: "p",
-    text: "Adrenaline integrates directly into a developer's workflow: import your repository from GitHub, ask a question or describe a bug, and receive an instant, contextual explanation and proposed fix. The system drastically reduces debugging time and enhances overall productivity, not by replacing developer judgement, but by accelerating it."
-  }, {
-    type: "callout",
-    text: "AI products win or lose on retrieval quality. The model is a commodity; the context you put in front of it is the moat."
-  }, {
-    type: "h2",
-    text: "From MVP to AWS-scale production"
-  }, {
-    type: "p",
-    text: "We helped Adrenaline go from a working prototype to a production deployment capable of handling Product Hunt traffic. Naive embedding-based retrieval worked on a 10,000-line repo and fell apart on a 1-million-line one, so we invested early in symbol-aware chunking, hierarchical retrieval, and a caching layer keyed to commit hashes, delivering sub-second retrieval on real-world repositories."
-  }, {
-    type: "h2",
-    text: "Results"
-  }, {
-    type: "bullets",
-    items: ["MVP shipped to Product Hunt in 8 weeks", "Indexing throughput improved 12× over the prototype baseline", "Per-query cost reduced by 60% via retrieval caching", "Zero-downtime deploys on AWS with finance-approved cost guardrails"]
-  }]
-}, {
   slug: "why-mvp-first",
   cat: "Strategy",
   title: "Why MVP first? The case for minimum viable products",
@@ -1158,58 +1133,6 @@ const POSTS = [{
   }, {
     type: "p",
     text: "We design our MVP engagements around a 6–8 week delivery window with a clearly defined success metric agreed before a line of code is written. The MVP ships; we measure; then we decide together what to build next. This gives our clients the fastest possible path to real market feedback, and the clearest possible foundation for the roadmap that follows."
-  }]
-}, {
-  slug: "seamless-software-project-handover",
-  cat: "Operations",
-  title: "The art of a seamless software project handover",
-  subtitle: "A successful handover is not an event, it is a process. How 7Code ensures clients have full control, full understanding, and full confidence when we hand over the keys.",
-  date: "Dec 12, 2023",
-  read: "6 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "defence",
-  illus: "relay_baton",
-  body: [{
-    type: "lead",
-    text: "Delivering software is only half the job. The other half is ensuring the client has everything they need to own, evolve, and operate what was built, confidently, without depending on us for every small change. A seamless handover is the mark of a vendor who treats the client relationship as a partnership, not a transaction."
-  }, {
-    type: "h2",
-    text: "Transparency and source code access"
-  }, {
-    type: "p",
-    text: "7Code goes beyond mere code delivery by promoting full transparency: comprehensive access to both the source code and the project documentation, provided to the client from day one. This fosters trust and ensures clients have complete control over their software's inner workings, not a dependency on us."
-  }, {
-    type: "h2",
-    text: "Project documentation that actually helps"
-  }, {
-    type: "p",
-    text: "With access to thorough project documentation, clients gain genuine insight into the software's architecture, design principles, and functionality. This empowers them to handle future updates, modifications, or collaborations with other development teams without starting from scratch."
-  }, {
-    type: "h2",
-    text: "The components of a complete handover"
-  }, {
-    type: "bullets",
-    items: ["Demo testing: a structured walkthrough of every feature, confirming the product works exactly as specified", "Customised training: hands-on sessions tailored to the client team, not a generic product tour", "Proactive maintenance handoff: runbooks, known issues, and escalation paths, not a blank slate", "Source code access with documented entry points and architectural decision records", "Client-centric communication throughout: regular updates, prompt query resolution, and active feedback loops", "Post-handover support: an agreed period of ongoing assistance so clients are never left without recourse"]
-  }, {
-    type: "h2",
-    text: "Communication is the backbone of handover"
-  }, {
-    type: "p",
-    text: "Throughout the handover process, open communication is not optional, it is the mechanism through which trust is built. We maintain a clear line of communication at every stage: addressing queries promptly, providing regular progress updates, and making the client an active participant in their own handover."
-  }, {
-    type: "callout",
-    text: "A handover that ends at the last commit isn't a handover, it's an abandonment. The first 90 days of client ownership decide whether the product thrives."
-  }, {
-    type: "h2",
-    text: "Post-handover support"
-  }, {
-    type: "p",
-    text: "Beyond the delivery milestone, our commitment continues. We offer a defined period of post-handover support, addressing concerns promptly, guiding the client through their first solo deployments, and ensuring the transition from 'our product' to 'your product' is complete in practice, not just on paper."
   }]
 }, {
   slug: "cms-wordpress-vs-custom-development",
@@ -1452,104 +1375,6 @@ const POSTS = [{
     type: "bullets",
     items: ["Chunk size of 500–1,000 users per batch is a reliable starting point for most tenants", "Log every user migration individually, batch-level logging makes diagnosis impossible", "Test MFA re-enrollment UX with real users before go-live: the surprise is worse than the inconvenience", "Keep the source tenant read-only for 48 hours post-migration as a rollback safety net"]
   }]
-}, {
-  slug: "fixed-price-vs-time-and-materials",
-  cat: "Strategy",
-  title: "Fixed price vs. time and materials for software",
-  subtitle: "The right pricing model depends on the nature of your project, your budget flexibility, and the level of scope certainty you actually have.",
-  date: "Sep 13, 2023",
-  read: "6 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "finance",
-  illus: "contract_doc",
-  body: [{
-    type: "lead",
-    text: "Fixed price or time and materials, this is one of the most consequential decisions in a software engagement, and it is often made too quickly. Each model allocates risk differently between client and vendor, and each is the right answer in specific circumstances. Getting it wrong costs more than the price difference."
-  }, {
-    type: "h2",
-    text: "The fixed price model"
-  }, {
-    type: "p",
-    text: "In a fixed-price engagement, the scope, timeline, and cost are defined upfront and agreed before work begins. The vendor absorbs the risk of underestimation; the client has cost certainty. This model works well when the scope is genuinely fixed, a defined feature set, a contained integration, or a discovery with named deliverables."
-  }, {
-    type: "h2",
-    text: "When fixed price is the right choice"
-  }, {
-    type: "bullets",
-    items: ["Projects with a well-defined, stable scope and clear acceptance criteria", "Engagements with a fixed budget that cannot flex, MVP builds, compliance features, defined integrations", "Short-duration projects where scope creep risk is low", "Discovery phases with named deliverables and a capped timebox"]
-  }, {
-    type: "h2",
-    text: "The time and materials model"
-  }, {
-    type: "p",
-    text: "In a time and materials engagement, clients pay for the time and resources actually used. The scope can evolve as the project progresses, and both parties share the risk of scope uncertainty. This model works best for ongoing product work, complex systems where requirements will emerge during build, and long-running platform engagements."
-  }, {
-    type: "h2",
-    text: "When T&M is the honest answer"
-  }, {
-    type: "bullets",
-    items: ["Open-ended product development where requirements will evolve with user feedback", "Multi-phase platform builds where each phase informs the next", "Agentic or AI system builds where the definition of 'done' depends on eval results", "Long-running engagements where the team needs autonomy to make the right engineering decisions"]
-  }, {
-    type: "callout",
-    text: "A vendor offering fixed price on an unscoped agentic build has priced in the risk, and will protect that price by saying no to the changes you need."
-  }, {
-    type: "h2",
-    text: "The hybrid we recommend"
-  }, {
-    type: "p",
-    text: "For most serious product builds, we recommend a hybrid: fixed-price discovery to lock the scope and architecture, fixed-price MVP keyed to defined acceptance criteria, then time and materials with a monthly cap for the iteration phase. This aligns incentives at the points that matter and keeps flexibility where the work is genuinely uncertain."
-  }]
-}, {
-  slug: "7code-discovery-mission",
-  cat: "Strategy",
-  title: "7Code's Discovery Mission: de-risk software builds",
-  subtitle: "A four-week Discovery Mission is the cornerstone of every successful build, producing the product vision, backlog, wireframes, architecture, and delivery plan that make development predictable.",
-  date: "Sep 04, 2023",
-  read: "5 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "cyan",
-  illus: "mission_board",
-  body: [{
-    type: "lead",
-    text: "Most software projects fail not in development but in the lack of clarity before development begins. 7Code's Discovery Mission is a four-week, structured engagement that transforms a vision into a build-ready plan, producing the artefacts a team needs to start development with confidence, aligned expectations, and a realistic budget."
-  }, {
-    type: "h2",
-    text: "Why discovery matters"
-  }, {
-    type: "p",
-    text: "Skipping discovery is the most expensive shortcut in software development. Teams that start building without a shared product vision accumulate misalignment silently, in architecture decisions, in feature scope, in infrastructure choices, until the cost of course-correcting exceeds the cost of having done discovery properly in the first place."
-  }, {
-    type: "h2",
-    text: "The four-week structure"
-  }, {
-    type: "bullets",
-    items: ["Week 1, Product vision: collaboratively define the product vision with stakeholders, aligning goals, identifying value propositions, and addressing potential obstacles. The product backlog takes shape.", "Week 2, Wireframes and backlog: craft a detailed backlog with acceptance criteria, and create wireframes that visualise the product's user interface and information flow, enabling all stakeholders to make informed decisions.", "Week 3, Technical architecture: develop a comprehensive diagram of the technical ecosystem, delineating all subsystems with accurate descriptions and ready-to-implement infrastructure items.", "Week 4, Delivery plan and estimates: present a well-informed delivery plan incorporating the proposed team structure, accurate estimations, milestones, and comprehensive cost estimates for effective project planning."]
-  }, {
-    type: "h2",
-    text: "The deliverables"
-  }, {
-    type: "p",
-    text: "A completed Discovery Mission produces: a product vision document signed off by leadership, a wireframe set that makes user flows explicit, a technical architecture diagram ready for implementation, a prioritised product backlog with acceptance criteria, and a delivery plan with team structure, milestones, and a transparent budget."
-  }, {
-    type: "callout",
-    text: "A well-executed Discovery Mission is the cornerstone of successful software development. It transforms ambiguity into clarity, and clarity into momentum."
-  }, {
-    type: "h2",
-    text: "What changes when you do discovery right"
-  }, {
-    type: "p",
-    text: "Teams that complete a proper discovery start development with a shared understanding that survives the first sprint. Architects make decisions against a known product vision. Developers build features with agreed acceptance criteria. Clients see a delivery plan they can defend to their board. The Discovery Mission doesn't slow the project down, it accelerates everything that comes after it."
-  }]
 },
 // ── Transferred from medium.com/7code ────────────────────────
 {
@@ -1603,64 +1428,6 @@ const POSTS = [{
   }, {
     type: "p",
     text: "Pick the highest-volume, lowest-risk coordination task on the operations team's plate. Supplier follow-ups, work-order reconciliation, and shift-handover summaries are typical first wins, they have clear inputs, clear outputs, and meaningful time savings. Build a thin agent that does just that workflow, instrument the eval set against real operational data, and ship in six weeks. Then expand the agent's tool surface, not the agent count."
-  }]
-}, {
-  slug: "changing-software-service-provider",
-  cat: "Strategy",
-  title: "How to change your software service provider",
-  subtitle: "Sunk cost keeps clients with the wrong vendor for months too long. With AI projects the cost of waiting is higher, model choices age out, eval debt compounds. A practical playbook for assessing, securing assets, and switching cleanly.",
-  date: "Nov 27, 2023",
-  read: "6 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "defence",
-  illus: "open_door",
-  body: [{
-    type: "lead",
-    text: "Most clients stay with the wrong software service provider at least six months longer than they should. Sunk cost, the fear of starting over, and the hope that things will improve all push the decision out. With AI projects the delay is even more expensive: model choices age out, eval debt compounds, and the team that built the system loses the context required to maintain it. This is the playbook we use when a switch is overdue."
-  }, {
-    type: "h2",
-    text: "What signals it's time to switch software service provider"
-  }, {
-    type: "p",
-    text: "Missed deadlines, unpredictable outcomes, and a lack of professionalism that starts to tarnish your own brand are the obvious symptoms. The less obvious one is the slow drift, requirements that quietly become impossible, change requests that always cost double, and a team that no longer engages with your business problems. For AI projects, add: no eval dashboard, rising cost-per-query that nobody can explain, and a vendor still recommending fine-tuning for problems frontier models now solve out of the box."
-  }, {
-    type: "h2",
-    text: "A three-step strategic approach to the transition"
-  }, {
-    type: "bullets",
-    items: ["Assess the current landscape: take an honest stock of what was promised, what was delivered, the actual quality of the code, and, for AI work, the state of the eval harness, the prompt repository, and the model cards", "Safeguard your assets: secure the source code, the eval dataset, the prompt history, deployment access, and a backup of every system that matters", "Seek expert guidance: bring in a fresh, neutral provider for a second opinion and a code audit, including an AI audit covering evals, retrieval design, and prompt strategy"]
-  }, {
-    type: "h2",
-    text: "What is a code audit, and what is an AI audit?"
-  }, {
-    type: "p",
-    text: "A code audit is a comprehensive evaluation of the existing codebase: its architecture, its security posture, its alignment with current best practices, and the realistic effort to extend or replace it. An AI audit goes further, inspecting the eval harness, the prompt repository, the retrieval design, the model selection, and the cost-per-query trajectory. Without both, every conversation about the transition is opinion-driven. With them, the new provider, the client, and the outgoing vendor share a factual baseline."
-  }, {
-    type: "callout",
-    text: "A switch made without a runnable eval suite in your hands is a switch into a black box. Your evals are the artefact that lets the new team prove they're improving the system, not just changing it."
-  }, {
-    type: "h2",
-    text: "The benefits of getting the transition right"
-  }, {
-    type: "bullets",
-    items: ["Informed decision-making, with a clear-eyed view of the project's true state, including AI-specific liabilities like prompt drift and eval gaps", "A smoother handover, where the new provider has the codebase, the evals, and the operational context they need from day one", "Reduced disruption to live users, paying customers, and internal teams during the change", "A working relationship from the first sprint, rather than three months of reverse-engineering the previous team's choices"]
-  }, {
-    type: "h2",
-    text: "What to ask of the new partner before you sign"
-  }, {
-    type: "bullets",
-    items: ["Show me the eval harness you'd build for this product on day one, and how you'd measure quality regressions weekly", "Show me a prompt diff and explain how you'd review it in PR alongside code", "Walk me through the first 90 days of the handover plan, with named owners and weekly milestones", "Tell me which of my current models or fine-tunes you'd retire and which you'd keep, and why"]
-  }, {
-    type: "h2",
-    text: "Don't accept substandard service"
-  }, {
-    type: "p",
-    text: "Software is a long-term investment, and the team that builds it shapes everything that comes next. With AI products, the team also shapes the evals, the prompt strategy, and the operational discipline. If your current provider is holding the project back, the right move is rarely to wait. Assess, audit, and act, the cost of doing it well is far smaller than the cost of doing it late."
   }]
 }, {
   slug: "aws-beanstalk-to-ecs-migration",
@@ -1727,55 +1494,6 @@ const POSTS = [{
     text: "ECS on Fargate is the right migration target when the team has containerised the application, wants real CI/CD without Beanstalk's restrictions, and does not need the operational depth of Kubernetes. For AI engineering teams running LLM proxies, retrieval workers, agent runtimes, or async eval pipelines, it is the cleanest middle ground. The setup takes a day, the deploy pipeline takes another, and the resulting platform scales with the product without the platform team growing alongside it."
   }]
 }, {
-  slug: "aws-ecs-vs-beanstalk-perspective",
-  cat: "Engineering",
-  title: "Why I moved AI workloads from Beanstalk to Fargate",
-  subtitle: "After six months on Elastic Beanstalk, the developer experience pushed me to ECS + Fargate. For containerised AI services with token budgets and eval gates, the case is even stronger.",
-  date: "Oct 25, 2023",
-  read: "5 min read",
-  author: {
-    name: "Alessandro Merola",
-    role: "CTO",
-    initial: "A",
-    photo: "/project/uploads/authors/alessandro-merola.jpg"
-  },
-  cover: "health",
-  illus: "cloud_compare",
-  body: [{
-    type: "lead",
-    text: "I picked Elastic Beanstalk for an AWS deployment because it looked like the simplest place to start. After six months of running real production traffic on it, including LLM proxies and retrieval workers, I had collected enough small papercuts that I moved the workload to ECS + Fargate. The migration paid for itself in the first month. Here is the comparison I would make again today."
-  }, {
-    type: "h2",
-    text: "The AWS deployment ladder, simplified"
-  }, {
-    type: "bullets",
-    items: ["Elastic Beanstalk: the simplest tier, focused on deploying code with minimal configuration", "ECS, Elastic Container Service: a middle tier focused on orchestrating Docker containers, with Fargate for serverless compute or EC2 for self-managed hosts", "EKS, Elastic Kubernetes Service: the most powerful tier, built on Kubernetes and aimed at platform-scale workloads"]
-  }, {
-    type: "p",
-    text: "For most workloads that do not need Kubernetes, including the AI services most product teams ship, ECS is the right place to land. It gives you containers, autoscaling, and clean integration with the rest of the AWS estate without the operational weight of a full Kubernetes platform."
-  }, {
-    type: "h2",
-    text: "Fargate vs EC2 for the underlying compute"
-  }, {
-    type: "p",
-    text: "ECS gives you two hosting options. Fargate is fully serverless, you hand AWS a container and it runs it without you managing instances. EC2 mode means managing the underlying hosts yourself. I picked Fargate because the time saved on instance management more than paid for the slightly higher per-task cost, and because AI workloads benefit from the predictable cold-start and autoscaling story Fargate provides."
-  }, {
-    type: "h2",
-    text: "Five things that pushed me off Beanstalk"
-  }, {
-    type: "bullets",
-    items: ["Logs: pulling logs in Beanstalk meant requesting archives and digging through multiple groups; on ECS, CloudWatch streams them in real time, the way logs should work, especially when you are debugging an LLM request that hit a 30-second timeout", "Configuration updates: Beanstalk updates across multiple instances were unreliable enough to leave services in a half-broken state; ECS rolls updates predictably with healthy/unhealthy tracking built in", "GitHub integration: Beanstalk has no first-party GitHub Actions support, so deploys depend on community actions; ECS has official actions that AWS maintains", "CI/CD: Beanstalk's pipeline is restrictive, modifying environment variables or running database migrations during a deploy is awkward at best; ECS task definitions handle both naturally, including the per-deploy secret rotation that AI services need", "Auto-scaling: Beanstalk's auto-scaling controls are unintuitive; ECS service auto-scaling is straightforward, reliable, and exposes the metrics that matter for AI workloads, queue depth on a retrieval worker, concurrent inference requests, token spend per minute"]
-  }, {
-    type: "callout",
-    text: "Beanstalk served its purpose, it was a starting point. The moment your deploy story has more requirements than 'push code, run app', and an AI service almost always does, it is time to graduate."
-  }, {
-    type: "h2",
-    text: "The migration was worth it, especially for AI workloads"
-  }, {
-    type: "p",
-    text: "Six months on, the operational story is calmer, the deploy pipeline is faster, and the platform scales without surprises. For AI services with token budgets, eval gates, and per-tenant rate limits, ECS + Fargate is the cleanest middle ground between 'too constrained' and 'too much platform'. It is not the right answer for every workload, but for the kind of containerised AI service most teams ship today, it is the one I would reach for first."
-  }]
-}, {
   slug: "how-to-hire-nearshore-ai-engineers",
   cat: "Operations",
   title: "How to Hire Nearshore AI Engineers: A Practical Guide for CTOs",
@@ -1799,7 +1517,7 @@ const POSTS = [{
     text: "Why nearshore for AI engineering specifically?"
   }, {
     type: "p",
-    text: "AI engineering is a specific skill set: production LLM integration, RAG pipeline design, agent orchestration, evaluation harness construction, prompt management, and MLOps. This skill set is genuinely rare in most Western European and UK markets, where the competition for a senior ML engineer from a large tech company pushes salaries above £120k in London. Cluj-Napoca, Bucharest, Warsaw, and Tallinn have graduates from the same computer science programmes, working in the same frameworks, at 40–60% of that cost."
+    text: "AI engineering is a specific skill set: production LLM integration, RAG pipeline design, agent orchestration, evaluation harness construction, prompt management, and MLOps. This skill set is genuinely rare in most Western European and UK markets, where the competition for a senior ML engineer from a large tech company pushes salaries up sharply in London. Cluj-Napoca, Bucharest, Warsaw, and Tallinn have graduates from the same computer science programmes, working in the same frameworks, at a lower cost (figures below)."
   }, {
     type: "h2",
     text: "The three most common hiring mistakes"
@@ -1815,6 +1533,12 @@ const POSTS = [{
   }, {
     type: "callout",
     text: "The single best interview question for a nearshore AI engineer: 'Tell me about a production AI system you built, and what its eval harness looked like.' The answer reveals everything about their actual experience level."
+  }, {
+    type: "h2",
+    text: "How much does it cost to hire an AI engineer?"
+  }, {
+    type: "p-html",
+    text: "In the UK, the median advertised salary for a machine learning engineer was £70,000 in the six months to 15 September 2026, with the 90th percentile at £110,000 (<a href=\"https://www.itjobswatch.co.uk/jobs/uk/machine%20learning%20engineer.do\" target=\"_blank\" rel=\"noopener noreferrer\">ITJobsWatch</a>). Employer costs come on top. Nearshore contractors cost less per hour. <a href=\"https://lemon.io/rate-calculator/\" target=\"_blank\" rel=\"noopener noreferrer\">Lemon.io</a>'s September 2026 data puts AI specialists in Romania at about $52/hr median and in Portugal at about $53/hr. <a href=\"https://alcor.com/romanian-developers-benefits-pitfalls-rates-insights/\" target=\"_blank\" rel=\"noopener noreferrer\">Alcor</a>'s 2026 research puts a senior LLM engineer in Romania at about $8,150 a month gross. Agency rates include management and cover, so they sit above freelance rates. 7code's rate card runs from €30–35/h for mid-level engineers and €40–50/h for seniors to €60–80/h for AI architects."
   }, {
     type: "h2",
     text: "Structuring the engagement"
@@ -1865,6 +1589,9 @@ const POSTS = [{
     type: "h2",
     text: "What we evaluated"
   }, {
+    type: "p",
+    text: "Disclosure: 7code publishes this list and includes itself. The scoring criteria below apply to every agency, us included."
+  }, {
     type: "bullets",
     items: ["AI specialism: do they have production LLM, RAG, and agent systems in their public portfolio, or are they generalising from web development experience?", "Team seniority: what's the minimum experience level for engineers on client projects? Junior-heavy teams with AI keywords are common and usually a mistake.", "Delivery model: fixed-scope, sprint-based, or T&M? Do they build evaluation harnesses as a default, or as an optional add-on?", "Client base: UK/EU companies at what stage? Regulated industries? References available?", "Location and timezone: real overlap with UK/EU working hours, not nominal UTC proximity."]
   }, {
@@ -1906,7 +1633,10 @@ const POSTS = [{
     text: "Eleks has deep roots in data science and ML research, which gives them genuine depth in model selection, fine-tuning, and data engineering. Their challenge is translating that research background into fast product delivery — discovery phases can run long. Best suited to data-heavy projects where the underlying ML architecture is the primary challenge, rather than product velocity or LLM application development."
   }, {
     type: "h2",
-    text: "How to choose"
+    text: "How do you choose a nearshore AI development agency?"
+  }, {
+    type: "p",
+    text: "Check four things. First, production AI work you can see: LLM, RAG or agent systems live with real users, not demos. Second, senior engineers on your project, not juniors with copilots. Third, a delivery model that fits your scope, fixed price or time and materials. Fourth, clients like you in the UK or EU. Time zone and GDPR come after that."
   }, {
     type: "p",
     text: "The right agency depends on what you're actually building. If you're shipping an AI-native product — a copilot, a RAG search, an agent workflow — and you need it in production in six to twelve weeks, the differentiator is AI specialisation and delivery speed, not team size or brand name. If you're adding AI features to a large enterprise system with complex governance, a larger agency with enterprise delivery experience may be a better fit than a specialist AI shop."
@@ -4770,19 +4500,9 @@ function BlogListPage() {
   const rest = POSTS.slice(1);
   const filtered = active === "All" ? rest : POSTS.filter(p => p.cat === active);
   const showFeatured = active === "All";
-  useEffectBL(() => {
-    const t = "Blog, AI Engineering, Product & Operations | 7Code";
-    const d = "Field notes from 7code's AI engineering practice: LLM features, agentic workflows, AI MVPs, and production AI — written by the team building them in Cluj-Napoca.";
-    document.title = t;
-    setMeta("description", d);
-    setMeta("og:title", t, "property");
-    setMeta("og:description", d, "property");
-    setMeta("og:type", "website", "property");
-    setMeta("og:url", SITE_ORIGIN_BL + "/blog", "property");
-    setMeta("twitter:title", t, "name");
-    setMeta("twitter:description", d, "name");
-    setCanonical(SITE_ORIGIN_BL + "/blog");
-  }, []);
+
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
+
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
   }, /*#__PURE__*/React.createElement("section", {
@@ -5034,21 +4754,9 @@ function BlogPostPage({
   const post = POSTS.find(p => p.slug === slug) || POSTS[0];
   const related = POSTS.filter(p => p.slug !== post.slug && p.cat === post.cat).slice(0, 2);
   const nextPost = POSTS[(POSTS.indexOf(post) + 1) % POSTS.length];
-  useEffectBL(() => {
-    const t = post.title + " | 7Code Blog";
-    const d = post.subtitle;
-    const url = SITE_ORIGIN_BL + "/blog/" + post.slug;
-    document.title = t;
-    setMeta("description", d);
-    setMeta("og:title", t, "property");
-    setMeta("og:description", d, "property");
-    setMeta("og:type", "article", "property");
-    setMeta("og:url", url, "property");
-    setMeta("twitter:title", t, "name");
-    setMeta("twitter:description", d, "name");
-    setCanonical(url);
-    return () => {};
-  }, [post.slug]);
+
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
+
   return /*#__PURE__*/React.createElement("div", {
     className: "page"
   }, /*#__PURE__*/React.createElement("section", {
@@ -5065,7 +4773,7 @@ function BlogPostPage({
     className: "blog-cat-pill"
   }, post.cat), /*#__PURE__*/React.createElement("span", {
     className: "blog-single-date"
-  }, post.date, " \xB7 ", post.read)), /*#__PURE__*/React.createElement("h1", {
+  }, post.date, POST_UPDATED[post.slug] ? " · Updated " + POST_UPDATED[post.slug] : "", " \xB7 ", post.read)), /*#__PURE__*/React.createElement("h1", {
     className: "blog-single-title"
   }, post.title), /*#__PURE__*/React.createElement("p", {
     className: "blog-single-sub"
@@ -5111,7 +4819,14 @@ function BlogPostPage({
     }
   }, "Published"), /*#__PURE__*/React.createElement("div", {
     className: "blog-sidebar-date"
-  }, post.date), /*#__PURE__*/React.createElement("div", {
+  }, post.date), POST_UPDATED[post.slug] && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "blog-sidebar-label",
+    style: {
+      marginTop: 12
+    }
+  }, "Updated"), /*#__PURE__*/React.createElement("div", {
+    className: "blog-sidebar-date"
+  }, POST_UPDATED[post.slug])), /*#__PURE__*/React.createElement("div", {
     className: "blog-sidebar-label",
     style: {
       marginTop: 12

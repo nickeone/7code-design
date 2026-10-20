@@ -11,11 +11,12 @@
 const BASE = process.argv[2] || "https://www.7code.tech";
 
 const CASES = [
+  { from: "/blog/",                 to: "/blog" },
   { from: "/blog-7code/",           to: "/blog" },
   { from: "/blog-7code",            to: "/blog" },
   {
     from: "/2025/09/04/7codes-discovery-mission-pioneering-successful-software-development/",
-    to:   "/blog/7code-discovery-mission",
+    to:   "/blog/ai-discovery-mission-de-risk-ai-products",
   },
   {
     from: "/2025/07/03/from-cluj-to-london-what-we-brought-home-from-tech-week/",
@@ -29,6 +30,8 @@ const CASES = [
   { from: "/pf/case-study-revote",  to: "/case-study/revote" },
   { from: "/service",               to: "/services" },
   { from: "/service/",              to: "/services" },
+  { from: "/case-study",            to: "/case-studies" },
+  { from: "/case-study/",           to: "/case-studies" },
   { from: "/home/",                 to: "/" },
   { from: "/home",                  to: "/" },
   { from: "/privacy-policy/",       to: "/privacy-policy" },

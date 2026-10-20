@@ -29,6 +29,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 // ── route list (keep in sync with prerender.mjs) ─────────────────────────────
 
 const ROUTES = [
+  "/", // homepage → index.html (injected last so the template pass above is unaffected)
   "/about",
   "/process",
   "/contact",
@@ -81,19 +82,13 @@ const ROUTES = [
   "/blog/ai-engineering-outstaffing",
   "/blog/lessons-from-london-tech-week-ai",
   "/blog/logistics-tech-tailored-solutions",
-  "/blog/changing-software-service-provider",
   "/blog/aws-beanstalk-to-ecs-migration",
-  "/blog/aws-ecs-vs-beanstalk-perspective",
-  "/blog/adrenaline-ai-code-debugger",
   "/blog/why-mvp-first",
-  "/blog/seamless-software-project-handover",
   "/blog/cms-wordpress-vs-custom-development",
   "/blog/osai-revolutionising-ai-interactions",
   "/blog/low-code-no-code-vs-custom-development",
   "/blog/reducing-costs-nearshoring-outstaffing",
   "/blog/migrating-users-auth0-python",
-  "/blog/fixed-price-vs-time-and-materials",
-  "/blog/7code-discovery-mission",
   "/blog/how-to-hire-nearshore-ai-engineers",
   "/blog/top-nearshore-ai-development-agencies-europe",
   "/resources/ai-automation-for-smes",
@@ -218,6 +213,7 @@ function injectRoot(html, innerHTML) {
 }
 
 function routeToFilePath(route) {
+  if (route === "/") return join(ROOT, "index.html");
   const rel = route.startsWith("/") ? route.slice(1) : route;
   return join(ROOT, rel + ".html");
 }

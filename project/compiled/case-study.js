@@ -1525,18 +1525,9 @@ function CaseStudyPage({
 }) {
   // Reassign module-level CSD synchronously before render
   CSD = CASES[slug] || CASES["wholesum"];
-  React.useEffect(() => {
-    const c = CASES[slug] || CASES["wholesum"];
-    const prevTitle = document.title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = "7Code, " + c.client + ": " + c.title;
-    if (descEl && c.metaDescription) descEl.setAttribute("content", c.metaDescription);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, [slug]);
+
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
+
   let Body;
   if (variant === "metric") Body = /*#__PURE__*/React.createElement(CSDMetric, null);else if (variant === "visual") Body = /*#__PURE__*/React.createElement(CSDVisual, null);else if (variant === "sticky") Body = /*#__PURE__*/React.createElement(CSDSticky, null);else Body = /*#__PURE__*/React.createElement(CSDLongRead, null);
   return /*#__PURE__*/React.createElement("div", {

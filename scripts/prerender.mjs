@@ -17,7 +17,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { SERVICE_FAQS, EXPERTISE_FAQS, faqPageEntity } from "./faq-data.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -28,11 +27,76 @@ const DEFAULT_OG = SITE + "/project/uploads/hera-hero.jpg";
 // Page metadata (extracted from JSX data sources)
 // ──────────────────────────────────────────────────────────────────────────
 
+// SEO titles: one per route, used for <title>, og:title and twitter:title (approved by Nicu 2026-10-20).
+// Routes not listed fall back to the template default.
+const SEO_TITLES = {
+  "/about": "About 7code — AI Engineering Team in Cluj-Napoca",
+  "/process": "How We Build AI-Native Products | 7code",
+  "/contact": "Contact 7code — Start an AI Engineering Project",
+  "/case-studies": "AI & Software Case Studies | 7code",
+  "/service/ai-product-engineering": "AI Product Engineering — Senior Nearshore Team | 7code",
+  "/service/system-integrations": "System Integration Services for AI Workloads | 7code",
+  "/service/ai-automation": "AI Process Automation Services | 7code",
+  "/service/cloud-agentic-infra": "Cloud & Agentic Infrastructure for AI Products | 7code",
+  "/service/ai-outstaffing": "AI Engineering Outstaffing — Senior Engineers | 7code",
+  "/service/llm-agent-development": "LLM & AI Agent Development Services | 7code",
+  "/case-study/revote": "ReVote: Remote Voting for the European Parliament | 7code",
+  "/case-study/cloud-of-legacy": "Cloud of Legacy: Secure Digital Inheritance | 7code",
+  "/case-study/melsonic": "Melsonic: AI Guitar Learning with Live Feedback | 7code",
+  "/case-study/lendit": "Lendit: Peer-to-Peer Rental Marketplace | 7code",
+  "/expertise/healthcare": "AI Software Development for Healthcare | 7code",
+  "/expertise/finance": "AI Software Development for Finance | 7code",
+  "/expertise/energy": "AI Software Development for Energy & Utilities | 7code",
+  "/expertise/defence": "AI Software Development for Defence & Security | 7code",
+  "/expertise/hr": "AI Software Development for HR | 7code",
+  "/expertise/operations": "AI Software Development for Operations | 7code",
+  "/blog/ai-discovery-mission-de-risk-ai-products": "The AI Discovery Mission: de-risk AI in four weeks | 7code",
+  "/blog/ai-engineering-pricing-fixed-vs-time-materials": "Fixed price vs. T&M for AI engineering: LLM budgets | 7code",
+  "/blog/senior-engineers-ai-leverage": "Why senior engineers with AI beat junior copilots | 7code",
+  "/blog/lessons-from-london-tech-week-ai": "Lessons from London Tech Week: an AI-first lens | 7code",
+  "/blog/logistics-tech-tailored-solutions": "AI-native logistics: beating the coordination tax | 7code",
+  "/blog/aws-beanstalk-to-ecs-migration": "AWS Beanstalk to ECS Fargate: AI-engineering recipe | 7code",
+  "/blog/why-mvp-first": "Why MVP first? The case for minimum viable products | 7code",
+  "/blog/cms-wordpress-vs-custom-development": "WordPress vs. custom development: how to choose | 7code",
+  "/blog/osai-revolutionising-ai-interactions": "Osai: revolutionising AI interactions with 7Code | 7code",
+  "/blog/low-code-no-code-vs-custom-development": "Low-code vs. custom development: how to choose | 7code",
+  "/blog/reducing-costs-nearshoring-outstaffing": "Dev cost savings through nearshoring and outstaffing | 7code",
+  "/blog/migrating-users-auth0-python": "Migrating users between Auth0 tenants in Python | 7code",
+};
+
+// Last substantive content update per post (from git history: May 2026 rewrite/migration,
+// 20 Oct 2026 disclosure). Only set when content really changed — never bump for freshness.
+// Keep in sync with POST_UPDATED in project/blog.jsx.
+const BLOG_UPDATED = {
+  "low-code-no-code-vs-custom-development": "2026-05-06",
+  "cms-wordpress-vs-custom-development": "2026-05-06",
+  "osai-revolutionising-ai-interactions": "2026-05-06",
+  "reducing-costs-nearshoring-outstaffing": "2026-05-06",
+  "aws-beanstalk-to-ecs-migration": "2026-05-06",
+  "migrating-users-auth0-python": "2026-05-06",
+  "logistics-tech-tailored-solutions": "2026-05-06",
+  "why-mvp-first": "2026-05-06",
+  "lessons-from-london-tech-week-ai": "2026-05-06",
+  "ai-engineering-outstaffing": "2026-05-05",
+  "switch-ai-engineering-partner": "2026-05-04",
+  "running-ai-engineering-pods-across-continents": "2026-05-05",
+  "ai-project-handover": "2026-05-04",
+  "senior-engineers-ai-leverage": "2026-05-06",
+  "adrenaline-ai-debugger-case-study": "2026-05-05",
+  "ai-native-automation-crm-erp-iot": "2026-05-05",
+  "ai-agents-manufacturing-operations": "2026-05-05",
+  "ai-engineering-pricing-fixed-vs-time-materials": "2026-05-06",
+  "ship-ai-mvp-six-weeks": "2026-05-06",
+  "ai-discovery-mission-de-risk-ai-products": "2026-05-06",
+  "top-nearshore-ai-development-agencies-europe": "2026-10-20",
+  "how-to-hire-nearshore-ai-engineers": "2026-10-20"
+};
+
 const MAIN_PAGES = [
   {
     path: "/about",
     title: "About 7Code — AI-First Software Engineering Partner",
-    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2019.",
+    description: "7Code is an AI-first software engineering partner based in Cluj-Napoca, Romania. We design, build, and operate AI-native products end-to-end since 2017.",
   },
   {
     path: "/process",
@@ -115,21 +179,17 @@ const CASES = [
 ];
 
 const RESOURCES = [
-  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12" },
+  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
-  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12" },
-  { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12" },
+  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
+  { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "nearshore-romania-vs-offshore-asia", title: "Nearshore Romania vs Offshore Asia: A Practical Guide for European Businesses", description: "A data-driven comparison of nearshore Romania and offshore India for European tech buyers — time zones, cost, quality, GDPR, and total cost of ownership.", datePublished: "2026-05-12" },
   { slug: "build-ai-in-house-vs-partner", title: "Build AI In-House vs With a Partner: The 2026 Decision Framework", description: "A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.", datePublished: "2026-05-12" },
 ];
 
 // Blog posts that appear in sitemap.xml
 const BLOG_POSTS = [
-  {"slug":"reduce-admin-work-medical-clinic","title":"How to Reduce Admin Work in a Medical Clinic","description":"Most clinic admin comes from the same few tasks. Here is how to tell whether ready-made clinic software is enough, or whether custom automation is worth it.","datePublished":"2026-10-20","faqs":[
-    {"q":"What is administrative burden in a clinic?","a":"All the tasks that keep the clinic running but aren’t patient care: scheduling, forms, billing, reports and paperwork."},
-    {"q":"Can we automate admin without changing our patient record system?","a":"Usually yes. We build around the systems you already use."},
-    {"q":"Will it replace our staff?","a":"No. It removes repetitive typing and chasing, so your team spends more time with patients."},
-  ]},
+  {"slug":"reduce-admin-work-medical-clinic","title":"How to Reduce Admin Work in a Medical Clinic","description":"Most clinic admin comes from the same few tasks. Here is how to tell whether ready-made clinic software is enough, or whether custom automation is worth it.","datePublished":"2026-10-20"},
   {"slug":"hire-or-automate-which-costs-less","title":"Hire or Automate: Which Costs Less?","description":"Automation usually costs less than hiring when the work is repetitive and follows clear rules. Hiring is the better choice when the work needs judgment or changes every week.","datePublished":"2026-10-20"},
   {"slug":"which-business-process-to-automate-first","title":"Which Business Process Should You Automate First?","description":"Start with the process that repeats often, follows clear rules, wastes the most hours, and touches only one or two tools. A 10-minute scoring method to pick yours.","datePublished":"2026-10-20"},
   {"slug":"business-process-automation-cost","title":"How Much Does Business Process Automation Cost?","description":"What decides the price of automating a business process, how to compare it with hiring, and the questions to ask any vendor before you sign.","datePublished":"2026-10-20"},
@@ -146,19 +206,13 @@ const BLOG_POSTS = [
   {"slug":"ai-engineering-outstaffing","title":"AI engineering outstaffing, done properly","description":"Cost is not the headline. Velocity, ownership, and AI fluency are. How we set up nearshore AI pods that actually ship.","datePublished":"2025-12-04"},
   {"slug":"lessons-from-london-tech-week-ai","title":"Lessons from London Tech Week, through an AI-first lens","description":"What we heard about agentic workflows, evaluation, and AI go-to-market, and what we're betting on next.","datePublished":"2025-11-20"},
   {"slug":"logistics-tech-tailored-solutions","title":"AI-native logistics software: turning the coordination tax into competitive advantage","description":"Generic logistics platforms cover 60% of the workflow and force teams to absorb the rest in spreadsheets. AI-native, integrated systems absorb the coordination tax and turn real-time data into faster, better operational decisions.","datePublished":"2023-12-10"},
-  {"slug":"changing-software-service-provider","title":"How to change your software service provider, with an AI-first lens","description":"Sunk cost keeps clients with the wrong vendor for months too long. With AI projects the cost of waiting is higher, model choices age out, eval debt compounds. A practical playbook for assessing, securing assets, and switching cleanly.","datePublished":"2023-11-27"},
   {"slug":"aws-beanstalk-to-ecs-migration","title":"Migrating from AWS Beanstalk to ECS on Fargate, the AI-engineering recipe","description":"AI services need a deploy story Beanstalk cannot give them. A practical recipe for moving a containerised AI workload to ECS on Fargate, with VPC, load balancer, and a GitHub Actions deploy pipeline.","datePublished":"2023-10-25"},
-  {"slug":"aws-ecs-vs-beanstalk-perspective","title":"Why I moved AI workloads from AWS Beanstalk to ECS + Fargate, a personal perspective","description":"After six months on Elastic Beanstalk, the developer experience pushed me to ECS + Fargate. For containerised AI services with token budgets and eval gates, the case is even stronger.","datePublished":"2023-10-25"},
-  {"slug":"adrenaline-ai-code-debugger","title":"Adrenaline: revolutionising code debugging with AI","description":"How GetAdrenaline partnered with 7Code to build an AI-powered debugger that diagnoses and fixes code issues in seconds, from MVP to production on AWS.","datePublished":"2024-11-21"},
   {"slug":"why-mvp-first","title":"Why MVP first? The advantages of a minimum viable product approach","description":"Starting lean, learning fast, and building what users actually need, the MVP approach is the most efficient path from idea to product-market fit.","datePublished":"2023-12-11"},
-  {"slug":"seamless-software-project-handover","title":"The art of seamless software project handover: a client-centric approach","description":"A successful handover is not an event, it is a process. How 7Code ensures clients have full control, full understanding, and full confidence when we hand over the keys.","datePublished":"2023-12-12"},
   {"slug":"cms-wordpress-vs-custom-development","title":"CMS (WordPress) vs. custom development: making the right choice for your business","description":"WordPress can launch a web presence in days. Custom development can build a competitive moat that lasts years. Here's how to decide which one your business actually needs.","datePublished":"2023-10-11"},
   {"slug":"osai-revolutionising-ai-interactions","title":"Osai: revolutionising AI interactions with 7Code's cutting-edge expertise","description":"How we built Osai, a prompt-sharing platform that unlocks collective intelligence across teams working with GPT-4, Midjourney, and DALL-E.","datePublished":"2023-10-11"},
   {"slug":"low-code-no-code-vs-custom-development","title":"Low code / no code vs. custom development: making the right choice for your product","description":"Low-code platforms are powerful for standard needs. Custom code is the only answer when your product demands performance, flexibility, and long-term viability.","datePublished":"2023-10-10"},
   {"slug":"reducing-costs-nearshoring-outstaffing","title":"Reducing development team costs through nearshoring and outstaffing","description":"10–30% cost savings are possible, but that is not the headline. Velocity, continuity, and access to senior talent are.","datePublished":"2023-10-11"},
   {"slug":"migrating-users-auth0-python","title":"Migrating users between Auth0 tenants in Python: handling large payloads","description":"A practical guide to the pitfalls, edge cases, and Python patterns for moving users from one Auth0 tenant to another, without data loss or downtime.","datePublished":"2023-10-25"},
-  {"slug":"fixed-price-vs-time-and-materials","title":"Fixed price vs. time and materials: a comparative analysis for software development","description":"The right pricing model depends on the nature of your project, your budget flexibility, and the level of scope certainty you actually have.","datePublished":"2023-09-13"},
-  {"slug":"7code-discovery-mission","title":"7Code's Discovery Mission: pioneering successful software development","description":"A four-week Discovery Mission is the cornerstone of every successful build, producing the product vision, backlog, wireframes, architecture, and delivery plan that make development predictable.","datePublished":"2023-09-04"},
   {"slug":"how-to-hire-nearshore-ai-engineers","title":"How to Hire Nearshore AI Engineers: A Practical Guide for CTOs","description":"Hiring nearshore AI engineers is faster and cheaper than most CTOs expect — if you evaluate the right signals and avoid the three most common mistakes.","datePublished":"2026-06-09"},
   {"slug":"top-nearshore-ai-development-agencies-europe","title":"Top 5 Nearshore AI Development Agencies in Europe (2026)","description":"A structured comparison of the leading nearshore AI engineering agencies serving UK and EU clients in 2026, based on delivery track record, team seniority, and AI specialism.","datePublished":"2026-07-14"},
 ];
@@ -184,7 +238,6 @@ function breadcrumbEntity(pageUrl, items) {
 
 function serviceSchema(s) {
   const url = SITE + "/service/" + s.slug;
-  const faqs = SERVICE_FAQS[s.slug];
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -203,14 +256,12 @@ function serviceSchema(s) {
         { name: "Services", url: SITE + "/services" },
         { name: s.title, url: url },
       ]),
-      ...(faqs ? [faqPageEntity(url, faqs)] : []),
     ],
   };
 }
 
 function expertiseSchema(e) {
   const url = SITE + "/expertise/" + e.slug;
-  const faqs = EXPERTISE_FAQS[e.slug];
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -229,7 +280,6 @@ function expertiseSchema(e) {
         { name: "Expertise", url: SITE + "/expertise" },
         { name: e.title, url: url },
       ]),
-      ...(faqs ? [faqPageEntity(url, faqs)] : []),
     ],
   };
 }
@@ -270,17 +320,43 @@ function blogPostSchema(p) {
         "image": p.ogImage ? SITE + p.ogImage : DEFAULT_OG,
         "url": url,
         "mainEntityOfPage": url,
-        "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
+        "author": authorEntity(POST_AUTHORS[p.slug]),
         "publisher": ORG_REF,
-        ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": p.datePublished } : {}),
+        ...(p.datePublished ? { "datePublished": p.datePublished, "dateModified": BLOG_UPDATED[p.slug] || p.datePublished } : {}),
       },
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },
         { name: "Blog", url: SITE + "/blog" },
         { name: p.title, url: url },
       ]),
-      ...(p.faqs ? [faqPageEntity(url, p.faqs)] : []),
     ],
+  };
+}
+
+
+// Article authors: read from the visible bylines in project/blog.jsx (single source of truth),
+// linked to the Person entities on /about. LinkedIn only where confirmed.
+const AUTHOR_SAMEAS = {
+  "Nicu Mardari": ["https://www.linkedin.com/in/nicu-mardari-b39a3477/"],
+};
+const POST_AUTHORS = (() => {
+  const src = fs.readFileSync(path.join(ROOT, "project", "blog.jsx"), "utf-8");
+  const map = {};
+  const re = /slug:\s*"([^"]+)"[\s\S]*?author:\s*\{\s*name:\s*"([^"]+)"/g;
+  let m;
+  while ((m = re.exec(src))) map[m[1]] = m[2];
+  return map;
+})();
+function authorEntity(name) {
+  if (!name) return { "@type": "Organization", "name": "7code", "url": SITE + "/" };
+  const id = SITE + "/#" + name.toLowerCase().replace(/[^a-z]+/g, "-");
+  return {
+    "@type": "Person",
+    "@id": id,
+    "name": name,
+    "url": SITE + "/about",
+    ...(AUTHOR_SAMEAS[name] ? { "sameAs": AUTHOR_SAMEAS[name] } : {}),
+    "worksFor": ORG_REF,
   };
 }
 
@@ -300,8 +376,12 @@ function resourceSchema(r) {
         "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
         "publisher": ORG_REF,
         "datePublished": r.datePublished,
-        "dateModified": r.datePublished,
+        "dateModified": r.dateModified || r.datePublished,
       },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: r.title, url: url },
+      ]),
     ],
   };
 }
@@ -348,7 +428,12 @@ function genericPageSchema(p, pageType, breadcrumbItems) {
 // Template + per-page rewrite
 // ──────────────────────────────────────────────────────────────────────────
 
-const TEMPLATE = fs.readFileSync(path.join(ROOT, "index.html"), "utf-8");
+// index.html is both the homepage and the template for every other route.
+// Since the homepage body is now prerendered into index.html, empty #root here so
+// no route ever inherits homepage content; scripts/prerender-body.mjs fills each route.
+const TEMPLATE = fs
+  .readFileSync(path.join(ROOT, "index.html"), "utf-8")
+  .replace(/<div id="root">[\s\S]*?<\/div>(?=\s*<script)/, '<div id="root"></div>');
 
 // Strip the path→hash bootstrap from a template — pre-rendered files don't
 // need it (we want the URL to stay clean as /service/X, not /#/service/X).
@@ -532,7 +617,7 @@ for (const p of MAIN_PAGES) {
   }
   const html = renderPage({
     pathname: p.path,
-    title: p.title,
+    title: SEO_TITLES[p.path] || p.title,
     description: p.description,
     ogImage: DEFAULT_OG,
     schema,
@@ -545,7 +630,7 @@ console.log("\nServices:");
 for (const s of SERVICES) {
   const html = renderPage({
     pathname: "/service/" + s.slug,
-    title: s.title + " — 7Code",
+    title: SEO_TITLES["/service/" + s.slug] || (s.title + " | 7code"),
     description: s.description,
     ogImage: s.ogImage ? SITE + s.ogImage : DEFAULT_OG,
     schema: serviceSchema(s),
@@ -557,7 +642,7 @@ console.log("\nExpertise:");
 for (const e of EXPERTISE) {
   const html = renderPage({
     pathname: "/expertise/" + e.slug,
-    title: e.title + " — 7Code",
+    title: SEO_TITLES["/expertise/" + e.slug] || (e.title + " | 7code"),
     description: e.description,
     ogImage: e.ogImage ? SITE + e.ogImage : DEFAULT_OG,
     schema: expertiseSchema(e),
@@ -569,7 +654,7 @@ console.log("\nCase studies:");
 for (const c of CASES) {
   const html = renderPage({
     pathname: "/case-study/" + c.slug,
-    title: c.title + " | 7Code",
+    title: SEO_TITLES["/case-study/" + c.slug] || (c.title + " | 7code"),
     description: c.description,
     ogImage: c.ogImage ? SITE + c.ogImage : DEFAULT_OG,
     schema: caseStudySchema(c),
@@ -581,7 +666,7 @@ console.log("\nBlog posts:");
 for (const p of BLOG_POSTS) {
   const html = renderPage({
     pathname: "/blog/" + p.slug,
-    title: p.title + " | 7Code Blog",
+    title: SEO_TITLES["/blog/" + p.slug] || (p.title + " | 7code"),
     description: p.description,
     ogImage: DEFAULT_OG,
     schema: blogPostSchema(p),

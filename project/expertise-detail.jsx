@@ -333,18 +333,7 @@ function ExpertiseDetailPage({ slug = "healthcare" }) {
     ...(typeof CASES !== "undefined" && CASES[s] ? CASES[s] : { title: s, kind: exp.kind, meta: [exp.title] }),
   }));
 
-  React.useEffect(() => {
-    const e = EXPERTISE[slug] || EXPERTISE["healthcare"];
-    const prevTitle = document.title;
-    const descEl = document.querySelector('meta[name="description"]');
-    const prevDesc = descEl ? descEl.getAttribute("content") : null;
-    document.title = "7Code, " + e.title + " software engineering";
-    if (descEl && e.metaDescription) descEl.setAttribute("content", e.metaDescription);
-    return () => {
-      document.title = prevTitle;
-      if (descEl && prevDesc !== null) descEl.setAttribute("content", prevDesc);
-    };
-  }, [slug]);
+  // Title/description/OG are set at build time by scripts/prerender.mjs (single source of truth for crawlers and browsers).
 
   return (
     <div className="page">

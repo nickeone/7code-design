@@ -60,9 +60,13 @@ export async function buildAll() {
     files["project/compiled/" + m + ".js"] = js[m];
     files["project/compiled/" + m + ".min.js"] = (await minify(js[m], TERSER_OPTS)).code;
   }
-  for (const [bundle, parts] of Object.entries(BUNDLES)) {
-    files["project/compiled/" + bundle] = (await minify(parts.map(p => js[p]).join(""), TERSER_OPTS)).code;
-  }
+  // bundle-core: the per-module .min.js files joined, each followed by "\n".
+  // bundle-routes: one terser pass over the route modules' .js files.
+  // (Same recipe as the bundles committed on main.)
+  files["project/compiled/bundle-core.min.js"] = BUNDLES["bundle-core.min.js"]
+    .map(p => files["project/compiled/" + p + ".min.js"] + "\n").join("");
+  files["project/compiled/bundle-routes.min.js"] =
+    (await minify(BUNDLES["bundle-routes.min.js"].map(p => js[p]).join(""), TERSER_OPTS)).code;
   const css = await readFile(join(PROJECT, "bundle.css"), "utf8");
   const cssOut = new CleanCSS().minify(css);
   if (cssOut.errors.length) throw new Error("CSS errors in project/bundle.css:\n" + cssOut.errors.join("\n"));
@@ -70,7 +74,7 @@ export async function buildAll() {
   return files;
 }
 
-async function main() {
+export async function main() {
   let files;
   try {
     files = await buildAll();
