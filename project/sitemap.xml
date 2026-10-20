@@ -195,6 +195,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.7code.tech/blog/business-process-automation-cost</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.7code.tech/blog/ai-discovery-mission-de-risk-ai-products</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

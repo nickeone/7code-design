@@ -323,6 +323,73 @@ const POSTS = [{
     text: "<strong>What if I pick the wrong process?</strong><br />That’s what the Quick Scan is for."
   }]
 }, {
+  slug: "business-process-automation-cost",
+  cat: "Strategy",
+  title: "How Much Does Business Process Automation Cost?",
+  subtitle: "What decides the price of automating a business process, how to compare it with hiring, and the questions to ask any vendor before you sign.",
+  date: "Oct 20, 2026",
+  read: "4 min read",
+  author: {
+    name: "Daniela Cazac",
+    role: "CMO",
+    initial: "D",
+    photo: "/project/uploads/authors/daniela-cazac.jpg"
+  },
+  cover: "energy",
+  illus: "launch",
+  featured: false,
+  body: [{
+    type: "lead",
+    text: "These ranges come from projects we’ve delivered, not from a rate card. Where you land inside them depends on five things, listed below. If you only have two minutes, read the section on hiring versus automating, because that is the decision most teams are really making."
+  }, {
+    type: "h2",
+    text: "What decides the price"
+  }, {
+    type: "bullets",
+    items: ["How many systems the process touches. A process that lives in one tool is simple. Once it has to read from your ERP, write to your CRM and notify someone by email, every connection adds build and testing time.", "How well the process is understood today. This is the biggest factor. If three people do the same task three different ways, we have to agree on one way before any code is written. That conversation takes time, and skipping it costs far more later.", "Exceptions. The normal case is easy to automate. The invoice with a missing PO number, or the client who sends the form in a different format, is where most of the work hides.", "Data quality. If the input data is inconsistent, it has to be cleaned first. We tell you this at the start, not halfway through.", "Compliance. Audit trails, access rules and where the data is stored all add scope. They’re much cheaper to plan on day one."]
+  }, {
+    type: "h2",
+    text: "Hire another person or automate?"
+  }, {
+    type: "p",
+    text: "If you’re keeping a role open for weeks to handle repetitive work, you already have a price to compare against."
+  }, {
+    type: "p",
+    text: "Take the yearly cost of the people doing the process today: salaries, plus the errors, rework and delays. Put that next to the project price. For the projects we’ve delivered, payback has been around [N months]."
+  }, {
+    type: "p",
+    text: "Automation isn’t always the better choice. If the process changes every month, or only one person ever does it, a hire may be cheaper. We’ll tell you if that’s the case, and we’d rather say it on a 20-minute call than after a three-month project."
+  }, {
+    type: "related-guide",
+    href: "/blog/hire-or-automate-which-costs-less",
+    title: "Hire or Automate: Which Costs Less?",
+    desc: "A quick way to check which one fits the work in front of you."
+  }, {
+    type: "h2",
+    text: "Questions to ask any vendor before you sign"
+  }, {
+    type: "p",
+    text: "Ask these of us and of anyone else you’re considering:"
+  }, {
+    type: "bullets",
+    items: ["Is the price fixed, or do we pay by the hour?", "Who owns the code and the documentation when it’s finished?", "What happens if the scope changes halfway through?", "Can I speak to a client who had a similar process?"]
+  }, {
+    type: "p",
+    text: "If the answers are vague, that tells you something."
+  }, {
+    type: "h2",
+    text: "Want a number for your process?"
+  }, {
+    type: "p-html",
+    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us what you’re trying to automate, and we’ll tell you which scope fits, roughly what it costs, and whether it’s worth doing at all."
+  }, {
+    type: "h2",
+    text: "Frequently asked questions"
+  }, {
+    type: "p-html",
+    text: "<strong>Do we have to replace our current systems?</strong><br />No. We build around the tools you already use."
+  }]
+}, {
   slug: "ai-discovery-mission-de-risk-ai-products",
   cat: "Strategy",
   title: "The AI Discovery Mission: de-risk AI in four weeks",
