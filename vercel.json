@@ -48,6 +48,7 @@
     { "source": "/case-study", "destination": "/case-studies", "statusCode": 301 },
     { "source": "/case-study/", "destination": "/case-studies", "statusCode": 301 },
     { "source": "/service/product-strategy", "destination": "/service/ai-product-engineering", "permanent": true },
+    { "source": "/blog/", "destination": "/blog", "statusCode": 301 },
     { "source": "/blog-7code/", "destination": "/blog", "permanent": true },
     { "source": "/blog-7code", "destination": "/blog", "permanent": true },
     { "source": "/2025/09/04/7codes-discovery-mission-pioneering-successful-software-development/", "destination": "/blog/7code-discovery-mission", "permanent": true },

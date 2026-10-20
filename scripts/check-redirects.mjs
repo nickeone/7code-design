@@ -11,6 +11,7 @@
 const BASE = process.argv[2] || "https://www.7code.tech";
 
 const CASES = [
+  { from: "/blog/",                 to: "/blog" },
   { from: "/blog-7code/",           to: "/blog" },
   { from: "/blog-7code",            to: "/blog" },
   {
