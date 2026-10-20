@@ -180,6 +180,11 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://www.7code.tech/blog/reduce-admin-work-medical-clinic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.7code.tech/blog/ai-discovery-mission-de-risk-ai-products</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
