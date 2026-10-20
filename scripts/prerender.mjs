@@ -180,6 +180,7 @@ const CASES = [
 
 const RESOURCES = [
   { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
+  { slug: "ai-automation-roi-for-smes", title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)", description: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.", datePublished: "2026-10-20", author: "Nicu Mardari" },
   { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
   { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
@@ -373,7 +374,7 @@ function resourceSchema(r) {
         "image": DEFAULT_OG,
         "url": url,
         "mainEntityOfPage": url,
-        "author": { "@type": "Organization", "name": "7code", "url": SITE + "/" },
+        "author": authorEntity(r.author),
         "publisher": ORG_REF,
         "datePublished": r.datePublished,
         "dateModified": r.dateModified || r.datePublished,

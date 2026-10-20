@@ -2989,3 +2989,7 @@ p { margin: 0; color: var(--slate-700); }
   line-height: 1.6;
   color: var(--slate-700);
 }
+
+/* Resource page inline links */
+.resource-html a { color: var(--cyan-600); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+.resource-html a:hover { color: var(--ink); }

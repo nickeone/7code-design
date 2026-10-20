@@ -28,6 +28,9 @@ const RESOURCES_DATA = {
       {
         heading: "ROI Math for AI Automation",
         body: "The ROI calculation for AI automation is straightforward. The formula: ROI = (Annual Value Generated − Annual Automation Cost) / Implementation Cost. Payback Period = Implementation Cost / Monthly Value Generated. Where Annual Value Generated = (Hours saved per month × 12 × fully-loaded hourly cost) + (Error reduction value per year) + (Revenue impact if applicable). A worked example for invoice processing automation — 800 invoices/month, 8 minutes saved per invoice, 107 hours saved per month, £35/h fully-loaded cost — yields a monthly time saving of £3,745, plus £8,000/year in error reduction value. At a £28,000 implementation cost, payback is approximately 7 months, with Year 1 ROI of 76% and Year 3 cumulative ROI of 428%. Typical SME payback range: 6–18 months for automation projects with clear volume metrics.",
+        blocks: [
+          { type: "p-html", text: "For a step-by-step version with costs and a worked example, see <a href=\"/resources/ai-automation-roi-for-smes\">AI automation ROI for SMEs</a>." },
+        ],
       },
       {
         heading: "Build vs. Buy vs. Partner Analysis",
@@ -43,7 +46,7 @@ const RESOURCES_DATA = {
           { q: "How are SMEs using AI?", a: "Most small and mid-sized firms start with work they already do by hand every day: reading invoices and documents, answering routine customer questions, sorting emails and leads, and pulling numbers into reports. They connect an AI model to the systems they already use, such as their accounting, CRM or helpdesk, and keep a person checking the output." },
           { q: "What are good AI automation services for small businesses?", a: "Most SME AI automation services fall into five types: document processing (reading invoices, matching them to orders and posting them to Xero or NetSuite); customer support assistants that answer common questions from your own content and pass hard cases to a person; recruitment screening that ranks CVs against a role; reporting and anomaly alerts on finance dashboards; and sales data enrichment in HubSpot or Salesforce. Pick the service that removes the most manual hours from one process, and check it connects to the systems you already use." },
           { q: "How long does AI automation take to implement?", a: "A focused automation for a single process — invoice processing, CV screening, report generation — typically takes four to eight weeks from kick-off to go-live. More complex multi-process programmes run twelve to twenty weeks. 7code uses two-week sprint cycles so you see working software throughout." },
-          { q: "What does AI automation cost?", a: "Project costs vary by scope. Ongoing cloud infrastructure and API costs are typically £200–£1,500 per month depending on volume. 7code provides a fixed-price proposal after a two-week Blueprint phase. Contact office@7code.ro for a scoped estimate." },
+          { q: "What does AI automation cost?", a: "At 7code, an automation pilot on one process starts from €10,000; bigger projects are scoped after the pilot. Ongoing cloud infrastructure and API costs are typically £200–£1,500 per month depending on volume. 7code provides a fixed-price proposal after a two-week Blueprint phase. Contact office@7code.ro for a scoped estimate." },
           { q: "Do I need technical staff to use AI automation?", a: "No. 7code builds automations with business-user interfaces — exception queues, dashboards, and alert notifications — that require no technical knowledge to operate." },
           { q: "Can AI automation integrate with my existing systems?", a: "Yes. 7code builds integrations to all major business platforms — SAP, Salesforce, HubSpot, NetSuite, Workday, Microsoft Dynamics, Xero — as well as custom databases and bespoke systems via API or direct database connection." },
           { q: "Is AI automation secure?", a: "Security is designed in from the start. Data is encrypted at rest and in transit. Access controls follow least-privilege principles. For EU clients, all architecture is GDPR-compliant by design." },
@@ -51,6 +54,91 @@ const RESOURCES_DATA = {
           { q: "How can AI automation help small businesses?", a: "AI automation lets small businesses process invoices, screen CVs, answer customer queries, and generate reports without adding headcount. Typical results are 20–40% productivity gains in the automated function and payback within 6–18 months. Unlike enterprise AI programmes, focused SME automations go live in four to eight weeks." },
           { q: "What is the 30% rule for AI?", a: "The 30% rule says AI should handle roughly 30% of a workflow — the repetitive, high-volume part — while humans keep the remaining 70% that requires judgment, relationships, or creativity. It is a guardrail against over-automation: automate the toil first, keep humans on decisions, and expand AI's share only after accuracy is proven." },
           { q: "What is the 10-20-70 rule for AI?", a: "The 10-20-70 rule states that successful AI adoption is about 10% algorithms, 20% technology and data infrastructure, and 70% people and process change. For SMEs the lesson is practical: model choice matters less than clean data, clear workflows, and staff who trust and use the automation. Budget accordingly." },
+        ],
+      },
+    ],
+  },
+
+  "ai-automation-roi-for-smes": {
+    slug: "ai-automation-roi-for-smes",
+    title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)",
+    metaDescription: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.",
+    datePublished: "2026-10-20",
+    author: "Nicu Mardari, CEO",
+    sections: [
+      {
+        heading: "Does AI automation pay off for a small business?",
+        blocks: [
+          { type: "p", text: "Usually, when it takes one repetitive, rules-heavy process off people's desks: invoice handling, support triage, copying data between systems. The return shows up as hours given back, fewer errors and shorter cycle times. Start with one process as a pilot, measure it for 30 days, then decide whether to scale." },
+          { type: "p", text: "Most small and mid-sized companies do not need an AI strategy to see a return. They need one process that costs them hours every week, a way to measure it before and after, and a pilot small enough to stop if it does not work. This guide shows how to find that process, how to calculate the return, and what it costs." },
+        ],
+      },
+      {
+        heading: "Benefits that show up in the numbers",
+        blocks: [
+          { type: "p", text: "Three benefits are worth measuring because they turn into money: hours returned, errors avoided and cycle time. Anything else (\"better decisions\", \"innovation\") is real but hard to put in an ROI." },
+          { type: "bullets", items: [
+            "<strong>Hours returned.</strong> People who use generative AI tools at work report saving 5.4% of their working hours, about 2.2 hours in a 40-hour week (<a href=\"https://www.stlouisfed.org/open-vault/2025/oct/generative-ai-productivity-future-work\" target=\"_blank\" rel=\"noopener\">Federal Reserve Bank of St. Louis</a>, survey of US workers, November 2024). That is for individual tool use. Automating a whole process saves more, because the task stops landing on anyone's desk at all.",
+            "<strong>Errors avoided.</strong> Re-keyed invoices, missed follow-ups and wrong stock counts cost money twice: the error, then the time to find and fix it. Count how many corrections a process needs per month before you start.",
+            "<strong>Cycle time.</strong> How long from an invoice arriving to it being paid, or from a lead coming in to someone answering it. Shorter cycles mean faster cash and fewer lost deals.",
+          ]},
+          { type: "p-html", text: "Small companies are where the gap is. In the EU, 17% of small enterprises (10–49 people) used AI in 2025, against 55% of large ones; in Romania the figure is 5.2%, the lowest in the EU. The most common reason companies give for not using it is lack of relevant expertise (71% of those that considered it) (<a href=\"https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises\" target=\"_blank\" rel=\"noopener\">Eurostat, Use of AI in enterprises, 2025</a>)." },
+        ],
+      },
+      {
+        heading: "How to calculate the ROI",
+        blocks: [
+          { type: "p", text: "ROI is the value of the time and errors saved, minus what the automation costs to build and run, divided by that cost." },
+          { type: "callout", text: "ROI = (hours saved × loaded hourly cost + error cost avoided − build cost − running cost) ÷ (build cost + running cost)" },
+          { type: "p", text: "Worked example (illustrative numbers, not a client result):" },
+          { type: "table", head: ["Input", "Value"], rows: [
+            ["Time the process takes today", "44 hours a week across the team (a bit more than one full-time person)"],
+            ["Share of that time the automation removes", "70%"],
+            ["Working weeks a year", "46"],
+            ["Loaded cost per hour", "€50"],
+            ["Pilot build cost", "€10,000"],
+            ["Running cost (hosting, AI usage, monitoring)", "€300 a month"],
+          ]},
+          { type: "p-html", text: "In the first 6 months that gives about 708 hours returned, worth about €35,400. Cost for the same 6 months is €11,800 (€10,000 build + €1,800 running), so the pilot returns about <strong>3 times its cost in 6 months</strong> and pays for itself in under 2 months. Over a full year: about 1,417 hours, worth €70,840, against €13,600. Error cost avoided is left out; add it if the process has a known correction rate." },
+          { type: "p", text: "3x in 6 months is the target we choose a pilot process for, not a promise. A smaller process returns less: the same setup on a 25-hour-a-week process returns about 1.7x in 6 months." },
+        ],
+      },
+      {
+        heading: "What it costs and how long it takes",
+        blocks: [
+          { type: "p", text: "At 7code, an automation pilot on one process starts from €10,000. Anything bigger is scoped after the pilot, once the numbers from the first process are known. A pilot takes 4–6 weeks from kickoff to a working, measured result." },
+          { type: "p", text: "What moves the cost, so you can place your own case:" },
+          { type: "bullets", items: [
+            "<strong>How many systems the process touches.</strong> One inbox and one spreadsheet is cheap; an ERP, a CRM and a bank feed are not.",
+            "<strong>How clean the data is.</strong> Scanned paper and free-text emails need extraction and checking before anything can be automated.",
+            "<strong>How much judgement is involved.</strong> Rules are cheap to automate; decisions that need a person to approve add review steps.",
+            "<strong>Compliance.</strong> Personal or health data adds logging, access control and GDPR work from day one.",
+          ]},
+        ],
+      },
+      {
+        heading: "When automation does not pay back",
+        blocks: [
+          { type: "bullets", items: [
+            "<strong>The process is rare.</strong> A task done twice a month will not repay a build, however painful it is.",
+            "<strong>The process changes every quarter.</strong> Automation built on rules that keep moving needs rebuilding each time.",
+            "<strong>Nobody owns it afterwards.</strong> An automation without an owner breaks quietly when a supplier changes an invoice format.",
+            "<strong>The data is not there.</strong> If the information lives in people's heads or on paper that never gets scanned, fix that first.",
+            "<strong>The real problem is the process itself.</strong> Automating a bad process makes the bad result arrive faster. Simplify, then automate.",
+          ]},
+        ],
+      },
+      {
+        heading: "How 7code runs the pilot",
+        blocks: [
+          { type: "ol", items: [
+            "<strong>Pick one process</strong> with you: frequent, rules-heavy, and painful today.",
+            "<strong>Measure the baseline</strong>: hours per week, corrections per month, cycle time.",
+            "<strong>Build the pilot</strong> on that one process, from €10,000.",
+            "<strong>Run it for 30 days</strong> next to the old way and compare against the baseline.",
+            "<strong>Decide</strong>: scale it to more processes, adjust it, or stop. Bigger projects are scoped only after this.",
+          ]},
+          { type: "p-html", text: "Further reading: <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a>, <a href=\"/blog/which-business-process-to-automate-first\">Which business process should you automate first?</a>, <a href=\"/blog/hire-or-automate-which-costs-less\">Hire or automate: which costs less?</a>, <a href=\"/resources/build-ai-in-house-vs-partner\">Build AI in-house vs with a partner</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>." },
         ],
       },
     ],
@@ -280,6 +368,35 @@ const RESOURCES_DATA = {
   },
 };
 
+const RB_TEXT = { color: "var(--slate-700)", lineHeight: 1.8, fontSize: 16, marginBottom: 16 };
+
+function ResourceBlock({ block }) {
+  if (block.type === "p") return <p style={RB_TEXT}>{block.text}</p>;
+  if (block.type === "p-html") return <p className="resource-html" style={RB_TEXT} dangerouslySetInnerHTML={{ __html: block.text }} />;
+  if (block.type === "bullets" || block.type === "ol") {
+    const Tag = block.type === "ol" ? "ol" : "ul";
+    return (
+      <Tag className="resource-html" style={{ ...RB_TEXT, paddingLeft: 22 }}>
+        {block.items.map((it, i) => <li key={i} style={{ marginBottom: 8 }} dangerouslySetInnerHTML={{ __html: it }} />)}
+      </Tag>
+    );
+  }
+  if (block.type === "callout") {
+    return <div style={{ ...RB_TEXT, background: "var(--slate-50)", borderLeft: "3px solid var(--cyan-600)", padding: "16px 20px", borderRadius: 8, fontWeight: 600, color: "var(--ink)" }}>{block.text}</div>;
+  }
+  if (block.type === "table") {
+    return (
+      <div style={{ overflowX: "auto", marginBottom: 16 }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 15, color: "var(--slate-700)" }}>
+          <thead><tr>{block.head.map((h, i) => <th key={i} style={{ textAlign: "left", padding: "10px 12px", borderBottom: "2px solid var(--slate-200)", color: "var(--ink)" }}>{h}</th>)}</tr></thead>
+          <tbody>{block.rows.map((r, i) => <tr key={i}>{r.map((c, j) => <td key={j} style={{ padding: "10px 12px", borderBottom: "1px solid var(--slate-200)", verticalAlign: "top" }}>{c}</td>)}</tr>)}</tbody>
+        </table>
+      </div>
+    );
+  }
+  return null;
+}
+
 function ResourcePage({ slug }) {
   const page = RESOURCES_DATA[slug];
 
@@ -303,7 +420,7 @@ function ResourcePage({ slug }) {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Resource</span>
           <h1 style={{ maxWidth: 800, margin: "0 auto" }}>{page.title}</h1>
-          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished}{page.dateModified ? " · Updated " + page.dateModified : ""} · 7code AI Engineering</p>
+          <p style={{ color: "var(--slate-500)", marginTop: 8 }}>Published {page.datePublished}{page.dateModified ? " · Updated " + page.dateModified : ""} · {page.author ? "By " + page.author : "7code AI Engineering"}</p>
         </div>
       </section>
 
@@ -315,6 +432,7 @@ function ResourcePage({ slug }) {
               {section.body && (
                 <p style={{ color: "var(--slate-700)", lineHeight: 1.8, fontSize: 16 }}>{section.body}</p>
               )}
+              {section.blocks && section.blocks.map((b, k) => <ResourceBlock key={k} block={b} />)}
               {section.faqs && (
                 <div style={{ marginTop: 16 }}>
                   {section.faqs.map((faq, j) => (

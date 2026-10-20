@@ -125,7 +125,7 @@ const POSTS = [
         "What happens to the data if we stop working together?",
       ]},
       { type: "h2", text: "How much does it cost, and how long does it take?" },
-      { type: "p", text: "One automated process usually costs \u20ac25,000 to \u20ac40,000 and takes 4 to 6 weeks. Several connected processes cost \u20ac60,000 to \u20ac150,000 and take 3 to 6 months." },
+      { type: "p", text: "An automation pilot on one process starts from \u20ac10,000 and takes 4 to 6 weeks. Several connected processes are scoped after the pilot and take 3 to 6 months." },
       { type: "p", text: "Pay-back formula you can use yourself:" },
       { type: "callout", text: "Price of automation ÷ monthly cost of the manual work = months to pay back. If the answer is under 12 months, it is worth a closer look." },
       { type: "h2", text: "How to find out if it fits your clinic" },
@@ -260,10 +260,10 @@ const POSTS = [
     illus: "launch",
     featured: false,
     body: [
-      { type: "lead", text: "These ranges come from projects we’ve delivered, not from a rate card. Where you land inside them depends on five things, listed below. If you only have two minutes, read the section on hiring versus automating, because that is the decision most teams are really making." },
+      { type: "lead", text: "An automation pilot on one process starts from €10,000. Bigger projects are scoped after the pilot, once the numbers from the first process are known. What they cost depends on five things, listed below. If you only have two minutes, read the section on hiring versus automating, because that is the decision most teams are really making." },
       { type: "table", head: ["Scope", "Typical price", "Time"], rows: [
-        ["One process, one or two tools", "\u20ac25,000 to \u20ac40,000", "4 to 6 weeks"],
-        ["Several connected processes", "\u20ac60,000 to \u20ac150,000", "3 to 6 months"],
+        ["One process, one or two tools (pilot)", "From \u20ac10,000", "4 to 6 weeks"],
+        ["Several connected processes", "Scoped after the pilot", "3 to 6 months"],
       ]},
       { type: "h2", text: "What decides the price" },
       { type: "bullets", items: [
@@ -277,6 +277,7 @@ const POSTS = [
       { type: "p", text: "If you’re keeping a role open for weeks to handle repetitive work, you already have a price to compare against." },
       { type: "p", text: "Take the yearly cost of the people doing the process today: salaries, plus the errors, rework and delays. Put that next to the project price. For the projects we’ve delivered, payback has been around 6 to 18 months." },
       { type: "p", text: "Automation isn’t always the better choice. If the process changes every month, or only one person ever does it, a hire may be cheaper. We’ll tell you if that’s the case, and we’d rather say it on a 20-minute call than after a three-month project." },
+      { type: "related-guide", href: "/resources/ai-automation-roi-for-smes", title: "AI Automation ROI for SMEs", desc: "How to calculate the return, with a worked example." },
       { type: "related-guide", href: "/blog/hire-or-automate-which-costs-less", title: "Hire or Automate: Which Costs Less?", desc: "A quick way to check which one fits the work in front of you." },
       { type: "h2", text: "Questions to ask any vendor before you sign" },
       { type: "p", text: "Ask these of us and of anyone else you’re considering:" },
