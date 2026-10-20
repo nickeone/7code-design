@@ -18,10 +18,10 @@ function HomePage({
   useSeoMeta("AI-Native Software Engineering Agency — 7code", "AI-native software engineering agency in Romania. LLM products, agent workflows, and cloud infrastructure for UK, EU, and UAE companies. Senior team.");
   const homeFaqs = [{
     q: "Where is 7code located?",
-    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe's leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code operates remotely across UK, EU, UAE, and US client time zones."
+    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe's leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code works remotely with clients in the UK, the EU (including the Nordics and DACH) and the US."
   }, {
     q: "What countries does 7code serve?",
-    a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
+    a: "7code serves clients primarily in the United Kingdom, the European Union (including the Nordics and the DACH region) and the United States. The team works on Eastern European Time (EET/EEST), two hours ahead of the UK, giving a full working-day overlap with UK and EU clients and a workable overlap with US East Coast teams. All client communication is conducted in English."
   }, {
     q: "How quickly can 7code start a new project?",
     a: "7code can typically begin a Discovery Sprint within one to two weeks of agreement signature. Full team mobilisation for a build engagement follows two to three weeks after Discovery. For urgent requirements, a fast-track onboarding process is available. Contact office@7code.ro to discuss your timeline — 7code will confirm availability within 48 hours."
@@ -223,7 +223,7 @@ function AboutPage() {
     role: "CEO & Founder",
     initial: "N",
     photo: "/project/uploads/authors/nicu-mardari.jpg",
-    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU, UAE, and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
+    bio: "Nicu Mardari founded 7code in Cluj-Napoca in 2017, building it from a boutique software studio into a specialist AI product engineering firm serving clients across the UK, EU and US. As CEO, Nicu leads business development, client strategy, and commercial operations, working directly with founders, CTOs, and technology leaders on AI automation and product engineering engagements. He brings a decade of experience in nearshore software delivery and AI-first product strategy."
   }, {
     name: "Alessandro Merola",
     role: "CTO & Co-Founder",
@@ -248,7 +248,7 @@ function AboutPage() {
     style: {
       justifyContent: "center"
     }
-  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across Europe, the UK, and the Middle East, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
+  }, "About 7Code"), /*#__PURE__*/React.createElement("h1", null, "About 7code \u2014 Senior AI Engineering Team"), /*#__PURE__*/React.createElement("p", null, "7Code is an AI-first software engineering agency based in Cluj-Napoca, Romania. Since 2017, we've designed, built, and operated AI-native products, LLM integrations, and cloud infrastructure for founders and product teams across the UK, Europe and the US, acting as the senior engineering team they needed but didn't want to hire full-time."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container about-split"
@@ -264,7 +264,7 @@ function AboutPage() {
     style: {
       marginTop: 16
     }
-  }, "Cluj-Napoca gives us a structural advantage: a deep pool of senior engineering talent, a lower cost base than Western Europe, and a timezone that overlaps comfortably with the UK, EU, and even UAE teams. We're Romanian-built and globally delivered."), /*#__PURE__*/React.createElement("p", {
+  }, "Cluj-Napoca gives us a structural advantage: a deep pool of senior engineering talent, a lower cost base than Western Europe, and a timezone that overlaps comfortably with UK and EU teams. We're Romanian-built and globally delivered."), /*#__PURE__*/React.createElement("p", {
     style: {
       marginTop: 16
     }
@@ -1522,10 +1522,10 @@ window.CompareAgencyFreelancerPage = CompareAgencyFreelancerPage;
 function FAQPage() {
   const faqs = [{
     q: "Where is 7code located?",
-    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe’s leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code operates remotely across UK, EU, UAE, and US client time zones."
+    a: "7code (Seven Code Development SRL) is headquartered in Cluj-Napoca, Romania — one of Central Europe’s leading technology hubs. Cluj-Napoca is home to major engineering universities and a high concentration of senior software talent. 7code works remotely with clients in the UK, the EU (including the Nordics and DACH) and the US."
   }, {
     q: "What countries does 7code serve?",
-    a: "7code serves clients primarily in the United Kingdom, the European Union, the United Arab Emirates, and the United States. The team operates in Central European Time (CET+1/+2), giving strong daily overlap with UK and EU clients and workable early/late overlap with UAE and US East Coast teams. All client communication is conducted in English."
+    a: "7code serves clients primarily in the United Kingdom, the European Union (including the Nordics and the DACH region) and the United States. The team works on Eastern European Time (EET/EEST), two hours ahead of the UK, giving a full working-day overlap with UK and EU clients and a workable overlap with US East Coast teams. All client communication is conducted in English."
   }, {
     q: "How much does a project with 7code cost?",
     a: "7code’s rate card runs from EUR 30–35/h for mid-level engineers to EUR 40–50/h for seniors and EUR 60–80/h for architects. Fixed-price project options are available for well-defined scopes. Contact office@7code.ro for a tailored estimate based on your scope and team requirements."
@@ -1558,10 +1558,10 @@ function FAQPage() {
     a: "Quality is enforced through a senior-only hiring policy, mandatory peer code review on all pull requests, AI-specific evaluation frameworks for model outputs, automated test suites (unit, integration, and end-to-end), and a pre-launch quality gate sign-off process. Each project has a named QA engineer. 7code does not ship without a passing test suite and architecture review sign-off."
   }, {
     q: "What does 7code do?",
-    a: "7code is an AI-native nearshore software engineering partner based in Cluj-Napoca, Romania. We build custom software, LLM integrations, agentic workflows, and system integrations for startups and SMEs in the UK, EU, and UAE. Our team is senior-only (70%+ senior engineers) and we operate an AI-first delivery model — every project is assessed for automation and AI opportunities from day one."
+    a: "7code is an AI-native nearshore software engineering partner based in Cluj-Napoca, Romania. We build custom software, LLM integrations, agentic workflows, and system integrations for startups and SMEs in the UK, EU and US. Our team is senior-only (70%+ senior engineers) and we operate an AI-first delivery model — every project is assessed for automation and AI opportunities from day one."
   }, {
     q: "What is nearshore software development?",
-    a: "Nearshore software development means working with an engineering team in a nearby country with timezone overlap, shared working culture, and EU legal alignment. For UK and EU companies, Romania is a leading nearshore destination — 1–2 hour timezone difference with the UK, GDPR-native environment, and a deep pool of senior engineering talent. 7code operates from Cluj-Napoca, Romania, serving clients across the UK, Europe, and UAE."
+    a: "Nearshore software development means working with an engineering team in a nearby country with timezone overlap, shared working culture, and EU legal alignment. For UK and EU companies, Romania is a leading nearshore destination — 1–2 hour timezone difference with the UK, GDPR-native environment, and a deep pool of senior engineering talent. 7code operates from Cluj-Napoca, Romania, serving clients across the UK, Europe and the US."
   }, {
     q: "What AI services does 7code offer?",
     a: "7code offers five core AI service lines: LLM integration (embedding GPT-4o, Claude, Gemini into existing products); agentic workflow automation (multi-step AI agents for complex business processes); RAG systems (connecting AI to proprietary data); AI copilots (custom AI assistants for internal or customer-facing use); and AI process automation (replacing manual workflows with intelligent pipelines). We also offer an Operational Quick Scan to identify and prioritise automation opportunities."

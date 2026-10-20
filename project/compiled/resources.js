@@ -137,7 +137,7 @@ const RESOURCES_DATA = {
       body: "1. Seniority of actual delivery team — ask to meet the engineers who will work on your project before you sign. A company that uses senior staff in business development and junior staff in delivery is a pattern to avoid. 2. References from clients in your market — ask for two to three references from clients in your sector or of similar size and speak to them directly. 3. Security and compliance maturity — review the partner's ISO 27001 status, GDPR data processing practices, code security review process, and incident response procedures. 4. Commercial transparency — understand the rate card fully, including how additional work is priced, what the notice period is, and how rate increases are handled. 5. Technical alignment with your stack and problem type — if you are building AI products, evaluate the partner's specific AI engineering experience, not their general software capability."
     }, {
       heading: "7code's Position in the Romanian Market",
-      body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case."
+      body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case."
     }, {
       heading: "Frequently Asked Questions",
       faqs: [{
@@ -228,7 +228,7 @@ const RESOURCES_DATA = {
         a: "On headline rate, yes — approximately 50–70% more per engineer-hour. When total cost of ownership is calculated (management overhead, rework, attrition, compliance, travel), the gap narrows to 10–20% for complex collaborative work, and can disappear entirely for AI engineering where quality drives outcomes."
       }, {
         q: "Can I work with a Romanian team entirely remotely?",
-        a: "Yes. 7code works with clients in the UK, UAE, and US entirely remotely. The CET+2 time zone provides full daily overlap with UK clients. On-site visits are welcomed but never required."
+        a: "Yes. 7code works with clients in the UK, the EU and the US entirely remotely. The CET+2 time zone provides full daily overlap with UK clients. On-site visits are welcomed but never required."
       }, {
         q: "How do I handle GDPR when working with a Romanian software company?",
         a: "Engagement with a Romanian software company requires only a standard Data Processing Agreement — the same as you would use with a UK or German vendor. No Standard Contractual Clauses required."
@@ -381,7 +381,7 @@ function ResourcePage({
       marginTop: 8,
       marginBottom: 24
     }
-  }, "7code's senior AI engineering team is based in Cluj-Napoca, Romania \u2014 serving UK, EU, UAE, and US clients."), /*#__PURE__*/React.createElement("a", {
+  }, "7code's senior AI engineering team is based in Cluj-Napoca, Romania \u2014 serving UK, EU and US clients."), /*#__PURE__*/React.createElement("a", {
     href: "/contact",
     className: "btn btn--cyan btn--lg"
   }, "Start a conversation ", /*#__PURE__*/React.createElement(Icon.arrow, null))))));

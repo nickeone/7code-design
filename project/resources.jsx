@@ -137,7 +137,7 @@ const RESOURCES_DATA = {
       },
       {
         heading: "7code's Position in the Romanian Market",
-        body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
+        body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
       },
       {
         heading: "Frequently Asked Questions",
@@ -213,7 +213,7 @@ const RESOURCES_DATA = {
         heading: "Frequently Asked Questions",
         faqs: [
           { q: "Is nearshore Romania significantly more expensive than offshore India?", a: "On headline rate, yes — approximately 50–70% more per engineer-hour. When total cost of ownership is calculated (management overhead, rework, attrition, compliance, travel), the gap narrows to 10–20% for complex collaborative work, and can disappear entirely for AI engineering where quality drives outcomes." },
-          { q: "Can I work with a Romanian team entirely remotely?", a: "Yes. 7code works with clients in the UK, UAE, and US entirely remotely. The CET+2 time zone provides full daily overlap with UK clients. On-site visits are welcomed but never required." },
+          { q: "Can I work with a Romanian team entirely remotely?", a: "Yes. 7code works with clients in the UK, the EU and the US entirely remotely. The CET+2 time zone provides full daily overlap with UK clients. On-site visits are welcomed but never required." },
           { q: "How do I handle GDPR when working with a Romanian software company?", a: "Engagement with a Romanian software company requires only a standard Data Processing Agreement — the same as you would use with a UK or German vendor. No Standard Contractual Clauses required." },
           { q: "Is the quality of Romanian engineers comparable to top offshore India engineers?", a: "At the senior level, yes — and in AI engineering specifically, Romanian senior engineers are competitive with the strongest Indian AI talent. The key difference is consistency: variance in quality within a Romanian senior team is lower." },
           { q: "Which model is better for long-term AI product development?", a: "For long-term AI product development requiring sustained collaboration and architectural judgment, nearshore Romania has a structural advantage: time zone alignment, lower attrition preserving accumulated AI domain knowledge, and cultural alignment with EU/UK product thinking." },
@@ -314,7 +314,7 @@ function ResourcePage({ slug }) {
 
           <div style={{ marginTop: 64, padding: "40px 32px", background: "var(--slate-50)", borderRadius: 16, textAlign: "center" }}>
             <h2 style={{ fontSize: 20, fontWeight: 700 }}>Ready to discuss your project?</h2>
-            <p style={{ color: "var(--slate-500)", marginTop: 8, marginBottom: 24 }}>7code's senior AI engineering team is based in Cluj-Napoca, Romania — serving UK, EU, UAE, and US clients.</p>
+            <p style={{ color: "var(--slate-500)", marginTop: 8, marginBottom: 24 }}>7code's senior AI engineering team is based in Cluj-Napoca, Romania — serving UK, EU and US clients.</p>
             <a href="/contact" className="btn btn--cyan btn--lg">Start a conversation <Icon.arrow /></a>
           </div>
         </div>
