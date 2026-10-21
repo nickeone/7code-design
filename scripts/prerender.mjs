@@ -572,7 +572,9 @@ const PAGE_CRUMB_PARENT = {
 };
 
 // Service URLs used for /services CollectionPage hasPart
-const SERVICE_URLS = SERVICES.map(s => SITE + "/service/" + s.slug);
+// /service/product-strategy 301-redirects to /service/ai-product-engineering (vercel.json), so it must not be listed.
+const REDIRECTED_SERVICES = new Set(["product-strategy"]);
+const SERVICE_URLS = SERVICES.filter(s => !REDIRECTED_SERVICES.has(s.slug)).map(s => SITE + "/service/" + s.slug);
 
 console.log("Main pages:");
 for (const p of MAIN_PAGES) {
