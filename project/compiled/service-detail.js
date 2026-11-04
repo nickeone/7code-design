@@ -13,7 +13,7 @@ const SERVICES_DATA = {
     slug: "ai-product-engineering",
     title: "AI-Native Product Engineering",
     shortTitle: "AI Product Engineering",
-    tagline: "We discover, design, and ship AI-native web and mobile products end-to-end, from user research and UX design through LLM features, agent workflows, and the backend infrastructure to run them reliably in production. Not retrofits. Not wrappers.",
+    tagline: "For founders and CTOs with an AI prototype or an existing product. We discover, design, and ship AI-native web and mobile products end-to-end, from user research and UX design through LLM features, agent workflows, and the backend infrastructure to run them reliably in production. Not retrofits. Not wrappers.",
     summary: "7Code is an AI-first product engineering company. We treat AI as a foundational capability, not a layer bolted on at the end: the data model, the retrieval and inference loops, the evaluation harness, and the UX are designed together from week one. The products we ship, Daily8 (UAE news aggregator with AI moderation and summarisation), WholeSum (self-serve qualitative-data analytics), and OctoLabs (AI support copilot), improve with every user interaction and scale cleanly as data and traffic grow.",
     icon: "code",
     accentColor: "#06B6D4",
@@ -21,14 +21,35 @@ const SERVICES_DATA = {
       v: "20+",
       l: "Projects delivered"
     }, {
-      v: "6 wks",
-      l: "to first production deploy"
+      v: "3 mo",
+      l: "Hera AI MVP"
     }, {
-      v: "Web + Mobile",
-      l: "full-stack delivery"
+      v: "16 wks",
+      l: "WholeSum launch"
     }, {
-      v: "HIPAA · SOC 2",
-      l: "compliance-ready"
+      v: "5 mo",
+      l: "Melsonic MVP"
+    }],
+    audience: [{
+      kicker: "You have a prototype",
+      title: "The demo works. Now it has to work for real users.",
+      desc: "We harden the AI, build the missing product (accounts, roles, billing, admin) and set up evaluation, security and monitoring for launch."
+    }, {
+      kicker: "You have a product",
+      title: "You want AI inside the product you already sell.",
+      desc: "We add AI features to your existing application through your data and APIs, without rebuilding what already works."
+    }],
+    productTypes: [{
+      title: "AI SaaS products, from MVP to production",
+      desc: "Products with AI at their core, sold by subscription or platform. The MVP is built so the production launch isn't a rewrite.",
+      proof: "Hera: AI MVP in 3 months · Melsonic: MVP in 5 months"
+    }, {
+      title: "Document and data intelligence products",
+      desc: "Products your customers use to turn documents and unstructured text into insight they can trust and reproduce.",
+      proof: "WholeSum: launched in 16 weeks"
+    }, {
+      title: "AI features in an existing product",
+      desc: "Copilots, natural-language interfaces, recommendations and AI-assisted workflows added to the product you already sell, without a rebuild."
     }],
     problem: {
       title: "Bolting AI onto a product built without it is expensive. Usually too expensive.",
@@ -76,7 +97,7 @@ const SERVICES_DATA = {
       title: "Production hardening and handoff",
       desc: "The final phase covers prompt management, model versioning, evaluation CI, observability, and cost controls. We do not hand off without an eval harness your team can run, dashboards for token spend and latency, and a runbook for when a model degrades. The engagement finishes when your team can operate the system independently."
     }],
-    cases: ["wholesum", "daily8", "hera"],
+    cases: ["wholesum", "hera", "melsonic"],
     seoTitle: "AI Product Engineering — Nearshore Senior Team | 7code",
     metaDescription: "AI-native product engineering by 7Code. LLM-powered web and mobile products, agents, RAG, evals, and cloud infrastructure for production.",
     faqs: [{
@@ -90,7 +111,16 @@ const SERVICES_DATA = {
       a: "7code builds with Python, FastAPI, and Node.js for backend services; React and Next.js for frontends; OpenAI, Anthropic Claude, and open-source LLMs for AI layers; Pinecone, Weaviate, and pgvector for vector storage; and AWS, GCP, or Azure for cloud infrastructure. Stack choices are always driven by the client’s existing environment and scalability requirements."
     }, {
       q: "How long does an AI product build typically take?",
-      a: "A minimum viable AI product typically takes 8–16 weeks from discovery to first production release. Complexity, integration requirements, and the maturity of the client’s data infrastructure all affect timeline. 7code uses time-boxed sprints with clear milestones, so clients see working software every two weeks rather than waiting months for a big reveal."
+      a: "A focused AI MVP typically takes 3 to 5 months. Hera’s AI patient-support app launched as an MVP in 3 months, WholeSum’s self-serve analytics product in 16 weeks (4 weeks design, 10 weeks build, 2 weeks UAT) and Melsonic’s AI guitar-learning platform in 5 months. Larger multi-user platforms are scoped after a short technical assessment. Clients see working software every two weeks."
+    }, {
+      q: "Can you turn an AI prototype into a production-ready product?",
+      a: "Yes. This can involve rebuilding parts of the architecture, developing missing application features, integrating data sources, improving AI quality and implementing security, testing and monitoring."
+    }, {
+      q: "Can you add AI features to existing software?",
+      a: "Yes. AI capabilities can be integrated into an existing application through APIs, data connections and custom development. The right approach depends on the current architecture and the functionality required."
+    }, {
+      q: "Do we need to train our own AI model?",
+      a: "Not necessarily. Many products can use existing models through APIs. RAG, fine-tuning or custom models may be appropriate when the product has specific data, quality, privacy or performance requirements."
     }, {
       q: "What is the minimum engagement size for AI product engineering?",
       a: "Contact office@7code.ro to discuss scope and fit. Smaller exploratory engagements — such as a Discovery Sprint or AI Readiness Audit — are available as entry points before committing to a full build."
@@ -181,6 +211,10 @@ const SERVICES_DATA = {
       desc: "Every pipeline ships with a monitoring dashboard, alerting rules, and a runbook your team can follow when something breaks at 2am. We do not consider an integration finished until it has been in production long enough to fail once and recover cleanly."
     }],
     cases: ["g42-fleet", "numerize", "revote"],
+    solutionLink: {
+      text: "Business problem this solves: connect your business systems",
+      url: "/solutions/connect-business-systems"
+    },
     seoTitle: "System Integration Services for AI Workloads | 7code",
     metaDescription: "System integrations by 7Code. We connect ERPs, CRMs, SaaS tools, data warehouses, and legacy systems into a reliable data fabric for AI workloads.",
     faqs: [{
@@ -276,6 +310,10 @@ const SERVICES_DATA = {
       title: "Production hardening and operate",
       desc: "Confidence thresholds, fallback paths, audit logging, eval CI, token-cost dashboards, and the drift monitoring that tells you when output quality degrades. We do not ship without these, and we can stay on to operate the system if you'd rather your team not learn it overnight."
     }],
+    solutionLink: {
+      text: "Business problem this solves: automate manual business processes",
+      url: "/solutions/automate-business-processes"
+    },
     cases: ["wholesum", "daily8", "melsonic"],
     seoTitle: "AI Process Automation Services — 7code | AI-Native Agency",
     metaDescription: "AI process automation by 7Code. RAG copilots, agentic workflows, and LLM integrations grounded in your data, evaluated rigorously, shipped to production.",
@@ -582,6 +620,10 @@ const SERVICES_DATA = {
       title: "Production hardening and handoff",
       desc: "Confidence thresholds, fallback paths, prompt versioning, evaluation CI, latency and cost dashboards, and drift monitoring. We do not consider an LLM system shipped until it has observability that catches degradation before users notice it."
     }],
+    solutionLink: {
+      text: "Business problem this solves: AI agents for business operations",
+      url: "/solutions/ai-agents-for-business-operations"
+    },
     cases: ["wholesum", "daily8", "hera"],
     seoTitle: "LLM & Agent Development Services | 7code AI Agency",
     metaDescription: "Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.",
@@ -729,7 +771,52 @@ function ServiceDetailPage({
       fontWeight: 600,
       fontSize: 15
     }
-  }, rl.text, " \u2192")))))), /*#__PURE__*/React.createElement("section", {
+  }, rl.text, " \u2192"))), svc.solutionLink && /*#__PURE__*/React.createElement("a", {
+    href: svc.solutionLink.url,
+    className: "svc-solution-link"
+  }, svc.solutionLink.text, " ", /*#__PURE__*/React.createElement(Icon.arrow, null))))), svc.audience && /*#__PURE__*/React.createElement("section", {
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head reveal"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Who this is for"), /*#__PURE__*/React.createElement("h2", null, "Built for founders and CTOs at two stages")), /*#__PURE__*/React.createElement("div", {
+    className: "svc-audience"
+  }, svc.audience.map((a, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "svc-audience-card reveal"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "sol-kicker"
+  }, a.kicker), /*#__PURE__*/React.createElement("h3", null, a.title), /*#__PURE__*/React.createElement("p", null, a.desc)))))), svc.productTypes && /*#__PURE__*/React.createElement("section", {
+    className: "section section--alt"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "section-head reveal"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "What we build"), /*#__PURE__*/React.createElement("h2", null, "AI-powered products we develop"), /*#__PURE__*/React.createElement("p", null, "Products you sell to your customers. For AI inside your own operations, see ", /*#__PURE__*/React.createElement("a", {
+    href: "/solutions/ai-agents-for-business-operations",
+    style: {
+      color: "var(--cyan-600)",
+      fontWeight: 600
+    }
+  }, "AI agents for business operations"), ".")), /*#__PURE__*/React.createElement("div", {
+    className: "svc-deliver-grid"
+  }, svc.productTypes.map((d, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "svc-deliver-card reveal"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "svc-deliver-num"
+  }, "0", i + 1), /*#__PURE__*/React.createElement("h3", null, d.title), /*#__PURE__*/React.createElement("p", null, d.desc), d.proof && /*#__PURE__*/React.createElement("p", {
+    className: "sol-note"
+  }, /*#__PURE__*/React.createElement("strong", {
+    style: {
+      color: "var(--ink)"
+    }
+  }, "Shipped:"), " ", d.proof)))))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
@@ -803,7 +890,9 @@ function ServiceDetailPage({
     style: {
       transitionDelay: i * 40 + "ms"
     }
-  }, /*#__PURE__*/React.createElement("summary", null, f.q), /*#__PURE__*/React.createElement("p", null, f.a)))))), relatedCases.length > 0 && /*#__PURE__*/React.createElement("section", {
+  }, /*#__PURE__*/React.createElement("summary", null, /*#__PURE__*/React.createElement("h3", {
+    className: "faq-q"
+  }, f.q)), /*#__PURE__*/React.createElement("p", null, f.a)))))), relatedCases.length > 0 && /*#__PURE__*/React.createElement("section", {
     className: "section section--alt"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"

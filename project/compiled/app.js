@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, SolutionDetailPage, SolutionsPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {
@@ -97,7 +97,9 @@ function App() {
   let Page;
   if (page === "/service" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ServiceDetailPage, {
     slug: slug
-  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/expertise" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ExpertiseDetailPage, {
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/solutions" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(SolutionDetailPage, {
+    slug: slug
+  }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/solutions") Page = routesReady ? /*#__PURE__*/React.createElement(SolutionsPage, null) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/expertise" && slug) Page = routesReady ? /*#__PURE__*/React.createElement(ExpertiseDetailPage, {
     slug: slug
   }) : /*#__PURE__*/React.createElement(LoadingPage, null);else if (page === "/expertise") Page = /*#__PURE__*/React.createElement(ExpertisePage, null);else if (page === "/case-studies") Page = routesReady ? /*#__PURE__*/React.createElement(CaseStudiesPage, {
     variant: tweaks.caseStudiesVariant

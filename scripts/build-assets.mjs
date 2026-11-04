@@ -30,13 +30,13 @@ const CHECK = process.argv.includes("--check");
 // Source modules that are compiled one-to-one.
 export const MODULES = [
   "icons", "layout", "sections", "heroes", "pages", "tweaks-panel", "app",
-  "case-studies", "case-study", "expertise-detail", "blog", "service-detail", "resources",
+  "case-studies", "case-study", "expertise-detail", "blog", "service-detail", "resources", "solutions",
 ];
 
 // Order matters: later files use globals defined by earlier ones.
 export const BUNDLES = {
   "bundle-core.min.js":   ["icons", "layout", "sections", "heroes", "pages", "tweaks-panel", "app"],
-  "bundle-routes.min.js": ["case-studies", "case-study", "expertise-detail", "blog", "service-detail", "resources"],
+  "bundle-routes.min.js": ["case-studies", "case-study", "expertise-detail", "blog", "service-detail", "resources", "solutions"],
 };
 
 const TERSER_OPTS = { compress: true, mangle: true };

@@ -12,6 +12,13 @@
 - [AI Engineering Outstaffing — Senior Engineers](https://www.7code.tech/service/ai-outstaffing): AI engineering outstaffing by 7Code. Senior AI and ML engineers, production LLM, RAG, and MLOps experience, embedded in your team in 72 hours. Monthly rolling, no lock-in.
 - [LLM & AI Agent Development Services](https://www.7code.tech/service/llm-agent-development): Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.
 
+## Solutions (business problems we solve)
+
+- [Solutions — Business Problems We Solve](https://www.7code.tech/solutions): Start from the problem, not the technology: connect business systems, automate manual processes, and put AI agents to work in operations.
+- [Connect Your Business Systems](https://www.7code.tech/solutions/connect-business-systems): Connect ERP, CRM and finance systems so data moves automatically, without replacing the software you use.
+- [Automate Manual Business Processes](https://www.7code.tech/solutions/automate-business-processes): Automate invoice processing, approvals, procurement and document handling. Pilots from €10,000, 4–6 weeks.
+- [AI Agents for Business Operations](https://www.7code.tech/solutions/ai-agents-for-business-operations): What an AI agent does and doesn't do, where it works, and how 7code builds agents with RAG, guardrails, observability and eval-gated releases.
+
 ## Industries
 
 - [Industry Expertise — Healthcare, Finance, Energy, Defence | 7Code](https://www.7code.tech/expertise): 7Code's industry expertise across healthcare (HIPAA + HL7/FHIR), finance (ERP + treasury), energy (IoT + SCADA), defence and security, HR, and operations.

@@ -37,7 +37,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources" || parts[0] === "solutions")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];
@@ -84,6 +84,9 @@ function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
   const [mobileExpOpen, setMobileExpOpen] = useState(false);
+  const [mobileSolOpen, setMobileSolOpen] = useState(false);
+  const [solOpen, setSolOpen] = useState(false);
+  const solTimer = useRef(null);
   const [megaOpen, setMegaOpen] = useState(false);
   const [svcOpen, setSvcOpen] = useState(false);
   const megaTimer = useRef(null);
@@ -107,6 +110,13 @@ function Nav() {
   };
   const closeSvc = () => {
     svcTimer.current = setTimeout(() => setSvcOpen(false), 120);
+  };
+  const openSol = () => {
+    clearTimeout(solTimer.current);
+    setSolOpen(true);
+  };
+  const closeSol = () => {
+    solTimer.current = setTimeout(() => setSolOpen(false), 120);
   };
   const services = [{
     icon: Icon.code,
@@ -138,6 +148,24 @@ function Nav() {
     title: "AI Engineering Outstaffing",
     slug: "ai-outstaffing",
     bullets: ["Dedicated AI Engineers", "Embedded Team Leads", "Domain Specialists"]
+  }];
+
+  // Problem-focused pages (project/solutions.jsx). Kept here so the nav renders before the routes bundle loads.
+  const solutions = [{
+    icon: Icon.globe,
+    title: "Connect business systems",
+    desc: "ERP, CRM and finance tools that share data automatically",
+    slug: "connect-business-systems"
+  }, {
+    icon: Icon.cpu,
+    title: "Automate manual processes",
+    desc: "Invoices, approvals and documents without manual effort",
+    slug: "automate-business-processes"
+  }, {
+    icon: Icon.zap,
+    title: "AI agents for operations",
+    desc: "Agents that gather data, decide the next step and act",
+    slug: "ai-agents-for-business-operations"
   }];
   const expertise = [{
     icon: Icon.heart,
@@ -222,7 +250,41 @@ function Nav() {
   }, /*#__PURE__*/React.createElement("span", null, "Tailored solutions for every need"), /*#__PURE__*/React.createElement("a", {
     href: "/contact",
     className: "svc-mega-cta"
-  }, "Book a meeting ", /*#__PURE__*/React.createElement(Icon.arrow, null))))), /*#__PURE__*/React.createElement(NavLinkA, {
+  }, "Book a meeting ", /*#__PURE__*/React.createElement(Icon.arrow, null))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: "relative"
+    },
+    onMouseEnter: openSol,
+    onMouseLeave: closeSol
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "/solutions",
+    className: "nav-link" + (solOpen ? " is-active" : ""),
+    "aria-expanded": solOpen
+  }, "Solutions ", /*#__PURE__*/React.createElement(Icon.caret, null)), /*#__PURE__*/React.createElement("div", {
+    className: "megamenu" + (solOpen ? " is-open" : "")
+  }, solutions.map((e, i) => {
+    const I = e.icon;
+    return /*#__PURE__*/React.createElement("a", {
+      key: i,
+      href: "/solutions/" + e.slug,
+      className: "mm-item"
+    }, /*#__PURE__*/React.createElement("span", {
+      className: "mm-icon"
+    }, /*#__PURE__*/React.createElement(I, null)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+      className: "mm-title"
+    }, e.title), /*#__PURE__*/React.createElement("span", {
+      className: "mm-desc"
+    }, e.desc)));
+  }), /*#__PURE__*/React.createElement("a", {
+    href: "/solutions",
+    className: "mm-item"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "mm-icon"
+  }, /*#__PURE__*/React.createElement(Icon.arrow, null)), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("span", {
+    className: "mm-title"
+  }, "All solutions"), /*#__PURE__*/React.createElement("span", {
+    className: "mm-desc"
+  }, "Business problems we solve"))))), /*#__PURE__*/React.createElement(NavLinkA, {
     to: "/case-studies"
   }, "Case Studies"), /*#__PURE__*/React.createElement("div", {
     style: {
@@ -275,7 +337,20 @@ function Nav() {
   }, services.map((s, i) => /*#__PURE__*/React.createElement("a", {
     key: i,
     href: "/service/" + s.slug
-  }, s.title)))), /*#__PURE__*/React.createElement("a", {
+  }, s.title)))), /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-group"
+  }, /*#__PURE__*/React.createElement("button", {
+    className: "nav-mobile-group-btn",
+    onClick: () => setMobileSolOpen(o => !o),
+    "aria-expanded": mobileSolOpen
+  }, "Solutions ", /*#__PURE__*/React.createElement(Icon.caret, null)), /*#__PURE__*/React.createElement("div", {
+    className: "nav-mobile-sub" + (mobileSolOpen ? " is-open" : "")
+  }, solutions.map((e, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: "/solutions/" + e.slug
+  }, e.title)), /*#__PURE__*/React.createElement("a", {
+    href: "/solutions"
+  }, "All solutions"))), /*#__PURE__*/React.createElement("a", {
     href: "/case-studies"
   }, "Case Studies"), /*#__PURE__*/React.createElement("div", {
     className: "nav-mobile-group"
@@ -358,6 +433,8 @@ function Footer() {
   }, "Build AI In-House vs Partner")))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h4", null, "Company"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "/about"
   }, "About")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+    href: "/solutions"
+  }, "Solutions")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "/case-studies"
   }, "Case Studies")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
     href: "/process"

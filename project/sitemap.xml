@@ -114,6 +114,26 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.7code.tech/solutions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/solutions/connect-business-systems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/solutions/automate-business-processes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.7code.tech/solutions/ai-agents-for-business-operations</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.7code.tech/service/ai-automation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>

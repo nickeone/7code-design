@@ -33,7 +33,7 @@ function useHashRoute() {
 function parseRoute(hash) {
   const parts = hash.split("/").filter(Boolean);
   if (!parts.length) return ["/", null];
-  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources")) {
+  if (parts.length >= 2 && (parts[0] === "case-study" || parts[0] === "expertise" || parts[0] === "blog" || parts[0] === "service" || parts[0] === "compare" || parts[0] === "resources" || parts[0] === "solutions")) {
     return ["/" + parts[0], parts[1]];
   }
   return ["/" + parts[0], null];
@@ -66,6 +66,9 @@ function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSvcOpen, setMobileSvcOpen] = useState(false);
   const [mobileExpOpen, setMobileExpOpen] = useState(false);
+  const [mobileSolOpen, setMobileSolOpen] = useState(false);
+  const [solOpen, setSolOpen] = useState(false);
+  const solTimer = useRef(null);
   const [megaOpen, setMegaOpen] = useState(false);
   const [svcOpen, setSvcOpen] = useState(false);
   const megaTimer = useRef(null);
@@ -82,6 +85,8 @@ function Nav() {
   const closeMega = () => { megaTimer.current = setTimeout(() => setMegaOpen(false), 120); };
   const openSvc = () => { clearTimeout(svcTimer.current); setSvcOpen(true); };
   const closeSvc = () => { svcTimer.current = setTimeout(() => setSvcOpen(false), 120); };
+  const openSol = () => { clearTimeout(solTimer.current); setSolOpen(true); };
+  const closeSol = () => { solTimer.current = setTimeout(() => setSolOpen(false), 120); };
 
   const services = [
     {
@@ -108,6 +113,13 @@ function Nav() {
       icon: Icon.users, title: "AI Engineering Outstaffing", slug: "ai-outstaffing",
       bullets: ["Dedicated AI Engineers", "Embedded Team Leads", "Domain Specialists"],
     },
+  ];
+
+  // Problem-focused pages (project/solutions.jsx). Kept here so the nav renders before the routes bundle loads.
+  const solutions = [
+    { icon: Icon.globe, title: "Connect business systems", desc: "ERP, CRM and finance tools that share data automatically", slug: "connect-business-systems" },
+    { icon: Icon.cpu,   title: "Automate manual processes", desc: "Invoices, approvals and documents without manual effort", slug: "automate-business-processes" },
+    { icon: Icon.zap,   title: "AI agents for operations", desc: "Agents that gather data, decide the next step and act", slug: "ai-agents-for-business-operations" },
   ];
 
   const expertise = [
@@ -151,6 +163,32 @@ function Nav() {
                 </div>
               </div>
             </div>
+            <div style={{ position: "relative" }} onMouseEnter={openSol} onMouseLeave={closeSol}>
+              <a href="/solutions" className={"nav-link" + (solOpen ? " is-active" : "")} aria-expanded={solOpen}>
+                Solutions <Icon.caret />
+              </a>
+              <div className={"megamenu" + (solOpen ? " is-open" : "")}>
+                {solutions.map((e, i) => {
+                  const I = e.icon;
+                  return (
+                    <a key={i} href={"/solutions/" + e.slug} className="mm-item">
+                      <span className="mm-icon"><I /></span>
+                      <span>
+                        <span className="mm-title">{e.title}</span>
+                        <span className="mm-desc">{e.desc}</span>
+                      </span>
+                    </a>
+                  );
+                })}
+                <a href="/solutions" className="mm-item">
+                  <span className="mm-icon"><Icon.arrow /></span>
+                  <span>
+                    <span className="mm-title">All solutions</span>
+                    <span className="mm-desc">Business problems we solve</span>
+                  </span>
+                </a>
+              </div>
+            </div>
             <NavLinkA to="/case-studies">Case Studies</NavLinkA>
             <div style={{ position: "relative" }} onMouseEnter={openMega} onMouseLeave={closeMega}>
               <a href="/expertise" className={"nav-link" + (megaOpen ? " is-active" : "")} aria-expanded={megaOpen}>
@@ -191,6 +229,17 @@ function Nav() {
             {services.map((s, i) => (
               <a key={i} href={"/service/" + s.slug}>{s.title}</a>
             ))}
+          </div>
+        </div>
+        <div className="nav-mobile-group">
+          <button className="nav-mobile-group-btn" onClick={() => setMobileSolOpen(o => !o)} aria-expanded={mobileSolOpen}>
+            Solutions <Icon.caret />
+          </button>
+          <div className={"nav-mobile-sub" + (mobileSolOpen ? " is-open" : "")}>
+            {solutions.map((e, i) => (
+              <a key={i} href={"/solutions/" + e.slug}>{e.title}</a>
+            ))}
+            <a href="/solutions">All solutions</a>
           </div>
         </div>
         <a href="/case-studies">Case Studies</a>
@@ -262,6 +311,7 @@ function Footer() {
             <h4>Company</h4>
             <ul>
               <li><a href="/about">About</a></li>
+              <li><a href="/solutions">Solutions</a></li>
               <li><a href="/case-studies">Case Studies</a></li>
               <li><a href="/process">Our Process</a></li>
               <li><a href="/blog">Blog</a></li>

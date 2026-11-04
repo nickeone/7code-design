@@ -40,6 +40,10 @@ const SEO_TITLES = {
   "/service/cloud-agentic-infra": "Cloud & Agentic Infrastructure for AI Products | 7code",
   "/service/ai-outstaffing": "AI Engineering Outstaffing — Senior Engineers | 7code",
   "/service/llm-agent-development": "LLM & AI Agent Development Services | 7code",
+  "/solutions": "Business Problems We Solve: Integration, Automation, AI Agents | 7code",
+  "/solutions/connect-business-systems": "Connect ERP, CRM & Business Systems Without Replacing Them | 7code",
+  "/solutions/automate-business-processes": "Automate Manual Business Processes: Invoices, Approvals | 7code",
+  "/solutions/ai-agents-for-business-operations": "AI Agents for Business Operations: What They Do and Don't | 7code",
   "/case-study/revote": "ReVote: Remote Voting for the European Parliament | 7code",
   "/case-study/cloud-of-legacy": "Cloud of Legacy: Secure Digital Inheritance | 7code",
   "/case-study/melsonic": "Melsonic: AI Guitar Learning with Live Feedback | 7code",
@@ -139,6 +143,11 @@ const MAIN_PAGES = [
     description: "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
   },
   {
+    path: "/solutions",
+    title: "Solutions — Business Problems We Solve | 7Code",
+    description: "Start from the problem, not the technology: connect ERP, CRM and finance systems, automate manual business processes, and put AI agents to work in operations.",
+  },
+  {
     path: "/services",
     title: "Services — AI Engineering, Integrations & Automation | 7Code",
     description: "7Code's service lines: AI-native product engineering, system integrations, AI & process automation, cloud and agentic infrastructure, AI engineering outstaffing, product strategy, and LLM & agent development.",
@@ -153,6 +162,13 @@ const SERVICES = [
   {"slug":"ai-outstaffing","title":"AI Engineering Outstaffing","description":"AI engineering outstaffing by 7Code. Senior AI and ML engineers, production LLM, RAG, and MLOps experience, embedded in your team in 72 hours. Monthly rolling, no lock-in.","ogImage":"/project/uploads/hera-hero.jpg"},
   {"slug":"product-strategy","title":"Product Strategy & Design","description":"Product strategy and design by 7Code. Discovery to design system for AI-native products, UX for streaming, confidence, and fallback paths. Figma to code.","ogImage":"/project/uploads/melsonic-hero.jpg"},
   {"slug":"llm-agent-development","title":"LLM & Agent Development","description":"Custom LLM and agent development by 7Code. OpenAI and Anthropic integrations, LangGraph pipelines, RAG systems, and eval-gated releases for production AI.","ogImage":"/project/uploads/daily8-hero.png"},
+];
+
+// Problem-focused pages (project/solutions.jsx). `service` is the matching technical service page.
+const SOLUTIONS = [
+  {"slug":"connect-business-systems","title":"Connect Your Business Systems","service":"system-integrations","description":"Connect your ERP, CRM and finance systems so data moves automatically, without replacing the software you use. Custom system integration by 7code.","ogImage":"/project/uploads/numerize-hero.jpg"},
+  {"slug":"automate-business-processes","title":"Automate Manual Business Processes","service":"ai-automation","description":"Automate invoice processing, approvals, procurement and document handling. Process automation with integrations and AI where it adds value. Pilots from €10,000.","ogImage":"/project/uploads/wholesum-hero.png"},
+  {"slug":"ai-agents-for-business-operations","title":"AI Agents for Business Operations","service":"llm-agent-development","description":"AI agents that read requests, pull data from your ERP and CRM, decide the next step and act, with RAG, guardrails, observability and eval-gated releases.","ogImage":"/project/uploads/hera-hero.jpg"},
 ];
 
 const EXPERTISE = [
@@ -256,6 +272,30 @@ function serviceSchema(s) {
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },
         { name: "Services", url: SITE + "/services" },
+        { name: s.title, url: url },
+      ]),
+    ],
+  };
+}
+
+function solutionSchema(s) {
+  const url = SITE + "/solutions/" + s.slug;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": url + "#page",
+        "name": s.title,
+        "description": s.description,
+        "url": url,
+        "isPartOf": { "@id": SITE + "/#website" },
+        "about": { "@id": SITE + "/service/" + s.service + "#service" },
+        "publisher": ORG_REF,
+      },
+      breadcrumbEntity(url, [
+        { name: "Home", url: SITE + "/" },
+        { name: "Solutions", url: SITE + "/solutions" },
         { name: s.title, url: url },
       ]),
     ],
@@ -550,6 +590,7 @@ const PAGE_TYPES = {
   "/ai-development-agency-uk": "WebPage",
   "/compare/agency-vs-freelancer": "WebPage",
   "/services": "CollectionPage",
+  "/solutions": "CollectionPage",
 };
 
 // Short display names used in breadcrumb trails for main pages
@@ -564,6 +605,7 @@ const PAGE_CRUMB_NAMES = {
   "/ai-development-agency-uk": "AI Development Agency UK",
   "/compare/agency-vs-freelancer": "Agency vs Freelancer",
   "/services": "Services",
+  "/solutions": "Solutions",
 };
 
 // Intermediate crumb for nested paths (e.g. /compare/* gets a "Compare" parent)
@@ -587,10 +629,13 @@ for (const p of MAIN_PAGES) {
     { name: crumbName, url: url },
   ];
   const isServiceListing = p.path === "/services";
+  const isSolutionListing = p.path === "/solutions";
   const isAbout = p.path === "/about";
   let schema;
   if (isServiceListing) {
     schema = listingSchema(p, "CollectionPage", SERVICE_URLS, breadcrumbItems);
+  } else if (isSolutionListing) {
+    schema = listingSchema(p, "CollectionPage", SOLUTIONS.map(x => SITE + "/solutions/" + x.slug + "#page"), breadcrumbItems);
   } else if (isAbout) {
     schema = genericPageSchema(p, "AboutPage", breadcrumbItems);
     schema["@graph"].push(
@@ -642,6 +687,18 @@ for (const s of SERVICES) {
   writeFile("service/" + s.slug + ".html", html);
 }
 
+console.log("\nSolutions:");
+for (const so of SOLUTIONS) {
+  const html = renderPage({
+    pathname: "/solutions/" + so.slug,
+    title: SEO_TITLES["/solutions/" + so.slug] || (so.title + " | 7code"),
+    description: so.description,
+    ogImage: so.ogImage ? SITE + so.ogImage : DEFAULT_OG,
+    schema: solutionSchema(so),
+  });
+  writeFile("solutions/" + so.slug + ".html", html);
+}
+
 console.log("\nExpertise:");
 for (const e of EXPERTISE) {
   const html = renderPage({
@@ -690,5 +747,5 @@ for (const r of RESOURCES) {
   writeFile("resources/" + r.slug + ".html", html);
 }
 
-const total = MAIN_PAGES.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length + RESOURCES.length;
+const total = MAIN_PAGES.length + SOLUTIONS.length + SERVICES.length + EXPERTISE.length + CASES.length + BLOG_POSTS.length + RESOURCES.length;
 console.log(`\nDone. ${total} pages pre-rendered.`);

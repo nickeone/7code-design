@@ -1,4 +1,4 @@
-/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, useState, useEffect */
+/* global React, ReactDOM, Logo, Icon, Nav, Footer, TweaksPanel, TweakSection, TweakRadio, useTweaks, useReveal, useHashRoute, parseRoute, ServiceDetailPage, ExpertiseDetailPage, ExpertisePage, CaseStudiesPage, CaseStudyPage, ProcessPage, AboutPage, BlogRouter, ContactPage, CompareAgencyFreelancerPage, AiMvpPage, UkGeoPage, HomePage, ResourcePage, PrivacyPolicyPage, TermsPage, CookieConsent, initAnalytics, FAQPage, ServicesPage, SolutionDetailPage, SolutionsPage, useState, useEffect */
 // LoadingPage shown for route components that are in the deferred bundle
 function LoadingPage() {
   return React.createElement('div', {style:{padding:'160px 0',textAlign:'center',color:'var(--slate-500)',fontSize:'15px'}}, 'Loading…');
@@ -41,6 +41,8 @@ function App() {
   }, [routesReady]);
   let Page;
   if      (page === "/service"      && slug) Page = routesReady ? <ServiceDetailPage slug={slug} /> : <LoadingPage />;
+  else if (page === "/solutions"    && slug) Page = routesReady ? <SolutionDetailPage slug={slug} /> : <LoadingPage />;
+  else if (page === "/solutions"         )  Page = routesReady ? <SolutionsPage /> : <LoadingPage />;
   else if (page === "/expertise"    && slug) Page = routesReady ? <ExpertiseDetailPage slug={slug} /> : <LoadingPage />;
   else if (page === "/expertise"         )  Page = <ExpertisePage />;
   else if (page === "/case-studies"      )  Page = routesReady ? <CaseStudiesPage variant={tweaks.caseStudiesVariant} /> : <LoadingPage />;
