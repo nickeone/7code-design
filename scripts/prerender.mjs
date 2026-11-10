@@ -167,7 +167,7 @@ const SERVICES = [
 // Problem-focused pages (project/solutions.jsx). `service` is the matching technical service page.
 const SOLUTIONS = [
   {"slug":"connect-business-systems","title":"Connect Your Business Systems","service":"system-integrations","description":"Connect your ERP, CRM and finance systems so data moves automatically, without replacing the software you use. Custom system integration by 7code.","ogImage":"/project/uploads/numerize-hero.jpg"},
-  {"slug":"automate-business-processes","title":"Automate Manual Business Processes","service":"ai-automation","description":"Automate invoice processing, approvals, procurement and document handling. Process automation with integrations and AI where it adds value. Pilots from €10,000.","ogImage":"/project/uploads/wholesum-hero.png"},
+  {"slug":"automate-business-processes","title":"Automate Manual Business Processes","service":"ai-automation","description":"Automate invoice processing, approvals, procurement and document handling. Process automation with integrations and AI where it adds value. Pilots from €10,000.","ogImage":"/project/uploads/wholesum-hero.png","offer":{"name":"Process automation pilot","description":"One business process automated end to end, with a working, measured result in 4–6 weeks.","minPrice":10000}},
   {"slug":"ai-agents-for-business-operations","title":"AI Agents for Business Operations","service":"llm-agent-development","description":"AI agents that read requests, pull data from your ERP and CRM, decide the next step and act, with RAG, guardrails, observability and eval-gated releases.","ogImage":"/project/uploads/hera-hero.jpg"},
 ];
 
@@ -292,6 +292,24 @@ function solutionSchema(s) {
         "isPartOf": { "@id": SITE + "/#website" },
         "about": { "@id": SITE + "/service/" + s.service + "#service" },
         "publisher": ORG_REF,
+        "mainEntity": { "@id": url + "#service" },
+      },
+      {
+        "@type": "Service",
+        "@id": url + "#service",
+        "name": s.title,
+        "serviceType": s.title,
+        "description": s.description,
+        "provider": ORG_REF,
+        "areaServed": ["United Kingdom", "Europe"],
+        "url": url,
+        ...(s.offer ? { "offers": {
+          "@type": "Offer",
+          "name": s.offer.name,
+          "description": s.offer.description,
+          "priceSpecification": { "@type": "PriceSpecification", "minPrice": s.offer.minPrice, "priceCurrency": "EUR" },
+          "url": url,
+        } } : {}),
       },
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },
@@ -326,19 +344,27 @@ function expertiseSchema(e) {
   };
 }
 
+// Case-study publish dates on the current site (= their sitemap <lastmod>). Keep in sync when a case study is updated.
+const CASE_DATES = {"daily8": "2026-05-05", "wholesum": "2026-05-05", "revote": "2026-05-05", "g42-fleet": "2026-05-05", "cloud-of-legacy": "2026-05-05", "lidl-road-safety": "2026-05-05", "hera": "2026-05-05", "melsonic": "2026-05-05", "drum-bun": "2026-05-05", "numerize": "2026-05-05", "lendit": "2026-09-07"};
+
 function caseStudySchema(c) {
   const url = SITE + "/case-study/" + c.slug;
   return {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "CreativeWork",
+        "@type": "Article",
         "@id": url + "#case",
         "name": c.title,
         "headline": c.title,
         "description": c.description,
-        "creator": ORG_REF,
+        "articleSection": "Case Study",
+        "image": c.ogImage ? SITE + c.ogImage : DEFAULT_OG,
+        "author": ORG_REF,
+        "publisher": ORG_REF,
+        "mainEntityOfPage": url,
         "url": url,
+        ...(CASE_DATES[c.slug] ? { "datePublished": CASE_DATES[c.slug], "dateModified": CASE_DATES[c.slug] } : {}),
       },
       breadcrumbEntity(url, [
         { name: "Home", url: SITE + "/" },
