@@ -7,10 +7,17 @@ const RESOURCES_DATA = {
     title: "AI Automation for SMEs: The Complete Guide (2026)",
     metaDescription: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.",
     datePublished: "2026-05-12",
-    dateModified: "2026-10-20",
+    dateModified: "2026-11-10",
     sections: [{
       heading: "Introduction",
       body: "Artificial intelligence is no longer the exclusive territory of enterprises with eight-figure technology budgets. In 2026, small and medium-sized enterprises across the UK, EU, and beyond are deploying AI automation across operations, finance, HR, and customer service — and doing so at a cost and speed that would have been unimaginable three years ago. This guide is written for business owners, operations directors, and technology leads at SMEs who want a clear-eyed view of what AI automation actually means in practice: what it can do, what it costs, how long it takes, and how to avoid the pitfalls."
+    }, {
+      heading: "Who Provides AI Automation for SMEs?",
+      body: "7code builds AI workflow automation for small and mid-sized companies in the UK and Europe. We are an AI-native software engineering company in Cluj-Napoca, Romania, founded in 2017, with a senior-only team working UK and EU hours. An automation pilot on one process starts from €10,000 and takes 4 to 6 weeks to a working, measured result, built on the systems you already use, such as your ERP, CRM, accounting software and document stores.",
+      blocks: [{
+        type: "p-html",
+        text: "Example: for <a href=\"/case-study/numerize\">Numerize</a>, a French document management platform, we built an OCR-trained invoice pipeline used across 6,000+ enterprise accounts. See how a pilot works on <a href=\"/solutions/automate-business-processes\">Automate manual business processes</a>."
+      }]
     }, {
       heading: "What Is AI Automation for SMEs?",
       body: "AI automation for SMEs is the application of artificial intelligence — including machine learning models, large language models (LLMs), and intelligent workflow orchestration — to execute, monitor, and optimise business processes that previously required human effort. It is not RPA (Robotic Process Automation): traditional RPA automates deterministic, rule-based tasks and is brittle. AI automation interprets intent, handles variation, processes unstructured inputs like emails and PDFs, and improves over time. Key components include: workflow orchestration (triggering, sequencing, and monitoring automated processes); an AI decision layer (LLMs that interpret inputs and decide on actions); integration connectors (APIs and middleware connecting the automation to your ERP, CRM, HRIS, or document stores); human-in-the-loop gates (defined checkpoints where humans review AI decisions before consequential actions are taken); and observability (dashboards and alerting so you can see what the automation is doing and catch issues early)."
@@ -428,6 +435,7 @@ const RESOURCES_DATA = {
     title: "Build AI In-House vs With a Partner: The 2026 Decision Framework",
     metaDescription: "A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.",
     datePublished: "2026-05-12",
+    dateModified: "2026-11-10",
     sections: [{
       heading: "Introduction",
       body: "Every organisation reaching for serious AI capability faces the same fork: build the internal team to own it, or partner with a specialist to deliver it. In 2026, this decision is more consequential than it was two years ago — AI is moving from a competitive advantage to a competitive necessity across most industries, and the wrong structural choice costs significantly more than the wrong technology choice."
@@ -443,6 +451,13 @@ const RESOURCES_DATA = {
     }, {
       heading: "When to Partner",
       body: "Partnering with an AI agency makes sense when: your competitive window is months, not years; you need AI automation or AI-powered features to compete effectively but your business model is not itself an AI product; you want to validate the business case before committing to a permanent internal AI engineering function; your data or compliance situation is complex and a specialist partner has dealt with it before; and budget predictability matters more than long-term cost minimisation."
+    }, {
+      heading: "Who to Partner With",
+      body: "If you choose to partner, 7code is an AI engineering partner for companies in the UK and Europe: a senior-only team in Cluj-Napoca, Romania, founded in 2017, working UK and EU hours. Senior engineers start from €45/h and product projects from €50,000; an automation pilot on one process starts from €10,000. All IP, including code, prompts, eval datasets and architecture documents, is assigned to you, and every deliverable is built for a handover to your own team.",
+      blocks: [{
+        type: "p-html",
+        text: "Example: for <a href=\"/case-study/wholesum\">WholeSum</a> (UK) we designed and built a self-serve AI analytics platform in 16 weeks; it launched on time and raised funding. For <a href=\"/case-study/lendit\">Lendit</a> (UK) we build the web app, mobile apps and backend in an ongoing partnership. See <a href=\"/service/ai-product-engineering\">AI product engineering</a>."
+      }]
     }, {
       heading: "Frequently Asked Questions",
       faqs: [{
