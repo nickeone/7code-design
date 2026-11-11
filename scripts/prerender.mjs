@@ -135,8 +135,8 @@ const MAIN_PAGES = [
   },
   {
     path: "/compare/agency-vs-freelancer",
-    title: "AI Agency vs AI Freelancer: Which Is Right for You? | 7code",
-    description: "Choosing between an AI agency and a freelancer for your LLM project? Compare delivery speed, accountability, quality, and total cost — then decide.",
+    title: "Freelancer vs Agency for AI Projects: Which Is Better? | 7code",
+    description: "Freelancer or agency for your AI project? A 10-point comparison of speed, cost, accountability and risk, plus when each one is the better choice.",
   },
   {
     path: "/solutions",
@@ -191,11 +191,11 @@ const CASES = [
 ];
 
 const RESOURCES = [
-  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide (2026)", description: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.", datePublished: "2026-05-12", dateModified: "2026-11-10" },
+  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: Use Cases, Cost & ROI (2026)", description: "5 proven use cases, a worked ROI example (708 hours saved in 6 months) and what a pilot costs: from €10,000, live in 4–6 weeks. Built for SMEs.", datePublished: "2026-05-12", dateModified: "2026-11-10" },
   { slug: "ai-customer-experience-for-smes", title: "AI for Customer Experience in SMEs: Support, Sales Follow-up and Productivity (2026)", description: "Where AI actually helps a small company's customers: support triage, fast sales follow-up and onboarding. What the research shows, what to keep human, and how to start in 30 days.", datePublished: "2026-10-20", author: "Nicu Mardari" },
   { slug: "ai-automation-roi-for-smes", title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)", description: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.", datePublished: "2026-10-20", author: "Nicu Mardari" },
   { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
-  { slug: "nearshore-software-romania", title: "Nearshore Software Development in Romania: The 2026 Guide", description: "Why Romania is Europe's leading nearshore software destination — talent, time zones, cost, and how to choose the right partner.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
+  { slug: "nearshore-software-romania", title: "Nearshore Developers in Romania: 2026 Rates & Guide", description: "Hiring nearshore developers in Romania? Senior rates (about $45/h median), Romania vs Poland vs Portugal, time zones, and 5 criteria to pick a partner.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "staff-augmentation-vs-dedicated-team", title: "Staff Augmentation vs Dedicated Team: Which Is Right for You?", description: "A clear comparison of staff augmentation and dedicated team models — decision table, cost structure, control, and 7code's recommendation.", datePublished: "2026-05-12", dateModified: "2026-10-20" },
   { slug: "nearshore-romania-vs-offshore-asia", title: "Nearshore Romania vs Offshore Asia: A Practical Guide for European Businesses", description: "A data-driven comparison of nearshore Romania and offshore India for European tech buyers — time zones, cost, quality, GDPR, and total cost of ownership.", datePublished: "2026-05-12" },
   { slug: "build-ai-in-house-vs-partner", title: "Build AI In-House vs With a Partner: The 2026 Decision Framework", description: "A practical framework for deciding whether to build your AI capability in-house or partner with an AI agency — 5 questions, cost comparison, and when each model wins.", datePublished: "2026-05-12", dateModified: "2026-11-10" },
