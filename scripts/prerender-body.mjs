@@ -69,6 +69,7 @@ const ROUTES = [
   "/case-study/drum-bun",
   "/case-study/numerize",
   "/case-study/lendit",
+  "/blog/senior-developer-cost-romania-vs-poland",
   "/blog/reduce-admin-work-medical-clinic",
   "/blog/hire-or-automate-which-costs-less",
   "/blog/which-business-process-to-automate-first",

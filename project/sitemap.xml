@@ -200,6 +200,11 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://www.7code.tech/blog/senior-developer-cost-romania-vs-poland</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.7code.tech/blog/reduce-admin-work-medical-clinic</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

@@ -66,6 +66,107 @@ const POST_UPDATED = {
   "how-to-hire-nearshore-ai-engineers": "Oct 20, 2026"
 };
 const POSTS = [{
+  slug: "senior-developer-cost-romania-vs-poland",
+  cat: "Strategy",
+  title: "Senior Developer Cost in Romania vs Poland (2026)",
+  subtitle: "What a senior nearshore developer costs per hour in Romania and in Poland in 2026, why published numbers disagree, and how to choose between the two.",
+  date: "Nov 11, 2026",
+  read: "6 min read",
+  author: {
+    name: "Nicu Mardari",
+    role: "CEO",
+    initial: "N",
+    photo: "/project/uploads/authors/nicu-mardari.jpg"
+  },
+  cover: "finance",
+  illus: "globe",
+  featured: true,
+  body: [{
+    type: "lead",
+    text: "In 2026 a senior developer hired through a nearshore vendor costs about $45 to $65 an hour in Romania and $55 to $80 an hour in Poland. Romania is usually 15% to 25% cheaper at vendor rates. Hired as freelancers, senior developers in the two countries cost almost the same, around $41 to $45 an hour at the median."
+  }, {
+    type: "p",
+    text: "Below are the numbers by seniority, why different sources give different figures, and when each country is the better choice."
+  }, {
+    type: "h2",
+    text: "Senior developer rates: Romania vs Poland"
+  }, {
+    type: "table",
+    head: ["", "Romania", "Poland"],
+    rows: [["Senior, vendor rate (per hour)", "$45 to $65", "$55 to $80"], ["Mid-level, vendor rate (per hour)", "$38 to $50", "$45 to $60"], ["Senior, monthly at 160 hours", "$7,200 to $10,400", "$8,800 to $12,800"], ["Senior, freelance median (per hour)", "$45", "$41"], ["Software developers", "About 190,000", "About 540,000"], ["Time zone", "UTC+2 (EET)", "UTC+1 (CET)"], ["English, EF EPI 2025 rank", "11th of 123", "15th of 123"], ["EU member, GDPR applies", "Yes", "Yes"]]
+  }, {
+    type: "p-html",
+    text: "Sources: vendor rates from <a href=\"https://www.hauerpower.com/en/insights-posts/poland-vs-romania-software-development\" target=\"_blank\" rel=\"noopener noreferrer\">Hauer Power (April 2026)</a>. Freelance medians from Lemon.io contract data for <a href=\"https://lemon.io/rate-calculator/poland/\" target=\"_blank\" rel=\"noopener noreferrer\">Poland (Q3 2026)</a> and Romania (May 2026). Developer counts from <a href=\"https://doitinpoland.com/why-do-it-in-poland/plenty-of-talents/\" target=\"_blank\" rel=\"noopener noreferrer\">Emerging Europe's Future of IT report, via Do IT in Poland</a> and <a href=\"https://devsdata.com/outsourcing-romania-overview-market-report/\" target=\"_blank\" rel=\"noopener noreferrer\">DevsData (2023)</a>. English ranks from the <a href=\"https://www.ef.com/epi\" target=\"_blank\" rel=\"noopener noreferrer\">EF English Proficiency Index 2025</a>. Monthly figures are our arithmetic at 160 billable hours."
+  }, {
+    type: "h2",
+    text: "Why the published numbers disagree"
+  }, {
+    type: "p",
+    text: "Search for Romania vs Poland developer rates and you will find figures from $25 to $110 an hour. Most of the gap comes from what is being measured:"
+  }, {
+    type: "bullets",
+    items: ["Freelance rates are what an individual contractor charges. They are the lowest, and Romania and Poland are close.", "Vendor rates are what a software company bills you. They include management, replacement cover and overhead, so they are higher. This is where Poland costs more.", "Salary data is what the developer takes home. It is not what you pay.", "Blended rates average seniors and mid-levels into one number. They look cheap and hide who is actually on your project."]
+  }, {
+    type: "p-html",
+    text: "Older or wider surveys put both countries higher. The 2024 Accelerance guide, <a href=\"https://distantjob.com/?p=120760\" target=\"_blank\" rel=\"noopener noreferrer\">as reported by DistantJob</a>, listed seniors at $65 to $95 in Romania and $70 to $110 in Poland. Compare like with like: one model, one seniority, one year."
+  }, {
+    type: "callout",
+    text: "When you get a quote, ask for the rate per named engineer and their CV. A low senior rate that is really a blended rate is the most common surprise."
+  }, {
+    type: "h2",
+    text: "When Romania is the better choice"
+  }, {
+    type: "bullets",
+    items: ["Cost matters and the scope is clear. At vendor rates the saving is usually 15% to 25%.", "You need a small senior team, not 50 people in one quarter.", "Your team works on Eastern European time, or in Finland. Romania shares Helsinki's time zone.", "You want English at a very high level. Romania ranks 11th in the world on the EF index."]
+  }, {
+    type: "h2",
+    text: "When Poland is the better choice"
+  }, {
+    type: "bullets",
+    items: ["You need to hire many people fast. Poland's developer pool is roughly two and a half to three times larger.", "You need a deep bench in one niche, such as fintech or gaming, where Poland has more companies to hire from.", "Your team is in Sweden, Norway, Denmark or Germany and wants the exact same clock. Poland is on Central European Time."]
+  }, {
+    type: "h2",
+    text: "Romania or Poland for a Nordic scale-up?"
+  }, {
+    type: "p",
+    text: "Both work. Both are in the EU, so GDPR applies with no extra data transfer paperwork. The time difference to Stockholm, Oslo or Copenhagen is zero for Poland and one hour for Romania, and zero for Romania to Helsinki."
+  }, {
+    type: "p",
+    text: "For a team of 3 to 10 senior engineers, Romania usually gives you the same seniority for less money. For 30 or more hires in a year, Poland's larger market makes it easier to fill the roles."
+  }, {
+    type: "h2",
+    text: "What a nearshore rate should include"
+  }, {
+    type: "bullets",
+    items: ["A named engineer with a CV you have seen, not a role.", "Replacement if the engineer leaves, at no extra cost.", "Equipment, office, and the employer's taxes.", "IP assigned to you in the contract.", "Notice period and exit terms, written down before you sign."]
+  }, {
+    type: "h2",
+    text: "What 7code charges"
+  }, {
+    type: "p-html",
+    text: "7code is a nearshore software company in Cluj-Napoca, Romania, founded in 2017. We work only with senior engineers, on UK and EU hours. Senior engineers start from \u20ac45/h. See <a href=\"/service/ai-outstaffing\">how our outstaffing works</a>, or <a href=\"/contact\">book 20 minutes with us</a> and tell us the role. If Poland suits you better, we will say so."
+  }, {
+    type: "related-guide",
+    href: "/resources/nearshore-software-romania",
+    title: "Nearshore Software Development in Romania",
+    desc: "Talent, cost, time zones and how to choose a partner in Romania."
+  }, {
+    type: "h2",
+    text: "Common questions"
+  }, {
+    type: "p-html",
+    text: "<strong>Is Romania cheaper than Poland for software development?</strong><br />At vendor rates, yes, usually by 15% to 25% for senior engineers. At freelance rates the two are about the same."
+  }, {
+    type: "p-html",
+    text: "<strong>How much does a senior developer cost per hour in Romania?</strong><br />About $45 to $65 an hour through a vendor in 2026, and around $45 at the median as a freelancer."
+  }, {
+    type: "p-html",
+    text: "<strong>How much does a senior developer cost per hour in Poland?</strong><br />About $55 to $80 an hour through a vendor in 2026, and around $41 at the median as a freelancer."
+  }, {
+    type: "p-html",
+    text: "<strong>Which has better English, Romania or Poland?</strong><br />Both score well. In the EF English Proficiency Index 2025, Romania ranks 11th and Poland 15th of 123 countries."
+  }]
+}, {
   slug: "reduce-admin-work-medical-clinic",
   cat: "Operations",
   title: "How to Reduce Admin Work in a Medical Clinic",
@@ -80,7 +181,7 @@ const POSTS = [{
   },
   cover: "health",
   illus: "gears",
-  featured: true,
+  featured: false,
   body: [{
     type: "lead",
     text: "Most clinic admin comes from the same few tasks: booking and reminders, intake forms, referrals, billing, and typing the same data into several systems. You can automate most of them. Ready-made clinic software covers the simple cases. Custom automation makes sense when your systems don’t talk to each other, or your process doesn’t fit the software."

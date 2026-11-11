@@ -207,6 +207,7 @@ const RESOURCES = [
 
 // Blog posts that appear in sitemap.xml
 const BLOG_POSTS = [
+  {"slug":"senior-developer-cost-romania-vs-poland","title":"Senior Developer Cost in Romania vs Poland (2026)","description":"What a senior nearshore developer costs per hour in Romania and in Poland in 2026, why published numbers disagree, and how to choose between the two.","datePublished":"2026-11-11"},
   {"slug":"reduce-admin-work-medical-clinic","title":"How to Reduce Admin Work in a Medical Clinic","description":"Most clinic admin comes from the same few tasks. Here is how to tell whether ready-made clinic software is enough, or whether custom automation is worth it.","datePublished":"2026-10-20"},
   {"slug":"hire-or-automate-which-costs-less","title":"Hire or Automate: Which Costs Less?","description":"Automation usually costs less than hiring when the work is repetitive and follows clear rules. Hiring is the better choice when the work needs judgment or changes every week.","datePublished":"2026-10-20"},
   {"slug":"which-business-process-to-automate-first","title":"Which Business Process Should You Automate First?","description":"Start with the process that repeats often, follows clear rules, wastes the most hours, and touches only one or two tools. A 10-minute scoring method to pick yours.","datePublished":"2026-10-20"},
