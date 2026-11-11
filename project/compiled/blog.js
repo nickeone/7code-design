@@ -45,11 +45,9 @@ const POST_UPDATED = {
   "low-code-no-code-vs-custom-development": "May 06, 2026",
   "cms-wordpress-vs-custom-development": "May 06, 2026",
   "osai-revolutionising-ai-interactions": "May 06, 2026",
-  "reducing-costs-nearshoring-outstaffing": "May 06, 2026",
   "aws-beanstalk-to-ecs-migration": "May 06, 2026",
   "migrating-users-auth0-python": "May 06, 2026",
   "logistics-tech-tailored-solutions": "May 06, 2026",
-  "why-mvp-first": "May 06, 2026",
   "lessons-from-london-tech-week-ai": "May 06, 2026",
   "ai-engineering-outstaffing": "May 05, 2026",
   "switch-ai-engineering-partner": "May 04, 2026",
@@ -1189,58 +1187,6 @@ const POSTS = [{
 },
 // ── Transferred from 7code.tech ──────────────────────────────
 {
-  slug: "why-mvp-first",
-  cat: "Strategy",
-  title: "Why MVP first? The case for minimum viable products",
-  subtitle: "Starting lean, learning fast, and building what users actually need, the MVP approach is the most efficient path from idea to product-market fit.",
-  date: "Dec 11, 2023",
-  read: "5 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "cyan",
-  illus: "stacked_layers",
-  body: [{
-    type: "lead",
-    text: "The most common mistake in software product development is building too much before you know what users actually want. The MVP, Minimum Viable Product, approach solves this by putting the smallest version of your product in front of real users as quickly as possible, generating validated learning before significant investment is committed."
-  }, {
-    type: "h2",
-    text: "What an MVP actually is"
-  }, {
-    type: "p",
-    text: "An MVP is not a half-finished product or a prototype. It is the smallest version of a product that delivers genuine value to a defined user, while generating the maximum learning about whether to build more. The key word is 'viable', it has to work well enough for a real user to get a real job done."
-  }, {
-    type: "h2",
-    text: "The advantages of going MVP first"
-  }, {
-    type: "bullets",
-    items: ["Validated learning: real user data tells you what works and what doesn't before you over-invest", "Cost efficiency: reduced initial investment keeps options open and preserves runway", "Adaptability: without a huge feature set to maintain, pivots are cheaper and faster", "User-centric development: every feature after the MVP is shaped by what users genuinely want, not what seemed good on a whiteboard", "Faster time to market: a lean product ships sooner, capturing early adopters and feedback simultaneously"]
-  }, {
-    type: "h2",
-    text: "Validated learning beats elaborate roadmaps"
-  }, {
-    type: "p",
-    text: "One of the most significant advantages of an MVP is the opportunity it provides for validated learning. By introducing the product to real users early in the process, companies gather critical data on what works and what doesn't. This replaces assumptions, which are always wrong in some dimension, with evidence."
-  }, {
-    type: "callout",
-    text: "The cost of being wrong for six weeks is recoverable. The cost of being wrong for six months is not."
-  }, {
-    type: "h2",
-    text: "When to expand beyond the MVP"
-  }, {
-    type: "p",
-    text: "Expand the MVP when you have evidence, not just enthusiasm, that a specific addition will measurably improve retention, conversion, or activation. Features built after validated learning compound; features built from gut feeling mostly create maintenance debt."
-  }, {
-    type: "h2",
-    text: "7Code's approach to MVPs"
-  }, {
-    type: "p",
-    text: "We design our MVP engagements around a 6–8 week delivery window with a clearly defined success metric agreed before a line of code is written. The MVP ships; we measure; then we decide together what to build next. This gives our clients the fastest possible path to real market feedback, and the clearest possible foundation for the roadmap that follows."
-  }]
-}, {
   slug: "cms-wordpress-vs-custom-development",
   cat: "Engineering",
   title: "WordPress vs. custom development: how to choose",
@@ -1377,57 +1323,6 @@ const POSTS = [{
   }, {
     type: "p",
     text: "Assess your specific needs honestly: standard requirements with a tight timeline and limited budget point toward low-code. A unique product, a performance-sensitive use case, or a long-term roadmap that demands flexibility points toward custom. The right choice is the one that serves your business goals, not the one that feels simpler today."
-  }]
-}, {
-  slug: "reducing-costs-nearshoring-outstaffing",
-  cat: "Strategy",
-  title: "Dev cost savings through nearshoring and outstaffing",
-  subtitle: "10–30% cost savings are possible, but that is not the headline. Velocity, continuity, and access to senior talent are.",
-  date: "Oct 11, 2023",
-  read: "6 min read",
-  author: {
-    name: "Daniela Cazac",
-    role: "Business Development Manager",
-    initial: "D",
-    photo: "/project/uploads/authors/daniela-cazac.jpg"
-  },
-  cover: "ops",
-  illus: "coin_stack",
-  body: [{
-    type: "lead",
-    text: "Nearshoring and outstaffing have a reputation for being cost plays. They are, but framing them only as cost strategies undersells their real value. The teams that get the most from nearshore engagement are not the ones chasing the lowest hourly rate; they are the ones using geographic flexibility to access senior talent, sustain velocity, and build long-running product teams that know the system."
-  }, {
-    type: "h2",
-    text: "Nearshoring vs outstaffing: the distinction"
-  }, {
-    type: "p",
-    text: "Nearshoring refers to outsourcing business processes or development work to companies in neighbouring or nearby countries, gaining cultural, time-zone, and language alignment alongside cost efficiency. Outstaffing involves hiring remote professionals to work on specific projects, operating as an extension of the client's team rather than a separate vendor."
-  }, {
-    type: "h2",
-    text: "The cost picture"
-  }, {
-    type: "bullets",
-    items: ["Companies using nearshoring or outstaffing can reduce development costs by 10–30% compared to equivalent local hiring", "Reduced overhead: no insurance, benefits, or employment infrastructure for external engineers", "Flexible allocation: scale the team based on project needs, paying only for active capacity", "No recruitment cost: senior engineers available immediately, without six-month hiring cycles"]
-  }, {
-    type: "h2",
-    text: "Why continuity is the real headline"
-  }, {
-    type: "p",
-    text: "Pure staff augmentation breaks on serious products because the work demands continuity. The engineer who designed the retrieval layer needs to own its evolution. A pod that churns engineers every quarter loses the institutional knowledge that makes AI and complex software work, and the client pays for that loss in bugs, regressions, and rework."
-  }, {
-    type: "callout",
-    text: "Cost is the table stakes. Velocity, ownership, and the ability to sustain a long-running team that knows your product, those are the real returns on a well-run nearshore engagement."
-  }, {
-    type: "h2",
-    text: "What to look for in a nearshore partner"
-  }, {
-    type: "bullets",
-    items: ["Senior-led teams, not body-shop augmentation, at least one senior engineer owning architecture end-to-end", "Overlap hours that are real and protected, not nominal", "Low churn: the same engineers on the engagement from month four through month fourteen", "Eval and ownership accountability, the team owns outcomes, not just seat hours"]
-  }, {
-    type: "related-guide",
-    href: "/compare/agency-vs-freelancer",
-    title: "Comparing an agency to a freelancer?",
-    desc: "Delivery speed, accountability, quality, and total cost — compared honestly."
   }]
 }, {
   slug: "migrating-users-auth0-python",
