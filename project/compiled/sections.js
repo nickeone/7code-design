@@ -1,3 +1,4 @@
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
 /* global React, Logo, Icon */
 
 const {
@@ -440,6 +441,11 @@ function VerifiedAccredited() {
     src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",
     alt: "Listed on GoodFirms",
     href: "https://www.goodfirms.co/company/7code"
+  }, {
+    src: "https://cdn.techbehemoths.com/public/static/validation/tb-verified-logo.svg",
+    alt: "TechBehemoths Verification",
+    href: "https://techbehemoths.com/company/7code",
+    tbVerify: true
   }];
   return /*#__PURE__*/React.createElement("section", {
     className: "section section--alt"
@@ -458,17 +464,20 @@ function VerifiedAccredited() {
       className: "trust-logo" + (item.className ? " " + item.className : ""),
       loading: "lazy"
     });
-    return item.href ? /*#__PURE__*/React.createElement("a", {
+    return item.href ? /*#__PURE__*/React.createElement("a", _extends({
       key: i,
       href: item.href,
       target: "_blank",
-      rel: "noopener noreferrer",
+      rel: "noopener noreferrer"
+    }, item.tbVerify ? {
+      "data-techbehemoths-verification": ""
+    } : {}, {
       className: "trust-card reveal",
       style: {
         transitionDelay: i % 4 * 50 + "ms"
       },
       "aria-label": item.alt
-    }, inner) : /*#__PURE__*/React.createElement("div", {
+    }), inner) : /*#__PURE__*/React.createElement("div", {
       key: i,
       className: "trust-card reveal",
       style: {

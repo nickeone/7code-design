@@ -201,6 +201,7 @@ function VerifiedAccredited() {
     { src: "/project/uploads/sortlist%20logo%20.png",          alt: "Sortlist Verified Agency" },
     { src: "/project/uploads/crunchbase.png",                  alt: "Listed on Crunchbase",  href: "https://www.crunchbase.com/organization/7code" },
     { src: "/project/uploads/Goodfirms-Logo-Vector.svg-.png",  alt: "Listed on GoodFirms",   href: "https://www.goodfirms.co/company/7code" },
+    { src: "https://cdn.techbehemoths.com/public/static/validation/tb-verified-logo.svg", alt: "TechBehemoths Verification", href: "https://techbehemoths.com/company/7code", tbVerify: true },
   ];
   return (
     <section className="section section--alt">
@@ -222,6 +223,7 @@ function VerifiedAccredited() {
             );
             return item.href ? (
               <a key={i} href={item.href} target="_blank" rel="noopener noreferrer"
+                 {...(item.tbVerify ? { "data-techbehemoths-verification": "" } : {})}
                  className="trust-card reveal" style={{ transitionDelay: (i % 4 * 50) + "ms" }}
                  aria-label={item.alt}>
                 {inner}
