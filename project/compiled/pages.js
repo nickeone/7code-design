@@ -558,6 +558,15 @@ function resolveGaClientId() {
     resolve("");
   });
 }
+
+// Records a lead in Google Analytics (only sent when the visitor accepted analytics cookies).
+function trackLead(source) {
+  try {
+    if (typeof window.gtag === "function") window.gtag("event", "generate_lead", {
+      lead_source: source
+    });
+  } catch {/* ignore */}
+}
 function ContactPage() {
   useSeoMeta("Contact 7Code, Start a Project | Cluj-Napoca, Romania", "Get in touch with 7Code, AI-native software engineering agency in Cluj-Napoca, Romania. Tell us about your project — we'll respond within one business day.");
   const [form, setForm] = useStateP({
@@ -650,6 +659,7 @@ function ContactPage() {
       const data = await res.json();
       if (data.ok) {
         setSent(true);
+        trackLead("contact_form");
       } else {
         setServerError(data.errors ? data.errors.map(err => err.message).join(" ") : "Submission failed. Please try again.");
       }
@@ -670,7 +680,7 @@ function ContactPage() {
     style: {
       justifyContent: "center"
     }
-  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Start Your AI Engineering Project"), /*#__PURE__*/React.createElement("p", null, "Tell us a bit about your project, we'll get back to you within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
+  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Start Your AI Engineering Project"), /*#__PURE__*/React.createElement("p", null, "Building a product, or automating a process? Tell us which, and we'll reply within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"
@@ -686,7 +696,16 @@ function ContactPage() {
     style: {
       color: "var(--slate-500)"
     }
-  }, "Prefer a quick chat? Pick whichever channel works best."), /*#__PURE__*/React.createElement("div", {
+  }, "Prefer to talk? Book a 20-minute call and pick a time that suits you."), /*#__PURE__*/React.createElement("a", {
+    href: "https://calendar.app.google/xgANCDkSjSQ2ZpQ18",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "btn btn--cyan",
+    style: {
+      justifySelf: "start"
+    },
+    onClick: () => trackLead("booking_link")
+  }, "Book a 20-minute call ", /*#__PURE__*/React.createElement(Icon.arrow, null)), /*#__PURE__*/React.createElement("div", {
     className: "contact-row"
   }, /*#__PURE__*/React.createElement("span", {
     className: "icon-tile"
@@ -785,10 +804,10 @@ function ContactPage() {
     name: "budget",
     value: form.budget,
     onChange: update("budget"),
-    toolparamdescription: "Approximate project budget range in USD (optional): $25k \u2013 $50k, $50k \u2013 $150k, $150k \u2013 $500k, or $500k+."
+    toolparamdescription: "Approximate project budget in EUR (optional): under \u20AC25k (automation pilot), \u20AC25k \u2013 \u20AC50k, \u20AC50k \u2013 \u20AC150k, \u20AC150k+, or not sure yet."
   }, /*#__PURE__*/React.createElement("option", {
     value: ""
-  }, "Select..."), /*#__PURE__*/React.createElement("option", null, "$25k \u2013 $50k"), /*#__PURE__*/React.createElement("option", null, "$50k \u2013 $150k"), /*#__PURE__*/React.createElement("option", null, "$150k \u2013 $500k"), /*#__PURE__*/React.createElement("option", null, "$500k+")))), /*#__PURE__*/React.createElement("div", {
+  }, "Select..."), /*#__PURE__*/React.createElement("option", null, "Under \u20AC25k (automation pilot)"), /*#__PURE__*/React.createElement("option", null, "\u20AC25k \u2013 \u20AC50k"), /*#__PURE__*/React.createElement("option", null, "\u20AC50k \u2013 \u20AC150k"), /*#__PURE__*/React.createElement("option", null, "\u20AC150k+"), /*#__PURE__*/React.createElement("option", null, "Not sure yet")))), /*#__PURE__*/React.createElement("div", {
     className: "field" + (errors.message ? " field--error" : "")
   }, /*#__PURE__*/React.createElement("label", {
     htmlFor: "contact-message"

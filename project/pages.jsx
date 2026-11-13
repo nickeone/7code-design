@@ -453,6 +453,11 @@ function resolveGaClientId() {
   });
 }
 
+// Records a lead in Google Analytics (only sent when the visitor accepted analytics cookies).
+function trackLead(source) {
+  try { if (typeof window.gtag === "function") window.gtag("event", "generate_lead", { lead_source: source }); } catch { /* ignore */ }
+}
+
 function ContactPage() {
   useSeoMeta(
     "Contact 7Code, Start a Project | Cluj-Napoca, Romania",
@@ -539,6 +544,7 @@ function ContactPage() {
       const data = await res.json();
       if (data.ok) {
         setSent(true);
+        trackLead("contact_form");
       } else {
         setServerError(data.errors ? data.errors.map(err => err.message).join(" ") : "Submission failed. Please try again.");
       }
@@ -555,7 +561,7 @@ function ContactPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Contact</span>
           <h1>Start Your AI Engineering Project</h1>
-          <p>Tell us a bit about your project, we'll get back to you within one business day with next steps.</p>
+          <p>Building a product, or automating a process? Tell us which, and we'll reply within one business day with next steps.</p>
         </div>
       </section>
 
@@ -564,7 +570,8 @@ function ContactPage() {
           <div className="contact-grid">
             <div className="contact-info reveal">
               <h2 style={{ fontSize: 28 }}>Get in touch</h2>
-              <p style={{ color: "var(--slate-500)" }}>Prefer a quick chat? Pick whichever channel works best.</p>
+              <p style={{ color: "var(--slate-500)" }}>Prefer to talk? Book a 20-minute call and pick a time that suits you.</p>
+              <a href="https://calendar.app.google/xgANCDkSjSQ2ZpQ18" target="_blank" rel="noopener noreferrer" className="btn btn--cyan" style={{ justifySelf: "start" }} onClick={() => trackLead("booking_link")}>Book a 20-minute call <Icon.arrow /></a>
               <div className="contact-row">
                 <span className="icon-tile"><Icon.email /></span>
                 <div><strong>Email</strong><a href="mailto:office@7code.ro" style={{ color: "var(--slate-500)" }}>office@7code.ro</a></div>
@@ -603,12 +610,13 @@ function ContactPage() {
                     </div>
                     <div className="field">
                       <label htmlFor="contact-budget">Budget</label>
-                      <select id="contact-budget" name="budget" value={form.budget} onChange={update("budget")} toolparamdescription="Approximate project budget range in USD (optional): $25k – $50k, $50k – $150k, $150k – $500k, or $500k+.">
+                      <select id="contact-budget" name="budget" value={form.budget} onChange={update("budget")} toolparamdescription="Approximate project budget in EUR (optional): under €25k (automation pilot), €25k – €50k, €50k – €150k, €150k+, or not sure yet.">
                         <option value="">Select...</option>
-                        <option>$25k – $50k</option>
-                        <option>$50k – $150k</option>
-                        <option>$150k – $500k</option>
-                        <option>$500k+</option>
+                        <option>Under €25k (automation pilot)</option>
+                        <option>€25k – €50k</option>
+                        <option>€50k – €150k</option>
+                        <option>€150k+</option>
+                        <option>Not sure yet</option>
                       </select>
                     </div>
                   </div>
