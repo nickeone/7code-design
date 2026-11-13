@@ -699,6 +699,69 @@ function Testimonials() {
 }
 
 // CTA strip
+// In-page booking offer: a topic-specific reason to book a 20-minute call.
+// Links straight to the booking page and records a generate_lead event
+// (only sent when the visitor accepted analytics cookies).
+const BOOKING_URL = "https://calendar.app.google/xgANCDkSjSQ2ZpQ18";
+function BookCallOffer({
+  title,
+  text,
+  button
+}) {
+  const onClick = () => {
+    try {
+      if (typeof window.gtag === "function") window.gtag("event", "generate_lead", {
+        lead_source: "booking_offer",
+        page_path: window.location.pathname
+      });
+    } catch (e) {/* ignore */}
+  };
+  return /*#__PURE__*/React.createElement("div", {
+    className: "book-offer",
+    style: {
+      margin: "32px 0",
+      padding: "28px 32px",
+      borderRadius: 16,
+      background: "var(--ink)",
+      color: "#fff",
+      display: "grid",
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontWeight: 700,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "var(--cyan-300)"
+    }
+  }, "20-minute call"), title && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontFamily: "var(--font-display)",
+      fontSize: 20,
+      fontWeight: 700,
+      lineHeight: 1.3,
+      color: "#fff"
+    }
+  }, title), /*#__PURE__*/React.createElement("p", {
+    style: {
+      margin: 0,
+      color: "rgba(255,255,255,0.78)",
+      fontSize: 15.5,
+      lineHeight: 1.65
+    }
+  }, text), /*#__PURE__*/React.createElement("a", {
+    href: BOOKING_URL,
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "btn btn--cyan",
+    style: {
+      justifySelf: "start",
+      marginTop: 4
+    },
+    onClick: onClick
+  }, button || "Book a 20-minute call", " ", /*#__PURE__*/React.createElement(Icon.arrow, null)));
+}
 function CTAStrip() {
   return /*#__PURE__*/React.createElement("section", {
     className: "section"

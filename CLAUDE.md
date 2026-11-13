@@ -32,7 +32,8 @@ nothing else broken. Follow this file exactly.
    one commit.
 2. Add an entry to `POSTS` in `project/blog.jsx`, using the existing block
    types only: `lead`, `h2`, `p`, `p-html`, `bullets`, `table`, `callout`,
-   `related-guide`. Keep the author's wording; don't rewrite it.
+   `related-guide`, `book-call` (a topic-specific booking offer:
+   `{ type: "book-call", title, text }`, links to the booking page). Keep the author's wording; don't rewrite it.
    - Authors (copy exactly):
      - `{ name: "Daniela Cazac", role: "CMO", initial: "D", photo: "/project/uploads/authors/daniela-cazac.jpg" }`
      - `{ name: "Nicu Mardari", role: "CEO", initial: "N", photo: "/project/uploads/authors/nicu-mardari.jpg" }`

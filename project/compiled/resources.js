@@ -17,6 +17,10 @@ const RESOURCES_DATA = {
       blocks: [{
         type: "p-html",
         text: "Example: for <a href=\"/case-study/numerize\">Numerize</a>, a French document management platform, we built an OCR-trained invoice pipeline used across 6,000+ enterprise accounts. See how a pilot works on <a href=\"/solutions/automate-business-processes\">Automate manual business processes</a>."
+      }, {
+        type: "book-call",
+        title: "Not sure your process fits a €10,000 pilot?",
+        text: "Book 20 minutes. Tell us the process, and we'll tell you whether it is worth automating and roughly what it would pay back. If it isn't worth it, we'll say so."
       }]
     }, {
       heading: "What Is AI Automation for SMEs?",
@@ -200,6 +204,10 @@ const RESOURCES_DATA = {
       }, {
         type: "p-html",
         text: "Further reading: <a href=\"/resources/ai-automation-roi-for-smes\">AI automation ROI for SMEs</a>, <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>."
+      }, {
+        type: "book-call",
+        title: "Where do your customers wait longest?",
+        text: "Book 20 minutes. Tell us where requests or leads wait today, and we'll tell you whether AI can close that gap and what a first pilot would involve."
       }]
     }]
   },
@@ -263,6 +271,10 @@ const RESOURCES_DATA = {
       }, {
         type: "bullets",
         items: ["<strong>How many systems the process touches.</strong> One inbox and one spreadsheet is cheap; an ERP, a CRM and a bank feed are not.", "<strong>How clean the data is.</strong> Scanned paper and free-text emails need extraction and checking before anything can be automated.", "<strong>How much judgement is involved.</strong> Rules are cheap to automate; decisions that need a person to approve add review steps.", "<strong>Compliance.</strong> Personal or health data adds logging, access control and GDPR work from day one."]
+      }, {
+        type: "book-call",
+        title: "Want the ROI for your own process?",
+        text: "Book 20 minutes. Bring the hours your team spends on the process today, and we'll run the same calculation with you. If it doesn't pay back, we'll tell you."
       }]
     }, {
       heading: "When automation does not pay back",
@@ -362,7 +374,12 @@ const RESOURCES_DATA = {
       body: "1. Seniority of actual delivery team — ask to meet the engineers who will work on your project before you sign. A company that uses senior staff in business development and junior staff in delivery is a pattern to avoid. 2. References from clients in your market — ask for two to three references from clients in your sector or of similar size and speak to them directly. 3. Security and compliance maturity — review the partner's ISO 27001 status, GDPR data processing practices, code security review process, and incident response procedures. 4. Commercial transparency — understand the rate card fully, including how additional work is priced, what the notice period is, and how rate increases are handled. 5. Technical alignment with your stack and problem type — if you are building AI products, evaluate the partner's specific AI engineering experience, not their general software capability."
     }, {
       heading: "7code's Position in the Romanian Market",
-      body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case."
+      body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
+      blocks: [{
+        type: "book-call",
+        title: "Need senior engineers in Romania?",
+        text: "Book 20 minutes. Tell us the role and your team's time zone, and we'll tell you whether we have a senior match and what it costs."
+      }]
     }, {
       heading: "Romania vs Poland vs Portugal for UK companies",
       body: "All three are EU members: Portugal since 1986, Poland since 2004 and Romania since 2007. GDPR applies in each. Mainland Portugal shares UK time. Poland is one hour ahead and Romania two, so all three give a near-full shared working day. On English, the EF English Proficiency Index 2025 ranks Portugal 6th, Romania 11th and Poland 15th of 123 countries. On cost, Lemon.io's September 2026 contract data puts senior median rates at about $45/hr in Romania, $41.70/hr in Poland and $40–45/hr in Portugal. That makes rate a weak way to choose between them. Poland has the largest market of the three. Portugal suits teams that want no time difference. Romania suits teams that want EU-based engineers in a smaller, less crowded market."
@@ -509,6 +526,10 @@ const RESOURCES_DATA = {
       blocks: [{
         type: "p-html",
         text: "Example: for <a href=\"/case-study/wholesum\">WholeSum</a> (UK) we designed and built a self-serve AI analytics platform in 16 weeks; it launched on time and raised funding. For <a href=\"/case-study/lendit\">Lendit</a> (UK) we build the web app, mobile apps and backend in an ongoing partnership. See <a href=\"/service/ai-product-engineering\">AI product engineering</a>."
+      }, {
+        type: "book-call",
+        title: "Still deciding between hiring and a partner?",
+        text: "Book 20 minutes. Tell us what you want to build and by when, and we'll tell you honestly which option fits, even if it isn't us."
       }]
     }, {
       heading: "Frequently Asked Questions",
@@ -571,6 +592,11 @@ function ResourceBlock({
       }
     })));
   }
+  if (block.type === "book-call") return /*#__PURE__*/React.createElement(BookCallOffer, {
+    title: block.title,
+    text: block.text,
+    button: block.button
+  });
   if (block.type === "callout") {
     return /*#__PURE__*/React.createElement("div", {
       style: {

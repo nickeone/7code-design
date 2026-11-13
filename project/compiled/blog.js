@@ -144,6 +144,10 @@ const POSTS = [{
     type: "p-html",
     text: "7code is a nearshore software company in Cluj-Napoca, Romania, founded in 2017. We work only with senior engineers, on UK and EU hours. Senior engineers start from \u20ac45/h. See <a href=\"/service/ai-outstaffing\">how our outstaffing works</a>, or <a href=\"/contact\">book 20 minutes with us</a> and tell us the role. If Poland suits you better, we will say so."
   }, {
+    type: "book-call",
+    title: "Need senior engineers in Romania?",
+    text: "Book 20 minutes. Tell us the role and your team's time zone, and we'll tell you whether we have a senior match and what it costs."
+  }, {
     type: "related-guide",
     href: "/resources/nearshore-software-romania",
     title: "Nearshore Software Development in Romania",
@@ -269,8 +273,8 @@ const POSTS = [{
     type: "h2",
     text: "Want to talk it through?"
   }, {
-    type: "p-html",
-    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us what your team does by hand, and we’ll tell you honestly whether to buy software, automate, or leave it as it is."
+    type: "book-call",
+    text: "Book 20 minutes with us. Tell us what your team does by hand, and we’ll tell you honestly whether to buy software, automate, or leave it as it is."
   }, {
     type: "related-guide",
     href: "/resources/ai-automation-for-smes",
@@ -345,8 +349,8 @@ const POSTS = [{
     type: "h2",
     text: "Not sure which fits you?"
   }, {
-    type: "p-html",
-    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us the process, and we’ll tell you honestly whether to automate or hire."
+    type: "book-call",
+    text: "Book 20 minutes with us. Tell us the process, and we’ll tell you honestly whether to automate or hire."
   }, {
     type: "h2",
     text: "Common questions"
@@ -436,8 +440,8 @@ const POSTS = [{
     type: "h2",
     text: "Not sure where to start?"
   }, {
-    type: "p-html",
-    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us your top three manual processes and we’ll tell you which one to do first."
+    type: "book-call",
+    text: "Book 20 minutes with us. Tell us your top three manual processes and we’ll tell you which one to do first."
   }, {
     type: "h2",
     text: "Common questions"
@@ -515,8 +519,8 @@ const POSTS = [{
     type: "h2",
     text: "Want a number for your process?"
   }, {
-    type: "p-html",
-    text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us what you’re trying to automate, and we’ll tell you which scope fits, roughly what it costs, and whether it’s worth doing at all."
+    type: "book-call",
+    text: "Book 20 minutes with us. Tell us what you’re trying to automate, and we’ll tell you which scope fits, roughly what it costs, and whether it’s worth doing at all."
   }, {
     type: "h2",
     text: "Frequently asked questions"
@@ -1561,6 +1565,10 @@ const POSTS = [{
   }, {
     type: "p",
     text: "The pattern across all of them: strong university computer science programmes, senior engineers who've worked on production AI systems at scale, and timezone overlap that makes real-time collaboration with UK and EU teams natural, not forced."
+  }, {
+    type: "book-call",
+    title: "Hiring nearshore AI engineers?",
+    text: "Book 20 minutes. Tell us what you are building and the skills you need, and we'll tell you whether we have a senior match and how the first weeks would run."
   }, {
     type: "related-guide",
     href: "/compare/agency-vs-freelancer",
@@ -4684,6 +4692,12 @@ function PostBody({
         color: "#fff"
       }
     }, /*#__PURE__*/React.createElement(Icon.arrow, null)));
+    if (b.type === "book-call") return /*#__PURE__*/React.createElement(BookCallOffer, {
+      key: i,
+      title: b.title,
+      text: b.text,
+      button: b.button
+    });
     if (b.type === "callout") return /*#__PURE__*/React.createElement("div", {
       key: i,
       className: "blog-callout"

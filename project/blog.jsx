@@ -127,6 +127,7 @@ const POSTS = [
       ]},
       { type: "h2", text: "What 7code charges" },
       { type: "p-html", text: "7code is a nearshore software company in Cluj-Napoca, Romania, founded in 2017. We work only with senior engineers, on UK and EU hours. Senior engineers start from \u20ac45/h. See <a href=\"/service/ai-outstaffing\">how our outstaffing works</a>, or <a href=\"/contact\">book 20 minutes with us</a> and tell us the role. If Poland suits you better, we will say so." },
+      { type: "book-call", title: "Need senior engineers in Romania?", text: "Book 20 minutes. Tell us the role and your team's time zone, and we'll tell you whether we have a senior match and what it costs." },
       { type: "related-guide", href: "/resources/nearshore-software-romania", title: "Nearshore Software Development in Romania", desc: "Talent, cost, time zones and how to choose a partner in Romania." },
       { type: "h2", text: "Common questions" },
       { type: "p-html", text: "<strong>Is Romania cheaper than Poland for software development?</strong><br />At vendor rates, yes, usually by 15% to 25% for senior engineers. At freelance rates the two are about the same." },
@@ -200,7 +201,7 @@ const POSTS = [
       { type: "p", text: "We offer a short check called the Operational Quick Scan. A senior consultant looks at your five most expensive processes, picks the two or three worth automating, and gives you the expected return in numbers." },
       { type: "p", text: "If ready-made software is enough for you, we’ll say so." },
       { type: "h2", text: "Want to talk it through?" },
-      { type: "p-html", text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us what your team does by hand, and we’ll tell you honestly whether to buy software, automate, or leave it as it is." },
+      { type: "book-call", text: "Book 20 minutes with us. Tell us what your team does by hand, and we’ll tell you honestly whether to buy software, automate, or leave it as it is." },
       { type: "related-guide", href: "/resources/ai-automation-for-smes", title: "AI Automation for SMEs: The Complete Guide", desc: "Where to start, how to measure the return, and how a rollout is phased." },
       { type: "h2", text: "Common questions" },
       { type: "p-html", text: "<strong>What is administrative burden in a clinic?</strong><br />All the tasks that keep the clinic running but aren’t patient care: scheduling, forms, billing, reports and paperwork." },
@@ -249,7 +250,7 @@ const POSTS = [
         "You need someone who talks to clients",
       ]},
       { type: "h2", text: "Not sure which fits you?" },
-      { type: "p-html", text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us the process, and we’ll tell you honestly whether to automate or hire." },
+      { type: "book-call", text: "Book 20 minutes with us. Tell us the process, and we’ll tell you honestly whether to automate or hire." },
       { type: "h2", text: "Common questions" },
       { type: "p-html", text: "<strong>Is automation cheaper than hiring?</strong><br />For repetitive work, usually yes. For work that needs judgment, usually no." },
     ],
@@ -310,7 +311,7 @@ const POSTS = [
       { type: "p", text: "We offer a short check called the Operational Quick Scan. A senior consultant looks at your five most expensive processes, picks the two or three worth automating, and gives you the expected return in numbers." },
       { type: "p", text: "If nothing is worth automating, we’ll tell you." },
       { type: "h2", text: "Not sure where to start?" },
-      { type: "p-html", text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us your top three manual processes and we’ll tell you which one to do first." },
+      { type: "book-call", text: "Book 20 minutes with us. Tell us your top three manual processes and we’ll tell you which one to do first." },
       { type: "h2", text: "Common questions" },
       { type: "p-html", text: "<strong>Do I need to change my current software?</strong><br />No. We build around the tools you already use." },
       { type: "p-html", text: "<strong>What if I pick the wrong process?</strong><br />That’s what the Quick Scan is for." },
@@ -357,7 +358,7 @@ const POSTS = [
       ]},
       { type: "p", text: "If the answers are vague, that tells you something." },
       { type: "h2", text: "Want a number for your process?" },
-      { type: "p-html", text: "<a href=\"/contact\">Book 20 minutes with us</a>. Tell us what you’re trying to automate, and we’ll tell you which scope fits, roughly what it costs, and whether it’s worth doing at all." },
+      { type: "book-call", text: "Book 20 minutes with us. Tell us what you’re trying to automate, and we’ll tell you which scope fits, roughly what it costs, and whether it’s worth doing at all." },
       { type: "h2", text: "Frequently asked questions" },
       { type: "p-html", text: "<strong>Do we have to replace our current systems?</strong><br />No. We build around the tools you already use." },
     ],
@@ -925,6 +926,7 @@ const POSTS = [
         "Krakow, Poland: university town with strong CS graduates, growing quickly as a nearshore hub for UK and EU clients. UTC+1.",
       ]},
       { type: "p", text: "The pattern across all of them: strong university computer science programmes, senior engineers who've worked on production AI systems at scale, and timezone overlap that makes real-time collaboration with UK and EU teams natural, not forced." },
+      { type: "book-call", title: "Hiring nearshore AI engineers?", text: "Book 20 minutes. Tell us what you are building and the skills you need, and we'll tell you whether we have a senior match and how the first weeks would run." },
       { type: "related-guide", href: "/compare/agency-vs-freelancer", title: "Comparing an agency to a freelancer?", desc: "Delivery speed, accountability, quality, and total cost — compared honestly." },
     ],
   },
@@ -1847,6 +1849,7 @@ function PostBody({ blocks }) {
             </span>
           </a>
         );
+        if (b.type === "book-call") return <BookCallOffer key={i} title={b.title} text={b.text} button={b.button} />;
         if (b.type === "callout") return (
           <div key={i} className="blog-callout">
             <div className="blog-callout-icon"><Icon.zap style={{ width: 18, height: 18 }} /></div>

@@ -18,6 +18,7 @@ const RESOURCES_DATA = {
         body: "7code builds AI workflow automation for small and mid-sized companies in the UK and Europe. We are an AI-native software engineering company in Cluj-Napoca, Romania, founded in 2017, with a senior-only team working UK and EU hours. An automation pilot on one process starts from €10,000 and takes 4 to 6 weeks to a working, measured result, built on the systems you already use, such as your ERP, CRM, accounting software and document stores.",
         blocks: [
           { type: "p-html", text: "Example: for <a href=\"/case-study/numerize\">Numerize</a>, a French document management platform, we built an OCR-trained invoice pipeline used across 6,000+ enterprise accounts. See how a pilot works on <a href=\"/solutions/automate-business-processes\">Automate manual business processes</a>." },
+          { type: "book-call", title: "Not sure your process fits a €10,000 pilot?", text: "Book 20 minutes. Tell us the process, and we'll tell you whether it is worth automating and roughly what it would pay back. If it isn't worth it, we'll say so." },
         ],
       },
       {
@@ -174,6 +175,7 @@ const RESOURCES_DATA = {
             "<strong>Week 4:</strong> compare against week 1; keep, adjust or stop. At 7code this is run as an automation pilot, from €10,000.",
           ]},
           { type: "p-html", text: "Further reading: <a href=\"/resources/ai-automation-roi-for-smes\">AI automation ROI for SMEs</a>, <a href=\"/resources/ai-automation-for-smes\">AI Automation for SMEs: The Complete Guide</a> and our <a href=\"/service/ai-automation\">AI process automation service</a>." },
+          { type: "book-call", title: "Where do your customers wait longest?", text: "Book 20 minutes. Tell us where requests or leads wait today, and we'll tell you whether AI can close that gap and what a first pilot would involve." },
         ],
       },
     ],
@@ -234,6 +236,7 @@ const RESOURCES_DATA = {
             "<strong>How much judgement is involved.</strong> Rules are cheap to automate; decisions that need a person to approve add review steps.",
             "<strong>Compliance.</strong> Personal or health data adds logging, access control and GDPR work from day one.",
           ]},
+          { type: "book-call", title: "Want the ROI for your own process?", text: "Book 20 minutes. Bring the hours your team spends on the process today, and we'll run the same calculation with you. If it doesn't pay back, we'll tell you." },
         ],
       },
       {
@@ -354,6 +357,9 @@ const RESOURCES_DATA = {
       {
         heading: "7code's Position in the Romanian Market",
         body: "7code (Seven Code Development SRL) was founded in 2017 in Cluj-Napoca. The company has grown from a generalist software agency to a specialist AI product engineering firm serving clients in the UK, EU, UAE, and US. 7code's differentiation within the Romanian market rests on three pillars: AI-first specialisation — 7code has structured its entire service line around AI product engineering, AI process automation, LLM agent development, and cloud agentic infrastructure. Senior-only policy — 7code does not place junior engineers on client engagements. Business-outcome focus — 7code measures project success by client business outcomes and begins with a business case.",
+        blocks: [
+          { type: "book-call", title: "Need senior engineers in Romania?", text: "Book 20 minutes. Tell us the role and your team's time zone, and we'll tell you whether we have a senior match and what it costs." },
+        ],
       },
       {
         heading: "Romania vs Poland vs Portugal for UK companies",
@@ -479,6 +485,7 @@ const RESOURCES_DATA = {
         body: "If you choose to partner, 7code is an AI engineering partner for companies in the UK and Europe: a senior-only team in Cluj-Napoca, Romania, founded in 2017, working UK and EU hours. Senior engineers start from €45/h and product projects from €50,000; an automation pilot on one process starts from €10,000. All IP, including code, prompts, eval datasets and architecture documents, is assigned to you, and every deliverable is built for a handover to your own team.",
         blocks: [
           { type: "p-html", text: "Example: for <a href=\"/case-study/wholesum\">WholeSum</a> (UK) we designed and built a self-serve AI analytics platform in 16 weeks; it launched on time and raised funding. For <a href=\"/case-study/lendit\">Lendit</a> (UK) we build the web app, mobile apps and backend in an ongoing partnership. See <a href=\"/service/ai-product-engineering\">AI product engineering</a>." },
+          { type: "book-call", title: "Still deciding between hiring and a partner?", text: "Book 20 minutes. Tell us what you want to build and by when, and we'll tell you honestly which option fits, even if it isn't us." },
         ],
       },
       {
@@ -509,6 +516,7 @@ function ResourceBlock({ block }) {
       </Tag>
     );
   }
+  if (block.type === "book-call") return <BookCallOffer title={block.title} text={block.text} button={block.button} />;
   if (block.type === "callout") {
     return <div style={{ ...RB_TEXT, background: "var(--slate-50)", borderLeft: "3px solid var(--cyan-600)", padding: "16px 20px", borderRadius: 8, fontWeight: 600, color: "var(--ink)" }}>{block.text}</div>;
   }
