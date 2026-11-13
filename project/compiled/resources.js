@@ -7,7 +7,7 @@ const RESOURCES_DATA = {
     title: "AI Automation for SMEs: The Complete Guide (2026)",
     metaDescription: "A practical guide to AI automation for small and medium-sized businesses — use cases, ROI math, build vs buy, and how to get started.",
     datePublished: "2026-05-12",
-    dateModified: "2026-11-10",
+    dateModified: "2026-11-13",
     sections: [{
       heading: "Introduction",
       body: "Artificial intelligence is no longer the exclusive territory of enterprises with eight-figure technology budgets. In 2026, small and medium-sized enterprises across the UK, EU, and beyond are deploying AI automation across operations, finance, HR, and customer service — and doing so at a cost and speed that would have been unimaginable three years ago. This guide is written for business owners, operations directors, and technology leads at SMEs who want a clear-eyed view of what AI automation actually means in practice: what it can do, what it costs, how long it takes, and how to avoid the pitfalls."
@@ -26,7 +26,39 @@ const RESOURCES_DATA = {
       body: "Three forces have converged to make 2026 the practical inflection point for SME AI adoption. Cost collapse: the cost of AI inference has fallen dramatically since 2023. Open-source maturity: models like Meta's Llama series and Mistral's open-weight releases now match or exceed the capability of proprietary models from 2022. Regulatory clarity: the EU AI Act has made clear that most SME automation use cases — document processing, internal workflow automation, customer service triage — fall into the minimal or limited risk categories. Competitive pressure: companies using AI for process automation are seeing productivity improvements of 20–40% in the specific functions automated."
     }, {
       heading: "5 SME Use Cases",
-      body: "1. Operations — Invoice processing automation: an AI document processing pipeline extracts structured data from invoices, performs automated three-way matching against purchase orders in the ERP, and routes exceptions to a human reviewer queue. 2. HR — CV screening and candidate scoring agent: an LLM-based screening agent reads each CV against the job specification, scores candidates on defined criteria, generates a structured summary, and ranks candidates into tiers. 3. Finance — Automated financial reporting and anomaly detection: an automated reporting pipeline pulls data from accounting, CRM, and budget systems, runs reconciliation checks, flags anomalies, and generates a formatted management pack with LLM narrative commentary. 4. Customer service — LLM-powered support agent with human escalation: an LLM agent handles inbound queries, classifies them by type and complexity, resolves routine queries autonomously using RAG against a knowledge base, and escalates complex queries to human agents with a pre-populated context summary. 5. Sales — AI-assisted CRM data enrichment and lead scoring: new leads are automatically enriched with company data, existing records are updated on a rolling basis, and a scoring model trained on historical closed-won data ranks leads by conversion probability."
+      body: "1. Operations — Invoice processing automation: an AI document processing pipeline extracts structured data from invoices, performs automated three-way matching against purchase orders in the ERP, and routes exceptions to a human reviewer queue. 2. HR — CV screening and candidate scoring agent: an LLM-based screening agent reads each CV against the job specification, scores candidates on defined criteria, generates a structured summary, and ranks candidates into tiers. 3. Finance — Automated financial reporting and anomaly detection: an automated reporting pipeline pulls data from accounting, CRM, and budget systems, runs reconciliation checks, flags anomalies, and generates a formatted management pack with LLM narrative commentary. 4. Customer service — LLM-powered support agent with human escalation: an LLM agent handles inbound queries, classifies them by type and complexity, resolves routine queries autonomously using RAG against a knowledge base, and escalates complex queries to human agents with a pre-populated context summary. 5. Sales — AI-assisted CRM data enrichment and lead scoring: new leads are automatically enriched with company data, existing records are updated on a rolling basis, and a scoring model trained on historical closed-won data ranks leads by conversion probability.",
+      blocks: [{
+        type: "p-html",
+        text: "For a sector example, see <a href=\"/blog/reduce-admin-work-medical-clinic\">How to reduce admin work in a medical clinic</a>."
+      }]
+    }, {
+      heading: "How Does AI Automation Help SMEs Make Decisions?",
+      blocks: [{
+        type: "p",
+        text: "AI automation helps with decisions by doing the preparation: it collects the data, checks it, flags what is unusual and ranks the options. A person still makes the call. In a small company, that means managers spend their time deciding instead of gathering numbers."
+      }, {
+        type: "table",
+        head: ["Decision", "What the automation prepares", "Who decides"],
+        rows: [["Approve a supplier invoice", "Matches it to the purchase order and flags price or quantity differences", "Finance, on the exceptions only"], ["Which leads to call first", "Enriches each lead and ranks it by how similar leads converted before", "Sales"], ["Who to interview", "Scores each CV against the role and groups candidates into tiers", "Hiring manager"], ["Where the month went off plan", "Reconciles the numbers, flags anomalies and drafts the commentary", "Finance director or owner"]]
+      }, {
+        type: "p",
+        text: "Two rules keep this safe. When the automation is not confident enough, it sends the case to a person instead of acting. And no automation goes live until its accuracy has been measured against how your team does the work today."
+      }, {
+        type: "p-html",
+        text: "To pick the first decision to support, use the 10-minute scoring in <a href=\"/blog/which-business-process-to-automate-first\">Which business process should you automate first?</a>"
+      }]
+    }, {
+      heading: "How Does AI Automation Improve Collaboration Between Teams?",
+      blocks: [{
+        type: "p",
+        text: "In a small company, most delays happen between teams, not inside them: a sales order waits for finance, a support ticket waits for the one person who knows the answer, a report waits for numbers from three systems. Automation shortens these handoffs."
+      }, {
+        type: "bullets",
+        items: ["<strong>One record, updated once.</strong> When the CRM, ERP and helpdesk are connected, an order or a customer change is entered once and every team sees the same data.", "<strong>Handovers with context.</strong> When the automation passes a case to a person, it adds a short summary of what has happened so far, so nobody starts from zero.", "<strong>One owner per exception.</strong> Each case that needs a person lands in one queue with one owner, instead of an email thread copied to five people.", "<strong>Shared visibility.</strong> A dashboard shows what the automation did, what is waiting and who it is waiting for."]
+      }, {
+        type: "p-html",
+        text: "Customer-facing teams usually gain the most. <a href=\"/resources/ai-customer-experience-for-smes\">AI for customer experience in SMEs</a> covers support, sales follow-up and onboarding, with the research behind each."
+      }]
     }, {
       heading: "ROI Math for AI Automation",
       body: "The ROI calculation for AI automation is straightforward: ROI = (value of hours saved + error cost avoided − build and running cost) ÷ (build and running cost). A worked example with illustrative numbers: a process that takes 44 hours a week across the team, 70% of which the automation removes, at a loaded cost of €50 an hour. In the first 6 months that returns about 708 hours, worth about €35,400, against €11,800 of cost (a €10,000 pilot plus €300 a month to run). That is about 3 times its cost in 6 months, and the target we choose a pilot process for, not a promise: a smaller process returns less. Error cost avoided comes on top.",
@@ -36,7 +68,24 @@ const RESOURCES_DATA = {
       }]
     }, {
       heading: "Build vs. Buy vs. Partner Analysis",
-      body: "Build in-house is slow (6–18 months to first result) and expensive in Year 1 (hiring + tooling), but gives full control. Buy SaaS is fast (days–weeks) and low Year 1 cost, but limited to vendor roadmap and licence escalation over time. Partner with an AI agency is medium speed (4–12 weeks), medium cost (project fee), high control (you own the IP), and includes immediate access to AI engineering expertise. 7code's recommendation for most SMEs: use SaaS for commodity functions and partner for automation that is core to your competitive differentiation, involves proprietary data, or requires deep integration with your existing systems."
+      body: "Build in-house is slow (6–18 months to first result) and expensive in Year 1 (hiring + tooling), but gives full control. Buy SaaS is fast (days–weeks) and low Year 1 cost, but limited to vendor roadmap and licence escalation over time. Partner with an AI agency is medium speed (4–12 weeks), medium cost (project fee), high control (you own the IP), and includes immediate access to AI engineering expertise. 7code's recommendation for most SMEs: use SaaS for commodity functions and partner for automation that is core to your competitive differentiation, involves proprietary data, or requires deep integration with your existing systems.",
+      blocks: [{
+        type: "p-html",
+        text: "If the real choice is between automating and hiring another person, see <a href=\"/blog/hire-or-automate-which-costs-less\">Hire or automate: which costs less?</a>"
+      }]
+    }, {
+      heading: "How to Choose an AI Automation Partner",
+      blocks: [{
+        type: "p",
+        text: "Choose a partner that starts with one process, measures it, and builds on the systems you already use. How a partner answers the questions below tells you more than its portfolio."
+      }, {
+        type: "table",
+        head: ["Ask", "A good answer", "A warning sign"],
+        rows: [["Where would you start?", "One process, picked by hours saved and clear rules, with today's numbers measured first", "A platform or a company-wide programme first"], ["What does the first step cost?", "A fixed price for a pilot, with the scope written down", "Hourly billing with no limit on the first project"], ["Which of our systems will it use?", "Your ERP, CRM, accounting or helpdesk, through their APIs", "You have to move to their software"], ["Who owns the code and documentation?", "You do, when the work is finished", "A licence you keep paying for"], ["What happens when the AI is not sure?", "It sends the case to a person, and accuracy is measured before go-live", "No clear answer"], ["Where is our data stored, and who can see it?", "A named country, access rules and logs, GDPR by design", "Vague answers"], ["Can we speak to a client with a similar process?", "Yes, a named reference", "Only anonymous logos"], ["Would you ever tell us not to automate?", "Yes, when the process changes often or a hire is cheaper", "Every process is a fit"]]
+      }, {
+        type: "p-html",
+        text: "For questions on price and contracts, see <a href=\"/blog/business-process-automation-cost\">How much does business process automation cost?</a> For the wider build or partner decision, see <a href=\"/resources/build-ai-in-house-vs-partner\">Build AI in-house vs with a partner</a>."
+      }]
     }, {
       heading: "7code's Approach to SME AI Automation",
       body: "7code works with SMEs through a structured four-phase process. Phase 1 — Operational Quick Scan (1 week): a senior consultant maps your top five processes by cost and volume and identifies two to three automation candidates with clear ROI potential. Phase 2 — AI-Ready Blueprint (2 weeks): a detailed technical specification covering data flow diagrams, integration requirements, AI model selection rationale, and a phased delivery plan. Phase 3 — Automation Pilot (4–6 weeks): build and deploy the first automation in your environment, validate outputs, tune the model, and document the results. Phase 4 — Department Sprint (6–12 weeks): systematically automate the remainder of the backlog, department by department. 7code's team is senior-only — no junior engineers are placed on client projects."
@@ -69,6 +118,9 @@ const RESOURCES_DATA = {
       }, {
         q: "How can AI automation help small businesses?",
         a: "AI automation lets small businesses process invoices, screen CVs, answer customer queries, and generate reports without adding headcount. A focused pilot on one process takes four to six weeks, and we choose the process so that it can return about three times its cost within six months."
+      }, {
+        q: "How do I choose an AI automation company?",
+        a: "Ask where they would start, what the first step costs, who owns the code, what happens when the AI is not sure, and where your data is stored. A good partner starts with one process at a fixed pilot price, builds on your existing systems, hands you the code and documentation, and will tell you when a process is not worth automating."
       }, {
         q: "What is the 30% rule for AI?",
         a: "The 30% rule says AI should handle roughly 30% of a workflow — the repetitive, high-volume part — while humans keep the remaining 70% that requires judgment, relationships, or creativity. It is a guardrail against over-automation: automate the toil first, keep humans on decisions, and expand AI's share only after accuracy is proven."

@@ -191,7 +191,7 @@ const CASES = [
 ];
 
 const RESOURCES = [
-  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: Use Cases, Cost & ROI (2026)", description: "5 proven use cases, a worked ROI example (708 hours saved in 6 months) and what a pilot costs: from €10,000, live in 4–6 weeks. Built for SMEs.", datePublished: "2026-05-12", dateModified: "2026-11-10" },
+  { slug: "ai-automation-for-smes", title: "AI Automation for SMEs: Use Cases, Cost & ROI (2026)", description: "5 proven use cases, a worked ROI example (708 hours saved in 6 months) and what a pilot costs: from €10,000, live in 4–6 weeks. Built for SMEs.", datePublished: "2026-05-12", dateModified: "2026-11-13" },
   { slug: "ai-customer-experience-for-smes", title: "AI for Customer Experience in SMEs: Support, Sales Follow-up and Productivity (2026)", description: "Where AI actually helps a small company's customers: support triage, fast sales follow-up and onboarding. What the research shows, what to keep human, and how to start in 30 days.", datePublished: "2026-10-20", author: "Nicu Mardari" },
   { slug: "ai-automation-roi-for-smes", title: "AI Automation ROI for SMEs: Benefits, Costs and Payback (2026)", description: "What AI automation saves a small business, how to calculate the ROI, what it costs and when it does not pay back. With a worked example and a pilot from €10,000.", datePublished: "2026-10-20", author: "Nicu Mardari" },
   { slug: "ai-native-product-engineering", title: "AI-Native Product Engineering: How to Build AI Products That Actually Work", description: "A complete guide to AI-native product engineering — architecture, methodology, team composition, and avoiding common failure modes.", datePublished: "2026-05-12" },
