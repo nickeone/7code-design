@@ -213,7 +213,7 @@ function Nav() {
             <NavLinkA to="/blog">Blog</NavLinkA>
           </nav>
           <div className="nav-cta">
-            <a href="/contact" className="btn btn--cyan btn--sm">Get in touch <Icon.arrow /></a>
+            <a href="https://calendar.app.google/xgANCDkSjSQ2ZpQ18" target="_blank" rel="noopener noreferrer" className="btn btn--cyan btn--sm" onClick={() => { try { window.gtag && window.gtag("event", "generate_lead", { lead_source: "booking_link_nav" }); } catch (e) {} }}>Book a call <Icon.arrow /></a>
             <button className="nav-mobile-toggle" onClick={() => setMobileOpen(o => !o)} aria-label="Menu">
               {mobileOpen ? <Icon.x /> : <Icon.menu />}
             </button>
@@ -255,7 +255,7 @@ function Nav() {
         </div>
         <a href="/about">About</a>
         <a href="/blog">Blog</a>
-        <a href="/contact" className="btn btn--cyan">Get in touch <Icon.arrow /></a>
+        <a href="https://calendar.app.google/xgANCDkSjSQ2ZpQ18" target="_blank" rel="noopener noreferrer" className="btn btn--cyan" onClick={() => { try { window.gtag && window.gtag("event", "generate_lead", { lead_source: "booking_link_nav" }); } catch (e) {} }}>Book a call <Icon.arrow /></a>
       </div>
     </>
   );

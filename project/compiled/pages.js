@@ -680,7 +680,7 @@ function ContactPage() {
     style: {
       justifyContent: "center"
     }
-  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Start Your AI Engineering Project"), /*#__PURE__*/React.createElement("p", null, "Building a product, or automating a process? Tell us which, and we'll reply within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
+  }, "Contact"), /*#__PURE__*/React.createElement("h1", null, "Start Your AI Engineering Project"), /*#__PURE__*/React.createElement("p", null, "Building an MVP, a product, or automating a process? Tell us which, and we'll reply within one business day with next steps."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"

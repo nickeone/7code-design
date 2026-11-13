@@ -318,9 +318,18 @@ function Nav() {
   }, "Blog")), /*#__PURE__*/React.createElement("div", {
     className: "nav-cta"
   }, /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
-    className: "btn btn--cyan btn--sm"
-  }, "Get in touch ", /*#__PURE__*/React.createElement(Icon.arrow, null)), /*#__PURE__*/React.createElement("button", {
+    href: "https://calendar.app.google/xgANCDkSjSQ2ZpQ18",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "btn btn--cyan btn--sm",
+    onClick: () => {
+      try {
+        window.gtag && window.gtag("event", "generate_lead", {
+          lead_source: "booking_link_nav"
+        });
+      } catch (e) {}
+    }
+  }, "Book a call ", /*#__PURE__*/React.createElement(Icon.arrow, null)), /*#__PURE__*/React.createElement("button", {
     className: "nav-mobile-toggle",
     onClick: () => setMobileOpen(o => !o),
     "aria-label": "Menu"
@@ -368,9 +377,18 @@ function Nav() {
   }, "About"), /*#__PURE__*/React.createElement("a", {
     href: "/blog"
   }, "Blog"), /*#__PURE__*/React.createElement("a", {
-    href: "/contact",
-    className: "btn btn--cyan"
-  }, "Get in touch ", /*#__PURE__*/React.createElement(Icon.arrow, null))));
+    href: "https://calendar.app.google/xgANCDkSjSQ2ZpQ18",
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: "btn btn--cyan",
+    onClick: () => {
+      try {
+        window.gtag && window.gtag("event", "generate_lead", {
+          lead_source: "booking_link_nav"
+        });
+      } catch (e) {}
+    }
+  }, "Book a call ", /*#__PURE__*/React.createElement(Icon.arrow, null))));
 }
 
 // ──────────────────────────────────────────────────────────────────

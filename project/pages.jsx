@@ -561,7 +561,7 @@ function ContactPage() {
         <div className="container">
           <span className="eyebrow" style={{ justifyContent: "center" }}>Contact</span>
           <h1>Start Your AI Engineering Project</h1>
-          <p>Building a product, or automating a process? Tell us which, and we'll reply within one business day with next steps.</p>
+          <p>Building an MVP, a product, or automating a process? Tell us which, and we'll reply within one business day with next steps.</p>
         </div>
       </section>
 
